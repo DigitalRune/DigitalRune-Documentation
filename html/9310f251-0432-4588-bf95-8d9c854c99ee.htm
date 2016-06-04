@@ -1,0 +1,84 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>XNA Framework Support</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="9310f251-0432-4588-bf95-8d9c854c99ee" /><meta name="Description" content="DigitalRune Mathematics contains a version that supports the Microsoft XNA Framework (see also ). This section explains XNA-specific issues." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="2ac58586-0d4f-4625-bf4c-fc32591a5304.htm" title="DigitalRune Mathematics" tocid="2ac58586-0d4f-4625-bf4c-fc32591a5304">DigitalRune Mathematics</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="384f6645-8a25-488c-9a08-47662266a552.htm" title="Definitions and Conventions" tocid="384f6645-8a25-488c-9a08-47662266a552">Definitions and Conventions</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="8c6f4ed6-3d35-4c23-9f64-aa823200e78b.htm" title="Statistics and Distributions" tocid="8c6f4ed6-3d35-4c23-9f64-aa823200e78b">Statistics and Distributions</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="9310f251-0432-4588-bf95-8d9c854c99ee.htm" title="XNA Framework Support" tocid="9310f251-0432-4588-bf95-8d9c854c99ee">XNA Framework Support</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="1f324567-e502-496a-a1ca-bdc232611133.htm" title="Articles" tocid="1f324567-e502-496a-a1ca-bdc232611133">Articles</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="ae58c8d2-5792-4560-9c28-93e8db73f059.htm" title="Class Diagrams" tocid="ae58c8d2-5792-4560-9c28-93e8db73f059">Class Diagrams</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">XNA Framework Support</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                DigitalRune Mathematics contains a version that supports the
+                Microsoft XNA Framework (see also
+                <a href="972bde71-5d0c-46be-8a81-ad0d2cea770a.htm">Files, Folders and Dependencies</a>).
+                This section explains XNA-specific issues.
+            </p></div><div class="collapsibleAreaRegion" id="Differences"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Differences</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    Both, DigitalRune Mathematics and the Microsoft XNA Framework use a
+                    <span class="phrase">right-handed</span> coordinate system. But vectors, matrices, and quaternions are used differently:
+                </p><div class="tableSection"><table><tr><th /><th><p>DigitalRune Mathematics</p></th><th><p>Microsoft XNA Framework</p></th></tr><tr><td><p>Coordinate system</p></td><td><p>right-handed</p></td><td><p>right-handed</p></td></tr><tr><td><p>Vector notation</p></td><td><p>column vectors</p></td><td><p>row vectors</p></td></tr><tr><td><p>Matrix notation</p></td><td><p>A matrix in DigitalRune Mathematics is the transpose of the matrix in XNA.</p></td><td><p>A matrix in XNA is the transpose of the matrix in DigitalRune Mathematics.</p></td></tr><tr><td><p>Matrix multiplication</p></td><td><p>
+                                A coordinate vector is transformed by using <span class="phrase">pre-multiplication</span>
+                                (also known as multiplication on the left):
+                                <span class="math">v' = M · v</span></p><p>
+                                Transformations are concatenated by using <span class="phrase">pre-multiplication</span>:
+                                <span class="math">
+                                    M<sub>12</sub> = M<sub>2</sub> · M<sub>1</sub></span>.
+                                (Order is from right to left, <span class="math">
+                                    M<sub>1</sub></span> is applied before
+                                <span class="math">
+                                    M<sub>2</sub></span>.)
+                            </p></td><td><p>
+                                A coordinate vector is transformed by using <span class="phrase">post-multiplication</span>
+                                (also known as multiplication on the right): <span class="math">v' = v · M</span></p><p>
+                                Transformations are concatenated by using <span class="phrase">post-multiplication</span>:
+                                <span class="math">
+                                    M<sub>12</sub> = M<sub>1</sub> · M<sub>2</sub></span>.
+                                (Order is from left to right, <span class="math">
+                                    M<sub>1</sub></span> is applied before
+                                <span class="math">
+                                    M<sub>2</sub></span>. The matrices are transposed.)
+                            </p></td></tr><tr><td><p>Quaternion notation</p></td><td><p><span class="math">
+                                    (<strong>w</strong>, x, y, z)
+                                </span></p></td><td><p><span class="math">
+                                    (x, y, z, <strong>w</strong>)
+                                </span></p></td></tr><tr><td><p>Quaternion multiplication</p></td><td><p>
+                                Quaternions are concatenated using the following order:
+                                <span class="math">
+                                    q<sub>12</sub> = q<sub>2</sub> · q<sub>1</sub></span>.
+                                (Order is from right to left,
+                                <span class="math">
+                                    q<sub>1</sub></span> is applied before
+                                <span class="math">
+                                    q<sub>2</sub></span>.)
+                            </p></td><td><p>
+                                Quaternions are concatenated using the following order:
+                                <span class="math">
+                                    q<sub>12</sub> = q<sub>2</sub> · q<sub>1</sub></span>.
+                                (Order is from right to left,
+                                <span class="math">
+                                    q<sub>1</sub></span> is applied before
+                                <span class="math">
+                                    q<sub>2</sub></span>.)
+                            </p></td></tr></table></div><p>
+                    The matrix, vector and quaternion types contain methods to convert from or to the
+                    equivalent XNA types. For example:
+                    <a href="c05db5d2-8063-9f11-af3c-e2389f8c0995.htm">Vector3F</a> has the methods
+                    <a href="7d587f39-57dd-5243-dd0b-e04b487a9497.htm">Vector3F<span id="LST455454C7_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST455454C7_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>ToXna<span id="LST455454C7_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST455454C7_1?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a> /
+                    <a href="2066eaf9-bd4b-d04c-60b2-803a652ab4f4.htm">Vector3F<span id="LST455454C7_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST455454C7_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>FromXna(Vector3)</a>
+                    or the explicit cast operators
+                    <a href="8e6e17e2-3ccc-97fe-f1b8-47c198ddaf49.htm">Vector3F <span id="LST455454C7_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST455454C7_3?cs=Explicit|vb=Narrowing|cpp=Explicit|nu=Explicit|fs=Explicit");</script>(Vector3F to Vector3)</a> /
+                    <a href="c3e40504-e2c6-2bc6-085f-f3ac23058b22.htm">Vector3F <span id="LST455454C7_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST455454C7_4?cs=Explicit|vb=Narrowing|cpp=Explicit|nu=Explicit|fs=Explicit");</script>(Vector3 to Vector3F)</a>.
+                </p></div><div class="collapsibleAreaRegion" id="ContentPipeline"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Content pipeline projects</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    If any types of DigitalRune Mathematics (such as
+                    <a href="c05db5d2-8063-9f11-af3c-e2389f8c0995.htm">Vector3F</a>,
+                    <a href="f50d7e60-d2a6-cf17-6e14-41dbb1f85058.htm">Matrix44F</a>,
+                    <a href="f08d8771-de8f-2144-1e2d-20cd4378ba43.htm">QuaternionF</a>,
+                    etc.) are used in an <span class="term">XNA content pipeline extension library</span>:
+                </p><ul><li>
+                        Add references to the following DLLs to your the content pipeline extension library:
+                        <ul><li><em>DigitalRune.dll</em></li><li><em>DigitalRune.Mathematics.dll</em></li><li><em>DigitalRune.Mathematics.Content.Pipeline.dll</em></li></ul></li><li>
+                        For all <span class="term">XNA content projects</span> that use the content pipeline extension library,
+                        add references to the following DLLs to the content projects:
+                        <ul><li><em>DigitalRune.Mathematics.Content.Pipeline.dll</em></li></ul></li></ul><p>
+                    The <em>DigitalRune.Mathematics.Content.Pipeline.dll</em> contains
+                    <a href="http://msdn2.microsoft.com/en-us/library/bb195484" target="_blank">ContentTypeWriter</a>s
+                    which ensure that the data types of DigitalRune Mathematics are properly serialized. Be
+                    sure to use the XNA-specific builds of the DLLs (see
+                    <a href="972bde71-5d0c-46be-8a81-ad0d2cea770a.htm">Files, Folders and Dependencies</a>).
+                </p></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID2RBSection" class="collapsibleSection"><h4 class="subHeading">Other Resources</h4><div class="seeAlsoStyle"><a href="972bde71-5d0c-46be-8a81-ad0d2cea770a.htm">Files, Folders and Dependencies</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

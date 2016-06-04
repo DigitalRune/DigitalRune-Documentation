@@ -1,0 +1,241 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Materials (*.drmat)</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="9e0c41a1-9e6b-4e78-95a0-831ec4fada0a" /><meta name="Description" content="A material defines how a submesh is rendered: Which render passes are supported? Which effects are used? Which effect parameters (e.g. colors and textures) are used? See ." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="9604b781-8adb-4ec6-87bd-85b805e9c036.htm" title="Asset Creation" tocid="9604b781-8adb-4ec6-87bd-85b805e9c036">Asset Creation</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="92ee2e92-0fc3-4928-b144-460b8e6d4fb7.htm" title="Building Content" tocid="92ee2e92-0fc3-4928-b144-460b8e6d4fb7">Building Content</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="2631164b-0b8b-47b2-9cda-f7923d7518f4.htm" title="Pre-Built Content" tocid="2631164b-0b8b-47b2-9cda-f7923d7518f4">Pre-Built Content</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="6cc96ddc-4127-4ec7-889a-19cb71af0d3d.htm" title="FBX Support" tocid="6cc96ddc-4127-4ec7-889a-19cb71af0d3d">FBX Support</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="80150ca3-144d-493e-9741-3587ab95ccdf.htm" title="Models" tocid="80150ca3-144d-493e-9741-3587ab95ccdf">Models</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="9e0c41a1-9e6b-4e78-95a0-831ec4fada0a.htm" title="Materials (*.drmat)" tocid="9e0c41a1-9e6b-4e78-95a0-831ec4fada0a">Materials (*.drmat)</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="52773ff4-36b3-4c9e-9534-c97ce25a06c1.htm" title="Effects (*.fx)" tocid="52773ff4-36b3-4c9e-9534-c97ce25a06c1">Effects (*.fx)</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Materials (*.drmat)</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                A material defines how a submesh is rendered: Which render passes are supported? Which
+                effects are used? Which effect parameters (e.g. colors and textures) are used?
+                See <a href="34a7f065-df4f-4f40-8b5c-5f0afee365db.htm">Materials and Material Instances</a>.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#DRMAT">Material Definition (*.drmat File)</a></li><li class="outlineSectionEntry"><a href="#Material">&lt;Material&gt;</a></li><li class="outlineSectionEntry"><a href="#Pass">&lt;Pass&gt;</a></li><li class="outlineSectionEntry"><a href="#Parameter">&lt;Parameter&gt;</a></li><li class="outlineSectionEntry"><a href="#Texture">&lt;Texture&gt;</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#AlphaMasks">Alpha masks</a></li><li class="outlineSectionEntry"><a href="#NormalMaps">Normal maps</a></li></ul><li class="outlineSectionEntry"><a href="#AutomaticCreation">Automatic creation of missing material definition files</a></li><li class="outlineSectionEntry"><a href="#seeAlsoSection">See Also</a></li></ul></div><div class="collapsibleAreaRegion" id="DRMAT"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Material Definition (*.drmat File)</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    The <span class="term">material definition</span> defines a material in DigitalRune Graphics. It
+                    is an XML file that uses the file extension <em>drmat</em>, for example
+                    <em>Wood.drmat</em>. Here is an example of a material definition:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAEAGAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAEAGAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAEAGAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-xml-bracket">&lt;?</span><span class="highlight-xml-tag">xml</span> <span class="highlight-xml-attribute-name">version</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"1.0"</span> <span class="highlight-xml-attribute-name">encoding</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"utf-8"</span><span class="highlight-xml-bracket">?&gt;</span>
+
+<span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Material</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"CustomMaterial"</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Pass</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Default"</span> <span class="highlight-xml-attribute-name">Effect</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"BasicEffect"</span> <span class="highlight-xml-attribute-name">Profile</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Any"</span><span class="highlight-xml-bracket">&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Parameter</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"DiffuseColor"</span> <span class="highlight-xml-attribute-name">Value</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"1,1,1"</span> <span class="highlight-xml-bracket">/&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Parameter</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"SpecularColor"</span> <span class="highlight-xml-attribute-name">Value</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"1,1,1"</span> <span class="highlight-xml-bracket">/&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Parameter</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"SpecularPower"</span> <span class="highlight-xml-attribute-name">Value</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"100"</span> <span class="highlight-xml-bracket">/&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Texture</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Texture"</span> <span class="highlight-xml-attribute-name">File</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"albedo.tga"</span> <span class="highlight-xml-bracket">/&gt;</span>
+  <span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Pass</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Pass</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"ShadowMap"</span> <span class="highlight-xml-attribute-name">Effect</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"DigitalRune/Materials/ShadowMap"</span> <span class="highlight-xml-attribute-name">Profile</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"HiDef"</span> <span class="highlight-xml-bracket">/&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Pass</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"GBuffer"</span> <span class="highlight-xml-attribute-name">Effect</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"DigitalRune/Materials/GBufferNormal"</span> <span class="highlight-xml-attribute-name">Profile</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"HiDef"</span><span class="highlight-xml-bracket">&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Parameter</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"SpecularPower"</span> <span class="highlight-xml-attribute-name">Value</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"100"</span> <span class="highlight-xml-bracket">/&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Texture</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"NormalTexture"</span> <span class="highlight-xml-attribute-name">Format</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Normal"</span> <span class="highlight-xml-attribute-name">File</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"normal.tga"</span> <span class="highlight-xml-bracket">/&gt;</span>
+  <span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Pass</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Pass</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Material"</span> <span class="highlight-xml-attribute-name">Effect</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"CustomMaterial.fx"</span> <span class="highlight-xml-attribute-name">Profile</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"HiDef"</span><span class="highlight-xml-bracket">&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Parameter</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"DiffuseColor"</span> <span class="highlight-xml-attribute-name">Value</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"1,1,1"</span> <span class="highlight-xml-bracket">/&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Parameter</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"SpecularColor"</span> <span class="highlight-xml-attribute-name">Value</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"1,1,1"</span> <span class="highlight-xml-bracket">/&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Parameter</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"CustomParameter"</span> <span class="highlight-xml-attribute-name">Value</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"0.95"</span> <span class="highlight-xml-bracket">/&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Texture</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"DiffuseTexture"</span> <span class="highlight-xml-attribute-name">File</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"albedo.tga"</span> <span class="highlight-xml-bracket">/&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Texture</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"SpecularTexture"</span> <span class="highlight-xml-attribute-name">File</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"specular.tga"</span> <span class="highlight-xml-bracket">/&gt;</span>
+  <span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Pass</span><span class="highlight-xml-bracket">&gt;</span>
+<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Material</span><span class="highlight-xml-bracket">&gt;</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAEAGAAA");</script><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                        The material definition file is optional. If the model description file is missing or the
+                        model description does not assign a material to a submesh, then the
+                        model content processor searches for a material definition using the texture names.
+                    </p><p>
+                        For example, if an imported submesh uses a texture called <em>Wood.tga</em>,
+                        the model content processor tries to find a material definition file <em>Wood.drmat</em>
+                        in the folder that contains the texture. If a material definition is found, it is
+                        automatically assigned to the submesh. If no material definition is found, the submesh
+                        will use the default material stored in the model.
+                    </p><p>
+                        Material definitions can be changed or overwritten at runtime.
+                    </p></td></tr></table></div><p>
+                    Using material definition files has several advantages:
+                </p><ul><li><p><strong>Complex materials:</strong>
+                            The DigitalRune Graphics engine supports complex render pipelines,
+                            which may involve multiple render passes per model. For example, a light pre-pass
+                            (a.k.a. deferred lighting) render pipeline may start with a "ShadowMap" pass to render
+                            shadow-casting models into shadow maps. In the "GBuffer" pass the model is rendered
+                            into the G-Buffer. Then, after the renderer has lit the scene, the model is rendered
+                            again in the "Material" pass. Each render pass may require a different effect or
+                            different settings. Therefore, a material definition may include one or more render
+                            passes.
+                        </p></li><li><p><strong>Shared materials:</strong>
+                            Materials can be shared between models. At design-time existing
+                            materials can be assigned to new models. At run-time shared materials are only
+                            loaded once and therefore require less resources. Renderers can sort submeshes based
+                            on their materials and thereby reduce the number of required render state changes.
+                        </p></li></ul><p>
+                    A material definition defines one or more render passes where each pass can have different
+                    parameters and textures. The names of the render passes and number of render passes
+                    depends on the actual render pipeline implemented in the game. A render pipeline in
+                    DigitalRune Graphics may include any number of passes - including user-defined passes.
+                </p></div><div class="collapsibleAreaRegion" id="Material"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />&lt;Material&gt;</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    The <span class="code">Material</span> element is the root node of the XML file. It has the
+                    following attributes:
+                </p><div class="tableSection"><table><tr><th><p>Attribute</p></th><th><p>Description</p></th><th><p>Examples</p></th></tr><tr><td><p>Name</p></td><td><p>
+                                Optional: The name of the material. Setting a name can be useful to identify a
+                                material at runtime (see property
+                                <a href="88d796f0-4af5-7599-c63c-c90214e6bfe3.htm">Material<span id="LST18441F2_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST18441F2_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Name</a>).
+                            </p></td><td><p><span class="code">Name="MaterialXYZ"</span></p></td></tr></table></div><p>
+                    The <span class="code">Material</span> element may contain one or more <span class="code">Pass</span>
+                    elements.
+                </p></div><div class="collapsibleAreaRegion" id="Pass"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />&lt;Pass&gt;</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    The <span class="code">Pass</span> element defines the settings for a specific render
+                    pass.
+                </p><p>
+                    The <span class="code">Pass</span> element has the following attributes:
+                </p><div class="tableSection"><table><tr><th><p>Attribute</p></th><th><p>Description</p></th><th><p>Examples</p></th></tr><tr><td><p>Name</p></td><td><p>
+                                The name of the render pass.
+                            </p></td><td><p><span class="code">Name="ShadowMap"</span></p></td></tr><tr><td><p>Effect</p></td><td><p>
+                                The DirectX Effect that is used in this render pass.
+                            </p><p>
+                                The value can be:
+                            </p><ul><li><p>
+                                        One of the XNA stock effects: <span class="code">AlphaTestEffect</span>,
+                                        <span class="code">BasicEffect</span>, <span class="code">DualTextureEffect</span>,
+                                        <span class="code">EnvironmentMapEffect</span>, <span class="code">SkinnedEffect</span></p></li><li><p>
+                                        A prebuilt effect asset (see <a href="fda15306-d5dc-449c-850d-82227359d35b.htm">Predefined Effects</a>).
+                                        In this case the value is the asset name, which is used
+                                        to load the effect at runtime.
+                                    </p></li><li><p>
+                                        A custom effect. In this case the value is the path of the effect file (.fx)
+                                        relative to the material definition file.
+                                    </p></li></ul></td><td><p><span class="code">Effect="SkinnedEffect"</span></p><p><span class="code">Effect="DigitalRune/DeferredLighting/GBuffer"</span></p><p><span class="code">Effect="../Effects/CustomEffect.fx"</span></p></td></tr><tr><td><p>Profile</p></td><td><p>
+                                Optional: Defines whether the render pass is designed for a certain graphics profile.
+                                The pass is ignored if it does not match the target profile of the game.
+                            </p><p>
+                                Allowed values are:
+                            </p><div class="tableSection"><table><tr><th><p>Value</p></th><th><p>Description</p></th></tr><tr><td><p><span class="code">Reach</span></p></td><td><p>
+                                            The render pass is only processed if the target profile of the game is
+                                            <strong>Reach</strong>.
+                                        </p></td></tr><tr><td><p><span class="code">HiDef</span></p></td><td><p>
+                                            The render pass is only processed if the target profile of the game is
+                                            <strong>HiDef</strong>.
+                                        </p></td></tr><tr><td><p><span class="code">Any</span></p></td><td><p>
+                                            The render pass is always processed.
+                                        </p></td></tr></table></div><p>
+                                The default value is <span class="code">Any</span></p></td><td><p><span class="code">Profile="HiDef"</span></p></td></tr></table></div><p>
+                    The <span class="code">Pass</span> element may contain one or more <span class="code">Parameter</span>
+                    and <span class="code">Texture</span> elements.
+                </p></div><div class="collapsibleAreaRegion" id="Parameter"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />&lt;Parameter&gt;</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    A DirectX Effect may define one or more effect parameters (shader constants). The Effect
+                    file may define default values for the effect parameter. This default value can be
+                    overridden using the <span class="code">Parameter</span> element.
+                </p><p>
+                    Currently only the following parameter types can be set in the material definition:
+                </p><div class="tableSection"><table><tr><th><p>HLSL Type</p></th><th><p>Example</p></th></tr><tr><td><p>bool</p></td><td><p><span class="code">&lt;Parameter Name="EnableSkinning" Value="False" /&gt;</span></p></td></tr><tr><td><p>bool[]</p></td><td><p><span class="code">&lt;Parameter Name="Flags" Value="False,False,True,False" /&gt;</span></p></td></tr><tr><td><p>float</p></td><td><p><span class="code">&lt;Parameter Name="ReferenceAlpha" Value="0.9" /&gt;</span></p></td></tr><tr><td><p>float2</p></td><td><p><span class="code">&lt;Parameter Name="Offset" Value="0.5,0.5" /&gt;</span></p></td></tr><tr><td><p>float3</p></td><td><p><span class="code">&lt;Parameter Name="UpDirection" Value="0,1,0" /&gt;</span></p></td></tr><tr><td><p>float4</p></td><td><p><span class="code">&lt;Parameter Name="Color" Value="1,1,1,0.5" /&gt;</span></p></td></tr><tr><td><p>float[]</p></td><td><p><span class="code">&lt;Parameter Name="Values" Value="0,0.1,0.2,0.3,0.4" /&gt;</span></p></td></tr></table></div><p>
+                    The <span class="code">Name</span> of a parameter is the <strong>case-sensitive</strong>
+                    name as it is declared in the DirectX Effect file (.fx).
+                </p></div><div class="collapsibleAreaRegion" id="Texture"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />&lt;Texture&gt;</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    Textures can be referenced using the <span class="code">Texture</span> element. The element
+                    defines the name, path, and preprocessing settings.
+                </p><p>
+                    Examples:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACBCAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACBCAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACBCAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Texture</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"DiffuseTexture"</span> <span class="highlight-xml-attribute-name">File</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"diffuse.tga"</span> <span class="highlight-xml-bracket">/&gt;</span>
+<span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Texture</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"SpecularTexture"</span> <span class="highlight-xml-attribute-name">File</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"specular.tga"</span> <span class="highlight-xml-bracket">/&gt;</span>
+<span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Texture</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"AlphaMask"</span> <span class="highlight-xml-attribute-name">ReferenceAlpha</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"0.9"</span> <span class="highlight-xml-attribute-name">ScaleAlphaToCoverage</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"True"</span> <span class="highlight-xml-attribute-name">File</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"mask.tga"</span> <span class="highlight-xml-bracket">/&gt;</span>
+<span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Texture</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"NormalMap"</span> <span class="highlight-xml-attribute-name">Format</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Normal"</span> <span class="highlight-xml-attribute-name">File</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"normal.tga"</span> <span class="highlight-xml-bracket">/&gt;</span>
+<span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Texture</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"LookupTable"</span> <span class="highlight-xml-attribute-name">Format</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Color"</span> <span class="highlight-xml-attribute-name">GenerateMimaps</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"False"</span> <span class="highlight-xml-attribute-name">PremultiplyAlpha</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"False"</span> <span class="highlight-xml-attribute-name">InputGamma</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"1.0"</span> <span class="highlight-xml-attribute-name">OutputGamma</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"1.0"</span> <span class="highlight-xml-attribute-name">File</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"lut.tga"</span> <span class="highlight-xml-bracket">/&gt;</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACBCAAA");</script><p>
+                    The <span class="code">Texture</span> element has the following attributes.
+                </p><div class="tableSection"><table><tr><th><p>Attribute</p></th><th><p>Description</p></th><th><p>Examples</p></th></tr><tr><td><p>Name</p></td><td><p>The name of the texture parameter in the Effect file.</p></td><td><p><span class="code">Name="DiffuseTexture"</span></p></td></tr><tr><td><p>File</p></td><td><p>
+                                The path of the source image relative to the material definition. Supported file types:
+                                .bmp, .dds, .dib, .hdr, .jpg, .pfm, .png, .ppm, and .tga.
+                            </p></td><td><p><span class="code">File="textures/diffuse.tga"</span></p></td></tr><tr><td><p>Format</p></td><td><p>
+                                Optional: Determines the surface format of the processed texture.
+                            </p><p>
+                                Allowed values are:
+                            </p><div class="tableSection"><table><tr><th><p>Value</p></th><th><p>Description</p></th></tr><tr><td><p><span class="code">NoChange</span></p></td><td><p>
+                                            The texture format of the input texture is not changed by the content processor.
+                                        </p></td></tr><tr><td><p><span class="code">Color</span></p></td><td><p>
+                                            The texture format of the input texture is converted to <strong>SurfaceFormat.Color</strong>
+                                            (32-bit ARGB format with alpha, 8 bits per channel) by the content processor.
+                                        </p></td></tr><tr><td><p><span class="code">Dxt</span></p></td><td><p>
+                                            The texture format of the input texture is converted to an appropriate DXT compression by
+                                            the content processor. If the input texture contains fractional alpha values, it is converted to
+                                            DXT5 format; otherwise it is converted to DXT1.
+                                        </p></td></tr><tr><td><p><span class="code">Normal</span></p></td><td><p>
+                                            The texture format of the input texture is converted to DXT5nm by the content processor.
+                                            This format reduces compression artifacts when storing normal maps. The x-component of
+                                            the normal is stored in the Alpha channel and the y-component is stored in the Green
+                                            channel. The z-component needs to be reconstructed in the pixel shader.
+                                        </p></td></tr><tr><td><p><span class="code">NormalInvertY</span></p></td><td><p>
+                                            Same as <span class="code">Normal</span>, except that the y-component of the normal vector is inverted. (See below.)
+                                        </p></td></tr></table></div><p>
+                                The default value is <span class="code">Dxt</span></p></td><td><p><span class="code">Format="NormalInvertY"</span></p></td></tr><tr><td><p>ColorKey</p></td><td><p>
+                                Optional: Enables color keying. The value is the key color (RGBA as byte values).
+                                All pixels that match the specified color are replaced with transparent black.
+                                Color keying is disabled by default.
+                            </p></td><td><p><span class="code">ColorKey="255,0,255,255"</span></p></td></tr><tr><td><p>GenerateMipmaps</p></td><td><p>
+                                Optional: Generates a full chain of mipmaps for the texture. Already existing mipmaps
+                                are not replaced.
+                            </p><p>
+                                Allowed values are: <span class="code">True</span> or <span class="code">False</span>.
+                            </p><p>
+                                The default value is <span class="code">True</span>.
+                            </p></td><td><p><span class="code">GenerateMipmaps="True"</span></p></td></tr><tr><td><p>InputGamma</p></td><td><p>
+                                Optional: Specifies the gamma value of the source image.
+                            </p><p>
+                                The default value is <span class="code">2.2</span>.
+                            </p></td><td><p><span class="code">InputGamma="2.2"</span></p></td></tr><tr><td><p>OutputGamma</p></td><td><p>
+                                Optional: Specifies the gamma value of the output texture. This value is the gamma
+                                that is expected by the DirectX Effect that reads the texture.
+                            </p><p>
+                                The default value is <span class="code">2.2</span>.
+                            </p></td><td><p><span class="code">OutputGamma="2.2"</span></p></td></tr><tr><td><p>PremultiplyAlpha</p></td><td><p>
+                                Optional: If enabled, source image is converted to premultiplied alpha format.
+                            </p><p>
+                                Allowed values are: <span class="code">True</span> or <span class="code">False</span>.
+                            </p><p>
+                                The default value is <span class="code">True</span>.
+                            </p></td><td><p><span class="code">PremultiplyAlpha="False"</span></p></td></tr><tr><td><p>ResizeToPowerOfTwo</p></td><td><p>
+                                Optional: If enabled, the source image is resized to the next largest power of two.
+                            </p><p>
+                                Allowed values are: <span class="code">True</span> or <span class="code">False</span>.
+                            </p><p>
+                                The default value is <span class="code">False</span>.
+                            </p></td><td><p><span class="code">ResizeToPowerOfTwo="True"</span></p></td></tr><tr><td><p>ReferenceAlpha</p></td><td><p>
+                                Optional: Specifies the reference alpha value, which is used in the alpha test. This
+                                attribute is only relevant if the source image has an alpha channel, the DirectX
+                                Effect performs an alpha test, GenerateMipmaps and ScaleAlphaToCoverage are enabled.
+                            </p><p>
+                                The default value is <span class="code">0.9</span>.
+                            </p></td><td><p><span class="code">ReferenceAlpha="0.95"</span></p></td></tr><tr><td><p>ScaleAlphaToCoverage</p></td><td><p>
+                                Optional: Specifies whether the alpha of the mipmaps should be scaled to achieve the
+                                same alpha test coverage as the source images. This attribute is only relevant if
+                                the source image has an alpha channel, the DirectX Effect performs an alpha test,
+                                and GenerateMipmaps is enabled.
+                            </p><p>
+                                Allowed values are: <span class="code">True</span> or <span class="code">False</span>.
+                            </p><p>
+                                The default value is <span class="code">False</span>.
+                            </p></td><td><p><span class="code">ScaleAlphaToCoverage="True"</span></p></td></tr></table></div><h4 class="subHeading" id="AlphaMasks">Alpha masks</h4><div class="subsection"><p>
+                            Textures can have an alpha channel, which can be used for alpha testing or alpha
+                            blending. However, textures with alpha require special treatment. The problem is
+                            described here in more detail:
+                            <a href="http://the-witness.net/news/2010/09/computing-alpha-mipmaps/" title="&quot;Computing Alpha Mipmaps&quot;, by Ignacio Castaño (The Witness Blog)" target="_blank">"Computing Alpha Mipmaps", by Ignacio Castaño (The Witness Blog)</a></p><p>
+                            The required correction described in the article can be enabled by setting the attributes
+                            <span class="code">ReferenceAlpha</span> and <span class="code">ScaleAlphaToCoverage</span>.
+                        </p><p>
+                            Example:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABABACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABABACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABABACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Texture</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"DiffuseWithAlphaTexture"</span> <span class="highlight-xml-attribute-name">ReferenceAlpha</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"0.9"</span> <span class="highlight-xml-attribute-name">ScaleAlphaToCoverage</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"True"</span> <span class="highlight-xml-attribute-name">File</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"albedo_mask.tga"</span> <span class="highlight-xml-bracket">/&gt;</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABABACAAA");</script><p>
+                            The <span class="code">ReferenceAlpha</span> needs to be the value, which is used for
+                            alpha testing in the DirectX Effect. If the reference alpha value is unknown, use a
+                            value close to 1.
+                        </p></div><h4 class="subHeading" id="NormalMaps">Normal maps</h4><div class="subsection"><p>
+                            Different content creation tools can use different tangent space bases when creating
+                            normal maps. Depending on the content creation tool you need to encode the normal map
+                            using either <span class="code">Format="Normal"</span> or <span class="code">Format="NormalInvertY"</span>.
+                        </p><p>
+                            For example, consider a normal map containing two truncated pyramids. Here are the
+                            resulting normal maps using two different tangent space bases.
+                        </p><div class="mediaNear"><div class="caption">Format="Normal"</div><img alt="Normal" src="../media/Normal.jpg" /></div><div class="mediaNear"><div class="caption">Format="NormalInvertY"</div><img alt="Normal InvertY" src="../media/NormalInvertY.jpg" /></div></div></div><div class="collapsibleAreaRegion" id="AutomaticCreation"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID6RB')" onkeypress="SectionExpandCollapse_CheckKey('ID6RB', event)" tabindex="0"><img id="ID6RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Automatic creation of missing material definition files</span></div><div id="ID6RBSection" class="collapsibleSection"><p>
+                    The DigitalRune model content processor will automatically create a default material
+                    definition (*.drmat) file if it cannot find any. The material definition is placed
+                    in the same folder as the texture of the submesh and uses the file name of the texture.
+                    For example, if a submesh uses a texture called <em>Wood.tga</em>, the model
+                    content processor creates a default material definition file <em>Wood.drmat</em>
+                    in the folder that contains the texture. You can edit this file to set the desired material
+                    properties.
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                        If the imported submesh does not use any textures, no default material definition is created.
+                    </p><p>
+                        The automatic generation of missing model descriptions can be turned off using a
+                        property of the content processor.
+                    </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID7RB')" onkeypress="SectionExpandCollapse_CheckKey('ID7RB', event)" tabindex="0"><img id="ID7RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID7RBSection" class="collapsibleSection"><h4 class="subHeading">Other Resources</h4><div class="seeAlsoStyle"><a href="http://msdn.microsoft.com/en-us/library/ff604995.aspx" title="&quot;What Is a Profile? (Reach vs. HiDef Comparison)&quot;, MSDN article" target="_blank">"What Is a Profile? (Reach vs. HiDef Comparison)", MSDN article</a></div><div class="seeAlsoStyle"><a href="http://the-witness.net/news/2010/09/computing-alpha-mipmaps/" title="&quot;Computing Alpha Mipmaps&quot;, by Ignacio Castaño (The Witness Blog)" target="_blank">"Computing Alpha Mipmaps", by Ignacio Castaño (The Witness Blog)</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

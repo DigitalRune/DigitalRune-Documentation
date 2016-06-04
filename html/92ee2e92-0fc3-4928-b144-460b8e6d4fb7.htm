@@ -1,0 +1,128 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Building Content</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="92ee2e92-0fc3-4928-b144-460b8e6d4fb7" /><meta name="Description" content="DigitalRune Graphics provides new content importers and processors, which can be used in an XNA content project. This topic explains how to build assets using the new content importers and processors." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="9604b781-8adb-4ec6-87bd-85b805e9c036.htm" title="Asset Creation" tocid="9604b781-8adb-4ec6-87bd-85b805e9c036">Asset Creation</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="92ee2e92-0fc3-4928-b144-460b8e6d4fb7.htm" title="Building Content" tocid="92ee2e92-0fc3-4928-b144-460b8e6d4fb7">Building Content</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="2631164b-0b8b-47b2-9cda-f7923d7518f4.htm" title="Pre-Built Content" tocid="2631164b-0b8b-47b2-9cda-f7923d7518f4">Pre-Built Content</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="6cc96ddc-4127-4ec7-889a-19cb71af0d3d.htm" title="FBX Support" tocid="6cc96ddc-4127-4ec7-889a-19cb71af0d3d">FBX Support</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="80150ca3-144d-493e-9741-3587ab95ccdf.htm" title="Models" tocid="80150ca3-144d-493e-9741-3587ab95ccdf">Models</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="9e0c41a1-9e6b-4e78-95a0-831ec4fada0a.htm" title="Materials (*.drmat)" tocid="9e0c41a1-9e6b-4e78-95a0-831ec4fada0a">Materials (*.drmat)</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="52773ff4-36b3-4c9e-9534-c97ce25a06c1.htm" title="Effects (*.fx)" tocid="52773ff4-36b3-4c9e-9534-c97ce25a06c1">Effects (*.fx)</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Building Content</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                DigitalRune Graphics provides new content importers and processors, which can be used in an
+                XNA content project. This topic explains how to build assets using the new content
+                importers and processors.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Importers">Content importers</a></li><li class="outlineSectionEntry"><a href="#Processors">Content processors</a></li><li class="outlineSectionEntry"><a href="#XNA">XNA content project</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#ReferencesXNA">Preparing a content project</a></li><li class="outlineSectionEntry"><a href="#PropertiesXNA">Adding assets to the content project</a></li></ul><li class="outlineSectionEntry"><a href="#MonoGame">MonoGame content project</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#ReferencesMonoGame">Preparing a content project</a></li><li class="outlineSectionEntry"><a href="#PropertiesMonoGame">Adding assets to the content project</a></li></ul></ul></div><div class="collapsibleAreaRegion" id="Importers"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Content importers</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    DigitalRune Graphics provides the following content importers:
+                </p><div class="tableSection"><table><tr><th><p>
+                                    Name
+                                </p></th><th><p>
+                                    Type
+                                </p></th><th><p>
+                                    Description
+                                </p></th></tr><tr><td><p>
+                                "Material - DigitalRune Graphics"
+                            </p></td><td><p><a href="24d3b44a-f12b-47a5-f56e-e372ea80efb2.htm">DRMaterialImporter</a></p></td><td><p>
+                                Imports materials.
+                                See <a href="9e0c41a1-9e6b-4e78-95a0-831ec4fada0a.htm">Materials (*.drmat)</a>.
+                            </p></td></tr><tr><td><p>
+                                "Model - DigitalRune Graphics"
+                            </p></td><td><p><a href="d2365ae6-e19c-35a0-f303-9e971629671b.htm">DRModelImporter</a></p></td><td><p>
+                                Imports models from model description files.
+                                See <a href="c5deb208-188f-4995-bb6b-c682a3997d40.htm">Model Description (*.drmdl File)</a>.
+                            </p></td></tr><tr><td><p>
+                                "Texture - DigitalRune Graphics"
+                            </p></td><td><p><a href="7db883e2-7977-aa86-bc8c-3252c0800e51.htm">DRTextureImporter</a></p></td><td><p>
+                                Imports textures. Extends and replaces the XNA Texture Importer.
+                            </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="Processors"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Content processors</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    DigitalRune Graphics provides the following content processors:
+                </p><div class="tableSection"><table><tr><th><p>
+                                    Name
+                                </p></th><th><p>
+                                    Type
+                                </p></th><th><p>
+                                    Output Type
+                                </p></th><th><p>
+                                    Description
+                                </p></th></tr><tr><td><p>
+                                "Material - DigitalRune Graphics"
+                            </p></td><td><p><a href="4ad2eea9-c8da-3890-66d4-5feeb553ac0b.htm">DRMaterialProcessor</a></p></td><td><p><a href="3ebe6b27-cffd-8dca-d4f6-ac37a45e439f.htm">Material</a></p></td><td><p>
+                                Processes materials.
+                                See <a href="9e0c41a1-9e6b-4e78-95a0-831ec4fada0a.htm">Materials (*.drmat)</a>.
+                            </p></td></tr><tr><td><p>
+                                "Model - DigitalRune Graphics"
+                            </p></td><td><p><a href="d5b60be9-5495-1b8c-9311-c401ce9b80df.htm">DRModelProcessor</a></p></td><td><p><a href="76d2cb68-3a81-7642-6112-bc72db9bf90c.htm">ModelNode</a></p></td><td><p>
+                                Processes models. Extends and replaces the XNA Model Processor.
+                            </p></td></tr><tr><td><p>
+                                "Texture - DigitalRune Graphics"
+                            </p></td><td><p><a href="a00e242c-28eb-c042-7c45-7092d2e45266.htm">DRTextureProcessor</a></p></td><td><p><strong>Texture2D</strong>,
+                                <strong>Texture3D</strong>,
+                                <strong>TextureCube</strong></p></td><td><p>
+                                Processes textures. Extends and replaces the XNA Texture Processor.
+                            </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="XNA"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />XNA content project</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    The following steps are necessary to build assets using an XNA content project.
+                </p><h4 class="subHeading" id="ReferencesXNA">Preparing a content project</h4><div class="subsection"><p>
+                            The XNA content project needs to reference the DigitalRune content pipeline extensions.
+                        </p><ol><li>
+                                Create a new or load an existing content project in Visual Studio.
+                            </li><li>
+                                Right-click the content project in Visual Studio and select <span class="ui">Add Reference...</span></li><li>
+                                Select the <span class="ui">Browse</span> tab and browse to the folder containing the DigitalRune
+                                assemblies for XNA (Windows x86 builds). See <a href="972bde71-5d0c-46be-8a81-ad0d2cea770a.htm">Files, Folders and Dependencies</a>.
+                            </li><li>
+                                Select the following files
+                                <ul><li><em>DigitalRune.Animation.Content.Pipeline.dll</em></li><li><em>DigitalRune.Geometry.Content.Pipeline.dll</em></li><li><em>DigitalRune.Graphics.Content.Pipeline.dll</em></li><li><em>DigitalRune.Mathematics.Content.Pipeline.dll</em></li></ul>
+                                and click <span class="ui">OK</span>.
+                            </li></ol><p>
+                            The DigitalRune content importers and processors are now available in the content project.
+                        </p></div><h4 class="subHeading" id="PropertiesXNA">Adding assets to the content project</h4><div class="subsection"><p>
+                            You can add new assets (models, textures, etc.) to the content project as usual:
+                        </p><ol><li>
+                                Right-click the content project and select <span class="ui">Add | Existing Item...</span></li><li>
+                                Browse for the asset file and click <span class="ui">Add</span>.
+                            </li></ol><p>
+                            For most assets the XNA content importers and processors are pre-selected in the
+                            <span class="ui">Properties</span> window. Do the following to change the content importers or
+                            processors:
+                        </p><ol><li>
+                                Select the asset in the content project.
+                            </li><li>
+                                Right-click the asset and select <span class="ui">Properties</span> to open the <span class="ui">Properties</span>
+                                window.
+                            </li><li>
+                                In the <span class="ui">Properties</span> window search for the properties <span class="ui">Content Importer</span>
+                                and <span class="ui">Content Processor</span> and select the appropriate DigitalRune importers and
+                                processors.
+                            </li></ol></div></div><div class="collapsibleAreaRegion" id="MonoGame"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />MonoGame content project</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    The following steps are necessary to build assets using MonoGame.
+                </p><h4 class="subHeading" id="ReferencesMonoGame">Preparing a content project</h4><div class="subsection"><p>
+                            The MonoGame content project needs to reference the DigitalRune content pipeline extensions.
+                        </p><ol><li>
+                                Start the MonoGame Content Pipeline Tool: <em>&lt;DIGITALRUNE_FOLDER&gt;\Tools\Pipeline.cmd</em></li><li>
+                                Create a new or open an existing MonoGame content project.
+                            </li><li>
+                                Select the content project (root node) in the tree view.
+                            </li><li>
+                                In the <span class="ui">Properties</span> pane select <span class="ui">References</span> and click the
+                                <span class="ui">...</span> button.
+                            </li><li>
+                                Add references to the following DigitalRune assemblies:
+                                <ul><li><em>DigitalRune.Animation.Content.Pipeline.dll</em></li><li><em>DigitalRune.Geometry.Content.Pipeline.dll</em></li><li><em>DigitalRune.Graphics.Content.Pipeline.dll</em></li><li><em>DigitalRune.Mathematics.Content.Pipeline.dll</em></li></ul>
+                                You need to select the DigitalRune assemblies for MonoGame (Windows).
+                                See <a href="972bde71-5d0c-46be-8a81-ad0d2cea770a.htm">Files, Folders and Dependencies</a>.
+                            </li></ol><p>
+                            The additional content importers and processors of DigitalRune Graphics are now available
+                            in the content project.
+                        </p></div><h4 class="subHeading" id="PropertiesMonoGame">Adding assets to the content project</h4><div class="subsection"><p>
+                            You can add new assets (models, textures, etc.) to the content project as usual:
+                        </p><ol><li>
+                                Select <span class="ui">Edit | Add | Existing Item...</span>.
+                            </li><li>
+                                Browse for the asset file and click <span class="ui">Open</span>.
+                            </li></ol><p>
+                            For most assets the MonoGame content importers and processors are pre-selected in the
+                            <span class="ui">Properties</span> pane. Do the following to change the content importers or
+                            processors:
+                        </p><ol><li>
+                                Select the asset in the tree view.
+                            </li><li>
+                                In the <span class="ui">Properties</span> pane search for the properties <span class="ui">Importer</span>
+                                and <span class="ui">Processor</span> and select the appropriate DigitalRune importers and
+                                processors.
+                            </li></ol></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

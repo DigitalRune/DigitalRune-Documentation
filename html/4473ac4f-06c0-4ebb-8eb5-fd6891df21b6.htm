@@ -1,0 +1,79 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>How To: Setup and Run a Simulation</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="4473ac4f-06c0-4ebb-8eb5-fd6891df21b6" /><meta name="Description" content="This section explains how setup and run a basic physics simulation." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="79a8677d-9460-4118-b27b-cef353dfbd92.htm" title="DigitalRune Physics" tocid="79a8677d-9460-4118-b27b-cef353dfbd92">DigitalRune Physics</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="61ea0a18-fef3-4e46-be80-e146b5e00d80.htm" title="Articles" tocid="61ea0a18-fef3-4e46-be80-e146b5e00d80">Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="3862d6f1-13c0-4ad9-8e4a-5edfa265bf8a.htm" title="How To: Add DigitalRune Physics to a Project" tocid="3862d6f1-13c0-4ad9-8e4a-5edfa265bf8a">How To: Add DigitalRune Physics to a Project</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="4473ac4f-06c0-4ebb-8eb5-fd6891df21b6.htm" title="How To: Setup and Run a Simulation" tocid="4473ac4f-06c0-4ebb-8eb5-fd6891df21b6">How To: Setup and Run a Simulation</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="920ac165-5f26-4bf1-a1b7-d0ecb308b14c.htm" title="How To: Create a Composite Rigid Body" tocid="920ac165-5f26-4bf1-a1b7-d0ecb308b14c">How To: Create a Composite Rigid Body</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="660bd2ec-5313-4d7b-8431-388e3ae6fc9d.htm" title="How To: Visualize Ragdoll Joints" tocid="660bd2ec-5313-4d7b-8431-388e3ae6fc9d">How To: Visualize Ragdoll Joints</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="be2efc8b-79a6-4be2-bd5e-f0a17579b02b.htm" title="How To: Create Ragdolls" tocid="be2efc8b-79a6-4be2-bd5e-f0a17579b02b">How To: Create Ragdolls</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="cb1a3d03-4603-4086-aaea-f91de81e7d8a.htm" title="Smooth Movement over Triangle Mesh" tocid="cb1a3d03-4603-4086-aaea-f91de81e7d8a">Smooth Movement over Triangle Mesh</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="5406f8ea-ffac-480c-9e98-ee3fa8eb741b.htm" title="External Articles" tocid="5406f8ea-ffac-480c-9e98-ee3fa8eb741b">External Articles</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">How To: Setup and Run a Simulation</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This section explains how setup and run a basic physics simulation.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Namespaces">Add DigitalRune namespaces</a></li><li class="outlineSectionEntry"><a href="#Setup">Setup simulation</a></li><li class="outlineSectionEntry"><a href="#Update">Run simulation</a></li></ul></div><div class="collapsibleAreaRegion" id="Namespaces"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Add DigitalRune namespaces</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    The following example will use types from DigitalRune Mathematics, Geometry and
+                    Physics. The following namespaces must be imported for this example
+                    at the beginning of the source code files:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> DigitalRune.Geometry;
+<span class="highlight-keyword">using</span> DigitalRune.Geometry.Shapes;
+<span class="highlight-keyword">using</span> DigitalRune.Mathematics.Algebra;
+<span class="highlight-keyword">using</span> DigitalRune.Physics;
+<span class="highlight-keyword">using</span> DigitalRune.Physics.ForceEffects;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAADAAA");</script></div><div class="collapsibleAreaRegion" id="Setup"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Setup simulation</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    Here is a simple example that shows how to setup the simulation and how
+                    to add rigid bodies. The simulation is configured with two force effects:
+                    gravity and damping. These force effects are necessary for most scenarios.
+                </p><p>
+                    The basic setup:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">Simulation mySimulation = <span class="highlight-keyword">new</span> Simulation();
+
+<span class="highlight-comment">// Add a gravity force that pulls objects to the ground.</span>
+mySimulation.ForceEffects.Add(<span class="highlight-keyword">new</span> Gravity());
+
+<span class="highlight-comment">// Add a damping effect that models air resistance and slows objects.</span>
+mySimulation.ForceEffects.Add(<span class="highlight-keyword">new</span> Damping());
+
+<span class="highlight-comment">// Add a ground plane.</span>
+RigidBody ground = <span class="highlight-keyword">new</span> RigidBody(<span class="highlight-keyword">new</span> PlaneShape(Vector3F.UnitY, <span class="highlight-number">0</span>))
+{
+  Name = <span class="highlight-literal">"GroundPlane"</span>,
+  Pose = Pose.Identity,
+  MotionType = MotionType.Static,  <span class="highlight-comment">// Ground plane should not move.</span>
+};
+mySimulation.RigidBodies.Add(ground);
+
+<span class="highlight-comment">// Add a box above the ground with a random orientation.</span>
+RigidBody cube = <span class="highlight-keyword">new</span> RigidBody(<span class="highlight-keyword">new</span> BoxShape(<span class="highlight-number">1</span>, <span class="highlight-number">1</span>, <span class="highlight-number">1</span>))
+{
+  Name = <span class="highlight-literal">"Cube"</span>,
+  Pose = <span class="highlight-keyword">new</span> Pose(<span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">0</span>, <span class="highlight-number">2</span>, <span class="highlight-number">0</span>), RandomHelper.Random.NextQuaternionF()),
+};
+mySimulation.RigidBodies.Add(cube);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAACAAA");</script></div><div class="collapsibleAreaRegion" id="Update"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Run simulation</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    In each frame of the game, the simulation must be updated by calling following
+                    method (usually with 60 fps):
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EACABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Advance the simulation.</span>
+<span class="highlight-comment">// deltaTime is the elapsed time since the last simulation update.</span>
+mySimulation.Update(deltaTime);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACABAAA");</script><p>
+                    In between updates you can manipulate the simulation in a variety of ways. For example, you can
+                </p><ul><li>
+                        Add or remove rigid bodies (see
+                        <a href="502090f3-4254-6693-5720-230f4f8fcd6a.htm">Simulation<span id="LSTAF7BCA07_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTAF7BCA07_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>RigidBodies</a>).
+                    </li><li>
+                        Add or remove force effects that affect all or certain group of
+                        rigid bodies (see
+                        <a href="5f3e197b-8d2e-6962-911d-d0b27687817b.htm">ForceEffects</a>).
+                    </li><li>
+                        Add or remove constraints between rigid bodies (see
+                        <a href="f7371ef2-c110-bcf1-961e-5f0d4bfcd190.htm">Simulation<span id="LSTAF7BCA07_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTAF7BCA07_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Constraints</a>).
+                    </li><li>
+                        Manipulate bodies by applying forces (see <a href="06421854-d8c5-4ac3-09e0-84ea68290764.htm">RigidBody<span id="LSTAF7BCA07_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTAF7BCA07_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>AddForce(Vector3F)</a>),
+                        torques (see <a href="22462ef2-e643-5351-2113-cf0964c6e5e0.htm">RigidBody<span id="LSTAF7BCA07_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTAF7BCA07_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>AddTorque(Vector3F)</a>),
+                        or instantly apply impulses (see <a href="9a8a139d-eb9a-06fa-62d9-cb103a18e769.htm">RigidBody<span id="LSTAF7BCA07_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTAF7BCA07_4?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>ApplyImpulse(Vector3F, Vector3F)</a>).
+                        <br />
+                        Bodies can be manipulate directly by setting their linear velocity
+                        (see <a href="496fbfc6-0275-1a71-843a-57a0f830b9aa.htm">RigidBody<span id="LSTAF7BCA07_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTAF7BCA07_5?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>LinearVelocity</a>),
+                        or angular velocity (see <a href="527c4af7-e3d0-47be-c902-77ebc0922313.htm">RigidBody<span id="LSTAF7BCA07_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTAF7BCA07_6?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>AngularVelocity</a>).
+                        <br />
+                        Further, any property such as scale, pose, shape, mass, etc. can be
+                        changed any time between updates.
+                    </li><li>
+                        Read the <a href="3ca75980-e5d6-3143-c089-f89457a01880.htm">Simulation<span id="LSTAF7BCA07_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTAF7BCA07_7?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>ContactConstraints</a>
+                        to see where and with which intensity bodies have collided.
+                    </li><li>
+                        And more...
+                    </li></ul></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

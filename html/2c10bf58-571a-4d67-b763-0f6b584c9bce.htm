@@ -1,0 +1,319 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Control Properties and Events</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="2c10bf58-571a-4d67-b763-0f6b584c9bce" /><meta name="Description" content="This article discusses the concept of UI control properties and events." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="a5a463da-de2e-432f-bf7d-07206aaca634.htm" title="DigitalRune Game UI" tocid="a5a463da-de2e-432f-bf7d-07206aaca634">DigitalRune Game UI</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="5bf85e1f-8f25-4778-b4b1-9d29faf15cc9.htm" title="UI Controls" tocid="5bf85e1f-8f25-4778-b4b1-9d29faf15cc9">UI Controls</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="2c10bf58-571a-4d67-b763-0f6b584c9bce.htm" title="Control Properties and Events" tocid="2c10bf58-571a-4d67-b763-0f6b584c9bce">Control Properties and Events</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c0f13e6f-5e80-4d6b-8816-39f1789fe825.htm" title="Layout" tocid="c0f13e6f-5e80-4d6b-8816-39f1789fe825">Layout</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="bb35e0b0-49d5-4847-b7f8-f5a1bb467fbb.htm" title="Rendering" tocid="bb35e0b0-49d5-4847-b7f8-f5a1bb467fbb">Rendering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="44fe138f-8897-48c6-8ed6-c41bafd7853f.htm" title="Themes" tocid="44fe138f-8897-48c6-8ed6-c41bafd7853f">Themes</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="b6cd5e3b-0bfa-4edb-8ad4-3abe5b47a071.htm" title="UI Input Handling" tocid="b6cd5e3b-0bfa-4edb-8ad4-3abe5b47a071">UI Input Handling</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Control Properties and Events</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This article discusses the concept of <span class="term">UI control properties and events</span>.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#UIControls">UI controls are game objects</a></li><li class="outlineSectionEntry"><a href="#Properties">UI control properties</a></li><li class="outlineSectionEntry"><a href="#Affects">AffectsMeasure, AffectsArrange and AffectsVisual</a></li><li class="outlineSectionEntry"><a href="#Style">Styling and themes</a></li><li class="outlineSectionEntry"><a href="#Override">Overriding default values</a></li><li class="outlineSectionEntry"><a href="#Animation">Animation</a></li><li class="outlineSectionEntry"><a href="#Events">Events</a></li><li class="outlineSectionEntry"><a href="#More">Other features of UI control properties</a></li><li class="outlineSectionEntry"><a href="#GameObjectEvents">UI control events</a></li></ul></div><div class="collapsibleAreaRegion" id="UIControls"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />UI controls are game objects</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    A
+                    <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>
+                    is derived from
+                    <a href="59222b0e-6149-e82f-b01e-357cdcc5319e.htm">GameObject</a>
+                    and therefore can have game object properties (see
+                    <a href="516e6103-f552-10dc-63a4-cddf14054f0f.htm">GameProperty<span id="LST3685A6FB_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_0?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST3685A6FB_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_1?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>)
+                    and game object events (see
+                    <a href="e60a28db-f51d-e93f-ab2c-8c1dc3f739d1.htm">GameEvent<span id="LST3685A6FB_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_2?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST3685A6FB_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_3?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>).
+                    Have a look at <a href="309293e8-f2d6-4308-8c85-3f4726f92244.htm">Game Object System</a> to learn more
+                    about game objects, game object properties and game object events.
+                </p><p>
+                    If you are familiar with WPF/Silverlight, you might be familiar with
+                    the types <strong>DependencyObject</strong> and <strong>DependencyProperty</strong>.
+                    The game object system provides a similar functionality to WPF dependency objects.
+                    To compare WPF/Silverlight and the DigitalRune Game UI:
+                </p><p><em>
+                        In WPF/Silverlight a FrameworkElement inherits (indirectly) from
+                        DependencyObject and has DependencyProperties.
+                    </em></p><p><em>
+                        In DigitalRune Game UI a
+                        <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>
+                        inherits from
+                        <a href="59222b0e-6149-e82f-b01e-357cdcc5319e.htm">GameObject</a>
+                        and has game object properties
+                        (<a href="516e6103-f552-10dc-63a4-cddf14054f0f.htm">GameProperty<span id="LST3685A6FB_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_4?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST3685A6FB_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_5?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>).
+                    </em></p><p>
+                    But in contrast to WPF dependency objects and properties, the DigitalRune game objects and
+                    properties address needs specific to game programming.
+                </p><p>
+                    Leveraging the strengths of the game objects system enables many important features,
+                    like UI themes, automatic invalidation, animation, and many more.
+                </p></div><div class="collapsibleAreaRegion" id="Properties"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />UI control properties</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    The UI control properties are extended game object properties: UI control properties must
+                    be created using the new
+                    <a href="db675e25-a224-db5b-5c5b-abb73a7f0734.htm">CreateProperty<span id="LST3685A6FB_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_6?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST3685A6FB_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_7?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                    and
+                    <a href="c0607029-c29a-3d76-99d2-2d7fbb5093eb.htm">CreateEvent<span id="LST3685A6FB_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_8?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST3685A6FB_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_9?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                    methods. For example, the
+                    <a href="7b0e1a97-e8c6-1ab5-09c2-a9d7b67b0f54.htm">IsEnabled</a>
+                    property of a
+                    <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>
+                    is created like this:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAJAIAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAJAIAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAJAIAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAJAIAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">class</span> UIControl : GameObject
+{
+  ...
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">readonly</span> <span class="highlight-keyword">int</span> IsEnabledPropertyId = CreateProperty(
+    <span class="highlight-keyword">typeof</span>(UIControl), <span class="highlight-literal">"IsEnabled"</span>, GamePropertyCategories.Common, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">true</span>,
+    UIPropertyOptions.AffectsRender);
+ 
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">bool</span> IsEnabled
+  {
+    <span class="highlight-keyword">get</span> { <span class="highlight-keyword">return</span> GetValue&lt;<span class="highlight-keyword">bool</span>&gt;(IsEnabledPropertyId); }
+    <span class="highlight-keyword">set</span> { SetValue(IsEnabledPropertyId, <span class="highlight-keyword">value</span>); }
+  }
+  ...
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAJAIAAA");</script><p>
+                    That is more complicated than a normal .NET property - but also a lot more powerful. Let's dissect this code lines:
+                </p><p>
+                    Using the static method
+                    <a href="db675e25-a224-db5b-5c5b-abb73a7f0734.htm">CreateProperty<span id="LST3685A6FB_10"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_10?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST3685A6FB_11"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_11?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                    a new UI control property is created, and the integer ID of this property is stored for public access.
+                    Everyone can access this property using:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAGAIAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAGAIAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAGAIAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAGAIAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">bool</span> isEnabled = myControl.GetValue&lt;<span class="highlight-keyword">bool</span>&gt;(UIControl.IsEnabledPropertyId);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAGAIAAA");</script><p>
+                    or (slower and less safe because you could make a typo):
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAEAIAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAEAIAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAEAIAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAEAIAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">bool</span> isEnabled = myControl.GetValue&lt;<span class="highlight-keyword">bool</span>&gt;(<span class="highlight-literal">"IsEnabled"</span>);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAEAIAAA");</script><p>
+                    After the
+                    <a href="db675e25-a224-db5b-5c5b-abb73a7f0734.htm">CreateProperty<span id="LST3685A6FB_12"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_12?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST3685A6FB_13"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_13?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                    call, a normal .NET
+                    property
+                    <strong>IsEnabled</strong>
+                    is added which uses the
+                    <a href="2e71324c-8950-942a-2538-e4ff6bea7e81.htm">GetValue</a>/<a href="38e8e401-fe30-920d-7d8a-4a1e407216ab.htm">SetValue</a>
+                    methods. This
+                    <strong>IsEnabled</strong>
+                    .NET property is added to make property access easy for the user. That means you will nearly always use
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EACAIAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EACAIAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EACAIAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EACAIAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">bool</span> isEnabled = myControl.IsEnabled;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EACAIAAA");</script><p>
+                    instead of the more complex
+                    <a href="2e71324c-8950-942a-2538-e4ff6bea7e81.htm">GetValue</a>/<a href="38e8e401-fe30-920d-7d8a-4a1e407216ab.htm">SetValue</a>
+                    methods.
+                </p><p>
+                    Next we have a look at the parameters of
+                    <a href="db675e25-a224-db5b-5c5b-abb73a7f0734.htm">CreateProperty<span id="LST3685A6FB_14"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_14?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST3685A6FB_15"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_15?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                    in detail. The first is the type of the class that owns this property. The second is the name of the
+                    property. The third
+                    <a href="cfdcd2fe-98b5-7900-4b64-f68bfd320f28.htm">GamePropertyCategories<span id="LST3685A6FB_16"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_16?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Common</a>
+                    is simply a string that can be used in a game editor to sort the game object properties into categories.
+                    The forth parameter is a description string, which we have left out because we think the property
+                    name is already pretty self-explanatory. Then comes the property default value <span class="code">true</span>.
+                </p></div><div class="collapsibleAreaRegion" id="Affects"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />AffectsMeasure, AffectsArrange and AffectsVisual</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    The last parameter of
+                    <a href="db675e25-a224-db5b-5c5b-abb73a7f0734.htm">CreateProperty<span id="LST3685A6FB_17"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_17?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST3685A6FB_18"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_18?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                    is special for
+                    UI controls. It tells the UI system whether the property influences the size
+                    (<a href="0024d7de-6903-818b-3535-b4d706fc669a.htm">AffectsMeasure</a>),
+                    positioning
+                    (<a href="0024d7de-6903-818b-3535-b4d706fc669a.htm">AffectsArrange</a>)
+                    or visual appearance
+                    (<a href="0024d7de-6903-818b-3535-b4d706fc669a.htm">AffectsRender</a>)
+                    of the control.
+                </p><p>
+                    To determine the GUI graphics, the UI system makes three traversals over all GUI controls.
+                    First, it measures each control to determine how much room each control desires –
+                    this is the <span class="term">measure pass</span>. Then it tells each control its final
+                    position and allotted space on the screen – this is the <span class="term">arrange pass</span>.
+                    And in each frame it the controls are drawn – this is the
+                    <span class="term">render pass</span>. The results of each pass are cached and are re-used in
+                    each frame.
+                </p><p>
+                    When you change a property of a
+                    UIControl,
+                    then you need to tell the UI system whether it needs to update its cached information.
+                    For this, you can manually call
+                    <a href="e92d03f7-1fc6-13e4-e108-83befd2a86fd.htm">InvalidateMeasure</a>,
+                    <a href="dd921cad-0376-8efc-df03-ff62c409e537.htm">InvalidateArrange</a> or
+                    <a href="996742d6-f472-7b4c-b90f-31d182c8c236.htm">InvalidateVisual</a>.
+                    (Invalidating the measure data automatically invalidates arrange and
+                    visual data. Invalidating the arrange data automatically invalidates the visual data
+                    but keeps the measure data intact.
+                    <a href="996742d6-f472-7b4c-b90f-31d182c8c236.htm">InvalidateVisual</a>
+                    only affects drawing data but no measure or arrange data.) If you change a UI control
+                    property, the property will automatically call the appropriate invalidate method for you.
+                </p><p>
+                    The
+                    <a href="7b0e1a97-e8c6-1ab5-09c2-a9d7b67b0f54.htm">IsEnabled</a>
+                    property has set the
+                    <a href="0024d7de-6903-818b-3535-b4d706fc669a.htm">AffectsRender</a>
+                    flag because the visual appearance will usually change to indicate that the UI control
+                    is enabled or not (e.g. using grayed-out button text). An example of a property with
+                    <a href="0024d7de-6903-818b-3535-b4d706fc669a.htm">AffectsArrange</a>
+                    is
+                    <a href="1d4e4af9-f088-a306-482b-db511814ea54.htm">UIControl<span id="LST3685A6FB_19"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_19?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>X</a>.
+                    This property determines the X position of a control in a
+                    <a href="064f1a67-ea23-a45b-d2de-ebdc72c2dd70.htm">Canvas</a>
+                    or in a
+                    <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>.
+                    It does not influence the size of the control.
+                    <a href="53561a86-0e11-d339-eb40-522dab77f9a5.htm">UIControl<span id="LST3685A6FB_20"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_20?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Width</a>
+                    is the perfect example for a property that
+                    <a href="0024d7de-6903-818b-3535-b4d706fc669a.htm">AffectsMeasure</a>.
+                </p><p>
+                    Now, if you have an unusual case where you want to shrink a button when it is disabled
+                    (<span class="code">IsEnabled == false</span>),
+                    then you would have to call
+                    <a href="e92d03f7-1fc6-13e4-e108-83befd2a86fd.htm">InvalidateMeasure</a>
+                    manually.
+                </p></div><div class="collapsibleAreaRegion" id="Style"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Styling and themes</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    Another advantage of UI control properties is that when a controls is initialized, it will
+                    ask the
+                    <a href="863906fb-2261-0dc3-cb25-22a0030957d8.htm">IUIRenderer</a>
+                    for default values. The standard
+                    <a href="1a67f258-eec1-5178-5c00-e3b880963929.htm">UIRenderer</a>
+                    class reads the data of the
+                    <em>Theme.xml</em>
+                    file to initialize the UI control properties. The
+                    <a href="1a67f258-eec1-5178-5c00-e3b880963929.htm">UIRenderer</a>
+                    can only do this for UI control properties - not for normal .NET properties. And
+                    properties will only be changed if they have not been touched by the user. That
+                    means, if you create dialog with a button and you set the
+                    <a href="56159b6c-94bc-35b1-bb50-9d741e57e8b0.htm">Foreground</a>
+                    color to green manually in your code, then this will have priority over the foreground
+                    color defined in the theme.
+                </p></div><div class="collapsibleAreaRegion" id="Override"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Overriding default values</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    Game object properties have only one global default value. UI control properties
+                    can have a default value per type of control.
+                    For example, if a control like
+                    a <strong>Button</strong>, should have class-specific default values,
+                    the method
+                    <a href="4e66d001-5642-e990-d35a-f569f7d73b01.htm">OverrideDefaultValue<span id="LST3685A6FB_21"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_21?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST3685A6FB_22"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_22?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                    can be used. Here is an example:
+                </p><p>
+                    The
+                    <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>
+                    base class creates a UI control property called
+                    <a href="80837a13-4353-e2aa-6b9e-31e79f5c908f.htm">Focusable</a>
+                    which determines whether a control can receive input focus. The
+                    <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>
+                    defines this property including the default value for this property. The default value is
+                    false, since most controls, like images, text blocks, panels, cannot receive the input
+                    focus. If this default value is not suitable for a control, then the control can
+                    override the default value. For example, buttons, text boxes and a lot more controls can
+                    get input focus and therefore need a different default value:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABAFAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABAFAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABAFAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABAFAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Static constructor of the ButtonBase class. </span>
+<span class="highlight-keyword">static</span> ButtonBase() 
+{ 
+  OverrideDefaultValue(<span class="highlight-keyword">typeof</span>(ButtonBase), FocusablePropertyId, <span class="highlight-keyword">true</span>); 
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABAFAAA");</script><p>
+                    At first it might look like we could simply call
+                    <span class="code">Focusable = true</span>
+                    in the
+                    <a href="e58f60ea-b5c9-9508-1a83-ce802d35b8f2.htm">ButtonBase</a>
+                    constructor. However, using
+                    <a href="4e66d001-5642-e990-d35a-f569f7d73b01.htm">OverrideDefaultValue<span id="LST3685A6FB_23"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_23?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST3685A6FB_24"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_24?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                    we register a new default value in the internal metadata. So when a new button is
+                    created, it uses this default value. If the theme defines another value, the value of
+                    the theme is used. But if we call
+                    <span class="code">Focusable = true</span> ,
+                    then we have changed the actual value of the property. This actual value has priority over
+                    the value defined in the theme – hence the control user cannot change this value
+                    anymore using the <em>Theme.xml</em>. Using the
+                    <a href="4e66d001-5642-e990-d35a-f569f7d73b01.htm">OverrideDefaultValue<span id="LST3685A6FB_25"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_25?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST3685A6FB_26"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_26?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                    method the default value can be changed, and the property can still be modified in the theme.
+                </p></div><div class="collapsibleAreaRegion" id="Animation"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID6RB')" onkeypress="SectionExpandCollapse_CheckKey('ID6RB', event)" tabindex="0"><img id="ID6RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Animation</span></div><div id="ID6RBSection" class="collapsibleSection"><p>
+                    Each UI control property can be animated using DigitalRune Animation. For example, here
+                    is a fade-in animation that animates the
+                    <a href="5b991902-9dc0-2cde-8475-080ed7266a44.htm">Opacity</a>
+                    UI control property from to 0 to its default value over 0.3 seconds:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EACAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EACAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EACAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EACAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">var</span> animation = <span class="highlight-keyword">new</span> SingleFromToByAnimation 
+{ 
+  TargetProperty = <span class="highlight-literal">"Opacity"</span>,  
+  From = <span class="highlight-number">0</span>,                    
+  Duration = <span class="highlight-number">0.3</span>f,             
+};</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EACAEAAA");</script><p>
+                    The animation can be started on a control using
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">animationService.StartAnimation(animation, myControl);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAAEAAA");</script></div><div class="collapsibleAreaRegion" id="Events"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID7RB')" onkeypress="SectionExpandCollapse_CheckKey('ID7RB', event)" tabindex="0"><img id="ID7RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Events</span></div><div id="ID7RBSection" class="collapsibleSection"><p>
+                    Each UI control property is automatically an event. Do you want to be notified when
+                    a property is disabled? No problem, just get the UI control property from the control:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAFADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAFADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAFADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAFADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">GameProperty&lt;<span class="highlight-keyword">bool</span>&gt; isEnabledProperty= myControl.Properties.Get&lt;<span class="highlight-keyword">bool</span>&gt;(UIControl.IsClickedPropertyId);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAFADAAA");</script><p><a href="516e6103-f552-10dc-63a4-cddf14054f0f.htm">GameProperty<span id="LST3685A6FB_27"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_27?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST3685A6FB_28"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_28?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                    is a structure that represents the game object property. It has a
+                    <a href="86a8e1c0-ffe3-5bff-9e4f-f286ac015921.htm">Changing</a>
+                    and a
+                    <a href="ce691c6a-9804-4e67-8d7c-19968c5d4ddc.htm">Changed</a>
+                    event which you can subscribe to, for example:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EADADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EADADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EADADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EADADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">isEnabledProperty.Changed += (s, e) =&gt; 
+{ 
+  <span class="highlight-keyword">if</span> (e.NewValue == <span class="highlight-keyword">true</span>) 
+  { 
+    <span class="highlight-comment">/* React to enabling of control */</span>
+  }
+};</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EADADAAA");</script><p>
+                    The
+                    <a href="516e6103-f552-10dc-63a4-cddf14054f0f.htm">GameProperty<span id="LST3685A6FB_29"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_29?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST3685A6FB_30"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_30?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                    structure also has a
+                    <a href="0d9c895d-909d-e5c7-628d-fe1515a26895.htm">Change</a>
+                    property, which is an event handler. You can use this to connect two UI control
+                    properties. For example, the
+                    <a href="989673bc-bce5-a26b-26de-9e101ae09f04.htm">ScrollViewer</a>
+                    control uses a
+                    <a href="0a7b7136-5cee-6421-f409-46d98ac5ecb2.htm">ScrollBar</a>
+                    control internally. When the
+                    <a href="989673bc-bce5-a26b-26de-9e101ae09f04.htm">ScrollViewer</a>
+                    is loaded it connects its own
+                    HorizontalOffset
+                    property with the
+                    <a href="9a30310f-d565-ac02-fe6d-436f69632652.htm">Value</a>
+                    property of the
+                    <a href="0a7b7136-5cee-6421-f409-46d98ac5ecb2.htm">ScrollBar</a>:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnLoad() 
+{ 
+  ...   
+  <span class="highlight-comment">// Connect ScrollBar.Value with HorizontalOffset (two-way connection). </span>
+  <span class="highlight-keyword">var</span> scrollBarValue = _horizontalScrollBar.Properties.Get&lt;<span class="highlight-keyword">float</span>&gt;(RangeBase.ValuePropertyId); 
+  <span class="highlight-keyword">var</span> horizontalOffset = Properties.Get&lt;<span class="highlight-keyword">float</span>&gt;(HorizontalOffsetPropertyId); 
+  scrollBarValue.Changed += horizontalOffset.Change; 
+  horizontalOffset.Changed += scrollBarValue.Change; 
+  ... 
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABADAAA");</script><p>
+                    This connects the properties: Changing one property automatically changes the other property.
+                </p></div><div class="collapsibleAreaRegion" id="More"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID8RB')" onkeypress="SectionExpandCollapse_CheckKey('ID8RB', event)" tabindex="0"><img id="ID8RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Other features of UI control properties</span></div><div id="ID8RBSection" class="collapsibleSection"><p>
+                    UI control properties have several other nice features.
+                </p><ul><li>
+                        Reduced memory usage: Per-instance memory for UI control properties is only allocated when needed.
+                    </li><li>
+                        Templating: For each control style loaded from the renderer only one template
+                        control is created. All controls using the same style refer to this
+                        template. This safes memory and by changing the template we can change all controls
+                        that use the template at once.
+                    </li><li>
+                        Attached properties: If you want to add a property to an existing control, you can
+                        simply create new property using
+                        <a href="db675e25-a224-db5b-5c5b-abb73a7f0734.htm">CreateProperty<span id="LST3685A6FB_31"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_31?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST3685A6FB_32"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_32?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>.
+                        No need to change the source code or to derive a new control class.
+                    </li><li>
+                        Metadata: UI control properties can be enumerated and have metadata which can be used in game editors.
+                    </li></ul><p>
+                    However, UI control properties are slower than normal .NET properties.
+                    Only use UI control properties if really needed. The controls in DigitalRune Game UI
+                    have UI control properties as well as normal .NET properties. If you want to set a
+                    property in the UI theme XML or if you want to animate a property, then you need a UI
+                    control property. Otherwise a normal .NET property might do.
+                </p></div><div class="collapsibleAreaRegion" id="GameObjectEvents"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID9RB')" onkeypress="SectionExpandCollapse_CheckKey('ID9RB', event)" tabindex="0"><img id="ID9RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />UI control events</span></div><div id="ID9RBSection" class="collapsibleSection"><p>
+                    The game object system also supports
+                    <span class="term">game object events</span>, which are very similar to
+                    <span class="term">game object properties</span>. The
+                    <a href="368ed785-8df2-9329-ef19-4dc203c2ef81.htm">ButtonBase<span id="LST3685A6FB_33"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_33?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Click</a>
+                    event is such an event:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EACABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EACABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EACABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EACABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">readonly</span> <span class="highlight-keyword">int</span> ClickEventId = CreateEvent( 
+  <span class="highlight-keyword">typeof</span>(ButtonBase), <span class="highlight-literal">"Click"</span>, GamePropertyCategories.Default, <span class="highlight-keyword">null</span>, EventArgs.Empty); 
+      
+<span class="highlight-keyword">public</span> <span class="highlight-keyword">event</span> EventHandler&lt;eventargs&gt; Click 
+{ 
+  add 
+  { 
+    <span class="highlight-keyword">var</span> click = Events.Get&lt;eventargs&gt;(ClickEventId); 
+    click.Event += <span class="highlight-keyword">value</span>; 
+  } 
+  remove 
+  { 
+    <span class="highlight-keyword">var</span> click = Events.Get&lt;eventargs&gt;(ClickEventId); 
+    click.Event -= <span class="highlight-keyword">value</span>; 
+  } 
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EACABAAA");</script><p>
+                    This looks very similar to the declaration of a UI control property. The
+                    <a href="c0607029-c29a-3d76-99d2-2d7fbb5093eb.htm">CreateEvent<span id="LST3685A6FB_34"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_34?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST3685A6FB_35"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3685A6FB_35?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                    call defines the event. The
+                    <a href="368ed785-8df2-9329-ef19-4dc203c2ef81.htm">Click</a>
+                    event is a normal .NET event that is only there for convenience and uses
+                    the UI control event.
+                </p><p>
+                    UI control events are useful to wire up events, e.g. in a game editor.
+                </p></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

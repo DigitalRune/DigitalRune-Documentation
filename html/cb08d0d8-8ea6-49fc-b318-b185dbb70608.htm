@@ -1,0 +1,259 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Models and Meshes</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="cb08d0d8-8ea6-49fc-b318-b185dbb70608" /><meta name="Description" content="A T:DigitalRune.Graphics.SceneGraph.ModelNode represents a 3D model. The T:DigitalRune.Graphics.SceneGraph.ModelNode serves as a &quot;group node&quot;, i.e. the actual data is stored in the T:DigitalRune.Graphics.SceneGraph.ModelNode." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="7d5a0abe-8231-452c-895c-e6dbab83822b.htm" title="Graphics Programming" tocid="7d5a0abe-8231-452c-895c-e6dbab83822b">Graphics Programming</a></div><div class="toclevel1 current" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="cb08d0d8-8ea6-49fc-b318-b185dbb70608.htm" title="Models and Meshes" tocid="cb08d0d8-8ea6-49fc-b318-b185dbb70608">Models and Meshes</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="b44b915a-f5f6-416a-9ffb-98de885812d7.htm" title="Morph Targets" tocid="b44b915a-f5f6-416a-9ffb-98de885812d7">Morph Targets</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Models and Meshes</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Model">Models</a></li><li class="outlineSectionEntry"><a href="#Mesh">Meshes</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#BoundingShapes">Bounding shapes</a></li><li class="outlineSectionEntry"><a href="#Materials">Materials</a></li><li class="outlineSectionEntry"><a href="#MorphTargets">Morph target animation</a></li><li class="outlineSectionEntry"><a href="#SkeletalAnimation">Skeletal animation ("mesh skinning")</a></li><li class="outlineSectionEntry"><a href="#Primitives">Primitives</a></li></ul><li class="outlineSectionEntry"><a href="#ClassDiagram">Class diagram</a></li><li class="outlineSectionEntry"><a href="#Rendering">Rendering models and meshes</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Renderer">MeshRenderer</a></li><li class="outlineSectionEntry"><a href="#Opaque">Example: Opaque meshes</a></li><li class="outlineSectionEntry"><a href="#AlphaBlended">Example: Alpha-blended meshes</a></li></ul><li class="outlineSectionEntry"><a href="#Batching">Batching and hardware instancing</a></li><li class="outlineSectionEntry"><a href="#Subtopics">Subtopics</a></li></ul></div><div class="collapsibleAreaRegion" id="Model"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Models</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    A <a href="76d2cb68-3a81-7642-6112-bc72db9bf90c.htm">ModelNode</a>
+                    represents a 3D model. The <a href="76d2cb68-3a81-7642-6112-bc72db9bf90c.htm">ModelNode</a>
+                    serves as a "group node", i.e. the actual data is stored in the <a href="76d2cb68-3a81-7642-6112-bc72db9bf90c.htm">ModelNode</a>.
+                    The complexity of a model can vary from a single <a href="150b5feb-ef12-d0be-cd27-0a32759af0ba.htm">MeshNode</a>
+                    to a complex hierarchical tree of <a href="150b5feb-ef12-d0be-cd27-0a32759af0ba.htm">MeshNode</a>s,
+                    <a href="100df524-cf31-0d95-6828-c31c838355cd.htm">LightNode</a>s,
+                    and other scene nodes.
+                </p><p>
+                    Models are usually loaded from files using the XNA content pipeline: see <a href="80150ca3-144d-493e-9741-3587ab95ccdf.htm">Models</a>.
+                </p></div><div class="collapsibleAreaRegion" id="Mesh"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Meshes</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    A <a href="33929aa1-dcdb-8034-19be-28782fc06ab9.htm">Mesh</a>
+                    represents the geometry and materials of a 3D object that can be rendered. A mesh owns a
+                    collection of materials (see property <a href="4824313b-7563-8c4b-c4e6-675c967a8a8f.htm">Materials</a>)
+                    and is divided into submeshes (see property <a href="7d73a701-e302-67ea-d87a-b32b21416540.htm">Submeshes</a>).
+                    Each <a href="7168abd2-bcdb-62de-95dd-e08018de40c5.htm">Submesh</a>
+                    describes a batch of primitives (usually indexed triangles) that use one material and can be
+                    rendered with a single draw call.
+                </p><p>
+                    A <a href="150b5feb-ef12-d0be-cd27-0a32759af0ba.htm">MeshNode</a>
+                    is used to position a mesh in a 3D scene. The mesh node defines
+                    its position and orientation. Multiple mesh nodes can reference the same mesh, hence
+                    it is possible to render the same mesh multiple times in a scene.
+                </p><h4 class="subHeading" id="BoundingShapes">Bounding shapes</h4><div class="subsection"><p>
+                            The bounding shape of the mesh is usually created by the content pipeline and stored in
+                            the <a href="1a5e26ea-1297-1b12-2fc6-3a39fe2c9240.htm">BoundingShape</a>
+                            property. It is not updated automatically when the vertex buffer changes. The user who
+                            changes the vertex buffer is responsible for updating or replacing the shape stored in
+                            <a href="1a5e26ea-1297-1b12-2fc6-3a39fe2c9240.htm">BoundingShape</a>.
+                            If the mesh can be deformed on the GPU (e.g. using mesh skinning), then the bounding
+                            shape must be large enough to contain all possible deformations.
+                        </p><p>
+                            The properties of the bounding shape can be changed at any time. But it is not allowed
+                            to replace the whole bounding shape while the mesh is in use, i.e. referenced by a
+                            scene node. For example, if the bounding shape is a
+                            <a href="a99abb5b-257f-4f39-ccb8-99ed8a87ab96.htm">SphereShape</a>,
+                            the radius of the sphere can be changed at any time. But it is not allowed to replace
+                            the <a href="a99abb5b-257f-4f39-ccb8-99ed8a87ab96.htm">SphereShape</a>
+                            with a <a href="0d0b67e4-5104-b6ac-e97c-25e9ee2e8054.htm">BoxShape</a>
+                            as long as the mesh is used in a scene. Replacing the bounding shape will not raise any
+                            exceptions, but the mesh may no longer be culled/rendered correctly.
+                        </p></div><h4 class="subHeading" id="Materials">Materials</h4><div class="subsection"><p>
+                            A mesh can have one or more materials. A material (class <a href="3ebe6b27-cffd-8dca-d4f6-ac37a45e439f.htm">Material</a>)
+                            defines how a submesh should be rendered. Materials can be shared between different
+                            meshes.
+                        </p><p>
+                            When a mesh node is created, a material instance (class
+                            <a href="4f8c40dd-3a3e-1dba-08c1-f5625a78f6ce.htm">MaterialInstance</a>)
+                            is created for each material of the mesh. The material instance stores the effect
+                            parameters that are specific to a certain mesh instance.
+                        </p><p>
+                            See <a href="34a7f065-df4f-4f40-8b5c-5f0afee365db.htm">Materials and Material Instances</a>
+                            for more information.
+                        </p></div><h4 class="subHeading" id="MorphTargets">Morph target animation</h4><div class="subsection"><p>
+                            Meshes support morph target animation. See
+                            <a href="b44b915a-f5f6-416a-9ffb-98de885812d7.htm">Morph Targets</a> for more information.
+                        </p></div><h4 class="subHeading" id="SkeletalAnimation">Skeletal animation ("mesh skinning")</h4><div class="subsection"><p>
+                            A mesh can have a skeleton (see property <a href="f6e165d6-432d-43b6-1048-02f73e71b15e.htm">Skeleton</a>),
+                            which can be used to animate (deform) the mesh. The skeletal animations are automatically
+                            loaded together with the mesh and stored in the property <a href="8d27120e-74a8-9ffe-4636-ad2ca662123a.htm">Animations</a>.
+                            <a href="c2892dfd-491e-4e78-83d1-737e38f1acc9.htm">DigitalRune Animation</a> can be used to play animations and apply them to the
+                            <a href="c3bbb1d5-de43-d383-50d7-c045c3ca96ed.htm">SkeletonPose</a>
+                            of a specific <a href="150b5feb-ef12-d0be-cd27-0a32759af0ba.htm">MeshNode</a>.
+                        </p><p>
+                            The animations stored in <a href="8d27120e-74a8-9ffe-4636-ad2ca662123a.htm">Mesh<span id="LST3C4EE998_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3C4EE998_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Animations</a>
+                            are usually of type <a href="532986ef-9267-60e1-b22b-25da2fde8ca4.htm">SkeletonKeyFrameAnimation</a>.
+                            When played back, a <a href="532986ef-9267-60e1-b22b-25da2fde8ca4.htm">SkeletonKeyFrameAnimation</a>
+                            runs once and then stops. To create a looping animation, the animation needs to be wrapped
+                            with an <a href="6990ac6e-9ea1-50af-5df7-91bfd17acba5.htm">AnimationClip<span id="LST3C4EE998_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3C4EE998_1?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST3C4EE998_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3C4EE998_2?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                            or a <a href="b1737627-6ddf-69ae-e6cc-7d43297ddb3b.htm">TimelineClip</a>.
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABABAFAAA_tab1" class="codeSnippetContainerTabSingle">Playing a walk cycle</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABABAFAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABABAFAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABABAFAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Start animation.</span>
+<span class="highlight-keyword">var</span> animationService = _services.GetInstance&lt;IAnimationService&gt;();
+<span class="highlight-keyword">var</span> animationClip = <span class="highlight-keyword">new</span> AnimationClip&lt;SkeletonPose&gt;(meshNode.Mesh.Animations[<span class="highlight-literal">"Walk"</span>])
+{
+  LoopBehavior = LoopBehavior.Cycle,  <span class="highlight-comment">// Repeat animation...</span>
+  Duration = TimeSpan.MaxValue,       <span class="highlight-comment">// ...forever.</span>
+};
+
+<span class="highlight-keyword">var</span> animationController = animationService.StartAnimation(animationClip, (IAnimatableProperty)meshNode.SkeletonPose);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABABAFAAA");</script><p>
+                            See <a href="93178dcc-a9b9-4cc6-b4df-ed693b988561.htm">3D Character Animation</a> for more information.
+                        </p></div><h4 class="subHeading" id="Primitives">Primitives</h4><div class="subsection"><p>
+                            The <a href="a0bdde53-ebf7-3ba1-7de9-7980dc31e82a.htm">MeshHelper</a>
+                            provides methods to create geometric primitives, such as boxes, spheres, cylinders, cones,
+                            etc.
+                        </p></div></div><div class="collapsibleAreaRegion" id="ClassDiagram"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Class diagram</span></div><div id="ID3RBSection" class="collapsibleSection"><div class="mediaNear"><img alt="DigitalRune.Graphics (Meshes and Materials)" src="../media/Graphics_Meshes.png" /><div class="caption">Class Diagram: Meshes</div></div></div><div class="collapsibleAreaRegion" id="Rendering"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Rendering models and meshes</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    This section explains how to render meshes using the
+                    <a href="1782e7fc-9a12-dd2d-d73d-8396a786fdeb.htm">MeshRenderer</a>.
+                </p><h4 class="subHeading" id="Renderer">MeshRenderer</h4><div class="subsection"><p>
+                            The <a href="1782e7fc-9a12-dd2d-d73d-8396a786fdeb.htm">MeshRenderer</a>
+                            is a <a href="c022a3a4-2330-9b46-24ad-c8f3ae13f1f8.htm">SceneNodeRenderer</a>
+                            that handles <a href="150b5feb-ef12-d0be-cd27-0a32759af0ba.htm">MeshNode</a>s.
+                            It can render a large number of meshes very efficiently: The renderer sorts meshes by material
+                            to reduce the number of render state changes. Multiple instances of the same mesh are rendered
+                            with a single draw call using geometry instancing.
+                        </p><p>
+                            It may be necessary to render a mesh multiple times per frame with different setting. These
+                            are called "render passes". For example, in the <span class="code">"GBuffer"</span> pass the mesh is
+                            rendered into the G-buffer, in the <span class="code">"ShadowMap"</span> pass the mesh is
+                            rendered into the shadow map, in the <span class="code">"Material"</span> the mesh is rendered
+                            into the back buffer, etc. Each render pass requires different settings: parameters, shaders,
+                            textures. The number of render passes may differ from application to application.
+                        </p><p>
+                            DigitalRune Graphics uses the following structure to describe meshes: A
+                            <a href="150b5feb-ef12-d0be-cd27-0a32759af0ba.htm">MeshNode</a>
+                            references a <a href="33929aa1-dcdb-8034-19be-28782fc06ab9.htm">Mesh</a>
+                            which defines vertex buffers, index buffers and materials. The mesh is divided into one or
+                            more <a href="7168abd2-bcdb-62de-95dd-e08018de40c5.htm">Submesh</a>es.
+                            Each submesh has a certain <a href="3ebe6b27-cffd-8dca-d4f6-ac37a45e439f.htm">Material</a>.
+                            A material is a dictionary of <a href="f15c1460-c6b8-f1d5-9bdd-c65acbb8f9f5.htm">EffectBinding</a>s -
+                            one effect binding per render pass.
+                        </p><p>
+                            The <a href="1782e7fc-9a12-dd2d-d73d-8396a786fdeb.htm">MeshRenderer</a>
+                            renders a single render pass: It takes a list of scene nodes, selects all mesh nodes and
+                            renders them using the selected render pass. A render pass is selected by setting the
+                            <a href="79b56643-429a-7edb-f845-391210e21cd8.htm">RenderPass</a>
+                            property in the <a href="ea575bf4-8a2a-e02a-be92-c5821bff1ad7.htm">RenderContext</a>.
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EACACADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EACACADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EACACADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EACACADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// TODO: Set graphics device states here.</span>
+
+<span class="highlight-comment">// Select render pass.</span>
+context.RenderPass = <span class="highlight-literal">"Material"</span>;
+
+<span class="highlight-comment">// Render a list of mesh nodes.</span>
+meshRenderer.Render(meshNodes, context);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EACACADAAA");</script><p>
+                            For each submesh, the mesh renderer looks up the effect binding in the material. If an effect
+                            binding for the given render pass is found, it applies the bindings (parameters, shaders,
+                            textures) and draws the submesh.
+                        </p><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Important note" /> Important</th></tr><tr><td><p>
+                                Render passes are arbitrary, user-defined strings. DigitalRune Graphics does not use a
+                                fixed set of render passes. Choosing the right render passes is up to the application.
+                            </p><p>
+                                If a material does not contain an entry for a specific render pass, the mesh renderer
+                                simply ignores the submesh. - It won't be rendered in this render pass!
+                            </p></td></tr></table></div></div><h4 class="subHeading" id="Opaque">Example: Opaque meshes</h4><div class="subsection"><p>
+                            The following code snippets shows how to render opaque meshes.
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAABADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAABADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAABADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAABADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Optional: Set render target and viewport.</span>
+graphicsDevice.SetRenderTarget(renderTarget);
+graphicsDevice.Viewport = viewport;
+
+<span class="highlight-comment">// Set the same values in the render context.</span>
+context.RenderTarget = renderTarget;
+context.Viewport = viewport;
+
+<span class="highlight-comment">// Set render states.</span>
+graphicsDevice.RasterizerState = RasterizerState.CullCounterClockwise;
+graphicsDevice.DepthStencilState = DepthStencilState.Default;
+graphicsDevice.BlendState = BlendState.Opaque;
+
+<span class="highlight-comment">// Select render pass.</span>
+context.RenderPass = <span class="highlight-literal">"Default"</span>;  <span class="highlight-comment">// Or "Material" ... depends on application</span>
+
+<span class="highlight-comment">// Render a list of scene nodes.</span>
+meshRenderer.Render(sceneNodes, context);
+
+<span class="highlight-comment">// Optional: If one of the meshes uses floating-point texture, it might be </span>
+<span class="highlight-comment">// necessary to reset the texture stage. Otherwise, the subsequent code may </span>
+<span class="highlight-comment">// throw an exception in XNA.</span>
+graphicsDevice.ResetTextures();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAABADAAA");</script></div><h4 class="subHeading" id="AlphaBlended">Example: Alpha-blended meshes</h4><div class="subsection"><p>
+                            The following code snippets shows how to render alpha-blended meshes.
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAAAADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAAAADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAAAADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAAAADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Optional: Set render target and viewport.</span>
+graphicsDevice.SetRenderTarget(renderTarget);
+graphicsDevice.Viewport = viewport;
+
+<span class="highlight-comment">// Set the same values in the render context.</span>
+context.RenderTarget = renderTarget;
+context.Viewport = viewport;
+
+<span class="highlight-comment">// Set render states.</span>
+graphicsDevice.RasterizerState = RasterizerState.CullCounterClockwise;
+graphicsDevice.DepthStencilState = DepthStencilState.DepthRead;
+graphicsDevice.BlendState = BlendState.AlphaBlend;
+
+<span class="highlight-comment">// Select render pass.</span>
+context.RenderPass = <span class="highlight-literal">"AlphaBlend"</span>;
+
+<span class="highlight-comment">// Render a list of scene nodes.</span>
+meshRenderer.Render(sceneNodes, context, RenderOrder.BackToFront);
+
+<span class="highlight-comment">// Optional: If one of the meshes uses floating-point texture, it might be </span>
+<span class="highlight-comment">// necessary to reset the texture stage. Otherwise, the subsequent code may </span>
+<span class="highlight-comment">// throw an exception in XNA.</span>
+graphicsDevice.ResetTextures();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAAAADAAA");</script></div></div><div class="collapsibleAreaRegion" id="Batching"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Batching and hardware instancing</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    Rendering a scene with many mesh instances can be time-consuming.
+                    <em>Batching</em> and <em>hardware instancing</em>
+                    can be used to improve performance.
+                </p><p>
+                    Following strategies can be used to handle a scene with many mesh instances:
+                </p><ul><li><p><strong>A) No batching:</strong></p><p>
+                            Each instance is represented by a
+                            <a href="150b5feb-ef12-d0be-cd27-0a32759af0ba.htm">MeshNode</a>.
+                            The mesh nodes use a material which does not support hardware instancing
+                            (see <a href="17442709-63e0-419c-abe8-00697ca4fc3a.htm">Guidelines for Writing Effects</a>)
+                            and/or
+                            dynamic hardware instancing of the
+                            <a href="1782e7fc-9a12-dd2d-d73d-8396a786fdeb.htm">MeshRenderer</a>
+                            (see property
+                            <a href="cdc86139-9cbb-090e-0102-9c43daaf8da8.htm">MeshRenderer<span id="LST3C4EE998_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3C4EE998_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>EnableInstancing</a>)
+                            is disabled. The
+                            <a href="1782e7fc-9a12-dd2d-d73d-8396a786fdeb.htm">MeshRenderer</a>
+                            renders meshes individually, which
+                            requires one draw call per instance. This method is the slowest.
+                        </p></li><li><p><strong>B) Batching using dynamic hardware instancing:</strong></p><p>
+                            Each instance is represented by a
+                            <a href="150b5feb-ef12-d0be-cd27-0a32759af0ba.htm">MeshNode</a>.
+                            The mesh nodes use a material which supports hardware instancing
+                            (see <a href="17442709-63e0-419c-abe8-00697ca4fc3a.htm">Guidelines for Writing Effects</a>)
+                            and
+                            dynamic hardware instancing of the
+                            <a href="1782e7fc-9a12-dd2d-d73d-8396a786fdeb.htm">MeshRenderer</a>
+                            (see property
+                            <a href="cdc86139-9cbb-090e-0102-9c43daaf8da8.htm">MeshRenderer<span id="LST3C4EE998_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3C4EE998_4?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>EnableInstancing</a>)
+                            is enabled.
+                            The
+                            <a href="1782e7fc-9a12-dd2d-d73d-8396a786fdeb.htm">MeshRenderer</a>
+                            automatically renders all instances of the same mesh with a single draw call.
+                        </p></li><li><p><strong>C) Batching using static hardware instancing:</strong></p><p>
+                            The class
+                            <a href="b656d182-3d25-515b-9412-fefe53823313.htm">MeshInstancingNode<span id="LST3C4EE998_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3C4EE998_5?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST3C4EE998_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3C4EE998_6?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                            represents a mesh and a collection of mesh instances. A single
+                            <a href="b656d182-3d25-515b-9412-fefe53823313.htm">MeshInstancingNode<span id="LST3C4EE998_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3C4EE998_7?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST3C4EE998_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3C4EE998_8?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                            can be used instead of storing individual
+                            <a href="150b5feb-ef12-d0be-cd27-0a32759af0ba.htm">MeshNode</a>.
+                            When the
+                            <a href="1782e7fc-9a12-dd2d-d73d-8396a786fdeb.htm">MeshRenderer</a>
+                            renders a
+                            <a href="b656d182-3d25-515b-9412-fefe53823313.htm">MeshInstancingNode<span id="LST3C4EE998_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3C4EE998_9?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST3C4EE998_10"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3C4EE998_10?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>,
+                            it renders all instances using only a single draw call. This is
+                            faster than strategy B because the graphics resources for hardware instancing only need to be
+                            created once (or whenever
+                            <a href="ef605682-07e6-0165-3f1a-ba53e56ae67b.htm">MeshInstancingNode<span id="LST3C4EE998_11"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3C4EE998_11?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST3C4EE998_12"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3C4EE998_12?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script><span id="LST3C4EE998_13"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3C4EE998_13?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Instances</a>
+                            is modified).
+                        </p></li><li><p><strong>D) Static batching:</strong></p><p>
+                            The
+                            <a href="a0bdde53-ebf7-3ba1-7de9-7980dc31e82a.htm">MeshHelper</a>
+                            can be used to merge all instances of a mesh into a new mesh. This creates one big
+                            vertex buffer with the pre-transformed vertices.
+                        </p></li></ul><p>
+                    Some more notes:
+                </p><ul class="noBullet"><li>
+                        Strategies C and D are the fastest. It is recommended to use D for small meshes (e.g. grass
+                        billboards) and C for large meshes (e.g. trees).
+                    </li><li>
+                        Strategies B and C require HiDef graphics profile and cannot be used with the Reach graphics profile.
+                    </li><li>
+                        Strategies C and D cannot be used with depth sorting (i.e., transparent objects
+                        will be blended in random order and not back-to-front).
+                    </li><li>
+                        Strategy C does not support occluders (i.e., the mesh should not contain an occluder).
+                    </li><li>
+                        No batching strategy can be used with skinned meshes or morphing (at the moment).
+                    </li></ul><p>
+                    For more details have a look at the <em>BatchingSample</em> (see
+                    <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a>).
+                </p></div><div class="collapsibleAreaRegion" id="Subtopics"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID6RB')" onkeypress="SectionExpandCollapse_CheckKey('ID6RB', event)" tabindex="0"><img id="ID6RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Subtopics</span></div><div id="ID6RBSection" class="collapsibleSection"><ul class="noBullet"><li><a href="b44b915a-f5f6-416a-9ffb-98de885812d7.htm">Morph Targets</a></li></ul></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

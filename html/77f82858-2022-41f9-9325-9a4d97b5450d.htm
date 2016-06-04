@@ -1,0 +1,333 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Step 16: GUI</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="77f82858-2022-41f9-9325-9a4d97b5450d" /><meta name="Description" content="In this step we will add a graphical user interface (GUI) to the game." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d94d3673-de15-47f9-a122-70b4d97b5920.htm" title="General" tocid="d94d3673-de15-47f9-a122-70b4d97b5920">General</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="4d7ccf95-54e8-4b4c-950f-9420947b4e24.htm" title="Tutorials" tocid="4d7ccf95-54e8-4b4c-950f-9420947b4e24">Tutorials</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="6ce9b230-eed2-419d-92df-3e3e4a03d27e.htm" title="Tutorial 01: Adding DigitalRune Engine to an XNA Game" tocid="6ce9b230-eed2-419d-92df-3e3e4a03d27e">Tutorial 01: Adding DigitalRune Engine to an XNA Game</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="8befb151-f7b6-4884-936b-530458b13860.htm" title="Step 1: Setup" tocid="8befb151-f7b6-4884-936b-530458b13860">Step 1: Setup</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="25418622-e634-4741-8d17-efc9fb44fba7.htm" title="Step 2: Empty game" tocid="25418622-e634-4741-8d17-efc9fb44fba7">Step 2: Empty game</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="0c04e065-a5fb-4045-bc09-7cce47c63d4e.htm" title="Step 3: Input service" tocid="0c04e065-a5fb-4045-bc09-7cce47c63d4e">Step 3: Input service</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="26ebc8f3-4778-4979-a217-1d85e2c5ae31.htm" title="Step 4: Graphics service" tocid="26ebc8f3-4778-4979-a217-1d85e2c5ae31">Step 4: Graphics service</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="efe7ad45-ea74-4e57-810d-93bc3ef3a28f.htm" title="Step 5: Debug rendering" tocid="efe7ad45-ea74-4e57-810d-93bc3ef3a28f">Step 5: Debug rendering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="da752ba9-7056-4485-9b90-d6070cb7c1e8.htm" title="Step 6: Game object service" tocid="da752ba9-7056-4485-9b90-d6070cb7c1e8">Step 6: Game object service</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="53ee55e3-b4a5-42cc-b47d-88d18b9de2f5.htm" title="Step 7: Model content" tocid="53ee55e3-b4a5-42cc-b47d-88d18b9de2f5">Step 7: Model content</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="253857cc-d401-4788-ae6e-4ca12a94a21e.htm" title="Step 8: Rendering models" tocid="253857cc-d401-4788-ae6e-4ca12a94a21e">Step 8: Rendering models</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="cdc88d41-dcb6-4464-be17-46d29a15d25a.htm" title="Step 9: Animated Model" tocid="cdc88d41-dcb6-4464-be17-46d29a15d25a">Step 9: Animated Model</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="a1c6f3cc-8a48-4c68-9401-421d36f67eba.htm" title="Step 10: More debug rendering" tocid="a1c6f3cc-8a48-4c68-9401-421d36f67eba">Step 10: More debug rendering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="dd394bdc-c9ec-442a-929d-7141f7b301ae.htm" title="Step 11: Physics" tocid="dd394bdc-c9ec-442a-929d-7141f7b301ae">Step 11: Physics</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="aa0a6f8f-d355-4188-9d4a-7041160411d1.htm" title="Step 12: Particles" tocid="aa0a6f8f-d355-4188-9d4a-7041160411d1">Step 12: Particles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c060be3d-f85f-4551-838c-6969ab45b0b4.htm" title="Step 13: Sky box" tocid="c060be3d-f85f-4551-838c-6969ab45b0b4">Step 13: Sky box</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="68c9f201-aa9c-4b7f-bf96-a57893faddfe.htm" title="Step 14: Post-processing" tocid="68c9f201-aa9c-4b7f-bf96-a57893faddfe">Step 14: Post-processing</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="b035aaae-87fb-48c6-86de-e30024ec9a89.htm" title="Step 15: Add DigitalRune Graphics content" tocid="b035aaae-87fb-48c6-86de-e30024ec9a89">Step 15: Add DigitalRune Graphics content</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="77f82858-2022-41f9-9325-9a4d97b5450d.htm" title="Step 16: GUI" tocid="77f82858-2022-41f9-9325-9a4d97b5450d">Step 16: GUI</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="7f0f5338-019d-4ef1-a579-3d99df4e1aa2.htm" title="Step 17: Deferred lighting" tocid="7f0f5338-019d-4ef1-a579-3d99df4e1aa2">Step 17: Deferred lighting</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Step 16: GUI</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                In this step we will add a graphical user interface (GUI) to the game.
+            </p></div><div class="collapsibleAreaRegion" id="Content"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Copy UI theme to content</span></div><div id="ID0RBSection" class="collapsibleSection"><ol><li>
+                        Open the Windows File Explorer and browse to
+                        <ul class="noBullet"><li><em>&lt;DigitalRune Engine Folder&gt;\Samples\Content\UI Themes\</em></li></ul></li><li>
+                        Copy the folder <em>BlendBlue</em> to <em>MyGame\MyGame\MyGameContent</em>.
+                        <div class="mediaNear"><img alt="Tutorial-01-26" src="../media/Tutorial-01-26.png" /></div></li></ol><p>
+                    The folder <em>BlendBlue</em> contains the UI theme, which consists of
+                </p><ul><li>mouse cursor file,</li><li>sprite fonts,</li><li>textures and</li><li>
+                        a XML file <em>Theme.xml</em> which defines the UI theme.
+                    </li></ul><div class="mediaNear"><img alt="Tutorial-01-27" src="../media/Tutorial-01-27.png" /></div></div><div class="collapsibleAreaRegion" id="Include"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Include UI theme in the content project</span></div><div id="ID1RBSection" class="collapsibleSection"><ol><li>
+                        In VS <span class="ui">Solution Explorer</span> select <em>MyGameContent</em>.
+                    </li><li>
+                        Click the <span class="ui">Show All Files</span> button.
+                    </li><li>
+                        Find the <em>Theme.xml</em>, right-click <em>Theme.xml</em>
+                        and select <span class="ui">Include In Project</span>.
+                        <div class="mediaNear"><img alt="Tutorial-01-28" src="../media/Tutorial-01-28.png" /></div></li><li>
+                        Press F4 to show the <span class="ui">Properties</span> window.
+                    </li><li>
+                        Set the <span class="ui">Content Importer</span> and the <span class="ui">Content Processor</span> to
+                        <span class="ui">UI Theme - DigitalRune</span>.
+                        <div class="mediaNear"><img alt="Tutorial-01-29" src="../media/Tutorial-01-29.png" /></div></li></ol></div><div class="collapsibleAreaRegion" id="UIManager"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Add game UI service</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    The GUI is handled by the <strong>DigitalRune.Game.UI.UIManager</strong>:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EACAFAAA_tab1" class="codeSnippetContainerTabSingle">Game1.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EACAFAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EACAFAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EACAFAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">…
+<span class="highlight-keyword">using</span> DigitalRune.Game.UI;                                                  <span class="highlight-comment">// NEW</span>
+…
+
+<span class="highlight-keyword">namespace</span> MyGame
+{
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> Game1 : Microsoft.Xna.Framework.Game
+    {
+        <span class="highlight-keyword">private</span> GraphicsDeviceManager _graphicsDeviceManager;
+
+        <span class="highlight-keyword">private</span> ServiceContainer _services;
+        <span class="highlight-keyword">private</span> InputManager _inputManager;
+        <span class="highlight-keyword">private</span> GraphicsManager _graphicsManager;
+        <span class="highlight-keyword">private</span> GameObjectManager _gameObjectManager;
+        <span class="highlight-keyword">private</span> AnimationManager _animationManager;
+        <span class="highlight-keyword">private</span> Simulation _simulation;
+        <span class="highlight-keyword">private</span> ParticleSystemManager _particleSystemManager;
+        <span class="highlight-keyword">private</span> UIManager _uiManager;                                       <span class="highlight-comment">// NEW</span>
+
+        …
+
+        <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> Initialize()
+        {
+            …
+            _particleSystemManager = <span class="highlight-keyword">new</span> ParticleSystemManager();
+            _services.Register(<span class="highlight-keyword">typeof</span>(IParticleSystemService), <span class="highlight-keyword">null</span>, _particleSystemManager);
+
+            _uiManager = <span class="highlight-keyword">new</span> UIManager(<span class="highlight-keyword">this</span>, _inputManager);                <span class="highlight-comment">// NEW</span>
+            _services.Register(<span class="highlight-keyword">typeof</span>(IUIService), <span class="highlight-keyword">null</span>, _uiManager);       <span class="highlight-comment">// NEW</span>
+
+            Components.Add(<span class="highlight-keyword">new</span> MyGameComponent(<span class="highlight-keyword">this</span>));
+
+            <span class="highlight-keyword">base</span>.Initialize();
+        }
+
+        <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> Update(GameTime gameTime)
+        {
+            _inputManager.Update(gameTime.ElapsedGameTime);
+
+            <span class="highlight-keyword">base</span>.Update(gameTime);
+
+            _uiManager.Update(gameTime.ElapsedGameTime);                    <span class="highlight-comment">// NEW</span>
+
+            _gameObjectManager.Update(gameTime.ElapsedGameTime);
+
+            _simulation.Update(gameTime.ElapsedGameTime);
+
+            _particleSystemManager.Update(gameTime.ElapsedGameTime);
+
+            _animationManager.Update(gameTime.ElapsedGameTime);
+            _animationManager.ApplyAnimations();
+        }
+        …</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EACAFAAA");</script><p>
+                    The UI service manages <strong>UIScreens</strong> and <strong>UIControls</strong>
+                    (e.g. buttons and windows).
+                    <strong>UIManager.Update</strong> updates the GUI layout and let's the controls
+                    handle user input. <strong>UIManager.Update</strong> does not draw anything.
+                </p><p>
+                    The update logic is similar to other game logic tasks. In the DigitalRune Engine the
+                    UI controls are just another form of game objects, i.e. the class
+                    <strong>UIControl</strong> derives from <strong>GameObject</strong>.
+                    Since the GUI is usually visible "above" the 3D scene, the UI controls are updated
+                    before the game objects.
+                </p></div><div class="collapsibleAreaRegion" id="GuiGraphicsScreen"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Add a new graphics screen for the GUI</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    As mentioned above, <strong>UIManager.Update</strong> does not render the
+                    GUI. Rendering is done in graphics screens. We could add the GUI rendering to
+                    <strong>MyGraphicsScreen</strong> - but we can also create a new graphics
+                    screen to separate the 3D rendering from the 2D GUI. Let's create a new class
+                    <em>GuiGraphicsScreen.cs</em>:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EACAEAAA_tab1" class="codeSnippetContainerTabSingle">GuiGraphicsScreen.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EACAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EACAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EACAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> DigitalRune;
+<span class="highlight-keyword">using</span> DigitalRune.Game.UI;
+<span class="highlight-keyword">using</span> DigitalRune.Game.UI.Controls;
+<span class="highlight-keyword">using</span> DigitalRune.Graphics;
+<span class="highlight-keyword">using</span> Microsoft.Practices.ServiceLocation;
+<span class="highlight-keyword">using</span> Microsoft.Xna.Framework;
+<span class="highlight-keyword">using</span> DigitalRune.Game.UI.Rendering;
+
+<span class="highlight-keyword">namespace</span> MyGame
+{
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> GuiGraphicsScreen : GraphicsScreen
+    {
+        <span class="highlight-keyword">public</span> UIScreen UIScreen { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">private</span> <span class="highlight-keyword">set</span>; }
+
+        <span class="highlight-keyword">public</span> GuiGraphicsScreen(IGraphicsService graphicsService) 
+            : <span class="highlight-keyword">base</span>(graphicsService)
+        {
+            <span class="highlight-keyword">var</span> uiService = ServiceLocator.Current.GetInstance&lt;IUIService&gt;();
+            <span class="highlight-keyword">var</span> game = ServiceLocator.Current.GetInstance&lt;Game&gt;();
+
+            <span class="highlight-keyword">var</span> theme = game.Content.Load&lt;Theme&gt;(<span class="highlight-literal">"BlendBlue/Theme"</span>);
+            <span class="highlight-keyword">var</span> renderer = <span class="highlight-keyword">new</span> UIRenderer(GraphicsService.GraphicsDevice, theme);
+            UIScreen = <span class="highlight-keyword">new</span> UIScreen(<span class="highlight-literal">"Default"</span>, renderer)
+            {
+                Background = Color.Transparent,
+            };
+            uiService.Screens.Add(UIScreen);
+        }
+
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> Dispose()
+        {
+            UIScreen.UIService.Screens.Remove(UIScreen);
+            UIScreen.Renderer.SafeDispose();
+        }
+
+        <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnUpdate(TimeSpan deltaTime)
+        {
+        }
+
+        <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnRender(RenderContext context)
+        {
+            UIScreen.Draw(context.DeltaTime);
+        }
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EACAEAAA");</script><p>
+                    The constructor loads the UI <strong>Theme</strong>, which describes all
+                    relevant mouse cursors, sprite fonts and textures.
+                    Then a <strong>UIRenderer</strong> is created, which can render the UI
+                    controls using the UI theme information.
+                    The <strong>GuiGraphicsScreen</strong> owns a <strong>UIScreen</strong>,
+                    which is a UI control that covers the whole screen. It is the root element of the
+                    GUI. Other controls (e.g. windows) can be added to the <strong>UIScreen</strong>.
+                    The <strong>Background</strong> of the <strong>UIScreen</strong>
+                    is set to transparent, otherwise the GUI would hide any graphics behind it (i.e.
+                    the 3D scene).
+                </p><p>
+                    The <strong>UIScreen</strong> renders itself to the back buffer in
+                    <strong>OnRender</strong>.
+                </p></div><div class="collapsibleAreaRegion" id="Cleanup"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Interlude: Clean up</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    All changes made in the the constructor are undone in <strong>GuiGraphicsScreen.Dispose</strong>.
+                    In simple projects, like this tutorial, we are often lazy and skip this part. However,
+                    once you have more practice you should make it a habit to clean up all actions. For example:
+                </p><ol><li>
+                        Call <strong>Dispose</strong> for all objects which implement
+                        <strong>IDisposable</strong>.
+                    </li><li>
+                        Remove <strong>UIScreens</strong> from the <strong>IUIService</strong>.
+                    </li><li>
+                        Remove <strong>GraphicsScreens</strong> from the <strong>IGraphicsService</strong>.
+                    </li><li>
+                        Remove <strong>GameObjects</strong> from the <strong>IGameObjectService</strong>.
+                    </li><li>
+                        Remove <strong>SceneNodes</strong> from the <strong>Scene</strong>.
+                    </li><li>
+                        etc.
+                    </li></ol></div><div class="collapsibleAreaRegion" id="Window"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID6RB')" onkeypress="SectionExpandCollapse_CheckKey('ID6RB', event)" tabindex="0"><img id="ID6RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Add a new window</span></div><div id="ID6RBSection" class="collapsibleSection"><p>
+                    Let's add a new file <em>MenuWindow.cs</em> to the project:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EALACAAA_tab1" class="codeSnippetContainerTabSingle">MenuWindow.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EALACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EALACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EALACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> DigitalRune.Game.UI;
+<span class="highlight-keyword">using</span> DigitalRune.Game.UI.Controls;
+<span class="highlight-keyword">using</span> Microsoft.Practices.ServiceLocation;
+<span class="highlight-keyword">using</span> Microsoft.Xna.Framework;
+
+<span class="highlight-keyword">namespace</span> MyGame
+{
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> MenuWindow : Window
+    {
+        <span class="highlight-keyword">public</span> MenuWindow()
+        {
+            Title = <span class="highlight-literal">"Menu"</span>;
+            X = <span class="highlight-number">100</span>;
+            Y = <span class="highlight-number">100</span>;
+
+            <span class="highlight-keyword">var</span> button = <span class="highlight-keyword">new</span> Button
+            {
+                Content = <span class="highlight-keyword">new</span> TextBlock { Text = <span class="highlight-literal">"Exit"</span> },
+                Width = <span class="highlight-number">60</span>,
+                Height = <span class="highlight-number">30</span>,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
+            };
+            button.Click += (s, e) =&gt;
+            {
+                <span class="highlight-keyword">var</span> game = ServiceLocator.Current.GetInstance&lt;Game&gt;();
+                game.Exit();
+            };
+
+            Content = button;
+        }
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EALACAAA");</script><p>
+                    This class defines a GUI <strong>Window</strong>. The <strong>Content</strong>
+                    of the window is a single <strong>Button</strong>. When the button is pressed, the game exits.
+                </p><p>
+                    We create an instance of the <strong>GuiGraphicsScreen</strong> and the
+                    <strong>MenuWindow</strong> in <strong>MyGameComponent</strong>:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EAIACAAA_tab1" class="codeSnippetContainerTabSingle">MyGameComponent.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EAIACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EAIACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EAIACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">…
+<span class="highlight-keyword">namespace</span> MyGame
+{
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> MyGameComponent : Microsoft.Xna.Framework.GameComponent
+    {
+        …
+        <span class="highlight-keyword">private</span> MenuWindow _menuWindow;                                                     <span class="highlight-comment">// NEW</span>
+
+        <span class="highlight-keyword">public</span> MyGameComponent(Game game)
+            : <span class="highlight-keyword">base</span>(game)
+        {
+            _inputService = ServiceLocator.Current.GetInstance&lt;IInputService&gt;();
+
+            _graphicsService = ServiceLocator.Current.GetInstance&lt;IGraphicsService&gt;();
+            
+            _myGraphicsScreen = <span class="highlight-keyword">new</span> MyGraphicsScreen(_graphicsService);
+            _graphicsService.Screens.Add(_myGraphicsScreen);
+            ((ServiceContainer)ServiceLocator.Current).Register(<span class="highlight-keyword">typeof</span>(IScene), <span class="highlight-keyword">null</span>, _myGraphicsScreen.Scene);
+            
+            <span class="highlight-keyword">var</span> guiGraphicsScreen = <span class="highlight-keyword">new</span> GuiGraphicsScreen(_graphicsService);                <span class="highlight-comment">// NEW</span>
+            _graphicsService.Screens.Add(guiGraphicsScreen);                                <span class="highlight-comment">// NEW</span>
+
+            <span class="highlight-keyword">var</span> gameObjectService = ServiceLocator.Current.GetInstance&lt;IGameObjectService&gt;();
+            <span class="highlight-keyword">var</span> cameraObject = <span class="highlight-keyword">new</span> CameraObject();
+            _myGraphicsScreen.CameraNode = cameraObject.CameraNode;
+            gameObjectService.Objects.Add(cameraObject);
+
+            gameObjectService.Objects.Add(<span class="highlight-keyword">new</span> GroundObject());
+            gameObjectService.Objects.Add(<span class="highlight-keyword">new</span> LightsObject());
+            gameObjectService.Objects.Add(<span class="highlight-keyword">new</span> DudeObject());
+            gameObjectService.Objects.Add(<span class="highlight-keyword">new</span> CrateObject());
+            gameObjectService.Objects.Add(<span class="highlight-keyword">new</span> SmokeObject());
+            gameObjectService.Objects.Add(<span class="highlight-keyword">new</span> SkyObject());
+
+            _menuWindow = <span class="highlight-keyword">new</span> MenuWindow();                                                 <span class="highlight-comment">// NEW</span>
+            _menuWindow.Show(guiGraphicsScreen.UIScreen);                                   <span class="highlight-comment">// NEW</span>
+
+            _myGraphicsScreen.DebugRenderer.DrawText(<span class="highlight-literal">"MyGame"</span>);
+            _myGraphicsScreen.DebugRenderer.DrawAxes(Pose.Identity, <span class="highlight-number">1</span>, <span class="highlight-keyword">false</span>);
+        }
+
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> Update(GameTime gameTime)
+        {
+            <span class="highlight-comment">//if (_inputService.IsDown(Keys.Escape))                                        // REMOVE</span>
+            <span class="highlight-comment">//  Game.Exit();                                                                // REMOVE</span>
+
+            _menuWindow.IsVisible = _inputService.IsDown(Keys.LeftControl);                 <span class="highlight-comment">// NEW</span>
+            _inputService.EnableMouseCentering = !_menuWindow.IsVisible &amp;&amp; Game.IsActive;   <span class="highlight-comment">// NEW</span>
+            Game.IsMouseVisible = _menuWindow.IsVisible;                                    <span class="highlight-comment">// NEW</span>
+
+            <span class="highlight-keyword">var</span> debugRenderer = _myGraphicsScreen.DebugRenderer;
+            debugRenderer.Clear();
+            …
+        }
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EAIACAAA");</script><p>
+                    The game component creates an instance of the <strong>GuiGraphicsScreen</strong>
+                    and adds it to the graphics service. The graphics service can manage several graphics
+                    screen. The order in the <strong>IGraphicsService.Screens</strong> collection
+                    defines the draw order: The 3D scene (<strong>MyGraphicsScreen</strong>) is
+                    rendered before the GUI (<strong>GuiGraphicsScreens</strong>).
+                </p><p>
+                    Then a <strong>MenuWindow</strong> is created and displayed in the
+                    <strong>UIScreen</strong> of the <strong>GuiGraphicsScreen</strong>.
+                    In <strong>OnUpdate</strong> the visibility of the window and the mouse
+                    cursor are controlled. The window is only visible when the left CONTROL key is
+                    pressed. We also have to disable mouse centering.
+                </p><p>
+                    To quit the game you now have to hold the left CONTROL key and click the exit button –
+                    or simply press ALT + F4.
+                </p><p>
+                    Previously, mouse centering was controlled by the <strong>CameraObject</strong>. Let's change this:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EADACAAA_tab1" class="codeSnippetContainerTabSingle">CameraObject.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EADACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EADACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EADACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">…
+<span class="highlight-keyword">namespace</span> MyGame
+{
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> CameraObject : GameObject
+    {
+        <span class="highlight-comment">//private Game _game;                                                             // REMOVE</span>
+        <span class="highlight-keyword">private</span> IInputService _inputService;
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">float</span> _currentYaw;
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">float</span> _currentPitch;
+
+        <span class="highlight-keyword">public</span> CameraNode CameraNode { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">private</span> <span class="highlight-keyword">set</span>; }
+
+        <span class="highlight-keyword">public</span> CameraObject()
+        {
+            <span class="highlight-comment">//_game = ServiceLocator.Current.GetInstance&lt;Game&gt;();                         // REMOVE</span>
+            _inputService = ServiceLocator.Current.GetInstance&lt;IInputService&gt;();
+
+            <span class="highlight-keyword">var</span> graphicsService = ServiceLocator.Current.GetInstance&lt;IGraphicsService&gt;();
+            <span class="highlight-keyword">var</span> projection = <span class="highlight-keyword">new</span> PerspectiveProjection();
+            projection.SetFieldOfView(
+                ConstantsF.PiOver4,
+                    graphicsService.GraphicsDevice.Viewport.AspectRatio,
+                    <span class="highlight-number">0.1</span>f,
+                    <span class="highlight-number">100</span>);
+            <span class="highlight-keyword">var</span> camera = <span class="highlight-keyword">new</span> Camera(projection);
+            CameraNode = <span class="highlight-keyword">new</span> CameraNode(camera);
+            CameraNode.PoseWorld = <span class="highlight-keyword">new</span> Pose(<span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">0</span>, <span class="highlight-number">1</span>, <span class="highlight-number">3</span>));
+        }
+
+        <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnUpdate(TimeSpan deltaTime)
+        {
+            <span class="highlight-comment">//_inputService.EnableMouseCentering = _game.IsActive;                        // REMOVE</span>
+            <span class="highlight-keyword">if</span> (!_inputService.EnableMouseCentering)                                      <span class="highlight-comment">// NEW</span>
+                <span class="highlight-keyword">return</span>;                                                                   <span class="highlight-comment">// NEW</span>
+
+            <span class="highlight-keyword">float</span> deltaTimeF = (<span class="highlight-keyword">float</span>)deltaTime.TotalSeconds;
+
+            Vector2F mousePositionDelta = _inputService.MousePositionDelta;
+            …
+        }
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EADACAAA");</script><p>
+                    Now the camera does not move when the GUI is visible.
+                </p><p>
+                    This is the result when the CTRL key is pressed:
+                </p><div class="mediaNear"><img alt="Tutorial-01-30" src="../media/Tutorial-01-30.jpg" /></div></div><div class="collapsibleAreaRegion" id="Next"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID7RB')" onkeypress="SectionExpandCollapse_CheckKey('ID7RB', event)" tabindex="0"><img id="ID7RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Next</span></div><div id="ID7RBSection" class="collapsibleSection"><p><a href="7f0f5338-019d-4ef1-a579-3d99df4e1aa2.htm">Step 17: Deferred lighting</a></p></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

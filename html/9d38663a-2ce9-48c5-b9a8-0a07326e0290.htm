@@ -1,0 +1,115 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Game Object Events</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="9d38663a-2ce9-48c5-b9a8-0a07326e0290" /><meta name="Description" content="This section describes game object events." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="fe8ccefb-7bce-4290-be56-81bd38ba86fe.htm" title="DigitalRune Game" tocid="fe8ccefb-7bce-4290-be56-81bd38ba86fe">DigitalRune Game</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="309293e8-f2d6-4308-8c85-3f4726f92244.htm" title="Game Object System" tocid="309293e8-f2d6-4308-8c85-3f4726f92244">Game Object System</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="fda7b77e-2d84-46d6-a082-175b4308a1af.htm" title="Game Objects" tocid="fda7b77e-2d84-46d6-a082-175b4308a1af">Game Objects</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="bae21eb9-66c2-422c-95ce-992e873a4774.htm" title="Game Object Service" tocid="bae21eb9-66c2-422c-95ce-992e873a4774">Game Object Service</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="08a99230-99dd-416b-9f58-1d00a4dfddea.htm" title="Game Object Properties" tocid="08a99230-99dd-416b-9f58-1d00a4dfddea">Game Object Properties</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="9d38663a-2ce9-48c5-b9a8-0a07326e0290.htm" title="Game Object Events" tocid="9d38663a-2ce9-48c5-b9a8-0a07326e0290">Game Object Events</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="be9dad32-1e3f-4361-9cbe-9874e2225049.htm" title="Templates" tocid="be9dad32-1e3f-4361-9cbe-9874e2225049">Templates</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Game Object Events</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This section describes game object events.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Events">Game object events</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Creation">Creating a game object event</a></li><li class="outlineSectionEntry"><a href="#EventHandling">Handling a game object event</a></li><li class="outlineSectionEntry"><a href="#Raising">Raising a game object event</a></li><li class="outlineSectionEntry"><a href="#Wrapping">Wrapping a game object event</a></li><li class="outlineSectionEntry"><a href="#Connecting">Connecting game object events</a></li></ul></ul></div><div class="collapsibleAreaRegion" id="Events"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Game object events</span></div><div id="ID1RBSection" class="collapsibleSection"><p><em>Game object events</em> (also called <em>ports</em>
+                    or <em>signals</em>) extend the functionality of common
+                    language runtime (CLR) events. The game object events are represented by the type
+                    <a href="e60a28db-f51d-e93f-ab2c-8c1dc3f739d1.htm">GameEvent<span id="LST1D28EE2E_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST1D28EE2E_0?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST1D28EE2E_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST1D28EE2E_1?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>.
+                    The game object events of a particular game object are listed in
+                    <a href="57e1cb77-3961-f539-c967-2127a9b9a4ed.htm">GameObject<span id="LST1D28EE2E_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST1D28EE2E_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Events</a>.
+                </p><h4 class="subHeading" id="Creation">Creating a game object event</h4><div class="subsection"><p>
+                            A new game object event can be defined by calling the static method
+                            <a href="264bca14-6715-c224-b4dd-4a145fb5ff6b.htm">GameObject<span id="LST1D28EE2E_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST1D28EE2E_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>CreateEvent<span id="LST1D28EE2E_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST1D28EE2E_4?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST1D28EE2E_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST1D28EE2E_5?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script>(String, String, String, T)</a>.
+                            For example:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAEAEABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAEAEABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAEAEABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAEAEABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">GameEventMetadata&lt;EventArgs&gt; metadata = GameObject.CreateEvent(
+  <span class="highlight-literal">"Click"</span>,                              <span class="highlight-comment">// The name of the event.</span>
+  <span class="highlight-literal">"Interaction"</span>,                        <span class="highlight-comment">// The category (for use in game editors).</span>
+  <span class="highlight-literal">"Occurs when the object is clicked."</span>, <span class="highlight-comment">// The description.</span>
+  EventArgs.Empty);                     <span class="highlight-comment">// The default event args.</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAEAEABAAA");</script><p>
+                            Once this method is called, the game object event is globally defined.
+                            If this method is called a second time with the same properties, it will
+                            not create a new game object event. Instead it will only return the
+                            metadata of the previous call. There cannot be multiple game object events
+                            with the same name and type of event arguments!
+                        </p><p>
+                            The metadata of any game object event can be queried by calling
+                            <a href="82be4bba-4ace-d596-9513-719920137004.htm">GameObject<span id="LST1D28EE2E_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST1D28EE2E_6?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>GetEventMetadata<span id="LST1D28EE2E_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST1D28EE2E_7?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST1D28EE2E_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST1D28EE2E_8?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script>(String)</a>
+                            where game object events can be identified by
+                        </p><ul><li>
+                                the automatically assigned ID stored in the metadata (see
+                                <a href="ec8fa078-2caa-4813-87d9-c1bb09b945bc.htm">Id</a>),
+                                or
+                            </li><li>
+                                by name and type of the event args.
+                            </li></ul><p>
+                            Either of these ways uniquely identifies a game object event.
+                        </p></div><h4 class="subHeading" id="EventHandling">Handling a game object event</h4><div class="subsection"><p>
+                            The following examples shows how an event handler can be attached to
+                            a game object event.
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EADADABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EADADABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EADADABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EADADABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">GameObject gameObject = <span class="highlight-keyword">new</span> GameObject();
+
+GameEvent&lt;EventArgs&gt; click = gameObject.Events.Get&lt;EventArgs&gt;(<span class="highlight-literal">"Click"</span>);
+click.Event += OnGameObjectClicked;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EADADABAAA");</script><p>
+                            Note, the member <span class="code">OnGameObjectClicked</span> in the
+                            example can be any method with the <span class="code">EventHandler&lt;EventArgs&gt;</span>
+                            signature.
+                        </p><p>
+                            Detaching an event handler from a game object event is similarly easy.
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAADABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAADABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAADABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAADABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">GameEvent&lt;EventArgs&gt; click = gameObject.Events.Get&lt;EventArgs&gt;(<span class="highlight-literal">"Click"</span>);
+click.Event -= OnGameObjectClicked;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAADABAAA");</script></div><h4 class="subHeading" id="Raising">Raising a game object event</h4><div class="subsection"><p>
+                            The <a href="7c905442-3fd3-05a4-60ca-3ce1d9a2f0cc.htm">Raise</a>
+                            method needs to be called to raise a game object event.
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAACABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAACABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAACABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAACABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">GameEvent&lt;EventArgs&gt; click = gameObject.Events.Get&lt;EventArgs&gt;(<span class="highlight-literal">"Click"</span>);
+
+<span class="highlight-comment">// Method #1: Raise the event using the default event args as specified in </span>
+<span class="highlight-comment">//            the metadata.</span>
+click.Raise();
+
+<span class="highlight-comment">// Method #2: Raise the event and explicitly specify the event args.</span>
+click.Raise(EventArgs.Empty);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAACABAAA");</script></div><h4 class="subHeading" id="Wrapping">Wrapping a game object event</h4><div class="subsection"><p>
+                            In some cases it is convenient to wrap a game object event using a standard
+                            CLR event. Here is an example that shows how to define a game object event
+                            in a class and wrap it using a CLR event:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EABABABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABABABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABABABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABABABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> ClickableObject : GameObject
+{
+  <span class="highlight-comment">/// &lt;summary&gt; </span>
+  <span class="highlight-comment">/// The ID of the &lt;see cref="Click"/&gt; game object event.</span>
+  <span class="highlight-comment">/// &lt;/summary&gt;</span>
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">readonly</span> <span class="highlight-keyword">int</span> ClickEventId = 
+    CreateEvent(<span class="highlight-literal">"Click"</span>, <span class="highlight-literal">"Interaction"</span>, <span class="highlight-literal">"Occurs when the object is clicked."</span>, EventArgs.Empty).Id;
+
+  <span class="highlight-comment">/// &lt;summary&gt;</span>
+  <span class="highlight-comment">/// Occurs when the object is clicked. This is a game object event.</span>
+  <span class="highlight-comment">/// &lt;/summary&gt;</span>
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">event</span> EventHandler&lt;EventArgs&gt; Click
+  {
+    add
+    {
+      <span class="highlight-keyword">var</span> click = Events.Get&lt;EventArgs&gt;(ClickEventId);
+      click.Event += <span class="highlight-keyword">value</span>;
+    }
+    remove
+    {
+      <span class="highlight-keyword">var</span> click = Events.Get&lt;EventArgs&gt;(ClickEventId);
+      click.Event -= <span class="highlight-keyword">value</span>;
+    }
+  }
+
+  ...
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABABABAAA");</script><p>
+                            The game object event can then be used like any other CLR event.
+                            (This pattern is extensively used in the
+                            <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>s
+                            of the <a href="a5a463da-de2e-432f-bf7d-07206aaca634.htm">DigitalRune Game UI</a> library.
+                        </p></div><h4 class="subHeading" id="Connecting">Connecting game object events</h4><div class="subsection"><p>
+                            Game object events have a property
+                            <a href="0d7f4849-da51-80cf-6a83-e21f0fc1f707.htm">RaiseOnEvent</a>,
+                            which is an event handler. This event handler can be connected with
+                            another game object event.
+                            This is very useful to connect game object events
+                            of different game objects. When one event is raised, the connected event
+                            is raised automatically.
+                            Here is an example:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAAAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// myButton is game object that represents a GUI button that can be clicked.</span>
+<span class="highlight-comment">// myMachine is a game object that represents an object that starts its operation</span>
+<span class="highlight-comment">// when its "Start" event is raised.</span>
+<span class="highlight-comment">// Connect the "Click" game object event of the button with the "Start" game object </span>
+<span class="highlight-comment">// event of myMachine. This way a button click automatically starts myMachine.</span>
+GameEvent&lt;EventArgs&gt; buttonClick = myButton.Events.Get&lt;EventArgs&gt;(<span class="highlight-literal">"Click"</span>);
+GameEvent&lt;EventArgs&gt; machineStart = myMachine.Events.Get&lt;EventArgs&gt;(<span class="highlight-literal">"Start"</span>);
+buttonClick.Event += machineStart.RaiseOnEvent;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAAAABAAA");</script></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

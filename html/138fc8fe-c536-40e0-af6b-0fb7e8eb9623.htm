@@ -1,0 +1,244 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Continuous Collision Detection (Background Information)</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="138fc8fe-c536-40e0-af6b-0fb7e8eb9623" /><meta name="Description" content="DigitalRune Geometry supports Continuous Collision Detection (CCD). See . This article contains background info about CCD." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="335dc86a-c68d-4d7b-8641-81dd80de5e76.htm" title="DigitalRune Geometry" tocid="335dc86a-c68d-4d7b-8641-81dd80de5e76">DigitalRune Geometry</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="76e11a96-42a4-495c-b8f8-6164a67d05d5.htm" title="Articles" tocid="76e11a96-42a4-495c-b8f8-6164a67d05d5">Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="833445f6-4042-40e7-a489-0b6ed790428c.htm" title="How To: Add DigitalRune Geometry to a Project" tocid="833445f6-4042-40e7-a489-0b6ed790428c">How To: Add DigitalRune Geometry to a Project</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="9a927200-8841-4c76-94bc-29c5633c5d38.htm" title="How To: Compute World and View Matrix using Pose" tocid="9a927200-8841-4c76-94bc-29c5633c5d38">How To: Compute World and View Matrix using Pose</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="23a00744-a02d-4830-9104-5b978cf74882.htm" title="How To: Compute the Minimal Distance of Objects" tocid="23a00744-a02d-4830-9104-5b978cf74882">How To: Compute the Minimal Distance of Objects</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="20035425-d861-43db-91c2-a4b4d30cbc16.htm" title="How To: Compute Contacts between Objects" tocid="20035425-d861-43db-91c2-a4b4d30cbc16">How To: Compute Contacts between Objects</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="7fc08da6-fe1c-4cfe-ad65-743d08b2b0ba.htm" title="How To: Create a Mesh of a Convex Hull" tocid="7fc08da6-fe1c-4cfe-ad65-743d08b2b0ba">How To: Create a Mesh of a Convex Hull</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="6268b551-b34f-47a4-9513-d7ba700f08fe.htm" title="How To: Load a 3D Collision Model Using the XNA Content Pipeline" tocid="6268b551-b34f-47a4-9513-d7ba700f08fe">How To: Load a 3D Collision Model Using the XNA Content Pipeline</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="138fc8fe-c536-40e0-af6b-0fb7e8eb9623.htm" title="Continuous Collision Detection (Background Information)" tocid="138fc8fe-c536-40e0-af6b-0fb7e8eb9623">Continuous Collision Detection (Background Information)</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="ab8276b7-a27e-43f3-8c23-4b7be065ff91.htm" title="External Articles" tocid="ab8276b7-a27e-43f3-8c23-4b7be065ff91">External Articles</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Continuous Collision Detection (Background Information)</td></tr></table><span class="introStyle"></span><div class="introduction"><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                    DigitalRune Geometry supports
+                    <em>Continuous Collision Detection (CCD)</em>. See
+                    <a href="cd2fc090-d3fd-4a0f-a7d3-1759241c8545.htm">Continuous Collision Detection (CCD)</a>.
+                    This article contains background info about CCD.
+                </p></td></tr></table></div><p>
+                Collision detection in 3d games detects whether objects are intersecting. The normal
+                discrete collision detection does so by checking the objects at their current position.
+                Then the game moves the objects and the collision detection checks the objects at their new
+                positions.
+                This method works for slow moving objects, but for fast moving objects critical collisions
+                can be missed. To detect all collisions we need
+                <em>Continuous Collision Detection (CCD)</em>, which
+                we will discuss in this article.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Why">Why do we need CCD?</a></li><li class="outlineSectionEntry"><a href="#Solutions">Solutions</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Supersampling">Supersampling</a></li><li class="outlineSectionEntry"><a href="#Bisection">
+                        Bisection
+                    </a></li><li class="outlineSectionEntry"><a href="#RayCasting">Ray casting</a></li><li class="outlineSectionEntry"><a href="#Analytical">Analytical solution</a></li><li class="outlineSectionEntry"><a href="#SweptSpheres">Swept bounding spheres</a></li><li class="outlineSectionEntry"><a href="#RayCastingConvex">Ray casting against general convex objects</a></li><li class="outlineSectionEntry"><a href="#CA">Conservative advancement</a></li><li class="outlineSectionEntry"><a href="#Other">And other…</a></li></ul><li class="outlineSectionEntry"><a href="#Notes">CCD notes</a></li><li class="outlineSectionEntry"><a href="#MotionClampingInPhysics">Motion clamping in game physics</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#MotionClamping">Motion clamping</a></li><li class="outlineSectionEntry"><a href="#MotionClampingProblem">Motion clamping problem</a></li><li class="outlineSectionEntry"><a href="#TOISolver">First time of impact solvers</a></li></ul></ul></div><div class="collapsibleAreaRegion" id="Why"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Why do we need CCD?</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    A normal game computes 30 or 60 frames per second. In each frame objects are positioned,
+                    collisions are detected and the objects are displayed on the screen. Object movement is
+                    not really continuous – instead each simulated objects makes 30 or 60 hops per second.
+                    In other words: the movement of the objects is sampled with 30 or 60 Hz.
+                </p><p>Two unwanted situations can occur:</p><ol><li>
+                        Two objects are separated in one frame and they are penetrating each other in the
+                        next frame. Most game objects are solid objects that should not overlap.
+                    </li><li>
+                        A bullet is shot at a thin wall. In one frame the bullet is in front of the wall. In
+                        the next frame the bullet is behind the wall. No collision is detected because the
+                        collision happened between two frames. This problem is also known as
+                        <em>tunneling</em>.
+                    </li></ol><p>
+                    The following video shows the second problem. Two spheres move towards the wall. The
+                    sphere in the front uses discrete collision detection. The collision with the wall is
+                    missed because it happens between two frames. The sphere in the back uses Continuous
+                    Collision Detection and the collision is detected.
+                </p><ul class="noBullet"><li><p><a href="http://www.youtube.com/watch?v=hKAYDg9Rswk" target="_blank">Video: Discrete vs. Continuous Collision Detection</a></p></li></ul><p>
+                    CCD is more difficult than discrete collision detection, but it does two important things:
+                </p><ol><li><p><strong>Compute the time of impact.</strong></p><p>
+                            The time of impact is the time when the objects start to touch. The result of a time
+                            of impact query is often a value between 0 and 1. 0 means that the objects are
+                            touching in the current frame. 1 means that the objects do not start to touch before
+                            the next frame. 0.5 means that the time of impact is halfway between the current and
+                            the next frame, etc.
+                        </p></li><li><strong>Avoid tunneling.</strong></li></ol></div><div class="collapsibleAreaRegion" id="Solutions"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Solutions</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    Let's discuss ways to implement CCD to avoid tunneling of objects (missed collisions) and
+                    find the time of impact.
+                </p><h4 class="subHeading" id="Supersampling">Supersampling</h4><div class="subsection"><p>
+                            In a 60 frames per second game the collision detection tests a moving object at 60
+                            positions – one position per frame. Obviously, we miss less collisions if we check
+                            more positions, for example 10 intermediate positions per frame. This would increase
+                            the sample rate to 600 Hz. – A simple brute-force solution. But collision detection is
+                            one of the most expensive parts of the game engine. A part which we don’t want to make
+                            10 times slower. Additionally, we could still miss collisions, and finding the time of
+                            impact is still not very accurate.
+                        </p></div><h4 class="subHeading" id="Bisection">
+                        Bisection
+                    </h4><div class="subsection"><p>
+                            The bisection method (binary search) is sometimes used in physics simulation to find
+                            the time of impact: If an object has no collision in frame i and penetrates another
+                            object in frame i + 1, then the time of impact is somewhere between does frames. Let’s
+                            assume that frame i is at time 0 and frame i + 1 is at time 1. We check for collision
+                            at time 0.5. If there is no collision, we check at time 0.75. If there is a penetration,
+                            we check at time 0.625. And so on, always halving the time interval until the penetration
+                            is sufficiently small.
+                        </p><p>
+                            With this scheme we can arrive at the time of impact very quickly, but we do not touch
+                            the tunneling problem because the bisection does not start if there is no collision at
+                            frame i and i + 1.
+                        </p></div><h4 class="subHeading" id="RayCasting">Ray casting</h4><div class="subsection"><p>
+                            A shooting game has typically many very fast, very small objects: bullets. Bullet
+                            collisions are better checked with ray casting. A ray is cast from the bullet’s
+                            current position to the bullet’s position of the next frame. This way no collisions
+                            are missed.
+                        </p><p>
+                            The ray casting approach can also be used for bigger objects if we cast a ray from
+                            the object center point to the future center point. We can get better results if we
+                            place more sample points in the object and shoot several rays. But this approach is
+                            not appropriate to test for collision of two moving objects because it is unlikely
+                            that rays of one object hit the rays of the other objects.
+                            The ray casting method is good for the bullet vs. slow object scenario.
+                        </p></div><h4 class="subHeading" id="Analytical">Analytical solution</h4><div class="subsection"><p>
+                            So far we have looked at general solutions that work for all kind of shapes. But if
+                            the involved shapes are simple (e.g. sphere, AABB, triangle), it is possible to find
+                            an analytical solution for specific shape pairs. Especially for moving sphere vs.
+                            moving sphere it is not too difficult to develop an exact test that determines the
+                            time of impact. Several tests are discussed here:
+                            <a href="http://www.realtimerendering.com/intersections.html" target="_blank">http://www.realtimerendering.com/intersections.html</a>
+                            (see section "Dynamic Object Intersections").
+                        </p></div><h4 class="subHeading" id="SweptSpheres">Swept bounding spheres</h4><div class="subsection"><p>
+                            If we have an analytical solution for moving sphere vs. moving sphere, we can use this
+                            to test the bounding spheres of moving objects – instead of the exact shapes. This is
+                            an approximation – but it’s okay because we use this approximation for fast moving
+                            objects where any errors are hardly noticeable on the screen.
+                        </p><p>
+                            I have seen cases where the tested spheres are not the bounding spheres but smaller
+                            spheres that represent the "core" of the moving objects.
+                        </p></div><h4 class="subHeading" id="RayCastingConvex">Ray casting against general convex objects</h4><div class="subsection"><p>
+                            Most of the time the involved shapes are convex (because convex shapes are a lot
+                            faster in the collision detection compared to concave shapes). Gino van den Bergen
+                            has developed an iterative algorithm that computes CCD for two convex shapes (convex
+                            hulls, spheres, capsules, boxes, …, all convex shapes!). It works by performing a
+                            GJK-based ray cast on the configuration space obstacle (CSO). It is described in the
+                            paper
+                            <a href="http://www.dtecta.com/papers/unpublished04raycast.pdf" target="_blank">Ray Casting against General Convex Objects with Application to Continuous Collision Detection</a>. – And if you think: GJK, CSO … what!? You clearly need to read this book:
+                            <em>Collision Detection in Interactive Environments, Gino van den Bergen</em></p></div><h4 class="subHeading" id="CA">Conservative advancement</h4><div class="subsection"><p>
+                            The above method works only for linear movement – rotational movement is ignored. An
+                            iterative method that works for rotational movement too is
+                            <em>Conservative Advancement</em>.
+                            I think the paper
+                            <a href="http://graphics.ewha.ac.kr/fast/" target="_blank">Continuous Collision Detection for Non-Convex Polyhedra</a>
+                            gives a very good introduction to this algorithm and how it can be extended for
+                            general polyhedra. It basically works like this: In each iteration, compute the
+                            closest points of the two objects (for example using GJK). Use this information to
+                            compute a safe distance by which the objects can move while avoiding collision (see
+                            paper). After only a few iterations the time of impact can be found.
+                        </p><p>
+                            Erwin Coumans developed a very interesting version of Conservative Advancement in the
+                            paper
+                            <a href="http://www.continuousphysics.com/BulletContinuousCollisionDetection.pdf" target="_blank">Continuous Collision Detection and Physics</a>. It is very similar to Ray Casting against General Convex Objects where
+                            the ray is cast against the deforming CSO, so that the algorithm works for linear and
+                            angular movement (rotations) of convex objects.
+                        </p></div><h4 class="subHeading" id="Other">And other…</h4><div class="subsection"><p>
+                            This list is by far not comprehensive. There are many other papers and ideas
+                            about there.
+                        </p></div></div><div class="collapsibleAreaRegion" id="Notes"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />CCD notes</span></div><div id="ID2RBSection" class="collapsibleSection"><p /><ul><li>
+                        CCD is more expensive than discrete collision detection.
+                    </li><li>
+                        Use CCD only for objects that move with a velocity that is high (relative to the
+                        object’s extent).
+                    </li><li>
+                        In many cases CCD is not needed or approximations can be used:
+                        CCD is relevant for fast moving objects. But when objects are moving fast, it is
+                        hard for the user to spot any errors. Errors would be noticeable when the
+                        objects on the screen are moving slower – but for slow objects discrete collision
+                        detection does a good job.
+                    </li><li>
+                        CCD should be used for critical game objects. It is very annoying if a player
+                        character "tunnels" through a wall; or if a projectile misses a collision with the
+                        enemy character.
+                    </li><li>
+                        Do not use CCD if the objects are already touching at the start positions. If this
+                        case is not correctly handled by the game logic, objects could get stuck.
+                    </li><li>
+                        In CCD it is OK to use approximations because errors of fast moving objects are
+                        hardly visible for the player. In many cases it is easier (and faster) to ignore
+                        rotational movements and assume that the objects do not rotate. Errors due to
+                        rotational movement of fast objects are not noticeable in most cases.
+                    </li><li>
+                        Remember: A case with two objects moving with a linear velocity can be reduced
+                        to a case where one object is static and the second object is moving relative to
+                        the first object.
+                    </li></ul></div><div class="collapsibleAreaRegion" id="MotionClampingInPhysics"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Motion clamping in game physics</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    How do we integrate this into our game physics library? This article explains how to use
+                    CCD in game physics; especially a technique called motion clamping (at least we call it
+                    like this) that is used in DigitalRune Physics and possible pitfalls you could come across
+                    when you use game physics with CCD.
+                </p><h4 class="subHeading" id="MotionClamping">Motion clamping</h4><div class="subsection"><p>
+                            Normally, game physics libraries advance the simulation in fixed time steps (e.g.
+                            1/60 s). In each time step following steps are performed:
+                        </p><ol><li>
+                                Detect collisions
+                            </li><li>
+                                Compute forces
+                            </li><li>
+                                Apply forces (this step updates the bodies' velocities)
+                            </li><li>
+                                Solve constraints (contacts and joints; this step corrects velocities so that
+                                constraints are all satisfied)
+                            </li><li>
+                                Update positions (using the corrected velocities)
+                            </li></ol><p>
+                            The order and details of this steps can vary between simulation methods, but the steps
+                            are basically the same. The problem of discrete collision detection is: The
+                            collisions are only detected at the beginning of the time step. With large time steps
+                            the final body positions after step 5 can result in inter-penetrating bodies or even
+                            missed collisions (tunneling).
+                        </p><p>
+                            Our collision detection library (DigitalRune Geometry) can compute CCD and we have to
+                            fit this into the time step scheme above. A very simple method is
+                            <em>motion clamping</em>. This method is used in DigitalRune Physics.
+                            The time step is modified like this:
+                        </p><ol><li>
+                                Detect collisions
+                            </li><li>
+                                Compute forces
+                            </li><li>
+                                Apply forces
+                            </li><li>
+                                Solve constraints
+                            </li><li>
+                                Update <strong>target</strong> positions
+                            </li><li><strong>Use CCD to compute the first time of impact of each body </strong></li><li><strong>Move bodies to their first time of impact position </strong></li></ol><p>
+                            The positions computed in step 5 are not treated as final positions. They are treated
+                            as target positions for the CCD. In step 6 the time of impact is computed for the
+                            motion from the old position (of the last time step) to the new target position. This
+                            is computed for all body pairs where the motion paths overlap. For each body the
+                            earliest time of impact is stored. In step 7 the position of each body is set to its
+                            first time of impact.
+                        </p><p>
+                            In practice most body positions are already finalized in step 5 as usual, and CCD is
+                            only performed for selected, game critical bodies. In DigitalRune Physics each
+                            <a href="45d87f0c-570b-1672-5d65-1a7ba131e533.htm">RigidBody</a>
+                            has a
+                            <a href="3156d3c8-25e7-5fab-7b50-2da2edcf647f.htm">CcdEnabled</a>
+                            flag where CCD can be turned on or off for this body. Further, CCD is only performed
+                            for fast bodies (see
+                            <a href="8efaeb9c-1ef6-38a1-3be0-06e04fea9eb3.htm">MotionSettings<span id="LST38431EFA_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST38431EFA_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>CcdVelocityThreshold</a>).
+                        </p></div><h4 class="subHeading" id="MotionClampingProblem">Motion clamping problem</h4><div class="subsection"><p>
+                            This method is simple and works well in most cases, but it has a clear disadvantage: A
+                            part of the bodies' motion is simply discarded (the body
+                            <em>loses time</em>). Since CCD is used for fast bodies the motion
+                            clamping is mostly not visible – unless the motion is repeatedly clamped in several frames.
+                        </p><p>
+                            Here is an example: A small ball is shot at the wall. Without CCD we shoot right
+                            through the wall. With CCD the ball hits the wall.
+                        </p><ul class="noBullet"><li><p><a href="http://www.youtube.com/watch?v=h3tSgsY4f9Q" target="_blank">Video: Motion Clamping in Game Physics</a></p></li></ul><p>
+                            In the second part of the video a large ball is shot at the wall. Without CCD the ball
+                            still hits the wall because it is too big to tunnel through. With CCD the ball’s motion
+                            appears choppy. The ball collides with many bricks and the motion is repeatedly
+                            clamped in several frames.
+                        </p><p>
+                            Using motion clamping for ragdolls is even worse if the ragdoll parts can collide with
+                            each other. The motion clamping visibly tears the limbs apart.
+                            In this case, CCD checks between ragdoll limbs should be disabled.
+                        </p><p>
+                            For big objects it is better not to use CCD – they are big anyway and it is unlikely
+                            that we miss any collisions.
+                        </p></div><h4 class="subHeading" id="TOISolver">First time of impact solvers</h4><div class="subsection"><p>
+                            For future version of DigitalRune Physics a more fine-grained control of CCD and motion
+                            clamping is planned to avoid these problems. We might even implement a real
+                            <em>first time of impact solver</em>.
+                        </p><p>
+                            A first time of impact solver is an advanced technique that integrates CCD with game
+                            physics. With this method the simulation does not make crude fixed time steps. Instead,
+                            the simulation steps from the smallest time of impact to the next smallest time of
+                            impact. Of course this is slower but can be optimized using an approach like:
+                            <a href="http://portal.acm.org/citation.cfm?id=344866" target="_blank">Timewarp rigid body simulation</a>. It is also important to guarantee progress and avoid slow-downs when
+                            the time of impacts are very small and approach zero…
+                        </p></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

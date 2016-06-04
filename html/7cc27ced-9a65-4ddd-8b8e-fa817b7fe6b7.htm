@@ -1,0 +1,201 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Character Controller Implementation</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="7cc27ced-9a65-4ddd-8b8e-fa817b7fe6b7" /><meta name="Description" content="DigitalRune Physics provides two character controller implementations: T:DigitalRune.Physics.Specialized.KinematicCharacterController and T:DigitalRune.Physics.Specialized.DynamicCharacterController." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="79a8677d-9460-4118-b27b-cef353dfbd92.htm" title="DigitalRune Physics" tocid="79a8677d-9460-4118-b27b-cef353dfbd92">DigitalRune Physics</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="3e1b091b-d795-4f67-a390-67648a3e5465.htm" title="Specialized Modules" tocid="3e1b091b-d795-4f67-a390-67648a3e5465">Specialized Modules</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="09d89582-ed82-465f-a65e-34f8cd55e1f6.htm" title="Character Controllers" tocid="09d89582-ed82-465f-a65e-34f8cd55e1f6">Character Controllers</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="eae2c109-980c-43e4-aaaf-0448e8f388a4.htm" title="Character Controller Requirements" tocid="eae2c109-980c-43e4-aaaf-0448e8f388a4">Character Controller Requirements</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="7cc27ced-9a65-4ddd-8b8e-fa817b7fe6b7.htm" title="Character Controller Implementation" tocid="7cc27ced-9a65-4ddd-8b8e-fa817b7fe6b7">Character Controller Implementation</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Character Controller Implementation</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Classes">Character controller types</a></li><li class="outlineSectionEntry"><a href="#Kinematic">Kinematic character controller</a></li><li class="outlineSectionEntry"><a href="#Dynamic">Dynamic character controller</a></li><li class="outlineSectionEntry"><a href="#Sample">Sample</a></li><li class="outlineSectionEntry"><a href="#References">References</a></li></ul></div><div class="collapsibleAreaRegion" id="Classes"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Character controller types</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    DigitalRune Physics provides two character controller implementations:
+                    <a href="7e5379a6-e6d3-0775-c465-2c53c8b1fc2f.htm">KinematicCharacterController</a>
+                    and
+                    <a href="aec4aa85-e831-0e8c-7f7a-c024c3d94bed.htm">DynamicCharacterController</a>.
+                </p><div class="mediaNear"><img alt="DigitalRune.Physics.Specialized (Character Controllers)" src="../media/Physics.Specialized_CharacterControllers.png" /><div class="caption">Class Diagram: DigitalRune.Physics.Specialized (Character Controllers)</div></div><p>
+                    The kinematic is more expensive and more advanced
+                    implementation. It is modeled as a
+                    <a href="45d87f0c-570b-1672-5d65-1a7ba131e533.htm">RigidBody</a>,
+                    but the movement (including
+                    sliding, stepping, etc.) is computed outside the physics simulation using only
+                    the collision detection. A kinematic character controller is more complex but allows to tune all
+                    aspects of the character movement.
+                </p><p>
+                    The dynamic character controller is a faster and simpler implementation.
+                    It is called "dynamic" because the character is modeled as a
+                    <a href="45d87f0c-570b-1672-5d65-1a7ba131e533.htm">RigidBody</a>
+                    where velocities are set. The physics simulation automatically computes
+                    the character movement.
+                </p><p>
+                    For a discussion about the advantages and disadvantages of the different character controller
+                    types, have a look at:
+                    <a href="http://www.digitalrune.com/Support/Blog/tabid/719/EntryId/40/Kinematic-vs-Dynamic-Character-Controllers.aspx" target="_blank">Kinematic vs. Dynamic Character Controllers [1]</a></p></div><div class="collapsibleAreaRegion" id="Kinematic"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Kinematic character controller</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    This section describes some implementation details of the character controller:
+                </p><ul><li><p><strong>Capsule shape:</strong>
+                            The character is modeled using an upright, capsule-shaped rigid body.
+                            The rotations of the capsule are locked (see e.g.
+                            <a href="79ef5b44-3144-3b7a-7f1d-9f5cc27957a4.htm">LockRotationX</a>).
+                            The rigid body is added to the physics simulation. However, the movement is still
+                            computed by <span class="term">slide</span> methods in the character controller.
+                            A capsule shape has the advantage that the lower spherical cap smooths up/down movement when it moves over small obstacles or over stairs. Still, an additional smoothing is desirable in many cases (which is not supported in our character controller example).
+                        </p></li><li><p><strong>Slide:</strong>
+                            The basic routine in our character controller is called a
+                            <span class="term">slide</span>. It takes a desired position and computes a valid,
+                            non-penetrating position near the desired position like this:
+                        </p><p>
+                            The capsule is set to the desired positions and we detect all intersections. The
+                            collision detection returns all contacts at the desired position, including contact
+                            positions, contact normal vectors and penetration depths. Each contact indicates that
+                            we have moved into a solid object - we have reached a limit of the allowed movement space.
+                        </p><p>
+                            For each contact found we store a bounding plane that represents that movement limit.
+                            If the capsule touches a wall, the bounding plane is parallel to the wall surface. If
+                            the capsule touches an object like a sphere, the bounding plane is parallel to the
+                            tangential plane at the contact point. All bounding planes together limit the
+                            allowed space in which the capsule can move.
+                        </p><p>
+                            Now, that we have a description of the allowed space in which the character can
+                            move, we compute the allowed position closest to the desired position. We do this
+                            by a simple iterative process: If we have no bounding planes or the desired position
+                            is in front of all bounding planes, we are done. If the desired position is behind
+                            a bounding plane, we project the position onto the surface of the bounding plane.
+                            The new position is checked against the next plane. If it is behind the plane
+                            it is projected onto the surface. The new position is checked against the other planes,
+                            and so forth. This is done in a loop until we have found an allowed position in front
+                            of all bounding planes.
+                        </p><p>
+                            Once, we have found the new position, we set the capsule to the new position and
+                            detect all intersections. It is possible that we find new bounding planes that we
+                            add to the set of existing bounding planes. We repeat the process above until
+                            we have a new position that does not violate any bounding plane.
+                        </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                                The above problem is very similar to
+                                <a href="http://en.wikipedia.org/wiki/Linear_programming" target="_blank">Linear Programming</a>. The bounding planes describe the convex polytope of
+                                the feasible space and our objective is to find an allowed position near
+                                the desired position.
+                            </p></td></tr></table></div></li><li><p><strong>Step up:</strong>
+                            The <span class="term">step up</span> operation temporarily changes the current capsule
+                            position: The step height is added and the capsule is moved forward by an amount
+                            proportional to the capsule size. If there are forbidden contacts at this position,
+                            the temporary position changes are undone. If there are no forbidden contacts, the
+                            up-stepping was successful: The new capsule position is the old capsule position
+                            plus the step height.
+                        </p></li><li><p><strong>Step down:</strong>
+                            Down stepping is like a slide to the current position minus the step height -
+                            but the movement is only committed if the movement stops at a position with a
+                            bottom contact. If the capsule does not find a ground contact within the step
+                            height, then the <span class="term">step down</span> operation does nothing because the
+                            character is simply falling.
+                        </p></li><li><p><strong>Move: </strong><a href="10e2bf71-162b-205c-4a95-0257870f7a7d.htm">KinematicCharacterController<span id="LSTAB43FAC6_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTAB43FAC6_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Move</a>
+                            is the public method that is called each frame. It combines all previous methods like
+                            this:
+                            First, we slide to the first obstacle. At this new position we try to step up. If the
+                            this is not successful we finish the slide to the desired position. At the end we try
+                            to step down And done.
+                        </p></li><li><p><strong>Jump maneuverability:</strong>
+                            The controller allows to limit movement changes when the character does not touch the
+                            ground. This is done by linearly interpolating the last movement with the desired
+                            movement. In pseudo code:
+                        </p><p><em>
+                                desiredMovement = Lerp(lastMovement,  desiredMovement, JumpManeuverability);
+                            </em></p><p>
+                            If
+                            <a href="e18f25c0-1b5a-c4b3-73d9-3ffbd9f3f1b7.htm">JumpManeuverability</a>
+                            is 0, the character continues the motion of the last frame. If
+                            <a href="e18f25c0-1b5a-c4b3-73d9-3ffbd9f3f1b7.htm">JumpManeuverability</a>
+                            is 1, the character can instantly change directions.
+                        </p></li><li><p><strong>Pushing objects:</strong>
+                            When the character stands on an object, its weight pushes the supporting object.
+                            This is achieved by applying a downwards-directed impulse to the object. To push
+                            objects horizontally, the character controller applies an impulse that depends on its
+                            current speed.
+                        </p></li><li><p><strong>Moving with moving platforms:</strong>
+                            To move with platforms (e.g. elevators, conveyors), the character checks its ground
+                            contacts and computes the average velocity of all ground contact points. This
+                            velocity is applied to the capsule body and the physics simulation will move the body.
+                        </p></li><li><p><strong>No continuous collision detection (CCD):</strong>
+                            The collision tests do not use continuous collision detection. That means, if the
+                            character moves a huge distance in one step, collision can be missed. For characters
+                            with normal speeds, this is not a problem. However, if a character should be moved
+                            with an very large speed, it might be better to divide the move into several
+                            smaller moves.
+                        </p></li></ul></div><div class="collapsibleAreaRegion" id="Dynamic"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Dynamic character controller</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    The
+                    <a href="aec4aa85-e831-0e8c-7f7a-c024c3d94bed.htm">DynamicCharacterController</a>
+                    is much simpler than the
+                    <a href="7e5379a6-e6d3-0775-c465-2c53c8b1fc2f.htm">KinematicCharacterController</a>.
+                    The goal of this implementation is to show how easy it is to create a basic character
+                    controller using a physics engine. It is also very fast because the movement is
+                    computed by the physics simulation and it lacks the elaborate tests of the
+                    <a href="7e5379a6-e6d3-0775-c465-2c53c8b1fc2f.htm">KinematicCharacterController</a>.
+                </p><p>
+                    The character is modeled as an upright, capsule-shaped rigid body.
+                    To move the character
+                    we simply set the velocity of the rigid body and let the physics simulation do the rest.
+                </p><p>
+                    A short ray is attached to the rigid body to sample the ground below the capsule. This is
+                    necessary to detect forbidden slopes. Further, we make sure that the walking velocity
+                    is always parallel to the ground. For example, when walking down an inclined plane,
+                    the walk velocity must be parallel to the plane. If we would simply set a horizontal
+                    velocity, the capsule would step into empty space and fall down in the next frames.
+                </p><p>
+                    Since the capsule’s bottom is round, it can automatically slide over small obstacles and
+                    steps. But it cannot smoothly pass high steps.
+                    Compared to the
+                    <a href="7e5379a6-e6d3-0775-c465-2c53c8b1fc2f.htm">KinematicCharacterController</a>,
+                    the
+                    <a href="aec4aa85-e831-0e8c-7f7a-c024c3d94bed.htm">DynamicCharacterController</a>
+                    is fast and simple. But it has several disadvantages:
+                </p><ul><li>
+                        Limited control because the movement is done in the physics simulation.
+                    </li><li>
+                        Instabilities when running into slope limits.
+                    </li><li>
+                        Limited stepping abilities.
+                    </li><li>
+                        No support for moving platforms.
+                    </li><li>
+                        No limitation of jump maneuverability.
+                    </li><li>
+                        Etc.
+                    </li></ul><p>
+                    Some of these restrictions are not inherent problems of a dynamic character controller.
+                    They are there to keep the code simple. The source code is available for licensees and
+                    can be extend, e.g. by adding features from the more advanced kinematic character
+                    controller.
+                </p></div><div class="collapsibleAreaRegion" id="Sample"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Sample</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    The <span class="term">CharacterControllerSample</span> (see
+                    <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a>) shows how to use the
+                    character controllers
+                    to let a player move, including: jumping, climbing, pushing objects,
+                    crawling, hanging on ledges, stepping over obstacles and slopes, etc.
+                </p><div class="mediaNear"><img alt="Character Controller" src="../media/Sample-Character.jpg" /><div class="caption"><span class="captionLead">Screenshot:
+						</span>Screenshot of the Character Controller Sample</div></div><p>
+                    Here is a video of the sample:
+                </p><ul class="noBullet"><li><p><a href="https://www.youtube.com/watch?v=LJp2NnKj1X4" target="_blank">Video: Character Controller Sample</a></p></li></ul><p>
+                    The sample shows how add several advanced character controller features:
+                </p><ul><li><p><strong>Dynamic Jump Height:</strong>
+                            The jump height depends on the duration over which the jump button is pressed.
+                            The player can hold the button longer to increase the jump height. The hold time can
+                            be limited (e.g. to 10 frames) to limit the maximal jump height.
+                        </p></li><li><p><strong>Crouch:</strong>
+                            To support ducking/crouching, simply change the height of the capsule. Before standing
+                            up, check if there is enough space for the full-size capsule. If the full-size capsule
+                            would collide with another object, the character remains crouching.
+                        </p></li><li><p><strong>Climbing:</strong>
+                            The character can climb when it touches certain trigger objects.
+                            This could be a ladder or a climbable part of the wall. When the trigger objects
+                            are touched the
+                            <a href="c506021a-2fcf-0341-f106-71e541e3ae68.htm">IsClimbing</a>
+                            flag of the character controller is set. When the flag is set, no gravity is applied
+                            in the character controller and vertical movement is allowed.
+                        </p></li><li><p><strong>Holding on Ledges:</strong>
+                            The character can hold onto edges of platforms. To find ledges create a
+                            collision object (e.g. a box) and check for collisions in the upper part of the
+                            capsule and in the lower part of the capsule.
+                            If the upper box does not collide and if the lower box collides with an object,
+                            then we assume to have found a ledge and set the
+                            <a href="c506021a-2fcf-0341-f106-71e541e3ae68.htm">IsClimbing</a>
+                            flag.
+                            This is one possible solution. We could also place extra trigger volumes to
+                            mark ledges - especially if we want to restrict where the player can climb.
+                        </p></li></ul></div><div class="collapsibleAreaRegion" id="References"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />References</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    [1] "Kinematic vs. Dynamic Character Controllers", DigitalRune Blog,
+                    <a href="http://www.digitalrune.com/Support/Blog/tabid/719/EntryId/40/Kinematic-vs-Dynamic-Character-Controllers.aspx" target="_blank">http://www.digitalrune.com/Support/Blog/tabid/719/EntryId/40/Kinematic-vs-Dynamic-Character-Controllers.aspx</a></p></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

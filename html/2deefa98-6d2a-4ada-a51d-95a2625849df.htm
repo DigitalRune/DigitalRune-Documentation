@@ -1,0 +1,109 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>How To: Create a Simple Particle Effect</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="2deefa98-6d2a-4ada-a51d-95a2625849df" /><meta name="Description" content="This article shows how to create a basic particle effect." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="5044112e-c86d-4d85-87d0-b567a0361c21.htm" title="DigitalRune Particles" tocid="5044112e-c86d-4d85-87d0-b567a0361c21">DigitalRune Particles</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="25e7a7a0-265e-4c12-9e41-be23852b39cf.htm" title="&quot;How To&quot; Articles" tocid="25e7a7a0-265e-4c12-9e41-be23852b39cf">"How To" Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="60bdbd87-fecb-42e2-bdf3-3966602bb9a5.htm" title="How To: Add DigitalRune Particles to a Project" tocid="60bdbd87-fecb-42e2-bdf3-3966602bb9a5">How To: Add DigitalRune Particles to a Project</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="2deefa98-6d2a-4ada-a51d-95a2625849df.htm" title="How To: Create a Simple Particle Effect" tocid="2deefa98-6d2a-4ada-a51d-95a2625849df">How To: Create a Simple Particle Effect</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="2e27afb1-6482-4f56-9497-ca903aef3c9f.htm" title="How To: Create a Particle Effector" tocid="2e27afb1-6482-4f56-9497-ca903aef3c9f">How To: Create a Particle Effector</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="5b005b7b-e103-4da2-8d18-cddce0a5bea7.htm" title="How To: Create a Particle Emitter" tocid="5b005b7b-e103-4da2-8d18-cddce0a5bea7">How To: Create a Particle Emitter</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="95a33167-7650-4006-8cf1-3e011c42bf54.htm" title="How To: Create a Start Value Effector" tocid="95a33167-7650-4006-8cf1-3e011c42bf54">How To: Create a Start Value Effector</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="f9e9b1f3-4850-437f-aa2b-a6b4c236f196.htm" title="How To: Clamp a Particle Parameter" tocid="f9e9b1f3-4850-437f-aa2b-a6b4c236f196">How To: Clamp a Particle Parameter</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">How To: Create a Simple Particle Effect</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This article shows how to create a basic particle effect.
+            </p></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Creating a simple particle effect</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    Following extract shows how to configure a basic particle effect. (The full source
+                    code can be found in the <em>ParticlesSample</em>.)
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAGABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAGABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAGABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAGABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Create a new "empty" particle system.</span>
+_particleSystem = <span class="highlight-keyword">new</span> ParticleSystem();
+
+<span class="highlight-comment">// Names are optional, but very useful for debugging.</span>
+_particleSystem.Name = <span class="highlight-literal">"MyFirstParticleSystem"</span>;
+
+<span class="highlight-comment">// The particle system uses pre-allocated arrays. We should define an upper limit for</span>
+<span class="highlight-comment">// the number of particles that can be alive at the same moment.</span>
+_particleSystem.MaxNumberOfParticles = <span class="highlight-number">100</span>;
+
+<span class="highlight-comment">// The particle system's Pose defines the position and orientation of the particle system</span>
+<span class="highlight-comment">// in the world. </span>
+_particleSystem.Pose = <span class="highlight-keyword">new</span> Pose(<span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">0</span>, <span class="highlight-number">2</span>, <span class="highlight-number">0</span>));
+
+<span class="highlight-comment">// The properties of the particles in the particle system are defined using </span>
+<span class="highlight-comment">// "particle parameters" (in the collection _particleSystem.Parameters).</span>
+<span class="highlight-comment">// Per default, there is only one parameter: "NormalizedAge" - which is managed</span>
+<span class="highlight-comment">// by the particle system itself and is the age of a particle in the range 0 - 1.</span>
+
+<span class="highlight-comment">// All our particles should live for 1 second after they have been created. Therefore,</span>
+<span class="highlight-comment">// we add a "uniform" parameter called "Lifetime" and set it to 1.</span>
+<span class="highlight-keyword">var</span> lifetimeParameter = _particleSystem.Parameters.AddUniform&lt;<span class="highlight-keyword">float</span>&gt;(<span class="highlight-literal">"Lifetime"</span>);
+lifetimeParameter.DefaultValue = <span class="highlight-number">1</span>f;
+
+<span class="highlight-comment">// Each particle should have a position value. Therefore, we add a "varying" parameter</span>
+<span class="highlight-comment">// called "Position". "Varying" means that each particle has its own position value.</span>
+<span class="highlight-comment">// The particle system will internally allocate a Vector3F array to store all particle</span>
+<span class="highlight-comment">// positions.</span>
+_particleSystem.Parameters.AddVarying&lt;Vector3F&gt;(<span class="highlight-literal">"Position"</span>);
+
+<span class="highlight-comment">// When particles are created, we want them to appear at a random position in a spherical</span>
+<span class="highlight-comment">// volume. We add an effector which initializes the particle "Positions" of newly created</span>
+<span class="highlight-comment">// particles.</span>
+_particleSystem.Effectors.Add(<span class="highlight-keyword">new</span> StartPositionEffector
+{
+  <span class="highlight-comment">// This effector should initialize the "Position" parameter.</span>
+  <span class="highlight-comment">// Parameter = "Position",     // "Position" is the default value anyway.</span>
+
+  <span class="highlight-comment">// The start values should be chosen from this random value distribution:</span>
+  Distribution = <span class="highlight-keyword">new</span> SphereDistribution { OuterRadius = <span class="highlight-number">2</span> }
+});
+
+<span class="highlight-comment">// The particles should slowly fade in and out to avoid sudden appearance and disappearance.</span>
+<span class="highlight-comment">// We add a varying particle parameter called "Alpha" to store the alpha value per particle.</span>
+_particleSystem.Parameters.AddVarying&lt;<span class="highlight-keyword">float</span>&gt;(<span class="highlight-literal">"Alpha"</span>);
+
+<span class="highlight-comment">// The SingleFadeEffector animates a float parameter from 0 to a target value and back to 0.</span>
+_particleSystem.Effectors.Add(<span class="highlight-keyword">new</span> SingleFadeEffector
+{
+  <span class="highlight-comment">// If TargetValueParameter is not set, then the target value is 1.</span>
+  <span class="highlight-comment">//TargetValueParameter = 1,</span>
+
+  <span class="highlight-comment">// The fade-in/out times are relative to a time parameter. </span>
+  <span class="highlight-comment">// By default the "NormalizedAge" of the particles is used.</span>
+  <span class="highlight-comment">//TimeParameter = "NormalizedAge",</span>
+
+  <span class="highlight-comment">// The Alpha value should be animated.</span>
+  ValueParameter = <span class="highlight-literal">"Alpha"</span>,
+
+  <span class="highlight-comment">// The fade-in/out times relative to the normalized age.</span>
+  FadeInStart = <span class="highlight-number">0.0</span>f,
+  FadeInEnd = <span class="highlight-number">0.3</span>f,
+  FadeOutStart = <span class="highlight-number">0.5</span>f,
+  FadeOutEnd = <span class="highlight-number">1.0</span>f,
+});
+
+<span class="highlight-comment">// Next, we choose a texture for the particles. All particles should use the same</span>
+<span class="highlight-comment">// texture parameter, which means the parameter can be "uniform". We immediately</span>
+<span class="highlight-comment">// set this parameter to "LensFlare" which is the asset name of the texture in our </span>
+<span class="highlight-comment">// content project.</span>
+<span class="highlight-keyword">var</span> textureParameter = _particleSystem.Parameters.AddUniform&lt;<span class="highlight-keyword">string</span>&gt;(<span class="highlight-literal">"Texture"</span>);
+textureParameter.DefaultValue = <span class="highlight-literal">"LensFlare"</span>;
+
+<span class="highlight-comment">// The particle system should be drawn using additive alpha blending.</span>
+<span class="highlight-keyword">var</span> blendStateParameter = _particleSystem.Parameters.AddUniform&lt;<span class="highlight-keyword">string</span>&gt;(<span class="highlight-literal">"BlendState"</span>);
+blendStateParameter.DefaultValue = <span class="highlight-literal">"Additive"</span>;
+
+<span class="highlight-comment">// Adding the particle system to a ParticleSystemService is optional but very useful</span>
+<span class="highlight-comment">// because the service will update the particle system each frame.</span>
+ParticleSystemService.ParticleSystems.Add(_particleSystem);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAGABAAA");</script><p>
+                    To create particles simply call the
+                    <a href="468ae797-48ab-c1d7-6bc0-85de73fad230.htm">AddParticles</a>
+                    method.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAEABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAEABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAEABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAEABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Add 2 new particles.</span>
+_particleSystem.AddParticles(<span class="highlight-number">2</span>);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAEABAAA");</script><p>
+                    Or add a
+                    <a href="f091034c-3028-8a3d-672b-94f9eb2555a0.htm">StreamEmitter</a>.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EACABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Add an effector that emits particles at a constant rate.</span>
+_particleSystem.Effectors.Add(<span class="highlight-keyword">new</span> StreamEmitter
+{
+  DefaultEmissionRate = <span class="highlight-number">30</span>,
+});</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACABAAA");</script><p>
+                    This code excerpt showed how to configure a basic particle effect. The
+                    <em>ParticlesSample</em> (see <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a>)
+                    further demonstrates how the particle system service is updated in the game loop and
+                    how the particle effect can be rendered. Check
+                    out the full source for more information.
+                </p><div class="mediaNear"><img alt="A basic particle effect" src="../media/BasicSample.jpg" /><div class="caption">ParticlesSample: A basic particle effect</div></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

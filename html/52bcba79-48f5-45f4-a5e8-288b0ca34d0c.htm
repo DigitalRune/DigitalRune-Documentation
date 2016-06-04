@@ -1,0 +1,114 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Scene Queries</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="52bcba79-48f5-45f4-a5e8-288b0ca34d0c" /><meta name="Description" content="One main purpose of a scene graph (represented by the interface T:DigitalRune.Graphics.SceneGraph.IScene) is the ability to quickly identify scene nodes that match a certain criterion." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="7d5a0abe-8231-452c-895c-e6dbab83822b.htm" title="Graphics Programming" tocid="7d5a0abe-8231-452c-895c-e6dbab83822b">Graphics Programming</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="4d8c922f-60cb-4b92-a22c-03c9e8816712.htm" title="Scene Management" tocid="4d8c922f-60cb-4b92-a22c-03c9e8816712">Scene Management</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c6170a88-b013-46b8-9183-d2efe06b9fc4.htm" title="Scene Graph" tocid="c6170a88-b013-46b8-9183-d2efe06b9fc4">Scene Graph</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="52bcba79-48f5-45f4-a5e8-288b0ca34d0c.htm" title="Scene Queries" tocid="52bcba79-48f5-45f4-a5e8-288b0ca34d0c">Scene Queries</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Scene Queries</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#SceneQueries">What are scene queries?</a></li><li class="outlineSectionEntry"><a href="#UserDefined">User-defined queries</a></li></ul></div><div class="collapsibleAreaRegion" id="SceneQueries"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />What are scene queries?</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    One main purpose of a scene graph (represented by the interface <a href="6e2214b1-b299-2ebf-112c-20cf5510185c.htm">IScene</a>)
+                    is the ability to quickly identify scene nodes that match a certain criterion. For example,
+                    all scene nodes within the camera viewing frustum, all light nodes that affect a certain mesh,
+                    all mesh nodes that cast shadows from a given light source, ...
+                </p><p>
+                    The interface <a href="6e2214b1-b299-2ebf-112c-20cf5510185c.htm">IScene</a>
+                    provides a <a href="37c07613-e89b-1421-2947-71255d94933b.htm">Query<span id="LSTDE2FE538_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTDE2FE538_0?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LSTDE2FE538_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTDE2FE538_1?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                    method. This method can be used to get all scene nodes that touch a given scene node, the
+                    <span class="term">reference node</span>. For example: If the reference node is the currently
+                    active camera node, the <a href="37c07613-e89b-1421-2947-71255d94933b.htm">Query<span id="LSTDE2FE538_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTDE2FE538_2?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LSTDE2FE538_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTDE2FE538_3?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                    method returns all scene nodes within the viewing frustum. (Checks are performed using the
+                    bounding shape of the scene nodes, not the exact geometry.)
+                </p><p>
+                    The <a href="37c07613-e89b-1421-2947-71255d94933b.htm">Query<span id="LSTDE2FE538_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTDE2FE538_4?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LSTDE2FE538_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTDE2FE538_5?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                    is a generic method that requires a type parameter. The type parameter specifies the
+                    <span class="term">scene query type</span>, which must be a class that implements
+                    <a href="8928eaec-020b-00ed-4ad7-12f83aa1338a.htm">ISceneQuery</a>.
+                    An instance of this scene query type is returned as the result of the method.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EACACAAA_tab1" class="codeSnippetContainerTabSingle">Example (C#)</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Get all scene nodes within viewing frustum.</span>
+CameraFrustumQuery sceneQuery = scene.Query&lt;CameraFrustumQuery&gt;(cameraNode);
+
+<span class="highlight-comment">// (The result is stored in sceneQuery.SceneNodes.)</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACACAAA");</script><p>
+                    The <a href="8928eaec-020b-00ed-4ad7-12f83aa1338a.htm">ISceneQuery</a>
+                    can further filter the returned scene nodes, or group them by category. DigitalRune Graphics
+                    provides several predefined scene query types:
+                    <a href="1ff2917c-a904-f22e-287c-3d9fd58a3116.htm">CameraFrustumQuery</a>,
+                    <a href="66a5f3f9-13f7-05b7-63bb-5972e6c0ce12.htm">FogQuery</a>,
+                    <a href="b7e22d31-64a8-6eb3-d0f3-1edd5084c1c2.htm">LightQuery</a>,
+                    <a href="b128b7ca-72bc-2c14-c91c-5bb56232ce21.htm">ShadowCasterQuery</a>.
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Important note" /> Important</th></tr><tr><td><p>
+                        Scene queries are cached and reused internally by the <a href="e79b2fa4-d731-66fe-ba4f-d8e58e557e32.htm">Scene</a>.
+                        That means, if <a href="37c07613-e89b-1421-2947-71255d94933b.htm">Query<span id="LSTDE2FE538_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTDE2FE538_6?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LSTDE2FE538_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTDE2FE538_7?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                        is called a second time with the same <a href="8928eaec-020b-00ed-4ad7-12f83aa1338a.htm">ISceneQuery</a>
+                        type, the same <a href="8928eaec-020b-00ed-4ad7-12f83aa1338a.htm">ISceneQuery</a>
+                        instance is returned.
+                    </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="UserDefined"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />User-defined queries</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    In complex rendering pipelines it can be useful to create a custom scene query. A new scene
+                    query type can be created by adding a new class that implements
+                    <a href="8928eaec-020b-00ed-4ad7-12f83aa1338a.htm">ISceneQuery</a>.
+                </p><p>
+                    Example: The following scene query sorts scene nodes by category and ignores unsupported
+                    scene node types.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EACABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> CustomSceneQuery : ISceneQuery
+{
+  <span class="highlight-keyword">public</span> SceneNode ReferenceNode { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">private</span> <span class="highlight-keyword">set</span>; }
+
+  <span class="highlight-keyword">public</span> List&lt;SceneNode&gt; DecalNodes { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">private</span> <span class="highlight-keyword">set</span>; }
+  <span class="highlight-keyword">public</span> List&lt;SceneNode&gt; Lights { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">private</span> <span class="highlight-keyword">set</span>; }
+  <span class="highlight-keyword">public</span> List&lt;SceneNode&gt; LensFlareNodes { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">private</span> <span class="highlight-keyword">set</span>; }
+  <span class="highlight-keyword">public</span> List&lt;SceneNode&gt; SkyNodes { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">private</span> <span class="highlight-keyword">set</span>; }
+  <span class="highlight-keyword">public</span> List&lt;SceneNode&gt; FogNodes { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">private</span> <span class="highlight-keyword">set</span>; }
+
+  <span class="highlight-comment">// All other scene nodes where IsRenderable is true (e.g. MeshNodes).</span>
+  <span class="highlight-keyword">public</span> List&lt;SceneNode&gt; RenderableNodes { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">private</span> <span class="highlight-keyword">set</span>; }
+
+  <span class="highlight-keyword">public</span> CustomSceneQuery()
+  {
+    DecalNodes = <span class="highlight-keyword">new</span> List&lt;SceneNode&gt;();
+    Lights = <span class="highlight-keyword">new</span> List&lt;SceneNode&gt;();
+    LensFlareNodes = <span class="highlight-keyword">new</span> List&lt;SceneNode&gt;();
+    SkyNodes = <span class="highlight-keyword">new</span> List&lt;SceneNode&gt;();
+    FogNodes = <span class="highlight-keyword">new</span> List&lt;SceneNode&gt;();
+    RenderableNodes = <span class="highlight-keyword">new</span> List&lt;SceneNode&gt;();
+  }
+
+
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> Reset()
+  {
+    ReferenceNode = <span class="highlight-keyword">null</span>;
+
+    DecalNodes.Clear();
+    Lights.Clear();
+    LensFlareNodes.Clear();
+    SkyNodes.Clear();
+    FogNodes.Clear();
+    RenderableNodes.Clear();
+  }
+
+
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> Set(SceneNode referenceNode, IList&lt;SceneNode&gt; nodes)
+  {
+    Reset();
+    ReferenceNode = referenceNode;
+
+    <span class="highlight-keyword">for</span> (<span class="highlight-keyword">int</span> i = <span class="highlight-number">0</span>; i &lt; nodes.Count; i++)
+    {
+      <span class="highlight-keyword">var</span> node = nodes[i];
+
+      <span class="highlight-keyword">if</span> (node <span class="highlight-keyword">is</span> DecalNode)
+        DecalNodes.Add(node);
+      <span class="highlight-keyword">else</span> <span class="highlight-keyword">if</span> (node <span class="highlight-keyword">is</span> LightNode)
+        Lights.Add(node);
+      <span class="highlight-keyword">else</span> <span class="highlight-keyword">if</span> (node <span class="highlight-keyword">is</span> LensFlareNode)
+        LensFlareNodes.Add(node);
+      <span class="highlight-keyword">else</span> <span class="highlight-keyword">if</span> (node <span class="highlight-keyword">is</span> SkyNode)
+        SkyNodes.Add(node);
+      <span class="highlight-keyword">else</span> <span class="highlight-keyword">if</span> (node <span class="highlight-keyword">is</span> FogNode)
+        FogNodes.Add(node);
+      <span class="highlight-keyword">else</span> <span class="highlight-keyword">if</span> (node.IsRenderable)
+        RenderableNodes.Add(node);
+
+      <span class="highlight-comment">// Note: Unsupported types are simply ignored.</span>
+    }
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACABAAA");</script><p>
+                    The following line shows how to use the new scene query:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">CustomSceneQuery sceneQuery = scene.Query&lt;CustomSceneQuery&gt;(referenceNode);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAABAAA");</script></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

@@ -1,0 +1,263 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Constraints, Contacts and Joints</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="a91cc376-dcbf-4b86-af7b-869fae861146" /><meta name="Description" content="This section introduces the concept of constraints." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="79a8677d-9460-4118-b27b-cef353dfbd92.htm" title="DigitalRune Physics" tocid="79a8677d-9460-4118-b27b-cef353dfbd92">DigitalRune Physics</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="6e0b9a08-b1d8-41a3-9ab4-ebf6235abe19.htm" title="Definitions and Conventions" tocid="6e0b9a08-b1d8-41a3-9ab4-ebf6235abe19">Definitions and Conventions</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="258f6a2c-e513-40c6-ab5b-848d130dc3b0.htm" title="Rigid Bodies" tocid="258f6a2c-e513-40c6-ab5b-848d130dc3b0">Rigid Bodies</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="bc000d5a-cac9-49f1-9a18-a26b17faa8e9.htm" title="The Simulation" tocid="bc000d5a-cac9-49f1-9a18-a26b17faa8e9">The Simulation</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="1e6a58ee-1cfd-4e71-8afc-afff720bb53d.htm" title="Forces, Force Effects and Force Fields" tocid="1e6a58ee-1cfd-4e71-8afc-afff720bb53d">Forces, Force Effects and Force Fields</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="576be7e1-f56c-4c5d-a0a6-22f67bde0379.htm" title="Materials" tocid="576be7e1-f56c-4c5d-a0a6-22f67bde0379">Materials</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="a91cc376-dcbf-4b86-af7b-869fae861146.htm" title="Constraints, Contacts and Joints" tocid="a91cc376-dcbf-4b86-af7b-869fae861146">Constraints, Contacts and Joints</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="dc07e943-fc57-4c45-bcc2-3dbc1f436272.htm" title="Best Practices and Recommended Literature" tocid="dc07e943-fc57-4c45-bcc2-3dbc1f436272">Best Practices and Recommended Literature</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="3e1b091b-d795-4f67-a390-67648a3e5465.htm" title="Specialized Modules" tocid="3e1b091b-d795-4f67-a390-67648a3e5465">Specialized Modules</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="81a6e7ab-bdd3-43d6-b20c-5322ff3f936a.htm" title="Advanced Topics" tocid="81a6e7ab-bdd3-43d6-b20c-5322ff3f936a">Advanced Topics</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="61ea0a18-fef3-4e46-be80-e146b5e00d80.htm" title="Articles" tocid="61ea0a18-fef3-4e46-be80-e146b5e00d80">Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c12eca22-95ea-48f4-95ee-91239af553fc.htm" title="FAQ" tocid="c12eca22-95ea-48f4-95ee-91239af553fc">FAQ</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="3734bae3-9f7f-4154-b120-4adfa4fc53e5.htm" title="Class Diagrams" tocid="3734bae3-9f7f-4154-b120-4adfa4fc53e5">Class Diagrams</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Constraints, Contacts and Joints</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This section introduces the concept of constraints.</p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#General">What are constraints?</a></li><li class="outlineSectionEntry"><a href="#Simulation">Constraints in the simulation</a></li><li class="outlineSectionEntry"><a href="#Anchors">Constraint anchors</a></li><li class="outlineSectionEntry"><a href="#Types">Constraint types</a></li><li class="outlineSectionEntry"><a href="#Contacts">Contact constraints</a></li><li class="outlineSectionEntry"><a href="#ERP">Error reduction, softness and damped springs</a></li><li class="outlineSectionEntry"><a href="#Other">Other useful constraint properties</a></li><li class="outlineSectionEntry"><a href="#Example">A ball joint example</a></li><li class="outlineSectionEntry"><a href="#seeAlsoSection">See Also</a></li></ul></div><div class="collapsibleAreaRegion" id="General"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />What are constraints?</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    A constraint is a simulation rule that limits the movement of two bodies
+                    relative to each other. In other words, a constraint restricts the degrees
+                    of movement of a body relative to another body. Here are a few examples:
+                </p><p><em>
+                        Contact constraints ensure that bodies
+                        cannot move through each other. The constraints also make sure that
+                        the velocity of colliding bodies is partially reflected to create a
+                        bouncing behavior. They also create friction if bodies slide on each other.
+                    </em></p><p><em>
+                        A ball-and-socket joint is a constraint that connects to bodies, like a joint
+                        of the human body that connects two limbs.
+                    </em></p><p><em>
+                        A hinge joint can connect a door to a wall to create a swinging
+                        door.
+                    </em></p><p><em>A revolute joint can connect a wheel to a car.</em></p><p><em>
+                        An angular velocity motor can control a wheel so that it
+                        rotates with a given constant angular velocity.
+                    </em></p></div><div class="collapsibleAreaRegion" id="Simulation"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Constraints in the simulation</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    The namespace
+                    <a href="01e14d20-f221-814b-a84d-6cfaa8e46f1a.htm">DigitalRune.Physics.Constraints</a>
+                    (see also <a href="f154d656-3ad3-4a96-b013-546a85c73e0c.htm">Class Diagram of Namespace DigitalRune.Physics.Constraints</a>)
+                    contains several constraint types that can be added to the
+                    <a href="f7371ef2-c110-bcf1-961e-5f0d4bfcd190.htm">Constraints</a>
+                    collection of a
+                    <a href="34c3f9ce-54ab-b65e-7652-aaf491c08633.htm">Simulation</a>.
+                    The simulation will check all constraints in each simulation time step and will
+                    apply forces to the rigid bodies, so that the constraints are satisfied.
+                    If a constraint is violated (e.g. a rigid body penetrates another rigid body
+                    therefore violating a contact constraint), the simulation will add
+                    velocities or apply position corrections, so that the constraint error is
+                    removed in the next few simulation steps.
+                </p><p>
+                    All constraints are two-body constraints - they connect exactly two bodies.
+                    However, it is often necessary to constrain a single body relative to world space.
+                    For example, it might be necessary to fix a body in the sky, or to hold a
+                    body at the current mouse cursor position. In these cases the special rigid body
+                    <a href="fc8770df-b425-dbe9-bdb5-7f1570f1d9cd.htm">Simulation<span id="LST2C67C673_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2C67C673_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>World</a>
+                    can be used. <a href="fc8770df-b425-dbe9-bdb5-7f1570f1d9cd.htm">World</a>
+                    is an abstract rigid body that can be set as the second body in a constraint.
+                </p></div><div class="collapsibleAreaRegion" id="Anchors"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Constraint anchors</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    A ball-and-socket joint connects one point of body i with one point of body j.
+                    The body points that are connected are called the <em>constraint anchor points</em>
+                    or, short, <em>constraint anchors</em>.
+                </p><div class="mediaNear"><img alt="Constraint Anchors" src="../media/ConstraintAnchors.jpg" /><div class="caption"><span class="captionLead">Figure:
+						</span>Illustration of two bodies and constraint anchors.</div></div><p>
+                    Constraint anchors are also called <em>attachment points</em>.
+                    Each constraint anchor is fixed on the rigid body. And in general, the anchor
+                    points are not in the origin of the rigid body nor in the center of mass.
+                    A constraint anchor does not only define a position, it defines a coordinate
+                    system with three <em>constraint axes</em>.
+                    The constraint axes are required for constraints that restrict movement. For
+                    example a hinge constraint will make sure that the constraint
+                    anchor points are touching and that one constraint axis - the <em>hinge axis</em> -
+                    is always aligned. More complex constraints allow to restrict translations or
+                    rotations around multiple constraint axes.
+                </p><p>
+                    Many constraint classes have properties that
+                    allow to define the constraint anchor using the type
+                    <a href="7c0b7cea-0ddc-0f21-0412-731af186b1c8.htm">Pose</a>.
+                    The pose defines the position of the anchor point and the orientation of the
+                    constraint axes relative to the local space of the rigid body.
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                        Specifying the correct orientation for the constraint anchor pose is not
+                        always easy. It is helpful to remember: The orientation of the constraint
+                        anchor pose is 3 x 3 rotation matrix, and the columns of this matrix are identical
+                        to the constraint axis vectors in local space of the body! The first column
+                        of the orientation matrix is the normalized direction of the constraint x
+                        axis. The second column is the normalized direction of the constraint y axis.
+                        The third column is the normalized direction of the constraint z axis.
+                        (All relative to the local space of the body.)
+                    </p></td></tr></table></div><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                        It is allowed to define an anchor point that lies outside the shape of the rigid body.
+                    </p></td></tr></table></div><p>
+                    A few practical examples for constraint anchors:
+                </p><p><em>
+                        For a contact constraint the constraint anchor points are the contact points
+                        found by the collision detection. The constraint anchor axes define the
+                        contact normal direction. The other two axes define two surface tangent
+                        directions.
+                    </em></p><p><em>
+                        A ball-and-socket joint makes sure that the constraint anchor points are
+                        always at the same world space position. The constraint anchor axes are
+                        irrelevant because the ball-and-socket joint does not restrict the rotational
+                        movement.
+                    </em></p><p><em>
+                        A hinge or revolute joint makes sure that the constraint anchor points touch
+                        and that the constraint x axes of both bodies are aligned. The hinge allows
+                        rotations around the constraint x axis and forbids any movement about the
+                        other constraint axes.
+                    </em></p><p><em>
+                        A point-on-plane constraint defines a plane that goes through the constraint
+                        anchor of the first body. The constraint x axis and the constraint y axis
+                        on the first body defines the plane direction. The constraint z axis defines
+                        the plane normal. The point-on-plane constraint makes sure that the constraint
+                        anchor point of the second body is always in the plane that is fixed on the
+                        first body. (The constraint axes on the second body are irrelevant.)
+                    </em></p><p><em>
+                        ...
+                    </em></p></div><div class="collapsibleAreaRegion" id="Types"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Constraint types</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    Constraints can be categorized by the number of degrees of freedom (DOFs) they
+                    remove. An unconstrained rigid body has 6 DOFs - 3 translational DOFs and
+                    3 rotational DOFs.
+                </p><div class="tableSection"><table><tr><th><p>Translational DOFs</p></th><th><p>Rotational DOFs</p></th><th><p>Constraint Type</p></th></tr><tr><td><p>3</p></td><td><p>3</p></td><td><p>unconstrained</p></td></tr><tr><td><p>3</p></td><td><p>2</p></td><td><p>-</p></td></tr><tr><td><p>3</p></td><td><p>1</p></td><td><p>-</p></td></tr><tr><td><p>3</p></td><td><p>0</p></td><td><p><a href="16107d6f-654a-734f-c41a-6804f2dacb92.htm">NoRotationConstraint</a></p></td></tr><tr><td><p>2</p></td><td><p>3</p></td><td><p><a href="de5ff630-3b9a-5197-31ee-4447d8b77dbc.htm">PointOnPlaneConstraint</a></p></td></tr><tr><td><p>2</p></td><td><p>2</p></td><td><p>-</p></td></tr><tr><td><p>2</p></td><td><p>1</p></td><td><p>-</p></td></tr><tr><td><p>2</p></td><td><p>0</p></td><td><p>-</p></td></tr><tr><td><p>1</p></td><td><p>3</p></td><td><p><a href="aecd4f5e-d142-c00f-c7a6-d5a85b955bce.htm">PointOnLineConstraint</a></p></td></tr><tr><td><p>1</p></td><td><p>2</p></td><td><p>-</p></td></tr><tr><td><p>1</p></td><td><p>1</p></td><td><p><a href="e8fbead5-915d-fba0-c2dd-7c2e1264c5ba.htm">CylindricalJoint</a></p></td></tr><tr><td><p>1</p></td><td><p>0</p></td><td><p><a href="709cdce7-8ed2-5e18-0f37-26333d53eb41.htm">PrismaticJoint</a></p></td></tr><tr><td><p>0</p></td><td><p>3</p></td><td><p><a href="aad43c5b-d890-ba55-de1a-72097b8833cf.htm">BallJoint</a></p></td></tr><tr><td><p>0</p></td><td><p>2</p></td><td><p><a href="0a76b2a5-632c-0771-95e0-702d704cae17.htm">Hinge2Joint</a>,
+                                <a href="836065b3-ad5c-e1a6-8701-a2756af4d965.htm">UniversalJoint</a></p></td></tr><tr><td><p>0</p></td><td><p>1</p></td><td><p><a href="e7140d81-16d3-226a-e40e-e818ca933777.htm">HingeJoint</a></p></td></tr><tr><td><p>0</p></td><td><p>0</p></td><td><p><a href="ef19bce4-7573-8679-fa32-bb9cc68e3819.htm">FixedJoint</a></p></td></tr></table></div><h4 class="subHeading" id="Limits">Limits</h4><div class="subsection"><p>
+                            Limits can be added to bodies that are already constrained. Limits restrict
+                            the range of motion for certain constraint axes. For example, a
+                            <a href="b9ecaf45-efa6-b87d-b7ca-02614ec83186.htm">TwistSwingLimit</a>
+                            can be combined with a ball joint to create a ball-and-socket joint with limited
+                            rotation angles.
+                        </p><p><a href="2139aca6-68a7-5f4a-884f-40d21919c73d.htm">PlaneLimit</a>
+                            forces a point on one body to be in front of a plane that is fixed on the other
+                            body. For example, 4 plane limits can be added to a ball joint to create a
+                            ball joint where the allowed swing is restricted by a 4-sided pyramid formed
+                            by the planes.
+                        </p><p>
+                            The <a href="b653474d-b9b9-cd61-10aa-e932266ccaa0.htm">DistanceLimit</a>
+                            enforces a certain distance of the constraint anchor points, as if the constraint
+                            anchor points were connected with a rope or a rod.
+                        </p><p><a href="29f7d46a-3345-aeb6-c0ba-7e034ae267ef.htm">LinearLimit</a>
+                            and
+                            <a href="f0c57aca-7f8c-33ba-49bb-c08079189061.htm">AngularLimit</a>
+                            are two very general limits. The first can be configured to restrict the 3
+                            translational DOFs individually. The second can be configured to restrict the
+                            3 angular DOFs individually. These configurable limits can be used to define
+                            certain limits or to create new constraint types. The existing joint types
+                            (fixed, ball, hinge, universal, point-on-line, etc.) can all be modeled
+                            with these two constraint classes. They can also be used to create joints for
+                            the gaps in the table above.
+                        </p></div><h4 class="subHeading" id="Motors">Motors</h4><div class="subsection"><p>
+                            Motors can also be modeled with constraints. Constraint motors come in
+                            two flavors:
+                        </p><ul><li>
+                                Position and orientation motors
+                                (see <a href="d5c31c7c-5e24-e340-03cb-5f82a971908d.htm">PositionMotor</a>,
+                                <a href="04fa0d84-48dc-eae0-818a-43304cab9d66.htm">EulerMotor</a>,
+                                <a href="ff7458d4-5cdb-b858-a5cb-63825559908a.htm">QuaternionMotor</a>)
+                                drive the constraint bodies to a target position or orientation. They can be
+                                used to model a spring that pushes or rotates the bodies.
+                            </li><li>
+                                Velocity motors
+                                (see <a href="428cc137-3fef-9fa1-8acc-93d82dfcaebf.htm">LinearVelocityMotor</a>,
+                                <a href="4c27a13c-4e6b-44ba-9d47-3ae96656155b.htm">AngularVelocityMotor</a>)
+                                accelerate or decelerate the bodies until their relative speed is equal to
+                                a target velocity.
+                            </li></ul></div><h4 class="subHeading" id="Combining">Combining multiple constraints</h4><div class="subsection"><p>
+                            Constraints can be combined. It is allowed to add multiple constraints between
+                            two bodies. For example, a ball joint can be combined with a twist-swing-limit
+                            to limit the rotation angles. Additionally a rotational motor can be added to model
+                            a spring that turns the bodies to a certain target angle. Or, a hinge
+                            joint can be used to connect a wheel to a car and a angular velocity motor
+                            can be added to rotate the wheel.
+                        </p><p>
+                            When combining constraints, conflicting constraints should be avoided. For
+                            example, a velocity motor should not drive a constraint beyond a limit.
+                        </p></div></div><div class="collapsibleAreaRegion" id="Contacts"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Contact constraints</span></div><div id="ID5RBSection" class="collapsibleSection"><p><a href="f9c58aa7-5680-78d1-ed07-2449db9b8054.htm">ContactConstraint</a>s
+                    are special constraints. They can only be created by the simulation and they
+                    are automatically created for all colliding bodies.
+                    Specifically, one
+                    <a href="f9c58aa7-5680-78d1-ed07-2449db9b8054.htm">ContactConstraint</a>
+                    is created for each contact that is found by the collision detection.
+                    The contact constraints model non-penetration, friction and bounce.
+                    The currently active contact constraints can be retrieved from the
+                    <a href="3ca75980-e5d6-3143-c089-f89457a01880.htm">Simulation<span id="LST2C67C673_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2C67C673_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>ContactConstraints</a>
+                    collection. (Contact constraints are not created for contacts when the collision response is disabled. See
+                    <a href="a8933d84-3eee-430c-a472-4fe0db5c1ecd.htm">Collision Response Filter</a>.)
+                </p><p>
+                    The property
+                    <a href="b6097895-72eb-09a4-77d3-b371e9fbb6e9.htm">Contact<span id="LST2C67C673_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2C67C673_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>UserData</a>
+                    is used by the simulation to store references to
+                    <a href="f9c58aa7-5680-78d1-ed07-2449db9b8054.htm">ContactConstraint</a>
+                    instances. Therefore, the <a href="b6097895-72eb-09a4-77d3-b371e9fbb6e9.htm">Contact<span id="LST2C67C673_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST2C67C673_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>UserData</a>
+                    property of contacts between rigid bodies must not be changed.
+                    In other words, the relationship between
+                    <a href="bfe2ad9f-ea88-a6a7-0e57-b9f95c88edb5.htm">Contact</a>s
+                    and
+                    <a href="f9c58aa7-5680-78d1-ed07-2449db9b8054.htm">ContactConstraint</a>s
+                    is
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID4EAAAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID4EAAAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID4EAAAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID4EAAAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">myContactConstraint.Contact == myContact
+myContact.UserData == myContactConstraint</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID4EAAAEAAA");</script></div><div class="collapsibleAreaRegion" id="ERP"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID6RB')" onkeypress="SectionExpandCollapse_CheckKey('ID6RB', event)" tabindex="0"><img id="ID6RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Error reduction, softness and damped springs</span></div><div id="ID6RBSection" class="collapsibleSection"><p>
+                    Most constraints have the two parameters called <strong>ErrorReduction</strong>
+                    and <strong>Softness</strong>. Per default, the error reduction parameter is
+                    as small value like 0.2. It defines how fast a constraint error is reduced.
+                    A value of 0.2 means that 20% of the error is corrected in each simulation step.
+                    If the error reduction parameter is set to 0, the simulation will still enforce the constraints,
+                    but any errors that occur will not be removed.
+                </p><p>
+                    The softness parameter defines how much constraint violation is allowed. A
+                    softness of 0 means that no constraint violation is allowed. This is the default
+                    for most constraints. A small positive softness value, like  0.001, makes a
+                    constraint "soft". For example, if a softness is set for a ball-and-socked joint
+                    the joint will appear more like a spring connecting the two bodies.
+                </p><p>
+                    Actually, it is possible to convert error reduction and softness to a spring
+                    constant and damping constant of a damped spring. The class
+                    <a href="132337d5-e09b-5047-90e0-41b358fb1a72.htm">ConstraintHelper</a>
+                    contains methods to convert <strong>ErrorReduction</strong> and <strong>Softness</strong>
+                    to damped spring parameters and back.
+                </p></div><div class="collapsibleAreaRegion" id="Other"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID7RB')" onkeypress="SectionExpandCollapse_CheckKey('ID7RB', event)" tabindex="0"><img id="ID7RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Other useful constraint properties</span></div><div id="ID7RBSection" class="collapsibleSection"><p>
+                    Each constraint has a property
+                    <a href="549d2021-5b15-a02d-f790-971a2c06378d.htm">CollisionEnabled</a>.
+                    This can be used to disable the collision detection between the two constrained
+                    bodies. If this flag is set to false, it overrides the general collision detection
+                    settings and disables collisions between the given pair of bodies.
+                </p><p>
+                    Constraints have the properties
+                    <a href="a28f0543-e221-b754-3dd9-38a2b2cd9b7d.htm">LinearConstraintImpulse</a>
+                    and
+                    <a href="d939e599-a901-2952-7dae-fb91915f960d.htm">AngularConstraintImpulse</a>
+                    that allow to read the constraint impulses that were applied in the last
+                    simulation step. This can be used, for example, to check whether a joint should "break".
+                    If the forces acting on the joint exceed a certain limit the constraints could be
+                    removed from the simulation.
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                        Remember: <em>Impulse = Force ∙ deltaTime</em>.
+                    </p><p>
+                        The simulation actually applies constraint impulses to satisfy constraint -
+                        and not constraint forces. To convert between forces and impulses just
+                        multiply with or divide by the time step size.
+                    </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="Example"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID8RB')" onkeypress="SectionExpandCollapse_CheckKey('ID8RB', event)" tabindex="0"><img id="ID8RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />A ball joint example</span></div><div id="ID8RBSection" class="collapsibleSection"><p>
+                    Here is a small example that shows how to create a ball-and-socket joint
+                    that connects two bodies.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID4EABABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID4EABABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID4EABABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID4EABABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Create a sphere shape with a radius of 0.5f.</span>
+Shape shape = <span class="highlight-keyword">new</span> SphereShape(<span class="highlight-number">0.5</span>f);
+
+<span class="highlight-comment">// Create the first rigid body and add it to the simulation.</span>
+RigidBody sphere0 = <span class="highlight-keyword">new</span> RigidBody(shape)
+{
+  Pose = <span class="highlight-keyword">new</span> Pose(<span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">-2</span>, <span class="highlight-number">2</span>, <span class="highlight-number">0</span>)),
+};
+mySimulation.RigidBodies.Add(sphere0);
+
+<span class="highlight-comment">// Create the second rigid body and add it to the simulation.</span>
+RigidBody sphere1 = <span class="highlight-keyword">new</span> RigidBody(shape)
+{
+  Pose = <span class="highlight-keyword">new</span> Pose(<span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">2</span>, <span class="highlight-number">2</span>, <span class="highlight-number">0</span>)),
+};
+mySimulation.RigidBodies.Add(sphere1);
+
+<span class="highlight-comment">// Create a ball-and-socket joint that connects the two bodies.</span>
+<span class="highlight-comment">// The attachment points are on the surface of the spheres.</span>
+BallJoint joint = <span class="highlight-keyword">new</span> BallJoint
+{
+  BodyA = sphere0,
+  BodyB = sphere1,
+  AnchorPositionALocal = <span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">0.5</span>f, <span class="highlight-number">0</span>, <span class="highlight-number">0</span>),
+  AnchorPositionBLocal = <span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">-0.5</span>f, <span class="highlight-number">0</span>, <span class="highlight-number">0</span>),
+};
+<span class="highlight-comment">// Add constraint to simulation.</span>
+mySimulation.Constraints.Add(joint);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID4EABABAAA");</script><p>
+                    In this example the constraint is not satisfied at the initial positions
+                    of the rigid bodies (the bodies are too far apart, the anchor points do not
+                    touch). The simulation will automatically
+                    correct this constraint violation in the next simulation steps.
+                    Nevertheless, it is recommended to initialize rigid bodies in a position where
+                    the constraints are satisfied.
+                </p></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID9RB')" onkeypress="SectionExpandCollapse_CheckKey('ID9RB', event)" tabindex="0"><img id="ID9RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID9RBSection" class="collapsibleSection"><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="01e14d20-f221-814b-a84d-6cfaa8e46f1a.htm">DigitalRune.Physics.Constraints</a></div><h4 class="subHeading">Other Resources</h4><div class="seeAlsoStyle"><a href="f154d656-3ad3-4a96-b013-546a85c73e0c.htm">Class Diagram of Namespace DigitalRune.Physics.Constraints</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

@@ -1,0 +1,248 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>IGeometricObject Interface</title><meta name="Language" content="en-us" /><meta name="System.Keywords" content="IGeometricObject interface" /><meta name="System.Keywords" content="DigitalRune.Geometry.IGeometricObject interface" /><meta name="System.Keywords" content="IGeometricObject interface, about IGeometricObject interface" /><meta name="Microsoft.Help.F1" content="DigitalRune.Geometry.IGeometricObject" /><meta name="Microsoft.Help.Id" content="T:DigitalRune.Geometry.IGeometricObject" /><meta name="Description" content="Defines an object that has a and a (position and orientation)." /><meta name="Microsoft.Help.ContentType" content="Reference" /><meta name="BrandingAware" content="true" /><meta name="container" content="DigitalRune.Geometry" /><meta name="file" content="14f1e616-5c53-aac7-dd8d-1a21f76ea472" /><meta name="guid" content="14f1e616-5c53-aac7-dd8d-1a21f76ea472" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d75eb659-6335-53f6-af7a-81814a21ab7f.htm" title="Class Library Reference" tocid="d75eb659-6335-53f6-af7a-81814a21ab7f">Class Library Reference</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="e827b4ea-a130-a570-6c8a-cf52028464af.htm" title="DigitalRune.Geometry" tocid="e827b4ea-a130-a570-6c8a-cf52028464af">DigitalRune.Geometry</a></div><div class="toclevel1 current" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="14f1e616-5c53-aac7-dd8d-1a21f76ea472.htm" title="IGeometricObject Interface" tocid="14f1e616-5c53-aac7-dd8d-1a21f76ea472">IGeometricObject Interface</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="2e89596e-ea1e-343c-8db8-783a1fd149c8.htm" title="IGeometricObject Methods" tocid="2e89596e-ea1e-343c-8db8-783a1fd149c8">IGeometricObject Methods</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="73110f80-196d-f6e4-deec-0b4d0e2e0b87.htm" title="IGeometricObject Properties" tocid="73110f80-196d-f6e4-deec-0b4d0e2e0b87">IGeometricObject Properties</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="34c8d3e7-be09-b583-eda3-84a905cd4531.htm" title="IGeometricObject Events" tocid="34c8d3e7-be09-b583-eda3-84a905cd4531">IGeometricObject Events</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">IGeometricObject Interface</td></tr></table><span class="introStyle"></span><div class="summary">
+            Defines an object that has a <a href="65ef7f15-2c47-4408-595a-b32ce7b85bd9.htm">Shape</a> and a <a href="e010da76-289c-e617-97a7-53facea954ab.htm">Pose</a> (position and 
+            orientation).
+            </div><p> </p><strong>Namespace:</strong> <a href="e827b4ea-a130-a570-6c8a-cf52028464af.htm">DigitalRune.Geometry</a><br /><strong>Assembly:</strong> DigitalRune.Geometry (in DigitalRune.Geometry.dll) Version: 1.18.0.0 (1.18.2.14427)<div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Syntax</span></div><div id="ID1RBSection" class="collapsibleSection"><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EDCA_tab1" class="codeSnippetContainerTab"><a href="#" onclick="javascript:ChangeTab('ID0EDCA','cs','1','4');return false;">C#</a></div><div id="ID0EDCA_tab2" class="codeSnippetContainerTab"><a href="#" onclick="javascript:ChangeTab('ID0EDCA','vb','2','4');return false;">VB</a></div><div id="ID0EDCA_tab3" class="codeSnippetContainerTab"><a href="#" onclick="javascript:ChangeTab('ID0EDCA','cpp','3','4');return false;">C++</a></div><div id="ID0EDCA_tab4" class="codeSnippetContainerTab"><a href="#" onclick="javascript:ChangeTab('ID0EDCA','fs','4','4');return false;">F#</a></div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EDCA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EDCA');return false;" title="Copy">Copy</a></div></div><div id="ID0EDCA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="identifier">IGeometricObject</span></pre></div><div id="ID0EDCA_code_Div2" class="codeSnippetContainerCode" style="display: none"><pre xml:space="preserve"><span class="keyword">Public</span> <span class="keyword">Interface</span> <span class="identifier">IGeometricObject</span></pre></div><div id="ID0EDCA_code_Div3" class="codeSnippetContainerCode" style="display: none"><pre xml:space="preserve"><span class="keyword">public</span> <span class="keyword">interface class</span> <span class="identifier">IGeometricObject</span></pre></div><div id="ID0EDCA_code_Div4" class="codeSnippetContainerCode" style="display: none"><pre xml:space="preserve"><span class="keyword">type</span> <span class="identifier">IGeometricObject</span> =  <span class="keyword">interface</span> <span class="keyword">end</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EDCA");</script></div><p>The <span class="selflink">IGeometricObject</span> type exposes the following members.</p><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Methods</span></div><div id="ID2RBSection" class="collapsibleSection"><table id="memberList" class="members"><tr><th class="iconColumn">
+								 
+							</th><th>Name</th><th>Description</th></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="9b6b2a23-878e-aaaa-aba8-176477e7833e.htm">Clone</a></td><td><div class="summary">
+            Creates a new <span class="selflink">IGeometricObject</span> that is a clone (deep copy) of the current
+            instance.
+            </div></td></tr></table><a href="#PageHeader">Top</a></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Properties</span></div><div id="ID3RBSection" class="collapsibleSection"><table id="memberList" class="members"><tr><th class="iconColumn">
+								 
+							</th><th>Name</th><th>Description</th></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="224a4ea9-b57e-1d22-6a10-037e5ffa64c8.htm">Aabb</a></td><td><div class="summary">
+            Gets the axis-aligned bounding box (AABB).
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="e010da76-289c-e617-97a7-53facea954ab.htm">Pose</a></td><td><div class="summary">
+            Gets the pose (position and orientation).
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="00325ee3-7716-7b3c-457f-54879aa1070e.htm">Scale</a></td><td><div class="summary">
+            Gets the scale.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="65ef7f15-2c47-4408-595a-b32ce7b85bd9.htm">Shape</a></td><td><div class="summary">
+            Gets the shape.
+            </div></td></tr></table><a href="#PageHeader">Top</a></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Events</span></div><div id="ID4RBSection" class="collapsibleSection"><table id="memberList" class="members"><tr><th class="iconColumn">
+								 
+							</th><th>Name</th><th>Description</th></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubevent.gif" alt="Public event" title="Public event" /></td><td><a href="a65f8dd1-1fc2-5e04-3828-a20ed65f39ed.htm">PoseChanged</a></td><td><div class="summary">
+            Occurs when the <a href="e010da76-289c-e617-97a7-53facea954ab.htm">Pose</a> was changed.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubevent.gif" alt="Public event" title="Public event" /></td><td><a href="504951ee-9f7b-749c-b06d-4ae839cf7c09.htm">ShapeChanged</a></td><td><div class="summary">
+            Occurs when the <a href="65ef7f15-2c47-4408-595a-b32ce7b85bd9.htm">Shape</a> or <a href="00325ee3-7716-7b3c-457f-54879aa1070e.htm">Scale</a> was changed.
+            </div></td></tr></table><a href="#PageHeader">Top</a></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Remarks</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+            Classes that need to implement <span class="selflink">IGeometricObject</span> can derive from 
+            <a href="a5223f58-7fb7-eb2c-2039-e1ef4444a19b.htm">GeometricObject</a>.
+            </p><p><strong>Important:</strong> An <span class="selflink">IGeometricObject</span> instance registers event 
+            handlers for the <a href="79484742-aa96-4253-f2b0-91b8b78b9bab.htm">Changed</a> event of the contained 
+            <a href="65ef7f15-2c47-4408-595a-b32ce7b85bd9.htm">Shape</a>. Therefore, a <a href="efff4741-4f03-f106-4b42-5892eb21377e.htm">Shape</a> will have an indirect reference
+            to the <span class="selflink">IGeometricObject</span>. This is no problem if the geometric object exclusively
+            owns the shape. However, this could lead to problems ("life extension bugs" a.k.a. "memory
+            leaks") when multiple geometric objects share the same shape: One geometric object is no
+            longer used but it cannot be collected by the garbage collector because the shape still holds
+            a reference to the object.
+            </p><p>
+            Therefore, when <a href="efff4741-4f03-f106-4b42-5892eb21377e.htm">Shape</a>s are shared between multiple 
+            <span class="selflink">IGeometricObject</span>s: Always set the property <a href="65ef7f15-2c47-4408-595a-b32ce7b85bd9.htm">Shape</a> to 
+            <a href="0897835b-dca2-734d-d71a-eb21dd884aa9.htm">Empty</a> when the <span class="selflink">IGeometricObject</span> 
+            is no longer used. <a href="0897835b-dca2-734d-d71a-eb21dd884aa9.htm">Empty</a> is a special 
+            immutable shape that never raises any <a href="79484742-aa96-4253-f2b0-91b8b78b9bab.htm">Changed</a> events. Setting 
+            <a href="65ef7f15-2c47-4408-595a-b32ce7b85bd9.htm">Shape</a> to <a href="0897835b-dca2-734d-d71a-eb21dd884aa9.htm">Empty</a> ensures that the internal event 
+            handlers are unregistered and the object can be garbage-collected properly.
+            </p><p><strong>Cloning:</strong> Geometric objects are cloneable. The method <a href="9b6b2a23-878e-aaaa-aba8-176477e7833e.htm">Clone<span id="LST3BFCEA83_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3BFCEA83_0?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a> 
+            creates a deep copy of the geometric object - except when documented otherwise (see 
+            description of implementing classes).
+            </p><p><strong>Notes to Inheritors:</strong> The support for cloning of geometric objects is built-in
+            in DigitalRune Geometry because several applications built upon the library rely on the 
+            cloning mechanism. The DigitalRune Geometry library internally does not use the cloning 
+            mechanism. So, if you need to write your own type that implements 
+            <span class="selflink">IGeometricObject</span> and your own application does not require to clone geometric 
+            objects, you can simply omit the implementation of <a href="9b6b2a23-878e-aaaa-aba8-176477e7833e.htm">Clone<span id="LST3BFCEA83_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST3BFCEA83_1?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a> - just throw a 
+            <a href="http://msdn2.microsoft.com/en-us/library/6byb74h9" target="_blank">NotImplementedException</a>.
+            </p></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID6RB')" onkeypress="SectionExpandCollapse_CheckKey('ID6RB', event)" tabindex="0"><img id="ID6RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Examples</span></div><div id="ID6RBSection" class="collapsibleSection">
+            The following is basically the implementation of <a href="a5223f58-7fb7-eb2c-2039-e1ef4444a19b.htm">GeometricObject</a>. The source 
+            code is shown here to illustrate how the interface <span class="selflink">IGeometricObject</span> should be 
+            implemented.
+            <div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAABA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAABA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAABA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAABA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> DigitalRune.Geometry.Shapes;
+<span class="highlight-keyword">using</span> DigitalRune.Mathematics.Algebra;
+
+
+<span class="highlight-keyword">namespace</span> DigitalRune.Geometry
+{
+  [Serializable]
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> GeometricObject : IGeometricObject
+  {
+    <span class="highlight-comment">//--------------------------------------------------------------</span>
+    <span class="highlight-preprocessor">#region</span> Properties &amp; Events
+    <span class="highlight-comment">//--------------------------------------------------------------</span>
+
+    <span class="highlight-keyword">public</span> Aabb Aabb
+    {
+      <span class="highlight-keyword">get</span>
+      {
+        <span class="highlight-keyword">if</span> (_aabbIsValid == <span class="highlight-keyword">false</span>)
+        {
+          _aabb = Shape.GetAabb(Scale, Pose);
+          _aabbIsValid = <span class="highlight-keyword">true</span>;
+        }
+
+        <span class="highlight-keyword">return</span> _aabb;
+      }
+    }
+    <span class="highlight-keyword">private</span> Aabb _aabb;
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">bool</span> _aabbIsValid;
+
+
+    <span class="highlight-keyword">public</span> Pose Pose
+    {
+      <span class="highlight-keyword">get</span> 
+      { 
+        <span class="highlight-keyword">return</span> _pose; 
+      }
+      <span class="highlight-keyword">set</span>
+      {
+        <span class="highlight-keyword">if</span> (_pose != <span class="highlight-keyword">value</span>)
+        {
+          _pose = <span class="highlight-keyword">value</span>;
+          OnPoseChanged(EventArgs.Empty);
+        }
+      }
+    }
+    <span class="highlight-keyword">private</span> Pose _pose;
+
+
+    <span class="highlight-keyword">public</span> Shape Shape
+    {
+      <span class="highlight-keyword">get</span> 
+      {   
+        <span class="highlight-keyword">return</span> _shape; 
+      }
+      <span class="highlight-keyword">set</span>
+      {
+        <span class="highlight-keyword">if</span> (<span class="highlight-keyword">value</span> == <span class="highlight-keyword">null</span>)
+          <span class="highlight-keyword">throw</span> <span class="highlight-keyword">new</span> ArgumentNullException(<span class="highlight-literal">"value"</span>);
+
+        <span class="highlight-keyword">if</span> (_shape != <span class="highlight-keyword">null</span>)
+          _shape.Changed -= OnShapeChanged;
+
+        _shape = <span class="highlight-keyword">value</span>;
+        _shape.Changed += OnShapeChanged;
+        OnShapeChanged(ShapeChangedEventArgs.Empty);
+      }
+    }
+    <span class="highlight-keyword">private</span> Shape _shape;
+
+
+    <span class="highlight-keyword">public</span> Vector3F Scale
+    {
+      <span class="highlight-keyword">get</span> 
+      {
+        <span class="highlight-keyword">return</span> _scale; 
+      }
+      <span class="highlight-keyword">set</span>
+      {
+        <span class="highlight-keyword">if</span> (_scale != <span class="highlight-keyword">value</span>)
+        {
+          _scale = <span class="highlight-keyword">value</span>;
+          OnShapeChanged(ShapeChangedEventArgs.Empty);
+        }
+      }
+    }
+    <span class="highlight-keyword">private</span> Vector3F _scale;
+
+
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">event</span> EventHandler&lt;EventArgs&gt; PoseChanged;
+
+
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">event</span> EventHandler&lt;ShapeChangedEventArgs&gt; ShapeChanged;
+    <span class="highlight-preprocessor">#endregion</span>
+
+
+    <span class="highlight-comment">//--------------------------------------------------------------</span>
+    <span class="highlight-preprocessor">#region</span> Creation &amp; Cleanup
+    <span class="highlight-comment">//--------------------------------------------------------------</span>
+
+    <span class="highlight-keyword">public</span> GeometricObject()
+    {
+      _shape = Shape.Empty;
+      _scale = Vector3F.One;
+      _pose = Pose.Identity;
+    }
+    <span class="highlight-preprocessor">#endregion</span>
+
+
+    <span class="highlight-comment">//--------------------------------------------------------------</span>
+    <span class="highlight-preprocessor">#region</span> Methods
+    <span class="highlight-comment">//--------------------------------------------------------------</span>
+
+    IGeometricObject IGeometricObject.Clone()
+    {
+      <span class="highlight-keyword">return</span> Clone();
+    } 
+
+
+    <span class="highlight-keyword">public</span> GeometricObject Clone()
+    {
+      GeometricObject clone = CreateInstance();
+      clone.CloneCore(<span class="highlight-keyword">this</span>);
+      <span class="highlight-keyword">return</span> clone;
+    }
+
+
+    <span class="highlight-keyword">private</span> GeometricObject CreateInstance()
+    {
+      GeometricObject newInstance = CreateInstanceCore();
+      <span class="highlight-keyword">if</span> (GetType() != newInstance.GetType())
+      {
+        <span class="highlight-keyword">string</span> message = String.Format(
+          <span class="highlight-literal">"Cannot clone shape. The derived class {0} does not implement CreateInstanceCore()."</span>,
+          GetType());
+        <span class="highlight-keyword">throw</span> <span class="highlight-keyword">new</span> InvalidOperationException(message);
+      }
+
+      <span class="highlight-keyword">return</span> newInstance;
+    }
+
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">virtual</span> GeometricObject CreateInstanceCore()
+    {
+      <span class="highlight-keyword">return</span> <span class="highlight-keyword">new</span> GeometricObject();
+    }
+
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">virtual</span> <span class="highlight-keyword">void</span> CloneCore(GeometricObject sourceShape)
+    {
+      Pose = sourceShape.Pose;
+      Shape = sourceShape.Shape.Clone();
+      Scale = sourceShape.Scale;
+    }
+
+
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> OnShapeChanged(<span class="highlight-keyword">object</span> sender, ShapeChangedEventArgs eventArgs)
+    {
+      OnShapeChanged(eventArgs);
+    }
+
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">virtual</span> <span class="highlight-keyword">void</span> OnPoseChanged(EventArgs eventArgs)
+    {
+      _aabbIsValid = <span class="highlight-keyword">false</span>;
+
+      <span class="highlight-keyword">var</span> handler = PoseChanged;
+
+      <span class="highlight-keyword">if</span> (handler != <span class="highlight-keyword">null</span>)
+        handler(<span class="highlight-keyword">this</span>, eventArgs);
+    }
+
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">virtual</span> <span class="highlight-keyword">void</span> OnShapeChanged(ShapeChangedEventArgs eventArgs)
+    {
+      _aabbIsValid = <span class="highlight-keyword">false</span>;
+
+      <span class="highlight-keyword">var</span> handler = ShapeChanged;
+
+      <span class="highlight-keyword">if</span> (handler != <span class="highlight-keyword">null</span>)
+        handler(<span class="highlight-keyword">this</span>, eventArgs);
+    }
+    <span class="highlight-preprocessor">#endregion</span>
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAABA");</script></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID7RB')" onkeypress="SectionExpandCollapse_CheckKey('ID7RB', event)" tabindex="0"><img id="ID7RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID7RBSection" class="collapsibleSection"><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="e827b4ea-a130-a570-6c8a-cf52028464af.htm">DigitalRune.Geometry Namespace</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script> </div></body></html>

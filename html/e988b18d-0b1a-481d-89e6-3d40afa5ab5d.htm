@@ -1,0 +1,157 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Skeleton Mapping</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="e988b18d-0b1a-481d-89e6-3d40afa5ab5d" /><meta name="Description" content="DigitalRune Animation supports skeleton mapping which can be used to transfer an animation from one skeleton to another skeleton with a different structure." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="c2892dfd-491e-4e78-83d1-737e38f1acc9.htm" title="DigitalRune Animation" tocid="c2892dfd-491e-4e78-83d1-737e38f1acc9">DigitalRune Animation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="93178dcc-a9b9-4cc6-b4df-ed693b988561.htm" title="3D Character Animation" tocid="93178dcc-a9b9-4cc6-b4df-ed693b988561">3D Character Animation</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="47e63a0f-e347-43fa-802e-bff707e804b6.htm" title="Character Animation Basics" tocid="47e63a0f-e347-43fa-802e-bff707e804b6">Character Animation Basics</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="e988b18d-0b1a-481d-89e6-3d40afa5ab5d.htm" title="Skeleton Mapping" tocid="e988b18d-0b1a-481d-89e6-3d40afa5ab5d">Skeleton Mapping</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="64fa1edd-5392-421b-b647-6379fea78318.htm" title="Inverse Kinematics" tocid="64fa1edd-5392-421b-b647-6379fea78318">Inverse Kinematics</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="699e16ff-af51-48c0-bc95-940ee40bbe17.htm" title="Ragdoll Physics" tocid="699e16ff-af51-48c0-bc95-940ee40bbe17">Ragdoll Physics</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="70b9ddd0-4356-45ac-8915-1af42a62ee08.htm" title="Xbox LIVE Avatars" tocid="70b9ddd0-4356-45ac-8915-1af42a62ee08">Xbox LIVE Avatars</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Skeleton Mapping</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                DigitalRune Animation supports skeleton mapping which can be used to transfer
+                an animation from one skeleton to another skeleton with a different structure.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Mapping">Skeleton mapping</a></li><li class="outlineSectionEntry"><a href="#ClassDiagram">Class diagram</a></li><li class="outlineSectionEntry"><a href="#Retargeting">Motion retargeting</a></li><li class="outlineSectionEntry"><a href="#Ragdoll">Ragdoll mapping</a></li><li class="outlineSectionEntry"><a href="#Caveats">Caveats</a></li></ul></div><div class="collapsibleAreaRegion" id="Mapping"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Skeleton mapping</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    Skeleton mapping can be used to transfer skeletal poses from one skeleton
+                    to another skeleton with a different topology (different number of bones,
+                    different bone poses, rotated bones, etc.). Skeleton mapping can be used for:
+                </p><ul><li>
+                        Ragdoll Mapping: A high detail skeleton (e.g. 60 bones) is mapped to a low detail skeleton
+                        (e.g. 15 bones). The high detail skeleton controls a visual character model. The low detail
+                        skeleton controls a ragdoll.
+                    </li><li>
+                        Motion Retargeting: The animations of one character should be applied to another character that
+                        uses a different skeleton. Motion retargeting is usually done as a pre-processing step, e.g. in
+                        the XNA content pipeline.
+                    </li></ul><p>
+                    The
+                    <a href="a7831d7c-7e10-fe62-0ee8-de79b94907c7.htm">SkeletonMapper</a>
+                    establishes the relations between two skeletons using a collection of
+                    <a href="ab55f3e6-c89a-01f3-3f61-9ff10ff1db09.htm">BoneMapper</a>s.
+                    The <a href="a7831d7c-7e10-fe62-0ee8-de79b94907c7.htm">SkeletonMapper</a>
+                    allows to transfer poses in both directions.
+                </p><p>
+                    DigitalRune Animation contains several predefined bone mapper classes:
+                </p><ul><li><a href="f1665a6a-d489-63de-9580-42db3f3ca3d9.htm">DirectBoneMapper</a>:
+                        This is the simplest bone mapper class. It observes the bone transformation of a single
+                        bone in the source skeleton  and replicates the same bone transformation in the target skeleton.
+                        This is the only bone mapper that supports translations. Other bone mappers only transfer rotations.
+                    </li><li><a href="abc3e11e-9810-bed8-31ab-ac4050abb433.htm">ChainBoneMapper</a>:
+                        This bone mapper can be used to map between bone chains of different length. It can also
+                        be used for single bones. It computes the direction from the root bone of a chain to the
+                        tip bone of a chain. Then it makes sure that the chain in the target skeleton has the same
+                        root to tip direction. Only the root bone of the chain is modified.
+                    </li><li><a href="9a45eab0-2f45-7667-f879-812d069b47b5.htm">UpperBackBoneMapper</a>:
+                        A specialized bone mapper for spine bones.
+                    </li><li>
+                        Custom bone mappers:
+                        You can also derive a class from
+                        <a href="ab55f3e6-c89a-01f3-3f61-9ff10ff1db09.htm">BoneMapper</a>
+                        to add a custom bone mapping for special situations.
+                    </li></ul><p>
+                    Without the bone mappers, the skeleton mapper does nothing. Bone mappers must
+                    be configured manually. Defining the right bone mappers is not trivial if the skeletons are very different.
+                    The skeleton mapping sample in the CharacterAnimationSample contains tips that help to set up a skeleton mapping between
+                    two skeletons.
+                </p><p>
+                    See the class
+                    <a href="a7831d7c-7e10-fe62-0ee8-de79b94907c7.htm">SkeletonMapper</a>, the
+                    class <a href="ab55f3e6-c89a-01f3-3f61-9ff10ff1db09.htm">BoneMapper</a>,
+                    and derived bone mappers for more information.
+                </p></div><div class="collapsibleAreaRegion" id="ClassDiagram"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Class diagram</span></div><div id="ID1RBSection" class="collapsibleSection"><div class="mediaNear"><img alt="Animation.Character Mapping" src="../media/Animation.Character_Mapping.png" /></div></div><div class="collapsibleAreaRegion" id="Retargeting"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Motion retargeting</span></div><div id="ID3RBSection" class="collapsibleSection"><p><span class="term">Motion retargeting</span> (or more precise:
+                    <span class="term">animation retargeting</span>) is the process of transferring the animations of
+                    one character to another character with a different skeleton topology.
+                    In the following video, the walk animation of the Dude model (left) is applied to the
+                    Marine model (right).
+                </p><ul class="noBullet"><li><p><a href="https://www.youtube.com/watch?v=9TRPSabQpNQ" target="_blank">Video: Motion retargeting</a></p></li></ul><p>
+                    At the first look the models seem similar, but a look at skeletal structure reveals a number
+                    of differences:
+                </p><div class="mediaNear"><img alt="Skeletons" src="../media/Skeletons.jpg" /></div><p>
+                    (The orange lines represent bones and the red-green-blue tripods indicate bone spaces.)
+                </p><ul><li>
+                        Both characters are modeled at a different scale, which is removed in the sample by
+                        scaling the models in the XNA content pipeline.
+                    </li><li>
+                        The Dude's skeleton is more detailed compared to the Marine: 58 bones vs. 26 bones
+                    </li><li>
+                        The bones have different size and orientations.
+                    </li><li>
+                        The bind poses are similar, but not identical. The Dude’s legs are spread wider apart,
+                        whereas the Marine's legs are modeled straight. (This can often be a problem when
+                        retargeting walk animations.)
+                    </li><li>
+                        The Dude's root bone is located at the center of the model (near the pelvis). The
+                        Marine's root bone is placed at the ground.
+                    </li><li>
+                        Etc.
+                    </li></ul><p>
+                    Motion retargeting is done using the
+                    <a href="a7831d7c-7e10-fe62-0ee8-de79b94907c7.htm">SkeletonMapper</a>.
+                    Following example code defines the mappings between the models in the video:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EAFADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EAFADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EAFADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EAFADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">_mapper = <span class="highlight-keyword">new</span> SkeletonMapper(_dudeSkeletonPose, _marineSkeletonPose);
+
+<span class="highlight-comment">// Pelvis</span>
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> DirectBoneMapper(<span class="highlight-number">1</span>, <span class="highlight-number">1</span>) { MapTranslations=<span class="highlight-keyword">true</span> });
+    
+<span class="highlight-comment">// Spine</span>
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> ChainBoneMapper(<span class="highlight-number">3</span>, <span class="highlight-number">6</span>, <span class="highlight-number">2</span>, <span class="highlight-number">3</span>));
+
+<span class="highlight-comment">// Clavicle</span>
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> DirectBoneMapper(<span class="highlight-number">12</span>, <span class="highlight-number">6</span>) { MapTranslations=<span class="highlight-keyword">false</span> });
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> DirectBoneMapper(<span class="highlight-number">31</span>, <span class="highlight-number">12</span>) { MapTranslations=<span class="highlight-keyword">false</span> });
+
+<span class="highlight-comment">// Left leg</span>
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> ChainBoneMapper(<span class="highlight-number">50</span>, <span class="highlight-number">51</span>, <span class="highlight-number">16</span>, <span class="highlight-number">17</span>));
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> ChainBoneMapper(<span class="highlight-number">51</span>, <span class="highlight-number">52</span>, <span class="highlight-number">17</span>, <span class="highlight-number">18</span>));
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> DirectBoneMapper(<span class="highlight-number">52</span>, <span class="highlight-number">18</span>) { MapTranslations=<span class="highlight-keyword">false</span> });
+
+<span class="highlight-comment">// Right leg</span>
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> ChainBoneMapper(<span class="highlight-number">54</span>, <span class="highlight-number">55</span>, <span class="highlight-number">21</span>, <span class="highlight-number">22</span>));
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> ChainBoneMapper(<span class="highlight-number">55</span>, <span class="highlight-number">56</span>, <span class="highlight-number">22</span>, <span class="highlight-number">23</span>));
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> DirectBoneMapper(<span class="highlight-number">56</span>, <span class="highlight-number">23</span>) { MapTranslations=<span class="highlight-keyword">false</span> });
+
+<span class="highlight-comment">// Left arm</span>
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> ChainBoneMapper(<span class="highlight-number">13</span>, <span class="highlight-number">14</span>, <span class="highlight-number">7</span>, <span class="highlight-number">8</span>));
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> ChainBoneMapper(<span class="highlight-number">14</span>, <span class="highlight-number">15</span>, <span class="highlight-number">8</span>, <span class="highlight-number">9</span>));
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> DirectBoneMapper(<span class="highlight-number">15</span>, <span class="highlight-number">9</span>) { MapTranslations=<span class="highlight-keyword">false</span> });
+
+<span class="highlight-comment">// Right arm</span>
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> ChainBoneMapper(<span class="highlight-number">32</span>, <span class="highlight-number">33</span>, <span class="highlight-number">12</span>, <span class="highlight-number">13</span>));
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> ChainBoneMapper(<span class="highlight-number">33</span>, <span class="highlight-number">34</span>, <span class="highlight-number">13</span>, <span class="highlight-number">14</span>));
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> DirectBoneMapper(<span class="highlight-number">34</span>, <span class="highlight-number">14</span>) { MapTranslations=<span class="highlight-keyword">false</span> });
+
+<span class="highlight-comment">// Neck, head</span>
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> ChainBoneMapper(<span class="highlight-number">6</span>, <span class="highlight-number">7</span>, <span class="highlight-number">3</span>, <span class="highlight-number">4</span>));
+_mapper.BoneMappers.Add(<span class="highlight-keyword">new</span> DirectBoneMapper(<span class="highlight-number">7</span>, <span class="highlight-number">4</span>) { MapTranslations=<span class="highlight-keyword">false</span> });</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EAFADAAA");</script><p>
+                    The numbers in brackets are simply bone indices.
+                    Once the mapping is initialized, any animations running on one model can be copied to the
+                    other model by calling:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EADADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EADADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EADADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EADADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">_skeletonMapper.MapAToB();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EADADAAA");</script><p>or</p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EABADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EABADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EABADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EABADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">_skeletonMapper.MapBToA();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EABADAAA");</script><p>These methods transfer the current pose and must be called each frame.</p></div><div class="collapsibleAreaRegion" id="Ragdoll"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Ragdoll mapping</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    Another application of the skeleton mapper is
+                    <span class="term">ragdoll mapping</span>:
+                </p><p>
+                    Imagine a character with 60+ bones. Creating a ragdoll with 60+ rigid bodies (one per
+                    bone) is a bad idea performance-wise. Ragdolls should have a low number of bodies; for
+                    example, 15 bodies (or less). In this scenario there are two skeleton representations for
+                    one model. A 60 bone, high-detail skeleton is used to animate the visual model. A 15 bone,
+                    low-detail skeleton represents the ragdoll. We can create a skeleton mapper that maps
+                    between both skeletons. The skeleton mapper can transfer key frame animations from the
+                    high-detail skeleton to the ragdoll, or ragdoll poses to the visual character.
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Important note" /> Important</th></tr><tr><td><p>
+                        It is not always required to use a skeleton mapper to create a low-detail ragdoll for
+                        a high-detail skeleton. The ragdoll samples of DigitalRune Animation (see
+                        <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a>) show that it
+                        is possible to create a ragdoll for the high-detail skeleton directly by simply
+                        ignoring some bones. Both approaches have their pros and cons. For beginners and simple
+                        scenarios (like in the samples), we recommend not using the skeleton mapper.
+                    </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="Caveats"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Caveats</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    If you perform motion retargeting at runtime and run into performance issues, then it is
+                    better to use the skeleton mapper in the
+                    preprocessing stage: Retarget the animation once and store the retargeted animation as
+                    a new key frame animation.
+                </p><p>
+                    If the mapped skeletons are very different, the mapped animation is not optimal. In the
+                    video above, you can see that the feet of the Marine model are tilted, and there are
+                    other minor issues. The mapping process is not perfect.
+                </p><p>
+                    If the standard
+                    <a href="ab55f3e6-c89a-01f3-3f61-9ff10ff1db09.htm">BoneMapper</a>s
+                    don’t do a good job for a model, then you can create custom bone mapper types or extend
+                    the existing classes.
+                </p></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

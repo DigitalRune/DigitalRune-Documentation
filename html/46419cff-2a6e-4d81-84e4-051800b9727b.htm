@@ -1,0 +1,67 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Installation</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="46419cff-2a6e-4d81-84e4-051800b9727b" /><meta name="Description" content="The information on this page is outdated. It does not apply to the open source project." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d94d3673-de15-47f9-a122-70b4d97b5920.htm" title="General" tocid="d94d3673-de15-47f9-a122-70b4d97b5920">General</a></div><div class="toclevel1 current" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="46419cff-2a6e-4d81-84e4-051800b9727b.htm" title="Installation" tocid="46419cff-2a6e-4d81-84e4-051800b9727b">Installation</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="06ec096e-b312-4052-b0ac-056d89efb5e1.htm" title="Using XNA Game Studio with Visual Studio 2012 (or higher)" tocid="06ec096e-b312-4052-b0ac-056d89efb5e1">Using XNA Game Studio with Visual Studio 2012 (or higher)</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Installation</td></tr></table><span class="introStyle"></span><div class="introduction"><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Caution note" /> Caution</th></tr><tr><td><p>
+                    The information on this page is outdated. It does not apply to the open source project.
+                </p></td></tr></table></div><p>This section describes prerequisites and contains additional installation instructions.</p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Prerequisites">Prerequisites</a></li><li class="outlineSectionEntry"><a href="#Download">Download the package</a></li><li class="outlineSectionEntry"><a href="#Unblocking">Important: Unblock ZIP file</a></li><li class="outlineSectionEntry"><a href="#Installation">Installation</a></li><li class="outlineSectionEntry"><a href="#seeAlsoSection">See Also</a></li></ul></div><div class="collapsibleAreaRegion" id="Prerequisites"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Prerequisites</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    For developing .NET applications you need to install:
+                </p><ul><li><p><a href="http://msdn.microsoft.com/en-us/vstudio/default.aspx" target="_blank">Microsoft Visual Studio 2010 (or newer)</a></p></li></ul><p>
+                    To develop XNA-based games or applications you need to install:
+                </p><ul><li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=27599" target="_blank">Microsoft XNA Game Studio 4.0 Refresh</a><br />
+                        (If you do not intend to build Xbox 360 projects, then you can skip this package because
+                        newer versions of XNA are also contained in the Windows Phone 7 SDK.)
+                    </li><li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=27570" target="_blank">Windows Phone SDK 7.1</a></li><li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=29233" target="_blank">Windows Phone SDK 7.1.1 Update</a></li></ul><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Important note" /> Important</th></tr><tr><td><p>
+                        Windows Phone SDK packages contains important XNA updates. Even if you do not intend to
+                        develop for Windows Phone 7, you need to install these packages.
+                    </p><p>
+                        The installation of XNA Game Studio or Windows Phone SDK might fail on Windows 8.
+                        For a workaround see:
+                    </p><ul><li><a href="http://blogs.msdn.com/b/astebner/archive/2012/02/29/10274694.aspx" target="_blank">How to work around a possible XNA Game Studio or Windows Phone SDK install failure on Windows 8 by Aaron Stebner</a></li></ul><p>
+                        The setup of the Windows Phone SDK 7.1.1 may fail if a newer version of the Microsoft Advertising SDK
+                        for Windows Phone is already installed on the system. In this case please follow these steps:
+                    </p><ol><li>
+                            Download the latest version of the
+                            <a href="http://www.microsoft.com/en-us/download/details.aspx?id=8729" target="_blank">Microsoft Advertising SDK for Windows Phone 8</a>.
+                        </li><li>
+                            Remove the previous installation by running the setup. (If the Ad SDK on the PC is older,
+                            then install latest version first, and then run the setup again to uninstall it.)
+                        </li><li>
+                            Install the Windows Phone SDK 7.1.1.
+                        </li><li>
+                            Re-install the latest version of Microsoft Advertising SDK for Windows Phone.
+                        </li></ol></td></tr></table></div><p>
+                    For developing Windows Phone applications you need to install:
+                </p><ul><li><a href="http://dev.windows.com/en-us/develop/download-phone-sdk" target="_blank">Windows Phone SDK</a></li></ul><p>
+                    For developing iOS or Android applications using Xamarin.iOS or Xamarin.Android, you will
+                    find the necessary information and tools here:
+                </p><ul><li><a href="http://xamarin.com/" target="_blank">Xamarin Website</a></li></ul><p>
+                    For developing MonoGame-based applications (e.g. for Windows Store, Windows Phone,
+                    Linux, iOS, etc.), you need to install:
+                </p><ul><li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=35" target="_blank">Latest DirectX Runtime</a></li></ul><p>
+                    For more information about developing MonoGame-based applications, please a look at the
+                    MonoGame documentation:
+                </p><ul><li><a href="http://www.monogame.net/documentation/" target="_blank">MonoGame Documentation</a></li><li><a href="https://github.com/mono/MonoGame/wiki" target="_blank">MonoGame GitHub Wiki</a></li></ul></div><div class="collapsibleAreaRegion" id="Download"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Download the package</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    When downloading a trial version or purchasing a DigitalRune product you receive a
+                    ZIP package containing all necessary files (see <a href="972bde71-5d0c-46be-8a81-ad0d2cea770a.htm">Files, Folders and Dependencies</a>).
+                </p></div><div class="collapsibleAreaRegion" id="Unblocking"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Important: Unblock ZIP file</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    When a ZIP file is downloaded in Windows, it is marked as unsafe by the file system.
+                </p><p><strong>Important:</strong> You must unblock the ZIP file before unpacking it.
+                    After downloading the file, perform the following steps:
+                </p><ul><li>
+                        Locate the downloaded ZIP file.
+                    </li><li>
+                        Right-click the file and select <span class="ui">Properties</span> from the context menu.
+                    </li><li>
+                        In the <span class="ui">Properties</span> dialog select the <span class="ui">General</span> tab and
+                        click the <span class="ui">Unblock</span> button.
+                        <div class="mediaNear"><img alt="Unblock-Zip" src="../media/Unblock-Zip.png" /><div class="caption"><span class="captionLead">Screenshot:
+						</span>Unblocking a ZIP file.</div></div></li><li>
+                        Close the <span class="ui">Properties</span> dialog by clicking <span class="ui">OK</span>.
+                    </li></ul></div><div class="collapsibleAreaRegion" id="Installation"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Installation</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    After unblocking the ZIP file, simply extract the files to any folder:
+                </p><ul><li>
+                        Right-click the ZIP file and select <span class="ui">Extract All...</span> from the context menu.
+                    </li></ul></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID4RBSection" class="collapsibleSection"><h4 class="subHeading">Other Resources</h4><div class="seeAlsoStyle"><a href="972bde71-5d0c-46be-8a81-ad0d2cea770a.htm">Files, Folders and Dependencies</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

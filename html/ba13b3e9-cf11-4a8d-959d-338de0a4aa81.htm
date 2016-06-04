@@ -1,0 +1,118 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Render Context</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="ba13b3e9-cf11-4a8d-959d-338de0a4aa81" /><meta name="Description" content="The class T:DigitalRune.Graphics.RenderContext is automatically created by the graphics service. It is a collection of data that needs to be passed to every Render method." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="7d5a0abe-8231-452c-895c-e6dbab83822b.htm" title="Graphics Programming" tocid="7d5a0abe-8231-452c-895c-e6dbab83822b">Graphics Programming</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="6b3a13bc-37b4-4820-9f82-c2364a9ed2eb.htm" title="Rendering" tocid="6b3a13bc-37b4-4820-9f82-c2364a9ed2eb">Rendering</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="ba13b3e9-cf11-4a8d-959d-338de0a4aa81.htm" title="Render Context" tocid="ba13b3e9-cf11-4a8d-959d-338de0a4aa81">Render Context</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="0d6d2221-c9da-4aa7-bee4-4d2bacae9bc4.htm" title="Rendering Scene Nodes" tocid="0d6d2221-c9da-4aa7-bee4-4d2bacae9bc4">Rendering Scene Nodes</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="1b907017-5904-440d-b5fa-75c75ab60e6b.htm" title="Rendering Debug Information" tocid="1b907017-5904-440d-b5fa-75c75ab60e6b">Rendering Debug Information</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Render Context</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#RenderContext">What is the render context?</a></li><li class="outlineSectionEntry"><a href="#Usage">How to Use the render context</a></li><li class="outlineSectionEntry"><a href="#Custom">Custom render contexts</a></li></ul></div><div class="collapsibleAreaRegion" id="RenderContext"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />What is the render context?</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    The class <a href="ea575bf4-8a2a-e02a-be92-c5821bff1ad7.htm">RenderContext</a>
+                    is automatically created by the graphics service. It is a collection of data that needs to
+                    be passed to every <strong>Render</strong> method. The render context should contain
+                    all information required to render an object or to perform a rendering step. (That means,
+                    if a renderer requires additional information, it should be able to find the information
+                    through the render context.)
+                </p><p>
+                    In most cases the active camera (property <a href="324769e9-33d4-bc99-cf3a-671dd7715d2f.htm">CameraNode</a>),
+                    the render pass (property <a href="79b56643-429a-7edb-f845-391210e21cd8.htm">RenderPass</a>)
+                    and the current scene (property <a href="b3695814-d1f0-fc8b-b465-81fe85d1d705.htm">Scene</a>)
+                    need to be set for rendering. Additional information in the render context might be required
+                    depending on the effect bindings or renderer that are used.
+                </p><p>
+                    Additional information can be stored in the
+                    <a href="24de262d-28a8-81b0-8525-f43395dc3231.htm">RenderContext<span id="LST804F673A_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST804F673A_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Data</a>
+                    dictionary.
+                </p></div><div class="collapsibleAreaRegion" id="Usage"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />How to Use the render context</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    Several properties of the render context are set automatically by the graphics service.
+                    These properties include:
+                    <a href="a81293a5-5999-c0ee-e816-1c43fc1d58d1.htm">DeltaTime</a>,
+                    <a href="a71a2215-5a22-faea-2e9a-9185d04a0e31.htm">GraphicsService</a>,
+                    <a href="b6a657eb-aa1c-d554-e3b8-0d3cdefd618a.htm">PresentationTarget</a>,
+                    <a href="9a9fcc8e-beb9-0e07-fe2c-bb236c643f43.htm">RenderTarget</a>,
+                    <a href="43ba4469-57d9-6cb1-e948-df150e9807d7.htm">Screen</a>,
+                    <a href="a79b5836-820d-ace2-7ff1-7a8f4f3710a6.htm">SourceTexture</a>,
+                    <a href="6bcb5279-ed06-0c24-c2d9-4da56de321d8.htm">Viewport</a></p><p>
+                    Other properties are automatically set by scene node renderers.
+                    These properties include:
+                    <a href="c8f7fc1a-d7a5-c264-4389-cf964b0d02cb.htm">MaterialBinding</a>,
+                    <a href="672f4499-06e0-550f-5dc3-c48e8a1402f5.htm">MaterialInstanceBinding</a>,
+                    <a href="3fc71c3b-b907-2060-0705-279fbdd1e011.htm">PassIndex</a>,
+                    <a href="4c5019f2-999e-5800-f801-be65a2d61190.htm">SceneNode</a></p><p>
+                    Following properties should be managed explicitly in your custom graphics screens or your custom renderers:
+                    <a href="324769e9-33d4-bc99-cf3a-671dd7715d2f.htm">CameraNode</a>,
+                    <a href="24de262d-28a8-81b0-8525-f43395dc3231.htm">Data</a>,
+                    <a href="60b28c3f-8979-b94f-e6fa-1f5c9043f767.htm">GBuffer0</a>,
+                    <a href="018b1ea3-f22a-23e4-776b-a9a41cfbd75f.htm">GBuffer1</a>,
+                    <a href="9d35fc78-3152-0cdb-c2c8-7dd6bb6b9953.htm">GBuffer2</a>,
+                    <a href="d838de4f-27a3-17cc-2eb2-9c4add785426.htm">GBuffer3</a>,
+                    <a href="1a2f39aa-3d7f-bf9e-1a60-9393a1929d48.htm">LightBuffer0</a>,
+                    <a href="ac4730df-f235-3a29-13ed-1afb1f5834fa.htm">LightBuffer1</a>,
+                    <a href="79b56643-429a-7edb-f845-391210e21cd8.htm">RenderPass</a>,
+                    <a href="9a9fcc8e-beb9-0e07-fe2c-bb236c643f43.htm">RenderTarget</a>,
+                    <a href="b3695814-d1f0-fc8b-b465-81fe85d1d705.htm">Scene</a>,
+                    <a href="a79b5836-820d-ace2-7ff1-7a8f4f3710a6.htm">SourceTexture</a>,
+                    <a href="845cb6e3-ee83-c8d8-9ec0-54e9bab14ef5.htm">Technique</a>,
+                    <a href="6bcb5279-ed06-0c24-c2d9-4da56de321d8.htm">Viewport</a></p><p>
+                    Here are some guidelines for using the render context:
+                </p><ul><li><p>
+                            If you have a piece of information and there is a render context property for it, then
+                            update the render context. For example, if a graphics screen has a
+                            <a href="e79b2fa4-d731-66fe-ba4f-d8e58e557e32.htm">Scene</a>
+                            then set the
+                            <a href="b3695814-d1f0-fc8b-b465-81fe85d1d705.htm">RenderContext<span id="LST804F673A_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST804F673A_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Scene</a>
+                            property at the beginning of the graphics screen's <strong>Render</strong> method.
+                            Especially before calling a renderer, make sure that the render context is up-to-date.
+                        </p></li><li><p>
+                            All graphics screens and renderers should restore the original render context at the
+                            end of their <strong>Render</strong> method.
+                        </p></li><li><p>
+                            It is allowed that renderers exchange the current render targets with another render
+                            target of the same format. This can be necessary for performance optimizations.
+                            After a renderer has executed, be prepared that it might have changed the current
+                            <a href="9a9fcc8e-beb9-0e07-fe2c-bb236c643f43.htm">RenderTarget</a>,
+                            <a href="60b28c3f-8979-b94f-e6fa-1f5c9043f767.htm">GBuffer0</a>
+                            or other render targets. Therefore, it is not recommended to store the current render target
+                            or G-buffer in a local variable. Use the render context properties.
+                        </p></li></ul><p>
+                    Here are some common usage examples:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EADACAAA_tab1" class="codeSnippetContainerTabSingle">Example (C#): A Simple Graphics Screen Render Method</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EADACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EADACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EADACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnRender(RenderContext context)
+{
+  <span class="highlight-comment">// Update render context.</span>
+  context.CameraNode = _myCameraNode;
+  context.Scene = _myScene;
+
+  <span class="highlight-comment">// Render...</span>
+
+  <span class="highlight-comment">// Clean up.</span>
+  context.Scene = <span class="highlight-keyword">null</span>;
+  context.CameraNode = <span class="highlight-keyword">null</span>;
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EADACAAA");</script><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EACACAAA_tab1" class="codeSnippetContainerTabSingle">Example (C#): Calling a MeshRenderer</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EACACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EACACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EACACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">context.RenderPass = <span class="highlight-literal">"Default"</span>;
+_renderer.Render(query.SceneNodes, context);
+context.RenderPass = <span class="highlight-keyword">null</span>;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EACACAAA");</script><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABACAAA_tab1" class="codeSnippetContainerTabSingle">Example (C#): Calling a Post-Processor</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">context.SourceTexture = sourceTexture;
+context.RenderTarget = renderTarget;
+context.Viewport = <span class="highlight-keyword">new</span> Viewport(<span class="highlight-number">0</span>, <span class="highlight-number">0</span>, renderTarget.Width, renderTarget.Height);
+postProcessor.Process(context);
+context.SourceTexture = <span class="highlight-keyword">null</span>;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABACAAA");</script><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAACAAA_tab1" class="codeSnippetContainerTabSingle">Example (C#): Switching a Render Target</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">graphicsDevice.SetRenderTarget(myRenderTarget);
+context.RenderTarget = myRenderTarget;
+context.Viewport = graphicsDevice.Viewport;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAACAAA");</script></div><div class="collapsibleAreaRegion" id="Custom"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Custom render contexts</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    It is possible to use a custom render context:
+                </p><ol><li><p>
+                            Create a new class that derives from
+                            <a href="ea575bf4-8a2a-e02a-be92-c5821bff1ad7.htm">RenderContext</a>
+                            and add the desired members (properties, methods, etc.).
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAACAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAACAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAACAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAACAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> MyRenderContext : RenderContext
+{
+  <span class="highlight-comment">// TODO: Add members here.</span>
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAACAABAAA");</script></li><li><p>
+                            Create a new class that derives from
+                            <a href="54a71e7b-aa19-1351-a13c-4d3574644d6e.htm">GraphicsManager</a>.
+                            and override the method <a href="0c7702cb-9860-cd9f-b1d5-236c4e716def.htm">CreateRenderContext</a>.
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAABAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAABAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAABAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAABAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> MyGraphicsManager : GraphicsManager
+{
+  <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> RenderContext CreateRenderContext()
+  {
+    <span class="highlight-keyword">return</span> <span class="highlight-keyword">new</span> MyRenderContext();
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAABAABAAA");</script></li><li><p>
+                            In the application use the new class instead of the default
+                            <a href="54a71e7b-aa19-1351-a13c-4d3574644d6e.htm">GraphicsManager</a>.
+                        </p></li></ol></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

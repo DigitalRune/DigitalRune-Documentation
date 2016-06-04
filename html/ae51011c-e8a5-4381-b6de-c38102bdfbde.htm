@@ -1,0 +1,207 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Simple Profiler</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="ae51011c-e8a5-4381-b6de-c38102bdfbde" /><meta name="Description" content="Here is a short description of the T:DigitalRune.Diagnostics.Profiler class" /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="dc44c3a5-8545-4253-9da1-62258a00607c.htm" title="DigitalRune Base Library" tocid="dc44c3a5-8545-4253-9da1-62258a00607c">DigitalRune Base Library</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="6736e3bc-383c-4d80-a828-c83fea5c3461.htm" title="Performance Profiling" tocid="6736e3bc-383c-4d80-a828-c83fea5c3461">Performance Profiling</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="ae51011c-e8a5-4381-b6de-c38102bdfbde.htm" title="Simple Profiler" tocid="ae51011c-e8a5-4381-b6de-c38102bdfbde">Simple Profiler</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="066b3b04-8a74-4f6e-a727-2b6966d62e45.htm" title="Hierarchical Profiler" tocid="066b3b04-8a74-4f6e-a727-2b6966d62e45">Hierarchical Profiler</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Simple Profiler</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                Here is a short description of the
+                <a href="e356680a-750a-d33c-897e-560994e93c71.htm">Profiler</a>
+                class
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Features">Simple profiler features</a></li><li class="outlineSectionEntry"><a href="#Overview">Overview</a></li><li class="outlineSectionEntry"><a href="#ThreadSafety">Thread-safety</a></li><li class="outlineSectionEntry"><a href="#Example">Example</a></li></ul></div><div class="collapsibleAreaRegion" id="Features"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Simple profiler features</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    The Profiler class provides following features:
+                </p><ul><li>
+                        Measure code execution time.
+                    </li><li>
+                        Collect interesting values, like "How many collisions happened in this frame?",
+                        "How many iterations did this algorithm make?", etc.
+                    </li><li>
+                        Compute minimum, average and maximum values.
+                    </li><li>
+                        The profiler is thread-safe.
+                    </li><li>
+                        Do not influence performance in release builds – only in profiling builds of the game.
+                    </li></ul></div><div class="collapsibleAreaRegion" id="Overview"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Overview</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    The
+                    <a href="e356680a-750a-d33c-897e-560994e93c71.htm">Profiler</a>
+                    class can be found in the namespace
+                    <strong>DigitalRune.Diagnostics</strong>.
+                    Here is a class diagram of the relevant classes.
+                </p><div class="mediaNear"><img alt="Digital Rune.Diagnostics Profiler" src="../media/DigitalRune.Diagnostics_Profiler.png" /></div><p>
+                    The
+                    <a href="e356680a-750a-d33c-897e-560994e93c71.htm">Profiler</a>
+                    class itself is a static class. The important methods are marked with a
+                    <a href="http://msdn2.microsoft.com/en-us/library/y5dw26w3" target="_blank">ConditionalAttribute</a>
+                    and they are only executed when the conditional compilation symbol
+                    <span class="code">DIGITALRUNE_PROFILE</span>
+                    is defined in the profiled application. This way, it is not necessary
+                    to remove the profiling code before the application is released – only remove the conditional
+                    compilation symbol.
+                </p><p>
+                    The <a href="e356680a-750a-d33c-897e-560994e93c71.htm">Profiler</a>
+                    stores several
+                    <a href="c7c7b1c9-d641-939d-f428-e2b20aad201d.htm">ProfilerDataCollection</a>s
+                    - one collection per thread. Each collection is a
+                    <a href="0d7a509e-c1a0-804a-1238-2208d66c2417.htm">NamedObjectCollection<span id="LSTC713AFD9_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC713AFD9_0?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTC713AFD9_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC713AFD9_1?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a> of
+                    <a href="5af9605b-13af-9fcf-2ef3-d2b877535bde.htm">ProfilerData</a>. Each
+                    <a href="5af9605b-13af-9fcf-2ef3-d2b877535bde.htm">ProfilerData</a>
+                    has a name and stores the minimum, average, maximum, etc. of the collected samples.
+                </p><p>
+                    To measure time you can call
+                    <a href="f058e9eb-007b-9d37-cff2-b5ef82eead1d.htm">Profiler<span id="LSTC713AFD9_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC713AFD9_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Start</a>
+                    and
+                    <a href="f59c4c28-e853-8d50-fa18-c542210b2ee9.htm">Profiler<span id="LSTC713AFD9_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC713AFD9_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Stop</a>.
+                    The profiler measures the time between Start and Stop and stores the value in the
+                    <a href="5af9605b-13af-9fcf-2ef3-d2b877535bde.htm">ProfilerData</a>
+                    for this name.
+                </p><p>
+                    Instead of using Start/Stop you can measure the time yourself and call
+                    <a href="75f8d1c9-f965-ac14-3de5-a040a2f22e80.htm">AddValue</a>
+                    to add a value to the
+                    <a href="5af9605b-13af-9fcf-2ef3-d2b877535bde.htm">ProfilerData</a>
+                    for the given name.
+                </p><p>
+                    You can use the Profiler not only for time measurement, but also for collecting other data. For
+                    example, if you want to know how many collisions are happening in each frame of your game,
+                    you can count the number of collisions and call
+                    <span class="code">Profiler.AddValue("CollisionsPerFrame", numberOfCollisions)</span>.
+                    The Profiler will create a ProfilerData instance with the name
+                    "CollisionsPerFrame" and keep track of the minimum, average, maximum number of collisions
+                    per frame.
+                </p><p>
+                    You can evaluate the collected data manually using the
+                    <a href="afb79201-2e90-7d7e-7b30-77f484c9ba52.htm">Get</a>
+                    methods or by enumerating the ProfilerDataCollections. You can also call
+                    <a href="b0e6b57f-9329-fd4d-f3b3-21bfa10f94da.htm">DumpAll</a>
+                    to get a string with the collected statistics. Using
+                    <a href="0605ce6c-98aa-a3a3-c98e-092efdb85258.htm">SetFormat</a>
+                    you can control how the data is formatted in DumpAll.
+                </p></div><div class="collapsibleAreaRegion" id="ThreadSafety"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Thread-safety</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    The Profiler is thread-safe. Data from different threads are collected in different
+                    <a href="c7c7b1c9-d641-939d-f428-e2b20aad201d.htm">ProfilerDataCollection</a>s.
+                    If different threads call
+                    <span class="code">Profiler.AddValue("MyValue", x)</span>,
+                    the values of the different threads are not combined.
+                </p></div><div class="collapsibleAreaRegion" id="Example"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Example</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    The following example executes a method Foo in a sequential and in a parallel loop. The
+                    method Foo generates 10000 random numbers between 0 and 100 and counts how many numbers
+                    are below 10. Several interesting times and values are collected using the Profiler class:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID3EAEABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID3EAEABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID3EAEABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID3EAEABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// The compilation symbol "DIGITALRUNE_PROFILE" must </span>
+<span class="highlight-comment">// be defined to activate profiling.</span>
+<span class="highlight-preprocessor">#define</span> DIGITALRUNE_PROFILE
+
+<span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> DigitalRune.Diagnostics;
+<span class="highlight-keyword">using</span> DigitalRune.Threading;
+
+<span class="highlight-keyword">namespace</span> ProfilingTest 
+{
+  <span class="highlight-keyword">class</span> Program 
+  {
+    <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> Main(<span class="highlight-keyword">string</span>[] args) 
+    {
+      <span class="highlight-comment">// Warmstart: We call Foo and the Parallel class so that all one-time initializations are </span>
+      <span class="highlight-comment">// done before we start measuring.</span>
+      Parallel.For(<span class="highlight-number">0</span>, <span class="highlight-number">100</span>, i =&gt; Foo());
+      Profiler.ResetAll();
+
+      <span class="highlight-comment">// Measure time of a sequential for-loop.</span>
+      Profiler.Start(<span class="highlight-literal">"MainSequential"</span>);
+      <span class="highlight-keyword">for</span> (<span class="highlight-keyword">int</span> i = <span class="highlight-number">0</span>; i &lt; <span class="highlight-number">100</span>; i++)
+        Foo();
+      Profiler.Stop(<span class="highlight-literal">"MainSequential"</span>);
+
+      <span class="highlight-comment">// Measure time of a parallel for-loop.</span>
+      Profiler.Start(<span class="highlight-literal">"MainParallel"</span>);
+      Parallel.For(<span class="highlight-number">0</span>, <span class="highlight-number">100</span>, i =&gt; Foo());
+      Profiler.Stop(<span class="highlight-literal">"MainParallel"</span>);
+
+      <span class="highlight-comment">// Format the output by defining a useful scale. We add descriptions, so that any other </span>
+      <span class="highlight-comment">// person looking at the output can interpret them more easily.</span>
+      Profiler.SetFormat(<span class="highlight-literal">"MainSequential"</span>, <span class="highlight-number">1</span>e3f, <span class="highlight-literal">"[ms]"</span>);
+      Profiler.SetFormat(<span class="highlight-literal">"MainParallel"</span>, <span class="highlight-number">1</span>e3f, <span class="highlight-literal">"[ms]"</span>);
+      Profiler.SetFormat(<span class="highlight-literal">"Foo"</span>, <span class="highlight-number">1</span>e6f, <span class="highlight-literal">"[µs]"</span>);
+      Profiler.SetFormat(<span class="highlight-literal">"ValuesBelow10"</span>, <span class="highlight-number">1.0</span>f / <span class="highlight-number">100.0</span>f, <span class="highlight-literal">"[%]"</span>);
+
+      <span class="highlight-comment">// Print the profiling results.</span>
+      Console.WriteLine(Profiler.DumpAll());
+    }
+
+
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> Foo() 
+    {
+      Profiler.Start(<span class="highlight-literal">"Foo"</span>);
+
+      <span class="highlight-keyword">var</span> random = <span class="highlight-keyword">new</span> Random();
+      <span class="highlight-keyword">int</span> numberOfValuesBelow10 = <span class="highlight-number">0</span>;
+      <span class="highlight-keyword">for</span> (<span class="highlight-keyword">int</span> i = <span class="highlight-number">0</span>; i &lt; <span class="highlight-number">10000</span>; i++) 
+      {
+        <span class="highlight-keyword">int</span> x = random.Next(<span class="highlight-number">0</span>, <span class="highlight-number">100</span>);
+        <span class="highlight-keyword">if</span> (x &lt; <span class="highlight-number">10</span>)
+          numberOfValuesBelow10++;
+      }
+
+      <span class="highlight-comment">// Profilers can also collect other interesting numbers (not only time). </span>
+      Profiler.AddValue(<span class="highlight-literal">"ValuesBelow10"</span>, numberOfValuesBelow10);
+
+      Profiler.Stop(<span class="highlight-literal">"Foo"</span>);
+    }
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID3EAEABAAA");</script><p>
+                    Here is the output of this program:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID3EACABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID3EACABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID3EACABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">Thread:  (#1) 
+Name              Calls      Sum          Min        Avg        Max Description 
+------------------------------------------------------------------------------- 
+Foo                 100  42433.400    411.200    424.334    530.300 [µs] 
+ValuesBelow10       100    986.480      9.480      9.865     10.110 [%] 
+MainSequential        1     42.483     42.483     42.483     42.483 [ms] 
+MainParallel          1     14.133     14.133     14.133     14.133 [ms]
+Thread: Parallel Worker 0 (#3) 
+Name              Calls      Sum          Min        Avg        Max Description 
+------------------------------------------------------------------------------- 
+Foo                  32  12948.000    362.500    404.625   1477.600 [µs] 
+ValuesBelow10        32    329.530     10.040     10.298     10.370 [%]
+Thread: Parallel Worker 1 (#4) 
+Name              Calls      Sum          Min        Avg        Max Description 
+------------------------------------------------------------------------------- 
+Foo                  36  13376.200    359.800    371.561    436.200 [µs] 
+ValuesBelow10        36    369.690     10.040     10.269     10.370 [%]
+Thread: Parallel Worker 2 (#5) 
+Name              Calls      Sum          Min        Avg        Max Description 
+------------------------------------------------------------------------------- 
+Foo                  32  13572.100    412.000    424.128    497.200 [µs] 
+ValuesBelow10        32    328.540     10.040     10.267     10.370 [%]
+Thread: Parallel Worker 3 (#6) 
+Name              Calls      Sum          Min        Avg        Max Description 
+------------------------------------------------------------------------------- 
+Foo                   0          -          -          -          - [µs] 
+ValuesBelow10         0          -          -          -          - [%]</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID3EACABAAA");</script><p>
+                    The output tells us several useful things:
+                </p><ul><li>
+                        There is one table per thread. The unnamed thread is the main thread of the application.
+                        We see that the Parallel.For() call has created 4 worker threads.
+                    </li><li>
+                        The output shows how often the measured code parts where executed. For example, Foo()
+                        was executed 100 times in the main thread, 32 times in the "Parallel Worker 0" thread,
+                        etc.
+                        The thread "Parallel Worker 3" didn’t have to do any of the work. We can now reason
+                        whether it is okay that Parallel Worker 3 didn’t to anything. Shouldn’t the worker be
+                        equally distributed among all threads? (Note: Actually, it is ok and does not indicate
+                        a problem.)
+                    </li><li>
+                        MainParallel is about 3 times faster than MainSequential. That’s not bad, though it
+                        could be faster on my quad core processor.
+                    </li><li>
+                        The table also shows the Sum/Min/Average/Max of the measured times. Some times are
+                        measured in µs and some in ms. This was set using Profiler.SetFormat().
+                    </li><li>
+                        In each execution of Foo() a lot of random values are created and in the ProfilerData
+                        "ValuesBelow10" the percentage of numbers below 10 are recorded. We expect this to be
+                        around 10%, and indeed the average on each thread is near 10.
+                        But something smells fishy: The Min and the Max on all but the first thread are
+                        exactly equal: Min = 10.04 and Max = 10.37. Isn’t that extremely unlikely? – Indeed,
+                        this is a problem: When the Random() constructor is called, it sets the random seed
+                        using the system clock and "as a result, different Random objects that are created in
+                        close succession by a call to the default constructor will have identical default seed
+                        values and, therefore, will produce identical sets of random numbers" (MSDN documentation).
+                    </li></ul></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

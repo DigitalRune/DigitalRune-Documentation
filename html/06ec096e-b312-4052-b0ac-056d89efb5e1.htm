@@ -1,0 +1,106 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Using XNA Game Studio with Visual Studio 2012 (or higher)</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="06ec096e-b312-4052-b0ac-056d89efb5e1" /><meta name="Description" content="Microsoft XNA Game Studio only supports Visual Studio 2010. Later version of Visual Studio are only partially supported (only Windows Phone 7 projects). Here is a list of workarounds to use the Microsoft XNA Game Studio with Visual Studio 2012 and higher." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d94d3673-de15-47f9-a122-70b4d97b5920.htm" title="General" tocid="d94d3673-de15-47f9-a122-70b4d97b5920">General</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="46419cff-2a6e-4d81-84e4-051800b9727b.htm" title="Installation" tocid="46419cff-2a6e-4d81-84e4-051800b9727b">Installation</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="06ec096e-b312-4052-b0ac-056d89efb5e1.htm" title="Using XNA Game Studio with Visual Studio 2012 (or higher)" tocid="06ec096e-b312-4052-b0ac-056d89efb5e1">Using XNA Game Studio with Visual Studio 2012 (or higher)</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Using XNA Game Studio with Visual Studio 2012 (or higher)</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                Microsoft XNA Game Studio only supports Visual Studio 2010. Later version of Visual Studio
+                are only partially supported (only Windows Phone 7 projects). Here is a list of workarounds to
+                use the Microsoft XNA Game Studio with Visual Studio 2012 and higher.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Setup">Setup</a></li><li class="outlineSectionEntry"><a href="#Issues">Known issues</a></li><li class="outlineSectionEntry"><a href="#seeAlsoSection">See Also</a></li></ul></div><div class="collapsibleAreaRegion" id="Setup"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Setup</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    Follow these instructions to use XNA Game Studio with Visual Studio 2012 (or higher).
+                </p><ol><li>
+                        For Windows 8 users: Install
+                        <a href="http://www.xbox.com/en-US/Live/PC/DownloadClient" target="_blank">Games for Windows Live client</a>.
+                    </li><li>
+                        Install Visual Studio 2012 or higher.
+                    </li><li>
+                        Install
+                        <a href="https://dev.windowsphone.com/en-us/downloadsdk" target="_blank">Windows Phone SDK 7.1</a>
+                        and
+                        <a href="https://dev.windowsphone.com/en-us/downloadsdk" target="_blank">Window Phone SDK 7.1.1 Update</a>.
+                        (Note: The Windows Phone SDK contains XNA Game Studio.)
+                    </li><li><p>
+                            Copy the folder named <em>XNA Game Studio 4.0</em> from
+                        </p><ul class="noBullet"><li><em>C:\Program Files (x86)\Microsoft Visual Studio 10.0\common7\ide\extensions\Microsoft</em></li></ul><p>
+                            to
+                        </p><ul class="noBullet"><li>
+                                (for VS2012) <em>C:\Program Files (x86)\Microsoft Visual Studio 11.0\common7\ide\extensions\Microsoft</em></li><li>
+                                (for VS2013) <em>C:\Program Files (x86)\Microsoft Visual Studio 12.0\common7\ide\extensions\Microsoft</em></li><li>
+                                (for VS2015) <em>C:\Program Files (x86)\Microsoft Visual Studio 14.0\common7\ide\extensions\Microsoft</em></li></ul><p>
+                            On some systems Visual Studio is incorrectly installed in the Program Files (x86) folder
+                            instead of the Microsoft Visual Studio 12.0 folder. In this case you have to use this
+                            target path:
+                            C:\Program Files (x86)\Common7\IDE\Extensions\Microsoft
+                        </p><ul class="noBullet"><li><em>C:\Program Files (x86)\Common7\IDE\Extensions\Microsoft</em></li></ul></li><li>
+                        Start a text editor with administrator privileges.
+                        Open the file <em>extension.vsixmanifest</em> from the folder <em>XNA Game Studio 4.0</em>.
+                        and change the supported Visual Studio version from
+                        <ul class="noBullet"><li><span class="code">
+&lt;VisualStudio Version="10.0"&gt;
+              </span></li></ul><p>
+                            to
+                        </p><ul class="noBullet"><li>
+                                (for VS2012) <span class="code">
+&lt;VisualStudio Version="11.0"&gt;
+              </span></li><li>
+                                (for VS2013) <span class="code">
+&lt;VisualStudio Version="12.0"&gt;
+              </span></li><li>
+                                (for VS2015) <span class="code">
+&lt;VisualStudio Version="14.0"&gt;
+              </span></li></ul><p>
+                            This works for Visual Studio Professional. If you use an edition that is not
+                            listed, you might have to add a tag for this edition. For example, for Visual Studio
+                            2013 Premium or Ultimate change
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACCAACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACCAACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACCAACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">SupportedProducts</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">VisualStudio</span> <span class="highlight-xml-attribute-name">Version</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"10.0"</span><span class="highlight-xml-bracket">&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Edition</span><span class="highlight-xml-bracket">&gt;</span>VSTS<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Edition</span><span class="highlight-xml-bracket">&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Edition</span><span class="highlight-xml-bracket">&gt;</span>VSTD<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Edition</span><span class="highlight-xml-bracket">&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Edition</span><span class="highlight-xml-bracket">&gt;</span>Pro<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Edition</span><span class="highlight-xml-bracket">&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Edition</span><span class="highlight-xml-bracket">&gt;</span>VCSExpress<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Edition</span><span class="highlight-xml-bracket">&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Edition</span><span class="highlight-xml-bracket">&gt;</span>VPDExpress<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Edition</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">VisualStudio</span><span class="highlight-xml-bracket">&gt;</span>
+<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">SupportedProducts</span><span class="highlight-xml-bracket">&gt;</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACCAACAAA");</script><p>
+                            to
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAACAACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAACAACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAACAACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">SupportedProducts</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">VisualStudio</span> <span class="highlight-xml-attribute-name">Version</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"12.0"</span><span class="highlight-xml-bracket">&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Edition</span><span class="highlight-xml-bracket">&gt;</span>Ultimate<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Edition</span><span class="highlight-xml-bracket">&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Edition</span><span class="highlight-xml-bracket">&gt;</span>Premium<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Edition</span><span class="highlight-xml-bracket">&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Edition</span><span class="highlight-xml-bracket">&gt;</span>Pro<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Edition</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">VisualStudio</span><span class="highlight-xml-bracket">&gt;</span>
+<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">SupportedProducts</span><span class="highlight-xml-bracket">&gt;</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAACAACAAA");</script></li><li>
+                        On some PCs the following step is necessary: Clear the VS extension cache. For example,
+                        for Visual Studio 2013 delete the files in
+                        <ul class="noBullet"><li><em>%localappdata%\Microsoft\VisualStudio\12.0\Extensions</em></li></ul></li><li>
+                        Open the command prompt with administrator privileges. Change the working directory to
+                        the directory which contains <em>devenv.exe</em>:
+                        <ul class="noBullet"><li>
+                                (for VS2012) <em>C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\</em></li><li>
+                                (for VS2013) <em>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\</em></li><li>
+                                (for VS2015) <em>C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\</em></li></ul><p>
+                            or
+                        </p><ul class="noBullet"><li><em>C:\Program Files (x86)\Common7\IDE\</em></li></ul><p>
+                            and execute
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABAAACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABAAACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABAAACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">devenv.exe /setup</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABAAACAAA");</script><p>
+                            to rebuild the extension cache.
+                        </p></li></ol></div><div class="collapsibleAreaRegion" id="Issues"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Known issues</span></div><div id="ID2RBSection" class="collapsibleSection"><h4 class="subHeading">Content is always rebuilt</h4><div class="subsection"><p>
+                            In some solutions XNA content projects are always rebuilt even if the output is up-to-date -
+                            which can be annoying because building content can take many minutes in larger
+                            projects.
+                            Usually, this happens if a content pipeline project is included in the solution. The content pipeline
+                            assembly is updated every time the project is built, which causes the content to be rebuilt.
+                        </p><p>
+                            A simple workaround is to build the content pipeline projects once and then unload it from the
+                            Visual Studio solution: In Visual Studio open the <strong>Solution Explorer</strong>,
+                            right-click the content pipeline project and select <strong>Unload Project</strong>
+                            in the context menu.
+                        </p><p>
+                            If this does not solve the problem and the content is still rebuilding, then you can
+                            check the Visual Studio build log in the <span class="ui">Output</span> window
+                            to see which project causes the rebuilds. You might have to increase the amount of
+                            information in the build log: Open the menu
+                            <span class="ui">Tools | Options... | Projects and Solutions | Build and Run</span> and change the
+                            <span class="ui">MSBuild project build output verbosity</span> to <span class="ui">Detailed</span>.
+                        </p></div></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID3RBSection" class="collapsibleSection"><h4 class="subHeading">Other Resources</h4><div class="seeAlsoStyle"><a href="46419cff-2a6e-4d81-84e4-051800b9727b.htm">Installation</a></div><div class="seeAlsoStyle"><a href="http://stackoverflow.com/questions/10881005/how-to-install-xna-game-studio-on-visual-studio-2012" target="_blank">Stackoverflow: How to install XNA game studio on Visual Studio 2012?</a></div><div class="seeAlsoStyle"><a href="http://dementedvice.wordpress.com/2013/10/21/let-me-explain-install-xna-on-visual-studio-2013-and-2012/" target="_blank">Álison Fernandes: Install XNA on Visual Studio 2013 and 2012</a></div><div class="seeAlsoStyle"><a href="http://jaquadro.com/2014/02/xna-templates-for-visual-studio-2013/" target="_blank">Justin Aquadro: XNA Templates for Visual Studio 2013</a></div><div class="seeAlsoStyle"><a href="http://jaquadro.com/2013/11/migrating-monogame-projects-to-vs2013-and-windows-8-1/" target="_blank">Justin Aquadro: Migrating MonoGame Projects to VS2013 and Windows 8.1</a></div><div class="seeAlsoStyle"><a href="http://what-ev.net/2014/02/19/the-xna-enabler-app-xna-in-visual-studio-2012-2013/?wt=5" target="_blank">Chris Cascioli: The XNA Enabler App – XNA in Visual Studio 2012 &amp; 2013</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

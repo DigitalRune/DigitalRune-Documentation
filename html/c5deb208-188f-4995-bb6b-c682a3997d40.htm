@@ -1,0 +1,320 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Model Description (*.drmdl File)</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="c5deb208-188f-4995-bb6b-c682a3997d40" /><meta name="Description" content="This topic describes the purpose and structure of the model description (*.drmdl file)." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="9604b781-8adb-4ec6-87bd-85b805e9c036.htm" title="Asset Creation" tocid="9604b781-8adb-4ec6-87bd-85b805e9c036">Asset Creation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="80150ca3-144d-493e-9741-3587ab95ccdf.htm" title="Models" tocid="80150ca3-144d-493e-9741-3587ab95ccdf">Models</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="c5deb208-188f-4995-bb6b-c682a3997d40.htm" title="Model Description (*.drmdl File)" tocid="c5deb208-188f-4995-bb6b-c682a3997d40">Model Description (*.drmdl File)</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c961412f-43c7-4b82-a68d-b20dd2d5131f.htm" title="Morph Targets" tocid="c961412f-43c7-4b82-a68d-b20dd2d5131f">Morph Targets</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="1bb7c46b-886a-4cca-a16d-f5f2a16e239f.htm" title="Level of Detail" tocid="1bb7c46b-886a-4cca-a16d-f5f2a16e239f">Level of Detail</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="6df1c8c2-edd1-4334-b830-70111c175aac.htm" title="Occluders" tocid="6df1c8c2-edd1-4334-b830-70111c175aac">Occluders</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Model Description (*.drmdl File)</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                        This topic describes the purpose and structure of the <span class="term">model description</span>
+                        (*.drmdl file).
+                  </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#DRMDL">Model description (*.drmdl file)</a></li><li class="outlineSectionEntry"><a href="#Model">&lt;Model&gt;</a></li><li class="outlineSectionEntry"><a href="#Mesh">&lt;Mesh&gt;</a></li><li class="outlineSectionEntry"><a href="#Submesh">&lt;Submesh&gt;</a></li><li class="outlineSectionEntry"><a href="#Animations">&lt;Animations&gt;</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#AnimationCompression">Animation compression</a></li></ul><li class="outlineSectionEntry"><a href="#Animation">&lt;Animation&gt;</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#MultipleAnimations">Multiple animations per model</a></li></ul><li class="outlineSectionEntry"><a href="#Auto">Automatic creation of missing model description files</a></li><li class="outlineSectionEntry"><a href="#seeAlsoSection">See Also</a></li></ul></div><div class="collapsibleAreaRegion" id="DRMDL"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Model description (*.drmdl file)</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                              The <span class="term">model description</span> is an XML file with the file extension
+                              ".drmdl" or ".xml". It provides settings for processing a model and assigns
+                              materials to each submesh.
+                        </p><p>
+                              Example:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAEAHAAA_tab1" class="codeSnippetContainerTabSingle">Model description: MyCharacter.drmdl</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAEAHAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAEAHAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAEAHAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-xml-bracket">&lt;?</span><span class="highlight-xml-tag">xml</span> <span class="highlight-xml-attribute-name">version</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"1.0"</span> <span class="highlight-xml-attribute-name">encoding</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"utf-8"</span><span class="highlight-xml-bracket">?&gt;</span>
+
+<span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Model</span> <span class="highlight-xml-attribute-name">File</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"MyCharacter.fbx"</span>
+       <span class="highlight-xml-attribute-name">AabbMinimum</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"-1,-0.2,-1"</span>
+       <span class="highlight-xml-attribute-name">AabbMaximum</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"1,2,1"</span>
+       <span class="highlight-xml-attribute-name">GenerateTangentFrames</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"True"</span>
+       <span class="highlight-xml-attribute-name">Scale</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"0.02"</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Mesh</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Body"</span><span class="highlight-xml-bracket">&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Submesh</span> <span class="highlight-xml-attribute-name">Material</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Skin.drmat"</span> <span class="highlight-xml-bracket">/&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Submesh</span> <span class="highlight-xml-attribute-name">Material</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Cloth.drmat"</span> <span class="highlight-xml-bracket">/&gt;</span>
+  <span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Mesh</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Mesh</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Hat"</span><span class="highlight-xml-bracket">&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Submesh</span> <span class="highlight-xml-attribute-name">Material</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Hat.drmat"</span> <span class="highlight-xml-bracket">/&gt;</span>
+  <span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Mesh</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Animations</span> <span class="highlight-xml-attribute-name">ScaleCompression</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"0.01"</span> 
+              <span class="highlight-xml-attribute-name">RotationCompression</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"1"</span> 
+              <span class="highlight-xml-attribute-name">TranslationCompression</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"0.01"</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Animations</span><span class="highlight-xml-bracket">&gt;</span>
+<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Model</span><span class="highlight-xml-bracket">&gt;</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAEAHAAA");</script><p>
+                              When a model (e.g. a FBX file) is included in a content project, the DigitalRune
+                              model processor searches for a model description in the current folder.
+                              It looks for a file with the same name and the extension ".drmdl" or ".xml".
+                              For example, if the path of the model is <em>"Assets\Models\Dude.fbx"</em>
+                              the model description must be stored as <em>"Assets\Models\Dude.drmdl"</em>.
+                        </p><p>
+                              If a model description is found, the model processor uses these settings for
+                              processing the model. If no matching model description is found, it uses the default settings.
+                        </p><p>
+                              In most cases the model (e.g. the FBX file) is added to content project. But when
+                              using model descriptions it is also possible to add the *.drmdl files instead of
+                              the models to the content project. The model description references the actual model
+                              using the <span class="code">File</span> attribute as shown above. Adding the model
+                              descriptions instead of the model to the content project has the following advantages:
+                        </p><ul><li>
+                                    The model description can reference the model using an absolute or relative path.
+                                    The model can be stored in a different folder.
+                              </li><li>
+                                    In XNA it is usually not possible to import the same model multiple times.
+                                    Multiple model descriptions can reference the same model. That means, it is
+                                    possible to import and process the same model multiple times with different
+                                    settings.
+                              </li></ul></div><div class="collapsibleAreaRegion" id="Model"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />&lt;Model&gt;</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                              The <span class="code">Model</span> element has the following attributes:
+                        </p><div class="tableSection"><table><tr><th><p>Attribute</p></th><th><p>Description</p></th><th><p>Example</p></th></tr><tr><td><p>File</p></td><td><p>
+                                                Optional: The path and name of the model file.
+                                          </p><p>
+                                                This attribute is only relevant when the .drmdl file is included in the
+                                                content project instead of the actual model. The content pipeline will
+                                                import the specified model as described
+                                                <a href="c5deb208-188f-4995-bb6b-c682a3997d40.htm#Import">below</a>.
+                                          </p></td><td><p><span class="code">File="Dude.fbx"</span></p></td></tr><tr><td><p>AabbMaximum</p></td><td><p>
+                                                Optional: The maximum corner for the axis-aligned bounding box (AABB) of the whole
+                                                model.
+                                          </p></td><td><p><span class="code">AabbMaximum="2,2.5,1</span></p></td></tr><tr><td><p>AabbMinimum</p></td><td><p>
+                                                Optional: The maximum corner for the axis-aligned bounding box (AABB) of the whole
+                                                model. If both <span class="code">AabbMaximum</span> and <span class="code">AabbMinimum</span>
+                                                are set, the default bounding shapes of all meshes are replaced with the specified
+                                                AABB.
+                                          </p></td><td><p><span class="code">AabbMinimum="-2,-0.5,-1"</span></p></td></tr><tr><td><p>GenerateTangentFrames</p></td><td><p>
+                                                Optional: If enabled, binormals and tangents are generated for all meshes. (Existing
+                                                binormals and tangents remain unchanged - existing data is never removed or replaced.)
+                                          </p><p>
+                                                Allowed values are <span class="code">True</span> and <span class="code">False</span>.
+                                          </p><p>
+                                                The default value is <span class="code">False</span>.
+                                          </p></td><td><p><span class="code">GenerateTangentFrames="True"</span></p></td></tr><tr><td><p>Importer</p></td><td><p>
+                                                Optional: The type name of the content importer.
+                                          </p><p>
+                                                This attribute is only relevant when the .drmdl file is included in the
+                                                content project instead of the actual model. The .drmdl file references
+                                                the actual model and the content pipeline will import the model using the
+                                                specified importer.
+                                          </p><p>
+                                                If the attribute is missing, the content pipeline will choose the default
+                                                content importer based on the file extension of the model.
+                                          </p></td><td><p><span class="code">Importer="FbxImporter"</span></p></td></tr><tr><td><p>MaxDistance</p></td><td><p>
+                                                Optional: The maximal distance up to which the model will be rendered.
+                                          </p><p>
+                                                See property <a href="42f41e06-fa8e-2944-956e-0b4c788d1967.htm">SceneNode<span id="LSTA726D307_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTA726D307_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>MaxDistance</a>.
+                                          </p><p>
+                                                The default value is <span class="code">0</span>, which means that distance culling
+                                                is disabled.
+                                          </p></td><td><p><span class="code">MaxDistance="1000"</span></p></td></tr><tr><td><p>PremultiplyVertexColors</p></td><td><p>
+                                                Optional: If enabled, the vertex colors are converted to premultiplied alpha format.
+                                          </p><p>
+                                                Allowed values are <span class="code">True</span> and <span class="code">False</span>.
+                                          </p><p>
+                                                The default value is <span class="code">True</span>.
+                                          </p></td><td><p><span class="code">PremultiplyVertexColors="False"</span></p></td></tr><tr><td><p>RotationX</p></td><td><p>
+                                                Optional: A rotation angle in degrees. The model is rotated by the specified number
+                                                of degrees around the z-axis.
+                                          </p><p>
+                                                The default value is 0.
+                                          </p></td><td><p><span class="code">RotationX="90"</span></p></td></tr><tr><td><p>RotationY</p></td><td><p>
+                                                Optional: A rotation angle in degrees. The model is rotated by the specified number
+                                                of degrees around the y-axis.
+                                          </p><p>
+                                                The default value is 0.
+                                          </p></td><td><p><span class="code">RotationY="-90"</span></p></td></tr><tr><td><p>RotationZ</p></td><td><p>
+                                                Optional: A rotation angle in degrees. The model is rotated by the specified number
+                                                of degrees around the z-axis.
+                                          </p><p>
+                                                The default value is 0.
+                                          </p></td><td><p><span class="code">RotationZ="180"</span></p></td></tr><tr><td><p>Scale</p></td><td><p>
+                                                Optional: A uniform scale factor, which is applied to the model.
+                                          </p><p>
+                                                The default value is 1.
+                                          </p></td><td><p><span class="code">Scale="0.1"</span></p></td></tr><tr><td><p>SwapWindingOrder</p></td><td><p>
+                                                Optional: If enabled, the winding order of the faces is swapped.
+                                          </p><p>
+                                                Allowed values are <span class="code">True</span> and <span class="code">False</span>.
+                                          </p><p>
+                                                The default value is <span class="code">False</span>.
+                                          </p></td><td><p><span class="code">SwapWindingOrder="True"</span></p></td></tr></table></div><p>
+                              The <span class="code">Model</span> element may have one or more <span class="code">Mesh</span>
+                              elements and an optional <span class="code">Animations</span> element.
+                        </p></div><div class="collapsibleAreaRegion" id="Mesh"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />&lt;Mesh&gt;</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                              The model descriptions usually has one <span class="code">Mesh</span> element per mesh in
+                              the original model. The <span class="code">Name</span> attribute needs to be set to match
+                              the element with a mesh of the model. The <span class="code">Mesh</span> element is used
+                              to specify processing options for the meshes and to assign materials to the submeshes.
+                        </p><p>
+                              The <span class="code">Mesh</span> element is optional. If it is not specified, then the
+                              material processor tries to assign material using the texture names. For example, if an
+                              imported submesh uses a texture called <em>Wood.tga</em>, it will try to find
+                              a material definition file <em>Wood.drmat</em> in the folder that contains
+                              the texture. If a material definition is found, it is assigned to the submesh. If no material
+                              definition is found, the submesh will use the default material stored in the model.
+                        </p><p>
+                              The <span class="code">Mesh</span> element has the following attributes:
+                        </p><div class="tableSection"><table><tr><th><p>Attribute</p></th><th><p>Description</p></th><th><p>Example</p></th></tr><tr><td><p>Name</p></td><td><p>
+                                                The name of the mesh.
+                                          </p></td><td><p><span class="code">Name="Body"</span></p></td></tr><tr><td><p>GenerateTangentFrames</p></td><td><p>
+                                                Optional: Specifies whether binormals and tangents are generated for this mesh.
+                                                (Existing binormals and tangents remain unchanged - existing data is never removed
+                                                or replaced.)
+                                          </p><p>
+                                                Allowed values are <span class="code">True</span> and <span class="code">False</span>.
+                                          </p><p>
+                                                The default value is <span class="code">False</span>.
+                                          </p></td><td><p><span class="code">GenerateTangentFrames="True"</span></p></td></tr><tr><td><p>LodDistance</p></td><td><p>
+                                                The LOD distance at which the mesh will be rendered. Only relevant if the mesh
+                                                belongs to a LOD group.
+                                          </p><p>
+                                                The default value is <span class="code">0</span>.
+                                          </p></td><td><p><span class="code">LodDistance="50"</span></p></td></tr><tr><td><p>MaxDistance</p></td><td><p>
+                                                Optional: The maximal distance up to which the mesh will be rendered.
+                                          </p><p>
+                                                See property <a href="42f41e06-fa8e-2944-956e-0b4c788d1967.htm">SceneNode<span id="LSTA726D307_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTA726D307_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>MaxDistance</a>.
+                                          </p><p>
+                                                The default value is <span class="code">0</span>, which means that distance culling
+                                                is disabled.
+                                          </p></td><td><p><span class="code">MaxDistance="1000"</span></p></td></tr></table></div><p>
+                              The <span class="code">Mesh</span> element may contain one or more
+                              <span class="code">Submesh</span> elements.
+                        </p></div><div class="collapsibleAreaRegion" id="Submesh"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />&lt;Submesh&gt;</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                              The <span class="code">Submesh</span> element assigns a material to each submesh. The order
+                              of the <span class="code">Submesh</span> elements needs to match the order of the submeshes
+                              in the original model!
+                        </p><p>
+                              The <span class="code">Submesh</span> element has the following attributes:
+                        </p><div class="tableSection"><table><tr><th><p>Attribute</p></th><th><p>Description</p></th><th><p>Example</p></th></tr><tr><td><p>GenerateTangentFrames</p></td><td><p>
+                                                Optional: Specifies whether binormals and tangents are generated for this mesh.
+                                                (Existing binormals and tangents remain unchanged - existing data is never removed
+                                                or replaced.)
+                                          </p><p>
+                                                Allowed values are <span class="code">True</span> and <span class="code">False</span>.
+                                          </p><p>
+                                                The default value is <span class="code">False</span>.
+                                          </p></td><td><p><span class="code">GenerateTangentFrames="True"</span></p></td></tr><tr><td><p>Material</p></td><td><p>
+                                                The path of the material definition (*.drmat file).
+                                          </p></td><td><p><span class="code">Material="RustyMetal.drmat"</span></p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="Animations"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />&lt;Animations&gt;</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                              Any animations included in the model are automatically pre-processed and imported into the
+                              DigitalRune Graphics engine. The <span class="code">Animations</span> element can be used
+                              to define further pre-processing options for animations.
+                        </p><p>
+                              The <span class="code">Animations</span> element has the following attributes.
+                        </p><div class="tableSection"><table><tr><th><p>Attribute</p></th><th><p>Description</p></th><th><p>Examples</p></th></tr><tr><td><p>MergeFiles</p></td><td><p>
+                                                Optional: A list of animation files, which are merged to the current model.
+                                          </p></td><td><p><span class="code">MergeFiles="idle.fbx;run.fbx;jump.fbx"</span></p></td></tr><tr><td><p>ScaleCompression</p></td><td><p>
+                                                Optional: Enables key frame compression. The value is the max. allowed scale error
+                                                of the compressed animation.
+                                          </p></td><td><p><span class="code">ScaleCompression="0.01"</span></p></td></tr><tr><td><p>RotationCompression</p></td><td><p>
+                                                Optional: Enables key frame compression. The value is the max. allowed rotation
+                                                error (in degrees) of the compressed animation.
+                                          </p></td><td><p><span class="code">RotationCompression="3"</span></p></td></tr><tr><td><p>TranslationCompression</p></td><td><p>
+                                                Optional: Enables key frame compression. The value is the max. allowed translation
+                                                error of the compressed animation.
+                                          </p></td><td><p><span class="code">TranslationCompression="0.001"</span></p></td></tr><tr><td><p>AddLoopFrame</p></td><td><p>
+                                                Optional: Adds a copy of the first key frame at the end of the
+                                                animation. This ensures that cyclic animations transition
+                                                smoothly when the last key frame is reached.
+                                          </p><p>
+                                                When an animation is played back with
+                                                <a href="9d0de083-de73-71b9-b0c9-da02a33d0a75.htm">LoopBehavior<span id="LSTA726D307_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTA726D307_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Cycle</a>
+                                                or <a href="9d0de083-de73-71b9-b0c9-da02a33d0a75.htm">LoopBehavior<span id="LSTA726D307_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTA726D307_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>CycleOffset</a>
+                                                the first key frame needs to match the last key frame.
+                                                <span class="code">AddLoopFrame="True"</span> inserts copy of the
+                                                first key frame at time = <em>duration</em>.
+                                                Existing key frames at time = <em>duration</em>
+                                                are overwritten.
+                                          </p><p>
+                                                Allowed values are <span class="code">True</span> and <span class="code">False</span>.
+                                          </p><p>
+                                                The default value is <span class="code">False</span>.
+                                          </p></td><td><p><span class="code">AddLoopFrame="True"</span></p></td></tr></table></div><h4 class="subHeading" id="AnimationCompression">Animation compression</h4><div class="subsection"><p>
+                                          Key frame animations can be memory intensive at runtime - in particular if the
+                                          exported animations store values for every frame. Animation compression can be applied
+                                          to reduce the memory requirements at runtime.
+                                    </p><p>
+                                          Animation compression is a lossy type of compression. The quality of the resulting
+                                          animation can be controlled by setting the attributes
+                                          <span class="code">ScaleCompression</span>,
+                                          <span class="code">RotationCompression</span>, and
+                                          <span class="code">TranslationCompression</span>.
+                                    </p><p>
+                                          Note, all three attributes have to be set to enable animation compression. For Example:
+                                    </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAAAADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAAAADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAAAADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-xml-bracket">&lt;?</span><span class="highlight-xml-tag">xml</span> <span class="highlight-xml-attribute-name">version</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"1.0"</span> <span class="highlight-xml-attribute-name">encoding</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"utf-8"</span><span class="highlight-xml-bracket">?&gt;</span>
+
+<span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Model</span> <span class="highlight-xml-attribute-name">File</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Character.fbx"</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Mesh</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Body"</span><span class="highlight-xml-bracket">&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Submesh</span> <span class="highlight-xml-attribute-name">Material</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Skin.drmat"</span> <span class="highlight-xml-bracket">/&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Submesh</span> <span class="highlight-xml-attribute-name">Material</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Cloth.drmat"</span> <span class="highlight-xml-bracket">/&gt;</span>
+  <span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Mesh</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Animations</span> <span class="highlight-xml-attribute-name">ScaleCompression</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"0.01"</span> <span class="highlight-xml-attribute-name">RotationCompression</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"1"</span> <span class="highlight-xml-attribute-name">TranslationCompression</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"0.01"</span> <span class="highlight-xml-bracket">/&gt;</span>
+<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Model</span><span class="highlight-xml-bracket">&gt;</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAAAADAAA");</script></div></div><div class="collapsibleAreaRegion" id="Animation"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID6RB')" onkeypress="SectionExpandCollapse_CheckKey('ID6RB', event)" tabindex="0"><img id="ID6RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />&lt;Animation&gt;</span></div><div id="ID6RBSection" class="collapsibleSection"><p>
+                              The <span class="code">Animations</span> element can contain <span class="code">Animation</span>
+                              elements, which can be used to split the animation.
+                        </p><p>
+                              The <span class="code">Animation</span> element has the following attributes.
+                        </p><div class="tableSection"><table><tr><th><p>Attribute</p></th><th><p>Description</p></th><th><p>Examples</p></th></tr><tr><td><p>Name</p></td><td><p>
+                                                The name of the animation.
+                                          </p></td><td><p><span class="code">Name="Walk"</span></p></td></tr><tr><td><p>StartTime</p></td><td><p>
+                                                The start of the animation in seconds.
+                                          </p></td><td><p><span class="code">StartTime="0.0"</span></p></td></tr><tr><td><p>EndTime</p></td><td><p>
+                                                The end of the animation in seconds.
+                                          </p></td><td><p><span class="code">EndTime="5.0"</span></p></td></tr><tr><td><p>StartFrame</p></td><td><p>
+                                                The start frame (zero-based index) of the animation.
+                                                The frame rate needs to be specified in the parent &lt;Animations&gt; tag.
+                                          </p></td><td><p><span class="code">StartFrame="0"</span></p></td></tr><tr><td><p>EndFrame</p></td><td><p>
+                                                The end frame (zero-based index) of the animation.
+                                                The frame rate needs to be specified in the parent &lt;Animations&gt; tag.
+                                          </p></td><td><p><span class="code">EndFrame="24"</span></p></td></tr><tr><td><p>AddLoopFrame</p></td><td><p>
+                                                Optional: Adds a copy of the first key frame at the end of the
+                                                animation. This ensures that cyclic animations transition
+                                                smoothly when the last key frame is reached.
+                                          </p><p>
+                                                When an animation is played back with
+                                                <a href="9d0de083-de73-71b9-b0c9-da02a33d0a75.htm">LoopBehavior<span id="LSTA726D307_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTA726D307_4?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Cycle</a>
+                                                or <a href="9d0de083-de73-71b9-b0c9-da02a33d0a75.htm">LoopBehavior<span id="LSTA726D307_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTA726D307_5?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>CycleOffset</a>
+                                                the first key frame needs to match the last key frame.
+                                                <span class="code">AddLoopFrame="True"</span> inserts copy of the
+                                                first key frame at time = <em>duration</em>.
+                                                Existing key frames at time = <em>duration</em>
+                                                are overwritten.
+                                          </p><p>
+                                                Setting <span class="code">AddLoopFrame</span> here overrides
+                                                the settings in the &lt;Animations&gt; tag.
+                                    </p><p>
+                                                Allowed values are <span class="code">True</span> and <span class="code">False</span>.
+                                          </p><p>
+                                                The default value is <span class="code">False</span>.
+                                          </p></td><td><p><span class="code">AddLoopFrame="True"</span></p></td></tr></table></div><h4 class="subHeading" id="MultipleAnimations">Multiple animations per model</h4><div class="subsection"><p>
+                                          The current Autodesk FBX exporter only supports a single animation take per FBX file.
+                                          There are two ways to export and load a model with multiple animations:
+                                    </p><ol><li><p><strong>Merge animation files</strong></p><p>
+                                                      The first solution is to export the animations into different FBX files. Animations
+                                                      stored in external files can be merged to the model during pre-processing using
+                                                      the <span class="code">MergeFiles</span> attribute.
+                                                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAABBAAACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAABBAAACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAABBAAACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-xml-bracket">&lt;?</span><span class="highlight-xml-tag">xml</span> <span class="highlight-xml-attribute-name">version</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"1.0"</span> <span class="highlight-xml-attribute-name">encoding</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"utf-8"</span><span class="highlight-xml-bracket">?&gt;</span>
+
+<span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Model</span> <span class="highlight-xml-attribute-name">File</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Character.fbx"</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Mesh</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Body"</span><span class="highlight-xml-bracket">&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Submesh</span> <span class="highlight-xml-attribute-name">Material</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Skin.drmat"</span> <span class="highlight-xml-bracket">/&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Submesh</span> <span class="highlight-xml-attribute-name">Material</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Cloth.drmat"</span> <span class="highlight-xml-bracket">/&gt;</span>
+  <span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Mesh</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Animations</span> <span class="highlight-xml-attribute-name">MergeFiles</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"idle.fbx;walk.fbx;run.fbx;jump.fbx;turn.fbx"</span> <span class="highlight-xml-bracket">/&gt;</span>
+<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Model</span><span class="highlight-xml-bracket">&gt;</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAABBAAACAAA");</script></li><li><p><strong>Split animation</strong></p><p>
+                                                      The second solution is to concatenate all animations into a single animation take
+                                                      and export the animation take as part of the model. <span class="code">Animation</span>
+                                                      tags can be used to split the take during pre-processing into individual animations.
+                                                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAABAAACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAABAAACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAABAAACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-xml-bracket">&lt;?</span><span class="highlight-xml-tag">xml</span> <span class="highlight-xml-attribute-name">version</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"1.0"</span> <span class="highlight-xml-attribute-name">encoding</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"utf-8"</span><span class="highlight-xml-bracket">?&gt;</span>
+
+<span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Model</span> <span class="highlight-xml-attribute-name">File</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Character.fbx"</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Mesh</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Body"</span><span class="highlight-xml-bracket">&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Submesh</span> <span class="highlight-xml-attribute-name">Material</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Skin.drmat"</span> <span class="highlight-xml-bracket">/&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Submesh</span> <span class="highlight-xml-attribute-name">Material</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Cloth.drmat"</span> <span class="highlight-xml-bracket">/&gt;</span>
+  <span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Mesh</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Animations</span> <span class="highlight-xml-attribute-name">Framerate</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"24"</span><span class="highlight-xml-bracket">&gt;</span> <span class="highlight-xml-comment">&lt;!-- Framerate attribute is only required if start and end are specified in 'frames'. --&gt;</span>      
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Animation</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Idle"</span> <span class="highlight-xml-attribute-name">StartTime</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"0"</span> <span class="highlight-xml-attribute-name">EndTime</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"1.0"</span><span class="highlight-xml-bracket">/&gt;</span>   <span class="highlight-xml-comment">&lt;!-- Start and end specified in seconds. --&gt;</span>
+    <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Animation</span> <span class="highlight-xml-attribute-name">Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Walk"</span> <span class="highlight-xml-attribute-name">StartFrame</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"24"</span> <span class="highlight-xml-attribute-name">EndFrame</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"60"</span><span class="highlight-xml-bracket">/&gt;</span> <span class="highlight-xml-comment">&lt;!-- Start end end specified in frames. --&gt;</span>
+    ...
+
+  <span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Animations</span><span class="highlight-xml-bracket">&gt;</span>
+<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Model</span><span class="highlight-xml-bracket">&gt;</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAABAAACAAA");</script></li></ol><p>
+                                          Note that either the first or the second approach can be used to import multiple
+                                          animations. But it is not possible to mix both approaches.
+                                    </p></div></div><div class="collapsibleAreaRegion" id="Auto"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID7RB')" onkeypress="SectionExpandCollapse_CheckKey('ID7RB', event)" tabindex="0"><img id="ID7RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Automatic creation of missing model description files</span></div><div id="ID7RBSection" class="collapsibleSection"><p>
+                              The DigitalRune model content processor will automatically create a default model
+                              description (*.drmdl file) if it cannot find any. You can edit this file to set
+                              the desired processing options and to assign materials to submeshes.
+                        </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                                    The automatic generation of missing model descriptions can be turned off using a
+                                    property of the content processor.
+                              </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID8RB')" onkeypress="SectionExpandCollapse_CheckKey('ID8RB', event)" tabindex="0"><img id="ID8RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID8RBSection" class="collapsibleSection"><h4 class="subHeading">Other Resources</h4><div class="seeAlsoStyle"><a href="http://blogs.msdn.com/b/shawnhar/archive/2010/06/18/merging-animation-files.aspx" title="&quot;Merging animation files&quot;, by Shawn Hargreaves" target="_blank">"Merging animation files", by Shawn Hargreaves</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

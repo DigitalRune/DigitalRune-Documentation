@@ -1,0 +1,142 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Clouds</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="695a2c07-5da8-4cf8-a508-5a7f6a29e5c8" /><meta name="Description" content="The following video demonstrates features of the cloud system:" /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="7d5a0abe-8231-452c-895c-e6dbab83822b.htm" title="Graphics Programming" tocid="7d5a0abe-8231-452c-895c-e6dbab83822b">Graphics Programming</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="975dcbca-5c87-4f33-a372-0cfe7f50cebe.htm" title="Sky" tocid="975dcbca-5c87-4f33-a372-0cfe7f50cebe">Sky</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="695a2c07-5da8-4cf8-a508-5a7f6a29e5c8.htm" title="Clouds" tocid="695a2c07-5da8-4cf8-a508-5a7f6a29e5c8">Clouds</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="e3826476-e1c8-4ac7-8304-bb2f5bd3e532.htm" title="Ephemeris" tocid="e3826476-e1c8-4ac7-8304-bb2f5bd3e532">Ephemeris</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Clouds</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Video">Video</a></li><li class="outlineSectionEntry"><a href="#Clouds">Defining clouds</a></li><li class="outlineSectionEntry"><a href="#Rendering">Rendering clouds</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#CloudMapRenderer">CloudMapRenderer</a></li></ul></ul></div><div class="collapsibleAreaRegion" id="Video"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Video</span></div><div id="ID0RBSection" class="collapsibleSection"><p>The following video demonstrates features of the cloud system:</p><ul class="noBullet"><li><p><a href="https://www.youtube.com/watch?v=kF4l3gCtgck" target="_blank">Video: Procedural Cloud Layer</a></p></li></ul></div><div class="collapsibleAreaRegion" id="Clouds"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Defining clouds</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    A
+                    <a href="5b884a02-5553-ff7f-47e5-3526331a406d.htm">CloudLayerNode</a>
+                    can be used to add clouds to a scene. The clouds are rendered as a 2D layer in the sky.
+                </p><p>
+                    The structure of the clouds is defined by a cloud texture in
+                    <a href="b0bbb0e2-0591-76b0-aa35-a596e6b7774e.htm">CloudMap</a>.
+                    The cloud texture stores the transmittance of the sky (see
+                    <a href="34bc11a4-fabc-eccf-7983-0b0ad8388d64.htm">CloudMap<span id="LST4ED84B20_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4ED84B20_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Texture</a>
+                    for more information). It is possible to set an artist-defined texture (see
+                    <a href="8f12c66f-8fbc-a708-3500-3126ecafed9b.htm">BasicCloudMap</a>)
+                    or dynamically generate a cloud texture at runtime (see
+                    <a href="dae1541e-ed10-f428-c2ec-37e0fb81fcd0.htm">LayeredCloudMap</a>).
+                    (The clouds in the video use a
+                    <a href="dae1541e-ed10-f428-c2ec-37e0fb81fcd0.htm">LayeredCloudMap</a>).
+                    consisting of 8 octaves of noise.)
+                </p><p>
+                    The texture coordinates of a layered cloud map can be scrolled to create clouds moving in the wind.
+                    The cloud map can also be animated to simulate simple formation and dissipation of clouds.
+                    The
+                    <a href="7c3f6773-eeaa-0e52-fc3d-f421ffad6601.htm">Coverage</a>
+                    of the
+                    <a href="dae1541e-ed10-f428-c2ec-37e0fb81fcd0.htm">LayeredCloudMap</a>
+                    can be used to transition from a clear to an overcast sky.
+                </p><div class="mediaNear"><img alt="DigitalRune.Graphics (Clouds)" src="../media/Graphics_Sky.png" /><div class="caption">Class Diagram: Clouds</div></div><p>
+                    The following example shows how to add a cloud layer to a scene.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAFACAAA_tab1" class="codeSnippetContainerTabSingle">Example (C#)</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAFACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAFACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAFACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// The cloud map defines the settings for generating a cloud texture.</span>
+<span class="highlight-keyword">var</span> cloudMap = <span class="highlight-keyword">new</span> LayeredCloudMap
+{
+  Density = <span class="highlight-number">15</span>,
+  Coverage = <span class="highlight-number">0.5</span>f,
+  Size = <span class="highlight-number">2048</span>,
+};
+<span class="highlight-comment">// The cloud is built from 8 octaves of static noise.</span>
+<span class="highlight-keyword">var</span> scale = CreateScale(<span class="highlight-number">0.2</span>f);  <span class="highlight-comment">// Scale the noise to generate bigger clouds patches.</span>
+cloudMap.Layers[<span class="highlight-number">0</span>] = <span class="highlight-keyword">new</span> CloudMapLayer(<span class="highlight-keyword">null</span>, scale * CreateScale(<span class="highlight-number">1</span>), <span class="highlight-number">-0.5</span>f, <span class="highlight-number">1.0</span>f, <span class="highlight-number">0</span>);
+cloudMap.Layers[<span class="highlight-number">1</span>] = <span class="highlight-keyword">new</span> CloudMapLayer(<span class="highlight-keyword">null</span>, scale * CreateScale(<span class="highlight-number">1.7</span>f), <span class="highlight-number">-0.5</span>f, <span class="highlight-number">1.0</span>f / <span class="highlight-number">2.0</span>f, <span class="highlight-number">0</span>);
+cloudMap.Layers[<span class="highlight-number">2</span>] = <span class="highlight-keyword">new</span> CloudMapLayer(<span class="highlight-keyword">null</span>, scale * CreateScale(<span class="highlight-number">3.97</span>f), <span class="highlight-number">-0.5</span>f, <span class="highlight-number">1.0</span>f / <span class="highlight-number">4.0</span>f, <span class="highlight-number">0</span>);
+cloudMap.Layers[<span class="highlight-number">3</span>] = <span class="highlight-keyword">new</span> CloudMapLayer(<span class="highlight-keyword">null</span>, scale * CreateScale(<span class="highlight-number">8.1</span>f), <span class="highlight-number">-0.5</span>f, <span class="highlight-number">1.0</span>f / <span class="highlight-number">8.0</span>f, <span class="highlight-number">0</span>);
+cloudMap.Layers[<span class="highlight-number">4</span>] = <span class="highlight-keyword">new</span> CloudMapLayer(<span class="highlight-keyword">null</span>, scale * CreateScale(<span class="highlight-number">16</span>, <span class="highlight-number">17</span>), <span class="highlight-number">-0.5</span>f, <span class="highlight-number">1.0</span>f / <span class="highlight-number">16.0</span>f, <span class="highlight-number">0</span>);
+cloudMap.Layers[<span class="highlight-number">5</span>] = <span class="highlight-keyword">new</span> CloudMapLayer(<span class="highlight-keyword">null</span>, scale * CreateScale(<span class="highlight-number">32</span>, <span class="highlight-number">31</span>), <span class="highlight-number">-0.5</span>f, <span class="highlight-number">1.0</span>f / <span class="highlight-number">32.0</span>f, <span class="highlight-number">0</span>);
+cloudMap.Layers[<span class="highlight-number">6</span>] = <span class="highlight-keyword">new</span> CloudMapLayer(<span class="highlight-keyword">null</span>, scale * CreateScale(<span class="highlight-number">64</span>, <span class="highlight-number">67</span>), <span class="highlight-number">-0.5</span>f, <span class="highlight-number">1.0</span>f / <span class="highlight-number">64.0</span>f, <span class="highlight-number">0</span>);
+cloudMap.Layers[<span class="highlight-number">7</span>] = <span class="highlight-keyword">new</span> CloudMapLayer(<span class="highlight-keyword">null</span>, scale * CreateScale(<span class="highlight-number">128</span>, <span class="highlight-number">127</span>), <span class="highlight-number">-0.5</span>f, <span class="highlight-number">1.0</span>f / <span class="highlight-number">64.0</span>f, <span class="highlight-number">0</span>);
+
+<span class="highlight-comment">// Add a new CloudLayerNode to the scene.</span>
+<span class="highlight-keyword">var</span> cloudLayerNode = <span class="highlight-keyword">new</span> CloudLayerNode(cloudMap)
+{
+  SkyCurvature = <span class="highlight-number">0.9</span>f,
+  TextureMatrix = CreateScale(<span class="highlight-number">0.5</span>f),  <span class="highlight-comment">// Stretch the texture by 2X.</span>
+  ForwardScatterExponent = <span class="highlight-number">10</span>,
+  ForwardScatterScale = <span class="highlight-number">10</span>f,
+  ForwardScatterOffset = <span class="highlight-number">0.3</span>f,
+  NumberOfSamples = <span class="highlight-number">16</span>,
+  HorizonFade = <span class="highlight-number">0.03</span>f,
+};
+scene.Children.Add(_cloudLayerNode);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAFACAAA");</script><p><strong>CreateScale</strong> in the example above is a helper method that creates a
+                    texture matrix.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EADACAAA_tab1" class="codeSnippetContainerTabSingle">Example (C#)</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EADACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EADACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EADACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">/// &lt;summary&gt;</span>
+<span class="highlight-comment">/// Creates the texture matrix for scaling texture coordinates.</span>
+<span class="highlight-comment">/// &lt;/summary&gt;</span>
+<span class="highlight-comment">/// &lt;param name="s"&gt;The uniform scale factor.&lt;/param&gt;</span>
+<span class="highlight-comment">/// &lt;returns&gt;The texture matrix.&lt;/returns&gt;</span>
+<span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> Matrix33F CreateScale(<span class="highlight-keyword">float</span> s)
+{
+  <span class="highlight-keyword">return</span> CreateScale(s, s);
+}
+
+<span class="highlight-comment">/// &lt;summary&gt;</span>
+<span class="highlight-comment">/// Creates the texture matrix for scaling the texture coordinates.</span>
+<span class="highlight-comment">/// &lt;/summary&gt;</span>
+<span class="highlight-comment">/// &lt;param name="su"&gt;The scale factor for u texture coordinates.&lt;/param&gt;</span>
+<span class="highlight-comment">/// &lt;param name="sv"&gt;The scale factor for v texture coordinates.&lt;/param&gt;</span>
+<span class="highlight-comment">/// &lt;returns&gt;The texture matrix.&lt;/returns&gt;</span>
+<span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> Matrix33F CreateScale(<span class="highlight-keyword">float</span> su, <span class="highlight-keyword">float</span> sv)
+{
+  <span class="highlight-keyword">return</span> <span class="highlight-keyword">new</span> Matrix33F(
+    su, <span class="highlight-number">0</span>, <span class="highlight-number">0</span>,
+    <span class="highlight-number">0</span>, sv, <span class="highlight-number">0</span>,
+    <span class="highlight-number">0</span>, <span class="highlight-number">0</span>, <span class="highlight-number">1</span>);
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EADACAAA");</script><p>
+                    Clouds are lit by sunlight and ambient light. The settings need to be updated
+                    by the game logic.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABACAAA_tab1" class="codeSnippetContainerTabSingle">Example (C#)</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Read light values from light nodes or environment model.</span>
+cloudLayerNode.SunDirection = sunDirection;
+cloudLayerNode.SunLight = sunlight;
+cloudLayerNode.AmbientLight = ambientLight;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABACAAA");</script><p>
+                    The cloud texture can be animated or used to render cloud shadows. These and other topics
+                    are demonstrated in the included sample projects.
+                </p></div><div class="collapsibleAreaRegion" id="Rendering"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Rendering clouds</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    A
+                    <a href="5b884a02-5553-ff7f-47e5-3526331a406d.htm">CloudLayerNode</a>
+                    is a
+                    <a href="b8d4f66d-5782-db3b-6580-142924299db9.htm">SkyNode</a>
+                    and it is rendered by the
+                    <a href="36f34319-fffd-165b-0902-826886bd9258.htm">SkyRenderer</a>
+                    like all other
+                    <a href="b8d4f66d-5782-db3b-6580-142924299db9.htm">SkyNode</a>s.
+                </p><p>
+                    Clouds are lit by the sun and ambient light settings of the
+                    <a href="5b884a02-5553-ff7f-47e5-3526331a406d.htm">CloudLayerNode</a>.
+                    Clouds in front of the sun show forward scattering.
+                </p><p>
+                    To create cloud shadows, the cloud map texture can be used as the texture of the
+                    directional light which represents the sun. The sun occlusion can also be computed
+                    by the renderer and is stored in the
+                    <a href="5b884a02-5553-ff7f-47e5-3526331a406d.htm">CloudLayerNode</a>.
+                    This value can be used, for example, to reduce lens flare effects when the sun is occluded.
+                </p><p>
+                    Cloud textures are created by a separate renderer, the
+                    <a href="a2239fc2-9069-0ad3-533d-51e3260fc200.htm">CloudMapRenderer</a>.
+                    (The
+                    <a href="a2239fc2-9069-0ad3-533d-51e3260fc200.htm">CloudMapRenderer</a>
+                    only creates the cloud textures for
+                    <a href="dae1541e-ed10-f428-c2ec-37e0fb81fcd0.htm">LayeredCloudMap</a>s.
+                    It does not render the clouds into the sky.)
+                </p><h4 class="subHeading" id="CloudMapRenderer">CloudMapRenderer</h4><div class="subsection"><p>
+                            Cloud textures can be generates using a <a href="a2239fc2-9069-0ad3-533d-51e3260fc200.htm">CloudMapRenderer</a>.
+                            The <a href="a2239fc2-9069-0ad3-533d-51e3260fc200.htm">CloudMapRenderer</a>
+                            is a <a href="c022a3a4-2330-9b46-24ad-c8f3ae13f1f8.htm">SceneNodeRenderer</a>
+                            which handles <a href="5b884a02-5553-ff7f-47e5-3526331a406d.htm">CloudLayerNode</a>s.
+                            If a
+                            <a href="5b884a02-5553-ff7f-47e5-3526331a406d.htm">CloudLayerNode</a>
+                            references a
+                            <a href="dae1541e-ed10-f428-c2ec-37e0fb81fcd0.htm">LayeredCloudMap</a>,
+                            the renderer creates the cloud texture and stores the result in the cloud map.
+                        </p><p>
+                            Cloud textures are usually generated at the start of the <strong>Draw</strong>-method,
+                            before the scene is rendered:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABAAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Generate the cloud textures of CloudLayerNodes.</span>
+cloudMapRenderer.Render(cloudNodes, context);
+
+<span class="highlight-comment">// Render scene...</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABAAABAAA");</script><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Tip" /> Tip</th></tr><tr><td><p>
+                                It is not necessary to call the <a href="a2239fc2-9069-0ad3-533d-51e3260fc200.htm">CloudMapRenderer</a>
+                                in every frame. Static cloud textures only need to be updated when the cloud map is
+                                changed. Dynamic, slow moving clouds can updated every second frame - or even less frequent.
+                            </p></td></tr></table></div></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

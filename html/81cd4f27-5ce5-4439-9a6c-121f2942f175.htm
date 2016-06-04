@@ -1,0 +1,194 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Exponential Smoothing Filter</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="81cd4f27-5ce5-4439-9a6c-121f2942f175" /><meta name="Description" content="This article shows how to implement an exponential smoothing filter." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="2ac58586-0d4f-4625-bf4c-fc32591a5304.htm" title="DigitalRune Mathematics" tocid="2ac58586-0d4f-4625-bf4c-fc32591a5304">DigitalRune Mathematics</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="1f324567-e502-496a-a1ca-bdc232611133.htm" title="Articles" tocid="1f324567-e502-496a-a1ca-bdc232611133">Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="dcccdb1a-a354-46e0-a792-6d866b751a77.htm" title="How To: Add DigitalRune Mathematics to a Project" tocid="dcccdb1a-a354-46e0-a792-6d866b751a77">How To: Add DigitalRune Mathematics to a Project</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="492d3089-3c0f-43a5-b068-417fcd8f91e3.htm" title="How To: Compare Floating-Point Numbers" tocid="492d3089-3c0f-43a5-b068-417fcd8f91e3">How To: Compare Floating-Point Numbers</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="e3ea796c-f78d-4a57-8cb4-cb065513c928.htm" title="How To: Use Vectors, Matrices and Quaternions" tocid="e3ea796c-f78d-4a57-8cb4-cb065513c928">How To: Use Vectors, Matrices and Quaternions</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="f2ee69ec-0e54-4acd-a9e7-bd645644a05d.htm" title="How To: Solve a Non-Linear Equation" tocid="f2ee69ec-0e54-4acd-a9e7-bd645644a05d">How To: Solve a Non-Linear Equation</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="101938c1-f02f-4224-b64e-a95774668df8.htm" title="How To: Move Objects on a 3D Path" tocid="101938c1-f02f-4224-b64e-a95774668df8">How To: Move Objects on a 3D Path</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="81cd4f27-5ce5-4439-9a6c-121f2942f175.htm" title="Exponential Smoothing Filter" tocid="81cd4f27-5ce5-4439-9a6c-121f2942f175">Exponential Smoothing Filter</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="69aba1e3-d818-4c9d-9696-a5978ea88f84.htm" title="Scattered Interpolation" tocid="69aba1e3-d818-4c9d-9696-a5978ea88f84">Scattered Interpolation</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Exponential Smoothing Filter</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This article shows how to implement an <span class="term">exponential smoothing filter</span>.
+            </p></div><div class="collapsibleAreaRegion" id="Usage"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Usage</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    The smoothing filter is a low-pass filter which can be used to smooth floating
+                    point values, e.g. camera position and orientation, mouse positions, etc.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAACAAA_tab1" class="codeSnippetContainerTabSingle">Example (C#): Filtering rotation changes</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">_filter.RawValue[<span class="highlight-number">0</span>] = deltaYaw;
+_filter.RawValue[<span class="highlight-number">1</span>] = deltaPitch;
+_filter.Filter(deltaTime);
+deltaYaw = _filter.FilteredValue[<span class="highlight-number">0</span>];
+deltaPitch = _filter.FilteredValue[<span class="highlight-number">1</span>];</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAACAAA");</script></div><div class="collapsibleAreaRegion" id="Implementation"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Implementation</span></div><div id="ID2RBSection" class="collapsibleSection"><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+
+
+<span class="highlight-keyword">namespace</span> DigitalRune.Mathematics.SignalProcessing
+{
+    <span class="highlight-comment">/// &lt;summary&gt;</span>
+    <span class="highlight-comment">/// Implements an exponential smoothing filter.</span>
+    <span class="highlight-comment">/// &lt;/summary&gt;</span>
+    <span class="highlight-comment">/// &lt;remarks&gt;</span>
+    <span class="highlight-comment">/// &lt;para&gt;</span>
+    <span class="highlight-comment">/// This class implements an exponential smoothing filter, a.k.a an infinite-impulse-response </span>
+    <span class="highlight-comment">/// (IIR) single-pole low-pass filter. The input values are &lt;see cref="Single"/&gt;</span>
+    <span class="highlight-comment">/// arrays where the number of array elements is &lt;see cref="ElementsPerValue"/&gt;.</span>
+    <span class="highlight-comment">/// The smoothness/responsiveness of the filter is controlled by &lt;see cref="TimeConstant"/&gt;.</span>
+    <span class="highlight-comment">/// &lt;/para&gt;</span>
+    <span class="highlight-comment">/// &lt;para&gt;</span>
+    <span class="highlight-comment">/// To avoid temporary allocations of arrays, the filter is used like this:</span>
+    <span class="highlight-comment">/// &lt;list type="number"&gt;</span>
+    <span class="highlight-comment">/// &lt;item&gt;Set the new sample value in &lt;see cref="RawValue"/&gt;.&lt;/item&gt;</span>
+    <span class="highlight-comment">/// &lt;item&gt;Call &lt;see cref="Filter"/&gt;.&lt;/item&gt;</span>
+    <span class="highlight-comment">/// &lt;item&gt;Read the filtered value from &lt;see cref="FilteredValue"/&gt;.&lt;/item&gt;</span>
+    <span class="highlight-comment">/// &lt;/list&gt;</span>
+    <span class="highlight-comment">/// &lt;/para&gt;</span>
+    <span class="highlight-comment">/// &lt;example&gt; </span>
+    <span class="highlight-comment">/// For example:</span>
+    <span class="highlight-comment">/// &lt;code lang="csharp"&gt;</span>
+    <span class="highlight-comment">/// &lt;![CDATA[</span>
+    <span class="highlight-comment">/// _filter.RawValue[0] = pose.Position.X;</span>
+    <span class="highlight-comment">/// _filter.RawValue[1] = pose.Position.Y;</span>
+    <span class="highlight-comment">/// _filter.RawValue[2] = pose.Position.Z;</span>
+    <span class="highlight-comment">/// _filter.Filter((float)gameTime.ElapsedGameTime.TotalSeconds);</span>
+    <span class="highlight-comment">/// pose.Position.X = _filter.FilteredValue[0];</span>
+    <span class="highlight-comment">/// pose.Position.Y = _filter.FilteredValue[1];</span>
+    <span class="highlight-comment">/// pose.Position.Z = _filter.FilteredValue[2];</span>
+    <span class="highlight-comment">/// ]]&gt;</span>
+    <span class="highlight-comment">/// &lt;/code&gt;</span>
+    <span class="highlight-comment">/// &lt;/example&gt;</span>
+    <span class="highlight-comment">/// &lt;/remarks&gt;</span>
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> ExponentialSmoothingFilterF
+    {
+        <span class="highlight-comment">// References:</span>
+        <span class="highlight-comment">// - http://en.wikipedia.org/wiki/Low-pass_filter</span>
+        <span class="highlight-comment">// - http://en.wikipedia.org/wiki/Exponential_smoothing</span>
+
+
+        <span class="highlight-comment">//--------------------------------------------------------------</span>
+        <span class="highlight-preprocessor">#region</span> Fields
+        <span class="highlight-comment">//--------------------------------------------------------------</span>
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">bool</span> _isInitialized;
+        <span class="highlight-preprocessor">#endregion</span>
+
+
+        <span class="highlight-comment">//--------------------------------------------------------------</span>
+        <span class="highlight-preprocessor">#region</span> Properties &amp; Events
+        <span class="highlight-comment">//--------------------------------------------------------------</span>
+
+        <span class="highlight-comment">/// &lt;summary&gt;</span>
+        <span class="highlight-comment">/// Gets the number of array elements per sample value.</span>
+        <span class="highlight-comment">/// &lt;/summary&gt;</span>
+        <span class="highlight-comment">/// &lt;value&gt;</span>
+        <span class="highlight-comment">/// The number of array elements per sample value.</span>
+        <span class="highlight-comment">/// &lt;/value&gt;</span>
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">int</span> ElementsPerValue
+        {
+            <span class="highlight-keyword">get</span> { <span class="highlight-keyword">return</span> _elementsPerValue; }
+        }
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">readonly</span> <span class="highlight-keyword">int</span> _elementsPerValue;
+
+
+        <span class="highlight-comment">/// &lt;summary&gt;</span>
+        <span class="highlight-comment">/// Gets the current raw input value.</span>
+        <span class="highlight-comment">/// &lt;/summary&gt;</span>
+        <span class="highlight-comment">/// &lt;value&gt;</span>
+        <span class="highlight-comment">/// The current raw input value.</span>
+        <span class="highlight-comment">/// &lt;/value&gt;</span>
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">float</span>[] RawValue
+        {
+            <span class="highlight-keyword">get</span> { <span class="highlight-keyword">return</span> _rawValue; }
+        }
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">readonly</span> <span class="highlight-keyword">float</span>[] _rawValue;
+
+
+        <span class="highlight-comment">/// &lt;summary&gt;</span>
+        <span class="highlight-comment">/// Gets the filtered output value.</span>
+        <span class="highlight-comment">/// &lt;/summary&gt;</span>
+        <span class="highlight-comment">/// &lt;value&gt;</span>
+        <span class="highlight-comment">/// The filtered output value.</span>
+        <span class="highlight-comment">/// &lt;/value&gt;</span>
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">float</span>[] FilteredValue
+        {
+            <span class="highlight-keyword">get</span> { <span class="highlight-keyword">return</span> _filteredValue; }
+        }
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">readonly</span> <span class="highlight-keyword">float</span>[] _filteredValue;
+
+
+        <span class="highlight-comment">/// &lt;summary&gt;</span>
+        <span class="highlight-comment">/// Gets or sets the time constant.</span>
+        <span class="highlight-comment">/// &lt;/summary&gt;</span>
+        <span class="highlight-comment">/// &lt;value&gt;</span>
+        <span class="highlight-comment">/// The time constant in seconds. The default value is 0.05s.</span>
+        <span class="highlight-comment">/// &lt;/value&gt;</span>
+        <span class="highlight-comment">/// &lt;remarks&gt;</span>
+        <span class="highlight-comment">/// Lower time constant values make the filter more responsive. Higher time constant</span>
+        <span class="highlight-comment">/// values make the filtered results smoother, but the filter is less responsive (more latency).</span>
+        <span class="highlight-comment">/// &lt;/remarks&gt;</span>
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">float</span> TimeConstant { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+        <span class="highlight-preprocessor">#endregion</span>
+
+
+        <span class="highlight-comment">//--------------------------------------------------------------</span>
+        <span class="highlight-preprocessor">#region</span> Creation &amp; Cleanup
+        <span class="highlight-comment">//--------------------------------------------------------------</span>
+
+        <span class="highlight-comment">/// &lt;summary&gt;</span>
+        <span class="highlight-comment">/// Initializes a new instance of the &lt;see cref="ExponentialSmoothingFilterF"/&gt; class.</span>
+        <span class="highlight-comment">/// &lt;/summary&gt;</span>
+        <span class="highlight-comment">/// &lt;param name="elementsPerValue"&gt;</span>
+        <span class="highlight-comment">/// The number of array elements per sample value.</span>
+        <span class="highlight-comment">/// &lt;/param&gt;</span>
+        <span class="highlight-comment">/// &lt;exception cref="System.ArgumentOutOfRangeException"&gt;</span>
+        <span class="highlight-comment">/// &lt;paramref name="elementsPerValue"/&gt; must be greater than 0.</span>
+        <span class="highlight-comment">/// &lt;/exception&gt;</span>
+        <span class="highlight-keyword">public</span> ExponentialSmoothingFilterF(<span class="highlight-keyword">int</span> elementsPerValue)
+        {
+            <span class="highlight-keyword">if</span> (elementsPerValue &lt;= <span class="highlight-number">0</span>)
+                <span class="highlight-keyword">throw</span> <span class="highlight-keyword">new</span> ArgumentOutOfRangeException(<span class="highlight-literal">"elementsPerValue"</span>, <span class="highlight-literal">"ElementsPerValue must be greater than 0."</span>);
+
+            _elementsPerValue = elementsPerValue;
+            TimeConstant = <span class="highlight-number">0.05</span>f;
+
+            _rawValue = <span class="highlight-keyword">new</span> <span class="highlight-keyword">float</span>[elementsPerValue];
+            _filteredValue = <span class="highlight-keyword">new</span> <span class="highlight-keyword">float</span>[elementsPerValue];
+        }
+        <span class="highlight-preprocessor">#endregion</span>
+
+
+        <span class="highlight-comment">//--------------------------------------------------------------</span>
+        <span class="highlight-preprocessor">#region</span> Methods
+        <span class="highlight-comment">//--------------------------------------------------------------</span>
+
+        <span class="highlight-comment">/// &lt;summary&gt;</span>
+        <span class="highlight-comment">/// Resets this filter (= deletes past sample values).</span>
+        <span class="highlight-comment">/// &lt;/summary&gt;</span>
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> Reset()
+        {
+            _isInitialized = <span class="highlight-keyword">false</span>;
+            Array.Clear(_rawValue, <span class="highlight-number">0</span>, _elementsPerValue);
+            Array.Clear(_filteredValue, <span class="highlight-number">0</span>, _elementsPerValue);
+        }
+
+
+
+        <span class="highlight-comment">/// &lt;summary&gt;</span>
+        <span class="highlight-comment">/// Filters the current &lt;see cref="RawValue"/&gt; and stores the result in</span>
+        <span class="highlight-comment">/// &lt;see cref="FilteredValue"/&gt;.</span>
+        <span class="highlight-comment">/// &lt;/summary&gt;</span>
+        <span class="highlight-comment">/// &lt;param name="deltaTime"&gt;The elapsed time since the last &lt;see cref="Filter"/&gt; call.&lt;/param&gt;</span>
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> Filter(<span class="highlight-keyword">float</span> deltaTime)
+        {
+            <span class="highlight-keyword">if</span> (!_isInitialized)
+            {
+                <span class="highlight-comment">// First time initialization.</span>
+                _isInitialized = <span class="highlight-keyword">true</span>;
+                Array.Copy(_rawValue, _filteredValue, _elementsPerValue);
+            }
+            <span class="highlight-keyword">else</span>
+            {
+                <span class="highlight-comment">// Average the old values and the current values. </span>
+                <span class="highlight-comment">// See http://en.wikipedia.org/wiki/Low-pass_filter for an explanation.</span>
+                <span class="highlight-keyword">float</span> weight1 = deltaTime / (deltaTime + TimeConstant);
+                <span class="highlight-keyword">float</span> weight2 = <span class="highlight-number">1</span> - weight1;
+                <span class="highlight-keyword">for</span> (<span class="highlight-keyword">int</span> i = <span class="highlight-number">0</span>; i &lt; _elementsPerValue; i++)
+                    _filteredValue[i] = _rawValue[i] * weight1 + _filteredValue[i] * weight2;
+            }
+        }
+        <span class="highlight-preprocessor">#endregion</span>
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAABAAA");</script></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

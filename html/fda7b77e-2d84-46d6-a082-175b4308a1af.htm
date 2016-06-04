@@ -1,0 +1,72 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Game Objects</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="fda7b77e-2d84-46d6-a082-175b4308a1af" /><meta name="Description" content="This section explains the concept of a game object." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="fe8ccefb-7bce-4290-be56-81bd38ba86fe.htm" title="DigitalRune Game" tocid="fe8ccefb-7bce-4290-be56-81bd38ba86fe">DigitalRune Game</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="309293e8-f2d6-4308-8c85-3f4726f92244.htm" title="Game Object System" tocid="309293e8-f2d6-4308-8c85-3f4726f92244">Game Object System</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="fda7b77e-2d84-46d6-a082-175b4308a1af.htm" title="Game Objects" tocid="fda7b77e-2d84-46d6-a082-175b4308a1af">Game Objects</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="bae21eb9-66c2-422c-95ce-992e873a4774.htm" title="Game Object Service" tocid="bae21eb9-66c2-422c-95ce-992e873a4774">Game Object Service</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="08a99230-99dd-416b-9f58-1d00a4dfddea.htm" title="Game Object Properties" tocid="08a99230-99dd-416b-9f58-1d00a4dfddea">Game Object Properties</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="9d38663a-2ce9-48c5-b9a8-0a07326e0290.htm" title="Game Object Events" tocid="9d38663a-2ce9-48c5-b9a8-0a07326e0290">Game Object Events</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="be9dad32-1e3f-4361-9cbe-9874e2225049.htm" title="Templates" tocid="be9dad32-1e3f-4361-9cbe-9874e2225049">Templates</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Game Objects</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This section explains the concept of a game object.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#GameObjects">Game objects</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Naming">Naming game objects</a></li><li class="outlineSectionEntry"><a href="#Lifecycle">Loading, updating, and unloading game objects</a></li></ul></ul></div><div class="collapsibleAreaRegion" id="GameObjects"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Game objects</span></div><div id="ID0RBSection" class="collapsibleSection"><p><em>Game objects</em> (also called <em>game entities</em>,
+                    <em>controllers</em>, or <em>actors</em>) are
+                    implemented by the class <a href="59222b0e-6149-e82f-b01e-357cdcc5319e.htm">GameObject</a>.
+                    Game objects are containers that contain game logic and have game object properties (see
+                    <a href="47f0ffea-dbe8-fcad-eb43-b4ed979c68cc.htm">Properties</a>)
+                    and game object events (see <a href="57e1cb77-3961-f539-c967-2127a9b9a4ed.htm">Events</a>).
+                    Game object properties and events can be dynamically added to or removed from any game
+                    object at runtime.
+                </p><p>
+                    Game object properties contain relevant data for scripting, e.g. "Health", "Damage", or reference
+                    components of other game services, for example a "RigidBody" for physics, a "Model" for rendering.
+                    Game object events describe events that can be raised by the game object, such as the "Enter" event
+                    of a Trigger or the "Click" event of a Button.
+                </p><p>
+                    A game usually contains a number of service, such as Input, AI, Audio, Physics, Graphics, etc.
+                    These services usually don't communicate directly with each other. Instead, the game objects
+                    act as the glue code that orchestrate the functions of different game services: They read input
+                    from the input service, set forces to rigid bodies, read the rigid body positions, and use it to
+                    position graphical models in the scene of the renderer.
+                </p><p>
+                    Game objects can be used as generic containers that are configured in a game
+                    editor. But it is also possible to derive from the
+                    <a href="59222b0e-6149-e82f-b01e-357cdcc5319e.htm">GameObject</a>
+                    class and create specialized game objects. This is, for example, done in the
+                    <a href="a5a463da-de2e-432f-bf7d-07206aaca634.htm">DigitalRune Game UI</a> where the class
+                    <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>
+                    derives from <a href="59222b0e-6149-e82f-b01e-357cdcc5319e.htm">GameObject</a>.
+                    The DigitalRune game object system was designed to support both cases: Using game objects
+                    in an editor or script environment, and using game objects in game libraries.
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                        In many game engines, game objects have a few fixed properties, such as a "Position"
+                        that defines the 3D position in the scene. Sometimes it also has more predefined properties
+                        like, "Shape" (for collision detection), "Model" for rendering, etc. Such a design is
+                        adequate for a game editor with limited functionality. It is not suitable for a general
+                        purpose game library; because depending on the game, a position of a game object can be
+                        defined using a 2D vector, a 3D vector, a parent object - or maybe it should not have a
+                        position at all (like a "ScriptObject").
+                    </p><p>
+                        In the DigitalRune Game library game objects are blank slates without predefined properties.
+                        This is preferable because it does not impose any restrictions on the architecture of a game.
+                    </p></td></tr></table></div><h4 class="subHeading" id="Naming">Naming game objects</h4><div class="subsection"><p>
+                            Game objects can have a <a href="8425db73-b2ad-0648-9db9-494f0588b9d8.htm">Name</a>.
+                            The name can be used to identify a game object and is also helpful for debugging.
+                            When a game object is added to a <a href="31fda385-aa20-5952-93c9-ec9c2c5df426.htm">IGameObjectService</a>
+                            it must have unique name. See also <a href="bae21eb9-66c2-422c-95ce-992e873a4774.htm">Game Object Service</a>.
+                        </p></div><h4 class="subHeading" id="Lifecycle">Loading, updating, and unloading game objects</h4><div class="subsection"><p>
+                            A game object contains the methods
+                            <a href="a20117b8-d8f4-02ca-ef74-e6448b0883ab.htm">Load</a> and
+                            <a href="44c1d79f-6b26-11df-fd31-b8798d5fc886.htm">Unload</a>.
+                            These methods are automatically called when the game object is added to or removed from
+                            a <a href="31fda385-aa20-5952-93c9-ec9c2c5df426.htm">IGameObjectService</a>.
+                            See also <a href="bae21eb9-66c2-422c-95ce-992e873a4774.htm">Game Object Service</a>.
+                        </p><p>
+                            The method <a href="e8894118-af9e-3449-0e27-2d30938202d9.htm">Update</a>
+                            is also call by the <a href="31fda385-aa20-5952-93c9-ec9c2c5df426.htm">IGameObjectService</a>
+                            that manages the game object. The method is usually called once per frame to
+                            run the game logic of the object.
+                        </p><p>
+                            Derived classes can override the methods
+                            <a href="76aa84f4-ea36-8556-3c00-3712f9b9038a.htm">OnLoad</a>,
+                            <a href="d9062483-e4dc-6eeb-9b65-7a2c88adb63d.htm">OnUpdate</a>,
+                            <a href="1d37b20c-6e2f-59f6-4c10-b0f2fc9106d3.htm">OnUnload</a>
+                            and perform the required steps to initialize, update or uninitialize objects.
+                        </p></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

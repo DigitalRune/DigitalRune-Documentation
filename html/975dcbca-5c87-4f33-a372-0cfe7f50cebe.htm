@@ -1,0 +1,182 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Sky</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="975dcbca-5c87-4f33-a372-0cfe7f50cebe" /><meta name="Description" content="This topic gives an overview of types which can be used to render the background of a 3D scene." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="7d5a0abe-8231-452c-895c-e6dbab83822b.htm" title="Graphics Programming" tocid="7d5a0abe-8231-452c-895c-e6dbab83822b">Graphics Programming</a></div><div class="toclevel1 current" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="975dcbca-5c87-4f33-a372-0cfe7f50cebe.htm" title="Sky" tocid="975dcbca-5c87-4f33-a372-0cfe7f50cebe">Sky</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="695a2c07-5da8-4cf8-a508-5a7f6a29e5c8.htm" title="Clouds" tocid="695a2c07-5da8-4cf8-a508-5a7f6a29e5c8">Clouds</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="e3826476-e1c8-4ac7-8304-bb2f5bd3e532.htm" title="Ephemeris" tocid="e3826476-e1c8-4ac7-8304-bb2f5bd3e532">Ephemeris</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Sky</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This topic gives an overview of types which can be used to render the background of a
+                3D scene.
+            </p><p>
+                Sky in games is usually rendered using a static cube map texture and skybox.
+                Static skyboxes are supported in DigitalRune Graphics. Additionally, you can
+                create dynamic skies for day-night cycles including: stars, sun, moons and planets
+                (including phase), sky (based on user-defined colors for maximal artistic control
+                or using physically-based simulation for maximum realism).
+            </p><p>
+                Additionally, DigitalRune Graphics reduces the work necessary to configure a
+                dynamic sky by providing the following values automatically for any time and
+                any place on Earth:
+                positions of the sun, moon and stars, star brightness, moon phase,
+                direct and ambient light (intensity + color) caused by the sun and the moon,
+                and fog colors.
+            </p><p>
+                Games do not have to use these real-world values, but it helps to have
+                them as a reference.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Video">Video</a></li><li class="outlineSectionEntry"><a href="#General">Defining sky</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#SkyboxNode">SkyboxNode</a></li><li class="outlineSectionEntry"><a href="#SkyObjectNode">SkyObjectNode</a></li><li class="outlineSectionEntry"><a href="#StarfieldNode">StarfieldNode</a></li><li class="outlineSectionEntry"><a href="#ScatteringSkyNode">ScatteringSkyNode</a></li><li class="outlineSectionEntry"><a href="#GradientSkyNode">GradientSkyNode and GradientTextureSkyNode</a></li><li class="outlineSectionEntry"><a href="#CloudLayerNode">CloudLayerNode</a></li></ul><li class="outlineSectionEntry"><a href="#Rendering">Rendering sky</a></li><li class="outlineSectionEntry"><a href="#Subtopics">Subtopics</a></li><li class="outlineSectionEntry"><a href="#References">References</a></li></ul></div><div class="collapsibleAreaRegion" id="Video"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Video</span></div><div id="ID0RBSection" class="collapsibleSection"><p>The following video demonstrates features of the sky rendering system:</p><ul class="noBullet"><li><p><a href="http://www.youtube.com/watch?v=RCx0mybKI78" target="_blank">Video: Sky Rendering</a></p></li></ul><p>
+                    The sky in this example consists of a Milky Way cube map,
+                    the 9110 brightest stars, the moon, the sun, and sky colors created
+                    using atmospheric scattering.
+                    Positions of sky objects, direct light, indirect light and fog colors
+                    are computed automatically. Post-processing is used to add noise and
+                    a physically-based blue-shift during night.
+                </p><p>
+                    Following video demonstrates the cloud rendering
+                    (see also <a href="695a2c07-5da8-4cf8-a508-5a7f6a29e5c8.htm">Clouds</a>):
+                </p><ul class="noBullet"><li><p><a href="https://www.youtube.com/watch?v=kF4l3gCtgck" target="_blank">Video: Procedural Cloud Layer</a></p></li></ul></div><div class="collapsibleAreaRegion" id="General"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Defining sky</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    The class
+                    <a href="b8d4f66d-5782-db3b-6580-142924299db9.htm">SkyNode</a>
+                    is a scene node and the base class for all sky classes.
+                </p><div class="mediaNear"><img alt="DigitalRune.Graphics.SceneGraph (Sky)" src="../media/Graphics.SceneGraph_Sky.png" /><div class="caption">Class Diagram: Sky</div></div><p>
+                    Several sky nodes can be added to scene. The property
+                    <a href="5384ad52-b235-e278-569f-9a627a4f17dc.htm">DrawOrder</a>
+                    can be used to define the order in which the sky nodes are rendered.
+                    A complex sky can for example consist of (from back to front):
+                </p><ul><li>
+                        a <a href="98d17339-11fd-0bda-e59c-444a4cb30921.htm">SkyboxNode</a>
+                        showing the milky way and the night sky colors,
+                    </li><li>
+                        a <a href="e99f9dd9-843f-9929-6d95-25c15852d7a1.htm">StarfieldNode</a>
+                        which draws the brightest stars,
+                    </li><li>
+                        a <a href="02843971-3f7c-87f3-4d94-593de9131e2b.htm">SkyObjectNode</a>
+                        which draws the sun,
+                    </li><li>
+                        a <a href="02843971-3f7c-87f3-4d94-593de9131e2b.htm">SkyObjectNode</a>
+                        which draws the moon including the moon phase,
+                    </li><li>
+                        a <a href="b49ef884-0814-0788-2e66-065e5530e0fb.htm">ScatteringSkyNode</a>
+                        which adds the sky colors.
+                    </li><li>
+                        a <a href="5b884a02-5553-ff7f-47e5-3526331a406d.htm">CloudLayerNode</a>
+                        which adds clouds.
+                    </li></ul><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Tip" /> Tip</th></tr><tr><td><p>
+                        In most applications, the sky changes only very slowly.
+                        If rendering several sky nodes in each frame is too expensive,
+                        the sky nodes can be rendered into a single cube map, and in each frame, only this cube
+                        map is rendered as the skybox.
+                        Meanwhile, an updated sky can be rendered into a second cube map. This background
+                        update can be distributed over several frames, and then the cube maps are swapped.
+                    </p></td></tr></table></div><h4 class="subHeading" id="SkyboxNode">SkyboxNode</h4><div class="subsection"><p>
+                            A
+                            <a href="98d17339-11fd-0bda-e59c-444a4cb30921.htm">SkyboxNode</a>
+                            can be used to render the background with a single cube map texture.
+                        </p><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Important note" /> Important</th></tr><tr><td><p>
+                                Due to limitations on certain mobile platforms it is recommended to
+                                <strong>disable mipmaps</strong> of skybox textures:
+                            </p><ul><li><p>
+                                        Select the skybox texture in the content project.
+                                    </p></li><li><p>
+                                        Right-click the texture and select <span class="ui">Properties</span> to open the <span class="ui">Properties</span>
+                                        window.
+                                    </p></li><li><p>
+                                        In the <span class="ui">Properties</span> window search for the property <span class="ui">Content Processor</span>
+                                        and set <span class="ui">Generate Mipmaps</span> to <span class="ui">False</span>.
+                                    </p></li></ul></td></tr></table></div></div><h4 class="subHeading" id="SkyObjectNode">SkyObjectNode</h4><div class="subsection"><p>
+                            The
+                            <a href="02843971-3f7c-87f3-4d94-593de9131e2b.htm">SkyObjectNode</a>
+                            can be used to render a quad that shows a planet/moon texture and up to two "glows". The glow is
+                            rendered in the shader, it is similar to the specular highlight of a Phong shaded material.
+                            The sky object node can be used to render the sun disk: no texture, 1 glow with a high "glow exponent"
+                            to create the sun disk, 1 glow with a low "glow exponent" for a smooth highlight around the sun.
+                        </p><div class="mediaNear"><img alt="Sky-Sun" src="../media/Sky-Sun.jpg" /></div><p>
+                            The moon can rendered with a moon texture and optional glow. The moon phase does not need to be
+                            baked into the texture. When the sun direction is set the phase is computed automatically in
+                            the shader.
+                        </p><div class="mediaNear"><img alt="Sky-Moon" src="../media/Sky-Moon.jpg" /></div></div><h4 class="subHeading" id="StarfieldNode">StarfieldNode</h4><div class="subsection"><p>
+                            The
+                            <a href="e99f9dd9-843f-9929-6d95-25c15852d7a1.htm">StarfieldNode</a>
+                            renders a list of stars as anti-aliased points.
+                            Stars could be created using a random generator, but arbitrary star positions and brightness
+                            values look unnatural. It is preferable to import the actual positions and brightness values
+                            from a star catalog [1]. The <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a>
+                            shows how to load the values of the 9110 brightest stars from a file.
+                        </p></div><h4 class="subHeading" id="ScatteringSkyNode">ScatteringSkyNode</h4><div class="subsection"><p>
+                            The
+                            <a href="b49ef884-0814-0788-2e66-065e5530e0fb.htm">ScatteringSkyNode</a>
+                            defines a sky which colors are computed using atmospheric scattering.
+                            This sky node has a few properties that define the appearance of the sky. These values
+                            can be tweaked to get a clear sky, a hazy sky, or even the atmosphere of an alien planet.
+                            The
+                            <a href="b49ef884-0814-0788-2e66-065e5530e0fb.htm">ScatteringSkyNode</a>
+                            can also estimate direct sunlight, indirect light and fog colors that match the configured sky.
+                        </p></div><h4 class="subHeading" id="GradientSkyNode">GradientSkyNode and GradientTextureSkyNode</h4><div class="subsection"><p>
+                            The
+                            <a href="54549895-bffa-e64f-a4a6-f048d95f2e89.htm">GradientSkyNode</a>
+                            provides a simple method to define a sky. It takes several user-defined colors and interpolates
+                            these colors across the sky.
+                        </p><p>
+                            The
+                            <a href="3549b495-4d9b-60f0-2b05-747b047ed2f1.htm">GradientTextureSkyNode</a>
+                            is more complex and allows artists to create completely user-defined day-night cycles. This
+                            method is similar to the approach described by Stephen McAuley [2]. You need to create two
+                            input textures, which define the colors in the direction of the sun and opposite to the sun.
+                            For example:
+                        </p><div class="mediaNear"><img alt="Sky-Gradient-Front" src="../media/Sky-Gradient-Front.jpg" /></div><div class="mediaNear"><img alt="Sky-Gradient-Back" src="../media/Sky-Gradient-Back.jpg" /></div><p>
+                            The x axis represents the time of day (from midnight to midnight). Each column in the
+                            textures is a vertical color gradient for a specific time of day. The renderer chooses a
+                            column in each texture and uses these gradients for the sky. The first image defines the
+                            colors from horizon to zenith in the direction of the sun. The second image defines the
+                            colors from horizon to zenith opposite the sun. All other sky colors are interpolated from
+                            these two gradients.
+                        </p><p>
+                            The
+                            <a href="54549895-bffa-e64f-a4a6-f048d95f2e89.htm">GradientSkyNode</a>
+                            and the
+                            <a href="3549b495-4d9b-60f0-2b05-747b047ed2f1.htm">GradientTextureSkyNode</a>
+                            both support the CIE Sky Model. This CIE standard defines brightness distributions (only
+                            intensities, no color) that match real world sky conditions. Applying these models helps
+                            to give the sky a realistic luminance distribution.
+                        </p></div><h4 class="subHeading" id="CloudLayerNode">CloudLayerNode</h4><div class="subsection"><p>
+                            The class
+                            <a href="5b884a02-5553-ff7f-47e5-3526331a406d.htm">CloudLayerNode</a>
+                            can be used render clouds. See <a href="695a2c07-5da8-4cf8-a508-5a7f6a29e5c8.htm">Clouds</a>.
+                        </p></div></div><div class="collapsibleAreaRegion" id="Rendering"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Rendering sky</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    This section explains how to render
+                    <a href="b8d4f66d-5782-db3b-6580-142924299db9.htm">SkyNode</a>s
+                    (skyboxes, sky objects, atmospheric scattering, clouds, etc.).
+                </p><p>
+                    The
+                    <a href="36f34319-fffd-165b-0902-826886bd9258.htm">SkyRenderer</a>
+                    is a
+                    <a href="c022a3a4-2330-9b46-24ad-c8f3ae13f1f8.htm">SceneNodeRenderer</a>
+                    which handles <a href="b8d4f66d-5782-db3b-6580-142924299db9.htm">SkyNode</a>s.
+                    Per default, it can handle all built-in sky nodes (see <a href="975dcbca-5c87-4f33-a372-0cfe7f50cebe.htm">Sky</a>).
+                </p><p>
+                    The sky is usually rendered after all opaque objects:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EACADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EACADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EACADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EACADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Render opaque objects...</span>
+
+<span class="highlight-comment">// Render a SkyNodes.</span>
+skyRenderer.Render(skyNodes, context);
+
+<span class="highlight-comment">// Render alpha-blended objects...</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EACADAAA");</script><p>
+                    If fog is rendered using the
+                    <a href="3f6c2719-531b-6a0a-521b-263ce1b29be1.htm">FogRenderer</a>,
+                    the sky can be rendered before the fog. In this case the sky is fogged as well. This is suitable
+                    for dense fog near the camera which hides the sky. The sky can also be rendered after the fog,
+                    in which case the sky is not obscured by the fog. This can be used to create "aerial perspective",
+                    where object in the distance shift towards the fog color but the sky is fully visible.
+                </p><p>
+                    Since the class is derived from
+                    <a href="3da01fb8-e3d4-8d84-1021-b0e23e28c645.htm">SceneRenderer</a>
+                    new custom
+                    <a href="c022a3a4-2330-9b46-24ad-c8f3ae13f1f8.htm">SceneNodeRenderer</a>
+                    can be added to its
+                    <a href="b19ae327-741d-5d93-b76f-5cec7929d6aa.htm">Renderers</a>
+                    collection to handle new custom
+                    <a href="b8d4f66d-5782-db3b-6580-142924299db9.htm">SkyNode</a>s.
+                </p></div><div class="collapsibleAreaRegion" id="Subtopics"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Subtopics</span></div><div id="ID4RBSection" class="collapsibleSection"><ul class="noBullet"><li><a href="695a2c07-5da8-4cf8-a508-5a7f6a29e5c8.htm">Clouds</a></li><li><a href="e3826476-e1c8-4ac7-8304-bb2f5bd3e532.htm">Ephemeris</a></li></ul></div><div class="collapsibleAreaRegion" id="References"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />References</span></div><div id="ID5RBSection" class="collapsibleSection"><ul class="noBullet"><li>
+                        [1] Bright Star Catalogue, Wikipedia,
+                        <a href="http://en.wikipedia.org/wiki/Bright_Star_Catalogue" target="_blank">http://en.wikipedia.org/wiki/Bright_Star_Catalogue</a></li><li>
+                        [2] Stephen McAuley: Calibrating Lighting and Materials in Far Cry 3, SIGGRAPH 2012,
+                        <a href="http://blog.stevemcauley.com/2012/09/09/calibrating-lighting-and-materials-in-far-cry-3/" target="_blank">http://blog.stevemcauley.com/2012/09/09/calibrating-lighting-and-materials-in-far-cry-3/</a></li></ul></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

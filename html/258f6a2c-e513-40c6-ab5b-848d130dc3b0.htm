@@ -1,0 +1,244 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Rigid Bodies</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="258f6a2c-e513-40c6-ab5b-848d130dc3b0" /><meta name="Description" content="This section explains the basics of rigid bodies." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="79a8677d-9460-4118-b27b-cef353dfbd92.htm" title="DigitalRune Physics" tocid="79a8677d-9460-4118-b27b-cef353dfbd92">DigitalRune Physics</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="6e0b9a08-b1d8-41a3-9ab4-ebf6235abe19.htm" title="Definitions and Conventions" tocid="6e0b9a08-b1d8-41a3-9ab4-ebf6235abe19">Definitions and Conventions</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="258f6a2c-e513-40c6-ab5b-848d130dc3b0.htm" title="Rigid Bodies" tocid="258f6a2c-e513-40c6-ab5b-848d130dc3b0">Rigid Bodies</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="bc000d5a-cac9-49f1-9a18-a26b17faa8e9.htm" title="The Simulation" tocid="bc000d5a-cac9-49f1-9a18-a26b17faa8e9">The Simulation</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="1e6a58ee-1cfd-4e71-8afc-afff720bb53d.htm" title="Forces, Force Effects and Force Fields" tocid="1e6a58ee-1cfd-4e71-8afc-afff720bb53d">Forces, Force Effects and Force Fields</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="576be7e1-f56c-4c5d-a0a6-22f67bde0379.htm" title="Materials" tocid="576be7e1-f56c-4c5d-a0a6-22f67bde0379">Materials</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="a91cc376-dcbf-4b86-af7b-869fae861146.htm" title="Constraints, Contacts and Joints" tocid="a91cc376-dcbf-4b86-af7b-869fae861146">Constraints, Contacts and Joints</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="dc07e943-fc57-4c45-bcc2-3dbc1f436272.htm" title="Best Practices and Recommended Literature" tocid="dc07e943-fc57-4c45-bcc2-3dbc1f436272">Best Practices and Recommended Literature</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="3e1b091b-d795-4f67-a390-67648a3e5465.htm" title="Specialized Modules" tocid="3e1b091b-d795-4f67-a390-67648a3e5465">Specialized Modules</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="81a6e7ab-bdd3-43d6-b20c-5322ff3f936a.htm" title="Advanced Topics" tocid="81a6e7ab-bdd3-43d6-b20c-5322ff3f936a">Advanced Topics</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="61ea0a18-fef3-4e46-be80-e146b5e00d80.htm" title="Articles" tocid="61ea0a18-fef3-4e46-be80-e146b5e00d80">Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c12eca22-95ea-48f4-95ee-91239af553fc.htm" title="FAQ" tocid="c12eca22-95ea-48f4-95ee-91239af553fc">FAQ</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="3734bae3-9f7f-4154-b120-4adfa4fc53e5.htm" title="Class Diagrams" tocid="3734bae3-9f7f-4154-b120-4adfa4fc53e5">Class Diagrams</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Rigid Bodies</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This section explains the basics of rigid bodies.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#RigidBody">Rigid bodies</a></li><li class="outlineSectionEntry"><a href="#MassFrame">Mass frame</a></li><li class="outlineSectionEntry"><a href="#Spaces">Coordinate spaces</a></li><li class="outlineSectionEntry"><a href="#MotionType">Static, kinematic and dynamic rigid bodies</a></li><li class="outlineSectionEntry"><a href="#CollisionObjects">Geometric objects and collision objects</a></li><li class="outlineSectionEntry"><a href="#seeAlsoSection">See Also</a></li></ul></div><div class="collapsibleAreaRegion" id="RigidBody"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Rigid bodies</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    A <a href="45d87f0c-570b-1672-5d65-1a7ba131e533.htm">RigidBody</a>
+                    is a body that is simulated by the laws of rigid body dynamics.
+                    The body has a
+                    <a href="9475e08f-2be9-e340-7202-e2b1634fd57b.htm">Shape</a>
+                    that is constant for the simulation (although the shape can be exchanged between
+                    simulation updates). No deformations are computed, therefore this type of body
+                    cannot be used to model soft objects like cloth or fluids.
+                    The rigid body also has mass properties defined in
+                    <a href="50402e99-a43d-4c53-ab09-986eaf2d3591.htm">MassFrame</a>
+                    and a
+                    <a href="aa71f5a7-d3ad-25bb-feba-27ee7bc9e3ea.htm">Material</a>
+                    that defines friction, bounciness and other material properties.
+                </p><p>
+                    A rigid body can be positioned in the world using the
+                    <a href="de8e72ae-12e7-e083-b217-c54cb4bfd848.htm">Pose</a>
+                    property. The rigid body moves and rotates with velocities defined by
+                    <a href="496fbfc6-0275-1a71-843a-57a0f830b9aa.htm">LinearVelocity</a>
+                    and
+                    <a href="527c4af7-e3d0-47be-c902-77ebc0922313.htm">AngularVelocity</a>.
+                </p><p>
+                    The physics simulation updates the properties
+                    <a href="de8e72ae-12e7-e083-b217-c54cb4bfd848.htm">Pose</a>,
+                    <a href="496fbfc6-0275-1a71-843a-57a0f830b9aa.htm">LinearVelocity</a>,
+                    and
+                    <a href="527c4af7-e3d0-47be-c902-77ebc0922313.htm">AngularVelocity</a>
+                    in each simulation step according to the forces and constraints that act on the rigid body.
+                    The other properties are treated as read-only by the simulation. The simulation reads properties
+                    like shape, mass, material, etc., but it does not change them.
+                </p></div><div class="collapsibleAreaRegion" id="MassFrame"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Mass frame</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    Mass defines how difficult it is to change the linear velocity of a body. For example,
+                    if mass is infinite it is impossible to move a resting body or to stop a body that
+                    is already in motion. The inertia matrix is the rotational equivalent of mass.
+                    It defines how difficult it is to change the angular velocity of a body.
+                </p><p>
+                    The mass frame defines the <span class="term">center of mass</span> relative
+                    to the local coordinate system of the rigid body.
+                    For the simulation the center of mass is the center of a rigid body. The
+                    center of mass has a special importance because if forces act on an
+                    unconstrained rigid body (e.g. a body floating in outer space) any
+                    rotations will be around the center of mass. In contrast, the local space
+                    origin of a rigid body can be anywhere where the user or game editor
+                    wants it to be. For example, the origin of rigid body with a cone shape
+                    is typically at the base of the cone, whereas the center of mass of a
+                    cone is inside the cone. Or the origin of a human can be at the feet and
+                    the center of mass is near the pelvis. This distinction allows easy
+                    placement of the rigid body in a game editor.
+                </p><p>
+                    The inertia tensor describes the "rotational mass" of a rigid body.
+                    In general, the inertia tensor is 3 x 3 matrix. But for all rigid
+                    bodies a rotated coordinate space can be found where all off-diagonal
+                    elements of the inertia matrix are 0. The axes of this rotated
+                    coordinate space are called the "principal axes". The mass frame class
+                    stores the diagonal elements of the diagonalized inertia matrix.
+                </p><p>
+                    A mass frame is defined by the class
+                    <a href="1d1b0d80-5502-0dd0-1978-3d645eafbb22.htm">MassFrame</a>.
+                    The property
+                    <a href="60201363-9b5a-7295-f377-08027ee610d7.htm">Pose</a>
+                    defines the position of the center of mass and the orientation of the
+                    principal axis relative to the local space of the rigid body.
+                </p><p>
+                    When a rigid body is created and no
+                    <a href="1d1b0d80-5502-0dd0-1978-3d645eafbb22.htm">MassFrame</a>
+                    instance is specified in the rigid body's constructor, the mass
+                    is computed automatically.
+                    Rigid bodies also have a property
+                    <a href="7de898ae-e49a-e197-2e07-4643c6820e51.htm">AutoUpdateMass</a>
+                    that defines whether mass frames are automatically updated when the shape of the
+                    rigid body changes.
+                </p><p>
+                    Mass frames can be defined manually, but this is non-trivial for complex
+                    shapes. Therefore, it is recommended to use the methods
+                    <a href="782353ab-7cf5-1633-b5ba-d7df3e715563.htm">MassFrame<span id="LSTEDA81E48_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>FromShapeAndDensity(Shape, Vector3F, Single, Single, Int32)</a>
+                    or
+                    <a href="471bd922-a9c7-209b-a9ba-b9ed3494a9e4.htm">MassFrame<span id="LSTEDA81E48_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>FromShapeAndMass(Shape, Vector3F, Single, Single, Int32)</a>.
+                    The first method takes a shape and a density and computes the mass properties.
+                    The second method takes a shape and a target mass value and computes mass
+                    frame properties so that the mass is equal to the specified target mass.
+                </p><p>
+                    For a stable simulation it is recommended that the mass ratios of different dynamic rigid bodies
+                    are small. The mass of the lightest dynamic object compared to the heaviest dynamic object should be around 1:10.
+                    In addition, all dynamic rigid bodies must have a mass less than
+                    <a href="a7e45ddc-581b-41c8-27dc-fc4e3aceaa23.htm">MassFrame<span id="LSTEDA81E48_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>MassLimit</a>.
+                    A mass value larger than
+                    <a href="a7e45ddc-581b-41c8-27dc-fc4e3aceaa23.htm">MassFrame<span id="LSTEDA81E48_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>MassLimit</a>
+                    is treated as infinite, which means the body will not respond to forces or impulses (similar to a kinematic
+                    or static body).
+                </p><p>
+                    When a rigid body is created and no
+                    <a href="1d1b0d80-5502-0dd0-1978-3d645eafbb22.htm">MassFrame</a>
+                    instance is specified in the rigid body's constructor, or when the shape of a rigid body
+                    is changed and
+                    <a href="7de898ae-e49a-e197-2e07-4643c6820e51.htm">AutoUpdateMass</a>
+                    is set, a new
+                    <a href="1d1b0d80-5502-0dd0-1978-3d645eafbb22.htm">MassFrame</a>
+                    is computed automatically. If the shape is very large, the mass can easily
+                    exceed the recommended mass ratio of 1:10. It can also exceed
+                    <a href="a7e45ddc-581b-41c8-27dc-fc4e3aceaa23.htm">MassFrame<span id="LSTEDA81E48_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_4?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>MassLimit</a>.
+                    In such cases it is recommended to specify a manually chosen
+                    <a href="1d1b0d80-5502-0dd0-1978-3d645eafbb22.htm">MassFrame</a>
+                    explicitly in the constructor of the rigid body and to set
+                    <a href="7de898ae-e49a-e197-2e07-4643c6820e51.htm">AutoUpdateMass</a>
+                    to false.
+                </p><p>
+                    The mass computation of complex shapes, such as triangle meshes, can take some time.
+                    To speed up the mass computation the mass frame can be substituted with the mass frame
+                    of a simpler shape. For example, the mass frame of a simple box or sphere could be used
+                    instead of the exact mass frame. Whether a body is simulated with its exact mass frame
+                    or an approximation is in many cases hardly noticeable.
+                </p><p>
+                    For kinematic and static bodies, the
+                    <a href="1d1b0d80-5502-0dd0-1978-3d645eafbb22.htm">MassFrame</a>
+                    mass frame is not used by the simulation because non-dynamic bodies are treated as
+                    bodies with infinite mass. For such bodies the mass frame can be set to any value,
+                    e.g. an empty <a href="1d1b0d80-5502-0dd0-1978-3d645eafbb22.htm">MassFrame</a>
+                    instance:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">RigidBody bodyA = <span class="highlight-keyword">new</span> RigidBody(shape, <span class="highlight-keyword">new</span> MassFrame(), <span class="highlight-keyword">null</span>)
+{
+  MotionType = MotionType.Static,
+  AutoUpdateMass = <span class="highlight-keyword">false</span>,
+};</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAAEAAA");</script></div><div class="collapsibleAreaRegion" id="Spaces"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Coordinate spaces</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    Several coordinates spaces are used in the simulation. Here, is a short
+                    overview. Coordinate spaces are also called spaces, frames, reference
+                    frames, coordinate systems, etc.
+                </p><p><span class="term">World space</span> (or <span class="term">global space</span>)
+                    is the space of the simulation. The origin of the world space is typically
+                    the center or start of a game level. All bodies are positioned in this
+                    space. Unless noted otherwise all vector quantities (like forces, velocities,
+                    impulses) are given in world space.
+                </p><p>
+                    Each rigid body has <span class="term">local space</span> (or
+                    <span class="term">body space</span>) in which its shape is defined.
+                    This space is fixed on the rigid body. The origin of this space is usually
+                    chosen so that a simple placement of the rigid body in a game editor is possible.
+                </p><p>
+                    Each rigid body further has a <span class="term">mass frame</span> which
+                    defines a coordinate space where the center of mass of the rigid body is
+                    the origin and the inertia tensor is a diagonal matrix. The axes of this
+                    space are the principal axes of the body. This space is fixed on the rigid
+                    body.
+                </p><p>
+                    The property
+                    <a href="de8e72ae-12e7-e083-b217-c54cb4bfd848.htm">RigidBody<span id="LSTEDA81E48_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_5?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Pose</a>
+                    defines the position and orientation of the local space of a rigid body.
+                    This pose defines the position and orientation of the rigid body in world
+                    space. It can be used to transform coordinates from local space to world space.
+                </p><p>
+                    The property
+                    <a href="e33d1ef0-5573-118c-3e36-101e5d3abfa2.htm">RigidBody<span id="LSTEDA81E48_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_6?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>PoseCenterOfMass</a>
+                    defines the position and orientation of the mass frame of the rigid body.
+                    This pose defines the position of the center of mass and the orientation
+                    of the principal axes in world space. It can be used to transform coordinates
+                    from the mass frame to world space.
+                </p><p>
+                    The change the position of a rigid body either
+                    <a href="de8e72ae-12e7-e083-b217-c54cb4bfd848.htm">Pose</a>
+                    or
+                    <a href="e33d1ef0-5573-118c-3e36-101e5d3abfa2.htm">PoseCenterOfMass</a>
+                    can be changed. If one property is changed, the other property is updated
+                    automatically. Usually
+                    <a href="de8e72ae-12e7-e083-b217-c54cb4bfd848.htm">Pose</a>
+                    is used to move a body.
+                </p><p><a href="60201363-9b5a-7295-f377-08027ee610d7.htm">MassFrame<span id="LSTEDA81E48_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_7?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Pose</a>
+                    defines the mass frame relative to the local space of the rigid body. This pose
+                    is constant for a rigid body. It defines how the
+                    <a href="e33d1ef0-5573-118c-3e36-101e5d3abfa2.htm">RigidBody<span id="LSTEDA81E48_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_8?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>PoseCenterOfMass</a>
+                    can be computed from the
+                    <a href="de8e72ae-12e7-e083-b217-c54cb4bfd848.htm">RigidBody<span id="LSTEDA81E48_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_9?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Pose</a>
+                    and vice versa. Normally,
+                    <a href="60201363-9b5a-7295-f377-08027ee610d7.htm">MassFrame<span id="LSTEDA81E48_10"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_10?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Pose</a>
+                    is only used by the simulation internally.
+                </p><p>
+                    Here are a few examples: For normal primitives that are symmetric and
+                    centered at the local space origin (such as spheres, boxes and capsules)
+                    <a href="e33d1ef0-5573-118c-3e36-101e5d3abfa2.htm">RigidBody<span id="LSTEDA81E48_11"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_11?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>PoseCenterOfMass</a>
+                    is equal to
+                    <a href="de8e72ae-12e7-e083-b217-c54cb4bfd848.htm">RigidBody<span id="LSTEDA81E48_12"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_12?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Pose</a>.
+                    For symmetric shapes that are not centered at the local space origin
+                    <a href="e33d1ef0-5573-118c-3e36-101e5d3abfa2.htm">RigidBody<span id="LSTEDA81E48_13"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_13?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>PoseCenterOfMass</a>
+                    has the same orientation as
+                    <a href="de8e72ae-12e7-e083-b217-c54cb4bfd848.htm">RigidBody<span id="LSTEDA81E48_14"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_14?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Pose</a>
+                    but the position is different. This is the case for a cone shape - the local
+                    space origin is at the cone base and the center of mass is inside the cone.
+                    For arbitrary triangle meshes and convex shapes
+                    <a href="e33d1ef0-5573-118c-3e36-101e5d3abfa2.htm">RigidBody<span id="LSTEDA81E48_15"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_15?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>PoseCenterOfMass</a>
+                    is typically different from
+                    <a href="de8e72ae-12e7-e083-b217-c54cb4bfd848.htm">RigidBody<span id="LSTEDA81E48_16"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_16?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Pose</a>.
+                </p></div><div class="collapsibleAreaRegion" id="MotionType"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Static, kinematic and dynamic rigid bodies</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    Rigid bodies have a property
+                    <a href="39777d89-674c-9d2e-09d0-265395d2cd05.htm">MotionType</a>,
+                    which can be set to any of the following values:
+                </p><ul><li><p><strong>Dynamic</strong>:
+                            Per default, a rigid body is dynamic. This means that
+                            the motion of this body is controlled by the forces and constraints in the simulation.
+                            In detail: Forces and constraints will update the velocity of the body. The pose
+                            of the body will be updated according to the body's velocity.
+                        </p></li><li><p><strong>Kinematic</strong>:
+                            A kinematic rigid body moves according to its velocities, but it is not affected
+                            by any forces or constraints in the simulation. The simulation updates the pose
+                            of a kinematic body based on its velocities. The velocities must
+                            be set by the user. The values are not changed by the simulation. Typical examples for
+                            kinematic bodies are elevators and other machinery that push other objects in the
+                            scene but cannot be pushed themselves.
+                        </p></li><li><p><strong>Static</strong>:
+                            A static body has a velocity of zero and a constant position. The simulation treats
+                            static bodies as immovable. Typical examples for static bodies are terrain, walls
+                            and other fixed structures.
+                        </p></li></ul><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p><strong>Moving Kinematic Bodies:</strong> In many games, there
+                        are moving kinematic bodies, like moving platforms. To behave well in
+                        a simulation, kinematic bodies should be moved by setting velocities
+                        (<a href="496fbfc6-0275-1a71-843a-57a0f830b9aa.htm">LinearVelocity</a> and
+                        <a href="527c4af7-e3d0-47be-c902-77ebc0922313.htm">AngularVelocity</a>)
+                        and letting the simulation compute the new pose.
+                        It is not recommended to change the
+                        <a href="de8e72ae-12e7-e083-b217-c54cb4bfd848.htm">Pose</a>
+                        directly. If the pose is changed manually, the body is "teleported" to the
+                        new position - for the simulation the body disappears on its old place and
+                        re-appears on the new place without any velocity-based movement in between.
+                        Collision response between a kinematic body and a dynamic body is
+                        only smooth if the kinematic body is moved using velocities.
+                    </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="CollisionObjects"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Geometric objects and collision objects</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    The
+                    <a href="45d87f0c-570b-1672-5d65-1a7ba131e533.htm">RigidBody</a>
+                    class implements the interface
+                    <a href="14f1e616-5c53-aac7-dd8d-1a21f76ea472.htm">IGeometricObject</a>.
+                    A <em>geometric object</em> is an object that has a pose (= position + orientation),
+                    a shape and a scale. Each rigid body has a property
+                    <a href="15768c9c-d8fe-de43-3145-dfe2d0a15567.htm">RigidBody<span id="LSTEDA81E48_17"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_17?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>CollisionObject</a>
+                    that defines the collision properties of the rigid body (e.g. the
+                    <a href="23f6c166-4b72-11c9-933a-a2f560bee253.htm">CollisionGroup</a>
+                    used for collision filtering).
+                    The collision object in turn has the property
+                    <a href="67012726-0cda-97a9-d6c1-4f01eadb6649.htm">GeometricObject</a>,
+                    which refers to the rigid body. In other words:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">rigidBody.CollisionObject.GeometricObject == rigidBody</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAABAAA");</script></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID6RB')" onkeypress="SectionExpandCollapse_CheckKey('ID6RB', event)" tabindex="0"><img id="ID6RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID6RBSection" class="collapsibleSection"><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="45d87f0c-570b-1672-5d65-1a7ba131e533.htm">DigitalRune.Physics<span id="LSTEDA81E48_18"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTEDA81E48_18?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>RigidBody</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

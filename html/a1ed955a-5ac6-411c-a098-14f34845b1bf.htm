@@ -1,0 +1,194 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Multithreading in the DigitalRune Engine</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="a1ed955a-5ac6-411c-a098-14f34845b1bf" /><meta name="Description" content="This article was originally posted on the DigitalRune Blog http://www.digitalrune.com/Blog.aspx : Multithreading in XNA (2011-03-23)http://www.digitalrune.com/Support/Blog/tabid/719/EntryId/89/DigitalRune-Helper-Library-Multithreading-in-XNA.aspx." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d82e6561-0857-4f31-bd2a-6678c311dca4.htm" title="Articles" tocid="d82e6561-0857-4f31-bd2a-6678c311dca4">Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="38879706-9d39-4f03-838f-26b7f14b9878.htm" title="3D Math Conventions" tocid="38879706-9d39-4f03-838f-26b7f14b9878">3D Math Conventions</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="a1ed955a-5ac6-411c-a098-14f34845b1bf.htm" title="Multithreading in the DigitalRune Engine" tocid="a1ed955a-5ac6-411c-a098-14f34845b1bf">Multithreading in the DigitalRune Engine</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="2a9138d6-d003-4df7-9793-1c3a018aa652.htm" title="Service Provider Pattern" tocid="2a9138d6-d003-4df7-9793-1c3a018aa652">Service Provider Pattern</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="6a6f8d44-7bbe-4c61-844f-8397b4ad6dd8.htm" title="Real-Time Motion Capture Using Kinect and XNA" tocid="6a6f8d44-7bbe-4c61-844f-8397b4ad6dd8">Real-Time Motion Capture Using Kinect and XNA</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="793ea828-8894-4b61-b623-9f3617e3e1a8.htm" title="External Articles" tocid="793ea828-8894-4b61-b623-9f3617e3e1a8">External Articles</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Multithreading in the DigitalRune Engine</td></tr></table><span class="introStyle"></span><div class="introduction"><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                    This article was originally posted on the
+                    <a href="http://www.digitalrune.com/Blog.aspx" target="_blank">DigitalRune Blog</a>:
+                    <a href="http://www.digitalrune.com/Support/Blog/tabid/719/EntryId/89/DigitalRune-Helper-Library-Multithreading-in-XNA.aspx" target="_blank">Multithreading in XNA (2011-03-23)</a>.
+                    It contains background information for users who want to
+                    know more about the history and internals of the DigitalRune Engine.
+                    Please note, that some of this information could be outdated.
+                </p></td></tr></table></div><p>
+                The .NET Framework 4 contains the Task Parallel Library (TPL). It introduces the concept of
+                tasks. Tasks represent asynchronous operations that can be executed concurrently. Developers
+                no longer have to manage threads or thread pool work items directly. The library provides a
+                higher-level API for writing multithreaded application or games. The only negative thing we
+                can say about the TPL is that it is not supported on the .NET Compact Framework and is
+                therefore not available on the Xbox 360 (or the WP7).
+            </p><p>
+                When we added multithreading support for our libraries, we looked for an easy-to-use,
+                cross-platform threading library. After evaluating a lot of solutions we found
+                the
+                <a href="http://paralleltasks.codeplex.com/" target="_blank">ParallelTasks</a>
+                library on
+                <a href="http://www.codeplex.com/" target="_blank">CodePlex</a>. The library is a lightweight replacement for the
+                TPL. It offers all relevant features such as
+            </p><ul><li><em>tasks</em> and <em>futures</em>,
+                </li><li>
+                    parallel for-loops and foreach-loops,
+                </li><li>
+                    work-stealing for automatic load-balancing,
+                </li><li>
+                    and is optimized for the .NET Compact Framework!
+                </li></ul><p>
+                Kudos to
+                <a href="http://www.codeplex.com/site/users/view/Aphid" target="_blank">Aphid</a>
+                who has done a great job!
+            </p><p>
+                The library is open source (Ms-PL) and we have integrated the library into the DigitalRune
+                Base Library. We have made a few changes and improvements: We fixed some issues with
+                contention in the task scheduler and made a few optimizations for PC and Xbox 360. These
+                changes have been contributed back to the original ParallelTasks project.
+            </p><p>
+                In the following we want to show a few examples where task-based multithreading has helped
+                to boost the performance of our libraries.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Geometry">Multithreading in DigitalRune Geometry</a></li><li class="outlineSectionEntry"><a href="#Physics">Multithreading in DigitalRune Physics</a></li><li class="outlineSectionEntry"><a href="#Summary">Summary</a></li></ul></div><div class="collapsibleAreaRegion" id="Geometry"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Multithreading in DigitalRune Geometry</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    A
+                    <a href="06292c81-16ba-c53c-3f55-a5a6d6eaa59c.htm">CollisionDomain</a>
+                    in DigitalRune Geometry manages a set of collision objects. In
+                    <a href="5e926ec8-f9ac-4b61-8664-6560fad60acd.htm">CollisionDomain<span id="LST4E6CE139_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4E6CE139_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update</a>
+                    the
+                    <a href="06292c81-16ba-c53c-3f55-a5a6d6eaa59c.htm">CollisionDomain</a>
+                    determines all collisions between those objects. The method consists of two parts: The
+                    "broad phase" and the "narrow phase". The broad phase yields pairs of objects. It returns
+                    all pairs of objects where the axis-aligned bounding boxes overlap. This is necessary to
+                    quickly sort out objects that don’t collide.
+                </p><p>
+                    The narrow phase is the computationally expensive part. It iterates over all pairs of
+                    objects and determines whether the objects collide. It computes the penetration depth,
+                    the normal vector and other properties of a contact point. The method basically looks like this:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAGADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAGADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAGADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAGADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> NarrowPhase(<span class="highlight-keyword">float</span> deltaTime)
+{
+  <span class="highlight-comment">// Notes: </span>
+  <span class="highlight-comment">//  - CandidatePairs is the collection of pairs returned by the broad phase.</span>
+  <span class="highlight-comment">//  - ContactSets is the resulting collection of colliding objects.</span>
+  ContactSets.Clear();
+  <span class="highlight-keyword">foreach</span> (<span class="highlight-keyword">var</span> pair <span class="highlight-keyword">in</span> CandidatePairs)
+  {
+    <span class="highlight-comment">// Fetch the appropriate collision algorithm and compute the contacts </span>
+    <span class="highlight-comment">// between the pair of objects.</span>
+    CollisionDetection.AlgorithmMatrix[pair].UpdateContacts(pair, deltaTime);
+
+    <span class="highlight-comment">// 'pair' now contains all required information: Whether the objects collide </span>
+    <span class="highlight-comment">// and where the objects intersect.</span>
+    <span class="highlight-comment">// If we have found a collision, add it to the results.</span>
+    <span class="highlight-keyword">if</span> (pair.HaveContact)
+    {
+      ContactSets.Add(pair);
+    }
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAGADAAA");</script><p>
+                    Now, to speed things up we can perform the computations of all collisions in parallel.
+                    The necessary changes are quite simple:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAEADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAEADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAEADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAEADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> NarrowPhase(<span class="highlight-keyword">float</span> deltaTime)
+{
+  <span class="highlight-comment">// Note: </span>
+ <span class="highlight-comment">//  - CandidatePairs is the collection of pairs returned by the broad phase.</span>
+ <span class="highlight-comment">//  - ContactSets is the resulting collection of pairs of colliding objects.</span>
+  ContactSets.Clear();
+  Parallel.ForEach(CandidatePairs, pair =&gt;
+  {
+    <span class="highlight-comment">// Fetch the appropriate collision algorithm and compute the contacts </span>
+   <span class="highlight-comment">// between the pair of objects.</span>
+   CollisionDetection.AlgorithmMatrix[pair].UpdateContacts(pair, deltaTime);
+  });
+
+  <span class="highlight-keyword">foreach</span> (<span class="highlight-keyword">var</span> pair <span class="highlight-keyword">in</span> CandidatePairs)
+  {
+    <span class="highlight-comment">// If we have found a collision, add it to the results.</span>
+   <span class="highlight-keyword">if</span> (pair.HaveContact)
+    {
+      ContactSets.Add(pair);
+    }
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAEADAAA");</script><p>
+                    We split the foreach loop in two parts: A parallel loop that computes the collisions and
+                    a sequential loop that adds the results to a collection. The sequential loop is necessary
+                    because the
+                    <a href="edc782a9-59b1-470b-88e7-fa019d12de86.htm">ContactSets</a>
+                    collection is not thread-safe.
+                </p><p>
+                    To be honest, the actual code in DigitalRune Geometry is more complex - we have greatly
+                    simplified the code. But the required steps to parallelize the code are the same. This
+                    examples shows how easy it is to execute code in parallel using the
+                    <a href="80257661-725a-be38-7bf1-7f97e6a3b94e.htm">Parallel</a>
+                    class. As a developer you no longer have to manage threads or jobs directly.
+                </p><p>
+                    Now, the really difficult part is that data structures and algorithms in the parallel loop
+                    need to be thread-safe. In our case we had to ensure the following:
+                </p><ul><li>
+                            The collision algorithms must be stateless. ('Stateless' in this case means that the
+                            collision algorithms do not store intermediate results in member variables because one
+                            instance of a collision algorithm might be used simultaneously in multiple threads.)
+                    </li><li>
+                            The objects that are tested for collision must not be modified during the test. (An
+                            object might be tested against multiple other objects at the same time.)
+                    </li><li>
+                            And, we had to make sure that the
+                            <a href="9e2a4144-69e9-4bf2-8cea-79713eb91490.htm">resource pools</a>
+                            used in the collision algorithms are also fast and thread-safe.
+                    </li></ul></div><div class="collapsibleAreaRegion" id="Physics"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Multithreading in DigitalRune Physics</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    The central object in DigitalRune Physics is the
+                    <a href="34c3f9ce-54ab-b65e-7652-aaf491c08633.htm">Simulation</a>.
+                    It manages all simulated bodies, forces, constraints, etc. The simulation needs to be
+                    updated by calling
+                    <a href="c527e0b6-d9ea-a908-47f6-1181cbcf5744.htm">Update</a>.
+                    The method checks how much time has passed and progresses the simulation by a number of
+                    fixed sized steps. One such step is called a <em>sub time step</em>.
+                </p><p>
+                    Here is what the multithreaded version of a sub time step looks like:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> SubTimeStep(<span class="highlight-keyword">float</span> fixedTimeStep)
+{
+  <span class="highlight-comment">// Run the collision detection.</span>
+  UpdateContacts();
+
+  <span class="highlight-comment">// Compute forces and torques.</span>
+  EvaluateForces();
+
+  <span class="highlight-comment">// Update velocities.</span>
+  Parallel.For(<span class="highlight-number">0</span>, RigidBodies.Count, UpdateVelocity);
+
+  <span class="highlight-comment">// Find simulation islands.</span>
+  IslandManager.Update();
+
+  <span class="highlight-comment">// Update simulation islands.</span>
+  Parallel.For(<span class="highlight-number">0</span>, IslandManager.Islands.Count, SolveIsland);
+
+  <span class="highlight-comment">// Update positions and orientations.</span>
+  Parallel.For(<span class="highlight-number">0</span>, RigidBodies.Count, UpdatePose);
+
+  <span class="highlight-comment">// CCD motion clamping.</span>
+  DoCcdMotionClamping();
+
+  <span class="highlight-comment">// Advance simulation time.</span>
+  Time += TimeSpan.FromSeconds(fixedTimeStep);
+
+  <span class="highlight-comment">// Raise SubTimeStepFinished event.</span>
+  OnSubTimeStepFinished(EventArgs.Empty); 
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACACAAA");</script><p>
+                    The first method updates the internal collision domain which runs on multiple threads as
+                    shown above. Then there are several for-loops that we have parallelized using
+                    <a href="80257661-725a-be38-7bf1-7f97e6a3b94e.htm">Parallel</a>.
+                    The methods called in the for-loops (e.g.
+                    <strong>UpdateVelocity</strong>) are simple delegates of type
+                    <strong>Action&lt;int&gt;</strong>. The method receives the loop index and
+                    performs the required action on the object with the given index.
+                </p><p>
+                    Again, we have omitted some minor details. But in this case the actual code in
+                    DigitalRune Physics looks pretty much as the code above. Pretty simple, right? There is
+                    no hidden magic here. (Well, there is quite a lot of magic involved, but it is all neatly
+                    wrapped in the
+                    <a href="80257661-725a-be38-7bf1-7f97e6a3b94e.htm">Parallel</a>
+                    class.)
+                </p></div><div class="collapsibleAreaRegion" id="Summary"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Summary</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    To speed up our libraries on multi-core systems we had to identify tasks that can run in
+                    parallel and then distribute them across multiple threads. Writing a multithreaded game in
+                    .NET/XNA can be relatively easy using the right tools. In our case "task-based multithreading"
+                    was a perfect fit. By the way, it is also quite simple to run the physics code as a task
+                    parallel to other game services, like graphics, AI, input, networking, etc. - so that all
+                    your CPU cores get their share of the work. This is demonstrated in the DigitalRune
+                    <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a>.
+                </p></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

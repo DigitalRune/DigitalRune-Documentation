@@ -1,0 +1,213 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Service Location and Inversion of Control</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="ce7bca46-717a-4dfb-a154-acb6ee1e8ad9" /><meta name="Description" content="The DigitalRune Base library provides a light-weight Inversion of Control (IoC) container for use in .NET applications and games." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="dc44c3a5-8545-4253-9da1-62258a00607c.htm" title="DigitalRune Base Library" tocid="dc44c3a5-8545-4253-9da1-62258a00607c">DigitalRune Base Library</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="09d39ddf-c826-4943-aac8-2ef9e16e5a12.htm" title="Parallel Tasks (Multithreading)" tocid="09d39ddf-c826-4943-aac8-2ef9e16e5a12">Parallel Tasks (Multithreading)</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="9e2a4144-69e9-4bf2-8cea-79713eb91490.htm" title="Resource Pooling" tocid="9e2a4144-69e9-4bf2-8cea-79713eb91490">Resource Pooling</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="ce7bca46-717a-4dfb-a154-acb6ee1e8ad9.htm" title="Service Location and Inversion of Control" tocid="ce7bca46-717a-4dfb-a154-acb6ee1e8ad9">Service Location and Inversion of Control</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="6736e3bc-383c-4d80-a828-c83fea5c3461.htm" title="Performance Profiling" tocid="6736e3bc-383c-4d80-a828-c83fea5c3461">Performance Profiling</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="120bed13-f23b-4774-bae7-d64d410d2122.htm" title="Storage and Virtual File Systems" tocid="120bed13-f23b-4774-bae7-d64d410d2122">Storage and Virtual File Systems</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="3b7ea45b-f13c-49b3-961b-42899323a477.htm" title="&quot;How To&quot; Articles" tocid="3b7ea45b-f13c-49b3-961b-42899323a477">"How To" Articles</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="dba0bb78-681c-4dd0-b84b-91ce08eeea36.htm" title="Class Diagrams" tocid="dba0bb78-681c-4dd0-b84b-91ce08eeea36">Class Diagrams</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Service Location and Inversion of Control</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                The DigitalRune Base library provides a light-weight <em>
+                    Inversion
+                    of Control
+                </em> (IoC) container for use in .NET applications and games.
+            </p><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Important note" /> Important</th></tr><tr><td><p>
+                    Note that the <a href="fac79e7c-47fb-e5e6-9f47-485010679f34.htm">ServiceContainer</a>
+                    is contained in a separate assembly (<em>DigitalRune.ServiceLocation.dll</em>) because
+                    it has a dependency on a third-party assembly (<em>Microsoft.Practices.ServiceLocation.dll</em>).
+                </p></td></tr></table></div><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Tip" /> Tip</th></tr><tr><td><p>
+                    More general information about the service provider design pattern can be found in the following article:
+                    <a href="2a9138d6-d003-4df7-9793-1c3a018aa652.htm">Service Provider Pattern</a></p></td></tr></table></div><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#ServiceContainer">The service container</a></li><li class="outlineSectionEntry"><a href="#Registration">Service registration</a></li><li class="outlineSectionEntry"><a href="#Resolution">Service resolution</a></li><li class="outlineSectionEntry"><a href="#Libraries">Libraries and inversion of control</a></li><li class="outlineSectionEntry"><a href="#Compatibility">Compatibility</a></li><li class="outlineSectionEntry"><a href="#Availability">Making the service locator available</a></li><li class="outlineSectionEntry"><a href="#seeAlsoSection">See Also</a></li></ul></div><div class="collapsibleAreaRegion" id="ServiceContainer"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />The service container</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    The <a href="fac79e7c-47fb-e5e6-9f47-485010679f34.htm">ServiceContainer</a>
+                    is a fast and efficient <em>Inversion of Control</em> (IoC) container
+                    which can be used in .NET Framework, Windows Presentation Foundation (WPF), Silverlight,
+                    Windows Phone 7, and Xbox 360 applications.
+                </p><p>
+                    IoC is a software design principle based on the idea that components should not directly
+                    create or access dependent objects ("services") to avoid tight coupling. Instead, components
+                    should only access services through abstracted interfaces. At runtime the components can
+                    acquire services by using a service locator, or the services are supplied automatically by
+                    an IoC container through <em>Dependency Injection</em> (DI). IoC
+                    facilitates software reuse, loose coupling, and easy testing of software components.
+                </p><p>
+                    This documentation is not meant to be an introduction on inversion of control. Instead, it
+                    explains how the DigitalRune ServiceContainer can be used. To find out more about
+                    Inversion of Control (IoC), Dependency Injection (DI), Service Location, and related concepts see
+                </p><ul><li><em>"Inversion of Control"</em> in Wikipedia:
+                            <a href="http://en.wikipedia.org/wiki/Inversion_of_control" title="Inversion of Control (Wikipedia)" target="_blank">Link</a></li><li><em>"Inversion of Control Containers and the Dependency Injection pattern"</em>
+                            by Martin Fowler:
+                            <a href="http://martinfowler.com/articles/injection.html" title="Inversion of Control Containers and the Dependency Injection pattern" target="_blank">Link</a></li></ul></div><div class="collapsibleAreaRegion" id="Registration"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Service registration</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    Services are usually abstracted using interfaces. This ensures that components
+                    do not have a hard dependency on an actual implementation. Implementations can
+                    be exchanged without requiring a change or rebuild of the component. For example:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAGBFAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAGBFAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAGBFAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAGBFAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// A random service...</span>
+<span class="highlight-keyword">interface</span> IService1
+{
+}
+
+<span class="highlight-comment">// ... and its implementation.</span>
+<span class="highlight-keyword">class</span> Service1 : IService1
+{
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAGBFAAA");</script><p>
+                    Services can be registered in the IoC container using one of the
+                    <strong>Register</strong>-methods.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAEBFAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAEBFAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAEBFAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAEBFAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">var</span> container = <span class="highlight-keyword">new</span> ServiceContainer();
+
+<span class="highlight-comment">// Register service by type. </span>
+<span class="highlight-comment">// (If required, the service container creates a new service instance using </span>
+<span class="highlight-comment">// reflection.)</span>
+container.Register(<span class="highlight-keyword">typeof</span>(IService1), <span class="highlight-keyword">null</span>, <span class="highlight-keyword">typeof</span>(Service1));
+
+<span class="highlight-comment">// Register service instance. </span>
+<span class="highlight-comment">// (The service container will always return the specified instance.)</span>
+<span class="highlight-keyword">var</span> service2 = <span class="highlight-keyword">new</span> Service2();
+container.Register(<span class="highlight-keyword">typeof</span>(IService2), <span class="highlight-keyword">null</span>, service2);
+
+<span class="highlight-comment">// Register a service using a factory method.</span>
+<span class="highlight-comment">// (If required, the service container will create a new instance using the</span>
+<span class="highlight-comment">// factory method.)</span>
+container.Register(<span class="highlight-keyword">typeof</span>(IService3), <span class="highlight-keyword">null</span>, container =&gt; <span class="highlight-keyword">new</span> Service3());</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAEBFAAA");</script><p>
+                    The first parameter is the <em>service type</em>,
+                    the type for which the service is registered. The service type is usually
+                    a .NET interface, but it can be a class type as well.
+                </p><p>
+                    The second parameter is the name under which the service is registered.
+                    The name is a string, which can be null. If the name is null, the service
+                    instance is considered the "default instance". Only one default instance
+                    can be registered for any given service type. But when using different
+                    names, multiple service implementations can be registered for any given
+                    service type. For example:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABBFAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABBFAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABBFAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABBFAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Register multiple implementations by name. </span>
+container.Register(<span class="highlight-keyword">typeof</span>(IService1), <span class="highlight-literal">"Implementation1"</span>, <span class="highlight-keyword">typeof</span>(ServiceImpl1));
+container.Register(<span class="highlight-keyword">typeof</span>(IService1), <span class="highlight-literal">"Implementation2"</span>, <span class="highlight-keyword">typeof</span>(ServiceImpl2));
+container.Register(<span class="highlight-keyword">typeof</span>(IService1), <span class="highlight-literal">"Implementation3"</span>, <span class="highlight-keyword">typeof</span>(ServiceImpl3));</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABBFAAA");</script><p>
+                    The <strong>Register</strong>-methods have additional overloads
+                    to customize when/how a new service is created and when a service instance
+                    is disposed (if it implements
+                    <a href="http://msdn2.microsoft.com/en-us/library/aax125c9" target="_blank">IDisposable</a>).
+                    See <a href="e482224b-f720-9447-021e-314af6a479bf.htm">CreationPolicy</a>
+                    and <a href="29e897b7-b14c-8860-d86b-ca6e5f2ca0e3.htm">DisposalPolicy</a>
+                    for more informations.
+                </p><h4 class="subHeading" id="DefaultServices">Registered default services</h4><div class="subsection"><p>
+                            The only service that is registered by default is the service container
+                            itself.
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAAAAFAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAAAAFAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAAAAFAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAAAAFAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// In each ServiceContainer, the ServiceContainer itself is registered by default.</span>
+<span class="highlight-comment">// The ServiceContainer is available as IServiceProvider, IServiceLocator, or </span>
+<span class="highlight-comment">// ServiceContainer. </span>
+<span class="highlight-comment">// FYI: These are calls used to register the container:</span>
+container.Register(<span class="highlight-keyword">typeof</span>(IServiceProvider), <span class="highlight-keyword">null</span>, container =&gt; container, CreationPolicy.LocalShared, DisposalPolicy.Manual);
+container.Register(<span class="highlight-keyword">typeof</span>(IServiceLocator), <span class="highlight-keyword">null</span>, container =&gt; container, CreationPolicy.LocalShared, DisposalPolicy.Manual);
+container.Register(<span class="highlight-keyword">typeof</span>(ServiceContainer), <span class="highlight-keyword">null</span>, container =&gt; container, CreationPolicy.LocalShared, DisposalPolicy.Manual);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAAAAFAAA");</script></div></div><div class="collapsibleAreaRegion" id="Resolution"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Service resolution</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    There are various ways to consume a registered service.
+                </p><h4 class="subHeading" id="ServiceLocation">Service location</h4><div class="subsection"><p>
+                            The IoC container can be used as a service locator. Components that depend on
+                            a certain service can acquire the service using one of the
+                            <strong>GetInstance</strong>-methods.
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAACAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAACAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAACAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAACAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Resolve service (default instance).</span>
+IService1 service1 = container.GetInstance&lt;IService1&gt;();
+
+<span class="highlight-comment">// Resolve named service.</span>
+IService1 service1 = container.GetInstance&lt;IService1&gt;(<span class="highlight-literal">"Implementation1"</span>);
+
+<span class="highlight-comment">// Resolve all named services of type IService1.</span>
+IEnumerable&lt;IService1&gt; service1 = container.GetAllInstances&lt;IService1&gt;();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAACAEAAA");</script></div><h4 class="subHeading" id="ConstructorInjection">Constructor injection</h4><div class="subsection"><p>
+                            Services or components that depend on other services can get the required
+                            services via constructor injection. For example, consider the following
+                            service which depends on two other services.
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EADABAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EADABAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EADABAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EADABAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">class</span> DependentService
+{
+  <span class="highlight-keyword">public</span> DependentService(IService service1, IService2 service2)
+  {
+    ...
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EADABAEAAA");</script><p>
+                            The IoC container can create a new instance of the given type and
+                            automatically resolve its dependencies.
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABABAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABABAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABABAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABABAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Create a new instance using constructor injection.</span>
+<span class="highlight-comment">// (Note: IService1 and IService2 need to be already registered.)</span>
+container.Register(<span class="highlight-keyword">typeof</span>(DependentService), <span class="highlight-keyword">null</span>, <span class="highlight-keyword">typeof</span>(DependentService));
+<span class="highlight-keyword">var</span> dependentService = container.GetInstance&lt;DependentService&gt;();
+
+<span class="highlight-comment">// Alternatively, if the DependentService is not registered in the container:</span>
+<span class="highlight-keyword">var</span> dependentService2 = (DependentService)container.CreateInstance(<span class="highlight-keyword">typeof</span>(DependentService));</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABABAEAAA");</script><p>
+                            Note that by default the <a href="fac79e7c-47fb-e5e6-9f47-485010679f34.htm">ServiceContainer</a>
+                            uses a greedy strategy for constructor injection: When creating a new instance,
+                            the IoC container looks for the constructor with the most arguments and tries
+                            to resolve the arguments from within the container.
+                        </p></div><h4 class="subHeading" id="PropertyInjection">Property injection</h4><div class="subsection"><p>
+                            Dependencies can also be defined via properties. For example:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAEAAAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAEAAAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAEAAAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAEAAAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">class</span> ComponentXyz
+{
+  <span class="highlight-comment">// Dependencies:</span>
+  <span class="highlight-keyword">public</span> IService1 Service1 { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+  <span class="highlight-keyword">public</span> IService2 Service2 { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+
+  ...
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAEAAAEAAA");</script><p>
+                            These dependencies can then be resolved using property injection:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EACAAAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EACAAAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EACAAAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EACAAAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Create new instance.</span>
+<span class="highlight-keyword">var</span> component = <span class="highlight-keyword">new</span> ComponentXyz();
+
+<span class="highlight-comment">// Resolve the dependencies using property injection.</span>
+container.ResolveProperties(component);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EACAAAEAAA");</script><p>
+                            When <a href="3900c048-f2a4-85f3-eff3-e6245fb91f49.htm">ResolveProperties</a>
+                            is called the IoC container will examine all public properties and try to
+                            resolve all missing objects.
+                        </p><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Important note" /> Important</th></tr><tr><td><p>
+                                Constructor injections is applied automatically when a new instance is created
+                                by the <a href="fac79e7c-47fb-e5e6-9f47-485010679f34.htm">ServiceContainer</a>
+                                using reflection. However, property injection is not applied automatically. The method
+                                <a href="3900c048-f2a4-85f3-eff3-e6245fb91f49.htm">ResolveProperties</a>
+                                needs to be called explicitly.
+                            </p></td></tr></table></div></div></div><div class="collapsibleAreaRegion" id="Libraries"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Libraries and inversion of control</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    As a general rule, a library should not register any services in the
+                    <a href="fac79e7c-47fb-e5e6-9f47-485010679f34.htm">ServiceContainer</a>.
+                    Services should only be registered by the caller of a library. If a library expects
+                    a specific service, this needs to be documented explicitly. In addition, libraries also
+                    need to document whether they expect a global IoC container in
+                    <a href="0cf6d54d-8793-40ea-2953-14fb723e58e2.htm">ServiceLocator<span id="LSTDAB6639C_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTDAB6639C_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Current</a>.
+                </p><p>
+                    The DigitalRune Engine libraries (such as DigitalRune Animation, DigitalRune Game,
+                    DigitalRune Physics, etc.) do <strong>not</strong> register any services in
+                    the <a href="fac79e7c-47fb-e5e6-9f47-485010679f34.htm">ServiceContainer</a>
+                    and they do <strong>not</strong> require any registered services.
+                </p></div><div class="collapsibleAreaRegion" id="Compatibility"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Compatibility</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    The <a href="fac79e7c-47fb-e5e6-9f47-485010679f34.htm">ServiceContainer</a>
+                    is yet another IoC/DI container among many other implementations on the Internet. The class
+                    <a href="fac79e7c-47fb-e5e6-9f47-485010679f34.htm">ServiceContainer</a>
+                    implements the interface <a href="40ca0d07-e686-e492-5914-6dfcbf120e1d.htm">IServiceLocator</a>.
+                    This interface is defined in the
+                    <a href="http://commonservicelocator.codeplex.com/" target="_blank">Commmon Service Locator library</a>
+                    (<em>Microsoft.Practices.ServiceLocation.dll</em>,
+                    from
+                    <a href="http://msdn.microsoft.com/en-us/practices" target="_blank">Microsoft patterns and practices</a>).
+                    This means that the container shares
+                    a common interface with many other IoC/DI container implementations.
+                </p><p>
+                    Applications or frameworks should access services only through the
+                    <a href="40ca0d07-e686-e492-5914-6dfcbf120e1d.htm">IServiceLocator</a>
+                    interface. This ensures that the code consuming the services is independent from the actual
+                    IoC/DI container. The <a href="fac79e7c-47fb-e5e6-9f47-485010679f34.htm">ServiceContainer</a>
+                    can be replaced by another IoC/DI container, or the code can be reused in a different context
+                    where a different IoC/DI container is used.
+                </p></div><div class="collapsibleAreaRegion" id="Availability"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID6RB')" onkeypress="SectionExpandCollapse_CheckKey('ID6RB', event)" tabindex="0"><img id="ID6RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Making the service locator available</span></div><div id="ID6RBSection" class="collapsibleSection"><p>
+                    Code that requires a specific service needs have access to the
+                    <a href="40ca0d07-e686-e492-5914-6dfcbf120e1d.htm">IServiceLocator</a>.
+                    There are several strategies for making the IServiceContainer available.
+                </p><h4 class="subHeading" id="Global">Using a global IServiceLocator</h4><div class="subsection"><p>
+                            The <a href="40ca0d07-e686-e492-5914-6dfcbf120e1d.htm">IServiceLocator</a>
+                            can be made globally available using the static class
+                            <a href="2dba0274-2e53-133e-98b7-385b8ea8ab08.htm">ServiceLocator</a>.
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAABABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAABABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAABABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAABABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">var</span> container = <span class="highlight-keyword">new</span> ServiceContainer();
+
+<span class="highlight-comment">// Register services.</span>
+container.Register(<span class="highlight-keyword">typeof</span>(IService1), <span class="highlight-keyword">null</span>, <span class="highlight-keyword">typeof</span>(Service1));
+...
+
+<span class="highlight-comment">// Make the service container globally available.</span>
+ServiceLocator.SetLocatorProvider(() =&gt; container);
+
+<span class="highlight-comment">// Now, any component can access the global service locator. For example,</span>
+<span class="highlight-keyword">var</span> service1 = ServiceLocator.Current.GetInstance&lt;IService1&gt;();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAABABAAA");</script></div><h4 class="subHeading" id="AsParameter">Passing the IServiceLocator</h4><div class="subsection"><p>
+                            Some developers may have concerns using a global service locator. Instead, the
+                            <a href="40ca0d07-e686-e492-5914-6dfcbf120e1d.htm">IServiceLocator</a>
+                            instance can simply be passed from the caller to all components.
+                        </p></div></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID7RB')" onkeypress="SectionExpandCollapse_CheckKey('ID7RB', event)" tabindex="0"><img id="ID7RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID7RBSection" class="collapsibleSection"><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="18bf3603-f6e6-d225-4a37-af065c538a02.htm">DigitalRune.ServiceLocation</a></div><div class="seeAlsoStyle"><a href="fac79e7c-47fb-e5e6-9f47-485010679f34.htm">DigitalRune.ServiceLocation<span id="LSTDAB6639C_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTDAB6639C_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>ServiceContainer</a></div><div class="seeAlsoStyle"><a href="f0478a47-93eb-9be0-84e7-2fefc3af7c19.htm">Microsoft.Practices.ServiceLocation</a></div><div class="seeAlsoStyle"><a href="40ca0d07-e686-e492-5914-6dfcbf120e1d.htm">Microsoft.Practices.ServiceLocation<span id="LSTDAB6639C_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTDAB6639C_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>IServiceLocator</a></div><h4 class="subHeading">Other Resources</h4><div class="seeAlsoStyle"><a href="http://martinfowler.com/articles/injection.html" target="_blank">Inversion of Control Containers and the Dependency Injection pattern</a></div><div class="seeAlsoStyle"><a href="http://en.wikipedia.org/wiki/Inversion_of_control" target="_blank">Inversion of Control (Wikipedia)</a></div><div class="seeAlsoStyle"><a href="http://commonservicelocator.codeplex.com/" target="_blank">Microsoft patterns &amp; practices CommonServiceLocator</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

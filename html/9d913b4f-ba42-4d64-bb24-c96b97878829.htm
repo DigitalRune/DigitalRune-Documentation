@@ -1,0 +1,92 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>How To: Blend Between Walk and Run Animation</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="9d913b4f-ba42-4d64-bb24-c96b97878829" /><meta name="Description" content="This topic explains how to blend between a &quot;Walk&quot; and a &quot;Run&quot; animations based on the speed of a character." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="c2892dfd-491e-4e78-83d1-737e38f1acc9.htm" title="DigitalRune Animation" tocid="c2892dfd-491e-4e78-83d1-737e38f1acc9">DigitalRune Animation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="751c362c-34c2-497e-a36e-75af009f37ef.htm" title="Articles" tocid="751c362c-34c2-497e-a36e-75af009f37ef">Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="ad0977be-89c4-4233-b570-8d7e97f9fe87.htm" title="How To: Add DigitalRune Animation to a Project" tocid="ad0977be-89c4-4233-b570-8d7e97f9fe87">How To: Add DigitalRune Animation to a Project</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="ecded02d-1df8-43e5-9987-e840bbd4ae00.htm" title="How To: Play a Cyclic Animation" tocid="ecded02d-1df8-43e5-9987-e840bbd4ae00">How To: Play a Cyclic Animation</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="53f0e8b9-91cc-4d19-ad2d-3413341c27a0.htm" title="How To: Immediately Apply an Animation Value" tocid="53f0e8b9-91cc-4d19-ad2d-3413341c27a0">How To: Immediately Apply an Animation Value</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="9d913b4f-ba42-4d64-bb24-c96b97878829.htm" title="How To: Blend Between Walk and Run Animation" tocid="9d913b4f-ba42-4d64-bb24-c96b97878829">How To: Blend Between Walk and Run Animation</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="b3b57add-09d0-4033-b5b8-35831ca22f73.htm" title="External Articles" tocid="b3b57add-09d0-4033-b5b8-35831ca22f73">External Articles</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">How To: Blend Between Walk and Run Animation</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This topic explains how to blend between a "Walk" and a "Run" animations based on the speed
+                of a character.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Simple">Method 1: Varying playback speeds and animation transitions</a></li><li class="outlineSectionEntry"><a href="#Blend">Method 2: Animation blending using a BlendGroup</a></li></ul></div><div class="collapsibleAreaRegion" id="Simple"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Method 1: Varying playback speeds and animation transitions</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    The character needs to have two animations: The "Walk" animation lets the character walk at
+                    average speed and the "Run" animation lets the character sprint with maximal speed.
+                    (Each animation contains a single
+                    <a href="http://en.wikipedia.org/wiki/Walk_cycle" target="_blank">walk cycle</a>.)
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAHACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAHACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAHACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAHACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Load the animations.</span>
+SkeletonKeyFrameAnimation walkAnimation = animations[<span class="highlight-literal">"Walk"</span>];
+SkeletonKeyFrameAnimation runAnimation = animations[<span class="highlight-literal">"Run"</span>];
+
+<span class="highlight-comment">// Create an AnimationClip&lt;T&gt; to loop the animation.</span>
+<span class="highlight-keyword">var</span> cyclicWalkAnimation = <span class="highlight-keyword">new</span> AnimationClip&lt;SkeletonPose&gt;(walkAnimation)
+{
+  LoopBehavior = LoopBehavior.Cycle,
+  Duration = TimeSpan.MaxValue,
+};
+
+<span class="highlight-keyword">var</span> cyclicRunAnimation = <span class="highlight-keyword">new</span> AnimationClip&lt;SkeletonPose&gt;(runAnimation)
+{
+  LoopBehavior = LoopBehavior.Cycle,
+  Duration = TimeSpan.MaxValue,
+};</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAHACAAA");</script><p>
+                    When the character starts moving, start by playing the "Walk" animation.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAFACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAFACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAFACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAFACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Start "Walk" animation.</span>
+<span class="highlight-keyword">var</span> animationController = AnimationService.StartAnimation(
+  walkAnimation, 
+  (IAnimatableProperty)_skeletonPose);
+animationController.AutoRecycle();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAFACAAA");</script><p>
+                    Vary the playback speed of the animation to match the speed of the character.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EADACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EADACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EADACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EADACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Play walk animation at half speed:</span>
+animationController.Speed = <span class="highlight-number">0.5</span>f;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EADACAAA");</script><p>
+                    Once the speed exceeds a certain threshold, switch to the run animation using a short
+                    fade-in duration:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EABACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">animationController = AnimationService.StartAnimation(
+  cyclicRunAnimation,
+  (IAnimatableProperty)_skeletonPose,
+  AnimationTransitions.Replace(<span class="highlight-number">0.2</span>f));
+animationController.AutoRecycle();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABACAAA");</script><p>
+                    The problem with this approach is that the "Run" animation is not automatically synchronized
+                    with the "Walk" animation. The transition is acceptable in the most cases, but will create
+                    some animation glitches in the worst case (when the right foot is in front in the "Walk"
+                    animation, but the left foot is in front in the "Run" animation).
+                </p></div><div class="collapsibleAreaRegion" id="Blend"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Method 2: Animation blending using a BlendGroup</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    The more accurate (but a bit more expensive way) way is to use a
+                    <a href="702e1ee3-4095-9528-3d5e-ab7bf3299fa3.htm">BlendGroup</a>.
+                    A <a href="702e1ee3-4095-9528-3d5e-ab7bf3299fa3.htm">BlendGroup</a>
+                    is an animation that blends cyclic animations with different length.
+                </p><p>
+                    Load the animations as before, but instead of creating an
+                    <a href="6990ac6e-9ea1-50af-5df7-91bfd17acba5.htm">AnimationClip<span id="LST30548653_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST30548653_0?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST30548653_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST30548653_1?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                    add the animations to a new <a href="702e1ee3-4095-9528-3d5e-ab7bf3299fa3.htm">BlendGroup</a>.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAGABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAGABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAGABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAGABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Load the animations.</span>
+SkeletonKeyFrameAnimation walkAnimation = animations[<span class="highlight-literal">"Walk"</span>];
+SkeletonKeyFrameAnimation runAnimation = animations[<span class="highlight-literal">"Run"</span>];
+
+<span class="highlight-comment">// Add the animations to a new blend group.</span>
+BlendGroup walkRunAnimation = <span class="highlight-keyword">new</span> BlendGroup
+{
+  LoopBehavior = LoopBehavior.Cycle, 
+  Duration = TimeSpan.MaxValue
+};
+walkRunAnimation.Add(walkAnimation);
+walkRunAnimation.Add(runAnimation);
+walkRunAnimation.SynchronizeDurations(); <span class="highlight-comment">// Needs to be called once!</span>
+walkRunAnimation.SetWeight(<span class="highlight-number">0</span>, <span class="highlight-number">1.0</span>f);     <span class="highlight-comment">// Enable walk animation.</span>
+walkRunAnimation.SetWeight(<span class="highlight-number">1</span>, <span class="highlight-number">0.0</span>f);     <span class="highlight-comment">// Disable run animation.</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAGABAAA");</script><p>
+                    The method <a href="ba09a392-81e0-d868-e75c-881508756c87.htm">SynchronizeDurations</a>
+                    needs to be called once after all animations have been added.
+                </p><p>
+                    The <a href="702e1ee3-4095-9528-3d5e-ab7bf3299fa3.htm">BlendGroup</a>
+                    can be used like any other animation. For example, to start the animation call:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EADABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EADABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EADABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EADABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">AnimationService.StartAnimation(
+  walkRunAnimation, 
+  (IAnimatableProperty)_skeletonPose
+  ).AutoRecycle();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EADABAAA");</script><p>
+                    The blend weights can be used to create a seamless transition from walking to running.
+                    (Note: The blend weights are automatically normalized.)
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EABABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Cross-fade between "Walk" and "Run":</span>
+walkRunAnimation.SetWeight(<span class="highlight-number">0</span>, <span class="highlight-number">0.5</span>f); <span class="highlight-comment">// 50% walk</span>
+walkRunAnimation.SetWeight(<span class="highlight-number">1</span>, <span class="highlight-number">0.5</span>f); <span class="highlight-comment">// 50% run</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABABAAA");</script><p><a href="702e1ee3-4095-9528-3d5e-ab7bf3299fa3.htm">BlendGroup</a>
+                    are actually pretty powerful: A <a href="702e1ee3-4095-9528-3d5e-ab7bf3299fa3.htm">BlendGroup</a>
+                    can blend any number of animations, not just two. For example, it is possible to mix a "Walk"
+                    animation with a "Run" animation and a "Limp" animation.
+                </p></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

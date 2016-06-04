@@ -1,0 +1,77 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>DirectXTex Texassemble</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="82aae839-9dee-4d18-b87b-85da2b547f7f" /><meta name="Description" content="Microsoft(R) DirectX 11 Texture Assembler (DirectXTex version). Copyright (C) Microsoft Corp. All rights reserved." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="aae4fd3b-9bc1-4d4e-81fc-b0527c2a57ae.htm" title="Tools" tocid="aae4fd3b-9bc1-4d4e-81fc-b0527c2a57ae">Tools</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="983ed4b5-d98b-4244-81d3-9518b7a16ab4.htm" title="Pack" tocid="983ed4b5-d98b-4244-81d3-9518b7a16ab4">Pack</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="82aae839-9dee-4d18-b87b-85da2b547f7f.htm" title="Texassemble" tocid="82aae839-9dee-4d18-b87b-85da2b547f7f">Texassemble</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="2225f642-6f72-4a1a-adc7-ad1be8bbd543.htm" title="Texconv" tocid="2225f642-6f72-4a1a-adc7-ad1be8bbd543">Texconv</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">DirectXTex Texassemble</td></tr></table><span class="introStyle"></span><div class="introduction"><p><em>
+                    Microsoft(R) DirectX 11 Texture Assembler (DirectXTex version).
+                    Copyright (C) Microsoft Corp. All rights reserved.
+                </em></p><p>
+                The <a href="https://directxtex.codeplex.com/" target="_blank">DirectXTex</a> command-line tool <span class="command">texassemble</span> can
+                be used to create DDS files containing cube maps, volume maps, or texture arrays
+                from individual images.
+            </p><p><span class="command">texassemble</span> does not support mipmap generation or texture
+                compression. The resulting DDS file needs to be processed using
+                <a href="2225f642-6f72-4a1a-adc7-ad1be8bbd543.htm">Texconv</a>.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Usage">Usage</a></li><li class="outlineSectionEntry"><a href="#Arguments">Arguments</a></li><li class="outlineSectionEntry"><a href="#Examples">Examples</a></li><li class="outlineSectionEntry"><a href="#seeAlsoSection">See Also</a></li></ul></div><div class="collapsibleAreaRegion" id="Usage"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Usage</span></div><div id="ID1RBSection" class="collapsibleSection"><p /><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">texassemble [-cube | - volume | -array | -cubearray] [-w &lt;width&gt;] [-h &lt;height&gt;] [-f &lt;format&gt;] [-if &lt;filter&gt;] [-sepalpha] [-o &lt;outputfile&gt;] [-dx10]  [-nologo] &lt;files&gt;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAADAAA");</script></div><div class="collapsibleAreaRegion" id="Arguments"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Arguments</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    The following arguments can be specified on the command-line:
+                </p><div class="tableSection"><table><tr><th><p>Argument</p></th><th><p>Description</p></th></tr><tr><td><p><em>files</em></p></td><td><p>
+                                The image files that should be assembled into the DDS file.
+                            </p></td></tr><tr><td><p><span class="command">-cube</span></p></td><td><p>
+                                Create a cube map. Requires 6 image files (+X, -X, +Y, -Y, +Z, -Z).
+                            </p></td></tr><tr><td><p><span class="command">-volume</span></p></td><td><p>
+                                Create a volume texture. Requires 2 or more images. The number of
+                                images defines the depth of the volume.
+                            </p></td></tr><tr><td><p><span class="command">-array</span></p></td><td><p>
+                                Create a 1D or 2D texture array. Requires 2 or more images.
+                            </p></td></tr><tr><td><p><span class="command">-cubearray</span></p></td><td><p>
+                                Create a cube map array. Requires multiple of 6 images.
+                            </p></td></tr><tr><td><p><span class="command">-w</span> <em>width</em></p></td><td><p>
+                                The width of the output texture in pixels.
+                            </p></td></tr><tr><td><p><span class="command">-h</span> <em>height</em></p></td><td><p>
+                                The height of the output texture in pixels. If no size is given, the
+                                size is taken from the first input image.
+                            </p></td></tr><tr><td><p><span class="command">-f</span> <em>format</em></p></td><td><p>
+                                The texture format of the output texture. If no format is given, the
+                                format of the first image file is used.
+                            </p><p>
+                                Allowed values are all
+                                <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb173059.aspx" target="_blank">DXGI formats</a>
+                                (without the "DXGI_FORMAT_" prefix).
+                            </p><p>
+                                Example: -f R10G10B10A2_UNORM
+                            </p></td></tr><tr><td><p><span class="command">-if</span> <em>filter</em></p></td><td><p>
+                                The image filter used for resizing.
+                            </p><p>
+                                Allowed values: POINT, LINEAR, CUBIC, FANT, BOX, TRIANGLE,
+                                POINT_DITHER, LINEAR_DITHER, CUBIC_DITHER, FANT_DITHER, BOX_DITHER,
+                                TRIANGLE_DITHER, POINT_DITHER_DIFFUSION, LINEAR_DITHER_DIFFUSION,
+                                CUBIC_DITHER_DIFFUSION, FANT_DITHER_DIFFUSION, BOX_DITHER_DIFFUSION,
+                                TRIANGLE_DITHER_DIFFUSION
+                            </p><p>
+                                Filters with DITHER in their name indicate that the 4x4 ordered
+                                dither algorithm, while "DITHER_DIFFUSION" is error diffusion
+                                dithering.
+                            </p></td></tr><tr><td><p><span class="command">-sepalpha</span></p></td><td><p>
+                                Resize alpha channel separately from color channels. This implies an
+                                alpha mode setting of DDS_ALPHA_MODE_CUSTOM as this is typically
+                                only used if the alpha channel doesn't contain transparency
+                                information.
+                            </p></td></tr><tr><td><p><span class="command">-o</span> <em>outputfile</em></p></td><td><p>
+                                The output file. The default name is a .DDS file based on the first
+                                input image file.
+                            </p></td></tr><tr><td><p><span class="command">-dx10</span></p></td><td><p>
+                                Force DDS file output to always use the "DX10" header extension. The
+                                resulting file may not be compatible with the legacy D3DX10 or
+                                D3DX11 libraries.
+                            </p></td></tr><tr><td><p><span class="command">-nologo</span></p></td><td><p>
+                                Suppress copyright message.
+                            </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="Examples"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Examples</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    Assemble 3 images into a 256x256x3 volume texture:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAEABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAEABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAEABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">texassemble -volume -w 256 -h 256 -f R8G8B8A8_UNORM -o volume.dds lena.jpg fishingboat.jpg peppers.tiff</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAEABAAA");</script><p>
+                    Assemble a 256x256 cube map from 6 images:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">texassemble -cube -w 256 -h 256 -f R8G8B8A8_UNORM -o cubemap.dds lobbyxposjpg lobbyxneg.jpg lobbyypos.jpg lobbyyneg.jpg lobbyzpos.jpg lobbyzneg.jpg</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACABAAA");</script><p>
+                    Assemble 2 images into a texture array ('lena.jpg' defines the DXGI format and
+                    size of the resulting texture):
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">texassemble -array -o array.dds lena.jpg peppers.tiff</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAABAAA");</script></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID4RBSection" class="collapsibleSection"><h4 class="subHeading">Other Resources</h4><div class="seeAlsoStyle"><a href="2225f642-6f72-4a1a-adc7-ad1be8bbd543.htm">Texconv</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

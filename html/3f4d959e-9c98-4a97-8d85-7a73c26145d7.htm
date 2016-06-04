@@ -1,0 +1,116 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Shadow Acne</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="3f4d959e-9c98-4a97-8d85-7a73c26145d7" /><meta name="Description" content="Shadow acne is another problem caused by the limited resolution of the shadow map." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="7d5a0abe-8231-452c-895c-e6dbab83822b.htm" title="Graphics Programming" tocid="7d5a0abe-8231-452c-895c-e6dbab83822b">Graphics Programming</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="3f82c46b-efec-4416-807f-670ac1930117.htm" title="Shadows" tocid="3f82c46b-efec-4416-807f-670ac1930117">Shadows</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="8666619e-60d7-436e-8a0f-b3d982f0dca7.htm" title="Shadow Types" tocid="8666619e-60d7-436e-8a0f-b3d982f0dca7">Shadow Types</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="bed07eb7-0d10-40f3-93e8-c823a787b6a7.htm" title="Shadow Filtering" tocid="bed07eb7-0d10-40f3-93e8-c823a787b6a7">Shadow Filtering</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="3f4d959e-9c98-4a97-8d85-7a73c26145d7.htm" title="Shadow Acne" tocid="3f4d959e-9c98-4a97-8d85-7a73c26145d7">Shadow Acne</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="4f8d2843-e46a-44cf-ba8d-c58fb8d9302d.htm" title="Shadow Maps" tocid="4f8d2843-e46a-44cf-ba8d-c58fb8d9302d">Shadow Maps</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="a3f49f80-226e-4a6b-b13a-dbf673b41438.htm" title="Shadow Masks" tocid="a3f49f80-226e-4a6b-b13a-dbf673b41438">Shadow Masks</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Shadow Acne</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Acne">Shadow acne</a></li><li class="outlineSectionEntry"><a href="#Biasing">Shadow biasing</a></li><li class="outlineSectionEntry"><a href="#DepthBias">Depth bias</a></li><li class="outlineSectionEntry"><a href="#NormalOffset">Normal offset</a></li><li class="outlineSectionEntry"><a href="#Units">Bias units</a></li><li class="outlineSectionEntry"><a href="#PeterPanning">Peter panning</a></li><li class="outlineSectionEntry"><a href="#References">References</a></li></ul></div><div class="collapsibleAreaRegion" id="Acne"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Shadow acne</span></div><div id="ID0RBSection" class="collapsibleSection"><p><span class="term">Shadow acne</span> is another problem caused by the limited
+                    resolution of the shadow map.
+                </p><p>
+                    First, a scene with no shadow acne:
+                </p><div class="mediaNear"><img alt="Shadow-Acne-Reference" src="../media/Shadow-Acne-Reference.jpg" /><div class="caption">Figure: Reference scene, no shadow acne</div></div><p>
+                    When shadows are rendered naively – simply comparing a depth value with the
+                    value in the shadow map – the following happens: Faces are likely to be
+                    self-shadowed. This erroneous self-shadowing is called
+                    <span class="term">shadow acne</span>.
+                </p><div class="mediaNear"><img alt="Shadow-Acne" src="../media/Shadow-Acne.jpg" /><div class="caption">Figure: Shadow Acne</div></div><p>
+                    Note that increasing the resolution of the shadow map does not prevent
+                    shadow acne…
+                </p><div class="mediaNear"><img alt="Shadow-Acne-Increased-Resolution" src="../media/Shadow-Acne-Increased-Resolution.jpg" /><div class="caption">Figure: Shadow acne with increased shadow map resolution.</div></div><p>
+                    … nor does shadow map filtering. A large filter radius can make the problem even
+                    worse.
+                </p><div class="mediaNear"><img alt="Shadow-Acne-Filtering" src="../media/Shadow-Acne-Filtering.jpg" /><div class="caption">Figure: Shadow filtering does not remove shadow acne.</div></div></div><div class="collapsibleAreaRegion" id="Biasing"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Shadow biasing</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    To avoid shadow acne, the pixels in the scene need to be moved closer to
+                    the light source during the shadow test. This is called
+                    <span class="term">biasing</span>. Different biasing methods exist:
+                </p><ul><li>
+                        Depth Bias: The pixel is moved in the direction of the light.
+                    </li><li>
+                        Slope-Scaled Depth Bias: Like the depth bias, but the offset depends on
+                        the slope of the surface because shadow acne is bigger on slopes which
+                        are nearly parallel to the light.
+                    </li><li>
+                        Normal Offset [1]: The pixels are moved in the direction of the surface
+                        normal. The offset can be proportional to the slope.
+                    </li><li>
+                        View Direction Offset [2]: Like the normal offset but instead of moving
+                        into the normal direction, the pixel is moved in the view direction.
+                        This is cheaper but not as good as the normal offset.
+                    </li><li>
+                        Receiver Plane Depth Bias [3][4]: The receiver plane is calculated to
+                        analytically find the ideal bias.
+                    </li></ul><p>
+                    A bias can be applied to the depth values when rendering the shadow map or
+                    when reading the shadow map: The depth bias and the slope-scaled depth
+                    bias are usually applied when the shadow map is created using the depth
+                    bias features of the graphics hardware. The other bias types are applied
+                    when the shadow map is read.
+                </p><p>
+                    We have tested these methods and found a combination of depth bias and
+                    slope-scaled normal offset to be the most robust. Both are applied when
+                    the shadow map is read. The bias values are controlled with the
+                    shadow
+                    properties
+                    <a href="f0ede3ec-e617-8e5c-0a65-89fc356b4c1a.htm">DepthBias</a>
+                    and
+                    <a href="0977059f-b424-894a-67e6-d9c131e8d364.htm">NormalOffset</a>.
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                        The depth bias and the normal offset are applied by the
+                        <a href="22403909-a781-58dc-2284-5478c65d0ffa.htm">ShadowMaskRenderer</a>
+                        (see <a href="a3f49f80-226e-4a6b-b13a-dbf673b41438.htm">Shadow Masks</a>).
+                        If you use forward rendering, you have to implement shadow biasing in
+                        the forward rendering shader and you are free to implement any biasing
+                        method you prefer.
+                    </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="DepthBias"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Depth bias</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    Increasing the
+                    <a href="f0ede3ec-e617-8e5c-0a65-89fc356b4c1a.htm">DepthBias</a>
+                    moves lit pixels closer to the light (the pixels are only moved during
+                    the shadow test, not in the real scene). The depth bias removes shadow
+                    acne from surfaces facing the light source.
+                </p><div class="mediaNear"><img alt="Shadow-Depth-Bias" src="../media/Shadow-Depth-Bias.jpg" /></div></div><div class="collapsibleAreaRegion" id="NormalOffset"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Normal offset</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    As shown in the image above, faces parallel to the light direction may
+                    still show shadow acne. To clean these faces the
+                    <a href="0977059f-b424-894a-67e6-d9c131e8d364.htm">NormalOffset</a>
+                    needs to be increased. The normal offset virtually pushes pixels into
+                    the light by moving them in the direction of the surface normal.
+                </p><div class="mediaNear"><img alt="Shadow-Normal-Offset" src="../media/Shadow-Normal-Offset.jpg" /></div></div><div class="collapsibleAreaRegion" id="Units"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Bias units</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    Depth bias and normal offset values are specified in
+                    <span class="term">shadow map texels</span>.
+                    For example, depth bias = 3 means that the pixels is moved the length
+                    of 3 shadows map texels closer to the light.
+                </p><p>
+                    This unit choice makes bias settings easier to understand and to
+                    configure: When shadow filtering is disabled, the size of the shadow map
+                    texels is easy to spot in the stair pattern of the shadow edges.
+                </p><p>
+                    This unit ensures that the bias automatically scales with the shadow
+                    map resolution. The same bias settings work regardless of the shadow map
+                    resolution.
+                </p><p>
+                    The bias also scales for lights with perspective projections such as
+                    spotlights: Objects near a spotlight (good shadow map resolution) only
+                    need a small bias, objects in the distance (poor shadow map resolution)
+                    need a large bias. By keeping the bias proportional to the projected shadow
+                    map texels, the same settings work at all distances.
+                </p></div><div class="collapsibleAreaRegion" id="PeterPanning"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Peter panning</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    If shadow filtering uses a large filter radius, you need larger depth
+                    bias and normal offset values. However, using large values can introduce
+                    a new problem called <span class="term">Peter Panning</span>, where the shadow
+                    becomes disconnected from the shadow caster.
+                </p><div class="mediaNear"><img alt="Shadow-Peter-Panning" src="../media/Shadow-Peter-Panning.jpg" /><div class="caption">
+                        Figure: Correct shadow bias (left) vs. large shadow bias (right)
+                    </div></div><p>
+                    Therefore, make the depth bias and normal offset only as large as
+                    necessary to remove shadow acne.
+                </p></div><div class="collapsibleAreaRegion" id="References"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID6RB')" onkeypress="SectionExpandCollapse_CheckKey('ID6RB', event)" tabindex="0"><img id="ID6RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />References</span></div><div id="ID6RBSection" class="collapsibleSection"><ul class="noBullet"><li>
+                        [1] Daniel Holbert: "Saying 'Goodbye' to Shadow Acne", GDC 2011 poster,
+                        <a href="http://www.dissidentlogic.com/old/images/NormalOffsetShadows/GDC_Poster_NormalOffset.png" target="_blank">http://www.dissidentlogic.com/old/images/NormalOffsetShadows/GDC_Poster_NormalOffset.png</a></li><li>
+                        [2] Angelo Pesce: "Shadowmap bias notes",
+                        <a href="http://c0de517e.blogspot.co.at/2011/05/shadowmap-bias-notes.html" target="_blank">http://c0de517e.blogspot.co.at/2011/05/shadowmap-bias-notes.html</a></li><li>
+                        [3] John R. Isidoro: "Shadow Mapping: GPU-based Tips and Techniques", GDC 2006,
+                        <a href="http://developer.amd.com/wordpress/media/2012/10/Isidoro-ShadowMapping.pdf" target="_blank">http://developer.amd.com/wordpress/media/2012/10/Isidoro-ShadowMapping.pdf</a></li><li>
+                        [4] David Tuft: "Plane-Based Depth Bias for Percentage Closer Filtering –
+                        Calculating a custom offset to remove self-shadowing for large PCF Kernels by
+                        fitting the underlying geometry to a plane", Game Developer Magazine 05/2010,
+                        pp. 35,
+                        <a href="http://twvideo01.ubm-us.net/o1/vault/GD_Mag_Archives/GDM_May_2010.pdf" target="_blank">http://twvideo01.ubm-us.net/o1/vault/GD_Mag_Archives/GDM_May_2010.pdf</a></li></ul></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

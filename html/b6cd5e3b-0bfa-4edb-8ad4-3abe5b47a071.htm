@@ -1,0 +1,253 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>UI Input Handling</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="b6cd5e3b-0bfa-4edb-8ad4-3abe5b47a071" /><meta name="Description" content="This article describes how the UI controls handle input." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="a5a463da-de2e-432f-bf7d-07206aaca634.htm" title="DigitalRune Game UI" tocid="a5a463da-de2e-432f-bf7d-07206aaca634">DigitalRune Game UI</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="5bf85e1f-8f25-4778-b4b1-9d29faf15cc9.htm" title="UI Controls" tocid="5bf85e1f-8f25-4778-b4b1-9d29faf15cc9">UI Controls</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="2c10bf58-571a-4d67-b763-0f6b584c9bce.htm" title="Control Properties and Events" tocid="2c10bf58-571a-4d67-b763-0f6b584c9bce">Control Properties and Events</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c0f13e6f-5e80-4d6b-8816-39f1789fe825.htm" title="Layout" tocid="c0f13e6f-5e80-4d6b-8816-39f1789fe825">Layout</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="bb35e0b0-49d5-4847-b7f8-f5a1bb467fbb.htm" title="Rendering" tocid="bb35e0b0-49d5-4847-b7f8-f5a1bb467fbb">Rendering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="44fe138f-8897-48c6-8ed6-c41bafd7853f.htm" title="Themes" tocid="44fe138f-8897-48c6-8ed6-c41bafd7853f">Themes</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="b6cd5e3b-0bfa-4edb-8ad4-3abe5b47a071.htm" title="UI Input Handling" tocid="b6cd5e3b-0bfa-4edb-8ad4-3abe5b47a071">UI Input Handling</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">UI Input Handling</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This article describes how the UI controls handle input.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Focus">Input focus</a></li><li class="outlineSectionEntry"><a href="#MouseOver">Mouse-over state</a></li><li class="outlineSectionEntry"><a href="#Routing">Input routing</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Context">Input context</a></li><li class="outlineSectionEntry"><a href="#Hit">Hit testing</a></li><li class="outlineSectionEntry"><a href="#Preemption">Input preemption</a></li><li class="outlineSectionEntry"><a href="#Custom">Custom input handling</a></li></ul></ul></div><div class="collapsibleAreaRegion" id="Focus"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Input focus</span></div><div id="ID0RBSection" class="collapsibleSection"><p><span class="term">Focus management</span> decides which control handles the user
+                    <span class="term">input first</span>. For example, if the user clicks a text box with the
+                    mouse, the text box gets the input focus. When keyboard keys or game pad buttons are
+                    pressed, the focused control can handle the keys first. The focused control should also
+                    use a visual state to tell the user that it has the focus. Here are some examples:
+                </p><ul><li>
+                        A text box that has input focus uses keyboard key presses to add character to
+                        its text. It has a visual state called "Focused". If this state is active, the UI
+                        renderer draws a blinking caret in the text box.
+                    </li><li>
+                        A button that has input focus checks the ENTER or SPACE keys and the game pad A
+                        button. It has a visual state called "Focused". If this state is active, the UI
+                        renderer adds a glow effect to the button.
+                    </li></ul><p>
+                    The user can move the focus from one control to another control using the keyboard arrow
+                    keys, the left thumb stick or the D-pad on the game pad.
+                </p><p>
+                    The focus is managed by the
+                    <a href="f682325d-2544-f85c-3a16-e500f9e19b4a.htm">FocusManager</a>
+                    class. Each
+                    <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>
+                    has a reference to a focus manager. The focus manager can be exchanged. You might want
+                    to inherit from
+                    <a href="f682325d-2544-f85c-3a16-e500f9e19b4a.htm">FocusManager</a>
+                    to change how the focus moves when keyboard arrow keys are pressed. The method
+                    <a href="1be66100-7c16-0b2e-924b-8714ac672566.htm">FocusManager<span id="LST20F7CB63_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST20F7CB63_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>OnMoveFocus</a>
+                    can be overridden to customize the focus movement. This might be necessary for radial
+                    GUI layouts or other complex layouts. The default implementation works best for
+                    grid-like control layouts.
+                </p><p>
+                    A
+                    <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>
+                    has several properties and methods for focus management:
+                </p><p><a href="ec092eab-dcf7-5c1b-2d3f-b3cb4d0dc2c3.htm">IsFocused</a>
+                    indicates whether the control currently has the input focus.
+                    <a href="f0aadff4-7c59-426f-40e4-5c1b63e32e6f.htm">IsFocusWithin</a>
+                    indicates whether the control or a child control has the focus. For example, if a
+                    text box in a window has the input focus, then the text box sets the
+                    <a href="ec092eab-dcf7-5c1b-2d3f-b3cb4d0dc2c3.htm">IsFocused</a>
+                    and the window sets the
+                    <a href="f0aadff4-7c59-426f-40e4-5c1b63e32e6f.htm">IsFocusWithin</a>
+                    flag.
+                </p><p><a href="7bd7b536-1d1e-fc6b-0dcb-e9ccfaa9f362.htm">Focus</a>
+                    moves the input focus to the control – but only if the control is
+                    <a href="80837a13-4353-e2aa-6b9e-31e79f5c908f.htm">Focusable</a> .
+                    Controls that handle input, like buttons, text boxes, sliders, are focusable per default.
+                    Passive controls, like images or text blocks, are not focusable per default. There are a
+                    few special cases, for example, a window has a
+                    <span class="term">close button</span> (the small X button in the upper right corner).
+                    This is a button but
+                    <a href="80837a13-4353-e2aa-6b9e-31e79f5c908f.htm">Focusable</a>
+                    is set to <span class="code">false</span> – the user cannot move the focus to this button.
+                </p><p><a href="20f8d4a7-374b-4a20-9c95-bf4185a779ed.htm">FocusWhenMouseOver</a>
+                    can be set to true if the control should receive the focus automatically when the
+                    mouse cursor hovers over the control. Menu items in a context menu and items in a
+                    drop-down box set this flag. This flag can also be useful for button in a
+                    start screen menu.
+                </p><p><span class="term">Focus scopes</span>
+                    define the region in which the focus can move. Windows have set the flag
+                    <a href="babb5d56-741d-4940-5186-cef25bcf6d9c.htm">IsFocusScope</a>
+                    and this enables focus movement between child controls inside the window. When the
+                    focus is moved using keyboard or game pad input, it can only move to another control
+                    inside the same focus scope.
+                    <a href="babb5d56-741d-4940-5186-cef25bcf6d9c.htm">IsFocusScope</a>
+                    could also be set on other controls, e.g. pages in a tab control or the
+                    <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>
+                    itself – but  that depends on the application.
+                    <a href="3f219a6d-b8da-1a57-e233-492b6e0ff7a1.htm">AutoUnfocus</a>
+                    determines if the input focus should be removed from all controls if the user clicks
+                    the empty space of a focus scope.
+                </p></div><div class="collapsibleAreaRegion" id="MouseOver"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Mouse-over state</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    When the mouse is moved over a control, the control should react and indicate that
+                    the user can interact with this control. Therefore, most interactive controls have a
+                    "MouseOver" visual state. For example, buttons can draw a glow effect when the mouse
+                    hovers over the button.
+                </p><p><a href="2994049c-2eda-2aa7-cc8b-f559d2e1fc01.htm">IsMouseOver</a>
+                    indicates if the mouse cursor is over the control or over any child control.
+                    <a href="417b537a-5f6e-e185-689c-77ccbbd9e7ed.htm">IsMouseDirectlyOver</a>
+                    indicates if the mouse cursor is over the control and not over a child control. – Imagine
+                    the mouse is over the
+                    close button of a window:
+                    <a href="2994049c-2eda-2aa7-cc8b-f559d2e1fc01.htm">IsMouseOver</a>
+                    and
+                    <a href="417b537a-5f6e-e185-689c-77ccbbd9e7ed.htm">IsMouseDirectlyOver</a>
+                    are true for the close button;
+                    <a href="2994049c-2eda-2aa7-cc8b-f559d2e1fc01.htm">IsMouseOver</a>
+                    is true for the window but
+                    <a href="417b537a-5f6e-e185-689c-77ccbbd9e7ed.htm">IsMouseDirectlyOver</a>
+                    is false.
+                </p><p>
+                    The
+                    <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>
+                    also keeps track of the control where
+                    <a href="417b537a-5f6e-e185-689c-77ccbbd9e7ed.htm">IsMouseDirectlyOver</a>
+                    is set – see property
+                    <a href="b91b950a-09b9-c29a-cc3b-a5101feb6994.htm">UIScreen<span id="LST20F7CB63_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST20F7CB63_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>ControlUnderMouse</a>.
+                </p></div><div class="collapsibleAreaRegion" id="Routing"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Input routing</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    GUI controls are managed in a tree-like structure, the
+                    <span class="term">visual tree</span>. The root of the tree is a
+                    <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>
+                    control and each control can have child controls (<span class="term">visual children</span>).
+                    Input handling is started by the
+                    <a href="dfc7be86-2bc8-5616-5aec-37d6bf62a917.htm">UIManager</a>
+                    when
+                    <a href="68b37aa2-910e-f88c-2b4e-4463359cc416.htm">UIManager<span id="LST20F7CB63_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST20F7CB63_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update</a>
+                    is executed in the game loop. Each control has an
+                    <a href="725d2b6d-fdaa-c9f9-fc98-dbd9c6c4495b.htm">OnHandleInput</a>
+                    method. To handle the input, the whole visual tree is traversed calling
+                    <a href="725d2b6d-fdaa-c9f9-fc98-dbd9c6c4495b.htm">OnHandleInput</a>
+                    of each control. This traversal starts at the
+                    <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>.
+                    In
+                    <a href="725d2b6d-fdaa-c9f9-fc98-dbd9c6c4495b.htm">OnHandleInput</a>
+                    each control let’s the child control with the input focus (if there is any) handle the
+                    input first. Then the other children can handle input and finally the control itself.
+                </p><p>
+                    Each control has the flag
+                    <a href="7b0e1a97-e8c6-1ab5-09c2-a9d7b67b0f54.htm">IsEnabled</a>.
+                    If this is set to false, the control (including its children) will skip input handling.
+                    (The read-only flag
+                    <a href="72545599-3600-2c3a-736e-c7f80eb56ccf.htm">ActualIsEnabled</a>
+                    indicates if a control and all its visual ancestors are enabled.) The screen has an
+                    <a href="95b0f595-003e-6ccc-e4fe-d9ddb9e0929a.htm">InputEnabled</a>
+                    flag that can be set to false to skip input handling for the entire visual tree.
+                </p><h4 class="subHeading" id="Context">Input context</h4><div class="subsection"><p>
+                            The screen builds an
+                            <a href="e7a6be85-30b4-6bdc-d49e-926b35a4cfe3.htm">InputContext</a>
+                            instance that gets passed to each control during input handling. This context
+                            provides a few very useful pieces of information, most notably the property
+                            <a href="d0e055dc-284f-d7ec-8426-3aaf53ac95ad.htm">MousePosition</a>.
+                            This is the mouse position <em>relative to the control</em>
+                            considering any render transformation that may be applied to the control. That means,
+                            the control can read the
+                            <a href="d0e055dc-284f-d7ec-8426-3aaf53ac95ad.htm">MousePosition</a>
+                            input and use it as if it was not scaled/rotated/translated. In contrast,
+                            <a href="8c4d529b-04a2-419e-f584-1b183f7df030.htm">ScreenMousePosition</a>
+                            is the absolute mouse position on the screen.
+                        </p><p>
+                            The input context is also useful to hand down information to visual children.
+                            For example, each control can set the
+                            <a href="aa78761b-57d0-b9c9-41a5-7a91581f3bcf.htm">AllowedPlayer</a>
+                            property to determine from which game pad it reads input. The allowed player is
+                            part of the input context because each control needs to know the allowed player
+                            of ancestors in the visual tree. Usually controls accept input from any game pad.
+                            But in some cases (e.g. split screen games), you might want to create a window
+                            that accepts only input from player 1 and not from player 2.
+                        </p></div><h4 class="subHeading" id="Hit">Hit testing</h4><div class="subsection"><p>
+                            Each control has a virtual method
+                            <a href="cc077511-2ad8-bf5a-67a9-170d7a7e7ed4.htm">HitTest</a>.
+                            This method is called during the input handling to check if the mouse is over the
+                            control. Per default, the hit test method returns true if the mouse is over the
+                            rectangular area
+                            (<a href="5d166a02-37b8-956f-2345-b384bf029b1b.htm">UIControl<span id="LST20F7CB63_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST20F7CB63_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>ActualBounds</a>)
+                            of the control.
+                        </p><p><a href="cc077511-2ad8-bf5a-67a9-170d7a7e7ed4.htm">HitTest</a>
+                            is also called to determine if the mouse is over a child control and this information
+                            is stored in
+                            <a href="a914fd44-dcf6-c468-4dfc-1698e24ddaed.htm">InputContext<span id="LST20F7CB63_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST20F7CB63_4?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>IsMouseOver</a>
+                            and passed to the child control. This is important for controls that clip the space
+                            of the child controls, like a scroll viewer. For example, a control could be
+                            outside the visible viewport of a scroll viewer. By checking
+                            <a href="a914fd44-dcf6-c468-4dfc-1698e24ddaed.htm">IsMouseOver</a>
+                            of the input context the control sees that mouse cannot be over this control because
+                            the mouse is either not over the parent control, or the control is clipped by the
+                            parent control.
+                        </p><p>
+                            You can override
+                            <a href="cc077511-2ad8-bf5a-67a9-170d7a7e7ed4.htm">HitTest</a>
+                            in custom controls to create round buttons or other non-rectangular clickable areas.
+                        </p></div><h4 class="subHeading" id="Preemption">Input preemption</h4><div class="subsection"><p>
+                            When a control handles keyboard input, it must let the other controls and other
+                            game logic know that the key presses have been handled. Here are a few examples:
+                        </p><ul><li>
+                                A window contains a multi-line text box and a button where
+                                <a href="6d192724-dd4d-640a-ddbd-b95e5159a791.htm">Button<span id="LST20F7CB63_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST20F7CB63_5?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>IsDefault</a>
+                                is true (this means the button is activated when the user presses ENTER if
+                                the focus is within the window). If the text box has input focus and the user
+                                presses ENTER, then the key press is handled by the text box and a newline is
+                                created in the text box. In this case the button should not react to the ENTER press.
+                            </li><li>
+                                If there are several windows overlapping and the mouse is clicked in the
+                                top-most window, then the windows below must know that the mouse click was
+                                already handled. (You cannot click <em>through</em> a window.)
+                            </li></ul><p>
+                            For this, the
+                            <a href="ccc38e5b-8b21-b109-140c-2ce6c275070f.htm">IInputService</a>
+                            has several flags:
+                            <a href="401b310b-6f7a-e15f-2eed-ce32d171f88a.htm">IsKeyboardHandled</a>,
+                            <a href="6cd01efe-8e5e-72dd-795a-d726a320d57e.htm">IsMouseOrTouchHandled</a>,
+                            <a href="e91c9f51-9c39-6b53-7e4f-c28f66e2d1f9.htm">IsGamePadHandled</a>
+                            and
+                            <a href="62de7439-102b-2ee7-55b7-0ad3a736b1ae.htm">IsAccelerometerHandled</a>.
+                            These flags can be read to see if the input from this device has already been
+                            handled by someone else in this frame. Controls or other game logic objects that
+                            handle input from a device should set the flags accordingly, to let other objects
+                            know that device input has been handled.
+                        </p><p>
+                            Some controls can also simply ignore these flags and handle the input
+                            nevertheless; for example, a context menu will always close when ESCAPE is pressed –
+                            no matter if any other object handles ESCAPE too.
+                        </p></div><h4 class="subHeading" id="Custom">Custom input handling</h4><div class="subsection"><p>
+                            To customize the input handling, you can derive a class from an existing control
+                            class and override
+                            <a href="725d2b6d-fdaa-c9f9-fc98-dbd9c6c4495b.htm">OnHandleInput</a>.
+                            Don’t forget to call
+                            <span class="code">base.OnHandleInput(context);</span>
+                            because this lets the visual children do the input handling. The basic structure of
+                            <a href="725d2b6d-fdaa-c9f9-fc98-dbd9c6c4495b.htm">OnHandleInput</a>
+                            is
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EADAAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EADAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EADAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EADAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnHandleInput(InputContext context)
+{
+  <span class="highlight-comment">// Do some stuff before the child control handle input.</span>
+  ...
+   
+  <span class="highlight-comment">// Call base class, which also calls child controls.</span>
+  <span class="highlight-keyword">base</span>.OnHandleInput(context);
+ 
+  <span class="highlight-comment">// Do some stuff after the child controls have handled input.</span>
+  ...
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EADAAABAAA");</script><p>
+                            Any code before
+                            <span class="code">base.OnHandleInput(context)</span>
+                            acts before the child controls have a chance to handle input.
+                            This is used, for example, by the
+                            <a href="8ad1b368-37b8-4b78-6228-5d03ca51c6ac.htm">Window</a>
+                            class: If the user is currently dragging the window with the mouse, then the
+                            window sets
+                            IInputService.IsMouseOrTouchHandled
+                            to true before
+                            <span class="code">base.OnHandleInput(context)</span>.
+                            This lets the child controls know that they should ignore mouse input.
+                        </p><p>
+                            There are also two
+                            <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>
+                            events that you can attach to instead of overriding
+                            <a href="725d2b6d-fdaa-c9f9-fc98-dbd9c6c4495b.htm">OnHandleInput</a>:
+                        </p><ul><li><a href="0a0d0b0d-7b5e-3c84-dc59-22aea723c8b0.htm">InputProcessing</a>
+                                is raised before
+                                <a href="725d2b6d-fdaa-c9f9-fc98-dbd9c6c4495b.htm">OnHandleInput</a>
+                                is called.
+                            </li><li><a href="0876b076-d60d-163a-fda2-57a4834d783c.htm">InputProcessed</a>
+                                is raised after
+                                <a href="725d2b6d-fdaa-c9f9-fc98-dbd9c6c4495b.htm">OnHandleInput</a>
+                                is called.
+                            </li></ul></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

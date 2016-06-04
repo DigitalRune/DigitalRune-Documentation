@@ -1,0 +1,157 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Step 14: Post-processing</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="68c9f201-aa9c-4b7f-bf96-a57893faddfe" /><meta name="Description" content="While we are modifying the graphics screen, we could add post-processing to apply some full-screen image filters." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d94d3673-de15-47f9-a122-70b4d97b5920.htm" title="General" tocid="d94d3673-de15-47f9-a122-70b4d97b5920">General</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="4d7ccf95-54e8-4b4c-950f-9420947b4e24.htm" title="Tutorials" tocid="4d7ccf95-54e8-4b4c-950f-9420947b4e24">Tutorials</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="6ce9b230-eed2-419d-92df-3e3e4a03d27e.htm" title="Tutorial 01: Adding DigitalRune Engine to an XNA Game" tocid="6ce9b230-eed2-419d-92df-3e3e4a03d27e">Tutorial 01: Adding DigitalRune Engine to an XNA Game</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="8befb151-f7b6-4884-936b-530458b13860.htm" title="Step 1: Setup" tocid="8befb151-f7b6-4884-936b-530458b13860">Step 1: Setup</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="25418622-e634-4741-8d17-efc9fb44fba7.htm" title="Step 2: Empty game" tocid="25418622-e634-4741-8d17-efc9fb44fba7">Step 2: Empty game</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="0c04e065-a5fb-4045-bc09-7cce47c63d4e.htm" title="Step 3: Input service" tocid="0c04e065-a5fb-4045-bc09-7cce47c63d4e">Step 3: Input service</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="26ebc8f3-4778-4979-a217-1d85e2c5ae31.htm" title="Step 4: Graphics service" tocid="26ebc8f3-4778-4979-a217-1d85e2c5ae31">Step 4: Graphics service</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="efe7ad45-ea74-4e57-810d-93bc3ef3a28f.htm" title="Step 5: Debug rendering" tocid="efe7ad45-ea74-4e57-810d-93bc3ef3a28f">Step 5: Debug rendering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="da752ba9-7056-4485-9b90-d6070cb7c1e8.htm" title="Step 6: Game object service" tocid="da752ba9-7056-4485-9b90-d6070cb7c1e8">Step 6: Game object service</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="53ee55e3-b4a5-42cc-b47d-88d18b9de2f5.htm" title="Step 7: Model content" tocid="53ee55e3-b4a5-42cc-b47d-88d18b9de2f5">Step 7: Model content</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="253857cc-d401-4788-ae6e-4ca12a94a21e.htm" title="Step 8: Rendering models" tocid="253857cc-d401-4788-ae6e-4ca12a94a21e">Step 8: Rendering models</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="cdc88d41-dcb6-4464-be17-46d29a15d25a.htm" title="Step 9: Animated Model" tocid="cdc88d41-dcb6-4464-be17-46d29a15d25a">Step 9: Animated Model</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="a1c6f3cc-8a48-4c68-9401-421d36f67eba.htm" title="Step 10: More debug rendering" tocid="a1c6f3cc-8a48-4c68-9401-421d36f67eba">Step 10: More debug rendering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="dd394bdc-c9ec-442a-929d-7141f7b301ae.htm" title="Step 11: Physics" tocid="dd394bdc-c9ec-442a-929d-7141f7b301ae">Step 11: Physics</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="aa0a6f8f-d355-4188-9d4a-7041160411d1.htm" title="Step 12: Particles" tocid="aa0a6f8f-d355-4188-9d4a-7041160411d1">Step 12: Particles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c060be3d-f85f-4551-838c-6969ab45b0b4.htm" title="Step 13: Sky box" tocid="c060be3d-f85f-4551-838c-6969ab45b0b4">Step 13: Sky box</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="68c9f201-aa9c-4b7f-bf96-a57893faddfe.htm" title="Step 14: Post-processing" tocid="68c9f201-aa9c-4b7f-bf96-a57893faddfe">Step 14: Post-processing</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="b035aaae-87fb-48c6-86de-e30024ec9a89.htm" title="Step 15: Add DigitalRune Graphics content" tocid="b035aaae-87fb-48c6-86de-e30024ec9a89">Step 15: Add DigitalRune Graphics content</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="77f82858-2022-41f9-9325-9a4d97b5450d.htm" title="Step 16: GUI" tocid="77f82858-2022-41f9-9325-9a4d97b5450d">Step 16: GUI</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="7f0f5338-019d-4ef1-a579-3d99df4e1aa2.htm" title="Step 17: Deferred lighting" tocid="7f0f5338-019d-4ef1-a579-3d99df4e1aa2">Step 17: Deferred lighting</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Step 14: Post-processing</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                While we are modifying the graphics screen, we could add post-processing to apply
+                some full-screen image filters.
+            </p></div><div class="collapsibleAreaRegion" id="HiDef"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Change graphics profile to HiDef</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    Some advanced effects are only available for the <span class="term">HiDef</span> graphics profile.
+                </p><ol><li>
+                        In the <span class="ui">Solution Explorer</span> right-click the <em>MyGame</em> project.
+                    </li><li>
+                        Select <span class="ui">Properties…</span></li><li>
+                        Select the XNA game studio tab and set the Game Profile to <span class="term">HiDef</span>.
+                        <div class="mediaNear"><img alt="Tutorial-01-22" src="../media/Tutorial-01-22.png" /></div></li></ol></div><div class="collapsibleAreaRegion" id="PostProcessing"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Add post-processing</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    This requires more changes in <em>MyGraphicsScreen.cs</em>:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EARACAAA_tab1" class="codeSnippetContainerTabSingle">MyGraphicsScreen.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EARACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EARACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EARACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">…
+<span class="highlight-keyword">using</span> DigitalRune.Graphics.PostProcessing;                                              <span class="highlight-comment">// NEW</span>
+…
+
+<span class="highlight-keyword">namespace</span> MyGame
+{
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> MyGraphicsScreen : GraphicsScreen
+    {
+        <span class="highlight-keyword">private</span> MeshRenderer _meshRenderer;
+        <span class="highlight-keyword">private</span> BillboardRenderer _billboardRenderer;
+        <span class="highlight-keyword">private</span> SkyRenderer _skyRenderer;
+        <span class="highlight-keyword">private</span> PostProcessorChain _postProcessors;                                     <span class="highlight-comment">// NEW</span>
+
+        …
+
+        <span class="highlight-keyword">public</span> MyGraphicsScreen(IGraphicsService graphicsService)
+          : <span class="highlight-keyword">base</span>(graphicsService)
+        {
+            _meshRenderer = <span class="highlight-keyword">new</span> MeshRenderer();
+            _billboardRenderer = <span class="highlight-keyword">new</span> BillboardRenderer(graphicsService, <span class="highlight-number">2048</span>);
+            _skyRenderer = <span class="highlight-keyword">new</span> SkyRenderer(graphicsService);
+
+            _postProcessors = <span class="highlight-keyword">new</span> PostProcessorChain(graphicsService);                  <span class="highlight-comment">// NEW</span>
+            _postProcessors.Add(<span class="highlight-keyword">new</span> SharpeningFilter(graphicsService));                 <span class="highlight-comment">// NEW</span>
+            _postProcessors.Add(<span class="highlight-keyword">new</span> GrainFilter(graphicsService));                      <span class="highlight-comment">// NEW</span>
+
+            <span class="highlight-keyword">var</span> spriteFont = graphicsService.Content.Load&lt;SpriteFont&gt;(<span class="highlight-literal">"SpriteFont1"</span>);
+            DebugRenderer = <span class="highlight-keyword">new</span> DebugRenderer(graphicsService, spriteFont);
+
+            Scene = <span class="highlight-keyword">new</span> Scene();
+        }
+
+        …
+
+        <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnRender(RenderContext context)
+        {
+            <span class="highlight-keyword">var</span> screenRenderTarget = context.RenderTarget;                              <span class="highlight-comment">// NEW</span>
+            <span class="highlight-keyword">var</span> screenViewport = context.Viewport;                                      <span class="highlight-comment">// NEW</span>
+
+            <span class="highlight-keyword">var</span> graphicsDevice = GraphicsService.GraphicsDevice;
+
+            <span class="highlight-keyword">var</span> intermediateRenderTarget = GraphicsService.RenderTargetPool.Obtain2D(   <span class="highlight-comment">// NEW</span>
+                <span class="highlight-keyword">new</span> RenderTargetFormat(                                                 <span class="highlight-comment">// NEW</span>
+                    context.Viewport.Width,                                             <span class="highlight-comment">// NEW</span>
+                    context.Viewport.Height,                                            <span class="highlight-comment">// NEW</span>
+                    <span class="highlight-keyword">false</span>,                                                              <span class="highlight-comment">// NEW</span>
+                    SurfaceFormat.Color,                                                <span class="highlight-comment">// NEW</span>
+                    DepthFormat.Depth24Stencil8));                                      <span class="highlight-comment">// NEW</span>
+     
+            graphicsDevice.SetRenderTarget(intermediateRenderTarget);                   <span class="highlight-comment">// NEW</span>
+            context.RenderTarget = intermediateRenderTarget;                            <span class="highlight-comment">// NEW</span>
+            context.Viewport = graphicsDevice.Viewport;                                 <span class="highlight-comment">// NEW</span>
+            
+            graphicsDevice.Clear(Color.CornflowerBlue);
+
+            context.CameraNode = CameraNode;
+            context.Scene = Scene;
+
+            <span class="highlight-comment">// Frustum Culling: Get all the scene nodes that intersect the camera frustum.</span>
+            <span class="highlight-keyword">var</span> query = Scene.Query&lt;CameraFrustumQuery&gt;(context.CameraNode, context);
+
+            <span class="highlight-comment">// Render opaque meshes that are visible from the camera</span>
+            graphicsDevice.DepthStencilState = DepthStencilState.Default;
+            graphicsDevice.RasterizerState = RasterizerState.CullCounterClockwise;
+            graphicsDevice.BlendState = BlendState.Opaque;
+            graphicsDevice.SamplerStates[<span class="highlight-number">0</span>] = SamplerState.AnisotropicWrap;
+            context.RenderPass = <span class="highlight-literal">"Default"</span>;
+            _meshRenderer.Render(query.SceneNodes, context);
+            context.RenderPass = <span class="highlight-keyword">null</span>;
+
+            _skyRenderer.Render(query.SceneNodes, context);
+
+            graphicsDevice.DepthStencilState = DepthStencilState.DepthRead;
+            _billboardRenderer.Render(query.SceneNodes, context, RenderOrder.BackToFront);
+
+            context.SourceTexture = intermediateRenderTarget;                           <span class="highlight-comment">// NEW</span>
+            context.RenderTarget = screenRenderTarget;                                  <span class="highlight-comment">// NEW</span>
+            context.Viewport = screenViewport;                                          <span class="highlight-comment">// NEW</span>
+            _postProcessors.Process(context);                                           <span class="highlight-comment">// NEW</span>
+            context.SourceTexture = <span class="highlight-keyword">null</span>;                                               <span class="highlight-comment">// NEW</span>
+
+            DebugRenderer.Render(context);
+
+            GraphicsService.RenderTargetPool.Recycle(intermediateRenderTarget);         <span class="highlight-comment">// NEW</span>
+            context.Scene = <span class="highlight-keyword">null</span>;
+            context.CameraNode = <span class="highlight-keyword">null</span>;
+        }
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EARACAAA");</script><p>
+                    This code creates a <strong>PostProcessorChain</strong>. The
+                    <strong>PostProcessorChain</strong> is a collection of post-process filters which are executed in sequence.
+                    Two post-processors are added to the <strong>PostProcessorChain</strong>: A
+                    <strong>SharpeningFilter</strong> and a <strong>GrainFilter</strong>.
+                </p><p><strong>OnRender</strong> becomes more complex. The post-processors are
+                    image filters. Therefore, we have to render the scene into an render target instead
+                    of the default back buffer.
+                </p><p>
+                    First, we remember the orginal render target and viewport:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EANACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EANACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EANACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EANACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">var</span> screenRenderTarget = context.RenderTarget;
+<span class="highlight-keyword">var</span> screenViewport = context.Viewport;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EANACAAA");</script><p>
+                    Usually the <strong>context.Viewport</strong> is the whole screen and
+                    <strong>context.RenderTarget</strong> is null, which means we are rendering
+                    into the back buffer. However, in complex rendering scenarios (e.g. several stacked
+                    graphics screen) this could be different.
+                </p><p>
+                    Next, an intermediate render target is created. The <strong>RenderTargetPool</strong>
+                    manages a pool of render targets. We use the pool to get the intermediate render target
+                </p><p>
+                    The immediate render target is set on the graphics device. After changing the render
+                    target, we update the information in the render context:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAJACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAJACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAJACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAJACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">graphicsDevice.SetRenderTarget(intermediateRenderTarget);
+context.RenderTarget = intermediateRenderTarget;
+context.Viewport = graphicsDevice.Viewport;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAJACAAA");</script><p>
+                    All subsequent render operations (rendering meshes, sky and billboards) draw into
+                    the intermediate render target.
+                </p><p>
+                    Then we call the post-processors:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAGACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAGACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAGACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAGACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">context.SourceTexture = intermediateRenderTarget;
+context.RenderTarget = screenRenderTarget;
+context.Viewport = screenViewport;
+_postProcessors.Process(context);
+context.SourceTexture = <span class="highlight-keyword">null</span>;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAGACAAA");</script><p>
+                    The post-processors read the intermediate render target and write the result into
+                    the final render target.
+                </p><p>
+                    At the end of <strong>OnRender</strong>, we return the render target to the
+                    pool. The render target will be reused in the next frame. (Alternatively, we could
+                    also call <strong>intermediateRenderTarget.Dispose()</strong> to free the
+                    memory. This is very important. If we do not recycle or dispose our render targets
+                    after use, we could run into out-of-memory problems!)
+                </p><p>
+                    It is also good practice to restore any information that was changed in the render context.
+                </p><p>
+                    What happens if we run the game? We get a <strong>ContentLoadException</strong>:
+                    <em>
+                        Error loading "DigitalRune\XXX". File not found.
+                    </em></p><div class="mediaNear"><img alt="Tutorial-01-23" src="../media/Tutorial-01-23.png" /></div><p>
+                    We will fix this in the next step.
+                </p></div><div class="collapsibleAreaRegion" id="Next"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Next</span></div><div id="ID3RBSection" class="collapsibleSection"><p><a href="b035aaae-87fb-48c6-86de-e30024ec9a89.htm">Step 15: Add DigitalRune Graphics content</a></p></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

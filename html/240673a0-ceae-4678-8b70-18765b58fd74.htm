@@ -1,0 +1,260 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Release 2015-09-28</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="240673a0-ceae-4678-8b70-18765b58fd74" /><meta name="Description" content="DigitalRune Graphics now includes support for large-scale, tile-based terrains using height fields. The terrain system is designed to cover anything from small game worlds up to large terrain databases." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d94d3673-de15-47f9-a122-70b4d97b5920.htm" title="General" tocid="d94d3673-de15-47f9-a122-70b4d97b5920">General</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="1a8e6419-68b2-4e09-9578-a430703e8d5a.htm" title="What's New?" tocid="1a8e6419-68b2-4e09-9578-a430703e8d5a">What's New?</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="ca6ae3c3-7f7c-481d-b1d5-8a3c310921b5.htm" title="Release 2016-03-10" tocid="ca6ae3c3-7f7c-481d-b1d5-8a3c310921b5">Release 2016-03-10</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="890389e2-7ad8-45e5-8c40-e982ef01ab10.htm" title="Release 2015-12-19" tocid="890389e2-7ad8-45e5-8c40-e982ef01ab10">Release 2015-12-19</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="240673a0-ceae-4678-8b70-18765b58fd74.htm" title="Release 2015-09-28" tocid="240673a0-ceae-4678-8b70-18765b58fd74">Release 2015-09-28</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="9fd388c5-bfb4-42ce-aada-32e2dcada3f3.htm" title="Release 2015-05-09" tocid="9fd388c5-bfb4-42ce-aada-32e2dcada3f3">Release 2015-05-09</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="09e8a719-2ba7-485f-a2e9-d8225fa8392f.htm" title="Release 2015-03-10" tocid="09e8a719-2ba7-485f-a2e9-d8225fa8392f">Release 2015-03-10</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="dac4c63c-cc30-43f0-a1bd-00b4c6c1ff3d.htm" title="Change Logs 2010-2014" tocid="dac4c63c-cc30-43f0-a1bd-00b4c6c1ff3d">Change Logs 2010-2014</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Release 2015-09-28</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#ReleaseNotes">Release notes</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Terrain">Terrain rendering</a></li><li class="outlineSectionEntry"><a href="#UWP">Windows 10: Universal Windows Platform</a></li><li class="outlineSectionEntry"><a href="#Unity">Unity game engine</a></li><li class="outlineSectionEntry"><a href="#DRMDL">Importing DRMDL files</a></li></ul><li class="outlineSectionEntry"><a href="#ChangeLog">Change log</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#General">General</a></li><li class="outlineSectionEntry"><a href="#Base">DigitalRune Base 1.18</a></li><li class="outlineSectionEntry"><a href="#Mathematics">DigitalRune Mathematics 1.13.1</a></li><li class="outlineSectionEntry"><a href="#Geometry">DigitalRune Geometry 1.18</a></li><li class="outlineSectionEntry"><a href="#Particles">DigitalRune Particles 1.4.1</a></li><li class="outlineSectionEntry"><a href="#Graphics">DigitalRune Graphics 1.0</a></li><li class="outlineSectionEntry"><a href="#Game">DigitalRune Game 1.3</a></li><li class="outlineSectionEntry"><a href="#GameUI">DigitalRune Game UI 1.6.1</a></li><li class="outlineSectionEntry"><a href="#Samples">Samples</a></li><li class="outlineSectionEntry"><a href="#MonoGame">MonoGame</a></li></ul></ul></div><div class="collapsibleAreaRegion" id="ReleaseNotes"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Release notes</span></div><div id="ID0RBSection" class="collapsibleSection"><h4 class="subHeading" id="Terrain">Terrain rendering</h4><div class="subsection"><p>
+                            DigitalRune Graphics now includes support for large-scale, tile-based terrains
+                            using height fields. The terrain system is designed to cover anything from
+                            small game worlds up to large terrain databases.
+                        </p><div class="mediaNear"><img alt="Terrain sample consisting of 2 x 2 tiles with 1024 m x 1024 m each" src="../media/Terrain.jpg" /><div class="caption">
+                                Figure 1: Terrain sample consisting of 2 x 2 tiles with 1024 m x 1024 m each
+                            </div></div><p>
+                            Features:
+                        </p><ul><li>
+                                Continuous level of detail (no mesh preprocessing, no hardware tessellation required)
+                            </li><li>
+                                Materials using diffuse maps, specular maps, normal maps, height maps
+                            </li><li>
+                                Customizable effects (including parallax occlusion mapping)
+                            </li><li>
+                                Flexible material blending (blend maps, height-based, slope-based, etc.) using any number of layers
+                            </li><li>
+                                Collision detection
+                            </li><li>
+                                Decal rendering
+                            </li><li>
+                                Roads
+                            </li><li>
+                                Procedural terrains
+                            </li><li>
+                                Holes
+                            </li></ul><div class="mediaNear"><img alt="Blood decal on terrain" src="../media/Terrain-Decal.jpg" /><div class="caption">
+                                Figure 2: Blood decal on terrain
+                            </div></div><div class="mediaNear"><img alt="Road carved into terrain" src="../media/Terrain-Road.jpg" /><div class="caption">
+                                Figure 3: Road carved into terrain
+                            </div></div><p>
+                            For more details, check out the new terrain samples and the <a href="46f261f5-750c-4df5-99e2-b6a289f15098.htm">Terrain</a>
+                            chapter.
+                        </p></div><h4 class="subHeading" id="UWP">Windows 10: Universal Windows Platform</h4><div class="subsection"><p>
+                            This release adds builds and samples for the Universal Windows Platform (UWP).
+                        </p></div><h4 class="subHeading" id="Unity">Unity game engine</h4><div class="subsection"><p>
+                            The license requirements for the Unity game engine have been relaxed: Previously, a
+                            DigitalRune Engine Professional license was required to use the DigitalRune libraries
+                            in Unity. From now on Indie and Professional licenses work with Unity. (If you own
+                            a DigitalRune Indie license: You can use your existing DigitalRune license key in
+                            the Unity project.)
+                        </p></div><h4 class="subHeading" id="DRMDL">Importing DRMDL files</h4><div class="subsection"><p>
+                            When importing a model for use in the DigitalRune Engine, two files are required:
+                            The model (e.g. the FBX file) and the model description (the DRMDL file). The model
+                            description is an XML file that contains preprocessing settings and references the
+                            material to be used.
+                        </p><p>
+                            To import the model, the FBX file needs to be added to an XNA or MonoGame content project.
+                            Due to certain limitations in the XNA content pipeline it was not possible to add the
+                            .drmdl file directly to the content project. This has been solved in the new release:
+                            Instead of adding the FBX file to the content project, it is now possible to directly
+                            add the DRMDL file to the content project.
+                        </p><p>
+                            This seemingly minor change solves a long standing problem with the XNA content pipeline:
+                            To import a model multiple times, the model had to be duplicated on disk. Now, multiple
+                            DRMDL files can reference the same model. The model can be imported/processed multiple
+                            times with different settings.
+                        </p></div></div><div class="collapsibleAreaRegion" id="ChangeLog"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Change log</span></div><div id="ID1RBSection" class="collapsibleSection"><h4 class="subHeading" id="General">General</h4><div class="subsection"><ul><li>
+                                NEW: Builds for Window 10 - Universal Windows Platform (UWP).
+                            </li><li>
+                                NEW: Microsoft.Practices.ServiceLocation.dll updated from version 1.2 to 1.3.
+                            </li><li>
+                                NEW: DigitalRune libraries built for Unity game engine can now be used with Indie licenses. (Previously a Professional license was required.)
+                            </li></ul></div><h4 class="subHeading" id="Base">DigitalRune Base 1.18</h4><div class="subsection"><ul><li>
+                                NEW:
+                                <a href="0d7a509e-c1a0-804a-1238-2208d66c2417.htm">NamedObjectCollection<span id="LST8E5EB3C6_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_0?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST8E5EB3C6_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_1?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                                now raises
+                                <a href="02689899-3816-87df-502d-93d7e62ad110.htm">CollectionChanged</a>
+                                events.
+                            </li><li>
+                                NEW: Methods
+                                <a href="66454ece-c622-fee8-a84b-2f9762ff7b0f.htm">InsertRange</a>
+                                and
+                                <a href="aab2efb4-08f4-071d-17e6-d407be1a2ea6.htm">RemoveRange</a>
+                                added to
+                                <a href="0d7a509e-c1a0-804a-1238-2208d66c2417.htm">NamedObjectCollection<span id="LST8E5EB3C6_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_2?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST8E5EB3C6_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_3?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a></li><li>
+                                FIX:
+                                <a href="b187b26b-7ffa-40c6-46b9-829cb0cddd21.htm">NotifyingCollection<span id="LST8E5EB3C6_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_4?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST8E5EB3C6_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_5?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script><span id="LST8E5EB3C6_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_6?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>RemoveItem</a>
+                                is not called when calling
+                                <a href="dbe909b8-b88b-97f2-3702-0b5bb35dd6f1.htm">RemoveRange</a>.
+                            </li></ul></div><h4 class="subHeading" id="Mathematics">DigitalRune Mathematics 1.13.1</h4><div class="subsection"><ul><li>
+                                CHANGE: Minor performance improvements.
+                            </li></ul></div><h4 class="subHeading" id="Geometry">DigitalRune Geometry 1.18</h4><div class="subsection"><ul><li><p>
+                                    NEW:
+                                    <a href="de0e44ab-f22b-5188-3868-b5031adbd7e1.htm">HeightField</a>
+                                    now uses a 1-dimensional array. See new height field properties:
+                                    <a href="654d6ff4-7b5d-7058-6fca-bbab7fe7fdd7.htm">Samples</a>,
+                                    <a href="164137d3-b34f-6694-3b62-b6884e345c5a.htm">NumberOfSamplesX</a>,
+                                    <a href="4f236ed9-6386-b8b3-b264-0e2d21cba8de.htm">NumberOfSamplesZ</a>.
+                                </p><p><a href="dade083a-3999-3666-1435-6a03e6017714.htm">HeightField<span id="LST8E5EB3C6_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_7?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Array</a>
+                                    (<span class="code">float[,]</span>) is obsolete. Instead, the height field data should
+                                    be set using a 1-dimensional array.
+                                    Please note: The property
+                                    <a href="dade083a-3999-3666-1435-6a03e6017714.htm">Array</a>
+                                    can still be used - but don't forget to call
+                                    <a href="a62b5766-c9fb-9dfe-d0b0-417f755af569.htm">Invalidate</a>
+                                    if the data in
+                                    <a href="dade083a-3999-3666-1435-6a03e6017714.htm">Array</a>
+                                    is changed after the
+                                    <a href="de0e44ab-f22b-5188-3868-b5031adbd7e1.htm">HeightField</a>
+                                    was created.
+                                </p></li><li>
+                                NEW:
+                                <a href="de0e44ab-f22b-5188-3868-b5031adbd7e1.htm">HeightField</a>
+                                can have a local origin (see
+                                <a href="14533ea9-ba7d-91a7-c6bd-34e797373ce9.htm">OriginX</a>,
+                                <a href="bada4b5d-24f9-d909-35e7-c6df61be3712.htm">OriginZ</a>).
+                            </li><li>
+                                NEW: Support for holes in height fields (using NaN values in the height array).
+                            </li><li>
+                                NEW:
+                                <a href="49b09f0f-a639-640a-8d79-40d00d94c25f.htm">GeometryHelper<span id="LST8E5EB3C6_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_8?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>MergeDuplicatePositions</a>
+                                added.
+                            </li><li>
+                                FIX: Cloned
+                                <a href="9ea9fb97-54e7-64ad-027b-afb0cfdca15f.htm">ConeShape</a>s
+                                had correct
+                                <a href="70395a3a-b6a9-ba33-6b60-b36060a1128a.htm">Radius</a>
+                                and
+                                <a href="945ad83b-a181-b59b-31ba-5531c3328669.htm">Height</a>
+                                but derived properties (e.g. AABB) were incorrect.
+                            </li><li>
+                                Minor other improvements.
+                            </li></ul></div><h4 class="subHeading" id="Particles">DigitalRune Particles 1.4.1</h4><div class="subsection"><ul><li>
+                                FIX: Particle systems with reference frame
+                                <a href="9456ff9c-14bb-fc6b-88ae-30c872860e3b.htm">World</a>
+                                should not be scaled when the particle system node has a scale.
+                            </li></ul></div><h4 class="subHeading" id="Graphics">DigitalRune Graphics 1.0</h4><div class="subsection"><ul><li>
+                                NEW: Terrain rendering. See <a href="46f261f5-750c-4df5-99e2-b6a289f15098.htm">Terrain</a> for more details.
+                            </li><li>
+                                NEW: Method overload
+                                <a href="1fd35a5d-3e6c-003d-9e04-7f1412a24680.htm">GetFogColor</a>
+                                with elevation angle parameter added.
+                            </li><li>
+                                NEW: The tag <strong>GenerateTangentFrames</strong> can now be set per model, per mesh, and
+                                per submesh in the model description (.drmdl file).
+                            </li><li>
+                                NEW: Added support for adding .drmdl files directly to content project.
+                            </li><li>
+                                NEW: The DigitalRune model processor now runs vertex cache optimizations on the meshes - a feature previously missing in MonoGame.
+                            </li><li>
+                                NEW: DigitalRune texture processor supports new surface formats, which have been added to
+                                the MonoGame content pipeline: PVRTC1 2bpp/4bpp for iOS, ETC1 for Android
+                            </li><li>
+                                NEW: Property
+                                <a href="90b0b416-ea71-78c9-2710-a9e62469cb7a.htm">RenderContext<span id="LST8E5EB3C6_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_9?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Object</a>
+                                added. (Stores current data object during rendering.)
+                            </li><li>
+                                NEW: Effect parameter semantics <a href="c4c23926-f505-fa00-48b8-4b0079ae9d1e.htm">DefaultEffectParameterSemantics<span id="LST8E5EB3C6_10"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_10?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>NaN</a>
+                                and <a href="fcff9aeb-3e02-f2c0-f1d9-2ba1785ff7b0.htm">SceneEffectParameterSemantics<span id="LST8E5EB3C6_11"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_11?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>LodCameraPosition</a>
+                                added.
+                            </li><li>
+                                NEW:
+                                <a href="1de06bef-c6f7-ce8d-decf-fd9e4c2b7bf4.htm">GraphicsHelper<span id="LST8E5EB3C6_12"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_12?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>RasterizerStateCullClockwise</a>,
+                                <a href="408cdfb5-a104-30ce-34d5-c062a60b95f6.htm">GraphicsHelper<span id="LST8E5EB3C6_13"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_13?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>RasterizerStateCullCounterClockwise</a>,
+                                <a href="b4009688-011d-97c6-4b04-6c930b256a4b.htm">GraphicsHelper<span id="LST8E5EB3C6_14"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_14?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>RasterizerStateCullNone</a>
+                                added. Identical to built-in rasterizer states in XNA, except that
+                                <strong>MultiSampleAntiAliasing</strong>
+                                is set to false, which improves line rendering when MSAA is disabled.
+                                <a href="b9a40c11-781d-4f2c-67ff-74fa921f8ea2.htm">GraphicsHelper<span id="LST8E5EB3C6_15"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_15?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>RasterizerStateWireFrame</a>
+                                now also sets
+                                <strong>MultiSampleAntiAliasing</strong> = false.
+                                The
+                                <a href="baba2099-54e9-015c-629a-dfe2800bc744.htm">DebugRenderer</a>
+                                uses the new rasterizer states to produce cleaner lines.
+                            </li><li>
+                                NEW: Method <a href="5c5031b2-7786-6627-7dd8-dfc45088f026.htm">NoiseHelper<span id="LST8E5EB3C6_16"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_16?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>GetNoiseTexture</a>
+                                added.
+                            </li><li>
+                                CHANGE:
+                                <em>Forward.fx</em> is now more customizable. Features (diffuse texture,
+                                specular texture, opacity texture, vertex colors, etc.) can be turned on or off
+                                using preprocessor directives.
+                            </li><li>
+                                CHANGE: Improved height fog rendering. If height fog was combined with distance fog and camera was
+                                in a low position, the skybox could get fogged ignoring the fog distance values
+                                (<a href="cdafc2a9-ff6f-d977-4c73-b09bf9464dc6.htm">Fog<span id="LST8E5EB3C6_17"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_17?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Start</a>,
+                                <a href="8a2bf5f3-6976-e67d-5135-68bb97325b0c.htm">Fog<span id="LST8E5EB3C6_18"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_18?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>End</a>).
+                            </li><li>
+                                CHANGE: Improved normal and tangent frame calculations.
+                            </li><li>
+                                CHANGE: DigitalRune texture processor automatically resizes textures to power-of-two or
+                                multiple-of-four, if required by the output format.
+                            </li><li>
+                                CHANGE: Water rendering: Improved projected grid resolution when camera is near water
+                                surface and looking horizontally. Minor other improvements.
+                            </li><li>
+                                REMOVE:
+                                <a href="461619a9-9087-a98a-91cf-7a9ac5d76097.htm">RenderContextKeys<span id="LST8E5EB3C6_19"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_19?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Shadow</a>
+                                is now marked as obsolete. The current shadow map can be found in
+                                <a href="90b0b416-ea71-78c9-2710-a9e62469cb7a.htm">RenderContext<span id="LST8E5EB3C6_20"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_20?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Object</a>
+                                when the shadow map is being rendered.
+                            </li><li>
+                                FIX: Fog with high height falloff could result in no fog or NaN values caused by numerical errors.
+                            </li><li>
+                                FIX: Bounding shape of
+                                ParticleSystemNode
+                                needs to ignore scale if the reference frame is
+                                <a href="9456ff9c-14bb-fc6b-88ae-30c872860e3b.htm">World</a>.
+                            </li><li>
+                                FIX: AMD DX9 graphics driver crash on Win8.1 caused by cloud layer.
+                            </li><li>
+                                FIX: Effect parameter bindings were not created for arrays in MonoGame.
+                            </li><li>
+                                FIX: Minor pixel artifacts at the border of last shadow cascade.
+                                (Problem appears only in Direct3D 11 on NVIDIA Geforce cards.)
+                            </li><li>
+                                FIX: No
+                                <a href="d75a9c99-aff1-74b5-443d-2eac30055c81.htm">OceanWaves</a>
+                                were rendered if
+                                <a href="0b6be64c-a0cd-51c4-522e-2d2e8cb3dc03.htm">EnableCpuQueries</a>
+                                was false.
+                            </li><li>
+                                Minor other improvements.
+                            </li></ul></div><h4 class="subHeading" id="Game">DigitalRune Game 1.3</h4><div class="subsection"><ul><li>
+                                NEW:
+                                <a href="d48fb751-e5f0-ff9f-cd13-b379de6367dd.htm">GameObjectCollection</a>
+                                now raises
+                                <a href="02689899-3816-87df-502d-93d7e62ad110.htm">CollectionChanged</a>
+                                events.
+                            </li></ul></div><h4 class="subHeading" id="GameUI">DigitalRune Game UI 1.6.1</h4><div class="subsection"><ul><li>
+                                FIX: Auto-generated key map contained wrong characters for Portuguese (and maybe other) keyboard layouts.
+                            </li></ul></div><h4 class="subHeading" id="Samples">Samples</h4><div class="subsection"><ul><li>
+                                NEW: Windows 10 samples.
+                            </li><li>
+                                NEW: Terrain samples (see graphics samples).
+                            </li><li>
+                                NEW: CustomCommandSample added (see Game UI samples.
+                            </li><li>
+                                NEW: Added more properties to <strong>FogObject</strong>:
+                                <strong>ApplyFogToSky</strong>, <strong>AttachToCamera</strong></li><li>
+                                NEW: Added fog properties to <strong>DynamicSkyObject</strong>.
+                            </li><li>
+                                CHANGE: When a model is used multiple times, the DRMDL files are added to the content
+                                project instead of the FBX file. The DRMDL files reference the same FBX file,
+                                which reduces the required disk space.
+                            </li><li>
+                                CHANGE: Changed slider ranges in <strong>FogObject</strong> GUI.
+                            </li><li>
+                                CHANGE: Removed use of obsolete property
+                                <a href="dade083a-3999-3666-1435-6a03e6017714.htm">HeightField<span id="LST8E5EB3C6_21"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8E5EB3C6_21?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Array</a>.
+                            </li><li>
+                                FIX: Minor fixes in parallax occlusion mapping sample.
+                                Light direction tangent was not normalized. Mip level checks must use
+                                &lt; instead of &lt;=
+                            </li></ul></div><h4 class="subHeading" id="MonoGame">MonoGame</h4><div class="subsection"><ul><li>
+                                CHANGE: Retarget MonoGame Windows 8 project from Windows 8.0 to Windows 8.1.
+                            </li><li>
+                                FIX: <strong>VertexStride</strong> was not set in
+                                <strong>VertexContent</strong>
+                                if a model contains only a position vertex channel.
+                            </li><li>
+                                FIX: Mesh tangent space was not computed correctly.
+                            </li></ul></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

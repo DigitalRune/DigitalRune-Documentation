@@ -1,0 +1,324 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Particle Systems, Parameters and Effectors</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="7fffe522-a53c-4944-979f-8646dc41ac9a" /><meta name="Description" content="This section discusses particle systems, particle parameters and particle effectors." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="5044112e-c86d-4d85-87d0-b567a0361c21.htm" title="DigitalRune Particles" tocid="5044112e-c86d-4d85-87d0-b567a0361c21">DigitalRune Particles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="6f2fd7a2-0d47-4a6d-a833-14b1fe62e0a9.htm" title="Design Notes" tocid="6f2fd7a2-0d47-4a6d-a833-14b1fe62e0a9">Design Notes</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="7fffe522-a53c-4944-979f-8646dc41ac9a.htm" title="Particle Systems, Parameters and Effectors" tocid="7fffe522-a53c-4944-979f-8646dc41ac9a">Particle Systems, Parameters and Effectors</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="678bfb4e-070d-4322-80d6-3367d6fdec68.htm" title="Multithreading" tocid="678bfb4e-070d-4322-80d6-3367d6fdec68">Multithreading</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="25e7a7a0-265e-4c12-9e41-be23852b39cf.htm" title="&quot;How To&quot; Articles" tocid="25e7a7a0-265e-4c12-9e41-be23852b39cf">"How To" Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="b113ef19-247b-4731-b704-1f4855dccfc0.htm" title="FAQ" tocid="b113ef19-247b-4731-b704-1f4855dccfc0">FAQ</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="ab3315a0-7863-4311-abb5-b0ae31198a06.htm" title="Class Diagrams" tocid="ab3315a0-7863-4311-abb5-b0ae31198a06">Class Diagrams</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Particle Systems, Parameters and Effectors</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This section discusses particle systems, particle parameters and particle effectors.</p><p>
+                Note: Have a look at the <a href="ab3315a0-7863-4311-abb5-b0ae31198a06.htm">Class Diagrams for DigitalRune.Particles</a>
+                to get an overview of the provided types. Check out the section
+                <a href="2deefa98-6d2a-4ada-a51d-95a2625849df.htm">How To: Create a Simple Particle Effect</a> and the included
+                <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a> to see how particle
+                systems are used in code.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#pss">The particle system service</a></li><li class="outlineSectionEntry"><a href="#ps">Particle systems</a></li><li class="outlineSectionEntry"><a href="#parameters">Particle parameters</a></li><li class="outlineSectionEntry"><a href="#effectors">Particle effectors</a></li><li class="outlineSectionEntry"><a href="#tips">Miscellaneous tips</a></li></ul></div><div class="collapsibleAreaRegion" id="pss"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />The particle system service</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    The <a href="4f0cff76-3496-ac25-35f8-ac5ebb9a25fd.htm">ParticleSystemManager</a>
+                    implements the interface
+                    <a href="d9252068-b0be-6468-3992-e20a21ff08b1.htm">IParticleSystemService</a>.
+                    A particle system service manages a collection of particle systems. Usually
+                    <a href="c102ab29-abbd-fa24-ba31-7df50665b7dd.htm">ParticleSystemManager<span id="LST7148E961_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update(TimeSpan)</a>
+                    is called in the game loop once per frame. In this method all particle systems
+                    are updated.
+                </p><p>
+                    The use of the <a href="4f0cff76-3496-ac25-35f8-ac5ebb9a25fd.htm">ParticleSystemManager</a>
+                    is optional. Individual particle systems can also be updated manually.
+                </p></div><div class="collapsibleAreaRegion" id="ps"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Particle systems</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    The class
+                    <a href="2cbfae22-0df1-a6eb-f196-cb13c862a1cd.htm">ParticleSystem</a>
+                    provides the base class for a particle system. It acts like a configurable container
+                    for particle parameters, particle effectors and other particle systems. To create
+                    a new particle effect a new type can be derived from
+                    <a href="2cbfae22-0df1-a6eb-f196-cb13c862a1cd.htm">ParticleSystem</a>,
+                    but usually the class is used directly.
+                </p><p>
+                    Each particle system can have child particle systems
+                    (see property
+                    <a href="98c0aeb7-44a6-cea4-f7cb-61b2ebf8ccc6.htm">Children</a>)
+                    to create complex effects. For example, an explosion particle system
+                    can consist of a glow particle system, a smoke particle system and
+                    a debris particle system.
+                </p><p>
+                    The particle system updates its simulation state when the method
+                    <a href="a05ca7f7-5339-4910-8853-f37b633845ef.htm">Update</a>
+                    is called. This method is called automatically if the particle system
+                    is added to a particle system service or a another particle system.
+                    <a href="d113d1cc-01c0-3063-cbf3-acd294b0ac7f.htm">Reset</a>
+                    can be called to remove all particles and set a particle system back to
+                    its initial state.
+                </p><p>
+                    A particle system starts without any particles. To add ("emit") new particles the method
+                    <a href="468ae797-48ab-c1d7-6bc0-85de73fad230.htm">AddParticles</a>
+                    needs to be called. There are special particle effectors (called "emitters" such as the
+                    <a href="f091034c-3028-8a3d-672b-94f9eb2555a0.htm">StreamEmitter</a>)
+                    that automatically call this method.
+                </p><h4 class="subHeading" id="geoobj">Geometric object</h4><div class="subsection"><p>
+                            The particle system implements
+                            <a href="14f1e616-5c53-aac7-dd8d-1a21f76ea472.htm">IGeometricObject</a>,
+                            which means that it has a
+                            <a href="e04592a5-f92b-761e-b9b7-bc3344129397.htm">Pose</a>
+                            (= position and orientation)
+                            and a
+                            <a href="8f5d47e7-169d-f3cd-4c8f-596fb6eed0fb.htm">Shape</a>.
+                            The shape can be used as a bounding volume for view frustum culling. A suitable
+                            shape must be set manually (the default shape is an infinitely large shape).
+                        </p></div><h4 class="subHeading" id="frame">Reference frame</h4><div class="subsection"><p>
+                            Normally, all 3D positions and directions of particle parameters are given in
+                            world space. The particle system has a property
+                            <a href="8d2be74c-34e8-0f73-ea9b-03bf0a3b9d73.htm">ReferenceFrame</a>
+                            where the coordinate space for particle parameters can be changed. If the
+                            reference frame is changed to
+                            <a href="9456ff9c-14bb-fc6b-88ae-30c872860e3b.htm">Local</a>,
+                            all 3D positions and directions are relative to the local space of the
+                            particle system. That means, when the particle system moves (by changing
+                            <a href="e04592a5-f92b-761e-b9b7-bc3344129397.htm">ParticleSystem<span id="LST7148E961_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Pose</a>),
+                            all particles move and rotate with the particle system as if they were attached to it.
+                        </p></div><h4 class="subHeading" id="timing">Timing</h4><div class="subsection"><p>
+                            The simulation time (see
+                            <a href="7d262cac-8a62-aee1-2cea-a4d721591888.htm">ParticleSystem<span id="LST7148E961_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Time</a>)
+                            of the particle system can be scaled using
+                            <a href="2f33439e-f173-28d1-e72f-3dc6fea787e1.htm">ParticleSystem<span id="LST7148E961_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>TimeScaling</a>
+                            to achieve slow motion or high speed effects.
+                        </p><p>
+                            Additionally, a delay can be defined (see
+                            <a href="679dd8a7-0c9f-b9b0-79f3-23021d995255.htm">ParticleSystem<span id="LST7148E961_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_4?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>InitialDelay</a>
+                            and <a href="8047aaf6-a1d1-4ad8-e985-6d927091e537.htm">ParticleSystem<span id="LST7148E961_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_5?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>CurrentDelay</a>).
+                            This can be used to time effects (e.g. for staggered explosions).
+                        </p><p>
+                            Some particle systems should not start without any particles. Instead, they should
+                            start "in the middle" of the effect. For example: When a player encounters
+                            a waterfall, the water should already be flowing. The properties
+                            <a href="4029625b-d51c-8333-b096-f55d76da84dd.htm">ParticleSystem<span id="LST7148E961_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_6?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>PreloadDuration</a>
+                            and <a href="e24a0902-9255-f0ca-ac7d-185a79e1bf36.htm">ParticleSystem<span id="LST7148E961_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_7?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>PreloadDeltaTime</a>
+                            can be used to define a pre-load phase, which is executed when the particle system
+                            is updated for the first time. In this phase particles can be created and simulated
+                            to ensure that the particle system is not empty when it is shown.
+                        </p></div></div><div class="collapsibleAreaRegion" id="parameters"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Particle parameters</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    Each particle system owns a
+                    <a href="a5946e49-f242-af00-e110-7f09c0cd61fb.htm">ParticleParameterCollection</a>
+                    which manages particle parameters.
+                    Particle parameters have a name and define properties of the particle system or of individual
+                    particles. Typical particle parameters are <em>Position</em>,
+                    <em>Speed</em>, <em>Direction</em>,
+                    <em>Size</em>, <em>Color</em>,
+                    <em>Alpha</em>, etc.
+                </p><p>
+                    A particle parameter is called "uniform" if it provides a single
+                    value that is shared by the particle system and all particles. For example,
+                    most particle systems will have a uniform parameter "Texture" that defines
+                    which texture a particle renderer should use for the particles. All particles
+                    use the same texture.
+                </p><p>
+                    A particle parameter is called "varying" if each particle has its own value.
+                    For example, most particle systems will have a varying parameter "Position"
+                    that stores the positions of the individual particles. (Each particle can have
+                    a unique position.)
+                </p><p>
+                    New particle parameters are added to a particle system using the methods
+                    <a href="fb8c0d20-b5a4-bfac-57a5-9453ed266159.htm">ParticleParameterCollection<span id="LST7148E961_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_8?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>AddUniform<span id="LST7148E961_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_9?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST7148E961_10"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_10?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script>(String)</a>
+                    and
+                    <a href="27a50e2d-028a-f450-7bfb-36ecd911b292.htm">ParticleParameterCollection<span id="LST7148E961_11"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_11?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>AddVarying<span id="LST7148E961_12"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_12?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST7148E961_13"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_13?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script>(String)</a>.
+                    Existing parameters can be retrieved using the <strong>Get</strong>
+                    methods (for example
+                    <a href="670d5798-5e95-04a9-4d75-0c8835ad56aa.htm">ParticleParameterCollection<span id="LST7148E961_14"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_14?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Get<span id="LST7148E961_15"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_15?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST7148E961_16"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_16?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script>(String)</a>).
+                </p><p>
+                    Particle parameters implement the interface
+                    <a href="babb0f1c-1c01-b9ed-36bd-c965436ba258.htm">IParticleParameter<span id="LST7148E961_17"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_17?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST7148E961_18"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_18?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>,
+                    which has a property
+                    <a href="625a944c-a276-0e63-b74a-27376af1eab7.htm">DefaultValue</a>
+                    and a property
+                    <a href="50b5adf2-18da-588c-a554-fd1c9df27ca6.htm">Values</a>.
+                    Uniform particle parameters store their value in
+                    <a href="625a944c-a276-0e63-b74a-27376af1eab7.htm">DefaultValue</a>
+                    and
+                    <a href="50b5adf2-18da-588c-a554-fd1c9df27ca6.htm">Values</a>
+                    is <em>null</em>.
+                    Varying particle parameters store the values in the
+                    <a href="50b5adf2-18da-588c-a554-fd1c9df27ca6.htm">Values</a>
+                    array and
+                    <a href="625a944c-a276-0e63-b74a-27376af1eab7.htm">DefaultValue</a>
+                    is not used.
+                    The
+                    <a href="50b5adf2-18da-588c-a554-fd1c9df27ca6.htm">Values</a>
+                    array is preallocated when the particle parameter is added to the
+                    particle system. The length of the array is defined by
+                    <a href="63bc5509-bf22-2cc2-a442-4f1fdd4f08d0.htm">ParticleSystem<span id="LST7148E961_19"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_19?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>MaxNumberOfParticles</a>.
+                    It is used as a circular buffer for the current particle values.
+                    <a href="7068fcee-0a11-1bd4-dd73-5acdac730b64.htm">ParticleSystem<span id="LST7148E961_20"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_20?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>ParticleStartIndex</a>
+                    determines the index of the oldest active particle in the array.
+                    <a href="cfc460fb-2636-6527-74c2-a633ff799c65.htm">ParticleSystem<span id="LST7148E961_21"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_21?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>NumberOfActiveParticles</a>
+                    defines how many array elements are currently in used. When old particles
+                    die,
+                    <a href="7068fcee-0a11-1bd4-dd73-5acdac730b64.htm">ParticleStartIndex</a>
+                    is increased by the particle system.
+                    <a href="cfc460fb-2636-6527-74c2-a633ff799c65.htm">NumberOfActiveParticles</a>
+                    is increased when new particles are added.
+                </p><p>
+                    The class
+                    <a href="468c2954-8748-ba04-2d11-c3b3c6de544c.htm">ParticleParameterNames</a>
+                    provides names for commonly used particle parameters. These names are only suggestions.
+                    (The only parameter name which is fixed is "NormalizedAge" - see below.)
+                </p><h4 class="subHeading" id="defaultparameters">Default parameters</h4><div class="subsection"><p>
+                            The particle system defines and manages only one particle parameter: "NormalizedAge"
+                            is a varying particle parameter (type: single-precision floating point). The
+                            parameter is 0 for new particles and increases linearly until the particle dies.
+                            Particles with a normalized age of 1 are removed.
+                        </p><p>
+                            By default, the lifetime of particles (= the time it takes for a particle to reach
+                            the normalized age of 1) is 3 seconds. A different lifetime can be set by adding
+                            a uniform or varying particle parameter called "Lifetime" to the particle system.
+                            The particle parameter needs to specify the particle lifetime in seconds (type:
+                            single-precision floating point). If "Lifetime" is a uniform parameter then
+                            all particles are simulated for the same time span. If "Lifetime" is a varying
+                            parameter then the lifetimes can be set per particle.
+                        </p><p>
+                            The particle system itself does not read or manipulate any other parameters.
+                            All particle parameters (except "NormalizedAge")
+                            must be added by the user. The designer of the particle system can decide which
+                            particle parameters are needed, which parameters should be uniform or varying,
+                            and which types the parameters should use!
+                        </p></div><h4 class="subHeading" id="inheritingparameters">Inheriting uniform parameters</h4><div class="subsection"><p>
+                            Uniform particle parameters can be <em>inherited</em> from
+                            parent particle systems (but not varying parameters). That means, a parent
+                            particle system can define a uniform parameter "Alpha" and if a child particle
+                            system does not define an "Alpha" parameter itself, it will use the value of the
+                            parent. (The <strong>Get</strong> methods of the
+                            <a href="a5946e49-f242-af00-e110-7f09c0cd61fb.htm">ParticleParameterCollection</a>
+                            first check whether a uniform parameter is defined locally. If it is missing they
+                            check the parent particle system.)
+                        </p><p>
+                            Inherited parameters are useful to control multiple particle systems at once.
+                            For example, the "teleport effect" (included in the samples)
+                            owns several child particle systems (one particle systems for glowing points and other particle
+                            systems for energy beams). The parent particle system defines a parameter "GlobalAlpha".
+                            The child particle systems multiply the "GlobalAlpha" with their local "Alpha" value.
+                            Thus the whole particle effect can be faded in/out by changing a single parameter.
+                        </p><p /></div></div><div class="collapsibleAreaRegion" id="effectors"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Particle effectors</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    Each particle system owns a
+                    <a href="2db1a74c-bdc2-ab1b-b949-b20cf34808d7.htm">ParticleEffectorCollection</a>
+                    that manages objects derived from the base class
+                    <a href="98aac0ca-d8d4-a3c8-dca3-b0579f335f85.htm">ParticleEffector</a>.
+                    In each update the particle system calls the particle effectors to do the actual work.
+                    Particle effectors can be used to create, initialize, and manipulate particles. Effectors define
+                    the behavior of a particle system.
+                </p><p>
+                    DigitalRune Particles provides several predefined effectors: See namespace
+                    <a href="d20951af-702d-ac4d-e3c1-54c927037f58.htm">DigitalRune.Particles.Effectors</a>
+                    and included samples.
+                </p><p>
+                    The base class
+                    <a href="98aac0ca-d8d4-a3c8-dca3-b0579f335f85.htm">ParticleEffector</a>
+                    provides several virtual methods, which can be overridden in derived class.
+                    See the class description of
+                    <a href="98aac0ca-d8d4-a3c8-dca3-b0579f335f85.htm">ParticleEffector</a>
+                    for more information.
+                </p><h4 class="subHeading" id="effectortypes">Common particle effector types</h4><div class="subsection"><p>
+                            Most particle effectors modify particle parameters. Thus, they define the behavior
+                            of the particles. Effectors should be designed to work with uniform and varying particle parameters.
+                            Usually, particle effectors override
+                            <a href="6615422d-63d4-4e82-f79a-d18a41a601b1.htm">OnBeginUpdate</a>
+                            or
+                            <a href="4b8dbe8f-ce36-9e7d-0d9e-63601520ea12.htm">OnEndUpdate</a>
+                            to modify uniform particle parameters, and
+                            <a href="d234dc37-131d-9e53-ffb0-97bf3d6d7766.htm">OnUpdateParticles</a>
+                            to handle varying particle parameters.
+                            The section <a href="2e27afb1-6482-4f56-9497-ca903aef3c9f.htm">How To: Create a Particle Effector</a>
+                            shows how to implement a particle effector.
+                        </p><p>
+                            A particle effector that creates particles (by calling
+                            <a href="468ae797-48ab-c1d7-6bc0-85de73fad230.htm">ParticleSystem<span id="LST7148E961_22"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_22?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>AddParticles(Int32)</a>)
+                            is called an <em>emitter</em>. For example, see class <a href="f091034c-3028-8a3d-672b-94f9eb2555a0.htm">StreamEmitter</a>.
+                            Usually, emitters override the method
+                            <a href="6615422d-63d4-4e82-f79a-d18a41a601b1.htm">OnBeginUpdate</a>
+                            to add new particles.
+                            The section <a href="5b005b7b-e103-4da2-8d18-cddce0a5bea7.htm">How To: Create a Particle Emitter</a>
+                            shows how to implement an emitter.
+                        </p><p>
+                            Particle effectors that set the initial values of varying parameters are called
+                            <em>start value effectors</em>. For example, see classes
+                            <a href="787a3f3a-7492-3e51-7ae6-0bbc80b73852.htm">StartValueEffector<span id="LST7148E961_23"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_23?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST7148E961_24"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_24?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>,
+                            <a href="4dde873b-64d4-b0d4-c681-121373628b6c.htm">StartPositionEffector</a>
+                            and
+                            <a href="4ca479d3-fd5e-7a4f-8e71-7cfc2fe7cb3c.htm">StartDirectionEffector</a>.
+                            Start value effectors usually override the methods
+                            <a href="6daf5d22-d32e-3de2-17f1-b1cde78c1d6b.htm">OnInitialize</a>
+                            to initialize uniform parameters and
+                            <a href="502dd2c6-7519-d415-09b5-6653a7162609.htm">OnInitializeParticles</a>
+                            to initialize varying parameters.
+                            The section <a href="95a33167-7650-4006-8cf1-3e011c42bf54.htm">How To: Create a Start Value Effector</a>
+                            shows how to implement a generic start value effector.
+                        </p></div><h4 class="subHeading" id="distribution">Distributions</h4><div class="subsection"><p>
+                            Many start value effectors use
+                            <a href="1b5d21f0-13c7-5517-7388-8bcb199b63d9.htm">Distribution<span id="LST7148E961_25"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_25?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST7148E961_26"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_26?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                            objects to define the start values of particle parameters.
+                            A <a href="1b5d21f0-13c7-5517-7388-8bcb199b63d9.htm">Distribution<span id="LST7148E961_27"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_27?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST7148E961_28"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_28?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                            usually returns random values that follow a certain probability distribution. For example, the
+                            <a href="4dde873b-64d4-b0d4-c681-121373628b6c.htm">StartPositionEffector</a>
+                            can use a
+                            <a href="8ea59f7a-c3ea-1f46-fb75-764e0fcb8cf5.htm">SphereDistribution</a>
+                            to return random start positions uniformly distributed within a sphere volume.
+                            See <a href="8c6f4ed6-3d35-4c23-9f64-aa823200e78b.htm">Statistics and Distributions in DigitalRune Mathematics</a>
+                            for more information.
+                        </p></div></div><div class="collapsibleAreaRegion" id="tips"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Miscellaneous tips</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    Here are some tips for designing particles effects:
+                </p><ul><li><p>
+                            For good performance try to decrease the number of particles. Use particles with
+                            high opacity (high alpha values) and textures that contain more structure.
+                        </p></li><li><p>
+                            Some particle effects look a lot better if particles have a random "Lifetime".
+                        </p><p /></li><li><p>
+                            If several start value effectors initialize the same particle parameter,
+                            the last effector in the
+                            <a href="19db02a4-c3e6-da07-2314-99329400979c.htm">Effectors</a>
+                            collection overrides the other start value effectors.
+                        </p></li><li><p>
+                            Uniform parameters can be directly initialized by setting their
+                            <a href="625a944c-a276-0e63-b74a-27376af1eab7.htm">DefaultValue</a>
+                            when they are created. For example:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID4EADGAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID4EADGAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID4EADGAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID4EADGAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">particleSystem.Parameters.AddUniform&lt;<span class="highlight-keyword">float</span>&gt;(ParticleParameterNames.Lifetime).DefaultValue = <span class="highlight-number">5</span>;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID4EADGAABAAA");</script><p>
+                            But they can also be initialized using start value effectors. For example:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID4EABGAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID4EABGAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID4EABGAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID4EABGAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">particleSystem.Effectors.Add(<span class="highlight-keyword">new</span> StartValueEffector&lt;<span class="highlight-keyword">float</span>&gt;
+{
+  Parameter = ParticleParameterNames.Lifetime,
+  DefaultValue = <span class="highlight-number">5</span>,
+});</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID4EABGAABAAA");</script><p>
+                            The advantage of using start value effectors is that when the particle system is
+                            reset (using the method
+                            <a href="d113d1cc-01c0-3063-cbf3-acd294b0ac7f.htm">Reset</a>)
+                            the start value effector will reset the uniform parameter. Without a start value effector,
+                            the uniform parameter keeps its last value and this might not be the same as the original
+                            value if the user or a particle effector has modified the parameter.
+                        </p></li><li><p>
+                            Have a look at the <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a> to see several particle effects
+                            in action.
+                        </p></li><li><p>
+                            The class
+                            <a href="2cbfae22-0df1-a6eb-f196-cb13c862a1cd.htm">ParticleSystem</a>
+                            implements the interface
+                            <a href="58812efb-838c-b735-4cc7-97ff368daa12.htm">IAnimatableObject</a>.
+                            All <em>uniform</em> particle parameters implement
+                            <a href="12daff40-617d-de91-038e-142e7cc14993.htm">IAnimatableProperty<span id="LST7148E961_29"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_29?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST7148E961_30"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_30?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>.
+                            That means, all uniform parameters can be animated using
+                            <a href="c2892dfd-491e-4e78-83d1-737e38f1acc9.htm">DigitalRune Animation</a>.
+                        </p></li><li><p>
+                            Particle systems and particle effectors can be cloned (see method
+                            <a href="56348ca5-f1ea-1368-d545-9063db3c5906.htm">Clone</a>).
+                            That means, a particle system can be configured once and then replicated as needed.
+                        </p></li><li><p>
+                            Particle systems and particle effectors can be serialized/deserialized using
+                            the
+                            <a href="http://msdn.microsoft.com/en-us/library/microsoft.xna.framework.content.pipeline.serialization.intermediate.intermediateserializer.aspx" target="_blank">XNA IntermediateSerializer</a>.
+                        </p></li><li><p>
+                            The class
+                            <a href="682b4df5-01b7-99f9-648a-97932cc7875c.htm">ParticleHelper</a>
+                            provides the extension methods
+                            <a href="6161fff8-384f-5525-5473-fe14ee7bab2d.htm">GetValue<span id="LST7148E961_31"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_31?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST7148E961_32"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_32?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                            and
+                            <a href="3edf5166-ce10-8a81-1f96-8574e19c4b9c.htm">SetValue<span id="LST7148E961_33"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_33?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST7148E961_34"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7148E961_34?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                            which can be used to retrieve values from particle parameters without differentiating
+                            between uniform or varying parameters.
+                        </p></li><li><p>
+                            Particle effectors can read uniform particle parameters to create a time-dependent
+                            behavior. For example, a <em>wind force effector</em> could
+                            use a uniform parameter "WindStrength" to determine its wind force. A
+                            <a href="06faaca9-0364-ad97-279b-252f589b2acd.htm">SingleFadeEffector</a>
+                            could be used to animate the "WindStrength" from 0 to its maximum and back to 0.
+                        </p></li></ul></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

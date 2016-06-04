@@ -1,0 +1,72 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Shadow Filtering</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="bed07eb7-0d10-40f3-93e8-c823a787b6a7" /><meta name="Description" content="This articles explains shadow filtering in DigitalRune Graphics." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="7d5a0abe-8231-452c-895c-e6dbab83822b.htm" title="Graphics Programming" tocid="7d5a0abe-8231-452c-895c-e6dbab83822b">Graphics Programming</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="3f82c46b-efec-4416-807f-670ac1930117.htm" title="Shadows" tocid="3f82c46b-efec-4416-807f-670ac1930117">Shadows</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="8666619e-60d7-436e-8a0f-b3d982f0dca7.htm" title="Shadow Types" tocid="8666619e-60d7-436e-8a0f-b3d982f0dca7">Shadow Types</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="bed07eb7-0d10-40f3-93e8-c823a787b6a7.htm" title="Shadow Filtering" tocid="bed07eb7-0d10-40f3-93e8-c823a787b6a7">Shadow Filtering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="3f4d959e-9c98-4a97-8d85-7a73c26145d7.htm" title="Shadow Acne" tocid="3f4d959e-9c98-4a97-8d85-7a73c26145d7">Shadow Acne</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="4f8d2843-e46a-44cf-ba8d-c58fb8d9302d.htm" title="Shadow Maps" tocid="4f8d2843-e46a-44cf-ba8d-c58fb8d9302d">Shadow Maps</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="a3f49f80-226e-4a6b-b13a-dbf673b41438.htm" title="Shadow Masks" tocid="a3f49f80-226e-4a6b-b13a-dbf673b41438">Shadow Masks</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Shadow Filtering</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This articles explains shadow filtering in DigitalRune Graphics.</p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Resolution">Shadow map resolution</a></li><li class="outlineSectionEntry"><a href="#Filtering">Shadow map filtering</a></li></ul><div class="mediaNear"><img alt="Shadow-Reference" src="../media/Shadow-Reference.jpg" /><div class="caption">Figure: Reference scene "palm tree with shadow"</div></div></div><div class="collapsibleAreaRegion" id="Resolution"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Shadow map resolution</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    The resolution of the shadow map (property
+                    <a href="e3396d2c-33c9-6a80-c737-9b98aa139f0b.htm">Shadow<span id="LST6F8D90DE_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6F8D90DE_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>PreferredSize</a>)
+                    is the most important parameter. This parameter has
+                    the biggest influence on quality and performance.
+                </p><div class="mediaNear"><img alt="Shadow-Resolution" src="../media/Shadow-Resolution.jpg" /></div><p>
+                    16-bit shadow maps have been sufficient in all test cases. Therefore, the property
+                    <a href="f24a0f19-851b-93f1-6678-833327dc4c3b.htm">Prefer16Bit</a>
+                    is now set by default.
+                </p></div><div class="collapsibleAreaRegion" id="Filtering"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Shadow map filtering</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    Without any sort of filtering the shadow shows strong aliasing. Individual
+                    shadow map texels are clearly visible in the image above. A pixel is either
+                    fully lit or completely in shadow.
+                </p><p><span class="term">Percentage closer filtering (PCF)</span> can be applied to
+                    reduce aliasing. Instead of taking a single sample the shadow map is sampled
+                    multiple times in a small radius around the original sample position. The
+                    results of these shadow tests are averaged, which means that a pixel can be
+                    partially shadowed.
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                        Shadow filtering is applied by the
+                        <a href="22403909-a781-58dc-2284-5478c65d0ffa.htm">ShadowMaskRenderer</a>
+                        (see also <a href="a3f49f80-226e-4a6b-b13a-dbf673b41438.htm">Shadow Masks</a>).
+                        If you use forward rendering, you have to implement shadow filtering in the
+                        forward rendering shader and you are free to implement any filtering
+                        method you prefer.
+                    </p></td></tr></table></div><p>
+                    The property
+                    <a href="28bf7b88-7e3a-5323-8416-03b3cfdabb77.htm">NumberOfSamples</a>
+                    determines the quality of the PCF:
+                </p><ul><li><a href="28bf7b88-7e3a-5323-8416-03b3cfdabb77.htm">NumberOfSamples</a>
+                        = 0 … Shadow map filtering disabled.
+                    </li><li><a href="28bf7b88-7e3a-5323-8416-03b3cfdabb77.htm">NumberOfSamples</a>
+                        = 1 … Only a single samples is taken, but a random offset is applied to the sample.
+                    </li><li><a href="28bf7b88-7e3a-5323-8416-03b3cfdabb77.htm">NumberOfSamples</a>
+                        &gt; 1 … Multiple samples are taken (jittered PCF).
+                    </li></ul><div class="mediaNear"><img alt="Shadow-Number-Of-Samples" src="../media/Shadow-Number-Of-Samples.jpg" /></div><p>
+                    We have tried different PCF sample patterns. Jittered PCF samples (using a
+                    rotated Poisson disk) seemed to be the most versatile method.
+                </p><p>
+                    Even without PCF and only one jittered sample (
+                    <a href="28bf7b88-7e3a-5323-8416-03b3cfdabb77.htm">NumberOfSamples</a>
+                    = 1), the look of the shadows improve. Jittered sampling is very useful
+                    if the shadows are blurred with a screen space blur (see
+                    <a href="a3f49f80-226e-4a6b-b13a-dbf673b41438.htm">Shadow Masks</a>).
+                </p><p>
+                    We use a jitter pattern which is stable in world space. This means the
+                    random jitter offset depends on the world space position of the shadowed
+                    pixel and not on the screen space position. This reduces shadow flickering
+                    from the filter pattern when the camera is moving. The size of the noise
+                    pattern is controlled by the property
+                    <a href="8268b2d0-fda9-7cf8-65a2-ec23d8e77c4c.htm">JitterResolution</a>.
+                    If
+                    <a href="8268b2d0-fda9-7cf8-65a2-ec23d8e77c4c.htm">JitterResolution</a>
+                    is too small, you get large visible dots instead of a fine noise pattern.
+                    If it is too large, the shadow edges will be noisy if the camera is too far away.
+                </p><p>
+                    The property
+                    <a href="9ad70326-81a4-334e-1ded-b374f3edc67d.htm">FilterRadius</a>
+                    determines the area around the original sample where the additional samples
+                    are taken.
+                </p><div class="mediaNear"><img alt="Shadow-Filter-Radius" src="../media/Shadow-Filter-Radius.jpg" /></div><p>
+                    The value is specified in texels (of the shadow map). A large filter radius
+                    reduces aliasing further and creates a softer, "out of focus" look. –
+                    However, a large filter radius creates more shadow acne
+                    (see <a href="3f4d959e-9c98-4a97-8d85-7a73c26145d7.htm">Shadow Acne</a>).
+                </p></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

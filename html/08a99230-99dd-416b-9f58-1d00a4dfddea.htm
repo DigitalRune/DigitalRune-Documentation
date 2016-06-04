@@ -1,0 +1,203 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Game Object Properties</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="08a99230-99dd-416b-9f58-1d00a4dfddea" /><meta name="Description" content="This section describes game object properties." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="fe8ccefb-7bce-4290-be56-81bd38ba86fe.htm" title="DigitalRune Game" tocid="fe8ccefb-7bce-4290-be56-81bd38ba86fe">DigitalRune Game</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="309293e8-f2d6-4308-8c85-3f4726f92244.htm" title="Game Object System" tocid="309293e8-f2d6-4308-8c85-3f4726f92244">Game Object System</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="fda7b77e-2d84-46d6-a082-175b4308a1af.htm" title="Game Objects" tocid="fda7b77e-2d84-46d6-a082-175b4308a1af">Game Objects</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="bae21eb9-66c2-422c-95ce-992e873a4774.htm" title="Game Object Service" tocid="bae21eb9-66c2-422c-95ce-992e873a4774">Game Object Service</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="08a99230-99dd-416b-9f58-1d00a4dfddea.htm" title="Game Object Properties" tocid="08a99230-99dd-416b-9f58-1d00a4dfddea">Game Object Properties</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="9d38663a-2ce9-48c5-b9a8-0a07326e0290.htm" title="Game Object Events" tocid="9d38663a-2ce9-48c5-b9a8-0a07326e0290">Game Object Events</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="be9dad32-1e3f-4361-9cbe-9874e2225049.htm" title="Templates" tocid="be9dad32-1e3f-4361-9cbe-9874e2225049">Templates</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Game Object Properties</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This section describes game object properties.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Properties">Game object properties</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Creation">Creating a game object property</a></li><li class="outlineSectionEntry"><a href="#Read">Reading a game object property</a></li><li class="outlineSectionEntry"><a href="#Write">Writing a game object property</a></li><li class="outlineSectionEntry"><a href="#Wrapping">Wrapping a game object property</a></li><li class="outlineSectionEntry"><a href="#Coercion">Value coercion</a></li><li class="outlineSectionEntry"><a href="#Change">Change notification</a></li><li class="outlineSectionEntry"><a href="#Connect">Connecting game object properties</a></li><li class="outlineSectionEntry"><a href="#Limitations">Limitations</a></li><li class="outlineSectionEntry"><a href="#types">Mismatched property value types</a></li></ul><li class="outlineSectionEntry"><a href="#BestPractices">Best practices</a></li><li class="outlineSectionEntry"><a href="#Performance">Performance considerations</a></li></ul></div><div class="collapsibleAreaRegion" id="Properties"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Game object properties</span></div><div id="ID1RBSection" class="collapsibleSection"><p><em>Game object properties</em> (also called <em>ports</em>,
+                    <em>signals</em>, or <em>attributes</em>)
+                    extend the functionality of common language runtime (CLR) properties.
+                    The game object properties are represented by the type
+                    <a href="516e6103-f552-10dc-63a4-cddf14054f0f.htm">GameProperty<span id="LST88B3FF3D_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_0?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST88B3FF3D_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_1?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>.
+                    The game object properties of a particular game object are listed in
+                    <a href="47f0ffea-dbe8-fcad-eb43-b4ed979c68cc.htm">GameObject<span id="LST88B3FF3D_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Properties</a>.
+                </p><h4 class="subHeading" id="Creation">Creating a game object property</h4><div class="subsection"><p>
+                            A new game object property can be defined by calling the static method
+                            <a href="e9e5fbd7-36e3-a4d8-725a-158fc948fbc6.htm">GameObject<span id="LST88B3FF3D_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>CreateProperty<span id="LST88B3FF3D_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_4?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST88B3FF3D_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_5?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script>(String, String, String, T)</a>.
+                            For example:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAEAIADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAEAIADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAEAIADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAEAIADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">GamePropertyMetadata&lt;<span class="highlight-keyword">float</span>&gt; metadata = GameObject.CreateProperty&lt;<span class="highlight-keyword">float</span>&gt;(
+  <span class="highlight-literal">"X"</span>,                       <span class="highlight-comment">// The name of the property.</span>
+  <span class="highlight-literal">"Common"</span>,                  <span class="highlight-comment">// The category (for use in game editors).</span>
+  <span class="highlight-literal">"Defines the x-position."</span>, <span class="highlight-comment">// The description.</span>
+  <span class="highlight-number">0.0</span>f);                     <span class="highlight-comment">// The default value.</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAEAIADAAA");</script><p>
+                            Once this method is called, the game object property is globally defined.
+                            If this method is called a second time with the same properties, it will
+                            not create a new game object property. Instead it will only return the
+                            metadata of the previous call. There cannot be multiple game object properties
+                            with the same name and type!
+                        </p><p>
+                            The metadata of any game object property can be queried by calling
+                            <a href="5420f1f2-69e7-15f8-70cf-8c7270ac74f8.htm">GameObject<span id="LST88B3FF3D_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_6?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>GetPropertyMetadata<span id="LST88B3FF3D_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_7?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST88B3FF3D_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_8?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script>(String)</a>
+                            where game object properties can be identified by
+                        </p><ul><li>
+                                the automatically assigned ID stored in the metadata (see
+                                <a href="f861fb11-3c4e-d8f3-8fd0-8a177fa01e08.htm">Id</a>),
+                                or
+                            </li><li>
+                                by name and value type.
+                            </li></ul><p>
+                            Either of these ways uniquely identifies a game object property.
+                        </p></div><h4 class="subHeading" id="Read">Reading a game object property</h4><div class="subsection"><p>
+                            Once a game object property is defined it can be set and queried on any game
+                            object. There are multiple ways to get the value of a game object property:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EABAHADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABAHADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABAHADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABAHADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">var</span> gameObject = <span class="highlight-keyword">new</span> GameObject();
+
+<span class="highlight-comment">// Method #1: Get value by name from game object.</span>
+<span class="highlight-keyword">float</span> x = gameObject.GetValue&lt;<span class="highlight-keyword">float</span>&gt;(<span class="highlight-literal">"X"</span>);
+
+<span class="highlight-comment">// Method #2: Get value by metadata from game object.</span>
+x = gameObject.GetValue&lt;<span class="highlight-keyword">float</span>&gt;(metadata);
+
+<span class="highlight-comment">// Method #3: Get value by ID from game object.</span>
+x = gameObject.GetValue&lt;<span class="highlight-keyword">float</span>&gt;(metadata.Id);
+
+<span class="highlight-comment">// Method #4: First get GameProperty&lt;T&gt; from game object. </span>
+<span class="highlight-comment">//            Then get the value from the GameProperty&lt;T&gt;.</span>
+GameProperty&lt;<span class="highlight-keyword">float</span>&gt; property = gameObject.Properties.Get&lt;<span class="highlight-keyword">float</span>&gt;(<span class="highlight-literal">"X"</span>);
+x = property.Value;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABAHADAAA");</script><p>
+                            Note that the game object property will return the default value as defined in
+                            the metadata if the property was never set on the object. (If the game object
+                            has template, the property will return the value of the template. See
+                            <a href="be9dad32-1e3f-4361-9cbe-9874e2225049.htm">Templates</a>.)
+                        </p></div><h4 class="subHeading" id="Write">Writing a game object property</h4><div class="subsection"><p>
+                            Setting the value of a game object property is similar:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EACAGADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACAGADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACAGADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACAGADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">var</span> gameObject = <span class="highlight-keyword">new</span> GameObject();
+
+<span class="highlight-comment">// Method #1: Set value by name.</span>
+gameObject.SetValue(<span class="highlight-literal">"X"</span>, <span class="highlight-number">10.0</span>f);
+
+<span class="highlight-comment">// Method #2: Set value by metadata.</span>
+gameObject.SetValue(metadata, <span class="highlight-number">10.0</span>f);
+
+<span class="highlight-comment">// Method #3: Set value by ID.</span>
+gameObject.SetValue(metadata.Id, <span class="highlight-number">10.0</span>f);
+
+<span class="highlight-comment">// Method #4: First get GameProperty&lt;T&gt; from game object. </span>
+<span class="highlight-comment">//            Then set the value of the GameProperty&lt;T&gt;.</span>
+GameProperty&lt;<span class="highlight-keyword">float</span>&gt; property = gameObject.Properties.Get&lt;<span class="highlight-keyword">float</span>&gt;(<span class="highlight-literal">"X"</span>);
+property.Value = <span class="highlight-number">10.0</span>f;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACAGADAAA");</script><p>
+                            The above described methods for reading or writing game object properties
+                            are basically equivalent.
+                        </p><p>
+                            In the last method a <a href="516e6103-f552-10dc-63a4-cddf14054f0f.htm">GameProperty<span id="LST88B3FF3D_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_9?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST88B3FF3D_10"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_10?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                            is acquired. This object is a handle to the property of a particular game object. Other objects
+                            can store a <a href="516e6103-f552-10dc-63a4-cddf14054f0f.htm">GameProperty<span id="LST88B3FF3D_11"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_11?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST88B3FF3D_12"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_12?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                            directly if they regularly need to read or change the property of a game object. When the object
+                            stores the <a href="516e6103-f552-10dc-63a4-cddf14054f0f.htm">GameProperty<span id="LST88B3FF3D_13"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_13?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST88B3FF3D_14"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_14?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                            it is not necessary to also keep a reference to the game object that owns the property.
+                        </p></div><h4 class="subHeading" id="Wrapping">Wrapping a game object property</h4><div class="subsection"><p>
+                            In some cases it is convenient to wrap a game object property using a standard
+                            CLR property. Here is an example that shows how to define a game object property
+                            in a class and wrap it using a CLR property:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EABAFADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABAFADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABAFADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABAFADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> MyGameObject : GameObject
+{
+  <span class="highlight-comment">/// &lt;summary&gt; </span>
+  <span class="highlight-comment">/// The ID of the &lt;see cref="X"/&gt; game object property.</span>
+  <span class="highlight-comment">/// &lt;/summary&gt;</span>
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">readonly</span> <span class="highlight-keyword">int</span> XPropertyId = 
+    CreateProperty&lt;<span class="highlight-keyword">float</span>&gt;(<span class="highlight-literal">"X"</span>, <span class="highlight-literal">"Common"</span>, <span class="highlight-literal">"Defines the x-position."</span>, <span class="highlight-number">0.0</span>f).Id;
+
+  <span class="highlight-comment">/// &lt;summary&gt;</span>
+  <span class="highlight-comment">/// Gets or sets the x-position. This is a game object property.</span>
+  <span class="highlight-comment">/// &lt;/summary&gt;</span>
+  <span class="highlight-comment">/// &lt;value&gt;The x-position.&lt;/value&gt;</span>
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">float</span> X
+  {
+    <span class="highlight-keyword">get</span> { <span class="highlight-keyword">return</span> GetValue&lt;<span class="highlight-keyword">float</span>&gt;(XPropertyId); }
+    <span class="highlight-keyword">set</span> { SetValue(XPropertyId, <span class="highlight-keyword">value</span>); }
+  }
+
+  ...
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABAFADAAA");</script><p>
+                            The game object property can then be used like any other CLR property.
+                            (This pattern is extensively used in the
+                            <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>s
+                            of the <a href="a5a463da-de2e-432f-bf7d-07206aaca634.htm">DigitalRune Game UI</a> library.
+                        </p></div><h4 class="subHeading" id="Coercion">Value coercion</h4><div class="subsection"><p>
+                            A <a href="516e6103-f552-10dc-63a4-cddf14054f0f.htm">GameProperty<span id="LST88B3FF3D_15"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_15?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST88B3FF3D_16"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_16?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                            has a <a href="86a8e1c0-ffe3-5bff-9e4f-f286ac015921.htm">Changing</a>
+                            event which is raised when the value is about to be changed. This
+                            event can be used for value coercion. The <a href="04bfa17a-7bf4-3251-6d10-64513dcfe506.htm">GamePropertyEventArgs<span id="LST88B3FF3D_17"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_17?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST88B3FF3D_18"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_18?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                            passed to the event handler contain the current value of the property (see
+                            <a href="885f2aff-4eb4-5b6c-148d-e6654ae589f6.htm">OldValue</a>)
+                            and the new value which is about to be set (see <a href="5db6d43b-46f2-9670-c240-4f4432c287e2.htm">NewValue</a>).
+                            The event handler can override the new value by setting the
+                            <a href="3b813d5a-eb80-1c7e-6546-e304146cfe47.htm">CoercedValue</a>.
+                            For example:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAAEADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAAEADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAAEADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAAEADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">var</span> valueProperty = slider1.Properties.Get&lt;<span class="highlight-keyword">float</span>&gt;(<span class="highlight-literal">"Value"</span>);
+valueProperty.Changing += (s, e) =&gt;
+{
+  <span class="highlight-keyword">if</span> (e.CoercedValue &lt; slider2.Value)
+    e.CoercedValue = slider2.Value;
+  <span class="highlight-keyword">if</span> (e.CoercedValue &gt; slider3.Value)
+    e.CoercedValue = slider3.Value;
+};</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAAEADAAA");</script></div><h4 class="subHeading" id="Change">Change notification</h4><div class="subsection"><p>
+                            A <a href="516e6103-f552-10dc-63a4-cddf14054f0f.htm">GameProperty<span id="LST88B3FF3D_19"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_19?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST88B3FF3D_20"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_20?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                            has a <a href="ce691c6a-9804-4e67-8d7c-19968c5d4ddc.htm">Changed</a>
+                            which is raised when the value of the property has changed. Other objects
+                            can attach an event handler to this event to listen for changes.
+                            The event handler will receive a
+                            <a href="04bfa17a-7bf4-3251-6d10-64513dcfe506.htm">GamePropertyEventArgs<span id="LST88B3FF3D_21"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_21?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST88B3FF3D_22"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_22?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                            which contains the previous value of the property (see <a href="885f2aff-4eb4-5b6c-148d-e6654ae589f6.htm">OldValue</a>)
+                            and the new value (see <a href="5db6d43b-46f2-9670-c240-4f4432c287e2.htm">NewValue</a>).
+                        </p><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Caution note" /> Caution</th></tr><tr><td><p>
+                                An event handler of a <a href="ce691c6a-9804-4e67-8d7c-19968c5d4ddc.htm">Changed</a>
+                                event of a property should not change the value of the property. This
+                                leads to nested <a href="ce691c6a-9804-4e67-8d7c-19968c5d4ddc.htm">Changed</a>
+                                event calls and might have unexpected results. Value coercion can be
+                                done in the <a href="86a8e1c0-ffe3-5bff-9e4f-f286ac015921.htm">Changing</a>
+                                event using the <a href="3b813d5a-eb80-1c7e-6546-e304146cfe47.htm">CoercedValue</a>
+                                property of the <a href="04bfa17a-7bf4-3251-6d10-64513dcfe506.htm">GamePropertyEventArgs<span id="LST88B3FF3D_23"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_23?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST88B3FF3D_24"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_24?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>.
+                            </p></td></tr></table></div></div><h4 class="subHeading" id="Connect">Connecting game object properties</h4><div class="subsection"><p>
+                            Game object properties have a property
+                            <a href="0d9c895d-909d-e5c7-628d-fe1515a26895.htm">Change</a>,
+                            which is an event handler. This event handler can be connected with the
+                            <a href="ce691c6a-9804-4e67-8d7c-19968c5d4ddc.htm">Changed</a>
+                            event of another property. This is very useful to connect game object properties
+                            of different game objects. Changing one property automatically updates the
+                            connected properties.
+                            Here is an example:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAACADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAACADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAACADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAACADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// mySlider is game object that represents a slider GUI control.</span>
+<span class="highlight-comment">// myAvatar is a game object that represents the avatar of the player.</span>
+<span class="highlight-comment">// Connect the "Value" game object property of the slider with the "Height" game object </span>
+<span class="highlight-comment">// property of the avatar. This way the slider automatically changes the avatar height.</span>
+GameProperty&lt;<span class="highlight-keyword">float</span>&gt; sliderValue = mySlider.Properties.Get&lt;<span class="highlight-keyword">float</span>&gt;(<span class="highlight-literal">"Value"</span>);
+GameProperty&lt;<span class="highlight-keyword">float</span>&gt; avatarHeight = myAvatar.Get&lt;<span class="highlight-keyword">float</span>&gt;(<span class="highlight-literal">"Height"</span>);
+sliderValue.Changed += avatarHeight.Change;
+
+<span class="highlight-comment">// Uncomment following line to create a two-way connection.</span>
+<span class="highlight-comment">//avatarHeight.Changed += sliderValue.Change;</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAACADAAA");</script></div><h4 class="subHeading" id="Limitations">Limitations</h4><div class="subsection"><p>Read-only properties are not supported.</p></div><h4 class="subHeading" id="types">Mismatched property value types</h4><div class="subsection"><p>
+                            Properties are identified by their name and type. That means that
+                            a game object can have two or more properties with the same name, as long
+                            as the types are different. It is important to match the value types
+                            exactly when setting property values. Following examples show that the
+                            type of the properties matter:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAAAADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAAAADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAAAADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAAAADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">gameObject.SetValue(<span class="highlight-literal">"X"</span>, <span class="highlight-number">10</span>);                   <span class="highlight-comment">// Setting the integer "X" property.</span>
+gameObject.SetValue(<span class="highlight-literal">"X"</span>, <span class="highlight-number">20.0</span>f);                <span class="highlight-comment">// Setting the float "X" property</span>
+<span class="highlight-keyword">int</span> intX = gameObject.GetValue&lt;<span class="highlight-keyword">int</span>&gt;(<span class="highlight-literal">"X"</span>);       <span class="highlight-comment">// Returns 10!</span>
+<span class="highlight-keyword">float</span> floatX = gameObject.GetValue&lt;<span class="highlight-keyword">float</span>&gt;(<span class="highlight-literal">"X"</span>); <span class="highlight-comment">// Returns 20.0f!</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAAAADAAA");</script></div></div><div class="collapsibleAreaRegion" id="BestPractices"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Best practices</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    The <a href="f27a20e5-b6c1-529e-3a0d-93cbf2525c32.htm">Description</a>
+                    of a game object property should use a general wording.
+                    For example, the description of the bool "IsEnabled" property could read:
+                    "Indicates whether this object is enabled."
+                </p><p>
+                    It should not read: "Indicates whether this GuiControl is enabled."
+                </p><p>
+                    Reason: All game objects that want to have a bool "IsEnabled" property (e.g. the "PointLight" and the "GuiButton")
+                    share the same property metadata. There can only be one description that
+                    should fit all possible uses of the bool "IsEnabled" property.
+                </p></div><div class="collapsibleAreaRegion" id="Performance"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Performance considerations</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    Accessing game object properties is not as fast as accessing CLR fields or properties -
+                    although the overhead is neglectable in most case. Here are some tips to minimize the
+                    performance impact.
+                </p><ul><li>
+                        Accessing game object properties using their ID or the
+                        <a href="516e6103-f552-10dc-63a4-cddf14054f0f.htm">GameProperty<span id="LST88B3FF3D_25"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_25?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST88B3FF3D_26"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST88B3FF3D_26?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                        are the fastest methods. Looking up a game object property by
+                        name is not as fast.
+                    </li><li>
+                        Instead of reading a game object property multiple times in a method,
+                        read the game object property once and store the result in a local variable.
+                    </li></ul></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

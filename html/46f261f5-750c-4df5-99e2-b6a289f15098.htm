@@ -1,0 +1,350 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Terrain</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="46f261f5-750c-4df5-99e2-b6a289f15098" /><meta name="Description" content="This topic describes how to create a heightfield-based terrain." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="7d5a0abe-8231-452c-895c-e6dbab83822b.htm" title="Graphics Programming" tocid="7d5a0abe-8231-452c-895c-e6dbab83822b">Graphics Programming</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="fda6c965-0105-4a5e-a0db-f8fa6ec4e73f.htm" title="Graphics Service" tocid="fda6c965-0105-4a5e-a0db-f8fa6ec4e73f">Graphics Service</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="2e870374-8980-4fbc-9426-1d1a6e2d9766.htm" title="Graphics Screens" tocid="2e870374-8980-4fbc-9426-1d1a6e2d9766">Graphics Screens</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="4d8c922f-60cb-4b92-a22c-03c9e8816712.htm" title="Scene Management" tocid="4d8c922f-60cb-4b92-a22c-03c9e8816712">Scene Management</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="6b3a13bc-37b4-4820-9f82-c2364a9ed2eb.htm" title="Rendering" tocid="6b3a13bc-37b4-4820-9f82-c2364a9ed2eb">Rendering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="ba1be841-af9c-41a4-8348-0b6bd92efdd9.htm" title="Effects and Effect Bindings" tocid="ba1be841-af9c-41a4-8348-0b6bd92efdd9">Effects and Effect Bindings</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="34a7f065-df4f-4f40-8b5c-5f0afee365db.htm" title="Materials and Material Instances" tocid="34a7f065-df4f-4f40-8b5c-5f0afee365db">Materials and Material Instances</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="cb08d0d8-8ea6-49fc-b318-b185dbb70608.htm" title="Models and Meshes" tocid="cb08d0d8-8ea6-49fc-b318-b185dbb70608">Models and Meshes</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="fda1f969-9b64-4851-873c-a59466ac69ba.htm" title="Cameras" tocid="fda1f969-9b64-4851-873c-a59466ac69ba">Cameras</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="e316a87e-0cdb-4c6b-bcb0-a2e66004c26f.htm" title="Lights" tocid="e316a87e-0cdb-4c6b-bcb0-a2e66004c26f">Lights</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="3f82c46b-efec-4416-807f-670ac1930117.htm" title="Shadows" tocid="3f82c46b-efec-4416-807f-670ac1930117">Shadows</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="630fb69e-a032-4125-bdc0-5484fbe2c86d.htm" title="Lens Flares" tocid="630fb69e-a032-4125-bdc0-5484fbe2c86d">Lens Flares</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="f782dc86-40e9-45c1-869a-4baf86e28ed9.htm" title="Decals" tocid="f782dc86-40e9-45c1-869a-4baf86e28ed9">Decals</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="4518dd2c-21ea-4cf8-8dec-8b3a32584743.htm" title="Billboards and Particles" tocid="4518dd2c-21ea-4cf8-8dec-8b3a32584743">Billboards and Particles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="d4d56ebf-a623-492c-bd37-b41a2979323e.htm" title="Sprites (Images and Text)" tocid="d4d56ebf-a623-492c-bd37-b41a2979323e">Sprites (Images and Text)</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="d70873e7-1dbc-492b-b10d-1afb6f06687a.htm" title="Figures (Lines, 2D Shapes)" tocid="d70873e7-1dbc-492b-b10d-1afb6f06687a">Figures (Lines, 2D Shapes)</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="0bc6a222-64d5-4642-a2b6-241e9017c873.htm" title="Fog" tocid="0bc6a222-64d5-4642-a2b6-241e9017c873">Fog</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="975dcbca-5c87-4f33-a372-0cfe7f50cebe.htm" title="Sky" tocid="975dcbca-5c87-4f33-a372-0cfe7f50cebe">Sky</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="46f261f5-750c-4df5-99e2-b6a289f15098.htm" title="Terrain" tocid="46f261f5-750c-4df5-99e2-b6a289f15098">Terrain</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="5697f90f-2893-4ed5-ae66-da63afccdfc3.htm" title="Water" tocid="5697f90f-2893-4ed5-ae66-da63afccdfc3">Water</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="924e5123-9ed9-4db7-bd0c-2ec8589985ed.htm" title="Post-Processing" tocid="924e5123-9ed9-4db7-bd0c-2ec8589985ed">Post-Processing</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="b7e96cd7-c737-4805-b5a9-98f1e8acd1d5.htm" title="Anti-Aliasing" tocid="b7e96cd7-c737-4805-b5a9-98f1e8acd1d5">Anti-Aliasing</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="b320aebd-46a0-45d8-8edb-0c717152a56b.htm" title="Level of Detail (LOD)" tocid="b320aebd-46a0-45d8-8edb-0c717152a56b">Level of Detail (LOD)</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="cc20d61e-83cb-46c7-a2e2-0841a35043ba.htm" title="Occlusion Culling" tocid="cc20d61e-83cb-46c7-a2e2-0841a35043ba">Occlusion Culling</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="7fbfaba5-af8d-4bf7-b5c3-6c084e1bfc54.htm" title="Windows Forms, WPF, UWP Interoperability" tocid="7fbfaba5-af8d-4bf7-b5c3-6c084e1bfc54">Windows Forms, WPF, UWP Interoperability</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="4e6f5dc1-8897-466f-88f2-b5c56d43a3c5.htm" title="Miscellaneous" tocid="4e6f5dc1-8897-466f-88f2-b5c56d43a3c5">Miscellaneous</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Terrain</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This topic describes how to create a heightfield-based terrain.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#DefiningTerrain">Defining terrain</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#TerrainNode">TerrainNode</a></li><li class="outlineSectionEntry"><a href="#Terrain">Terrain</a></li><li class="outlineSectionEntry"><a href="#TerrainTiles">Terrain tiles</a></li><li class="outlineSectionEntry"><a href="#TerrainLayers">Terrain layers</a></li></ul><li class="outlineSectionEntry"><a href="#Rendering">Rendering terrain</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#TerrainClipmapRenderer">Terrain clipmap renderer</a></li><li class="outlineSectionEntry"><a href="#TerrainRenderer">Terrain renderer</a></li><li class="outlineSectionEntry"><a href="#LOD">Level of detail (LOD) and multiple cameras</a></li><li class="outlineSectionEntry"><a href="#effects">Predefined effects</a></li></ul><li class="outlineSectionEntry"><a href="#Misc">Miscellaneous</a></li></ul></div><div class="collapsibleAreaRegion" id="DefiningTerrain"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Defining terrain</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    DigitalRune Graphics uses following types to define terrain:
+                </p><div class="mediaNear"><img alt="DigitalRune.Graphics (Terrain)" src="../media/Graphics_Terrain.png" /><div class="caption">Class Diagram: Terrain</div></div><h4 class="subHeading" id="TerrainNode">TerrainNode</h4><div class="subsection"><p>
+                            A
+                            <a href="0ccc0730-6c89-9f32-2535-96c7227eb179.htm">TerrainNode</a>
+                            is a
+                            <a href="206bf836-6510-1c9d-02d4-c0c9a30a75a0.htm">SceneNode</a>
+                            that represents a terrain in the scene graph.
+                            <a href="0ccc0730-6c89-9f32-2535-96c7227eb179.htm">TerrainNode</a>s
+                            are rendered by the
+                            <a href="5cd59de3-012e-3bcc-9164-406cd2c4a896.htm">TerrainRenderer</a>.
+                        </p><p>
+                            The terrain data is defined by the
+                            <a href="573cdf70-87d7-2bab-1c87-6acb0834150a.htm">Terrain</a>
+                            class.
+                            <a href="573cdf70-87d7-2bab-1c87-6acb0834150a.htm">Terrain</a>
+                            instances can be shared, i.e., multiple
+                            <a href="0ccc0730-6c89-9f32-2535-96c7227eb179.htm">TerrainNode</a>s
+                            can reference the same
+                            <a href="573cdf70-87d7-2bab-1c87-6acb0834150a.htm">Terrain</a>
+                            instance.
+                        </p><p>
+                            The terrain node is rendered using a
+                            <a href="3ebe6b27-cffd-8dca-d4f6-ac37a45e439f.htm">Material</a>
+                            (similar to a normal
+                            <a href="33929aa1-dcdb-8034-19be-28782fc06ab9.htm">Mesh</a>).
+                            If no custom material is set, a default material is used. The default
+                            material supports the render passes "GBuffer" and "Material" (which are used in the deferred lighting
+                            samples).
+                        </p><p>
+                            The default material renders the terrain using height and material information stored in
+                            clipmaps. These clipmaps are explained below.
+                        </p><p>
+                            Terrain nodes can be rendered into the shadow maps.
+                            The scene node property
+                            <a href="6742fd55-f5d2-0c37-1128-b4de73746260.htm">CastsShadows</a>
+                            is <span class="code">true</span> by default.
+                            Please note: When using the default
+                            <a href="b128b7ca-72bc-2c14-c91c-5bb56232ce21.htm">ShadowCasterQuery</a>,
+                            terrain nodes are only rendered into the shadow maps of
+                            <a href="ddbd29fe-2db7-9569-2892-7433e7d1e8c6.htm">DirectionalLight</a>s.
+                        </p></div><h4 class="subHeading" id="Terrain">Terrain</h4><div class="subsection"><p>
+                            The class
+                            <a href="573cdf70-87d7-2bab-1c87-6acb0834150a.htm">Terrain</a>
+                            defines a heightfield-based terrain.
+                        </p><p>
+                            A terrain is split into one or more
+                            <a href="ffdb24e1-8011-1621-c36c-c879bf342c1d.htm">TerrainTile</a>s.
+                            The terrain tiles define the geometry and materials of the terrain.
+                        </p></div><h4 class="subHeading" id="TerrainTiles">Terrain tiles</h4><div class="subsection"><p>
+                            A
+                            <a href="ffdb24e1-8011-1621-c36c-c879bf342c1d.htm">TerrainTile</a>
+                            defines the geometry (height, normals, holes) and materials of a rectangular terrain region.
+                        </p><p>
+                            The geometry of the terrain is defined using textures. The
+                            <a href="d4ccc38f-8802-677f-0e9b-9936fd81737a.htm">HeightTexture</a>
+                            defines height values (absolute heights in world space) of the terrain.
+                            The
+                            <a href="d53ea60b-fb6e-e070-28ef-a0b00aac8f34.htm">NormalTexture</a>
+                            contains the terrain normal vectors. This texture encodes the
+                            normal vectors like a standard "green-up" normal map. (I.e., the world space +x component of the
+                            normal is stored in the red channel. The world space up (+y) component is stored in the blue
+                            channel. The <em>negative</em> world space z component is stored
+                            in the green channel.)
+                            <a href="e236bed9-cffc-60a0-cf0a-21cb244e74f8.htm">HoleTexture</a>
+                            defines holes in the terrain. The texture is used like an alpha mask
+                            texture. If the alpha channel contains 0, then there is a hole in the terrain.
+                        </p><p>
+                            All textures should contain mipmaps. Ideally, the mipmaps are
+                            generated using 3 x 3 downsampling instead of the usual 2 x 2 downsampling. - Suitable
+                            textures can be created using the
+                            <a href="3c34f51b-473f-95d6-a156-06bffb980091.htm">TerrainHelper</a>
+                            class.
+                        </p><p>
+                            Each tile has a set of material layers (class
+                            <a href="60be8e80-6760-65f0-fb63-4dabbe3c6229.htm">TerrainLayer</a>)
+                            that define the appearance (dirt, grass, decals, roads). The material layers
+                            are applied (blended) one after the other, which means that a layer can
+                            override previous layers.
+                        </p><p><a href="c03c63b8-fe7b-d627-5e79-56f2f3ea34e8.htm">OriginX</a>
+                            and
+                            <a href="18f26916-e9e2-bce8-3215-ae2fc30061b4.htm">OriginZ</a>
+                            define the tile origin in world space - which corresponds to center of the
+                            first texel of the textures.
+                            <a href="a429ea81-b3c3-eb57-c603-c614c5093446.htm">CellSize</a>
+                            defines the horizontal distance between two height values.
+                            The texture coordinate u is aligned with the positive x-axis. The texture coordinate
+                            v is aligned with the positive z-axis. This means, if the cell/texel size is 1 world space
+                            unit and the texture is 1025 x 513 texels large, then the terrain tile covers the area between
+                            (OriginX, *, OriginZ) and (OriginX + 1024, *, OriginZ + 512).
+                            This also means that two neighboring
+                            <a href="ffdb24e1-8011-1621-c36c-c879bf342c1d.htm">TerrainTile</a>
+                            should overlap by one texel to avoid gaps!
+                        </p><p><a href="c03c63b8-fe7b-d627-5e79-56f2f3ea34e8.htm">OriginX</a>
+                            and
+                            <a href="18f26916-e9e2-bce8-3215-ae2fc30061b4.htm">OriginZ</a>
+                            should always be an integer multiple of the
+                            cell size. For example, if the cell size is 0.5, valid origin values are -0.5, 0,
+                            0.5, 1, etc.
+                        </p></div><h4 class="subHeading" id="TerrainLayers">Terrain layers</h4><div class="subsection"><p><a href="60be8e80-6760-65f0-fb63-4dabbe3c6229.htm">TerrainLayer</a>s
+                            define the materials (detail textures, decals, roads, etc.) of a terrain tile.
+                            The material layers are applied (blended) one after the
+                            other, which means that a layer can override previous layers.
+                        </p><p>
+                            For example: The first layer draws a dirt texture that covers the whole tile. The second layer
+                            draws a grass texture, which covers only parts of the tile defined by a blend map. Additional
+                            layers add roads and decals like dirt, leaves, sewer grates, etc.
+                        </p><p>
+                            Each terrain tile can have its own set of terrain layers, but they can also share the same
+                            terrain layer instances.
+                        </p><p>
+                            There are several default terrain layer types:
+                        </p><ul><li>
+                                The <a href="674b1989-e2ce-8b64-b426-84d088b5db6e.htm">TerrainMaterialLayer</a>
+                                is the most important terrain layer type. It paints a tiling material
+                                (e.g. a repeating grass texture) onto the terrain. The blending
+                                can be controlled by a blend texture, by terrain height, by terrain slope, etc. 
+                            </li><li>
+                                The 
+                                <a href="675842bd-1e5c-966f-13e9-28d97b58bd81.htm">TerrainDecalLayer</a>
+                                can be used to render decals, such as dirt, leaves,
+                                explosion marks, sewer grates, etc. onto the terrain.
+                            </li><li>
+                                The 
+                                <a href="e192bccf-ad71-b6ba-8499-91e266f31177.htm">TerrainRoadLayer</a>
+                                renders a mesh which represents a road (or road-like structures, e.g. skid marks).
+                                The class contains methods to create road meshes from spline patha, to clamp a 
+                                road to a terrain or to carve a road into a terrain (manipulating the terrain height
+                                values).
+                            </li></ul></div></div><div class="collapsibleAreaRegion" id="Rendering"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Rendering terrain</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    This section explains how to render
+                    <a href="0ccc0730-6c89-9f32-2535-96c7227eb179.htm">TerrainNode</a>s.
+                </p><h4 class="subHeading" id="TerrainClipmapRenderer">Terrain clipmap renderer</h4><div class="subsection"><p>
+                            The
+                            <a href="f13741cf-40a0-2152-e58b-48fbaf229a55.htm">TerrainClipmapRenderer</a>
+                            is a
+                            <a href="c022a3a4-2330-9b46-24ad-c8f3ae13f1f8.htm">SceneNodeRenderer</a>
+                            that handles
+                            <a href="0ccc0730-6c89-9f32-2535-96c7227eb179.htm">TerrainNode</a>s.
+                            It renders into the two clipmaps stored in the
+                            <a href="0ccc0730-6c89-9f32-2535-96c7227eb179.htm">TerrainNode</a>:
+                            <a href="00771797-cf90-ea75-6988-4968f4b7d4eb.htm">BaseClipmap</a>
+                            and
+                            <a href="fdda6371-466c-e7ae-5e78-7ff7fd075019.htm">DetailClipmap</a>.
+                        </p><p>
+                            Terrain clipmaps are usually generated at the start of the <strong>Draw</strong>-method,
+                            before the scene is rendered:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAHADACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAHADACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAHADACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAHADACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Update terrain clipmaps.</span>
+terrainClipmapRenderer.Render(terrainNodes, context);
+
+<span class="highlight-comment">// Render scene...</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAHADACAAA");</script><p>
+                            The
+                            <a href="f13741cf-40a0-2152-e58b-48fbaf229a55.htm">TerrainClipmapRenderer</a>
+                            uses the geometry and material information defined by the
+                            <a href="573cdf70-87d7-2bab-1c87-6acb0834150a.htm">Terrain</a>,
+                            combines the information (e.g. blends the material detail textures) and caches
+                            the information in the clipmaps.
+                            The renderer updates the clipmaps incrementally when the camera moves.
+                        </p><p>
+                            This renderer uses the
+                            <a href="3ebe6b27-cffd-8dca-d4f6-ac37a45e439f.htm">Material</a>s
+                            of the
+                            <a href="ffdb24e1-8011-1621-c36c-c879bf342c1d.htm">TerrainTile</a>s
+                            and the
+                            <a href="60be8e80-6760-65f0-fb63-4dabbe3c6229.htm">TerrainLayer</a>s.
+                            The materials need a render pass called "Base" to render into the base clipmap
+                            and a render pass called "Detail" to render into the detail clipmap.
+                            (A material can have render passes for both, "Base" and "Detail".)
+                        </p><p>
+                            The
+                            <a href="00771797-cf90-ea75-6988-4968f4b7d4eb.htm">BaseClipmap</a>
+                            stores information at the terrain vertex level. It usually
+                            provides height, normal and hole information which define the terrain geometry.
+                            When the default terrain materials are used, the terrain clipmap renderer
+                            uses the materials of the
+                            <a href="ffdb24e1-8011-1621-c36c-c879bf342c1d.htm">TerrainTile</a>s
+                            to render into the base clipmap
+                            which uses the surface format <strong>HalfVector4</strong>.
+                            The base clipmap stores:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EADADACAAA_tab1" class="codeSnippetContainerTabSingle">Content of base clipmap</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EADADACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EADADACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EADADACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">terainNode.BaseClipmap.Textures[<span class="highlight-number">0</span>]: (absolute terrain height, world space normal x, world space normal z, hole flag)</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EADADACAAA");</script><p>
+                            The
+                            <a href="fdda6371-466c-e7ae-5e78-7ff7fd075019.htm">DetailClipmap</a>
+                            stores more detailed information which is used to shade the
+                            terrain. It usually stores detail normals (for normal mapping), diffuse colors, specular
+                            colors, heights (for parallax occlusion mapping) and other material information.
+                            When the default terrain materials are used, the terrain clipmap renderer
+                            uses the materials of the
+                            <a href="60be8e80-6760-65f0-fb63-4dabbe3c6229.htm">TerrainLayer</a>s
+                            to render into the detail clipmap
+                            which consists of several clipmap hierarchies that use the surface format
+                            <strong>Color</strong>. The detail clipmap stores:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABADACAAA_tab1" class="codeSnippetContainerTabSingle">Content of detail clipmap</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABADACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABADACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABADACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">terainNode.DetailClipmap.Textures[<span class="highlight-number">0</span>]: (world space detail normal x, world space detail normal z, specular power, hole flag)
+terainNode.DetailClipmap.Textures[<span class="highlight-number">1</span>]: (diffuse R, diffuse B, diffuse B, not used)
+terainNode.DetailClipmap.Textures[<span class="highlight-number">2</span>]: (specular intensity, height, not used, not used)</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABADACAAA");</script><p>
+                            The content of the clipmaps can be changed by using custom materials for the
+                            <a href="ffdb24e1-8011-1621-c36c-c879bf342c1d.htm">TerrainTile</a>s
+                            and
+                            <a href="60be8e80-6760-65f0-fb63-4dabbe3c6229.htm">TerrainLayer</a>s.
+                            This way, it is possible to store different information, for example, an
+                            "emissive intensity" could be added for glowing terrain.
+                        </p></div><h4 class="subHeading" id="TerrainRenderer">Terrain renderer</h4><div class="subsection"><p>
+                            The
+                            <a href="5cd59de3-012e-3bcc-9164-406cd2c4a896.htm">TerrainRenderer</a>
+                            is a
+                            <a href="c022a3a4-2330-9b46-24ad-c8f3ae13f1f8.htm">SceneNodeRenderer</a>
+                            that handles
+                            <a href="0ccc0730-6c89-9f32-2535-96c7227eb179.htm">TerrainNode</a>s.
+                        </p><p>
+                            The terrain is usually rendered before or after the opaque objects of the scene. For example:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EACACACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EACACACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EACACACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EACACACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Render terrain.</span>
+terrainRenderer.Render(terrainNodes, context);
+
+<span class="highlight-comment">// Render opaque objects...</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EACACACAAA");</script><p>
+                            The renderer draws the terrain using a single mesh (one draw call) which represents
+                            a <span class="term">geometry clipmap</span>. This mesh is represented by the
+                            <a href="e7b96887-019e-05e2-f69c-895357dcfb4a.htm">TerrainRendererMesh</a>
+                            class. It is not necessary to create a
+                            <a href="e7b96887-019e-05e2-f69c-895357dcfb4a.htm">TerrainRendererMesh</a>
+                            manually - it is created automatically by the terrain renderer. However,
+                            the creation of the mesh can take a short moment. Therefore, it is also
+                            possible to control when the mesh is created or to load it from a file.
+                            <a href="e7b96887-019e-05e2-f69c-895357dcfb4a.htm">TerrainRendererMesh</a>
+                            can be loaded from file and saved to file using
+                            <a href="c1f0c4c3-6dfe-1629-636c-9f6eeb99f9b5.htm">Load</a>
+                            and
+                            <a href="3d3c533b-d4b9-c132-85ff-f67466703e41.htm">Save</a>.
+                            A manually created mesh can be assigned to the
+                            terrain renderer using
+                            <a href="2fd6e057-24c4-2822-ed71-77440a73cf12.htm">SetMesh</a>.
+                        </p><p>
+                            The terrain renderer renders terrain nodes using the
+                            <a href="2826c745-9943-5f74-27cf-3b2eb97e8bb1.htm">Material</a>
+                            of the node.
+                            It is possible to use a custom material to control how the terrain is rendered.
+                            The default material uses clipmaps
+                            (<a href="00771797-cf90-ea75-6988-4968f4b7d4eb.htm">BaseClipmap</a>
+                            and
+                            <a href="fdda6371-466c-e7ae-5e78-7ff7fd075019.htm">DetailClipmap</a>).
+                            The clipmaps are created and updated by the
+                            <a href="f13741cf-40a0-2152-e58b-48fbaf229a55.htm">TerrainClipmapRenderer</a>
+                            - not by the
+                            <a href="5cd59de3-012e-3bcc-9164-406cd2c4a896.htm">TerrainRenderer</a>.
+                        </p></div><h4 class="subHeading" id="LOD">Level of detail (LOD) and multiple cameras</h4><div class="subsection"><p>
+                            When the terrain is rendered, the terrain mesh and texture resolution depends on the distance
+                            from the camera. When the 
+                            <a href="5cd59de3-012e-3bcc-9164-406cd2c4a896.htm">TerrainRenderer</a>
+                            renders the terrain, it uses the
+                            <a href="fd0935c3-e5f6-fd1d-5f9d-47b8d222e2f7.htm">LodCameraNode</a>
+                            of the 
+                            <a href="ea575bf4-8a2a-e02a-be92-c5821bff1ad7.htm">RenderContext</a>.
+                            (If no
+                            <a href="fd0935c3-e5f6-fd1d-5f9d-47b8d222e2f7.htm">LodCameraNode</a>
+                            is set, the normal
+                            <a href="324769e9-33d4-bc99-cf3a-671dd7715d2f.htm">CameraNode</a>
+                            of the render context is used.)
+                        </p><p>
+                            A terrain node should only be rendered for a single camera node because the renderer might
+                            cache camera-dependent LOD data. If a scene contains two camera nodes (e.g. for 2 player
+                            split screen rendering), the 
+                            <a href="fd0935c3-e5f6-fd1d-5f9d-47b8d222e2f7.htm">LodCameraNode</a>
+                            should be one of these two cameras. It could also be a "virtual" camera, 
+                            which is e.g. between both player cameras. 
+                            Switching the cameras within one frame would be inefficient.
+                        </p><p>
+                            Alternatively, each camera could use a separate 
+                            <a href="0ccc0730-6c89-9f32-2535-96c7227eb179.htm">TerrainNode</a>
+                            instance. When the image of a camera is rendered only one terrain node 
+                            should be rendered. Several terrain nodes can
+                            reference the same 
+                            <a href="573cdf70-87d7-2bab-1c87-6acb0834150a.htm">Terrain</a>
+                            instance.
+                        </p></div><h4 class="subHeading" id="effects">Predefined effects</h4><div class="subsection"><p>
+                            DigitalRune Graphics contains several predefined effects which can be used
+                            in the terrain materials. (See also
+                            <a href="2631164b-0b8b-47b2-9cda-f7923d7518f4.htm">Pre-Built Content</a>).
+                            Following effects can be used in the material of the terrain node:
+                        </p><div class="tableSection"><table><tr><th><p>Effect</p></th><th><p>Description</p></th></tr><tr><td><p>DigitalRune/Terrain/TerrainGBuffer</p></td><td><p>
+                                        Renders the terrain in the G-buffer pass. 
+                                        Holes in the effect are rendered by culling triangles.
+                                    </p></td></tr><tr><td><p>DigitalRune/Terrain/TerrainGBufferHoles</p></td><td><p>
+                                        Renders the terrain in the G-buffer pass.
+                                        Holes in the effect are created using texkill/clip in the pixel shader.
+                                    </p></td></tr><tr><td><p>DigitalRune/Terrain/TerrainGBufferPom</p></td><td><p>
+                                        Renders the terrain in the G-buffer pass.
+                                        Holes in the effect are rendered by culling triangles.
+                                        The effect supports parallax occlusion mapping.
+                                    </p></td></tr><tr><td><p>DigitalRune/Terrain/TerrainGBufferHolesPom</p></td><td><p>
+                                        Renders the terrain in the G-buffer pass. 
+                                        Holes in the effect are created using texkill/clip in the pixel shader.
+                                        The effect supports parallax occlusion mapping.
+                                    </p></td></tr><tr><td><p>DigitalRune/Terrain/TerrainMaterial</p></td><td><p>
+                                        Renders the terrain in the Material pass.
+                                        Holes in the effect are rendered by culling triangles.
+                                    </p></td></tr><tr><td><p>DigitalRune/Terrain/TerrainMaterialHoles</p></td><td><p>
+                                        Renders the terrain in the Material pass.
+                                        Holes in the effect are created using texkill/clip in the pixel shader.
+                                    </p></td></tr><tr><td><p>DigitalRune/Terrain/TerrainMaterialPom</p></td><td><p>
+                                        Renders the terrain in the Material pass.
+                                        Holes in the effect are rendered by culling triangles.
+                                        The effect supports parallax occlusion mapping.
+                                    </p></td></tr><tr><td><p>DigitalRune/Terrain/TerrainMaterialHolesPom</p></td><td><p>
+                                        Renders the terrain in the Material pass.
+                                        Holes in the effect are created using texkill/clip in the pixel shader.
+                                        The effect supports parallax occlusion mapping.
+                                    </p></td></tr><tr><td><p>DigitalRune/Terrain/TerrainShadowMap</p></td><td><p>
+                                        Renders the terrain into the shadow map.
+                                        Holes in the effect are rendered by culling triangles.
+                                    </p></td></tr><tr><td><p>DigitalRune/Terrain/TerrainShadowMapHoles</p></td><td><p>
+                                        Renders the terrain into the shadow map.
+                                        Holes in the effect are created using texkill/clip in the pixel shader.
+                                    </p></td></tr></table></div><p>
+                            You can use following code to create a material for a terrain node:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABAAACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABAAACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABAAACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABAAACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">var</span> shadowMapEffect = content.Load&lt;Effect&gt;(<span class="highlight-literal">"DigitalRune/Terrain/TerrainShadowMap"</span>);
+<span class="highlight-keyword">var</span> gBufferEffect = content.Load&lt;Effect&gt;(<span class="highlight-literal">"DigitalRune/Terrain/TerrainGBuffer"</span>);
+<span class="highlight-keyword">var</span> materialEffect = content.Load&lt;Effect&gt;(<span class="highlight-literal">"DigitalRune/Terrain/TerrainMaterial"</span>);
+<span class="highlight-keyword">var</span> material = <span class="highlight-keyword">new</span> Material
+{
+  { <span class="highlight-literal">"ShadowMap"</span>, <span class="highlight-keyword">new</span> EffectBinding(_graphicsService, shadowMapEffect, <span class="highlight-keyword">null</span>, EffectParameterHint.Material) },
+  { <span class="highlight-literal">"GBuffer"</span>, <span class="highlight-keyword">new</span> EffectBinding(_graphicsService, gBufferEffect, <span class="highlight-keyword">null</span>, EffectParameterHint.Material) },
+  { <span class="highlight-literal">"Material"</span>, <span class="highlight-keyword">new</span> EffectBinding(_graphicsService, materialEffect, <span class="highlight-keyword">null</span>, EffectParameterHint.Material) }
+};
+TerrainNode = <span class="highlight-keyword">new</span> TerrainNode(terrain, material);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABAAACAAA");</script><p>
+                            Have a look at the terrain samples (see <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a>)
+                            for more details.
+                        </p></div></div><div class="collapsibleAreaRegion" id="Misc"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Miscellaneous</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    The class
+                    <a href="3c34f51b-473f-95d6-a156-06bffb980091.htm">TerrainHelper</a>
+                    contains various methods which help to create and manipulate height maps and other
+                    terrain textures.
+                </p><p>
+                    The terrain renderers provide several effect parameter bindings for effect
+                    parameters which can be used in the materials of terrain nodes, terrain tiles and
+                    terrain layers. A list of supported effect parameter semantics can be found in the class
+                    <a href="e2751b90-5182-4aad-beed-78545612f5dd.htm">TerrainEffectParameterSemantics</a>.
+                </p><p>
+                    The rendering system caches terrain information internally to improve
+                    performance. The cache is invalidated automatically when an important property
+                    of a terrain class is changed. However, in some cases it is not possible
+                    to automatically detect these changes, e.g. if the data of a height
+                    texture is changed. In this case it is necessary to manually call the
+                    <strong>Invalidate</strong> method of the appropriate terrain class.
+                </p></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

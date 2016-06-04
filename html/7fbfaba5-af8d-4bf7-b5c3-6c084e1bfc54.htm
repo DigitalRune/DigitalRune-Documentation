@@ -1,0 +1,214 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Windows Forms, WPF, UWP Interoperability</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="7fbfaba5-af8d-4bf7-b5c3-6c084e1bfc54" /><meta name="Description" content="This topic gives a brief overview on interoperability with Windows Forms, the Windows Presentation Foundation (WPF) and the Universal Windows Platform (UWP)." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="7d5a0abe-8231-452c-895c-e6dbab83822b.htm" title="Graphics Programming" tocid="7d5a0abe-8231-452c-895c-e6dbab83822b">Graphics Programming</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="fda6c965-0105-4a5e-a0db-f8fa6ec4e73f.htm" title="Graphics Service" tocid="fda6c965-0105-4a5e-a0db-f8fa6ec4e73f">Graphics Service</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="2e870374-8980-4fbc-9426-1d1a6e2d9766.htm" title="Graphics Screens" tocid="2e870374-8980-4fbc-9426-1d1a6e2d9766">Graphics Screens</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="4d8c922f-60cb-4b92-a22c-03c9e8816712.htm" title="Scene Management" tocid="4d8c922f-60cb-4b92-a22c-03c9e8816712">Scene Management</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="6b3a13bc-37b4-4820-9f82-c2364a9ed2eb.htm" title="Rendering" tocid="6b3a13bc-37b4-4820-9f82-c2364a9ed2eb">Rendering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="ba1be841-af9c-41a4-8348-0b6bd92efdd9.htm" title="Effects and Effect Bindings" tocid="ba1be841-af9c-41a4-8348-0b6bd92efdd9">Effects and Effect Bindings</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="34a7f065-df4f-4f40-8b5c-5f0afee365db.htm" title="Materials and Material Instances" tocid="34a7f065-df4f-4f40-8b5c-5f0afee365db">Materials and Material Instances</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="cb08d0d8-8ea6-49fc-b318-b185dbb70608.htm" title="Models and Meshes" tocid="cb08d0d8-8ea6-49fc-b318-b185dbb70608">Models and Meshes</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="fda1f969-9b64-4851-873c-a59466ac69ba.htm" title="Cameras" tocid="fda1f969-9b64-4851-873c-a59466ac69ba">Cameras</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="e316a87e-0cdb-4c6b-bcb0-a2e66004c26f.htm" title="Lights" tocid="e316a87e-0cdb-4c6b-bcb0-a2e66004c26f">Lights</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="3f82c46b-efec-4416-807f-670ac1930117.htm" title="Shadows" tocid="3f82c46b-efec-4416-807f-670ac1930117">Shadows</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="630fb69e-a032-4125-bdc0-5484fbe2c86d.htm" title="Lens Flares" tocid="630fb69e-a032-4125-bdc0-5484fbe2c86d">Lens Flares</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="f782dc86-40e9-45c1-869a-4baf86e28ed9.htm" title="Decals" tocid="f782dc86-40e9-45c1-869a-4baf86e28ed9">Decals</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="4518dd2c-21ea-4cf8-8dec-8b3a32584743.htm" title="Billboards and Particles" tocid="4518dd2c-21ea-4cf8-8dec-8b3a32584743">Billboards and Particles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="d4d56ebf-a623-492c-bd37-b41a2979323e.htm" title="Sprites (Images and Text)" tocid="d4d56ebf-a623-492c-bd37-b41a2979323e">Sprites (Images and Text)</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="d70873e7-1dbc-492b-b10d-1afb6f06687a.htm" title="Figures (Lines, 2D Shapes)" tocid="d70873e7-1dbc-492b-b10d-1afb6f06687a">Figures (Lines, 2D Shapes)</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="0bc6a222-64d5-4642-a2b6-241e9017c873.htm" title="Fog" tocid="0bc6a222-64d5-4642-a2b6-241e9017c873">Fog</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="975dcbca-5c87-4f33-a372-0cfe7f50cebe.htm" title="Sky" tocid="975dcbca-5c87-4f33-a372-0cfe7f50cebe">Sky</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="46f261f5-750c-4df5-99e2-b6a289f15098.htm" title="Terrain" tocid="46f261f5-750c-4df5-99e2-b6a289f15098">Terrain</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="5697f90f-2893-4ed5-ae66-da63afccdfc3.htm" title="Water" tocid="5697f90f-2893-4ed5-ae66-da63afccdfc3">Water</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="924e5123-9ed9-4db7-bd0c-2ec8589985ed.htm" title="Post-Processing" tocid="924e5123-9ed9-4db7-bd0c-2ec8589985ed">Post-Processing</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="b7e96cd7-c737-4805-b5a9-98f1e8acd1d5.htm" title="Anti-Aliasing" tocid="b7e96cd7-c737-4805-b5a9-98f1e8acd1d5">Anti-Aliasing</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="b320aebd-46a0-45d8-8edb-0c717152a56b.htm" title="Level of Detail (LOD)" tocid="b320aebd-46a0-45d8-8edb-0c717152a56b">Level of Detail (LOD)</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="cc20d61e-83cb-46c7-a2e2-0841a35043ba.htm" title="Occlusion Culling" tocid="cc20d61e-83cb-46c7-a2e2-0841a35043ba">Occlusion Culling</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="7fbfaba5-af8d-4bf7-b5c3-6c084e1bfc54.htm" title="Windows Forms, WPF, UWP Interoperability" tocid="7fbfaba5-af8d-4bf7-b5c3-6c084e1bfc54">Windows Forms, WPF, UWP Interoperability</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="4e6f5dc1-8897-466f-88f2-b5c56d43a3c5.htm" title="Miscellaneous" tocid="4e6f5dc1-8897-466f-88f2-b5c56d43a3c5">Miscellaneous</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Windows Forms, WPF, UWP Interoperability</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This topic gives a brief overview on interoperability with Windows Forms, the Windows
+                Presentation Foundation (WPF) and the Universal Windows Platform (UWP).
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Overview">Interoperability overview</a></li><li class="outlineSectionEntry"><a href="#Start">Launching a Windows Forms or WPF window</a></li><li class="outlineSectionEntry"><a href="#Host">Presenting 3D graphics inside a Windows Forms, WPF or UWP control</a></li><li class="outlineSectionEntry"><a href="#Caveats">Caveats</a></li><li class="outlineSectionEntry"><a href="#WpfEnvironment">Class WpfEnvironment</a></li></ul></div><div class="collapsibleAreaRegion" id="Overview"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Interoperability overview</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    The namespace
+                    <a href="9b1aaa6f-ac79-bb3b-5c5d-7e8b84ba7102.htm">DigitalRune.Graphics.Interop</a>
+                    provides controls that allow to present 3D graphics in regular Windows Forms, WPF and
+                    UWP applications. The interoperability classes were specifically designed to 
+                    enable the following scenarios:
+                </p><ul><li>
+                        The application is a regular Windows Forms, WPF or UWP project. 3D graphics 
+                        can be presented in one or several controls in the application. 
+                    </li><li>
+                        The application is an XNA project. The game can run normally inside the 
+                        default game window. The user can switch between windowed (desktop) and 
+                        full-screen mode. From the running game, the user can switch to a game 
+                        editor which is hosted inside a Windows Forms or WPF window. The game editor 
+                        allows one or more independent views on the game world. While the game 
+                        editor is visible, the game can keep running uninterrupted.
+                    </li></ul><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Tip" /> Tip</th></tr><tr><td><p>
+                        For more details take a look at the various <em>Interop</em> samples for Windows 
+                        Forms, WPF and UWP.
+                    </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="Start"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Launching a Windows Forms or WPF window</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    The following examples show how to start an external window, such as a game editor, from
+                    an XNA game.
+                </p><p>
+                    The following example shows how to open a Windows Form.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EACAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EACAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EACAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EACAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Create a new Windows Forms window.</span>
+<span class="highlight-keyword">var</span> form = <span class="highlight-keyword">new</span> MyForm() { GraphicsServices = _graphicsManager };
+
+<span class="highlight-comment">// Make the window visible.</span>
+form.Show();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EACAEAAA");</script><p>
+                    The following example shows to open a WPF window.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">var</span> window = <span class="highlight-keyword">new</span> WpfWindow { GraphicsService = _graphicsManager };
+
+<span class="highlight-comment">// Allow WPF window to receive keyboard events from Windows Forms.</span>
+ElementHost.EnableModelessKeyboardInterop(window);
+
+window.Show();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAAEAAA");</script></div><div class="collapsibleAreaRegion" id="Host"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Presenting 3D graphics inside a Windows Forms, WPF or UWP control</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    A control that shows a 3D scene of the XNA game is called a <span class="term">presentation target</span>.
+                    The namespace includes following presentation target controls which can be added inside
+                    Windows Forms, WPF or UWP windows.
+                </p><ul><li><a href="aa16ce10-489c-cbd5-7d21-17c7f04483a2.htm">FormsPresentationTarget</a>
+                        (for Windows Forms)
+                    </li><li><a href="ab9856ec-b0ac-072b-3250-d8f0cdda0e56.htm">ElementPresentationTarget</a>
+                        (for WPF, using the .NET <strong>WindowsFormsHost</strong> class internally)
+                    </li><li><a href="da532926-b1cf-37ee-c3de-15ee88dcad8f.htm">D3DImagePresentationTarget</a>
+                        (for WPF, only in MonoGame, using the .NET <strong>D3DImage</strong> class internally)
+                    </li><li><a href="9d6883e5-298b-3c9e-859c-b4ac580bb9f6.htm">SwapChainPresentationTarget</a>
+                        (for UWP)
+                    </li></ul><p>
+                    Presentation targets need to be registered in the graphics service (see property
+                    <a href="430eda23-aa3f-9e7d-76ce-af438903ad39.htm">PresentationTargets</a>).
+                    The following examples shows how to register and unregister presentation targets of a WPF
+                    window.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAEADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAEADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAEADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAEADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> System.ComponentModel;
+<span class="highlight-keyword">using</span> System.Windows;
+<span class="highlight-keyword">using</span> System.Windows.Input;
+<span class="highlight-keyword">using</span> DigitalRune.Graphics;
+<span class="highlight-keyword">using</span> DigitalRune.Graphics.Interop;
+
+<span class="highlight-keyword">namespace</span> InteropSample
+{
+  <span class="highlight-comment">// A WPF window with a presentation target for 3D graphics.</span>
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">partial</span> <span class="highlight-keyword">class</span> MyWindow
+  {
+    <span class="highlight-keyword">public</span> IGraphicsService GraphicsService { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+
+    <span class="highlight-keyword">public</span> WpfWindow()
+    {
+      InitializeComponent();
+      Loaded += OnLoaded;
+    }
+
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> OnLoaded(<span class="highlight-keyword">object</span> sender, RoutedEventArgs eventArgs)
+    {
+      <span class="highlight-comment">// Register render targets.</span>
+      <span class="highlight-keyword">if</span> (GraphicsService != <span class="highlight-keyword">null</span>)
+        GraphicsService.PresentationTargets.Add(PresentationTarget);
+    }
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnClosing(CancelEventArgs eventArgs)
+    {
+      <span class="highlight-comment">// Unregister render targets.</span>
+      <span class="highlight-keyword">if</span> (GraphicsService != <span class="highlight-keyword">null</span>)
+        GraphicsService.PresentationTargets.Remove(PresentationTarget);
+
+      <span class="highlight-keyword">base</span>.OnClosing(eventArgs);
+    }
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAEADAAA");</script><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EADADAAA_tab1" class="codeSnippetContainerTabSingle">XAML</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EADADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EADADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EADADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Window</span> <span class="highlight-xml-attribute-name">x:Class</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"MyApplication.MyWindow"</span>
+        <span class="highlight-xml-attribute-name">xmlns</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
+        <span class="highlight-xml-attribute-name">xmlns:x</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
+        <span class="highlight-xml-attribute-name">xmlns:dr</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"http://schemas.digitalrune.com/windows"</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Grid</span><span class="highlight-xml-bracket">&gt;</span>
+      <span class="highlight-xml-comment">&lt;!--  A WPF presentation target into which XNA graphics can be rendered:  --&gt;</span>
+      <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">dr:ElementPresentationTarget</span> <span class="highlight-xml-attribute-name">x:Name</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"PresentationTarget"</span> <span class="highlight-xml-bracket">/&gt;</span>
+    <span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Grid</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Grid</span><span class="highlight-xml-bracket">&gt;</span>
+<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Window</span><span class="highlight-xml-bracket">&gt;</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EADADAAA");</script><p>
+                    The graphics service can render a scene into the registered presentation targets. 
+                    In XNA game projects this is usually done in the <strong>Draw</strong>-method 
+                    of the XNA <strong>Game</strong> class.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> Draw(GameTime gameTime)
+{
+  <span class="highlight-comment">// Update graphics service.</span>
+  _graphicsManager.Update(gameTime.ElapsedGameTime);
+
+  <span class="highlight-keyword">foreach</span> (<span class="highlight-keyword">var</span> presentationTarget <span class="highlight-keyword">in</span> _graphicsManager.PresentationTargets)
+  {
+    <span class="highlight-comment">// Prepare scene (camera, etc.) for presentation target.</span>
+    ...
+
+    <span class="highlight-comment">// Render scene into presentation target.</span>
+    _graphicsManager.Render(presentationTarget);
+  }
+
+  <span class="highlight-comment">// Render scene into back buffer.</span>
+  _graphicsManager.Render(<span class="highlight-keyword">false</span>);
+
+  <span class="highlight-keyword">base</span>.Draw(gameTime);
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABADAAA");</script><p>
+                    In regular Windows Forms, WPF or UWP applications a custom "game loop" can be
+                    created which handles the rendering of 3D graphics. Have a look at the included
+                    <em>Interop</em> samples for more details.
+                </p></div><div class="collapsibleAreaRegion" id="Caveats"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Caveats</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    The XNA <strong>Mouse</strong> class does not work in some interoperability
+                    scenarios. In this case you can read normal Windows Forms, WPF or UWP mouse events to handle
+                    mouse input.
+                </p></div><div class="collapsibleAreaRegion" id="WpfEnvironment"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Class WpfEnvironment</span></div><div id="ID5RBSection" class="collapsibleSection"><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                        The class
+                        <a href="7edd9bef-d351-070e-c68c-fd782bc3f71b.htm">WpfEnvironment</a>
+                        is obsolete. It is not required anymore to use
+                        <a href="7edd9bef-d351-070e-c68c-fd782bc3f71b.htm">WpfEnvironment</a>
+                        for WPF interoperability.
+                    </p></td></tr></table></div><p>
+                    The class
+                    <a href="7edd9bef-d351-070e-c68c-fd782bc3f71b.htm">WpfEnvironment</a>
+                    is a helper class that provides an execution environment for a WPF window that runs on
+                    a separate thread inside a Windows Forms application (such as the XNA game).
+                </p><p>
+                    The following examples shows to open a WPF window using the
+                    <a href="7edd9bef-d351-070e-c68c-fd782bc3f71b.htm">WpfEnvironment</a>.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EACABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EACABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EACABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EACABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// The WpfEnvironment class create a separate thread which runs the WPF windows.</span>
+<span class="highlight-comment">// (Redundant calls of Startup() are no problem.)</span>
+WpfEnvironment.Startup(Window.Handle);
+
+<span class="highlight-comment">// From the WpfEnvironment class we can get the Dispatcher. We can use it to </span>
+<span class="highlight-comment">// execute actions on the WPF thread. </span>
+WpfEnvironment.Dispatcher.Invoke((Action)(() =&gt;
+{
+  <span class="highlight-keyword">var</span> window = <span class="highlight-keyword">new</span> MyWindow() { GraphicsServices = _graphicsManager };
+  window.Show();
+}));</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EACABAAA");</script><p>
+                    When the
+                    <a href="7edd9bef-d351-070e-c68c-fd782bc3f71b.htm">WpfEnvironment</a>
+                    is used, Windows Forms and XNA runs on one thread, WPF runs on another thread.
+                    Care needs to be taken to avoid any cross-thread issues. All operations which manipulates
+                    the WPF controls must be executed on the WPF thread using
+                    <a href="21c52cc5-6795-8d63-ff20-5838692704f3.htm">WpfEnvironment<span id="LST5412045A_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST5412045A_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Dispatcher</a>,
+                    as shown in the example above. All operations which manipulate the state of Windows Forms
+                    controls or XNA must be executed on the Windows Forms thread. The following examples shows
+                    how to register and unregister presentation targets of a WPF window. The operations are
+                    explicitly invoked on the Windows Forms thread.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> System.ComponentModel;
+<span class="highlight-keyword">using</span> System.Windows;
+<span class="highlight-keyword">using</span> System.Windows.Input;
+<span class="highlight-keyword">using</span> DigitalRune.Graphics;
+<span class="highlight-keyword">using</span> DigitalRune.Graphics.Interop;
+
+<span class="highlight-keyword">namespace</span> InteropSample
+{
+  <span class="highlight-comment">// A WPF window with a presentation target for 3D graphics.</span>
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">partial</span> <span class="highlight-keyword">class</span> MyWindow
+  {
+    <span class="highlight-keyword">public</span> IGraphicsService GraphicsService { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+
+    <span class="highlight-keyword">public</span> WpfWindow()
+    {
+      InitializeComponent();
+      Loaded += OnLoaded;
+    }
+
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> OnLoaded(<span class="highlight-keyword">object</span> sender, RoutedEventArgs eventArgs)
+    {
+      <span class="highlight-comment">// Register render targets.</span>
+      WpfEnvironment.Form.BeginInvoke((Action)(() =&gt;
+      {
+        <span class="highlight-keyword">if</span> (GraphicsService != <span class="highlight-keyword">null</span>)
+          GraphicsService.PresentationTargets.Add(PresentationTarget);
+      }));
+    }
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnClosing(CancelEventArgs eventArgs)
+    {
+      <span class="highlight-comment">// Unregister render targets.</span>
+      WpfEnvironment.Form.BeginInvoke((Action)(() =&gt;
+      {
+        <span class="highlight-keyword">if</span> (GraphicsService != <span class="highlight-keyword">null</span>)
+          GraphicsService.PresentationTargets.Remove(PresentationTarget);
+      }));
+
+      <span class="highlight-keyword">base</span>.OnClosing(eventArgs);
+    }
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAABAAA");</script></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

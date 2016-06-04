@@ -1,0 +1,167 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Parallel Tasks (Multithreading)</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="09d39ddf-c826-4943-aac8-2ef9e16e5a12" /><meta name="Description" content="The DigitalRune Base library supports running multiple tasks in parallel. This section explains how to utilize multithreading in your application." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="dc44c3a5-8545-4253-9da1-62258a00607c.htm" title="DigitalRune Base Library" tocid="dc44c3a5-8545-4253-9da1-62258a00607c">DigitalRune Base Library</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="09d39ddf-c826-4943-aac8-2ef9e16e5a12.htm" title="Parallel Tasks (Multithreading)" tocid="09d39ddf-c826-4943-aac8-2ef9e16e5a12">Parallel Tasks (Multithreading)</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="9e2a4144-69e9-4bf2-8cea-79713eb91490.htm" title="Resource Pooling" tocid="9e2a4144-69e9-4bf2-8cea-79713eb91490">Resource Pooling</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="ce7bca46-717a-4dfb-a154-acb6ee1e8ad9.htm" title="Service Location and Inversion of Control" tocid="ce7bca46-717a-4dfb-a154-acb6ee1e8ad9">Service Location and Inversion of Control</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="6736e3bc-383c-4d80-a828-c83fea5c3461.htm" title="Performance Profiling" tocid="6736e3bc-383c-4d80-a828-c83fea5c3461">Performance Profiling</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="120bed13-f23b-4774-bae7-d64d410d2122.htm" title="Storage and Virtual File Systems" tocid="120bed13-f23b-4774-bae7-d64d410d2122">Storage and Virtual File Systems</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="3b7ea45b-f13c-49b3-961b-42899323a477.htm" title="&quot;How To&quot; Articles" tocid="3b7ea45b-f13c-49b3-961b-42899323a477">"How To" Articles</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="dba0bb78-681c-4dd0-b84b-91ce08eeea36.htm" title="Class Diagrams" tocid="dba0bb78-681c-4dd0-b84b-91ce08eeea36">Class Diagrams</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Parallel Tasks (Multithreading)</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                The DigitalRune Base library supports running multiple tasks in parallel. This section explains
+                how to utilize multithreading in your application.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#General">General information</a></li><li class="outlineSectionEntry"><a href="#Tasks">Tasks</a></li><li class="outlineSectionEntry"><a href="#Futures">Futures</a></li><li class="outlineSectionEntry"><a href="#BackgroundTask">Background tasks</a></li><li class="outlineSectionEntry"><a href="#Exceptions">Exception handling</a></li><li class="outlineSectionEntry"><a href="#CompletionCallbacks">Completion callbacks</a></li><li class="outlineSectionEntry"><a href="#Loops">Parallel loops</a></li><li class="outlineSectionEntry"><a href="#Scheduling">Task scheduling</a></li><li class="outlineSectionEntry"><a href="#Credits">Credits</a></li><li class="outlineSectionEntry"><a href="#seeAlsoSection">See Also</a></li></ul></div><div class="collapsibleAreaRegion" id="General"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />General information</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    The namespace <a href="34755e8a-951a-369c-717a-134c9c1a337e.htm">DigitalRune.Threading</a>
+                    and the class <a href="80257661-725a-be38-7bf1-7f97e6a3b94e.htm">Parallel</a>
+                    provides support for concurrency to run multiple task in parallel and automatically balance work
+                    across all available processors. The implementation is a replacement for Microsoft's
+                    <a href="http://msdn.microsoft.com/en-us/library/dd460717" target="_blank">Task Parallel Library</a>
+                    which is not yet supported by the .NET Compact Framework. The class
+                    <a href="80257661-725a-be38-7bf1-7f97e6a3b94e.htm">Parallel</a>
+                    provides a lightweight and cross-platform implementation. The library supports Windows,
+                    Silverlight, Windows Phone 7, and Xbox 360).
+                </p><p>
+                    The API has similarities to Microsoft's Task Parallel Library, but it is not identical. The
+                    names in the namespace <a href="34755e8a-951a-369c-717a-134c9c1a337e.htm">DigitalRune.Threading</a>
+                    conflict with the types of the namespace <a href="http://msdn2.microsoft.com/en-us/library/dd235608" target="_blank">System.Threading.Tasks</a>.
+                    This is on purpose as only one solution for concurrency should be used in an application.
+                    The library has been optimized for the .NET Compact Framework: Only the absolute minimum of
+                    memory is allocated at runtime.
+                </p><p>
+                    The DigitalRune libraries make extensive use of the class
+                    <a href="80257661-725a-be38-7bf1-7f97e6a3b94e.htm">Parallel</a>.
+                    We highly recommend, that if you need support for multithreading in your application, you
+                    should take advantage of this class. (Using different solutions for concurrency can reduce
+                    performance.)
+                </p></div><div class="collapsibleAreaRegion" id="Tasks"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Tasks</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    A task is an asynchronous operation which is started, for example, by calling
+                    <a href="b24415a2-4aa2-3602-3253-10240f3161e5.htm">Parallel<span id="LST6BF81F63_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6BF81F63_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Start(Action)</a>.
+                    The method returns a handle of type <a href="5dc0dfd6-e14e-a3ea-a9a7-a04b4264d654.htm">Task</a>.
+                    This handle can be used to query the status of the asynchronous operation (see property
+                    <a href="f7127ec2-f9f6-842e-f058-cceaf7cd349a.htm">IsComplete</a>).
+                    The method <a href="f77a5979-0b65-8dda-da74-8a2394a6a66e.htm">Wait</a>
+                    can be called to wait until the operation has completed.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAAJAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAAJAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAAJAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAAJAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Start a method call on another thread:</span>
+<span class="highlight-comment">// DoSomeWork can either be an Action delegate, or an object which implements IWork.</span>
+Task task = Parallel.Start(DoSomeWork);
+
+<span class="highlight-comment">// Do something else on this thread for a while.</span>
+DoSomethingElse();
+
+<span class="highlight-comment">// Wait for the task to complete. This ensures that after this call returns, the </span>
+<span class="highlight-comment">// task has finished.</span>
+task.Wait();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAAJAAA");</script></div><div class="collapsibleAreaRegion" id="Futures"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Futures</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    A future is an asynchronous operation that returns a value. A future is created, for example,
+                    by calling <a href="19ef0e80-16a0-fc9f-d6ee-1a0b87da7f56.htm">Parallel<span id="LST6BF81F63_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6BF81F63_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Start<span id="LST6BF81F63_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6BF81F63_2?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST6BF81F63_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6BF81F63_3?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script>(Func<span id="LST6BF81F63_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6BF81F63_4?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST6BF81F63_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6BF81F63_5?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script>)</a>
+                    and specifying a function that computes a value. The method returns a handle of type
+                    <a href="b45f33ef-ee73-b02e-4dbd-5c4ddd844f27.htm">Task<span id="LST6BF81F63_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6BF81F63_6?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST6BF81F63_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6BF81F63_7?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>,
+                    which is similar to <a href="5dc0dfd6-e14e-a3ea-a9a7-a04b4264d654.htm">Task</a>.
+                    The result of a future can be queried by calling <a href="bbd9a8a8-f7d4-49f5-03e0-d32fc47329bc.htm">GetResult</a>.
+                    Note that <a href="bbd9a8a8-f7d4-49f5-03e0-d32fc47329bc.htm">GetResult</a>
+                    can only be called once - the handle becomes invalid after the first call!
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAAIAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAAIAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAAIAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAAIAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Task&lt;T&gt; is similar to Task, but you can retrieve a result from it.</span>
+Task&lt;<span class="highlight-keyword">double</span>&gt; piTask = Parallel.Start(CalculatePi);
+
+<span class="highlight-comment">// Do something else for a while.</span>
+DoSomethingElse();
+
+<span class="highlight-comment">// Retrieve the result. The caller will block until the task has completed. </span>
+<span class="highlight-comment">// GetResult() can only be called once!</span>
+<span class="highlight-keyword">double</span> pi = piTask.GetResult();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAAIAAA");</script></div><div class="collapsibleAreaRegion" id="BackgroundTask"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Background tasks</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    Long running operations which may block (i.e. wait for I/O operation to finish) should be
+                    scheduled as background tasks. Background tasks are created by using the method
+                    <a href="6be88189-3eec-6c53-4e43-dff0f15511ce.htm">Parallel<span id="LST6BF81F63_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6BF81F63_8?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>StartBackground</a>.
+                    Background tasks will not be scheduled using the
+                    <a href="a55e9e47-926e-716e-3453-03de0a9e0764.htm">Scheduler</a>
+                    (see below). Instead the class <a href="80257661-725a-be38-7bf1-7f97e6a3b94e.htm">Parallel</a>
+                    manages an additional pool of threads that are used for background tasks. The processor
+                    affinity of these threads is not set automatically. The background tasks will usually run on
+                    the same hardware thread where the background thread was created first or run last. The
+                    processor affinity can be set manually from within the task by calling
+                    <a href="http://msdn.microsoft.com/en-us/library/system.threading.thread.setprocessoraffinity.aspx" target="_blank">Thread.SetProcessorAffinity</a>.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAAHAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAAHAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAAHAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAAHAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Begin loading some files in the background.</span>
+Parallel.StartBackground(LoadFiles);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAAHAAA");</script></div><div class="collapsibleAreaRegion" id="Exceptions"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Exception handling</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    The tasks executed asynchronously can raise exceptions. The exceptions are stored internally
+                    and a <a href="295c2a39-7627-aba4-93f6-91ea6e9afc85.htm">TaskException</a>
+                    containing these exceptions is thrown when
+                    <a href="f77a5979-0b65-8dda-da74-8a2394a6a66e.htm">Wait</a>
+                    is called.
+                </p></div><div class="collapsibleAreaRegion" id="CompletionCallbacks"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID6RB')" onkeypress="SectionExpandCollapse_CheckKey('ID6RB', event)" tabindex="0"><img id="ID6RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Completion callbacks</span></div><div id="ID6RBSection" class="collapsibleSection"><p>
+                    It is possible to specify a completion callbacks when starting a new tasks. For example, see
+                    method <a href="9af831c4-a0ef-69da-015e-c8ff72b5c380.htm">Parallel<span id="LST6BF81F63_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6BF81F63_9?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Start(Action, Action)</a>.
+                    The completion callbacks are executed after the corresponding tasks have completed.
+                    Completion callbacks are executed regardless of whether tasks have completed successfully
+                    or have thrown an exception.
+                </p><p><strong>Important:</strong> The callbacks are not executed immediately! Instead, the method
+                    <a href="64c6a670-9ad6-e88a-9487-d4a3ad7c268b.htm">Parallel<span id="LST6BF81F63_10"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6BF81F63_10?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>RunCallbacks</a>
+                    needs to be called explicitly - usually on the main thread - to invoke the callbacks.
+                </p></div><div class="collapsibleAreaRegion" id="Loops"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID7RB')" onkeypress="SectionExpandCollapse_CheckKey('ID7RB', event)" tabindex="0"><img id="ID7RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Parallel loops</span></div><div id="ID7RBSection" class="collapsibleSection"><p>
+                    The following demonstrates how a for-loop can be executed in parallel.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EACAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EACAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EACAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EACAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Sequential loop:</span>
+<span class="highlight-keyword">for</span> (<span class="highlight-keyword">int</span> i = <span class="highlight-number">0</span>; i &lt; count; i++)
+{
+  DoWork(i);
+}
+
+<span class="highlight-comment">// Same loop, but each iteration may happen in parallel on a different thread.</span>
+Parallel.For(<span class="highlight-number">0</span>, count, i =&gt;
+{
+  DoWork(i);
+});</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EACAEAAA");</script><p>
+                    The following demonstrates how a foreach-loop can be executed in parallel.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Sequential loop:</span>
+<span class="highlight-keyword">foreach</span> (<span class="highlight-keyword">var</span> item <span class="highlight-keyword">in</span> list)
+{
+  DoWork(item);
+}
+
+<span class="highlight-comment">// Same loop, but each iteration may happen in parallel on a different thread.</span>
+Parallel.ForEach(list, item =&gt;
+{
+  DoWork(item);
+});</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAAEAAA");</script></div><div class="collapsibleAreaRegion" id="Scheduling"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID8RB')" onkeypress="SectionExpandCollapse_CheckKey('ID8RB', event)" tabindex="0"><img id="ID8RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Task scheduling</span></div><div id="ID8RBSection" class="collapsibleSection"><p>
+                    The number of threads used for parallelization is determined by the task scheduler (see
+                    <a href="a55e9e47-926e-716e-3453-03de0a9e0764.htm">Parallel<span id="LST6BF81F63_11"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6BF81F63_11?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Scheduler</a>).
+                    The task scheduler creates a number of threads and distributes the tasks among these worker
+                    threads. The default task scheduler is a
+                    <a href="11be11a3-8e57-2e57-a52b-fc0c60aba22e.htm">WorkStealingScheduler</a>
+                    that creates one thread per CPU core on Windows and 3 threads on Xbox 360 (on the hardware
+                    threads 3, 4, and 5). The number of worker threads can be specified in the constructor of
+                    the <a href="11be11a3-8e57-2e57-a52b-fc0c60aba22e.htm">WorkStealingScheduler</a>.
+                </p><p>
+                    The property <a href="a55e9e47-926e-716e-3453-03de0a9e0764.htm">Scheduler</a>
+                    can be changed at runtime. The default task scheduler can be replaced with another task
+                    scheduler (e.g. with a <a href="11be11a3-8e57-2e57-a52b-fc0c60aba22e.htm">WorkStealingScheduler</a>
+                    that uses a different number of tasks, or with a custom
+                    <a href="64797864-31bf-8012-f0b1-b031686fe655.htm">ITaskScheduler</a>).
+                    Replacing a task scheduler will affect all future tasks that have not yet been scheduled.
+                    However, it is highly recommended to use the default scheduler or specify the scheduler
+                    only once at the startup of the application.
+                </p><h4 class="subHeading">Processor affinity</h4><div class="subsection"><p>
+                            In the .NET Compact Framework for Xbox 360 the processor affinity determines the processors
+                            on which a thread runs. Setting the processor affinity in Windows has no effect.
+                        </p><p>
+                            The processor affinity is defined as an array using the property
+                            <a href="7799d3cf-1dba-84bb-163f-a0190578e003.htm">ProcessorAffinity</a>.
+                            Each entry in the array specifies the hardware thread that the corresponding worker
+                            thread will use. The default value is <span class="code">{ 3, 4, 5, 1 }</span>. The
+                            default task scheduler reads this array and assigns the worker threads to the specified
+                            hardware threads. (See also
+                            <a href="http://msdn.microsoft.com/en-us/library/system.threading.thread.setprocessoraffinity.aspx" target="_blank">Thread.SetProcessorAffinity</a>
+                            in the MSDN Library to find out more.)
+                        </p><p><strong>Important:</strong> The processor affinity needs to be set before any
+                            parallel tasks are created or before a new
+                            <a href="11be11a3-8e57-2e57-a52b-fc0c60aba22e.htm">WorkStealingScheduler</a>
+                            is created. Changing the processor affinity afterwards has no effect.
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAAAADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAAAADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAAAADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAAAADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Configure the class Parallel to use the hardware threads 3 and 4 on the Xbox 360.</span>
+<span class="highlight-comment">// (Note: Setting the processor affinity has no effect on Windows.)</span>
+Parallel.ProcessorAffinity = <span class="highlight-keyword">new</span>[] { <span class="highlight-number">3</span>, <span class="highlight-number">4</span> };
+
+<span class="highlight-comment">// Create task scheduler that uses 2 worker threads.</span>
+Parallel.Scheduler = <span class="highlight-keyword">new</span> WorkStealingScheduler(<span class="highlight-number">2</span>);
+
+<span class="highlight-comment">// Note: Above code is usually run at the start of an application. It is not recommended to </span>
+<span class="highlight-comment">// change the processor affinity or the task scheduler at runtime of the application.</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAAAADAAA");</script></div></div><div class="collapsibleAreaRegion" id="Credits"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID9RB')" onkeypress="SectionExpandCollapse_CheckKey('ID9RB', event)" tabindex="0"><img id="ID9RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Credits</span></div><div id="ID9RBSection" class="collapsibleSection"><p>
+                    The implementation is based on the ParallelTasks library (see
+                    <a href="http://paralleltasks.codeplex.com/" target="_blank">http://paralleltasks.codeplex.com/</a>)
+                    which is licensed under the <span class="nolink">Microsoft Public License (Ms-PL)</span>.
+                </p></div><div id="ID10RBSection" class="collapsibleSection"><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Tip" /> Tip</th></tr><tr><td><p>
+                        More background information about multithreading can be found in following article:
+                        <a href="a1ed955a-5ac6-411c-a098-14f34845b1bf.htm">Multithreading in the DigitalRune Engine</a></p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID11RB')" onkeypress="SectionExpandCollapse_CheckKey('ID11RB', event)" tabindex="0"><img id="ID11RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID11RBSection" class="collapsibleSection"><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="34755e8a-951a-369c-717a-134c9c1a337e.htm">DigitalRune.Threading</a></div><div class="seeAlsoStyle"><a href="80257661-725a-be38-7bf1-7f97e6a3b94e.htm">Parallel</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

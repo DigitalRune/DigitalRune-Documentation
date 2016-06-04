@@ -1,0 +1,269 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Release 2015-05-09</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="9fd388c5-bfb4-42ce-aada-32e2dcada3f3" /><meta name="Description" content="A critical memory leak in MonoGame has been fixed. The problem was caused by the following methods:" /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d94d3673-de15-47f9-a122-70b4d97b5920.htm" title="General" tocid="d94d3673-de15-47f9-a122-70b4d97b5920">General</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="1a8e6419-68b2-4e09-9578-a430703e8d5a.htm" title="What's New?" tocid="1a8e6419-68b2-4e09-9578-a430703e8d5a">What's New?</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="ca6ae3c3-7f7c-481d-b1d5-8a3c310921b5.htm" title="Release 2016-03-10" tocid="ca6ae3c3-7f7c-481d-b1d5-8a3c310921b5">Release 2016-03-10</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="890389e2-7ad8-45e5-8c40-e982ef01ab10.htm" title="Release 2015-12-19" tocid="890389e2-7ad8-45e5-8c40-e982ef01ab10">Release 2015-12-19</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="240673a0-ceae-4678-8b70-18765b58fd74.htm" title="Release 2015-09-28" tocid="240673a0-ceae-4678-8b70-18765b58fd74">Release 2015-09-28</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="9fd388c5-bfb4-42ce-aada-32e2dcada3f3.htm" title="Release 2015-05-09" tocid="9fd388c5-bfb4-42ce-aada-32e2dcada3f3">Release 2015-05-09</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="09e8a719-2ba7-485f-a2e9-d8225fa8392f.htm" title="Release 2015-03-10" tocid="09e8a719-2ba7-485f-a2e9-d8225fa8392f">Release 2015-03-10</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="dac4c63c-cc30-43f0-a1bd-00b4c6c1ff3d.htm" title="Change Logs 2010-2014" tocid="dac4c63c-cc30-43f0-a1bd-00b4c6c1ff3d">Change Logs 2010-2014</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Release 2015-05-09</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#ReleaseNotes">Release notes</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#MemLeak">Memory leak in MonoGame</a></li><li class="outlineSectionEntry"><a href="#WBOIT">Weighted blended order-independent transparency</a></li><li class="outlineSectionEntry"><a href="#Documentation">Documentation</a></li></ul><li class="outlineSectionEntry"><a href="#ChangeLog">Change log</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#General">General</a></li><li class="outlineSectionEntry"><a href="#Geometry">DigitalRune Geometry 1.17.1</a></li><li class="outlineSectionEntry"><a href="#Graphics">DigitalRune Graphics 1.0beta2</a></li><li class="outlineSectionEntry"><a href="#Samples">Samples</a></li><li class="outlineSectionEntry"><a href="#MonoGame">MonoGame 3.4</a></li></ul></ul></div><div class="collapsibleAreaRegion" id="ReleaseNotes"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Release notes</span></div><div id="ID0RBSection" class="collapsibleSection"><h4 class="subHeading" id="MemLeak">Memory leak in MonoGame</h4><div class="subsection"><p>
+                            A critical memory leak in MonoGame has been fixed. The problem was caused by the following methods:
+                        </p><ul><li>
+                                VertexBuffer.GetData
+                            </li><li>
+                                IndexBuffer.GetData
+                            </li></ul><p>
+                            These methods pinned the data arrays and thereby prevented these objects from being garbage collected.
+                        </p><p>
+                            The following DigitalRune methods were affected by this bug:
+                        </p><ul><li><a href="fb8d5d64-bebf-2c84-1d99-0d53670addb8.htm">TriangleMesh<span id="LST287F4C3A_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST287F4C3A_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>FromModel</a></li><li><a href="5c23b4bc-db43-16f1-8eab-04f9e3f63938.htm">MeshHelper<span id="LST287F4C3A_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST287F4C3A_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Merge</a></li><li><a href="ca7dd9c4-68a7-5924-fabd-2bc22fccf1b6.htm">MeshHelper<span id="LST287F4C3A_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST287F4C3A_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>ToTriangleMesh</a></li></ul></div><h4 class="subHeading" id="WBOIT">Weighted blended order-independent transparency</h4><div class="subsection"><p>
+                            A new sample demonstrates <span class="term">weighted blended order-independent transparency</span>,
+                            which is a technique for rendering transparent objects. In contrast to traditional
+                            alpha blending, it does not require geometry to be rendered in sorted order (back-to-front).
+                        </p><p>
+                            Figure 1 shows an opaque tank model (reference), the model rendered with alpha blending (α = 0.8),
+                            and the model rendered with weighted blended order-independent transparency (α = 0.8).
+                            Triangles are submitted unsorted, which results in wrong visibility when using traditional alpha blending.
+                        </p><div class="mediaNear"><img alt="Weighted Blended Order-Independent Transparency" src="../media/WeightedBlendedOITSample.jpg" /><div class="caption">
+                                Figure 1: Opaque model (top), alpha blended transparency (middle), weighted blended
+                                order-independent transparency (bottom).
+                            </div></div><p>
+                            (Note: The shader used during weighted blended order-independent transparency uses a different lighting model, therefore the shading does not match exactly.)
+                        </p><p>
+                            For more information:
+                        </p><ul class="noBullet"><li>
+                                McGuire and Bavoil, Weighted Blended Order-Independent Transparency,
+                                Journal of Computer Graphics Techniques (JCGT), vol. 2, no. 2, 122--141, 2013.
+                                Available online http://jcgt.org/published/0002/02/09/
+                            </li></ul></div><h4 class="subHeading" id="Documentation">Documentation</h4><div class="subsection"><p>
+                            The documentation is now generated using the latest Sandcastle presentation style.
+                        </p></div></div><div class="collapsibleAreaRegion" id="ChangeLog"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Change log</span></div><div id="ID1RBSection" class="collapsibleSection"><h4 class="subHeading" id="General">General</h4><div class="subsection"><ul><li>
+                                CHANGE: Documentation uses latest Sandcastle presentation style.
+                            </li></ul></div><h4 class="subHeading" id="Geometry">DigitalRune Geometry 1.17.1</h4><div class="subsection"><ul><li>
+                                CHANGE:
+                                <a href="fb8d5d64-bebf-2c84-1d99-0d53670addb8.htm">TriangleMesh<span id="LST287F4C3A_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST287F4C3A_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>FromModel</a>
+                                now supports models with 32 bit indices.
+                            </li></ul></div><h4 class="subHeading" id="Graphics">DigitalRune Graphics 1.0beta2</h4><div class="subsection"><ul><li>
+                                NEW: Support for processing additional texture formats.
+                                Formats supported in previous release:
+                                <ul><li>
+                                        R32G32B32A32_Float,
+                                    </li><li>
+                                        R8G8B8A8_UNorm,
+                                    </li><li>
+                                        R8G8B8A8_UNorm_SRgb,
+                                    </li><li>
+                                        R8_UNorm,
+                                    </li><li>
+                                        A8_UNorm,
+                                    </li><li>
+                                        BC1_UNorm,
+                                    </li><li>
+                                        BC1_UNorm_SRgb,
+                                    </li><li>
+                                        BC2_UNorm,
+                                    </li><li>
+                                        BC2_UNorm_SRgb,
+                                    </li><li>
+                                        BC3_UNorm,
+                                    </li><li>
+                                        BC3_UNorm_SRgb,
+                                    </li><li>
+                                        B8G8R8A8_UNorm,
+                                    </li><li>
+                                        B8G8R8A8_UNorm_SRgb,
+                                    </li><li>
+                                        B5G6R5_UNorm*,
+                                    </li><li>
+                                        B5G5R5A1_UNorm*,
+                                    </li><li>
+                                        B4G4R4A4_UNorm* (* loading only)
+                                    </li></ul>
+                                Formats added in this release:
+                                <ul><li>
+                                        R32G32B32A32_UInt,
+                                    </li><li>
+                                        R32G32B32A32_SInt,
+                                    </li><li>
+                                        R32G32B32_Float,
+                                    </li><li>
+                                        R32G32B32_UInt,
+                                    </li><li>
+                                        R32G32B32_SInt,
+                                    </li><li>
+                                        R32G32_Float,
+                                    </li><li>
+                                        R32G32_UInt,
+                                    </li><li>
+                                        R32G32_SInt,
+                                    </li><li>
+                                        R32_Float,
+                                    </li><li>
+                                        R32_UInt,
+                                    </li><li>
+                                        R32_SInt,
+                                    </li><li>
+                                        R16G16B16A16_Float,
+                                    </li><li>
+                                        R16G16B16A16_UNorm,
+                                    </li><li>
+                                        R16G16B16A16_UInt,
+                                    </li><li>
+                                        R16G16B16A16_SNorm,
+                                    </li><li>
+                                        R16G16B16A16_SInt,
+                                    </li><li>
+                                        R16G16_Float,
+                                    </li><li>
+                                        R16G16_UNorm,
+                                    </li><li>
+                                        R16G16_UInt,
+                                    </li><li>
+                                        R16G16_SNorm,
+                                    </li><li>
+                                        R16G16_SInt,
+                                    </li><li>
+                                        R16_Float,
+                                    </li><li>
+                                        R16_UNorm,
+                                    </li><li>
+                                        R16_UInt,
+                                    </li><li>
+                                        R16_SNorm,
+                                    </li><li>
+                                        R16_SInt,
+                                    </li><li>
+                                        R8G8B8A8_UInt,
+                                    </li><li>
+                                        R8G8B8A8_SNorm,
+                                    </li><li>
+                                        R8G8B8A8_SInt,
+                                    </li><li>
+                                        R8G8_UNorm,
+                                    </li><li>
+                                        R8G8_UInt,
+                                    </li><li>
+                                        R8G8_SNorm,
+                                    </li><li>
+                                        R8G8_SInt,
+                                    </li><li>
+                                        R8_UInt,
+                                    </li><li>
+                                        R8_SNorm,
+                                    </li><li>
+                                        R8_SInt,
+                                    </li><li>
+                                        A8_UNorm,
+                                    </li><li>
+                                        B8G8R8X8_UNorm,
+                                    </li><li>
+                                        B8G8R8X8_UNorm_SRgb
+                                    </li></ul></li><li>
+                                NEW: Effect parameter bindings will throw an exception if the value type is
+                                not compatible with effect parameter.
+                                <br />
+                                (Additional checks are necessary because MonoGame does not fully validate
+                                effect parameter values.)
+                            </li><li>
+                                NEW: Properties
+                                <a href="139127ed-8bb8-a0d3-2825-013c57bb5103.htm">EffectName</a>
+                                and
+                                <a href="d0936ce8-c28a-9080-5ea0-49a9f7058639.htm">EffectParameterName</a>
+                                added to
+                                <a href="7930c8e6-cd69-ed1c-4d29-f892d48fbebf.htm">EffectBindingException</a>
+                                to provide additional information when a binding fails.
+                            </li><li>
+                                NEW: <a href="aa16ce10-489c-cbd5-7d21-17c7f04483a2.htm">FormsPresentationTarget</a>
+                                is now also available in MonoGame.
+                            </li><li>
+                                CHANGE: Presentation targets refactored. It is now possible to implement
+                                custom presentation targets. (Methods
+                                <a href="29b3d3d0-b900-e681-cc62-80731b194f21.htm">IPresentationTarget<span id="LST287F4C3A_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST287F4C3A_4?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>BeginRender</a>
+                                and
+                                <a href="df46ecdd-8735-b368-4010-de1f2b5821a3.htm">IPresentationTarget<span id="LST287F4C3A_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST287F4C3A_5?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>EndRender</a>
+                                added.
+                                <strong>IPresentationTarget.Handle</strong> is no longer needed and has been marked as obsolete.)
+                            </li><li>
+                                CHANGE: Conservative shadow caster culling improved.
+                            </li><li>
+                                CHANGE: Some "false positives" removed in progressive shadow caster culling.
+                            </li><li>
+                              CHANGE: Clamp large (infinite) AABBs to camera/light AABB in
+                              <a href="22d9c439-af08-d00f-18be-96a6ebbcc1ca.htm">OcclusionBuffer</a>.
+                              Automatically handle infinite objects. Improve performance for large objects.
+                            </li><li>
+                                CHANGE: Calculate exact view-normalized distance in
+                                <a href="22d9c439-af08-d00f-18be-96a6ebbcc1ca.htm">OcclusionBuffer</a>.
+                                (Currently shader computes position from AABB instead of scene node origin.)
+                            </li><li>
+                                CHANGE: MeshHelper.ToTriangleMesh now supports meshes with 32 bit indices.
+                            </li><li>
+                                REMOVE: Method <strong>GraphicsManager.Present()</strong> has been marked
+                                as obsolete and will be removed in future version.
+                            </li><li>
+                                FIX: <a href="http://msdn2.microsoft.com/en-us/library/27426hcy" target="_blank">ArgumentNullException</a>
+                                in DigitalRune Model Processor if skinned model is exported without any materials. (XNA only.)
+                            </li><li>
+                                FIX: When a skinned model without textures and without material definition (.drmat file)
+                                is processed, the wrong effect may stored in the .xnb file.
+                            </li><li>
+                                FIX: When skinned model is exported without any materials, a SkinnedEffect is set as default.
+                            </li><li>
+                                FIX: Content processors try to automatically find resources if models contain invalid paths.
+                                (For example, when a FBX file contains an invalid texture file name (path does not exist),
+                                the model processor will search in the content folder and in the current directory for a
+                                matching file.)
+                            </li><li>
+                                FIX: The DigitalRune Texture processor may throw an exception ("Surface format is not supported.")
+                                even if no processing is required.
+                            </li><li>
+                                FIX: Minor floating-point rounding issues in
+                                <a href="e9febfd8-16c5-b30c-b3f9-af4bcf7717a0.htm">SpriteRenderer</a>.
+                            </li><li>
+                                FIX: Effect parameter bindings for XNA stock effects (AlphaTestEffect, BasicEffect, etc.)
+                                fail when using
+                                <a href="c05db5d2-8063-9f11-af3c-e2389f8c0995.htm">Vector3F</a>/<a href="8829ae6d-4174-ee82-2a8b-2351dbb84844.htm">Vector4F</a>
+                                instead of
+                                <a href="http://msdn2.microsoft.com/en-us/library/bb199670" target="_blank">Vector3</a>/<a href="http://msdn2.microsoft.com/en-us/library/bb199679" target="_blank">Vector4</a>.
+                            </li><li>
+                                FIX: <a href="22d9c439-af08-d00f-18be-96a6ebbcc1ca.htm">OcclusionBuffer</a>
+                                does not handle partially infinite shapes (e.g. ocean's
+                                <a href="f27f2a44-d4e7-73d0-6dc6-53d7a456b99e.htm">PlaneShape</a>)
+                                correctly.
+                            </li><li>
+                                FIX: <a href="22d9c439-af08-d00f-18be-96a6ebbcc1ca.htm">OcclusionBuffer</a>
+                                did not cull shadow casters that were occluded from the light's point of view when "progressive shadow caster culling" is enabled.
+                            </li><li>
+                                FIX: <a href="22d9c439-af08-d00f-18be-96a6ebbcc1ca.htm">OcclusionBuffer</a>
+                                may uses wrong <a href="42f41e06-fa8e-2944-956e-0b4c788d1967.htm">MaxDistance</a>
+                                when culling shadow casters.
+                            </li><li>
+                                FIX: Wrong order of gamma correction and premultiplication in <em>Billboard.fx</em>.
+                            </li><li>
+                                FIX: Wrong opacity when rendering semi-transparent textures with <em>Forward.fx</em>.
+                                (Premultiplication and gamma correction are calculated in the wrong order, which results in a
+                                low opacity.)
+                            </li></ul></div><h4 class="subHeading" id="Samples">Samples</h4><div class="subsection"><ul><li>
+                                NEW: <em>WeightedBlendedOITSample</em> added, which implements
+                                <span class="term">weighted blended order-independent transparency</span>.
+                            </li><li>
+                                CHANGE: <em>InteropSample</em> (XNA) and <em>WpfInteropSample</em>
+                                (MonoGame) merged (shared source code).
+                                <br />
+                                The folder <em>InteropSample</em> now includes two Visual Studio projects:
+                                <em>InteropSample-XNA.csproj</em> and <em>InteropSample-MonoGame.csproj</em>.
+                                <br />
+                                The folder <em>WpfInteropSample</em> has been removed.
+                            </li><li>
+                                FIX: <em>WpfInteropSample</em> does not end when WPF window
+                                is active and ALT+F4 is pressed. (This bug was introduced by a change in MonoGame.)
+                            </li><li>
+                                FIX: Mesh name not set in <em>ProceduralObject.cs</em>.
+                            </li></ul></div><h4 class="subHeading" id="MonoGame">MonoGame 3.4</h4><div class="subsection"><ul><li><a href="http://www.monogame.net/2015/04/29/monogame-3-4/" target="_blank">MonoGame 3.4 Release Notes</a></li><li><strong>BREAKING CHANGE:</strong> MGFX uses a new preprocessor for
+                                effect files. Include files now need to end with a newline character, otherwise
+                                compilation fails.
+                            </li><li><strong>BREAKING CHANGE:</strong> Effect files (.fx) need to be rebuilt.
+                            </li><li><strong>CRITICAL FIX:</strong> Memory leak in <strong>VertexBuffer.GetData</strong> and
+                                <strong>IndexBuffer.GetData</strong>.
+                            </li><li>
+                                FIX: It is now possible to import skinned models from FBX files where the root
+                                bone has a transformation pivot.
+                            </li></ul></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

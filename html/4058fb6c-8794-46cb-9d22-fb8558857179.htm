@@ -1,0 +1,136 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Shadow Caster Culling</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="4058fb6c-8794-46cb-9d22-fb8558857179" /><meta name="Description" content="Rendering shadow maps can be expensive in large scenes. Directional lights, like the sun, usually cover the entire level. Modern shadow mapping algorithms, such as cascaded shadow maps, limit the distance up to which shadows are rendered." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="7d5a0abe-8231-452c-895c-e6dbab83822b.htm" title="Graphics Programming" tocid="7d5a0abe-8231-452c-895c-e6dbab83822b">Graphics Programming</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="cc20d61e-83cb-46c7-a2e2-0841a35043ba.htm" title="Occlusion Culling" tocid="cc20d61e-83cb-46c7-a2e2-0841a35043ba">Occlusion Culling</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="6679e11b-3057-4a17-822c-6c7e58307687.htm" title="What is Occlusion Culling?" tocid="6679e11b-3057-4a17-822c-6c7e58307687">What is Occlusion Culling?</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="cdbeb666-2028-4b73-b315-75c35e3158a5.htm" title="Occluders" tocid="cdbeb666-2028-4b73-b315-75c35e3158a5">Occluders</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="08902551-6d52-40de-b8bf-ff40a46bbc3f.htm" title="Occlusion Buffer" tocid="08902551-6d52-40de-b8bf-ff40a46bbc3f">Occlusion Buffer</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="4058fb6c-8794-46cb-9d22-fb8558857179.htm" title="Shadow Caster Culling" tocid="4058fb6c-8794-46cb-9d22-fb8558857179">Shadow Caster Culling</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="1dd61993-8033-4bb2-aeab-de3367913a36.htm" title="Statistics and Visualization (Debugging)" tocid="1dd61993-8033-4bb2-aeab-de3367913a36">Statistics and Visualization (Debugging)</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Shadow Caster Culling</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                Rendering shadow maps can be expensive in large scenes. Directional lights, like the sun,
+                usually cover the entire level. Modern shadow mapping algorithms, such as cascaded shadow
+                maps, limit the distance up to which shadows are rendered. Still, this may leave us with
+                hundreds or thousands of shadow casting objects that need to be rendered into a shadow map.
+                <span class="term">Shadow caster culling</span> reduces the number of shadow casters further by
+                removing shadow casters that do not contribute to the final image.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#ShadowCasterCulling">Shadow caster culling with OcclusionBuffer</a></li><li class="outlineSectionEntry"><a href="#ImplementationNotes">Implementation notes</a></li><li class="outlineSectionEntry"><a href="#Progressive">Conservative vs. progressive shadow caster culling</a></li></ul></div><div class="collapsibleAreaRegion" id="ShadowCasterCulling"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Shadow caster culling with OcclusionBuffer</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    The <a href="22d9c439-af08-d00f-18be-96a6ebbcc1ca.htm">OcclusionBuffer</a>
+                    implements shadow caster culling for the main directional light source. It is activated
+                    by passing the directional light node to the <a href="1f63fb55-a90e-57e0-b01b-1a8ba5eb6346.htm">Render</a>
+                    method. Multiple directional lights with shadows are not supported.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EABADAAA_tab1" class="codeSnippetContainerTabSingle">Example: Occlusion culling and shadow caster culling</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Render the occluders into the occlusion buffer.</span>
+<span class="highlight-comment">// lightNode is the main directional light that casts shadows.</span>
+occlusionBuffer.Render(occluders, lightNode, context);
+
+<span class="highlight-comment">// Perform occlusion culling and shadow caster culling on the</span>
+<span class="highlight-comment">// list of scene nodes.</span>
+occlusionBuffer.Query(sceneNodes, context);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABADAAA");</script><p>
+                    Shadow-casting nodes that are culled are internally marked as hidden. The <a href="50fe6abc-deec-f38d-d866-9d6558a2ebdf.htm">ShadowMapRenderer</a>
+                    will automatically skip these scene nodes.
+                </p></div><div class="collapsibleAreaRegion" id="ImplementationNotes"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Implementation notes</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    For background information about shadow caster culling see
+                    <a href="http://blog.selfshadow.com/publications/practical-visibility/" target="_blank">Stephen Hill and Daniel Collin: "Prac­ti­cal, Dynamic Vis­i­bil­ity for Games", GPU Pro 2</a>
+                    and
+                    <a href="http://www.nickdarnell.com/2010/07/hierarchical-z-buffer-occlusion-culling-shadows/" target="_blank">Nick Darnell: "Hierarchical Z-Buffer Occlusion Culling – Shadows"</a></p><p>
+                    Shadow caster culling involves several steps:
+                </p><ol><li><p><strong>Light Frustum Culling: </strong>
+                            As a first step the bounds of the shadow casters are compared with the light frustum.
+                            Shadow casters that do not intersect with the light frustum are marked as hidden.
+                        </p><p>
+                            (Note: A spotlight can be represented as a single frustum; an omnidirectional point
+                            light as six 90° frustums. In case of a directional light, the light frustum is an
+                            orthographic frustum, which needs to be large enough to cover the viewing frustum and
+                            catch all shadow casters in front of the light source.)
+                        </p></li><li><p><strong>Light Occlusion Culling: </strong>
+                            The occluders are rendered from the light's perspective and the bounds of the shadow
+                            casters are tested against the occluders. Shadow casters that are occluded from the
+                            light's perspective are marked as hidden.
+                        </p></li><li><p><strong>Camera Frustum Culling: </strong>
+                            Next, the extent of the shadow is estimated. The resulting shadow volume is compared
+                            with the viewing frustum. If the shadow volume does not intersect with the viewing
+                            frustum, the shadow caster is marked as hidden.
+                        </p></li><li><p><strong>Camera Occlusion Culling: </strong>
+                            The shadow volume is tested against the occluders from the camera's perspective.
+                            When the shadow volume is occluded, the shadow caster is marked as hidden.
+                        </p></li><li><p><strong>Shadow Caster vs. Receiver Test: </strong>
+                            (1) - (4) gets rid of most shadow casters that do not contribute to the final image.
+                            However, there is still a chance that a shadow "just passes through" the view and that
+                            the shadow is not cast on an object visible inside the viewing frustum.
+                            Bittner et al. have proposed a culling method that solves this issue
+                            (see
+                            <a href="http://www.cg.tuwien.ac.at/research/publications/2011/bittner-2011-scc/" target="_blank">"Shadow Caster Culling for Efficient Shadow Mapping"</a>):
+                        </p><p>
+                            This step assumes that we have already performed occlusion culling for the objects in
+                            the scene. Only objects that are visible from the main camera are potential shadow
+                            receivers. We can render all potential shadow receivers as seen from the light source
+                            into a mask. Then we can compare the bounds of the shadow casters with this mask.
+                            Only shadow casters that overlap with a visible shadow receiver needs to be rendered
+                            into the shadow map.
+                        </p></li></ol><p>
+                    The new
+                    <a href="22d9c439-af08-d00f-18be-96a6ebbcc1ca.htm">OcclusionBuffer</a>
+                    implements (1) - (4) for one directional light, which is usually the sun.
+                    <a href="1f63fb55-a90e-57e0-b01b-1a8ba5eb6346.htm">OcclusionBuffer<span id="LSTB0709C45_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB0709C45_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Render</a>
+                    creates a HZB for the active camera (which is set in the render context) and a HZB for the
+                    directional light.
+                    <a href="83a7716f-3c72-8acc-5b6b-2ccdad1ef086.htm">OcclusionBuffer<span id="LSTB0709C45_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB0709C45_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Query</a>
+                    performs occlusion culling and shadow caster culling on the given
+                    list of scene nodes. Shadow casters that are culled are marked,
+                    see flag <a href="460530b8-1179-f7e5-06cb-c96526b9605f.htm">SceneNode<span id="LSTB0709C45_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB0709C45_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>IsShadowCasterCulled</a>.
+                    This flag is automatically check by the
+                    <a href="b128b7ca-72bc-2c14-c91c-5bb56232ce21.htm">ShadowCasterQuery</a>.
+                    In custom scene queries this flag has to be checked explicitly.
+                </p><p>
+                    Step (5) is not implemented. It is also not desirable in some cases, for example: When a
+                    single shadow receiver stretches across the entire level (e.g. a landscape mesh), then (5)
+                    has no effect. When rendering volumetric effects, (5) might remove shadow casters that are
+                    actually needed in the shadow map.
+                </p><p>
+                    Local lights (point lights, spotlights, …) are culled as a whole as part of the regular
+                    occlusion culling. The remaining, visible lights are usually small and have a manageable
+                    number of shadow casters – shadow caster culling is not necessary/efficient.
+                </p></div><div class="collapsibleAreaRegion" id="Progressive"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Conservative vs. progressive shadow caster culling</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    The <a href="22d9c439-af08-d00f-18be-96a6ebbcc1ca.htm">OcclusionBuffer</a>
+                    supports two modes:
+                </p><ul><li>
+                        "Conservative" shadow caster culling performs steps 1 and 2.
+                    </li><li>
+                        "Progressive" shadow caster culling performs steps 1 - 4.
+                    </li></ul><p>
+                    The property <a href="786fad98-79ff-855d-4c00-9a487714e0ac.htm">ProgressiveShadowCasterCulling</a>
+                    determines whether progressive shadow caster culling is active.
+                </p><p>
+                    "Progressive" shadow caster culling is more aggressive than "conservative" shadow caster
+                    culling, but may cause problems: In some cases it is not possible to estimate the correct
+                    extent of the shadow volume. A shadow caster might be culled, even though its shadow should be
+                    visible. Shadows can start to flicker.
+                </p><p>
+                    The problem is caused by steps (3) and (4) because they require the extent of the shadow
+                    volume. The bounds of the shadow caster are defined, but the extent of the shadow volume,
+                    i.e. the distance at which the shadow ends in the scene, is not available. It is estimated
+                    by reading the maximum depth from the HZB during occlusion culling. Using this solution
+                    the extent of the shadow volume is the distance from the shadow caster to the furthest
+                    occluder behind the shadow caster. However, this method is unreliable if an object is both
+                    a shadow caster and an occluder at the same time. In this situation the following problems
+                    can occur:
+                </p><ul><li>
+                        The occluder occludes its own shadow volume. Hence, the actual depth of the shadow
+                        volume is not available. This case is rare because it only happens when the occluder
+                        is rectangular and perfectly axis-aligned with the light frustum. In all other cases,
+                        the tested shadow volume area is larger than the occluder and some HZB samples will
+                        not contain the occluder.
+                    </li><li>
+                        However, this may still be a problem when the shadow caster is completely surrounded
+                        by other occluders. In this case, the maximum depth behind the shadow caster is not be available in the HZB.
+                    </li></ul><p>
+                    In these cases the estimated extent of the shadow volume is too small and the shadow
+                    caster may be culled, which causes flickering or missing shadows. Both cases are rare, but
+                    they can be examined in the <em>OcclusionCullingSample</em>
+                    (see <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a>).
+                </p><p>
+                    The following solutions can be applied to prevent missing/flickering shadows:
+                </p><ul><li>
+                        Reduce the size of the occluder that causes the problem.
+                    </li><li>
+                        Remove the occluder that causes the problem.
+                    </li><li>
+                        Disable progressive shadow caster culling.
+                    </li></ul></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

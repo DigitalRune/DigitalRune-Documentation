@@ -1,0 +1,90 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>How To: Compare Floating-Point Numbers</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="492d3089-3c0f-43a5-b068-417fcd8f91e3" /><meta name="Description" content="This section shows how to safely compare floating-point numbers." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="2ac58586-0d4f-4625-bf4c-fc32591a5304.htm" title="DigitalRune Mathematics" tocid="2ac58586-0d4f-4625-bf4c-fc32591a5304">DigitalRune Mathematics</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="1f324567-e502-496a-a1ca-bdc232611133.htm" title="Articles" tocid="1f324567-e502-496a-a1ca-bdc232611133">Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="dcccdb1a-a354-46e0-a792-6d866b751a77.htm" title="How To: Add DigitalRune Mathematics to a Project" tocid="dcccdb1a-a354-46e0-a792-6d866b751a77">How To: Add DigitalRune Mathematics to a Project</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="492d3089-3c0f-43a5-b068-417fcd8f91e3.htm" title="How To: Compare Floating-Point Numbers" tocid="492d3089-3c0f-43a5-b068-417fcd8f91e3">How To: Compare Floating-Point Numbers</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="e3ea796c-f78d-4a57-8cb4-cb065513c928.htm" title="How To: Use Vectors, Matrices and Quaternions" tocid="e3ea796c-f78d-4a57-8cb4-cb065513c928">How To: Use Vectors, Matrices and Quaternions</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="f2ee69ec-0e54-4acd-a9e7-bd645644a05d.htm" title="How To: Solve a Non-Linear Equation" tocid="f2ee69ec-0e54-4acd-a9e7-bd645644a05d">How To: Solve a Non-Linear Equation</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="101938c1-f02f-4224-b64e-a95774668df8.htm" title="How To: Move Objects on a 3D Path" tocid="101938c1-f02f-4224-b64e-a95774668df8">How To: Move Objects on a 3D Path</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="81cd4f27-5ce5-4439-9a6c-121f2942f175.htm" title="Exponential Smoothing Filter" tocid="81cd4f27-5ce5-4439-9a6c-121f2942f175">Exponential Smoothing Filter</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="69aba1e3-d818-4c9d-9696-a5978ea88f84.htm" title="Scattered Interpolation" tocid="69aba1e3-d818-4c9d-9696-a5978ea88f84">Scattered Interpolation</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">How To: Compare Floating-Point Numbers</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This section shows how to safely compare floating-point numbers.</p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Numeric">The class Numeric</a></li><li class="outlineSectionEntry">Floating-point numbers in other types</li></ul></div><div class="collapsibleAreaRegion" id="Numeric"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />The class Numeric</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    This library contains a class
+                    <a href="aaa4772d-71bd-0e14-522a-3a294eeffdf6.htm">Numeric</a>
+                    that supports proper comparison of floating-point values. The comparisons
+                    are performed by checking if two values differ by less than a tolerance value epsilon.
+                    (Note: The class <a href="aaa4772d-71bd-0e14-522a-3a294eeffdf6.htm">Numeric</a>
+                    is part of the <em>DigitalRune.dll</em> not the <em>DigitalRune.Mathematics.dll</em>.)
+                </p><p>
+                    Following code shows a simple example where comparison with <span class="code">==</span>
+                    is not desired.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EABBCAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABBCAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABBCAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABBCAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Lets do some arbitrary calculations.</span>
+<span class="highlight-keyword">float</span> a = (<span class="highlight-keyword">float</span>)Math.PI;
+<span class="highlight-keyword">float</span> b = (<span class="highlight-keyword">float</span>)Math.Sqrt(a);
+<span class="highlight-keyword">float</span> c = (<span class="highlight-keyword">float</span>)Math.Sqrt(b);
+<span class="highlight-keyword">float</span> d = c * c * c * c;
+
+<span class="highlight-comment">// --&gt; d should be equal to a, but because of limited precision and numerical errors a != d.</span>
+<span class="highlight-keyword">if</span> (a == d)
+  Console.WriteLine(<span class="highlight-literal">"a == d"</span>);
+<span class="highlight-keyword">else</span>
+  Console.WriteLine(<span class="highlight-literal">"a != d"</span>);     <span class="highlight-comment">// This message is written. :-(</span>
+
+<span class="highlight-comment">// Comparison methods in Numeric allow a small error.</span>
+<span class="highlight-keyword">if</span> (Numeric.AreEqual(a, d))
+  Console.WriteLine(<span class="highlight-literal">"Numeric.AreEqual(a, d) is true."</span>);  <span class="highlight-comment">// This message is written. :-)</span>
+<span class="highlight-keyword">else</span>
+  Console.WriteLine(<span class="highlight-literal">"Numeric.AreEqual(a, d) is false."</span>);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABBCAAA");</script><p><a href="aaa4772d-71bd-0e14-522a-3a294eeffdf6.htm">Numeric</a>
+                    has several other methods for comparison of floating-point numbers (single or double precision).
+                </p><h4 class="subHeading">Epsilon values</h4><div class="subsection"><p>
+                            The values
+                            <a href="edc0896c-5b36-89a3-0ee8-75da8ac7f703.htm">EpsilonF</a>
+                            and
+                            <a href="76f86a6c-6b8a-c342-1eb8-42035cf5c298.htm">EpsilonD</a>
+                            in
+                            <a href="aaa4772d-71bd-0e14-522a-3a294eeffdf6.htm">Numeric</a>
+                            define the allowed error for the numerical comparison methods for single-
+                            and double-precision floating-point numbers.
+                            These values are used
+                            in the methods of
+                            <a href="aaa4772d-71bd-0e14-522a-3a294eeffdf6.htm">Numeric</a>
+                            - unless the method allows to specify a different epsilon as a method parameter.
+                        </p><p>
+                            These epsilon values have been optimized for typical 3D simulations and
+                            games - including 3D collision detection and rigid body physics simulation.
+                        </p></div><h4 class="subHeading">Common pitfalls</h4><div class="subsection"><p><a href="edc0896c-5b36-89a3-0ee8-75da8ac7f703.htm">EpsilonF</a>
+                            is used for single-precision floating-point numbers.
+                            <a href="76f86a6c-6b8a-c342-1eb8-42035cf5c298.htm">EpsilonD</a>
+                            is used for double-precision floating-point numbers.
+                            One common mistake is to invoke a method that uses the wrong epsilon value:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAAAACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAAAACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAAAACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAAAACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">float</span> myFloat = ...;
+<span class="highlight-keyword">bool</span> result1 = Numeric.AreEqual(myFloat, Math.Cos(<span class="highlight-number">0.3</span>f)));        <span class="highlight-comment">// Warning: This uses EpsilonD because Math.Cos() returns double!</span>
+<span class="highlight-keyword">bool</span> result2 = Numeric.AreEqual(myFloat, (<span class="highlight-keyword">float</span>)Math.Cos(<span class="highlight-number">0.3</span>f))); <span class="highlight-comment">// This uses EpsilonF!</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAAAACAAA");</script></div></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Floating-point numbers in other types</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    Several types implement the comparison operators (<span class="code">==</span>,
+                    <span class="code">!=</span>, <span class="code">&gt;=</span>, etc. in C#), for example:
+                    <a href="c05db5d2-8063-9f11-af3c-e2389f8c0995.htm">Vector3F</a>,
+                    <a href="f50d7e60-d2a6-cf17-6e14-41dbb1f85058.htm">Matrix44F</a>.
+                    These overloaded operations compare the floating-point values directly (without using an
+                    epsilon tolerance). In addition to the equality operators most types have methods, like
+                    <a href="5384703f-012b-73e7-0c62-b859e5dc45dd.htm">AreNumericallyEqual</a>,
+                    that perform comparisons using an epsilon tolerance.
+                </p><p>
+                    This example compares two vectors:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Define a vector.</span>
+Vector3F v0 = <span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">1000</span>, <span class="highlight-number">2000</span>, <span class="highlight-number">3000</span>);
+
+<span class="highlight-comment">// Define a rotation quaternion that rotates 360° around the x axis.</span>
+QuaternionF rotation = QuaternionF.CreateRotationX(MathHelper.ToRadians(<span class="highlight-number">360</span>));
+
+<span class="highlight-comment">// Rotate v0.</span>
+Vector3F v1 = rotation.Rotate(v0);
+
+<span class="highlight-comment">// The rotated vector v1 should be identical to v0 because a 360° rotation should not</span>
+<span class="highlight-comment">// change the vector. - But due to numerical errors v0 and v1 are not equal.</span>
+<span class="highlight-keyword">if</span> (v0 == v1)
+  Console.WriteLine(<span class="highlight-literal">"Vectors are equal."</span>);
+<span class="highlight-keyword">else</span>
+  Console.WriteLine(<span class="highlight-literal">"Vectors are not equal."</span>);   <span class="highlight-comment">// This message is written. :-(</span>
+
+<span class="highlight-comment">// With Vector3F.AreNumericallyEqual() we can check if two vectors are equal when we allow</span>
+<span class="highlight-comment">// a small numeric tolerance.</span>
+<span class="highlight-keyword">if</span> (Vector3F.AreNumericallyEqual(v0, v1))
+  Console.WriteLine(<span class="highlight-literal">"Vectors are numerically equal."</span>); <span class="highlight-comment">// This message is written. :-)</span>
+<span class="highlight-keyword">else</span>
+  Console.WriteLine(<span class="highlight-literal">"Vectors are not numerically equal."</span>);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAABAAA");</script></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

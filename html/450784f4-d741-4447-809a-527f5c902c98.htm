@@ -1,0 +1,287 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Input Handling</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="450784f4-d741-4447-809a-527f5c902c98" /><meta name="Description" content="This section describes the classes that read and process input from devices, like keyboard, mouse, etc." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="a5a463da-de2e-432f-bf7d-07206aaca634.htm" title="DigitalRune Game UI" tocid="a5a463da-de2e-432f-bf7d-07206aaca634">DigitalRune Game UI</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="450784f4-d741-4447-809a-527f5c902c98.htm" title="Input Handling" tocid="450784f4-d741-4447-809a-527f5c902c98">Input Handling</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="5bf85e1f-8f25-4778-b4b1-9d29faf15cc9.htm" title="UI Controls" tocid="5bf85e1f-8f25-4778-b4b1-9d29faf15cc9">UI Controls</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="8baa0734-787c-4b13-9cc8-e046adbd4bb9.htm" title="Articles" tocid="8baa0734-787c-4b13-9cc8-e046adbd4bb9">Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="6643e7a7-230b-43a8-ab8e-ec47a1613cbd.htm" title="FAQ" tocid="6643e7a7-230b-43a8-ab8e-ec47a1613cbd">FAQ</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="6be1c3d5-e842-4dec-81d8-5fce19a76345.htm" title="Class Diagrams" tocid="6be1c3d5-e842-4dec-81d8-5fce19a76345">Class Diagrams</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Input Handling</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This section describes the classes that read and process input from devices,
+                like keyboard, mouse, etc.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Overview">Overview</a></li><li class="outlineSectionEntry"><a href="#InputService">The InputService and the InputManager</a></li><li class="outlineSectionEntry"><a href="#Clicks">Detecting clicks</a></li><li class="outlineSectionEntry"><a href="#Preemption">Input preemption and IsHandled flags</a></li><li class="outlineSectionEntry"><a href="#LogicalPlayers">Connected controllers and logical players</a></li><li class="outlineSectionEntry"><a href="#Repetition">Key and button repetition</a></li><li class="outlineSectionEntry"><a href="#MouseCentering">Mouse position and mouse centering</a></li><li class="outlineSectionEntry"><a href="#Commands">Input commands and user-defined input bindings</a></li><li class="outlineSectionEntry"><a href="#Misc">Miscellaneous</a></li></ul></div><div class="collapsibleAreaRegion" id="Overview"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Overview</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    Every interactive application has to read and process input from one or more input devices. The namespace
+                    <a href="02bd96b5-c091-2df3-73d5-fbb8056b8e03.htm">DigitalRune.Game.Input</a>
+                    (see also
+                    <a href="726991b1-4bbc-4d45-a9c7-e422a5e4f65d.htm">Class Diagrams of Namespace DigitalRune.Game.Input</a>)
+                    provides classes that handle several common input-related tasks:
+                </p><ul><li>
+                        Detecting clicks and double-clicks.
+                    </li><li>
+                        Order of input handling between game components.
+                    </li><li>
+                        Assigning logical players to physical controllers.
+                    </li><li>
+                        Key/button repetition: Repeating clicks for keys/buttons that are pressed down for a longer period.
+                    </li><li>
+                        Translating raw input (e.g. "Button A was clicked") to semantic commands (e.g. "User wants to jump").
+                    </li><li>
+                        Centering the mouse cursor for relative mouse input.
+                    </li><li>
+                        Etc.
+                    </li></ul></div><div class="collapsibleAreaRegion" id="InputService"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />The InputService and the InputManager</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    The central interface is
+                    <a href="ccc38e5b-8b21-b109-140c-2ce6c275070f.htm">IInputService</a>,
+                    which provides access to all input devices supported by XNA:
+                </p><ul><li>
+                        Keyboard
+                    </li><li>
+                        Mouse
+                    </li><li>
+                        Gamepads (including special controllers, like guitars, dancepads, etc.)
+                    </li><li>
+                        Accelerometer (Windows Phone 7)
+                    </li><li>
+                        Touch input (Windows Phone 7)
+                    </li></ul><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Tip" /> Tip</th></tr><tr><td><p>
+                        All components of a game should use this interface to read user input instead
+                        of accessing the input devices in XNA directly.
+                    </p><p>
+                        The interface could be implemented in various ways. The implementations can be changed
+                        without breaking existing components. For example, the default implementation of the
+                        input service reads input from various the devices. Another implementation could read
+                        input from a file to replay a previous gameplay session.
+                    </p><p>
+                        Components that only depend on certain interfaces are easier to unit-tested.
+                    </p></td></tr></table></div><p>
+                    This interface is implemented by the class
+                    <a href="4ecd0ffb-a08d-20e6-7d7a-a221ceddd1f1.htm">InputManager</a>.
+                    The input manager has one additional member, which is not in the interface:
+                    <a href="399f0719-6e93-c5de-4979-01109fc091b0.htm">InputManager<span id="LST578BF69A_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST578BF69A_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update(TimeSpan)</a>.
+                    <a href="399f0719-6e93-c5de-4979-01109fc091b0.htm">Update</a>
+                    must be called once per frame. In this method the input manager reads the device states and processes the input.
+                </p><p>
+                    The input service has a
+                    <a href="7dcddb80-f179-c89e-c782-3b968d45a41c.htm">Settings</a>
+                    property where
+                    <a href="63f8b93e-23b5-ba7e-b41e-28d433c2ecd1.htm">InputSettings</a>
+                    can be configured (timings, thresholds, etc.).
+                </p></div><div class="collapsibleAreaRegion" id="Clicks"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Detecting clicks</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    The input service provides methods to check if a button is down, up, pressed, or released:
+                </p><ul><li><strong>IsDown()</strong> checks if a button is currently pressed down.
+                    </li><li><strong>IsUp()</strong> checks if a button is currently released.
+                    </li><li><strong>IsPressed()</strong> checks if a button was pressed in the current frame.
+                        (The button was up in the previous frame, but is down in the current frame.)
+                    </li><li><strong>IsReleased()</strong> checks if a button was released in the current frame.
+                        (The button was down in the previous frame, but is up in the current frame.)
+                    </li></ul><p>
+                    That means: If the user presses a button and holds it for 10 frames, then
+                    <strong>IsDown</strong> returns true for all 10 frames.
+                    <strong>IsPressed</strong> is only true in the first frame.
+                    <strong>IsReleased</strong> is true for the one frame where the user
+                    releases the button.
+                </p><ul><li><strong>IsDoubleClick()</strong> can be used to check for double-clicks.
+                    </li></ul></div><div class="collapsibleAreaRegion" id="Preemption"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Input preemption and IsHandled flags</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    Typically, multiple components in a game need to handle input. The input needs
+                    to be processed in a certain order.
+                </p><p>
+                    For example: If several game menus are open, only the top-most menu should handle
+                    the input. If a component has captured the mouse during a drag-and-drop operation,
+                    other components should ignore mouse input.
+                </p><p>
+                    To handle the input preemption, the input service provides <strong>IsHandled</strong>
+                    flags for all devices:
+                </p><ul><li><a href="62de7439-102b-2ee7-55b7-0ad3a736b1ae.htm">IsAccelerometerHandled</a></li><li><a href="1a7aaefe-b3d9-2177-ce37-434a0aac329c.htm">IsGamePadHandled</a></li><li><a href="401b310b-6f7a-e15f-2eed-ce32d171f88a.htm">IsKeyboardHandled</a></li><li><a href="6cd01efe-8e5e-72dd-795a-d726a320d57e.htm">IsMouseOrTouchHandled</a></li></ul><p>
+                    The flags are reset in <a href="399f0719-6e93-c5de-4979-01109fc091b0.htm">InputManager<span id="LST578BF69A_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST578BF69A_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update(TimeSpan)</a>
+                    and the game components that handle input can set one or more flags to indicate
+                    that a device has been handled and should not be processed by other components.
+                    All components should check the flags before processing input.
+                    (Game components can choose to ignore this flag and still read and handle the input.)
+                </p><p>
+                    Here is an example that shows how a game component should process mouse clicks:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID3EABAGAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID3EABAGAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID3EABAGAAA');return false;" title="Copy">Copy</a></div></div><div id="ID3EABAGAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Has mouse input been handled by another game component?</span>
+<span class="highlight-keyword">if</span> (!inputService.IsMouseOrTouchHandled)
+{
+  <span class="highlight-comment">// Was left mouse button pressed in this frame?</span>
+  <span class="highlight-keyword">if</span> (inputService.IsPressed(MouseButtons.Left, <span class="highlight-keyword">false</span>)) 
+  {
+    <span class="highlight-comment">// React to mouse click.</span>
+    ...
+
+    <span class="highlight-comment">// Inform other game objects that the mouse input was handled.</span>
+    inputService.IsMouseOrTouchHandled = <span class="highlight-keyword">true</span>;
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID3EABAGAAA");</script><p>
+                    Albeit very simple, this mechanism has proven to be very powerful in practice.
+                    It allows to correctly handle input even in complex games with multiple windows,
+                    nested 3D scenes and even "mouse-capturing" for drag-and-drop. The
+                    <strong>IsHandled</strong> flags replace more complex input routing methods.
+                </p></div><div class="collapsibleAreaRegion" id="LogicalPlayers"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Connected controllers and logical players</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    The Xbox 360 supports up to 4 connected game controllers.
+                </p><p><strong>Important:</strong>
+                    Games should not assume that the game controller connected to
+                    the first port is the controller that the player wants to use. For single
+                    player games, the user should be able to pick any controller and play with
+                    it. The input handling must be able to ignore some controllers (e.g. the
+                    first controller could be a guitar controller). And the game must be able
+                    to detect when a controller was disconnected and automatically pause the
+                    gameplay.
+                </p><p>
+                    The input service allows to assign a
+                    <a href="19791639-1b96-eef1-c9bb-095b05f994cc.htm">LogicalPlayerIndex</a>
+                    (= player) to a
+                    <a href="http://msdn.microsoft.com/en-us/library/microsoft.xna.framework.playerindex.aspx" target="_blank">PlayerIndex</a>
+                    (= controller port). This assignment does not occur automatically, it must be set by
+                    the game code. Typically, the game will show a start screen where the user has to press
+                    the START or the A button. The controller where START or A is pressed should henceforth
+                    be used as the first logical player index ("Player One").
+                </p><p>
+                    Game controllers are assigned to players using the method
+                    <a href="aaef81df-be8b-aade-a464-ec7b8205b1a5.htm">SetLogicalPlayer</a>.
+                </p><p>
+                    Several methods of the input service can be called using either the <strong>PlayerIndex</strong>
+                    or the <strong>LogicalPlayerIndex</strong>. When using the <strong>PlayerIndex</strong>,
+                    the methods will return the input of the game controller at the given port when connected or default values when
+                    disconnected. When using the <strong>LogicalPlayerIndex</strong>
+                    the methods will return the input of the game controller assigned to the specified player or default
+                    values when no controller has been assigned to the player.
+                </p><p>
+                    Further, the game must poll the
+                    <a href="http://msdn.microsoft.com/en-us/library/microsoft.xna.framework.input.gamepadstate.isconnected.aspx" target="_blank">IsConnected</a>
+                    flag of the game controller in each frame to detect and handle disconnects. (The input service
+                    does not handle disconnects automatically.)
+                </p></div><div class="collapsibleAreaRegion" id="Repetition"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID6RB')" onkeypress="SectionExpandCollapse_CheckKey('ID6RB', event)" tabindex="0"><img id="ID6RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Key and button repetition</span></div><div id="ID6RBSection" class="collapsibleSection"><p>
+                    Key repetition creates "virtual key presses" when a key is held down for a
+                    longer period.
+                </p><p>
+                    Key repetition is, for example, used for keyboard input in text boxes: The user
+                    presses and holds the 'A' key. The first 'A' character is displayed immediately
+                    and after a short delay more 'A' characters are added to the text box.
+                </p><p>
+                    Button repetition is also used when navigating menus with a gamepad: The user opened a game menu
+                    and holds down the thumbstick or D-pad in one direction. Immediately the next item in the
+                    menu is selected. After a short delay the selection moves from menu item to menu item until
+                    the user releases the thumbstick or D-pad.
+                </p><p>
+                    The input services automatically generates virtual key presses. The
+                    <strong>IsPressed</strong> methods have an additional parameter called
+                    <span class="code">useKeyRepetition</span>/<span class="code">useButtonRepetition</span>.
+                    If this parameter is true, the <strong>IsPressed</strong> method return physical key
+                    presses as well as virtual key presses.
+                </p><p>
+                    The repetition delay and repetition interval can be configured in the
+                    <a href="63f8b93e-23b5-ba7e-b41e-28d433c2ecd1.htm">InputSettings</a>.
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                        Only the last key/button press is repeated. If button A and then B are pressed
+                        and held, virtual presses are only generated for button B.
+                    </p><p>
+                        This is not optimal when navigating menus with a gamepad. For example:
+                        The left thumbstick is pushed downwards. Then the thumbstick is, accidentally, pushed to the left.
+                        Now both a down and a left press are recognized. If the user corrects his mistake and pushes the
+                        thumbstick straight down, no virtual presses are generated because virtual presses are only
+                        generated for the last pressed button/direction. The thumbstick must be released and pushed down
+                        so that a new down press is recognized and used for the repetition. - If this problem occurs,
+                        it might help to increase the
+                        <a href="9634dea1-4c01-dd57-d816-4f2981bc08bd.htm">ThumbstickThreshold</a>.
+                    </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="MouseCentering"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID7RB')" onkeypress="SectionExpandCollapse_CheckKey('ID7RB', event)" tabindex="0"><img id="ID7RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Mouse position and mouse centering</span></div><div id="ID7RBSection" class="collapsibleSection"><p>
+                    The mouse position, as read from the mouse device, is available in
+                    <a href="d4f35860-618e-07f7-ebf4-a6fe755cf2e8.htm">MousePositionRaw</a>,
+                    which is a read-only property. The same value is also stored in
+                    <a href="191ae406-1b5d-53f7-a9f9-4108164782e6.htm">MousePosition</a>,
+                    which is writable property and can be modified by game components. This is helpful if
+                    a game component expects the mouse position to be relative to a local (or transformed) viewport.
+                    In general, game components should use the <strong>MousePosition</strong> property to read
+                    the mouse position. The game (or the first game component that handles input) can read
+                    <strong>MousePositionRaw</strong> in each frame and set the adjusted position in
+                    <strong>MousePosition</strong>.
+                </p><p>
+                    Some games, like first-person shooters, need relative mouse input to rotate the view.
+                    Normally, the mouse is stopped when it reaches the screen boundary - and the view does
+                    not rotate any further. To avoid this behavior,
+                    <a href="997a4539-519e-40b2-ba5f-6f3f61252a7c.htm">EnableMouseCentering</a>
+                    can be set. The input service will automatically reset the mouse position in each frame.
+                    The mouse position will be set to
+                    <a href="e5467d9a-cb28-3974-cb99-96b3af507f04.htm">MouseCenter</a>
+                    - usually the center of the screen. The property is defined in the input settings.
+                </p><p><a href="840621af-34cd-3390-2eb2-e1d360da0be8.htm">MousePositionDeltaRaw</a>
+                    and
+                    <a href="f3b2b173-b60b-987f-7e6c-7159505e5b27.htm">MousePositionDelta</a>
+                    can be used to get the relative movement of the mouse since the last frame.
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Tip" /> Tip</th></tr><tr><td><p>
+                        It is a good practice to disable mouse centering when the game window does not have
+                        the focus (e.g. the user presses ALT+Tab and switches to another applications). Check
+                        <a href="http://msdn.microsoft.com/en-us/library/microsoft.xna.framework.game.isactive.aspx" target="_blank">Game.IsActive</a>
+                        to see whether the game window is active.
+                    </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="Commands"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID8RB')" onkeypress="SectionExpandCollapse_CheckKey('ID8RB', event)" tabindex="0"><img id="ID8RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Input commands and user-defined input bindings</span></div><div id="ID8RBSection" class="collapsibleSection"><p>
+                    Game input should be configurable by the user. Users should be able to
+                    reconfigure the controls to their likings. Game components that require user
+                    input should not directly check the "A" button to decide if the user wants to jump.
+                    Instead, there needs to be a level of abstraction that separates the actual input from
+                    the desired action the user wants to perform.
+                </p><p>
+                    Input commands (see base class <a href="d860397b-da53-d4e6-e248-20c213894a42.htm">IInputCommand</a>)
+                    translate raw input (such as button presses, key combinations, etc.) to semantic
+                    actions.
+                </p><p>
+                    All input commands have a <a href="38b6612c-fc87-e75b-0e1c-2c896bf1c9c6.htm">Name</a>,
+                    such as "Forward", "Jump", "Shoot", which identifies the action and a
+                    <a href="6cb02b86-ad86-20c0-2734-69f54a618a2e.htm">Value</a>
+                    that represents the result of the user input. The <a href="6cb02b86-ad86-20c0-2734-69f54a618a2e.htm">Value</a>
+                    is a floating-point number - most actions will have only two output values:
+                    0 to indicate that the input command is inactive - the user has not pressed the
+                    required buttons or keys. And 1 to indicate that the input command is active - the
+                    user wants to perform the action. Depending on the type of action, input commands can be
+                    bound to analog input. For example, the "Forward" command could be mapped to the y-axis
+                    of the game pad. In this case a positive value indicates that the user wants
+                    to move	forward and a negative value indicates that the user wants to move backward.
+                </p><p>
+                    Input commands are managed by the <a href="ccc38e5b-8b21-b109-140c-2ce6c275070f.htm">IInputService</a>.
+                    Input commands can be registered or unregistered by adding them to or removing them
+                    from the <a href="bba3c6c6-a910-4f02-8922-2e0641c3b2ab.htm">Commands</a>.
+                    When the input service is updated, the method <a href="32578f22-243c-39c7-6d06-1a5cb32b3c8f.htm">Update</a>
+                    of all registered input commands is executed and the commands can check the input
+                    devices and update their value.
+                </p><p>
+                    Game components can check the <a href="6cb02b86-ad86-20c0-2734-69f54a618a2e.htm">Value</a>
+                    of an input command to see if a certain action should be performed. For example:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID3EAEBCAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID3EAEBCAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID3EAEBCAAA');return false;" title="Copy">Copy</a></div></div><div id="ID3EAEBCAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">if</span> (InputService.Commands[<span class="highlight-literal">"Jump"</span>].Value &gt; <span class="highlight-number">0</span>)
+{
+  <span class="highlight-comment">// Let the player character jump.</span>
+  ...
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID3EAEBCAAA");</script><p>
+                    If all game components strictly use input commands, then controls can easily be
+                    remapped at runtime. Input commands can be created for different input events: button
+                    presses, key presses, key combinations, double-clicks, mouse gestures, etc.
+                    Custom input commands can also be used to encapsulate complex input processing. For example:
+                </p><ul><li>
+                        Create a "LowPassFilterCommand" that reads and filters an input signal.
+                    </li><li>
+                        Create a "HoldButtonCommand" that becomes active when a button is held down for a certain duration.
+                    </li><li>
+                        Etc.
+                    </li></ul><p>
+                    Creating custom input commands is simple: New input commands need to implement the
+                    interface <a href="d860397b-da53-d4e6-e248-20c213894a42.htm">IInputCommand</a>.
+                    In the <a href="32578f22-243c-39c7-6d06-1a5cb32b3c8f.htm">Update</a>
+                    method the commands need to check the input and set their
+                    <a href="6cb02b86-ad86-20c0-2734-69f54a618a2e.htm">Value</a>
+                    accordingly.
+                </p><p>
+                    If game components regularly access input commands, they can retrieve the
+                    input commands once from the input service and store a reference to the command
+                    for future use. (This assumes that the command instances are persistent for the
+                    lifetime of the game. That means, once a "Jump" command has been registered in
+                    the input service it should not be replaced by another "Jump" command.)
+                </p><h4 class="subHeading" id="ConfigurableInputCommand">ConfigurableInputCommand</h4><div class="subsection"><p>
+                            The <a href="72069b2e-ec6e-2dc0-ff3a-b580ca376f4d.htm">ConfigurableInputCommand</a>
+                            is the default implementation of <a href="d860397b-da53-d4e6-e248-20c213894a42.htm">IInputCommand</a>,
+                            which is recommend for most games: The
+                            <a href="72069b2e-ec6e-2dc0-ff3a-b580ca376f4d.htm">ConfigurableInputCommand</a>
+                            allowes to define a <a href="727f1b44-3af2-a32c-ab16-18b1fe790931.htm">PrimaryMapping</a>
+                            and a <a href="2e55cb4c-8652-b5c4-383c-0a1d13c968ac.htm">SecondaryMapping</a>.
+                            Actions can be bound to mouse, keyboard, or game pad input and reconfigured
+                            at runtime.
+                        </p><div class="mediaNear"><img alt="DigitalRune.Game.Input (Input Commands)" src="../media/Game.Input_Commands.png" /></div></div></div><div class="collapsibleAreaRegion" id="Misc"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID9RB')" onkeypress="SectionExpandCollapse_CheckKey('ID9RB', event)" tabindex="0"><img id="ID9RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Miscellaneous</span></div><div id="ID9RBSection" class="collapsibleSection"><p>
+                    In some game states it makes sense to skip <a href="399f0719-6e93-c5de-4979-01109fc091b0.htm">InputManager<span id="LST578BF69A_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST578BF69A_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update(TimeSpan)</a>,
+                    for example if the game window does not have focus (<a href="http://msdn.microsoft.com/en-us/library/microsoft.xna.framework.game.isactive.aspx" target="_blank">Game.IsActive</a>
+                    is false). (This is not automatically done by the input manager because in
+                    some cases input should be processed even if the game is inactive.)
+                </p></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

@@ -1,0 +1,110 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>FBX Export from Blender</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="6f749972-9cb2-4274-b283-c327ba45e379" /><meta name="Description" content="Here are a few tips for exporting FBX files from Blender." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="9604b781-8adb-4ec6-87bd-85b805e9c036.htm" title="Asset Creation" tocid="9604b781-8adb-4ec6-87bd-85b805e9c036">Asset Creation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="6cc96ddc-4127-4ec7-889a-19cb71af0d3d.htm" title="FBX Support" tocid="6cc96ddc-4127-4ec7-889a-19cb71af0d3d">FBX Support</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="48064718-39d0-4169-90d7-09cfad8ae1f8.htm" title="FBX Export from 3ds Max" tocid="48064718-39d0-4169-90d7-09cfad8ae1f8">FBX Export from 3ds Max</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="6f749972-9cb2-4274-b283-c327ba45e379.htm" title="FBX Export from Blender" tocid="6f749972-9cb2-4274-b283-c327ba45e379">FBX Export from Blender</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">FBX Export from Blender</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                Here are a few tips for exporting FBX files from Blender.
+            </p><p>
+                This article assumes that you have basic knowledge about modeling and rigging in
+                Blender.
+            </p><p>
+                Please note that the instruction and settings mentioned in this article were tested
+                with Blender 2.76b. Other versions of Blender may behave differently. Other FBX 
+                files may require different settings.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Units">Units</a></li><li class="outlineSectionEntry"><a href="#Import">FBX import</a></li><li class="outlineSectionEntry"><a href="#Fix">Fixing the model</a></li><li class="outlineSectionEntry"><a href="#Export">FBX export</a></li><li class="outlineSectionEntry"><a href="#seeAlsoSection">See Also</a></li></ul></div><div class="collapsibleAreaRegion" id="Units"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Units</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    Before creating a new model or importing an existing model into Blender, check
+                    the units settings. Go to <span class="ui">Properties | Scene | Units</span> and note the settings.
+                    The units should be set to either:
+                </p><ul><li><span class="ui">None</span> (which is interpreted as 1 unit = 1 m)
+                    </li><li><span class="ui">Metric</span> with <span class="ui">Scale = 1.0</span> (which is interpreted as 1 unit = 1 m)
+                    </li><li><span class="ui">Metric</span> with <span class="ui">Scale = 0.01</span> (which is interpreted as 1 unit = 1 cm)
+                    </li></ul><p>
+                    Do not use <span class="ui">Imperial</span> because the FBX format uses the metric system (1 unit = 1 cm)
+                    by default.
+                </p><div class="mediaNear"><img alt="Blender-Units" src="../media/Blender-Units.png" /></div><p>
+                    Note that changing the units after the model was created does not change the data -
+                    only how it is interpreted.
+                </p></div><div class="collapsibleAreaRegion" id="Import"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />FBX import</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    Many FBX models available on the web use bad conventions or settings not supported
+                    in MonoGame. In these cases it is necessary to import the model in Blender and apply
+                    the appropriate fixes.
+                </p><p>
+                    The current versions of Blender can import FBX 7.4 (binary).
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Important note" /> Important</th></tr><tr><td><p>
+                        The FBX import in Blender is the main point of corruption, especially for animated
+                        models. Using the wrong settings can screw up a model or its animations - without 
+                        an easy way to fix them later on!
+                    </p><p>
+                        In some cases the imported model and its animations look okay in Blender, yet
+                        it is not possible to export the model and produce a working FBX file. Therefore
+                        it is necessary to test FBX import/export settings early on!
+                    </p></td></tr></table></div><p>
+                    To import an FBX file in Blender go to <span class="ui">File | Import | FBX (.fbx)</span>. In the 
+                    <span class="ui">Main</span> category, set the <span class="ui">Scale</span> to:
+                </p><ul><li><span class="ui">100</span> if the Blender units are "<span class="ui">None</span>".
+                    </li><li><span class="ui">100</span> if the Blender units are "<span class="ui">Metric</span> with <span class="ui">Scale = 1</span>"
+                    </li><li><span class="ui">1</span> if the Blender units are "<span class="ui">Metric</span> with <span class="ui">Scale = 0.01</span>"
+                    </li></ul><p>
+                    Do NOT use <span class="ui">!EXPERIMENTAL! Apply Transform</span> during import. This can corrupt
+                    the animations internally!
+                </p><div class="mediaNear"><img alt="Blender-FBX-Import-01" src="../media/Blender-FBX-Import-01.png" /></div><p>
+                    In the <span class="ui">Armature category</span> either set <span class="ui">Automatic Bone Orientation</span>,
+                    or manually play around with the <span class="ui">Primary Bone Axis</span> and <span class="ui">Second Bone Axis</span>.
+                    Many FBX models use:
+                </p><ul><li><span class="ui">Primary Bone Axis</span> = <span class="ui">X Axis</span></li><li><span class="ui">Secondary Bone Axis</span> = <span class="ui">Y Axis</span></li></ul><div class="mediaNear"><img alt="Blender-FBX-Import-02" src="../media/Blender-FBX-Import-02.png" /></div><p>
+                    Select the FBX file and click <span class="ui">Import FBX</span>.
+                </p></div><div class="collapsibleAreaRegion" id="Fix"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Fixing the model</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    After importing the FBX file, animated models (mesh skinning) may look wrong. There
+                    might be a rotation transform between the mesh and armature. Here are instructions
+                    to fix this problem.
+                </p><p>
+                    If the mesh is parented to the armature, clear the parent: Select the mesh in the
+                    <span class="ui">3D View</span>, click <span class="ui">Object | Parent | Clear Parent</span>.
+                </p><p>
+                    If the mesh has an <span class="ui">Armature Modifier</span>, remove the modifier.
+                </p><p>
+                    Select the armature in the <span class="ui">3D View</span> or the <span class="ui">Outliner</span> and check the
+                    transform of the armature: Go to <span class="ui">Properties | Object | Transform</span>. Apply
+                    any rotation, but do NOT apply any scale! The <span class="ui">Rotation</span> should be (0, 0, 0)
+                    and the <span class="ui">Scale</span> should be (1, 1, 1)!
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Important note" /> Important</th></tr><tr><td><p>
+                        A <span class="ui">Scale</span> other than (1, 1, 1) usually means that the FBX was imported with
+                        the wrong settings. The animation data might be corrupt! The animations may look
+                        fine in Blender, but you won't be able to export them correctly. In this case:
+                        Start over again and try different import settings!
+                    </p></td></tr></table></div><p>
+                    Next, check the mesh. Select the mesh in the <span class="ui">3D View</span> or <span class="ui">Outliner</span>
+                    and go to <span class="ui">Properties | Object | Transform</span>. Apply any rotation or scale.
+                    The <span class="ui">Rotation</span> should be (0, 0, 0) and the <span class="ui">Scale</span> should be (1, 1, 1).
+                    The <span class="ui">Location</span> of the mesh should be identical to the armature - ideally set
+                    both locations to (0, 0, 0).
+                </p><div class="mediaNear"><img alt="Blender-Transform" src="../media/Blender-Transform.png" /></div><p>
+                    After the transforms are fixed, select the mesh and add the <span class="ui">Armature Modifier</span>
+                    again. Play back the animations check whether the model looks okay.
+                </p></div><div class="collapsibleAreaRegion" id="Export"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />FBX export</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    The current versions of Blender can export FBX 6.1 ASCII and FBX 7.4 Binary. Choose
+                    <span class="ui">FBX 7.4 binary</span>.
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                        Blender 2.68 could only export FBX 6.1 ASCII, but it had supported special settings
+                        (<span class="ui">XNA Rotate Animation Hack</span>, <span class="ui">XNA Strict Options</span>) for XNA. Blender
+                        2.68 did not support importing FBX files.
+                    </p><p>
+                        See
+                        <a href="http://blog.diabolicalgame.co.uk/2011/07/exporting-animated-models-from-blender.html" target="_blank">Exporting Animated Models From Blender To XNA</a>
+                        when working with previous versions of Blender.
+                    </p></td></tr></table></div><p>
+                    To export a model go to <span class="ui">File | Export | FBX (.fbx)</span>. In the <span class="ui">Main</span> category set the
+                    <span class="ui">Scale</span> to:
+                </p><ul><li><span class="ui">0.01</span> if the Blender units are "<span class="ui">None</span>".
+                    </li><li><span class="ui">0.01</span> if the Blender units are "<span class="ui">Metric</span> with <span class="ui">Scale = 1</span>"
+                    </li><li><span class="ui">1</span> if the Blender units are "<span class="ui">Metric</span> with <span class="ui">Scale = 0.01</span>"
+                    </li></ul><p>
+                    Enable <span class="ui">!EXPERIMENTAL! Apply Transform</span>.
+                </p><div class="mediaNear"><img alt="Blender-FBX-Export-01" src="../media/Blender-FBX-Export-01.png" /></div><p>
+                    In the <span class="ui">Armature</span> category you may want enable <span class="ui">Only Deform Bones</span>
+                    and disable <span class="ui">Add Leaf Bones</span> to exclude bones which are not required at runtime.
+                </p><div class="mediaNear"><img alt="Blender-FBX-Export-03" src="../media/Blender-FBX-Export-03.png" /></div><p>
+                    Select the output file and click <span class="ui">Export FBX</span>.
+                </p></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID4RBSection" class="collapsibleSection"><h4 class="subHeading">Other Resources</h4><div class="seeAlsoStyle"><a href="https://www.blender.org/" target="_blank">Blender</a></div><div class="seeAlsoStyle"><a href="http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Import-Export/Autodesk_FBX" target="_blank">Blender FBX Add-on</a></div><div class="seeAlsoStyle"><a href="http://blog.diabolicalgame.co.uk/2011/07/exporting-animated-models-from-blender.html" target="_blank">Exporting Animated Models From Blender [2.6x] To XNA</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

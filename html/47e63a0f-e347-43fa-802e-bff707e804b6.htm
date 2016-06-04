@@ -1,0 +1,167 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Character Animation Basics</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="47e63a0f-e347-43fa-802e-bff707e804b6" /><meta name="Description" content="DigitalRune Animation provides comprehensive support for 3D character animation: Skeletal animation, inverse kinematics, ragdoll physics, and more." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="c2892dfd-491e-4e78-83d1-737e38f1acc9.htm" title="DigitalRune Animation" tocid="c2892dfd-491e-4e78-83d1-737e38f1acc9">DigitalRune Animation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="93178dcc-a9b9-4cc6-b4df-ed693b988561.htm" title="3D Character Animation" tocid="93178dcc-a9b9-4cc6-b4df-ed693b988561">3D Character Animation</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="47e63a0f-e347-43fa-802e-bff707e804b6.htm" title="Character Animation Basics" tocid="47e63a0f-e347-43fa-802e-bff707e804b6">Character Animation Basics</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="e988b18d-0b1a-481d-89e6-3d40afa5ab5d.htm" title="Skeleton Mapping" tocid="e988b18d-0b1a-481d-89e6-3d40afa5ab5d">Skeleton Mapping</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="64fa1edd-5392-421b-b647-6379fea78318.htm" title="Inverse Kinematics" tocid="64fa1edd-5392-421b-b647-6379fea78318">Inverse Kinematics</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="699e16ff-af51-48c0-bc95-940ee40bbe17.htm" title="Ragdoll Physics" tocid="699e16ff-af51-48c0-bc95-940ee40bbe17">Ragdoll Physics</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="70b9ddd0-4356-45ac-8915-1af42a62ee08.htm" title="Xbox LIVE Avatars" tocid="70b9ddd0-4356-45ac-8915-1af42a62ee08">Xbox LIVE Avatars</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Character Animation Basics</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                DigitalRune Animation provides comprehensive support for 3D character animation:
+                Skeletal animation, inverse kinematics, ragdoll physics, and more.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#SkeletalAnimation">Skeletal animation</a></li><li class="outlineSectionEntry"><a href="#Morphing">Morphing animation</a></li></ul></div><div class="collapsibleAreaRegion" id="SkeletalAnimation"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Skeletal animation</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    Skeletal animation is the prevalent technique for 3D character animation.
+                    The mesh of a character model is deformed based on an underlying skeleton.
+                    The technique is known under a variety of names: <span class="term">mesh skinning</span>,
+                    <span class="term">enveloping</span>, <span class="term">matrix deformation</span>,
+                    <span class="term">linear blend skinning</span>, <span class="term">smooth skinning</span> or
+                    <span class="term">skeleton-subspace deformation</span>.
+                </p><h4 class="subHeading" id="Skeleton">Skeleton and skeleton pose</h4><div class="subsection"><p>
+                            A <a href="a45d6150-0eaa-8faa-3e5b-3232cb76c51c.htm">Skeleton</a>
+                            defines the structure of a skeleton. It defines the hierarchy of bones
+                            and their position and orientation in <span class="term">bind pose</span>
+                            (also called <span class="term">rest pose</span>). The bind pose is usually the
+                            pose in which the character mesh is modeled. The
+                            <a href="a45d6150-0eaa-8faa-3e5b-3232cb76c51c.htm">Skeleton</a>
+                            is immutable, that means once a skeleton is created it cannot be modified.
+                            Multiple characters can share the same instance of the
+                            <a href="a45d6150-0eaa-8faa-3e5b-3232cb76c51c.htm">Skeleton</a>
+                            class.
+                        </p><p>
+                            A <a href="eac29537-e6a7-fb72-2dc3-7687814964c1.htm">SkeletonPose</a>
+                            defines a new pose for an existing skeleton. A new skeleton pose is
+                            defined by a set of bone transforms. A bone transform defines the transformation
+                            of a bone relative to its bind pose.
+                            Bone transforms can be set manually at runtime or, for example, by using a
+                            <a href="532986ef-9267-60e1-b22b-25da2fde8ca4.htm">SkeletonKeyFrameAnimation</a>.
+                            The <a href="eac29537-e6a7-fb72-2dc3-7687814964c1.htm">SkeletonPose</a>
+                            returns the matrices required for mesh skinning: See properties
+                            <a href="5c421245-8bc4-8a50-0c9f-79d32c4985bf.htm">SkinningMatrices</a>
+                            and <a href="5a09ee9e-05b4-0b9e-6a25-d9dd2b3b08a8.htm">SkinningMatricesXna</a>.
+                        </p></div><h4 class="subHeading" id="SRT">SRT transforms</h4><div class="subsection"><p>
+                            DigitalRune Animation uses the value type
+                            <a href="51068581-bb0c-140a-3c13-178b490ea26e.htm">SrtTransform</a>
+                            to represent bone transforms.
+                            An SRT transform describes a scale transformation, followed by a rotation,
+                            followed by a translation. (SRT transforms are particularly well suited for
+                            character animation.)
+                            See the <a href="51068581-bb0c-140a-3c13-178b490ea26e.htm">SrtTransform</a>
+                            for more information.
+                        </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                                DigitalRune Animation and the SrtTransform type uses LERP (linear interpolation) operations instead of a SLERP
+                                (spherical linear interpolation) operation to interpolate quaternions. Using LERP
+                                is faster, and the difference to SLERP is negligible in most cases.
+                            </p></td></tr></table></div></div><h4 class="subHeading" id="Spaces">Skeleton coordinate spaces and bone transforms</h4><div class="subsection"><p>
+                            DigitalRune Animations uses following terms to refer to different coordinate spaces and
+                            bone transformations:
+                        </p><p><strong>Bind Pose Space</strong>: The bind pose is the pose in
+                            which the character mesh is modeled (usually a T pose).
+                            The
+                            <a href="a45d6150-0eaa-8faa-3e5b-3232cb76c51c.htm">Skeleton</a>
+                            class manages the bind pose transformations of all bones.
+                        </p><p><strong>Bind Pose Transformation</strong>:
+                            A bind pose transformation defines the position, orientation and scale
+                            of a bone relative to its parent bone or relative to model space.
+                            The
+                            <a href="a45d6150-0eaa-8faa-3e5b-3232cb76c51c.htm">Skeleton</a>
+                            class manages the bind pose transformations of all bones.
+                        </p><p><strong>Bone Space</strong>: The bone space is the
+                            local coordinate space that is fixed on a bone. The origin of this
+                            space is the origin of the bone. Sometimes, one coordinate axis
+                            points into the direction of the bone.
+                            <span class="term">Bone Transforms</span> are always
+                            relative to bone space.
+                        </p><p><strong>Parent Bone Space</strong>:
+                            Each bone except the root bone of the model has a unique parent
+                            bone. The parent bone space is the bone space of the parent bone.
+                            The parent bone space of the root bone is the <span class="term">model space</span>.
+                            Transformations that are relative to the parent bone space
+                            have the term <span class="term">Relative</span> in their name,
+                            for example:
+                            <a href="4c1afa20-04aa-072b-673c-95a230362b9f.htm">GetBonePoseRelative</a></p><p><strong>Model Space</strong>: The model space is the
+                            local coordinate space of the whole model. The origin of this
+                            space is usually at the feet of the character.
+                            Transformations that are relative to the model space
+                            have the term <span class="term">Absolute</span> in their name,
+                            for example:
+                            <a href="fb81eb54-fcfb-e952-4aab-69a4fb921952.htm">GetBonePoseAbsolute</a></p><p><strong>World Space</strong>: The world space is the
+                            coordinate space that contains all game objects. The origin of this
+                            space is usually the center of a game level.
+                        </p><p><strong>Bone Transform</strong>:
+                            A bone transform is a local transformation in bone space that is applied to a bone. Bones are
+                            animated by changing the bone transforms of a skeleton pose. If a bone transform is the identity transformation
+                            (scale is 1, no rotation, no translation), then the bone is not animated.
+                            If all bone transforms of a skeleton pose are identity transformations, then
+                            the character is displayed in its bind pose.
+                        </p><p><strong>Bone Pose</strong>:
+                            A <span class="term">bone pose transformation matrix</span>
+                            (or short: <span class="term">bone pose</span>) defines the resulting pose of bone
+                            after the bone transforms are applied. A bone pose describes the bone's position, orientation
+                            and scale relative to another coordinate space. A <span class="term">relative bone pose</span> describes the pose
+                            of a bone relative to the parent bone. An
+                            <span class="term">absolute bone pose</span> describes the pose of a bone relative to model space.
+                            Bone poses are computed automatically (when needed) from the current bone transforms by the
+                            <a href="eac29537-e6a7-fb72-2dc3-7687814964c1.htm">SkeletonPose</a>
+                            class.
+                        </p><p><strong>Skinning Matrix</strong>:
+                            Skinning matrices are used to transform the vertices of the character mesh.
+                            A skinning matrix transform a vertex position (in model space)
+                            of the bind pose mesh to a vertex position (in model space) of the deformed mesh.
+                        </p></div><h4 class="subHeading" id="Computation">Computing bone poses and skinning matrices</h4><div class="subsection"><p>
+                            Understanding how all matrices and coordinate spaces fit together is far from trivial.
+                            Here is some code that explains how the bone poses and skinning matrices are computed
+                            by the
+                            <a href="eac29537-e6a7-fb72-2dc3-7687814964c1.htm">SkeletonPose</a>.
+                            (Please note: This is pseudo-code. And don't forget: The multiplication
+                            order of the transformations is from right to left.)
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAADACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAADACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAADACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAADACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Apply current animation (bone transform) to the rest pose (= bind pose) to get the final bone pose.</span>
+<span class="highlight-keyword">for</span> (<span class="highlight-keyword">int</span> i = <span class="highlight-number">0</span>; i &lt; numberOfBones; i++)
+  bonePoseRelative[i] = bindPosesRelative[i] * boneTransforms[i];
+
+<span class="highlight-comment">// bonePoseRelative is the bonePose relative to the parent bone.</span>
+<span class="highlight-comment">// Compute bonePoseAbsolute, which is the bonePose relative to the model space.</span>
+bonePoseAbsolute[<span class="highlight-number">0</span>] = bonePoseRelative[<span class="highlight-number">0</span>];
+<span class="highlight-keyword">for</span> (<span class="highlight-keyword">int</span> i = <span class="highlight-number">1</span>; i &lt; numberOfBones; i++)
+{
+  <span class="highlight-keyword">int</span> parentIndex = skeleton.GetParent(i);
+  bonePoseAbsolute[i] = bonePoseAbsolute[parentIndex] * bonePoseRelative[i];
+}
+
+<span class="highlight-comment">// Compute the skinning matrices needed in a skinning shader.</span>
+<span class="highlight-keyword">for</span> (<span class="highlight-keyword">int</span> i = <span class="highlight-number">0</span>; i &lt; numberOfBones; i++)
+  skinningMatrices[i] = bonePoseAbsolute[i] * bindPosesAbsoluteInverse[i];</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAADACAAA");</script></div><h4 class="subHeading" id="Animation">Animating a SkeletonPose</h4><div class="subsection"><p>
+                            The type <a href="eac29537-e6a7-fb72-2dc3-7687814964c1.htm">SkeletonPose</a>
+                            can be animated. It implements the interface
+                            <a href="c001c0c1-ab5d-aacc-d1c4-b1ed00057ce4.htm">IAnimatableProperty</a>
+                            of type
+                            <a href="eac29537-e6a7-fb72-2dc3-7687814964c1.htm">SkeletonPose</a>,
+                            as well as the interface
+                            <a href="58812efb-838c-b735-4cc7-97ff368daa12.htm">IAnimatableObject</a>.
+                            That means the whole skeleton pose can be animated using a
+                            <a href="532986ef-9267-60e1-b22b-25da2fde8ca4.htm">SkeletonKeyFrameAnimation</a>.
+                            The
+                            <a href="532986ef-9267-60e1-b22b-25da2fde8ca4.htm">SkeletonKeyFrameAnimation</a>
+                            controls all bones of the skeleton (but it supports per-bone weights).
+                            But it is also possible to animate only individual bones using
+                            <a href="be27e53e-f867-706a-d7a4-f5508636bfd5.htm">SrtKeyFrameAnimation</a>
+                            animations.
+                            See
+                            <a href="eac29537-e6a7-fb72-2dc3-7687814964c1.htm">SkeletonPose</a>
+                            for more information.
+                        </p></div><h4 class="subHeading" id="ClassDiagram">Class diagram</h4><div class="subsection"><div class="mediaNear"><img alt="Animation.Character" src="../media/Animation.Character.png" /></div></div><h4 class="subHeading" id="Sample">Sample</h4><div class="subsection"><p>
+                            The CharacterAnimationSample (see <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a>)
+                            shows how to animate 3D characters.
+                        </p><div class="mediaNear"><img alt="Character skeletons are displayed for debugging" src="../media/CharacterAnimationSample-SkeletonInfo.jpg" /><div class="caption">CharacterAnimationSample: Character skeletons are displayed for debugging</div></div></div></div><div class="collapsibleAreaRegion" id="Morphing"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Morphing animation</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    Besides skeletal animation, <span class="term">morphing</span> is another important
+                    technique used for 3D character animation: A mesh of a character model is
+                    changed by blending between various <span class="term">morph targets</span>
+                    (<span class="term">blend shapes</span>). The technique is hence also known as
+                    <span class="term">morph target animation</span> or <span class="term">blend shape interpolation</span>.
+                </p><p>
+                    Morph target animation is typically used for facial animation where different
+                    facial poses are modeled and stored as morph targets. Weights (usually floating-point
+                    values) are assigned to each morph target. The weights are animated at runtime
+                    and the morph targets are blended together based on their weights.
+                </p><p>
+                    Morph target weights can be animated using the basic animation types. Hence,
+                    DigitalRune Animation does not provide special support for morph target
+                    animation.
+                </p></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

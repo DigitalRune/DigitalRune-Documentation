@@ -1,0 +1,92 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Smooth Movement over Triangle Mesh</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="cb1a3d03-4603-4086-aaea-f91de81e7d8a" /><meta name="Description" content="This topic discusses a common problem that occurs when rigid bodies move over a static triangle mesh and factors which influence the triangle mesh interactions." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="79a8677d-9460-4118-b27b-cef353dfbd92.htm" title="DigitalRune Physics" tocid="79a8677d-9460-4118-b27b-cef353dfbd92">DigitalRune Physics</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="61ea0a18-fef3-4e46-be80-e146b5e00d80.htm" title="Articles" tocid="61ea0a18-fef3-4e46-be80-e146b5e00d80">Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="3862d6f1-13c0-4ad9-8e4a-5edfa265bf8a.htm" title="How To: Add DigitalRune Physics to a Project" tocid="3862d6f1-13c0-4ad9-8e4a-5edfa265bf8a">How To: Add DigitalRune Physics to a Project</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="4473ac4f-06c0-4ebb-8eb5-fd6891df21b6.htm" title="How To: Setup and Run a Simulation" tocid="4473ac4f-06c0-4ebb-8eb5-fd6891df21b6">How To: Setup and Run a Simulation</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="920ac165-5f26-4bf1-a1b7-d0ecb308b14c.htm" title="How To: Create a Composite Rigid Body" tocid="920ac165-5f26-4bf1-a1b7-d0ecb308b14c">How To: Create a Composite Rigid Body</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="660bd2ec-5313-4d7b-8431-388e3ae6fc9d.htm" title="How To: Visualize Ragdoll Joints" tocid="660bd2ec-5313-4d7b-8431-388e3ae6fc9d">How To: Visualize Ragdoll Joints</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="be2efc8b-79a6-4be2-bd5e-f0a17579b02b.htm" title="How To: Create Ragdolls" tocid="be2efc8b-79a6-4be2-bd5e-f0a17579b02b">How To: Create Ragdolls</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="cb1a3d03-4603-4086-aaea-f91de81e7d8a.htm" title="Smooth Movement over Triangle Mesh" tocid="cb1a3d03-4603-4086-aaea-f91de81e7d8a">Smooth Movement over Triangle Mesh</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="5406f8ea-ffac-480c-9e98-ee3fa8eb741b.htm" title="External Articles" tocid="5406f8ea-ffac-480c-9e98-ee3fa8eb741b">External Articles</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Smooth Movement over Triangle Mesh</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This topic discusses a common problem that occurs when rigid bodies move over
+                a static triangle mesh and factors which influence the triangle mesh interactions.
+            </p></div><div class="collapsibleAreaRegion" id="Problem"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Problem</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    In my game I am rolling a small ball down a large, curved ramp which is a
+                    triangle mesh imported from a FBX file.  Consider a ball rolling down a
+                    half-pipe. The problem is that although the ramp has a lot of faces on the curve,
+                    the ball will often bounce off the surface unnaturally.
+                </p></div><div class="collapsibleAreaRegion" id="Solution"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Solution</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    Unnatural bounces at triangle edges can have several causes and here are a few things you
+                    can try:
+                </p><h4 class="subHeading" id="ContactWelding">Contact welding</h4><div class="subsection"><p>
+                            Bounces can be caused by bad normal vectors at triangle edges. Enable contact
+                            welding for the mesh:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EADAGABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EADAGABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EADAGABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EADAGABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">triangleShapeMesh.EnableContactWelding = <span class="highlight-keyword">true</span>;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EADAGABAAA");</script><p>
+                            and make the welding more aggressive by setting the welding limit to 1. This is a
+                            static property of the
+                            <a href="1cad2120-62c1-409a-6bbf-65bda4dcd825.htm">TriangleMeshAlgorithm</a>
+                            class:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABAGABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABAGABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABAGABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABAGABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">TriangleMeshAlgorithm.WeldingLimit = <span class="highlight-number">1</span>f;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABAGABAAA");</script><p>
+                            Contact welding improves the contact normal vectors at triangle edges.
+                        </p></div><h4 class="subHeading" id="SphereContacts">Perfect sphere contacts</h4><div class="subsection"><p>
+                            Normally, when a sphere touches another object, the contact normal vector points in
+                            the direction from the sphere center to the contact. When contact welding is used,
+                            the contact positions can be a bit off. - But small errors can cause visible bounces.
+                            We can correct this with a custom contact filter:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EADAFABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EADAFABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EADAFABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EADAFABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> MyContactFilter : IContactFilter 
+{ 
+  <span class="highlight-keyword">private</span> ContactReducer _defaultContactFilter = <span class="highlight-keyword">new</span> ContactReducer(); 
+  
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> Filter(ContactSet contactSet) 
+  { 
+    <span class="highlight-comment">// Call the default contact filter. </span>
+    _defaultContactFilter.Filter(contactSet); 
+  
+    <span class="highlight-comment">// Abort if there are no contacts in this contact set. </span>
+    <span class="highlight-keyword">if</span> (contactSet.Count == <span class="highlight-number">0</span>) 
+      <span class="highlight-keyword">return</span>; 
+  
+    <span class="highlight-comment">// If this is a sphere vs. * contact set, then we correct the position of the  </span>
+    <span class="highlight-comment">// contact point to make sure that the contact position is in line with the sphere center. </span>
+  
+    <span class="highlight-keyword">var</span> sphere = contactSet.ObjectA.GeometricObject.Shape <span class="highlight-keyword">as</span> SphereShape; 
+    <span class="highlight-keyword">if</span> (sphere != <span class="highlight-keyword">null</span>) 
+    { 
+      <span class="highlight-keyword">float</span> radius = sphere.Radius; 
+  
+      <span class="highlight-keyword">foreach</span>(<span class="highlight-keyword">var</span> contact <span class="highlight-keyword">in</span> contactSet) 
+        contact.Position = contactSet.ObjectA.GeometricObject.Pose.Position + contact.Normal * (radius - contact.PenetrationDepth / <span class="highlight-number">2</span>); 
+           
+      <span class="highlight-keyword">return</span>; 
+    } 
+  
+    sphere = contactSet.ObjectB.GeometricObject.Shape <span class="highlight-keyword">as</span> SphereShape; 
+    <span class="highlight-keyword">if</span> (sphere != <span class="highlight-keyword">null</span>) 
+    { 
+      <span class="highlight-keyword">float</span> radius = sphere.Radius; 
+      <span class="highlight-keyword">foreach</span> (<span class="highlight-keyword">var</span> contact <span class="highlight-keyword">in</span> contactSet) 
+        contact.Position = contactSet.ObjectB.GeometricObject.Pose.Position - contact.Normal * (radius - contact.PenetrationDepth / <span class="highlight-number">2</span>); 
+    } 
+  } 
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EADAFABAAA");</script><p>
+                            Set this filter with:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABAFABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABAFABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABAFABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABAFABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">simulation.CollisionDomain.CollisionDetection.ContactFilter = <span class="highlight-keyword">new</span> MyContactFilter();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABAFABAAA");</script><p>
+                            Usually, when you use contact welding and this contact filter, you get a very smooth
+                            movement. If this does not help, here are a few more things you can try:
+                        </p></div><h4 class="subHeading" id="Friction">Lower friction</h4><div class="subsection"><p>
+                            Try to use a lower friction. If the friction is lower, the spheres can glide more
+                            smoothly over bumps.
+                        </p></div><h4 class="subHeading" id="PenDepth">Allowed penetration depth</h4><div class="subsection"><p>
+                            Try to lower the allowed penetration depth. For example:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABADABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABADABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABADABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABADABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">simulation.Settings.Constraints.AllowedPenetration = <span class="highlight-number">0.001</span>f;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABADABAAA");</script><p>
+                            If this parameter is high (which is not good in your case), then the sphere will sink
+                            more into the triangle surface. And when it rolls to a triangle edge, it will
+                            perceive the neighbor edge as a small upwards step.
+                        </p></div><h4 class="subHeading" id="Gravity">Gravity</h4><div class="subsection"><p>
+                            When the gravity is high, small bumps can have a higher impact. Try to use a lower
+                            gravity, for example:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAACABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAACABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAACABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAACABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">simulation.ForceEffects.Add(<span class="highlight-keyword">new</span> Gravity() { Acceleration = <span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">0</span>, <span class="highlight-number">-5</span>, <span class="highlight-number">0</span>)});</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAACABAAA");</script></div><h4 class="subHeading" id="HeightField">Height field instead of triangle mesh</h4><div class="subsection"><p>
+                            Try to use a height field instead of a triangle mesh - if your scenario allows to
+                            use a height field.
+                        </p></div><h4 class="subHeading" id="Triangles">Distorted triangles</h4><div class="subsection"><p>
+                            If your triangles are very distorted (one side is small relative to the other sides),
+                            subdivide your mesh to create more regular triangles. Very long, distorted shapes
+                            will create high numerical errors in many collision detection and physics algorithms.
+                        </p></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

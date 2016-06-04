@@ -1,0 +1,137 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Character Controller Requirements</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="eae2c109-980c-43e4-aaaf-0448e8f388a4" /><meta name="Description" content="This article discusses the requirements of a 3D character controller for games." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="79a8677d-9460-4118-b27b-cef353dfbd92.htm" title="DigitalRune Physics" tocid="79a8677d-9460-4118-b27b-cef353dfbd92">DigitalRune Physics</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="3e1b091b-d795-4f67-a390-67648a3e5465.htm" title="Specialized Modules" tocid="3e1b091b-d795-4f67-a390-67648a3e5465">Specialized Modules</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="09d89582-ed82-465f-a65e-34f8cd55e1f6.htm" title="Character Controllers" tocid="09d89582-ed82-465f-a65e-34f8cd55e1f6">Character Controllers</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="eae2c109-980c-43e4-aaaf-0448e8f388a4.htm" title="Character Controller Requirements" tocid="eae2c109-980c-43e4-aaaf-0448e8f388a4">Character Controller Requirements</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="7cc27ced-9a65-4ddd-8b8e-fa817b7fe6b7.htm" title="Character Controller Implementation" tocid="7cc27ced-9a65-4ddd-8b8e-fa817b7fe6b7">Character Controller Implementation</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Character Controller Requirements</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This article discusses the requirements of a 3D character controller for games.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Functional">Functional requirements</a></li><li class="outlineSectionEntry"><a href="#Qualitative">Non-functional/qualitative requirements</a></li><li class="outlineSectionEntry"><a href="#Course">Test obstacle course</a></li></ul></div><div class="collapsibleAreaRegion" id="Functional"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Functional requirements</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    A character controller should support following functions:
+                </p><ul><li><p><strong>Teleport:</strong>
+                            The first requirement is teleport because the character controller must be
+                            set to its initial position. A teleport sets the character to a new position. It
+                            doesn't matter where it was previously and if there are obstacles between the old
+                            and new position.
+                        </p></li><li><p><strong>Recover from penetrations:</strong>
+                            Trusting
+                            <a href="http://en.wikipedia.org/wiki/Murphy's_law" target="_blank">Murphy's Law</a>
+                            we can safely assume that each teleport brings the character into a position
+                            where it penetrates other objects. So it is good if the character controller has the
+                            ability to find a valid, non-penetrating position near the desired position.
+                        </p></li><li><p><strong>Move:</strong>
+                            This is the basic operation that moves the character from its current position to
+                            its new position with a method that is often called "collide and slide" or "bump and
+                            slide". The character should stop before obstacles and slide along the obstacles to
+                            get as near to the desired position as possible without penetrating other solid objects.
+                        </p></li><li><p><strong>Jump, Gravity:</strong>
+                            The player should be able to jump. There should be a restricted maneuverability
+                            (jump height and direction) while in the air. When the character does not touch the
+                            ground it should fall due to gravity.
+                        </p></li><li><p><strong>Slope Limit:</strong>
+                            The character should slide up and down inclined planes. There should be an inclination
+                            limit. Steep planes cannot be climbed. If slope limits are not supported, the level
+                            designer must place invisible walls to stop the player. (Even if slope limits are supported
+                            invisible walls are probably a good idea. Players will find all glitches.)
+                        </p></li><li><p><strong>Step Up and Step Height Limit:</strong>
+                            The character should automatically step onto/over small obstacles. Stairs should
+                            also be no problem. There must be a limit for the maximal step height. If stepping
+                            up is not supported, the collision objects of stairs must be inclined planes.
+                        </p></li><li><p><strong>Step Down:</strong>
+                            Stepping down sounds superfluous because the character will fall automatically -
+                            but stepping down is essential. In real life humans walking down stairs do not
+                            step into the air and let themselves fall down, they bend their knees and actively
+                            step down to touch the ground. If stepping down is not supported, a character
+                            moving down stairs or inclined planes will not move down smoothly. Instead it
+                            will bounce down on short ballistic curves and look very silly.
+                        </p></li><li><p><strong>Modes:</strong>
+                            The character controller should support different operation modes, depending on
+                            whether collisions and gravity are enabled:
+                        </p><ul><li>
+                                Collisions disabled, gravity disabled =&gt; Ghost mode. The character can fly
+                                and move through objects. Very useful for debugging.
+                            </li><li>
+                                Collision enabled, gravity disabled =&gt; Fly mode. The character can fly
+                                and slides along obstacles.
+                            </li><li>
+                                Collision enabled, gravity enabled =&gt; Walk mode. This is the normal
+                                mode where the character walks on the ground.
+                            </li></ul><p>
+                            Theoretically there is a fourth mode:
+                        </p><ul><li>
+                                Collisions disabled, gravity enabled =&gt; Falling mode. The character falls due to
+                                gravity and nothing stops him because collisions are disabled - not very useful.
+                            </li></ul></li><li><p><strong>Collision Filtering:</strong>
+                            It must be possible to define with which objects the character will collide and
+                            which are ignored.
+                        </p></li><li><p><strong>Advanced Functions:</strong>
+                            The above functions cover the basics. A lot of other functions are desirable:
+                        </p><ul><li>
+                                Changing the height of the character controller, crouching
+                                Before a character stands up, it must be checked if there is enough room to
+                                stand up.
+                            </li><li>
+                                Swimming
+                            </li><li>
+                                Climbing
+                            </li><li>
+                                IK for hands and feet
+                            </li><li>
+                                Pushing dynamic objects and being pushed
+                            </li><li>
+                                Moving with elevators or conveyor belts
+                            </li><li>
+                                Additional movement smoothing
+                            </li><li>
+                                Etc.
+                            </li></ul></li></ul></div><div class="collapsibleAreaRegion" id="Qualitative"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Non-functional/qualitative requirements</span></div><div id="ID1RBSection" class="collapsibleSection"><ul><li><p><strong>Avoid penetrations:</strong>
+                            The character should not penetrate solid objects. But: A small amount
+                            of penetration should be allowed for stability reasons.
+                        </p></li><li><p><strong>Avoid tunneling:</strong>
+                            Fast moving characters should not "tunnel" through thin or fast moving objects.
+                            That means, all collisions must be detected.
+                        </p></li><li><p><strong>Avoid jitter:</strong>
+                            The character controller should not jitter when running into a limit, e.g.
+                            when running against a steep plane or into a sharp corner.
+                        </p></li><li><p><strong>Avoid getting stuck:</strong>
+                            The character should not get into situations where it cannot move anymore. A
+                            situation where a character controller might get stuck, looks like this:
+                        </p><div class="mediaNear"><img alt="Character-Stuck" src="../media/Character-Stuck.jpg" /></div><p>
+                            Many games have auto-unstuck features to
+                            move the character to a safe position once he gets stuck.
+                        </p></li><li><p><strong>Limit the maximal velocity:</strong>
+                            The maximal velocity or movement per frame must be limited to avoid glitches.
+                        </p></li></ul></div><div class="collapsibleAreaRegion" id="Course"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Test obstacle course</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    To test our character controller implementations we have use an obstacle course.
+                    In the course we test the following:
+                </p><ul><li>
+                        Movement over small obstacles on the floor.
+                    </li><li>
+                        Moving up/down stairs with steps of different height.
+                    </li><li>
+                        Moving up/down inclined planes with different angles.
+                    </li><li>
+                        Sliding down planes above the slope limit.
+                    </li><li>
+                        Sliding along a wall and other objects.
+                    </li><li>
+                        Running full speed into paper-thin objects.
+                    </li><li>
+                        Movement over height fields and meshes.
+                    </li><li>
+                        Running into corners.
+                    </li><li>
+                        Obstacles where the character controller could get stuck.
+                    </li><li>
+                        Crouching and trying to stand up in places where there is not enough
+                        room to stand up.
+                    </li><li>
+                        Running and jumping with inclined obstacles above the character.
+                    </li><li>
+                        Sliding down planes/stairs while sliding against a wall.
+                    </li><li>
+                        Moving/jumping diagonal. (Diagonal movement should not be
+                        faster than straight movement.)
+                    </li><li>
+                        Etc.
+                    </li></ul></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

@@ -1,0 +1,315 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Vehicle Physics</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="143af493-329d-408f-975d-e63625646f2f" /><meta name="Description" content="This article discusses how to simulate vehicles, like cars." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="79a8677d-9460-4118-b27b-cef353dfbd92.htm" title="DigitalRune Physics" tocid="79a8677d-9460-4118-b27b-cef353dfbd92">DigitalRune Physics</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="3e1b091b-d795-4f67-a390-67648a3e5465.htm" title="Specialized Modules" tocid="3e1b091b-d795-4f67-a390-67648a3e5465">Specialized Modules</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="09d89582-ed82-465f-a65e-34f8cd55e1f6.htm" title="Character Controllers" tocid="09d89582-ed82-465f-a65e-34f8cd55e1f6">Character Controllers</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="0f8abfcc-b27e-4887-8017-9fda6e7fb0fc.htm" title="Ragdolls" tocid="0f8abfcc-b27e-4887-8017-9fda6e7fb0fc">Ragdolls</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="143af493-329d-408f-975d-e63625646f2f.htm" title="Vehicle Physics" tocid="143af493-329d-408f-975d-e63625646f2f">Vehicle Physics</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Vehicle Physics</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This article discusses how to simulate vehicles, like cars.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Methods">Simulation methods</a></li><li class="outlineSectionEntry"><a href="#Vehicle">Vehicle classes</a></li><li class="outlineSectionEntry"><a href="#Sample">VehicleSample</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Chassis">The chassis</a></li><li class="outlineSectionEntry"><a href="#Mass">The mass frame</a></li><li class="outlineSectionEntry"><a href="#Material">Material</a></li><li class="outlineSectionEntry"><a href="#Wheels">Wheels</a></li><li class="outlineSectionEntry"><a href="#Suspension">Suspension</a></li><li class="outlineSectionEntry"><a href="#SideForce">Side force</a></li><li class="outlineSectionEntry"><a href="#ForwardForce">Forward force</a></li><li class="outlineSectionEntry"><a href="#Sliding">Sliding</a></li><li class="outlineSectionEntry"><a href="#WheelRotation">Wheel rotation</a></li><li class="outlineSectionEntry"><a href="#Steering">Steering</a></li><li class="outlineSectionEntry"><a href="#Tuning">Tuning</a></li><li class="outlineSectionEntry"><a href="#Extensions">Possible extensions</a></li><li class="outlineSectionEntry"><a href="#Camera">Car camera</a></li></ul><li class="outlineSectionEntry"><a href="#Alternatives">Alternative vehicle implementation</a></li><li class="outlineSectionEntry"><a href="#References">References</a></li></ul></div><div class="collapsibleAreaRegion" id="Methods"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Simulation methods</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    There are 2 common ways to implement car physics:
+                </p><ul><li><p><strong>Constraint Car:</strong></p><p>
+                            The <em>ConstraintCarSample</em> in the
+                            <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a> shows how to
+                            implement a very basic
+                            <span class="term">constraint car</span>,
+                            where a car is created using rigid bodies and constraints. The chassis is a
+                            box and the wheels are cylindrical bodies. The wheels are connected to the
+                            chassis using constraints
+                            (<a href="e7140d81-16d3-226a-e40e-e818ca933777.htm">HingeJoint</a>s
+                            for the rear-wheels,
+                            <a href="0a76b2a5-632c-0771-95e0-702d704cae17.htm">Hinge2Joint</a>s
+                            for the steerable front-wheels). The wheel rotation is controlled using motor
+                            constraints.
+                        </p><p>
+                            This works in principle but has a few disadvantages: We would need more complex
+                            joints to simulate suspension. The sliding behavior of wheels is different from
+                            standard rigid bodies. Real wheels aren’t rigid bodies. We have a lot of constraints
+                            that have to be configured very carefully. Etc. - For action games a different
+                            simulation method is much simpler and more customizable:
+                        </p></li><li><p><strong>Ray-cast Car:</strong></p><p>
+                            In a <span class="term">ray-cast car</span> the chassis is a rigid body, but the wheels are
+                            only short rays that sample the ground. In the simulation, there are no cylindrical
+                            shapes or rigid bodies for the wheels. The wheels are only rendered as part
+                            of the visual model. A ray-cast car is simpler, more efficient and gives us a lot of tuning options.
+                        </p></li></ul></div><div class="collapsibleAreaRegion" id="Vehicle"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Vehicle classes</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    The class
+                    <a href="a5efb9e9-e885-4a73-8dbc-bd9ae7daa377.htm">Vehicle</a>
+                    implements a
+                    <span class="term">ray-cast car</span> which
+                    can be used to simulate vehicles, like racing cars, with a variable number
+                    of
+                    <a href="8010648b-0e10-77ee-cec1-ab45ac0d8202.htm">Wheel</a>s.
+                </p><div class="mediaNear"><div class="caption">DigitalRune.Physics.Specialized (Vehicles)</div><img alt="DigitalRune.Physics.Specialized (Vehicles)" src="../media/Physics.Specialized_Vehicles.png" /></div></div><div class="collapsibleAreaRegion" id="Sample"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />VehicleSample</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    The <em>VehicleSample</em> (see
+                    <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a>) shows how
+                    to use vehicle physics.
+                </p><div class="mediaNear"><img alt="Sample-Vehicle" src="../media/Sample-Vehicle.jpg" /><div class="caption"><span class="captionLead">Screenshot:
+						</span>Screenshot of the Vehicle Sample</div></div><p>
+                    Here is a video of the vehicle sample:
+                </p><ul class="noBullet"><li><p><a href="https://www.youtube.com/watch?v=u0kZiti67h4" target="_blank">Video: Vehicle Physics</a></p></li></ul><p>
+                    This section describes the vehicle implementation of the
+                    <a href="a5efb9e9-e885-4a73-8dbc-bd9ae7daa377.htm">Vehicle</a>
+                    class and how it is used in the
+                    <em>VehicleSample</em>.
+                </p><h4 class="subHeading" id="Chassis">The chassis</h4><div class="subsection"><p>
+                            We use a single rigid body for the chassis of the car. You can use a
+                            simple box or a composite shape consisting of two boxes (lower car part + upper car
+                            part) as the shape. If you use a more detailed car model, it is better to use the
+                            convex hull of the mesh vertices as the shape because triangle meshes are not
+                            optimal for collision detection.
+                        </p><p>
+                            The original car model used in the sample has about 10,000 vertices – its
+                            convex hull about 500 vertices. That’s still quite a lot of vertices. Therefore
+                            we simplified the convex hull: Our convex hull generator allows to set an upper
+                            limit for the allowed number of vertices. In our example we set an upper limit of
+                            max. 64 vertices. The simplified convex hull has less vertices than the original
+                            convex hull. However, it is also slightly bigger. That’s the disadvantage of
+                            a simplified convex hull.
+                        </p><p>
+                            The convex hull worked quite well in most cases. Except in uneven terrain the
+                            car chassis could hit a hump in the ground and stop the car. The mesh of our
+                            sports car was too close to the ground for some uneven off-road parts in our
+                            level. To give the car a bit more freedom, we shrank the convex hull shape by
+                            a small factor (using a negative skin with of –4 cm).
+                        </p><p>
+                            In the sample the chassis shape is created like this:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EAAAMADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EAAAMADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EAAAMADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EAAAMADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// 1. Extract the vertices from the car model.</span>
+TriangleMesh mesh = TriangleMesh.FromModel(_car);
+
+<span class="highlight-comment">// 2. (Optional) Create simplified convex hull from mesh.</span>
+DcelMesh convexHull = GeometryHelper.CreateConvexHull(
+mesh.Vertices, <span class="highlight-number">64</span>, <span class="highlight-number">-0.04</span>f);
+
+<span class="highlight-comment">// 3. Create convex polyhedron using the vertices of the </span>
+<span class="highlight-comment">// convex hull.</span>
+ConvexPolyhedron chassisShape = <span class="highlight-keyword">new</span> ConvexPolyhedron(
+convexHull.Vertices.Select(v =&gt; v.Position));</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EAAAMADAAA");</script></div><h4 class="subHeading" id="Mass">The mass frame</h4><div class="subsection"><p>
+                            The mass frame defines the center of mass of a rigid body. Normally, a physics
+                            engine computes the center of mass automatically from the given shape. For the
+                            chassis, the automatically computed
+                            <span class="term">center of mass (COM)</span> is not optimal because
+                            it assumes a uniform density in the whole chassis. Therefore, we adjust the position
+                            of the COM manually. And we apply another trick: We artificially place the
+                            COM lower to the ground. It can even be outside of the shape under the ground!
+                            Lowering the COM makes the car more stable. Cars with a high COM are unstable in
+                            tight curves and tend to overturn.
+                            Here is how we create the mass frame and the final rigid body for the chassis:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EAAALADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EAAALADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EAAALADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EAAALADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// The mass properties of the car. We use a mass of 800 kg.</span>
+MassFrame mass = MassFrame.FromShapeAndMass(
+chassisShape, Vector3F.One, <span class="highlight-number">800</span>, <span class="highlight-number">0.1</span>f, <span class="highlight-number">1</span>);
+Pose pose = mass.Pose;
+pose.Position.Y -= <span class="highlight-number">0.5</span>f; <span class="highlight-comment">// Lower the center of mass.</span>
+pose.Position.Z = <span class="highlight-number">-0.5</span>f; <span class="highlight-comment">// Center should be below the driver.</span>
+mass.Pose = pose;
+
+RigidBody chassis = <span class="highlight-keyword">new</span> RigidBody(chassisShape, mass, material);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EAAALADAAA");</script></div><h4 class="subHeading" id="Material">Material</h4><div class="subsection"><p>
+                            For the material: We use a standard material with standard restitution and
+                            friction values. The material is only important when the car chassis slides along
+                            walls or the ground in crashes.
+                        </p></div><h4 class="subHeading" id="Wheels">Wheels</h4><div class="subsection"><p>
+                            We create a ray for each wheel. The ray of a wheel starts where the suspension is
+                            fixed to the chassis. It shoots down and its length is the suspension length plus
+                            the wheel radius. These rays are used to detect the ground distance and the normal
+                            vector of the ground in each frame. And in each frame we have to apply 3 forces per
+                            wheel:
+                        </p><ul><li>
+                                suspensions force,
+                            </li><li>
+                                side force
+                            </li><li>
+                                and forward force.
+                            </li></ul></div><h4 class="subHeading" id="Suspension">Suspension</h4><div class="subsection"><p>
+                            The suspension is modeled as simple damped spring that has a spring constant
+                            (<span class="term">suspension stiffness</span>) and a damping constant
+                            (<span class="term">suspension damping</span>). Actually, we use two different damping
+                            coefficients: one when the suspension is compressing (higher) and another one when
+                            the suspension is extending (lower than the compression damping). The current
+                            suspension length is
+                            <em>hit distance of the ray - wheel radius</em>. We
+                            assume that the suspension spring is at rest when it is fully extended. The
+                            suspension force in pseudo code is
+                        </p><p><em>
+                                suspensionForce = stiffness * (restLength – currentLength) + damping * (previousLength – currentLength) / deltaTime
+                            </em></p><p>
+                            This force is applied to the chassis at the position where the wheel touches the
+                            ground. And an equal but opposite force is applied to the ground.
+                        </p></div><h4 class="subHeading" id="SideForce">Side force</h4><div class="subsection"><p>
+                            The goal of the side force is to stop any sideways motion of the wheel. We
+                            compute a vector in the ground plane that is orthogonal to the current rolling
+                            direction. Then we compute the force that is necessary to stop the sideways motion
+                            of the chassis at the wheel ground position.
+                        </p><p>
+                            The side force is computed but not applied immediately.
+                        </p></div><h4 class="subHeading" id="ForwardForce">Forward force</h4><div class="subsection"><p>
+                            The forward force is applied to the chassis at the wheel ground position. It acts
+                            in the forward direction of the wheel and lies in the ground plane. This
+                            force accelerates the car (user steps onto the gas pedal) or decelerates the car
+                            (braking).
+                        </p><p>
+                            The forward force is further divided into the motor force and the brake force.
+                            The motor force increases when the user presses the forward button. It decreases and
+                            can get negative when the user presses the backwards button. The motor force returns
+                            to 0 when the user does not press the forward or backward buttons.
+                        </p><p>
+                            The brake force is set to a constant value when the user presses the handbrake button.
+                            If the motor force is larger than the brake force, then we use the difference as
+                            the magnitude of our forward force. If the brake force is larger, then we cannot
+                            simply use the brake force value as the magnitude of the forward force. The brake
+                            force could be too large and accelerate the car into the opposite direction -
+                            especially when the car is at rest. To compute the exact brake force, we compute
+                            the force that would stop any car motion in the forward direction. Then we limit
+                            this force by the current brake force.
+                        </p><p>
+                            After that we know the magnitude of the forward force – but we do not apply this
+                            force yet.
+                        </p></div><h4 class="subHeading" id="Sliding">Sliding</h4><div class="subsection"><p>
+                            The computed forward and side forces are ideal, in the sense that the wheel is not
+                            sliding. But sliding a.k.a. drifting is one of the fun parts of racing games and we
+                            need to model this too.
+                        </p><p>
+                            When an object is pushed tangential to the ground, a friction force acts against the
+                            movement. This friction force is limited by
+                        </p><p><em>maxFrictionForce = frictionCoefficient * normalForce</em></p><p>
+                            For each wheel, we assume a constant friction coefficient. And we already know the
+                            normal force: It is simply the suspension force computed earlier. This
+                            maxFrictionForce limits the possible forward and side forces. We sum up the
+                            forward force (in forward direction) and the side force (in side direction) and
+                            get the sum force that lies in the ground plane. When the magnitude of this force
+                            is larger than the maxFrictionForce, the wheel is sliding and we clamp the
+                            magnitude to the maxFrictionForce. The clamped force is applied to the chassis
+                            at the wheel ground position.
+                        </p><p>
+                            We further compute the so-called
+                            <span class="term">skid energy</span>, which is the
+                            <a href="http://en.wikipedia.org/wiki/Friction#Energy_of_friction" target="_blank">energy of friction [1]</a>
+                            when the car is
+                            sliding. This information can be used to control skid sounds or rendering of
+                            tire marks.
+                        </p><p>
+                            One important aspect of this sliding model is that forward force and side force
+                            are summed up before they are clamped. That means, the side force is indirectly
+                            limited by the current forward force. For example, if the car is at rest, it is
+                            hard to push the car sideways. But if the car is accelerating or decelerating, the
+                            maximal side force is reduced. In other words: Drive at a high speed in a curve and
+                            hit the handbrake, the braking wheels will start to slide.
+                        </p></div><h4 class="subHeading" id="WheelRotation">Wheel rotation</h4><div class="subsection"><p>
+                            Our wheels are only rays, still we have to compute a wheel rotation for visual
+                            wheel models. We simply compute the linear point velocity of the chassis at the
+                            wheel ground position in the forward direction (in the ground plane). The angular
+                            velocity of the wheel is then
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EADAEADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EADAEADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EADAEADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EADAEADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">wheel.AngularVelocity = forwardVelocity / wheel.Radius;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EADAEADAAA");</script><p>
+                            and the rotation angle is
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EABAEADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EABAEADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EABAEADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EABAEADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">wheel.RotationAngle += wheel.AngularVelocity * deltaTime;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EABAEADAAA");</script><p>
+                            You might want to change this. For example: Immediately stop the wheel rotation
+                            when the handbrake is active – for a dramatic effect.
+                        </p></div><h4 class="subHeading" id="Steering">Steering</h4><div class="subsection"><p>
+                            To steer the car, we set the steering angle of the wheels. The steering angle
+                            defines the forward direction in which the forward force is applied. (The side
+                            force is always normal to the forward force.) The steering angle changes when
+                            the user presses the steering buttons (e.g. the left/right arrow keys on the
+                            keyboard). The steering angle does not change instantly. Instead, it changes over
+                            time until it reaches the maximal allowed steering angle. When the user
+                            is not pressing a steering button, the steering angle goes back to 0.
+                        </p><p>
+                            For very high speeds it is advisable to reduce the maximal allowed steering
+                            angles – small angles will suffice and keep the car controllable.
+                        </p></div><h4 class="subHeading" id="Tuning">Tuning</h4><div class="subsection"><p>
+                            Good car physics needs a lot of tuning and also depends on the type of game.
+                            Following parameters should be considered for tuning:
+                        </p><ul><li>
+                                Suspension stiffness and damping: Use a high stiffness for sports cars and a
+                                lower stiffness for off-road cars and normal cars.
+                            </li><li>
+                                Center of mass position: Shifting the COM can significantly change the
+                                driving behavior.
+                            </li><li>
+                                Wheel friction: Use different friction for front and rear wheels to create
+                                oversteering or understeering behavior.
+                            </li><li>
+                                Motor forces and braking forces: Tune the maximal forces and decide where to
+                                apply the forces (front-wheel drive vs. rear-wheel drive vs. all-wheel drive).
+                            </li><li>
+                                Roll reduction: This a parameter that we haven’t discussed so far. When it is
+                                0, the wheel side forces are applied at the wheel ground position. When it
+                                is &gt; 0, the side force are applied on a higher position. This makes the car
+                                more stable in curves. It reduces the sideways tilt in curves or the chance
+                                that the car will overturn. Changing this parameter can also have significant
+                                effects.
+                            </li><li>
+                                Gravity: Maybe use a higher gravity for the car.
+                            </li><li>
+                                Extra yaw torques (or angular impulses) can be applied to improve turning and
+                                create artificial sliding behavior.
+                            </li><li>
+                                Use extra damping forces if the car is too unstable.
+                            </li><li>
+                                Change the wheel friction depending on the current wheel velocity to create
+                                the perfect drifting behavior.
+                            </li></ul></div><h4 class="subHeading" id="Extensions">Possible extensions</h4><div class="subsection"><p>
+                            The implemented car physics can be improved in several aspects:
+                            (The vehicle source code is available for licensees!)
+                        </p><ul><li>
+                                Consider gears and transmission when computing the wheel motor forces.
+                            </li><li>
+                                Use more ray casts per wheel instead of only a single ray. Or, use a
+                                <span class="term">linear shape cast</span> with the cylinder shape.
+                                (A linear cast or shape cast is similar to a ray cast, but
+                                where a ray cast shoots a single point, a shape cast shoots a larger shape and
+                                computes the first time of impact. In
+                                DigitalRune.Geometry this can be done using
+                                <a href="4e54d544-4c8d-3e83-6f55-4552a9d333ae.htm">GetTimeOfImpact</a>
+                                queries.)
+                            </li><li>
+                                Use hard constraints when the suspension is at its minimum length. Currently,
+                                when the car falls with a high velocity, the wheels can sink into the ground.
+                                The suspension force is not high enough to prevent this. For this case we could
+                                add a constraint (e.g. a
+                                <a href="29f7d46a-3345-aeb6-c0ba-7e034ae267ef.htm">LinearLimit</a>)
+                                that is active when the suspension is max compressed.
+                            </li></ul></div><h4 class="subHeading" id="Camera">Car camera</h4><div class="subsection"><p>
+                            In a third-person view the camera can be fixed behind the car. This is used in
+                            our sample but does not look very dynamic. A spring-based chase camera, like in
+                            the <a href="http://xbox.create.msdn.com/en-US/education/catalog/sample/chasecamera" target="_blank">AppHub Chase Camera sample</a>,
+                            could look better. Or, compute the camera direction
+                            as a linear interpolation of the current car orientation and the current
+                            driving direction.
+                        </p></div></div><div class="collapsibleAreaRegion" id="Alternatives"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Alternative vehicle implementation</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    The <em>ConstraintVehicleSample</em> (see
+                    <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a>) contains an
+                    alternative vehicle physics implementation. The new implementation is very
+                    similar to the
+                    <a href="a5efb9e9-e885-4a73-8dbc-bd9ae7daa377.htm">Vehicle</a>
+                    class described above. It also uses rays to represent the wheels, but instead of
+                    a force effect it uses constraints which model the wheel forces.
+                </p><p>
+                    Using constraints is more difficult than applying forces. However, they improve
+                    stability. For example, when a stiff spring is modeled with forces, the simulation
+                    will easily become unstable. Constraints can be used to model stable springs [2].
+                </p><p>
+                    The alternative car physics implementation provides the following benefits:
+                </p><ul><li>
+                        Stable springs, which means that this implementation can be used with very
+                        rigid wheel suspensions.
+                    </li><li>
+                        No sliding on slopes. (The other car implementation slides down on slopes. To park a
+                        car on slopes you need to use some tricks.)
+                    </li><li>
+                        Braking wheels do not rotate.* – This is a simple change, which only affects the
+                        visuals and not the actual simulation. In the previous implementation the wheels
+                        rotate as long as the car is moving. Simply stopping the wheels while user presses
+                        the brake button is a good feedback and visually more interesting.
+                    </li><li>
+                        A broad phase filter disables collision detection for static geometry.* This avoids
+                        some unnecessary collision computations and contact data and thereby
+                        improves performance.
+                    </li></ul><p>
+                    *The last two changes could also easily be added to the old vehicle sample.
+                </p><p>
+                    The disadvantage of the new implementation is that it is probably more difficult to
+                    understand; hence, more difficult to adapt.
+                </p></div><div class="collapsibleAreaRegion" id="References"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />References</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    [1] "Energy of Friction", Wikipedia,
+                    <a href="http://en.wikipedia.org/wiki/Friction#Energy_of_friction" target="_blank">http://en.wikipedia.org/wiki/Friction#Energy_of_friction</a></p><p>
+                    [2] Erin Catto: "Soft Constraints – Reinventing the Spring", GDC 2011,
+                    <a href="http://code.google.com/p/box2d/downloads/detail?name=GDC2011_Catto_Erin_Soft_Constraints.pdf" target="_blank">http://code.google.com/p/box2d/downloads/detail?name=GDC2011_Catto_Erin_Soft_Constraints.pdf</a></p></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

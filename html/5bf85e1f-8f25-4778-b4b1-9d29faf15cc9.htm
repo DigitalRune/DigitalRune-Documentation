@@ -1,0 +1,79 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>UI Controls</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="5bf85e1f-8f25-4778-b4b1-9d29faf15cc9" /><meta name="Description" content="The DigitalRune Game UI library provides GUI controls, like windows, buttons, text boxes, ..., for any XNA application (Windows, Windows Phone 7 or Xbox 360). This section gives an overview over the UI service and controls." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="a5a463da-de2e-432f-bf7d-07206aaca634.htm" title="DigitalRune Game UI" tocid="a5a463da-de2e-432f-bf7d-07206aaca634">DigitalRune Game UI</a></div><div class="toclevel1 current" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="5bf85e1f-8f25-4778-b4b1-9d29faf15cc9.htm" title="UI Controls" tocid="5bf85e1f-8f25-4778-b4b1-9d29faf15cc9">UI Controls</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="2c10bf58-571a-4d67-b763-0f6b584c9bce.htm" title="Control Properties and Events" tocid="2c10bf58-571a-4d67-b763-0f6b584c9bce">Control Properties and Events</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c0f13e6f-5e80-4d6b-8816-39f1789fe825.htm" title="Layout" tocid="c0f13e6f-5e80-4d6b-8816-39f1789fe825">Layout</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="bb35e0b0-49d5-4847-b7f8-f5a1bb467fbb.htm" title="Rendering" tocid="bb35e0b0-49d5-4847-b7f8-f5a1bb467fbb">Rendering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="44fe138f-8897-48c6-8ed6-c41bafd7853f.htm" title="Themes" tocid="44fe138f-8897-48c6-8ed6-c41bafd7853f">Themes</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="b6cd5e3b-0bfa-4edb-8ad4-3abe5b47a071.htm" title="UI Input Handling" tocid="b6cd5e3b-0bfa-4edb-8ad4-3abe5b47a071">UI Input Handling</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">UI Controls</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                The DigitalRune Game UI library provides GUI controls, like windows, buttons, text boxes, ..., for any
+                XNA application (Windows, Windows Phone 7 or Xbox 360). This section gives an overview over the UI
+                service and controls.
+            </p></div><div class="collapsibleAreaRegion" id="Overview"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />The UI service and the UI manager</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    Each application that wants to render UI controls must create an instance of the
+                    <a href="dfc7be86-2bc8-5616-5aec-37d6bf62a917.htm">UIManager</a>.
+                    <a href="399f0719-6e93-c5de-4979-01109fc091b0.htm">InputManager<span id="LST7BF68F40_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7BF68F40_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update(TimeSpan)</a>
+                    must be called once per frame.
+                </p><p>
+                    The UI manager implements the interface
+                    <a href="3a0b060b-69bb-5926-3137-590ac2943e2a.htm">IUIService</a>,
+                    which can be used by game components to add UI screens and UI controls.
+                </p></div><div class="collapsibleAreaRegion" id="UIControls"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />UI controls and UI screens</span></div><div id="ID1RBSection" class="collapsibleSection"><p><a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>
+                    is the base class for all UI controls. UI controls are managed in a <em>visual tree</em>
+                    (e.g. a Window control contains a StackPanel control which contains several Button controls, ...).
+                </p><p>
+                    The root of the visual tree is the
+                    <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>.
+                    Screens must be added to the UI service. The UI service automatically updates the
+                    screens in each frame. Screens are not drawn automatically. You must call
+                    <a href="c4f635fd-b2c3-c279-021c-a27394d9f6bb.htm">UIScreen<span id="LST7BF68F40_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7BF68F40_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Draw(GameTime)</a>
+                    manually to draw a screen. Screens can be rendered into the backbuffer or into a render target.
+                    For example, it is also possible to render a screen into a render target
+                    and use it as an interactive texture in the 3D game.
+                </p><p>
+                    Games can use any number of screens. Many games will only use a single screen.
+                    Some games will use several screens, e.g. a "Debug" screen with debug statistics
+                    above the normal "Game" screen with the UI controls of the game.
+                </p><h4 class="subHeading" id="Trees">Visual tree and logical tree</h4><div class="subsection"><p>
+                            Controls are managed in a <em>visual tree</em>: Each control has a
+                            <a href="0133a381-2684-8711-f81e-04c7daad3c3d.htm">VisualParent</a>
+                            and <a href="afa86d4b-310f-8ecf-106e-4c3ec69f5d8d.htm">VisualChildren</a>.
+                            Visual children are managed by the controls themselves; the
+                            <a href="afa86d4b-310f-8ecf-106e-4c3ec69f5d8d.htm">VisualChildren</a>
+                            collection should not be directly changed by the user. The controls will automatically
+                            add a "logical child" to the visual children if it needs to be rendered.
+                        </p><p>
+                            The root of the visual tree is the
+                            <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>,
+                            which starts all update, layout and render traversals. The screen does not
+                            have a visual parent. Only objects in the visual tree handle input, take part
+                            in the layout process and are rendered.
+                        </p><p><a href="d48478c3-a046-4976-b79a-6a6b1301f1a2.htm">ContentControl</a>s
+                            have a
+                            <a href="c1baeaa5-cd6e-1461-e3d0-f6d5560dfbf6.htm">Content</a>
+                            property.
+                            <a href="aaebdf7d-b609-4eb1-38b6-77ddc8cc1e4c.htm">Panel</a>
+                            and the
+                            <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>
+                            have a
+                            <a href="48ce6cf1-8f1e-3397-4759-69cb7436f20c.htm">Children</a>
+                            collection. Other controls may have an
+                            <a href="cb6ef714-0bfc-e83f-3eb1-338eb4665ac0.htm">Items</a>
+                            collection. Using these properties the user can
+                            create parent-child relationships which define the <em>logical tree</em>.
+                        </p><p>
+                            Here is an example:
+                            A <a href="8ad1b368-37b8-4b78-6228-5d03ca51c6ac.htm">Window</a>
+                            is a <a href="d48478c3-a046-4976-b79a-6a6b1301f1a2.htm">ContentControl</a>,
+                            therefore it has a <a href="c1baeaa5-cd6e-1461-e3d0-f6d5560dfbf6.htm">Content</a>
+                            property. The user adds a logical child to the window by setting the
+                            <a href="c1baeaa5-cd6e-1461-e3d0-f6d5560dfbf6.htm">Content</a>
+                            property (e.g. a <a href="10d83aad-a2a8-66ed-5812-bc532f39bec7.htm">StackPanel</a>
+                            that contains other controls). The window will automatically put the content into the
+                            <a href="afa86d4b-310f-8ecf-106e-4c3ec69f5d8d.htm">VisualChildren</a>
+                            collection because the content should be updated and rendered with the window. The window has a few more
+                            visual children: An <a href="8439f7ae-1adc-e84e-664c-ba4e7891eda1.htm">Image</a>
+                            control that draws the window icon, a <a href="d4da839e-436e-2442-64a0-419cafdae031.htm">TextBlock</a>
+                            that draws the window title and a <a href="edac5bcb-4871-e66a-a7bd-be45c82d1539.htm">Button</a>
+                            that represents the Close button of a window. These "internal" controls are automatically created by the
+                            window and added to its visual children.
+                        </p></div></div><div class="collapsibleAreaRegion" id="Subtopics"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Subtopics</span></div><div id="ID2RBSection" class="collapsibleSection"><ul class="noBullet"><li><a href="2c10bf58-571a-4d67-b763-0f6b584c9bce.htm">Control Properties and Events</a></li><li><a href="c0f13e6f-5e80-4d6b-8816-39f1789fe825.htm">Layout</a></li><li><a href="bb35e0b0-49d5-4847-b7f8-f5a1bb467fbb.htm">Rendering</a></li><li><a href="44fe138f-8897-48c6-8ed6-c41bafd7853f.htm">Themes</a></li><li><a href="b6cd5e3b-0bfa-4edb-8ad4-3abe5b47a071.htm">UI Input Handling</a></li></ul></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

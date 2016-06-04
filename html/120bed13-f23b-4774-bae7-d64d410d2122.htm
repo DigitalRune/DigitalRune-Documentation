@@ -1,0 +1,129 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Storage and Virtual File Systems</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="120bed13-f23b-4774-bae7-d64d410d2122" /><meta name="Description" content="This topic describes the storage API for cross-platform file access and virtual file systems." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="dc44c3a5-8545-4253-9da1-62258a00607c.htm" title="DigitalRune Base Library" tocid="dc44c3a5-8545-4253-9da1-62258a00607c">DigitalRune Base Library</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="09d39ddf-c826-4943-aac8-2ef9e16e5a12.htm" title="Parallel Tasks (Multithreading)" tocid="09d39ddf-c826-4943-aac8-2ef9e16e5a12">Parallel Tasks (Multithreading)</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="9e2a4144-69e9-4bf2-8cea-79713eb91490.htm" title="Resource Pooling" tocid="9e2a4144-69e9-4bf2-8cea-79713eb91490">Resource Pooling</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="ce7bca46-717a-4dfb-a154-acb6ee1e8ad9.htm" title="Service Location and Inversion of Control" tocid="ce7bca46-717a-4dfb-a154-acb6ee1e8ad9">Service Location and Inversion of Control</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="6736e3bc-383c-4d80-a828-c83fea5c3461.htm" title="Performance Profiling" tocid="6736e3bc-383c-4d80-a828-c83fea5c3461">Performance Profiling</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="120bed13-f23b-4774-bae7-d64d410d2122.htm" title="Storage and Virtual File Systems" tocid="120bed13-f23b-4774-bae7-d64d410d2122">Storage and Virtual File Systems</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="3b7ea45b-f13c-49b3-961b-42899323a477.htm" title="&quot;How To&quot; Articles" tocid="3b7ea45b-f13c-49b3-961b-42899323a477">"How To" Articles</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="dba0bb78-681c-4dd0-b84b-91ce08eeea36.htm" title="Class Diagrams" tocid="dba0bb78-681c-4dd0-b84b-91ce08eeea36">Class Diagrams</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Storage and Virtual File Systems</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+        This topic describes the storage API for cross-platform file access and virtual file systems.
+      </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Storages">Storages</a></li><li class="outlineSectionEntry"><a href="#PAK">PAK file format</a></li><li class="outlineSectionEntry"><a href="#VFS">Virtual file systems</a></li><li class="outlineSectionEntry"><a href="#seeAlsoSection">See Also</a></li></ul></div><div class="collapsibleAreaRegion" id="Storages"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Storages</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+          Different platforms have different APIs for accessing files. For example:
+        </p><ul><li>
+              Desktop apps access the file system directly (namespace <a href="http://msdn2.microsoft.com/en-us/library/29kt2zfk" target="_blank">System.IO</a>).
+          </li><li>
+              Silverlight apps use isolated storage.
+          </li><li>
+              Windows Store apps use storage folders.
+          </li><li>
+              XNA games use the title storage and user storage on Xbox 360.
+          </li><li>
+              Etc.
+          </li></ul><p>
+          DigitalRune introduces a common storage API. The interface <a href="c01e7da4-f86a-512c-8c6d-c59bdb4bb541.htm">IStorage</a>
+          provides access to files from different sources. The namespace <a href="10c2cb5d-9fab-1460-c0a6-b5579397eceb.htm">DigitalRune.Storages</a>
+          includes several storage providers:
+        </p><ul><li><a href="16439a6b-2897-de7a-c4cd-caf11d83b647.htm">FileSystemStorage</a>
+              provides access to the file system of the operation system.
+          </li><li><a href="f49bc9d2-5ca5-8f1d-856b-0ed831dd9edb.htm">TitleStorage</a>
+              provides access to the title storage on Xbox 360.
+          </li></ul><p>
+          The following storage types are built on top of other storages:
+        </p><ul><li><a href="97e246e8-5bb5-020b-acbc-af2485ceccdf.htm">ZipStorage</a>
+              provides access to files stored in ZIP archives. The ZIP archive can be read from any
+              of the existing storages.
+          </li><li><a href="a0966aa9-0e4a-c48b-d7a2-eda38d3f37be.htm">VfsStorage</a>
+              maps existing storages into a virtual file system. Different storage devices and locations
+              can be accessed as a single directory hierarchy.
+          </li></ul><p>
+          Additional storage providers will be added in future releases. Third-party developers can
+          also provide custom implementations.
+        </p></div><div class="collapsibleAreaRegion" id="PAK"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />PAK file format</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+          Video games have a tradition of packing game content into single package files (.PAK files).
+          Package formats are used to simplify the file structure, add file compression and encryption.
+          The actual file format of a .PAK file may vary from one game to another.
+        </p><p>
+          The <a href="97e246e8-5bb5-020b-acbc-af2485ceccdf.htm">ZipStorage</a>
+          provides access to package files that use the ZIP file format. That means, game assets can
+          be packed into a ZIP package and the game logic can access the files in the package. The
+          <a href="97e246e8-5bb5-020b-acbc-af2485ceccdf.htm">ZipStorage</a>
+          automatically handles decompression and encryption (optional).
+        </p><p>
+          Developers can provide custom <a href="c01e7da4-f86a-512c-8c6d-c59bdb4bb541.htm">IStorage</a>
+          implementations to provide support for other package file formats.
+        </p><p>
+          DigitalRune includes a command-line tool <a href="983ed4b5-d98b-4244-81d3-9518b7a16ab4.htm">Pack</a>
+          for packing files into a ZIP archive. The tool was designed to be used from the command-line or called
+          as a <span class="ui">Build Event</span> in a Visual Studio project.
+        </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+            It is not required to use the Pack.exe provided by DigitalRune. Any standard ZIP tool can
+            be used to create/update packages.
+          </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="VFS"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Virtual file systems</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+          The class <a href="a0966aa9-0e4a-c48b-d7a2-eda38d3f37be.htm">VfsStorage</a>
+          can be used to create a <span class="term">virtual file system</span>. A virtual file system is 
+          abstraction on top of concrete storages. Existing storage locations can be mapped into a
+          virtual directory hierarchy.
+        </p><p>
+          Virtual files systems are commonly used in games to abstract access to files. The actual
+          storage locations and file IO may vary from one platform to another. For example, game
+          content can be provided on a removable media (ROM cartridge, DVD, Blu-ray Disc, etc.), can
+          be installed on a local harddisk, or can be cached in memory for faster access. The storage
+          classes can be used to access these locations. A <a href="a0966aa9-0e4a-c48b-d7a2-eda38d3f37be.htm">VfsStorage</a>
+          can be set up to map these locations into a virtual file system. The game logic reads
+          assets from the virtual file system. Using this approach the game logic can more easily be
+          ported to different platforms.
+        </p><h4 class="subHeading">Example: MonoGame Samples project</h4><div class="subsection"><p>
+              The following structure is used in the <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a>
+              project for MonoGame: The game assets are stored in the <em>Content</em>
+              subdirectory of the application directory. The sample assets (*.xnb files) are packed
+              into a single ZIP archive <em>Assets.zip</em>. The DigitalRune Graphics assets
+              are stored in <em>DigitalRune.zip</em>.
+            </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EAHAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EAHAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EAHAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">&lt;gameLocation&gt;/
+    Content/
+      Assets.zip
+      DigitalRune.zip
+      other assets...</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EAHAAABAAA");</script><p>
+              The following code is used to set up the virtual file system:
+            </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EAFAAABAAA_tab1" class="codeSnippetContainerTabSingle">Setting up a virtual file system</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EAFAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EAFAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EAFAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Create a TitleStorage that reads files from "&lt;gameLocation&gt;/Content".</span>
+<span class="highlight-keyword">var</span> titleStorage = <span class="highlight-keyword">new</span> TitleStorage(<span class="highlight-literal">"Content"</span>);
+
+<span class="highlight-comment">// The VfsStorage creates a virtual file system.</span>
+<span class="highlight-keyword">var</span> vfsStorage = <span class="highlight-keyword">new</span> VfsStorage();
+
+<span class="highlight-comment">// Map the titleStorage to the root "/" of the virtual file system.</span>
+vfsStorage.MountInfos.Add(<span class="highlight-keyword">new</span> VfsMountInfo(titleStorage, <span class="highlight-keyword">null</span>));
+
+<span class="highlight-comment">// The game assets (*.xnb files) are packed as a ZIP archive "Content/Assets.zip".</span>
+<span class="highlight-comment">// A ZipStorage can be used to access files inside the ZIP archive.</span>
+<span class="highlight-comment">// Mount the zipped files to the root "/" of the virtual file system.</span>
+<span class="highlight-keyword">var</span> assetsStorage = <span class="highlight-keyword">new</span> ZipStorage(titleStorage, <span class="highlight-literal">"Assets.zip"</span>);
+vfsStorage.MountInfos.Add(<span class="highlight-keyword">new</span> VfsMountInfo(assetsStorage, <span class="highlight-keyword">null</span>));
+
+<span class="highlight-comment">// DigitalRune Graphics assets (built-in effects) are stored in "Content/DigitalRune.zip".</span>
+<span class="highlight-comment">// Mount the DigitalRune assets to the root of the virtual file system.</span>
+<span class="highlight-keyword">var</span> drStorage = <span class="highlight-keyword">new</span> ZipStorage(titleStorage, <span class="highlight-literal">"DigitalRune.zip"</span>);
+vfsStorage.MountInfos.Add(<span class="highlight-keyword">new</span> VfsMountInfo(drStorage, <span class="highlight-keyword">null</span>));</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EAFAAABAAA");</script><p>
+              Once the virtual file system is set up, files can be easily be open for reading.
+            </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EADAAABAAA_tab1" class="codeSnippetContainerTabSingle">Reading a file from a virtual file system</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EADAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EADAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EADAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">try</span>
+{
+  <span class="highlight-comment">// To read the file "Models/Model.xnb" which is stored in "Assets.zip":</span>
+  <span class="highlight-keyword">using</span> (<span class="highlight-keyword">var</span> stream = vfsStorage.OpenFile(<span class="highlight-literal">"Models/Model.xnb"</span>)
+  {
+    <span class="highlight-comment">// Here: Read file content.</span>
+  }
+}
+<span class="highlight-keyword">catch</span> (Exception ex)
+{
+  <span class="highlight-comment">// Here: Handle file IO exceptions.</span>
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EADAAABAAA");</script><p>
+              In XNA an <a href="105acc00-ad37-eddd-4e71-bbcb6c0ee531.htm">StorageContentManager</a>
+              can be used instead of the regular XNA ContentManager.
+            </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EABAAABAAA_tab1" class="codeSnippetContainerTabSingle">StorageContentManager for XNA</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EABAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EABAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EABAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// The StorageContentManager can be used in XNA to read game assets from the</span>
+<span class="highlight-comment">// virtual file system. (Replaces the XNA ContentManager.)</span>
+Content = <span class="highlight-keyword">new</span> StorageContentManager(Services, vfsStorage);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EABAAABAAA");</script><p>
+              Note that multiple storage locations can be mapped to the same mount point. In the 
+              example above three storages (<em>Content/*.*</em>, <em>Content/Assets.zip</em>,
+              and <em>Content/DigitalRune.zip</em>) are mapped to the root "/" of the virtual
+              file system. The order of the entries in the
+              <a href="fe8240a8-ee01-5857-1f8a-8fc0254c26f3.htm">MountInfos</a>
+              list determines the search order.
+            </p></div></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID4RBSection" class="collapsibleSection"><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="10c2cb5d-9fab-1460-c0a6-b5579397eceb.htm">DigitalRune.Storages</a></div><div class="seeAlsoStyle"><a href="c01e7da4-f86a-512c-8c6d-c59bdb4bb541.htm">IStorage</a></div><div class="seeAlsoStyle"><a href="16439a6b-2897-de7a-c4cd-caf11d83b647.htm">FileSystemStorage</a></div><div class="seeAlsoStyle"><a href="f49bc9d2-5ca5-8f1d-856b-0ed831dd9edb.htm">TitleStorage</a></div><div class="seeAlsoStyle"><a href="a0966aa9-0e4a-c48b-d7a2-eda38d3f37be.htm">VfsStorage</a></div><div class="seeAlsoStyle"><a href="97e246e8-5bb5-020b-acbc-af2485ceccdf.htm">ZipStorage</a></div><div class="seeAlsoStyle"><a href="105acc00-ad37-eddd-4e71-bbcb6c0ee531.htm">StorageContentManager</a></div><h4 class="subHeading">Other Resources</h4><div class="seeAlsoStyle"><a href="http://en.wikipedia.org/wiki/PAK_(file_format)" target="_blank">PAK file format (Wikipedia)</a></div><div class="seeAlsoStyle"><a href="http://en.wikipedia.org/wiki/Virtual_file_system" target="_blank">Virtual File Systems (Wikipedia)</a></div><div class="seeAlsoStyle"><a href="983ed4b5-d98b-4244-81d3-9518b7a16ab4.htm">Pack</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

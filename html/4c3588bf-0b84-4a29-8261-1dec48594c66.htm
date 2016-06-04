@@ -1,0 +1,106 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Animation Manager</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="4c3588bf-0b84-4a29-8261-1dec48594c66" /><meta name="Description" content="The T:DigitalRune.Animation.AnimationManager is the core of the animation system. It manages, updates and applies all running animations. A game usually has one instance of this class which is updated in the main game loop." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="c2892dfd-491e-4e78-83d1-737e38f1acc9.htm" title="DigitalRune Animation" tocid="c2892dfd-491e-4e78-83d1-737e38f1acc9">DigitalRune Animation</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="4c3588bf-0b84-4a29-8261-1dec48594c66.htm" title="Animation Manager" tocid="4c3588bf-0b84-4a29-8261-1dec48594c66">Animation Manager</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="126b4c8b-7f0a-4530-9e6b-081703fb74dd.htm" title="Animatable Objects and Properties" tocid="126b4c8b-7f0a-4530-9e6b-081703fb74dd">Animatable Objects and Properties</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="aa0975de-0777-4a65-bee0-1bfed7d87b3e.htm" title="Animating Objects and Properties" tocid="aa0975de-0777-4a65-bee0-1bfed7d87b3e">Animating Objects and Properties</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="de13b766-a75f-4320-9928-4f9fa2bdc967.htm" title="Controlling Animations" tocid="de13b766-a75f-4320-9928-4f9fa2bdc967">Controlling Animations</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c3cf4f80-807c-412a-894f-b77313d88184.htm" title="Animation Types" tocid="c3cf4f80-807c-412a-894f-b77313d88184">Animation Types</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="93178dcc-a9b9-4cc6-b4df-ed693b988561.htm" title="3D Character Animation" tocid="93178dcc-a9b9-4cc6-b4df-ed693b988561">3D Character Animation</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="751c362c-34c2-497e-a36e-75af009f37ef.htm" title="Articles" tocid="751c362c-34c2-497e-a36e-75af009f37ef">Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="5bfb585d-77b4-4faa-b04c-1b626e09cddf.htm" title="FAQ" tocid="5bfb585d-77b4-4faa-b04c-1b626e09cddf">FAQ</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="e3af2ccd-53d2-4eb6-bbf9-648449e0666f.htm" title="Class Diagrams" tocid="e3af2ccd-53d2-4eb6-bbf9-648449e0666f">Class Diagrams</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Animation Manager</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                The <a href="010c6662-6bd9-7db8-54b9-ffa7861aaae8.htm">AnimationManager</a>
+                is the core of the animation system. It manages, updates and applies all
+                running animations. A game usually has one instance of this class which is updated in
+                the main game loop.
+            </p></div><div class="collapsibleAreaRegion" id="Initialization"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Initialization</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    Creation and initialization of the animation manager is straight forward.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EADADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EADADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EADADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EADADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Create a new animation manager.</span>
+AnimationManager animationManager = <span class="highlight-keyword">new</span> AnimationManager();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EADADAAA");</script><p>
+                    Optionally, it is possible to enable or disable support for multithreading. When multithreading is
+                    enabled all animations are evaluated in parallel. The workload is automatically distributed among
+                    all available CPU cores. Multithreading is enabled by default. See property
+                    <a href="888145f0-6ac9-d3c6-6529-f2aeff861dad.htm">AnimationManager<span id="LST4ECE3F9C_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4ECE3F9C_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>EnableMultithreading</a>
+                    for more information.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EABADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Optional: Enable or disable multithreading support. (Enabled by default.)</span>
+animationManager.EnableMultithreading = <span class="highlight-keyword">true</span>;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABADAAA");</script><p>
+                    Support for multithreading can be enabled or disabled at any point at runtime.
+                </p></div><div class="collapsibleAreaRegion" id="Update"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Update</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    All active animations are registered by the animation manager. The method
+                    <a href="193da52f-4320-4cdb-8039-9ba610735dbf.htm">AnimationManager<span id="LST4ECE3F9C_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4ECE3F9C_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update(TimeSpan)</a>
+                    needs to be called regularly, usually once per frame, to update all animations.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAFACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAFACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAFACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAFACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Progress all animations by the given time.</span>
+<span class="highlight-comment">// (deltaTime is the elapsed time since the last update.)</span>
+animationManager.Update(deltaTime);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAFACAAA");</script><p>
+                    The <a href="193da52f-4320-4cdb-8039-9ba610735dbf.htm">AnimationManager<span id="LST4ECE3F9C_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4ECE3F9C_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update(TimeSpan)</a>
+                    method is the part were the animation manager does most of its work.
+                </p><p><strong>Important:</strong> The <a href="193da52f-4320-4cdb-8039-9ba610735dbf.htm">Update</a>
+                    method does not yet write the animation results to the objects that are being animated.
+                    Instead the new animation values are cached by the animations system. The method
+                    <a href="9234f8b3-15ef-c348-8003-28f2c527a350.htm">AnimationManager<span id="LST4ECE3F9C_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4ECE3F9C_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>ApplyAnimations<span id="LST4ECE3F9C_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4ECE3F9C_4?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>
+                    needs to be called to write the animation results.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EACACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Apply the new animation values to the objects and properties that</span>
+<span class="highlight-comment">// are being animated.</span>
+animationManager.ApplyAnimations();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACACAAA");</script><p>
+                    By separating the <a href="193da52f-4320-4cdb-8039-9ba610735dbf.htm">Update</a>
+                    and the <a href="9234f8b3-15ef-c348-8003-28f2c527a350.htm">ApplyAnimations</a>
+                    logic it is possible to run the update parallel to other game services (such as AI, graphics, physics, etc.).
+                </p><p>
+                    It is not allowed to start or stop animations while they are being updated.
+                </p></div><div class="collapsibleAreaRegion" id="AnimationService"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Animation service</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    The <a href="010c6662-6bd9-7db8-54b9-ffa7861aaae8.htm">AnimationManager</a>
+                    implements the interface <a href="ce8fbff2-b621-fbb7-b7ed-ce31aaccf2c5.htm">IAnimationService</a>.
+                    This interface exposes all methods required to start and stop animations.
+                    All game components that need to start or stop animations need to have access
+                    to this interface.
+                </p><p>
+                    One solution to make the service globally available is to store the animation manager
+                    in a global variable. A more elegant solution is to put the interface into a service
+                    provider ("service locator") which is globally available. The following is an example
+                    of a stripped-down XNA Game class.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EADABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EADABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EADABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EADABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> Game1 : Game
+{
+  <span class="highlight-keyword">private</span> AnimationManager _animationManager;
+
+  <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> Initialize()
+  {
+    <span class="highlight-comment">// Best practice: The services are stored in Game.Services to make them </span>
+    <span class="highlight-comment">// accessible for all game components.</span>
+
+    <span class="highlight-comment">// Add the animation service.</span>
+    _animationManager = <span class="highlight-keyword">new</span> AnimationManager();
+    Services.AddService(<span class="highlight-keyword">typeof</span>(IAnimationService), _animationManager);
+
+    ...
+
+    <span class="highlight-keyword">base</span>.Initialize();
+  }
+
+
+  <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> Update(GameTime gameTime)
+  {
+    TimeSpan deltaTime = gameTime.ElapsedGameTime;
+
+    <span class="highlight-comment">// Game logic.</span>
+    ...
+
+    <span class="highlight-comment">// Update the game components.</span>
+    <span class="highlight-keyword">base</span>.Update(gameTime);
+
+    <span class="highlight-comment">// Update the animations.</span>
+    _animationManager.Update(deltaTime);
+
+    <span class="highlight-comment">// Apply the animations.</span>
+    _animationManager.ApplyAnimations();
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EADABAAA");</script><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                        In the example above the animations are updated after the game logic and all game
+                        components have been updated. Note that this is just one possible example! It is
+                        also possible to update the animations at a different point of the game loop.
+                    </p><p>
+                        Also, the method <a href="9234f8b3-15ef-c348-8003-28f2c527a350.htm">ApplyAnimations</a>
+                        does not necessarily need to be called immediately after <a href="193da52f-4320-4cdb-8039-9ba610735dbf.htm">Update</a>.
+                    </p></td></tr></table></div><p>
+                    Tip: In the example above the interface
+                    <a href="ce8fbff2-b621-fbb7-b7ed-ce31aaccf2c5.htm">IAnimationService</a>
+                    is registered as a service in <strong>Game.Services</strong>. Other game components
+                    can retrieve the service from the service provider if necessary.
+                    Here is an example:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Fetch the animation service from the game's service provider.</span>
+<span class="highlight-keyword">var</span> animationService = (IAnimationService)Game.Services.GetService(<span class="highlight-keyword">typeof</span>(IAnimationService));</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAABAAA");</script></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

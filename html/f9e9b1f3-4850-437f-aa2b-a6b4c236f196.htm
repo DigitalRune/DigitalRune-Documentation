@@ -1,0 +1,103 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>How To: Clamp a Particle Parameter</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="f9e9b1f3-4850-437f-aa2b-a6b4c236f196" /><meta name="Description" content="This topic shows how you can limit particle parameter values at runtime, e.g. to limit the alpha value of particles." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="5044112e-c86d-4d85-87d0-b567a0361c21.htm" title="DigitalRune Particles" tocid="5044112e-c86d-4d85-87d0-b567a0361c21">DigitalRune Particles</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="25e7a7a0-265e-4c12-9e41-be23852b39cf.htm" title="&quot;How To&quot; Articles" tocid="25e7a7a0-265e-4c12-9e41-be23852b39cf">"How To" Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="60bdbd87-fecb-42e2-bdf3-3966602bb9a5.htm" title="How To: Add DigitalRune Particles to a Project" tocid="60bdbd87-fecb-42e2-bdf3-3966602bb9a5">How To: Add DigitalRune Particles to a Project</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="2deefa98-6d2a-4ada-a51d-95a2625849df.htm" title="How To: Create a Simple Particle Effect" tocid="2deefa98-6d2a-4ada-a51d-95a2625849df">How To: Create a Simple Particle Effect</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="2e27afb1-6482-4f56-9497-ca903aef3c9f.htm" title="How To: Create a Particle Effector" tocid="2e27afb1-6482-4f56-9497-ca903aef3c9f">How To: Create a Particle Effector</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="5b005b7b-e103-4da2-8d18-cddce0a5bea7.htm" title="How To: Create a Particle Emitter" tocid="5b005b7b-e103-4da2-8d18-cddce0a5bea7">How To: Create a Particle Emitter</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="95a33167-7650-4006-8cf1-3e011c42bf54.htm" title="How To: Create a Start Value Effector" tocid="95a33167-7650-4006-8cf1-3e011c42bf54">How To: Create a Start Value Effector</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="f9e9b1f3-4850-437f-aa2b-a6b4c236f196.htm" title="How To: Clamp a Particle Parameter" tocid="f9e9b1f3-4850-437f-aa2b-a6b4c236f196">How To: Clamp a Particle Parameter</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">How To: Clamp a Particle Parameter</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This topic shows how you can limit particle parameter values at runtime, e.g. to limit the
+                alpha value of particles.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Effector">Creating a ClampValueEffector</a></li><li class="outlineSectionEntry"><a href="#Add">Adding ClampValueEffector to a ParticleSystem</a></li><li class="outlineSectionEntry"><a href="#FuncEffector">Clamping using a standard FuncEffector</a></li></ul></div><div class="collapsibleAreaRegion" id="Effector"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Creating a ClampValueEffector</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    You can use a custom
+                    <a href="98aac0ca-d8d4-a3c8-dca3-b0579f335f85.htm">ParticleEffector</a>
+                    to change particle parameters. See
+                    <a href="2e27afb1-6482-4f56-9497-ca903aef3c9f.htm">How To: Create a Particle Effector</a>.
+                </p><p>
+                    Here is a code snippet of a particle effector that clamps a value between a min and max value:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> DigitalRune.Mathematics;
+<span class="highlight-keyword">using</span> DigitalRune.Particles;
+
+<span class="highlight-keyword">namespace</span> Samples.Particles
+{
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> ClampValueEffector&lt;T&gt; : ParticleEffector <span class="highlight-keyword">where</span> T : IComparable&lt;T&gt;
+  {
+    <span class="highlight-keyword">private</span> IParticleParameter&lt;T&gt; _parameter;
+
+    [ParticleParameter(ParticleParameterUsage.InOut)]
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">string</span> Parameter { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+
+    <span class="highlight-keyword">public</span> T Min { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+    <span class="highlight-keyword">public</span> T Max { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> ParticleEffector CreateInstanceCore()
+    {
+      <span class="highlight-keyword">return</span> <span class="highlight-keyword">new</span> ClampValueEffector&lt;T&gt;();
+    }
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> CloneCore(ParticleEffector source)
+    {
+      <span class="highlight-keyword">base</span>.CloneCore(source);
+
+      <span class="highlight-keyword">var</span> sourceTyped = (ClampValueEffector&lt;T&gt;)source;
+      Parameter = sourceTyped.Parameter;
+    }
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnRequeryParameters()
+    {
+      _parameter = ParticleSystem.Parameters.Get&lt;T&gt;(Parameter);
+    }
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnUninitialize()
+    {
+      _parameter = <span class="highlight-keyword">null</span>;
+    }
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnBeginUpdate(TimeSpan deltaTime)
+    {
+      <span class="highlight-keyword">if</span> (_parameter == <span class="highlight-keyword">null</span>)
+        <span class="highlight-keyword">return</span>;
+
+      T[] values = _parameter.Values;
+      <span class="highlight-keyword">if</span> (values == <span class="highlight-keyword">null</span>)
+      {
+        <span class="highlight-comment">// Value is a uniform parameter.</span>
+        _parameter.DefaultValue = MathHelper.Clamp(_parameter.DefaultValue, Min, Max);
+      }
+    }
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnUpdateParticles(TimeSpan deltaTime, <span class="highlight-keyword">int</span> startIndex, <span class="highlight-keyword">int</span> count)
+    {
+      <span class="highlight-keyword">if</span> (_parameter == <span class="highlight-keyword">null</span>)
+        <span class="highlight-keyword">return</span>;
+
+      T[] values = _parameter.Values;
+      <span class="highlight-keyword">if</span> (values == <span class="highlight-keyword">null</span>)
+      {
+        <span class="highlight-comment">// Value is a uniform parameter. Uniform parameters are handled in OnBeginUpdate().</span>
+        <span class="highlight-keyword">return</span>;
+      }
+
+      <span class="highlight-comment">// Value is a varying parameter.</span>
+      <span class="highlight-keyword">for</span> (<span class="highlight-keyword">int</span> i = startIndex; i &lt; startIndex + count; i++)
+        values[i] = MathHelper.Clamp(values[i], Min, Max);
+    }
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAADAAA");</script></div><div class="collapsibleAreaRegion" id="Add"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Adding ClampValueEffector to a ParticleSystem</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    You need to add the new
+                    <strong>ClampValueEffecto </strong>
+                    to the particle system, for example:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">_particleSystem.Effectors.Add(<span class="highlight-keyword">new</span> ClampValueEffector&lt;<span class="highlight-keyword">float</span>&gt;
+{
+  Parameter = ParticleParameterNames.Alpha,
+  Min = <span class="highlight-number">0.2</span>f,
+  Max = <span class="highlight-number">0.8</span>f,
+});</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAACAAA");</script></div><div class="collapsibleAreaRegion" id="FuncEffector"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Clamping using a standard FuncEffector</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    Alternatively, you can use the
+                    <a href="b3e5b322-92d8-f0a1-8bd2-f18c9f340359.htm">FuncEffector<span id="LSTC6EEF5CB_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC6EEF5CB_0?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T, TResult<span id="LSTC6EEF5CB_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC6EEF5CB_1?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">particleSystem.Effectors.Add(<span class="highlight-keyword">new</span> FuncEffector&lt;<span class="highlight-keyword">float</span>, <span class="highlight-keyword">float</span>&gt;
+{
+  InputParameter = <span class="highlight-literal">"Alpha"</span>,
+  OutputParameter = <span class="highlight-literal">"Alpha"</span>,
+  Func = x =&gt; MathHelper.Clamp(x, <span class="highlight-number">0.2</span>f, <span class="highlight-number">0.8</span>f),
+});</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAABAAA");</script></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

@@ -1,0 +1,107 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Shadow Masks</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="a3f49f80-226e-4a6b-b13a-dbf673b41438" /><meta name="Description" content="In DigitalRune Graphics shadow maps are used in two ways:" /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="7d5a0abe-8231-452c-895c-e6dbab83822b.htm" title="Graphics Programming" tocid="7d5a0abe-8231-452c-895c-e6dbab83822b">Graphics Programming</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="3f82c46b-efec-4416-807f-670ac1930117.htm" title="Shadows" tocid="3f82c46b-efec-4416-807f-670ac1930117">Shadows</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="8666619e-60d7-436e-8a0f-b3d982f0dca7.htm" title="Shadow Types" tocid="8666619e-60d7-436e-8a0f-b3d982f0dca7">Shadow Types</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="bed07eb7-0d10-40f3-93e8-c823a787b6a7.htm" title="Shadow Filtering" tocid="bed07eb7-0d10-40f3-93e8-c823a787b6a7">Shadow Filtering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="3f4d959e-9c98-4a97-8d85-7a73c26145d7.htm" title="Shadow Acne" tocid="3f4d959e-9c98-4a97-8d85-7a73c26145d7">Shadow Acne</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="4f8d2843-e46a-44cf-ba8d-c58fb8d9302d.htm" title="Shadow Maps" tocid="4f8d2843-e46a-44cf-ba8d-c58fb8d9302d">Shadow Maps</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="a3f49f80-226e-4a6b-b13a-dbf673b41438.htm" title="Shadow Masks" tocid="a3f49f80-226e-4a6b-b13a-dbf673b41438">Shadow Masks</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Shadow Masks</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#ShadowMaps">How shadow maps are used</a></li><li class="outlineSectionEntry"><a href="#ShadowMask">Shadow mask</a></li><li class="outlineSectionEntry"><a href="#Filtering">Shadow mask filtering (a.k.a screen-space blurred shadows)</a></li><li class="outlineSectionEntry"><a href="#HalfRes">Half-resolution rendering</a></li></ul></div><div class="collapsibleAreaRegion" id="ShadowMaps"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />How shadow maps are used</span></div><div id="ID0RBSection" class="collapsibleSection"><p>In DigitalRune Graphics shadow maps are used in two ways: </p><ul><li><p><strong>Forward rendering:</strong>
+                            In
+                            <span class="term">forward rendering</span> models are drawn directly to the screen. The effect
+                            that renders the model samples the shadow map directly to see if a pixel is lit/shadowed.
+                            Shadows are disabled in the pre-built effects for forward rendering. But the code for
+                            directional light shadows is included in the source and can be enabled using preprocessor
+                            directives. If you want to add shadows for forward rendering, please have a look at the
+                            source code of
+                            <span class="term">Forward.fx</span>.
+                        </p></li><li><p><strong>Deferred shadow maps:</strong>
+                            In a
+                            <span class="term">deferred lighting</span> pipeline models are first rendered into the G-buffer. Then the
+                            <a href="22403909-a781-58dc-2284-5478c65d0ffa.htm">ShadowMaskRenderer</a>
+                            reads the shadow maps and creates a <span class="term">shadow mask</span>.
+                            The shadow mask indicates which pixels in the
+                            G-buffer are lit and which are shadowed.
+                            Shadow filtering is done when the shadow mask is created. In addition, the shadow mask can be
+                            blurred to create soft shadows. The shadow mask can also be rendered into a low-resolution
+                            render target to improve performance.
+                            Any shader that applies a light can simply read the shadow mask – it is not necessary to
+                            sample individual shadow maps.
+                        </p></li></ul><p>
+                    In a typical game with deferred lighting, opaque meshes are rendered into the G-buffer, and
+                    transparent meshes are rendered using forward rendering. Therefore, deferred shadow maps only
+                    work for opaque meshes. In many games transparent meshes do not receive any shadows to keep
+                    the forward rendering simple.
+                </p></div><div class="collapsibleAreaRegion" id="ShadowMask"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Shadow mask</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    The <span class="term">shadow mask</span> is an image, as seen from the camera, where each pixel
+                    stores the shadow information of the scene. Each shadow-casting light is assigned to one
+                    8-bit channel (R, G, B, or A). Lights that do not overlap can use the same channel!
+                </p><p>
+                    Each channel stores the shadow term of the light source. A value of 0 means the pixel is
+                    shadowed; a value of 1 means the pixel is fully lit. The shadow mask is usually an RGBA render
+                    target, which means that it can store the shadow terms of up to four shadows per pixel.
+                    If a pixel is affected by more than 4 shadows at the same time, multiple render targets
+                    are required to store the shadow mask. – For performance reasons it is recommended that no
+                    more than 4 shadow-casting lights overlap in a scene. A single render target should be
+                    sufficient in most cases.
+                </p><p>
+                    The following screenshot shows a scene with a directional light (sun) and a point light
+                    (colored sphere). The shadow mask is shown in the upper left. The shadows have to use
+                    different shadow mask channels because the directional light and the point light overlap.
+                    The directional light's shadow is stored in the R channel. The point light's shadow is
+                    stored in the G channel.
+                </p><div class="mediaNear"><img alt="Shadow-Mask" src="../media/Shadow-Mask.jpg" /></div><p>
+                    DigitalRune Graphics provides a
+                    <a href="22403909-a781-58dc-2284-5478c65d0ffa.htm">ShadowMaskRenderer</a>.
+                    The renderer supports
+                    <a href="8304ef95-b8af-395c-e56a-035d0d281f97.htm">StandardShadow</a>s,
+                    <a href="1ead4eb1-24a9-1697-c981-9b95b1eb9d99.htm">CubeMapShadow</a>s,
+                    <a href="0c57c848-9e69-7c24-6357-9798a7a94cbc.htm">CascadedShadow</a>s and
+                    <a href="582377bf-1bcc-fea1-d054-f2361884e4ea.htm">CompositeShadow</a>s.
+                    Support for new shadow types can be implemented by creating a new renderer and adding it to
+                    the
+                    <a href="b19ae327-741d-5d93-b76f-5cec7929d6aa.htm">Renderers</a>
+                    collection of the
+                    <a href="22403909-a781-58dc-2284-5478c65d0ffa.htm">ShadowMaskRenderer</a>.
+                </p><p>
+                    In deferred rendering pipelines, the
+                    <a href="22403909-a781-58dc-2284-5478c65d0ffa.htm">ShadowMaskRenderer</a>
+                    is usually called after the shadow map renderer:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAEADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAEADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAEADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAEADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Create shadow masks for the specified light nodes.</span>
+shadowMaskRenderer.Render(lightNodes, context);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAEADAAA");</script><p>
+                    The shadow mask renderer handles shadow filtering and biasing. The resulting shadow masks
+                    are stored in
+                    <a href="2b58fed9-33a3-1d38-a7a5-5dbff24cbcf5.htm">Shadow<span id="LST47EB6F64_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST47EB6F64_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>ShadowMask</a>.
+                    The assigned shadow mask channel is stored in
+                    <a href="587af69c-49bf-b855-ce61-9f293ddcf716.htm">Shadow<span id="LST47EB6F64_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST47EB6F64_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>ShadowMaskChannel</a>.
+                </p><p>
+                    Shadow masks are also available via the
+                    <a href="894a5bdb-a499-673e-58a6-f9f9e02335ac.htm">ShadowMaskRenderer<span id="LST47EB6F64_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST47EB6F64_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>ShadowMasks</a>
+                    property – which is often helpful for debugging.
+                </p><p>
+                    The shadow masks are usually used by the deferred
+                    <a href="e7826294-a115-6d0d-320d-4b9e79553bc7.htm">LightRenderer</a>.
+                    When the shadow masks are no longer required, they can be recycled by calling
+                    <a href="cef2b624-fe79-b8ee-5a22-c93f6edd4187.htm">RecycleShadowMasks</a>.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">shadowMaskRenderer.RecycleShadowMasks();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAADAAA");</script></div><div class="collapsibleAreaRegion" id="Filtering"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Shadow mask filtering (a.k.a screen-space blurred shadows)</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    The shadow mask can be blurred as post-process to reduce shadow aliasing even further.
+                    This requires a special type of filter:
+                    A <span class="term">depth-scaled, cross-bilateral, anisotropic, pseudo-separable Gaussian filter</span>.
+                </p><p>
+                    This filter needs to be assigned to the
+                    <a href="22403909-a781-58dc-2284-5478c65d0ffa.htm">ShadowMaskRenderer</a>,
+                    for example:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAEACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAEACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAEACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAEACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">var</span> blur = <span class="highlight-keyword">new</span> Blur(GraphicsService);
+blur.InitializeGaussianBlur(<span class="highlight-number">11</span>, <span class="highlight-number">3</span>, <span class="highlight-keyword">true</span>);  <span class="highlight-comment">// 11 taps</span>
+blur.DepthScaling = <span class="highlight-number">0.7</span>f;
+blur.IsBilateral = <span class="highlight-keyword">true</span>;
+blur.IsAnisotropic = <span class="highlight-keyword">true</span>;
+
+shadowMaskRenderer.Filter = blur;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAEACAAA");</script><p>
+                    As can be seen in the screenshot below, this type of filter produces excellent results
+                    and is particularly efficient. It can blur all shadows in the shadow mask at once!
+                </p><div class="mediaNear"><img alt="Shadow-Mask-Blur" src="../media/Shadow-Mask-Blur.jpg" /><div class="caption">Figure: Unfiltered shadow mask (left) and filtered shadow mask (right)</div></div><p>
+                    The next image compares shadow map filtering (PCF) with shadow mask filtering ("screen space blur").
+                </p><div class="mediaNear"><img alt="Shadow-Mask-Blur 2" src="../media/Shadow-Mask-Blur2.jpg" /><div class="caption">Figure: Shadow map filtering using PCF (left) vs. shadow mask filtering (right)</div></div></div><div class="collapsibleAreaRegion" id="HalfRes"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Half-resolution rendering</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    The shadow mask can optionally be rendered at half resolution to improve performance.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EACABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EACABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EACABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EACABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">ShadowMaskRenderer.UseHalfResolution = <span class="highlight-keyword">true</span>;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EACABAAA");</script><p>
+                    The shadow mask is then upscaled using cross-bilateral ("depth-aware") upsampling.
+                </p><div class="mediaNear"><img alt="Shadow-Mask-Half-Res" src="../media/Shadow-Mask-Half-Res.jpg" /></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

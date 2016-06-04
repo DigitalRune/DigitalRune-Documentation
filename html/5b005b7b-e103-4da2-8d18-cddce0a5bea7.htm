@@ -1,0 +1,221 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>How To: Create a Particle Emitter</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="5b005b7b-e103-4da2-8d18-cddce0a5bea7" /><meta name="Description" content="This section explains how to create a particle emitter (an effector that creates particles)." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="5044112e-c86d-4d85-87d0-b567a0361c21.htm" title="DigitalRune Particles" tocid="5044112e-c86d-4d85-87d0-b567a0361c21">DigitalRune Particles</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="25e7a7a0-265e-4c12-9e41-be23852b39cf.htm" title="&quot;How To&quot; Articles" tocid="25e7a7a0-265e-4c12-9e41-be23852b39cf">"How To" Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="60bdbd87-fecb-42e2-bdf3-3966602bb9a5.htm" title="How To: Add DigitalRune Particles to a Project" tocid="60bdbd87-fecb-42e2-bdf3-3966602bb9a5">How To: Add DigitalRune Particles to a Project</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="2deefa98-6d2a-4ada-a51d-95a2625849df.htm" title="How To: Create a Simple Particle Effect" tocid="2deefa98-6d2a-4ada-a51d-95a2625849df">How To: Create a Simple Particle Effect</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="2e27afb1-6482-4f56-9497-ca903aef3c9f.htm" title="How To: Create a Particle Effector" tocid="2e27afb1-6482-4f56-9497-ca903aef3c9f">How To: Create a Particle Effector</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="5b005b7b-e103-4da2-8d18-cddce0a5bea7.htm" title="How To: Create a Particle Emitter" tocid="5b005b7b-e103-4da2-8d18-cddce0a5bea7">How To: Create a Particle Emitter</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="95a33167-7650-4006-8cf1-3e011c42bf54.htm" title="How To: Create a Start Value Effector" tocid="95a33167-7650-4006-8cf1-3e011c42bf54">How To: Create a Start Value Effector</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="f9e9b1f3-4850-437f-aa2b-a6b4c236f196.htm" title="How To: Clamp a Particle Parameter" tocid="f9e9b1f3-4850-437f-aa2b-a6b4c236f196">How To: Clamp a Particle Parameter</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">How To: Create a Particle Emitter</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This section explains how to create a <em>particle emitter</em> (an effector that creates particles).
+            </p></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />What is a particle emitter?</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    Objects that create new particles are usually called
+                    <em>particle emitters</em>. In DigitalRune Particles, emitters can be implemented
+                    as <a href="98aac0ca-d8d4-a3c8-dca3-b0579f335f85.htm">ParticleEffector</a>s
+                    that call the method <a href="468ae797-48ab-c1d7-6bc0-85de73fad230.htm">ParticleSystem<span id="LSTB4A970CA_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB4A970CA_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>AddParticles(Int32)</a>
+                    to create particles.
+                </p><p>
+                    This article shows how to implement a stream emitter that creates
+                    particles at a configurable rate. (Please note: DigitalRune Particles
+                    contains a <a href="f091034c-3028-8a3d-672b-94f9eb2555a0.htm">StreamEmitter</a>
+                    that provides the same functionality.)
+                </p></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Creating a stream emitter</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    First, we create a new class that inherits from
+                    <a href="98aac0ca-d8d4-a3c8-dca3-b0579f335f85.htm">ParticleEffector</a>.
+                    Particle effectors can be added to a particle system, and they are called
+                    whenever the particle system is initialized or updated. Here is the empty class
+                    and the namespaces that we will need:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EARACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EARACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EARACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EARACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> System.Collections.Generic;
+<span class="highlight-keyword">using</span> DigitalRune.Particles;
+
+
+<span class="highlight-keyword">namespace</span> MyNamespace
+{
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> MyStreamEmitter : ParticleEffector
+  {
+    <span class="highlight-comment">// TODO: Add code.</span>
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EARACAAA");</script><p>
+                    To allow users to configure the emission rate, we have two options:
+                </p><ol><li>
+                        The stream emitter class could have an "EmissionRateParameter" property of
+                        type string where the user can set the name of a uniform particle parameter
+                        that defines the emission rate.
+                    </li><li>
+                        The stream emitter class has an "EmissionRate" property of type float that
+                        defines the current emission rate.
+                    </li></ol><p>
+                    We can offer both options by adding these properties to the stream emitter:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EANACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EANACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EANACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EANACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">[ParticleParameter(ParticleParameterUsage.In, Optional = <span class="highlight-keyword">true</span>)]
+<span class="highlight-keyword">public</span> <span class="highlight-keyword">string</span> EmissionRateParameter { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+
+<span class="highlight-keyword">public</span> <span class="highlight-keyword">float</span> DefaultEmissionRate { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+
+<span class="highlight-keyword">public</span> MyStreamEmitter()
+{
+  DefaultEmissionRate = <span class="highlight-number">10</span>;
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EANACAAA");</script><p>
+                    If <strong>EmissionRateParameter</strong> is set, the stream emitter
+                    should search for a uniform particle parameter with this name and use the value
+                    of this parameter as the emission rate. Using particle parameters is very flexible because
+                    particle parameters can be animated using other particle effectors or the animation
+                    system in <a href="c2892dfd-491e-4e78-83d1-737e38f1acc9.htm">DigitalRune Animation</a>.
+                </p><p>
+                    If the <strong>EmissionRateParameter</strong> is not set, the value of the property <strong>DefaultEmissionRate</strong>
+                    (with a default value of 10) is used as the emission rate. Regular properties are easier
+                    to use than particle parameters - but offer less flexibility.
+                </p><p>
+                    The <a href="79a959a4-ae44-582a-4f3d-f87e28833e30.htm">ParticleParameterAttribute</a>
+                    provides meta-information for particle editors and validation. In this example,
+                    the <strong>EmissionRateParameter</strong> is an optional input parameter.
+                </p><p>
+                    Particle effectors should be cloneable. The following two methods must be
+                    overridden to support cloning:
+                    <a href="3e0436a8-a377-0c63-f4b0-22ce7fe568bd.htm">CreateInstanceCore</a>
+                    must return a new instance of the particle emitter and
+                    <a href="b33385e0-f83d-16cd-2f03-d7e67be006a4.htm">CloneCore</a>
+                    must copy all important properties:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAIACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAIACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAIACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAIACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> ParticleEffector CreateInstanceCore()
+{
+  <span class="highlight-keyword">return</span> <span class="highlight-keyword">new</span> MyStreamEmitter();
+}
+
+
+<span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> CloneCore(ParticleEffector source)
+{
+  <span class="highlight-keyword">base</span>.CloneCore(source);
+
+  <span class="highlight-keyword">var</span> sourceTyped = (MyStreamEmitter)source;
+  EmissionRateParameter = sourceTyped.EmissionRateParameter;
+  DefaultEmissionRate = sourceTyped.DefaultEmissionRate;
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAIACAAA");</script><p>
+                    The base class
+                    <a href="98aac0ca-d8d4-a3c8-dca3-b0579f335f85.htm">ParticleEffector</a>
+                    provides several virtual methods, which are automatically called by the
+                    particle system. Derived classes can override these methods to change
+                    particle parameters, manipulate the particle system, or emit new particles.
+                </p><p>
+                    The particle effector can query the required parameters and cache the
+                    references in
+                    <a href="7543215c-6c1f-c910-3651-22bb21f8f99d.htm">OnRequeryParameters</a>.
+                    This method is called when the particle system is updated for the first
+                    time, and then every time the particle parameters change and need
+                    to be requeried.
+                </p><p><a href="6daf5d22-d32e-3de2-17f1-b1cde78c1d6b.htm">OnInitialize</a>
+                    is called after <a href="7543215c-6c1f-c910-3651-22bb21f8f99d.htm">OnRequeryParameters</a>
+                    when the particle system is updated for the first time and whenever
+                    the particle system is reset. In this method the internal state of the
+                    particle effector should be reset.
+                </p><p><a href="97f514fa-1854-32d6-07eb-5d716a48f9ee.htm">OnUninitialize</a>
+                    is called when the particle effector is removed from a particle system. In this method
+                    all resources and references to external objects should be released.
+                </p><p>
+                    The stream emitter in our example will use two private fields that require initialization
+                    and clean-up: The first field stores a reference to the emission rate parameter, and
+                    the second field remembers how many particles need to be emitted in the next time step:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EACACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EACACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EACACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EACACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">private</span> IParticleParameter&lt;<span class="highlight-keyword">float</span>&gt; _emissionRateParameter;
+<span class="highlight-keyword">private</span> <span class="highlight-keyword">float</span> _leftoverParticles;
+
+<span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnRequeryParameters()
+{
+  _emissionRateParameter = ParticleSystem.Parameters.Get&lt;<span class="highlight-keyword">float</span>&gt;(EmissionRateParameter);
+}
+
+<span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnInitialize()
+{
+  _leftoverParticles = <span class="highlight-number">0</span>;
+}
+
+<span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnUninitialize()
+{
+  _emissionRateParameter = <span class="highlight-keyword">null</span>;
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EACACAAA");</script><p>
+                    The base class
+                    <a href="98aac0ca-d8d4-a3c8-dca3-b0579f335f85.htm">ParticleEffector</a>
+                    has several virtual methods that are called when the particle system is updated.
+                    One of these method is
+                    <a href="6615422d-63d4-4e82-f79a-d18a41a601b1.htm">OnBeginUpdate</a>.
+                    This method is called when the particle system begins with the update. The
+                    stream emitter can override the method and call
+                    <a href="468ae797-48ab-c1d7-6bc0-85de73fad230.htm">ParticleSystem<span id="LSTB4A970CA_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB4A970CA_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>AddParticles(Int32)</a>
+                    to create ("emit") new particles in each frame.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnBeginUpdate(TimeSpan deltaTime)
+{
+  <span class="highlight-keyword">float</span> dt = (<span class="highlight-keyword">float</span>)deltaTime.TotalSeconds;
+  <span class="highlight-keyword">float</span> emissionRate = (_emissionRateParameter != <span class="highlight-keyword">null</span>) ? _emissionRateParameter.DefaultValue : DefaultEmissionRate;
+  <span class="highlight-keyword">float</span> numberOfParticles = emissionRate * dt + _leftoverParticles;
+
+  ParticleSystem.AddParticles((<span class="highlight-keyword">int</span>)numberOfParticles, <span class="highlight-keyword">this</span>);
+
+  <span class="highlight-comment">// The decimal fraction of numberOfParticles is truncated, so not the whole</span>
+  <span class="highlight-comment">// deltaTime is really used. We store the unused fraction for the next frame.</span>
+  _leftoverParticles = numberOfParticles - (<span class="highlight-keyword">float</span>)Math.Floor(numberOfParticles);
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAACAAA");</script></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />The final stream emitter code</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    Here is the full source code of the stream emitter.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> System.Collections.Generic;
+<span class="highlight-keyword">using</span> DigitalRune.Particles;
+
+
+<span class="highlight-keyword">namespace</span> MyNamespace
+{
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> MyStreamEmitter : ParticleEffector
+  {
+    <span class="highlight-keyword">private</span> IParticleParameter&lt;<span class="highlight-keyword">float</span>&gt; _emissionRateParameter;
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">float</span> _leftoverParticles;
+
+
+    [ParticleParameter(ParticleParameterUsage.In, Optional = <span class="highlight-keyword">true</span>)]
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">string</span> EmissionRateParameter { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">float</span> DefaultEmissionRate { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+
+
+    <span class="highlight-keyword">public</span> MyStreamEmitter()
+    {
+      DefaultEmissionRate = <span class="highlight-number">10</span>;
+    }
+
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> ParticleEffector CreateInstanceCore()
+    {
+      <span class="highlight-keyword">return</span> <span class="highlight-keyword">new</span> MyStreamEmitter();
+    }
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> CloneCore(ParticleEffector source)
+    {
+      <span class="highlight-keyword">base</span>.CloneCore(source);
+
+      <span class="highlight-keyword">var</span> sourceTyped = (MyStreamEmitter)source;
+      EmissionRateParameter = sourceTyped.EmissionRateParameter;
+      DefaultEmissionRate = sourceTyped.DefaultEmissionRate;
+    }
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnRequeryParameters()
+    {
+      _emissionRateParameter = ParticleSystem.Parameters.Get&lt;<span class="highlight-keyword">float</span>&gt;(EmissionRateParameter);
+    }
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnInitialize()
+    {
+      _leftoverParticles = <span class="highlight-number">0</span>;
+    }
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnUninitialize()
+    {
+      _emissionRateParameter = <span class="highlight-keyword">null</span>;
+    }
+
+    <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> OnBeginUpdate(TimeSpan deltaTime)
+    {
+      <span class="highlight-keyword">float</span> dt = (<span class="highlight-keyword">float</span>)deltaTime.TotalSeconds;
+      <span class="highlight-keyword">float</span> emissionRate = (_emissionRateParameter != <span class="highlight-keyword">null</span>) ? _emissionRateParameter.DefaultValue : DefaultEmissionRate;
+      <span class="highlight-keyword">float</span> numberOfParticles = emissionRate * dt + _leftoverParticles;
+
+      ParticleSystem.AddParticles((<span class="highlight-keyword">int</span>)numberOfParticles, <span class="highlight-keyword">this</span>);
+
+      <span class="highlight-comment">// The decimal fraction of numberOfParticles is truncated, so not the whole</span>
+      <span class="highlight-comment">// deltaTime is really used. We store the unused fraction for the next frame.</span>
+      _leftoverParticles = numberOfParticles - (<span class="highlight-keyword">float</span>)Math.Floor(numberOfParticles);
+    }
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAABAAA");</script></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

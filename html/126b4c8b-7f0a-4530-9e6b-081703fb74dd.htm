@@ -1,0 +1,154 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Animatable Objects and Properties</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="126b4c8b-7f0a-4530-9e6b-081703fb74dd" /><meta name="Description" content="The purpose of the animation system is to animate other object and properties, i.e. to change their values over time in a controlled fashion." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="c2892dfd-491e-4e78-83d1-737e38f1acc9.htm" title="DigitalRune Animation" tocid="c2892dfd-491e-4e78-83d1-737e38f1acc9">DigitalRune Animation</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="4c3588bf-0b84-4a29-8261-1dec48594c66.htm" title="Animation Manager" tocid="4c3588bf-0b84-4a29-8261-1dec48594c66">Animation Manager</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="126b4c8b-7f0a-4530-9e6b-081703fb74dd.htm" title="Animatable Objects and Properties" tocid="126b4c8b-7f0a-4530-9e6b-081703fb74dd">Animatable Objects and Properties</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="aa0975de-0777-4a65-bee0-1bfed7d87b3e.htm" title="Animating Objects and Properties" tocid="aa0975de-0777-4a65-bee0-1bfed7d87b3e">Animating Objects and Properties</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="de13b766-a75f-4320-9928-4f9fa2bdc967.htm" title="Controlling Animations" tocid="de13b766-a75f-4320-9928-4f9fa2bdc967">Controlling Animations</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c3cf4f80-807c-412a-894f-b77313d88184.htm" title="Animation Types" tocid="c3cf4f80-807c-412a-894f-b77313d88184">Animation Types</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="93178dcc-a9b9-4cc6-b4df-ed693b988561.htm" title="3D Character Animation" tocid="93178dcc-a9b9-4cc6-b4df-ed693b988561">3D Character Animation</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="751c362c-34c2-497e-a36e-75af009f37ef.htm" title="Articles" tocid="751c362c-34c2-497e-a36e-75af009f37ef">Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="5bfb585d-77b4-4faa-b04c-1b626e09cddf.htm" title="FAQ" tocid="5bfb585d-77b4-4faa-b04c-1b626e09cddf">FAQ</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="e3af2ccd-53d2-4eb6-bbf9-648449e0666f.htm" title="Class Diagrams" tocid="e3af2ccd-53d2-4eb6-bbf9-648449e0666f">Class Diagrams</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Animatable Objects and Properties</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+        The purpose of the animation system is to animate other object and properties, i.e.
+        to change their values over time in a controlled fashion.
+      </p><p>
+        Animations can be applied to objects that implement the interface
+        <a href="58812efb-838c-b735-4cc7-97ff368daa12.htm">IAnimatableObject</a>
+        or properties that implement <a href="12daff40-617d-de91-038e-142e7cc14993.htm">IAnimatableProperty<span id="LSTBD135360_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_0?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTBD135360_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_1?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>.
+      </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+          All objects of the <a href="309293e8-f2d6-4308-8c85-3f4726f92244.htm">DigitalRune Game Object System</a>
+          and all UI controls of <a href="a5a463da-de2e-432f-bf7d-07206aaca634.htm">DigitalRune Game UI</a>
+          already implement the interfaces <a href="58812efb-838c-b735-4cc7-97ff368daa12.htm">IAnimatableObject</a>
+          and <a href="12daff40-617d-de91-038e-142e7cc14993.htm">IAnimatableProperty<span id="LSTBD135360_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_2?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTBD135360_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_3?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>.
+        </p><p><a href="59222b0e-6149-e82f-b01e-357cdcc5319e.htm">GameObject</a>s and
+          <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>s
+          implement <a href="58812efb-838c-b735-4cc7-97ff368daa12.htm">IAnimatableObject</a>.
+          These objects can be animated directly by the animation system.
+        </p><p>
+          A <a href="516e6103-f552-10dc-63a4-cddf14054f0f.htm">GameProperty<span id="LSTBD135360_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_4?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTBD135360_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_5?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+          can be cast to <a href="12daff40-617d-de91-038e-142e7cc14993.htm">IAnimatableProperty<span id="LSTBD135360_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_6?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTBD135360_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_7?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+          by calling <a href="6567d075-dab7-da8a-1d7c-28e8a6181e1d.htm">GameProperty<span id="LSTBD135360_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_8?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTBD135360_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_9?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script><span id="LSTBD135360_10"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_10?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>AsAnimatable<span id="LSTBD135360_11"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_11?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>.
+          This can be necessary if an animation should be applied directly to a specific property.
+        </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="Properties"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Animatable properties</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+          There are several helper classes that provide implementations of the interface
+          <a href="12daff40-617d-de91-038e-142e7cc14993.htm">IAnimatableProperty<span id="LSTBD135360_12"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_12?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTBD135360_13"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_13?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>,
+          so in most cases it is not necessary to implement this interface directly.
+        </p><h4 class="subHeading" id="AnimatableProperty">AnimatableProperty&lt;T&gt;</h4><div class="subsection"><p>
+              The helper class <a href="e69245fb-ec88-5a55-f141-2a64b1a07d8d.htm">AnimatableProperty<span id="LSTBD135360_14"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_14?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTBD135360_15"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_15?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+              can be used to create a new (stand-alone) animatable property. It is basically just a container
+              storing a value.
+            </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAACACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAACACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAACACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAACACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Create new property which can be animated.</span>
+AnimatableProperty&lt;Vector3F&gt; position = <span class="highlight-keyword">new</span> AnimatableProperty&lt;Vector3F&gt;();
+
+<span class="highlight-comment">// The AnimatableProperty&lt;T&gt; is just a wrapper over a another type.</span>
+position.Value = <span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">1.0</span>f, <span class="highlight-number">2.0</span>f, <span class="highlight-number">3.0</span>f);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAACACAAA");</script></div><h4 class="subHeading" id="DelegateAnimatableProperty">DelegateAnimatableProperty&lt;T&gt;</h4><div class="subsection"><p>
+              The <a href="d0f8dc7a-6797-cc7b-83ec-6e9af78cf798.htm">DelegateAnimatableProperty<span id="LSTBD135360_16"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_16?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTBD135360_17"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_17?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+              is a helper class can be used to make an existing field or property accessible
+              for the animation system. It does not directly store a value, instead it stores
+              two callbacks that read or write the value.
+            </p><p>
+              For example, imagine an existing class that represents a Sprite:
+            </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EACABACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACABACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACABACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACABACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> Sprite
+{
+  <span class="highlight-keyword">public</span> Color Color { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+  <span class="highlight-keyword">public</span> Vector2 Position { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+  <span class="highlight-keyword">public</span> Texture2D Texture { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACABACAAA");</script><p>
+              In order to animate the Position, the property needs to be wrapped using a
+              <a href="d0f8dc7a-6797-cc7b-83ec-6e9af78cf798.htm">DelegateAnimatableProperty<span id="LSTBD135360_18"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_18?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTBD135360_19"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_19?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>:
+            </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAABACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAABACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAABACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAABACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Lets create a new Sprite.</span>
+<span class="highlight-keyword">var</span> sprite = <span class="highlight-keyword">new</span> Sprite();
+
+<span class="highlight-comment">// To animate the Sprite's position, we need to create an IAnimatableProperty&lt;Vector2&gt;.</span>
+<span class="highlight-keyword">var</span> animatablePosition = <span class="highlight-keyword">new</span> DelegateAnimatableProperty&lt;Vector2&gt;(
+  () =&gt; sprite.Position,     <span class="highlight-comment">// A getter that reads the value.</span>
+  v =&gt; sprite.Position = v); <span class="highlight-comment">// A setter that writes the value.</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAABACAAA");</script></div><h4 class="subHeading" id="Values">Background information: base values vs. animation values</h4><div class="subsection"><p>
+              A property needs to implement <a href="12daff40-617d-de91-038e-142e7cc14993.htm">IAnimatableProperty<span id="LSTBD135360_20"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_20?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTBD135360_21"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_21?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+              in order to be animated. The interface has two main properties:
+              <a href="a6978e2f-1317-7665-310c-5e0b70d2323b.htm">BaseValue</a>
+              and <a href="4f1074e6-dfba-ffa7-7da8-c07c5f80cfc4.htm">AnimationValue</a>.
+              That means, an animatable property can have a <span class="term">base value</span> and an
+              <span class="term">animation value</span>.
+            </p><p><strong>Base Value:</strong> The base value is the value of the property that is valid when no animations
+              are active. The base value is optional - not all properties that implement
+              <a href="12daff40-617d-de91-038e-142e7cc14993.htm">IAnimatableProperty<span id="LSTBD135360_22"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_22?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTBD135360_23"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_23?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+              need to have a base value. The properties
+              <a href="fb0fc15e-4b3a-3fb4-6db8-4cbb977b7248.htm">HasBaseValue</a>
+              and <a href="a6978e2f-1317-7665-310c-5e0b70d2323b.htm">BaseValue</a>
+              need to be set by the object that implements the interface. The animation system reads the
+              base value but does not change it. The base value is used by certain types of animations:
+              For example, additive animations will add the result of the animations to the base value value.
+              Another example are "From-To-Animations": If only the "To" value is defined then the animation
+              will animate from the base value of the property to the "To" value defined in the animation.
+            </p><p><strong>Animation Value:</strong> The animation value of the property is determined
+              by the animations that are controlling the property. The properties
+              <a href="97bb34cf-c2c8-727c-be96-175b465d5780.htm">IsAnimated</a>
+              and <a href="4f1074e6-dfba-ffa7-7da8-c07c5f80cfc4.htm">AnimationValue</a>
+              are set by the animations system and should be treated as read-only.
+              <a href="97bb34cf-c2c8-727c-be96-175b465d5780.htm">IsAnimated</a>
+              is <span class="code">true</span> when an animation is active; <span class="code">false</span>
+              indicates that no animations are active. In this case the base value, if available, should
+              be treated as the effective value of the property.
+            </p><p>
+              Note that not all types that implement <a href="12daff40-617d-de91-038e-142e7cc14993.htm">IAnimatableProperty<span id="LSTBD135360_24"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_24?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTBD135360_25"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_25?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+              have a base value. Some implementations such as
+              <a href="e69245fb-ec88-5a55-f141-2a64b1a07d8d.htm">AnimatableProperty<span id="LSTBD135360_26"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_26?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTBD135360_27"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_27?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+              do, some implementations such as
+              <a href="d0f8dc7a-6797-cc7b-83ec-6e9af78cf798.htm">DelegateAnimatableProperty<span id="LSTBD135360_28"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_28?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTBD135360_29"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_29?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+              don't! If a property stores a base value and all animations are stopped, the property value
+              reverts to the base value. If the property does not have a base value and all
+              animations are stopped, the property value retains the most recent animation value.
+            </p><p>
+              Properties that do not store a base value, only an animation value, are sometimes
+              called "pure animated properties".
+            </p><p>
+              Users never have to deal with the interface <a href="12daff40-617d-de91-038e-142e7cc14993.htm">IAnimatableProperty<span id="LSTBD135360_30"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_30?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTBD135360_31"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_31?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+              directly - except when they want to implement their own type of animatable property.
+            </p></div></div><div class="collapsibleAreaRegion" id="AnimatableObject"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Animatable objects</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+          The interface <a href="58812efb-838c-b735-4cc7-97ff368daa12.htm">IAnimatableObject</a>
+          indicates that an object has properties that implement
+          <a href="12daff40-617d-de91-038e-142e7cc14993.htm">IAnimatableProperty<span id="LSTBD135360_32"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_32?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTBD135360_33"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTBD135360_33?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>.
+          Objects that implement <a href="58812efb-838c-b735-4cc7-97ff368daa12.htm">IAnimatableObject</a>
+          have several advantages: Animations that affect multiple properties can be
+          group together as one animation ("storyboard"). A complex storyboard can be
+          treated as a single animation.
+        </p><p>
+          Here is an example that shows how a class that implements
+          <a href="58812efb-838c-b735-4cc7-97ff368daa12.htm">IAnimatableObject</a>
+          could look like. In this example the color and position of a sprite can be animated.
+        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> AnimatableSprite : IAnimatableObject
+{
+  <span class="highlight-keyword">private</span> <span class="highlight-keyword">readonly</span> AnimatableProperty&lt;Color&gt; _color = <span class="highlight-keyword">new</span> AnimatableProperty&lt;Color&gt;();
+  <span class="highlight-keyword">private</span> <span class="highlight-keyword">readonly</span> AnimatableProperty&lt;Vector2&gt; _position = <span class="highlight-keyword">new</span> AnimatableProperty&lt;Vector2&gt;();
+
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">string</span> Name { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+
+  <span class="highlight-keyword">public</span> Color Color
+  { 
+    <span class="highlight-keyword">get</span> { <span class="highlight-keyword">return</span> _color.Value; }
+    <span class="highlight-keyword">set</span> { _color.Value = <span class="highlight-keyword">value</span>; } 
+  }
+
+  <span class="highlight-keyword">public</span> Vector2 Position 
+  { 
+    <span class="highlight-keyword">get</span> { <span class="highlight-keyword">return</span> _position.Value; }
+    <span class="highlight-keyword">set</span> { _position.Value = <span class="highlight-keyword">value</span>; } 
+  }
+
+  <span class="highlight-keyword">public</span> Texture2D Texture { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+
+  <span class="highlight-keyword">public</span> IEnumerable&lt;IAnimatableProperty&gt; GetAnimatedProperties()
+  {
+    <span class="highlight-keyword">yield</span> <span class="highlight-keyword">return</span> _color;
+    <span class="highlight-keyword">yield</span> <span class="highlight-keyword">return</span> _position;
+  }
+
+  <span class="highlight-keyword">public</span> IAnimatableProperty&lt;T&gt; GetAnimatableProperty&lt;T&gt;(<span class="highlight-keyword">string</span> name)
+  {
+    <span class="highlight-keyword">switch</span> (name)
+    {
+      <span class="highlight-keyword">case</span> <span class="highlight-literal">"Color"</span>:
+        <span class="highlight-keyword">return</span> _animatableColor <span class="highlight-keyword">as</span> IAnimatableProperty&lt;T&gt;;
+      <span class="highlight-keyword">case</span> <span class="highlight-literal">"Position"</span>:
+        <span class="highlight-keyword">return</span> _animatablePosition <span class="highlight-keyword">as</span> IAnimatableProperty&lt;T&gt;;
+      <span class="highlight-keyword">default</span>:
+        <span class="highlight-keyword">return</span> <span class="highlight-keyword">null</span>;
+    }
+  }  
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAABAAA");</script></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

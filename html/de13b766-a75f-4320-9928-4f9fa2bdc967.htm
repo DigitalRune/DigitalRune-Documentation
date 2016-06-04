@@ -1,0 +1,222 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Controlling Animations</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="de13b766-a75f-4320-9928-4f9fa2bdc967" /><meta name="Description" content="This topic explains some general concepts and contains information about starting, stopping and controlling animations." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="c2892dfd-491e-4e78-83d1-737e38f1acc9.htm" title="DigitalRune Animation" tocid="c2892dfd-491e-4e78-83d1-737e38f1acc9">DigitalRune Animation</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="4c3588bf-0b84-4a29-8261-1dec48594c66.htm" title="Animation Manager" tocid="4c3588bf-0b84-4a29-8261-1dec48594c66">Animation Manager</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="126b4c8b-7f0a-4530-9e6b-081703fb74dd.htm" title="Animatable Objects and Properties" tocid="126b4c8b-7f0a-4530-9e6b-081703fb74dd">Animatable Objects and Properties</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="aa0975de-0777-4a65-bee0-1bfed7d87b3e.htm" title="Animating Objects and Properties" tocid="aa0975de-0777-4a65-bee0-1bfed7d87b3e">Animating Objects and Properties</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="de13b766-a75f-4320-9928-4f9fa2bdc967.htm" title="Controlling Animations" tocid="de13b766-a75f-4320-9928-4f9fa2bdc967">Controlling Animations</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c3cf4f80-807c-412a-894f-b77313d88184.htm" title="Animation Types" tocid="c3cf4f80-807c-412a-894f-b77313d88184">Animation Types</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="93178dcc-a9b9-4cc6-b4df-ed693b988561.htm" title="3D Character Animation" tocid="93178dcc-a9b9-4cc6-b4df-ed693b988561">3D Character Animation</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="751c362c-34c2-497e-a36e-75af009f37ef.htm" title="Articles" tocid="751c362c-34c2-497e-a36e-75af009f37ef">Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="5bfb585d-77b4-4faa-b04c-1b626e09cddf.htm" title="FAQ" tocid="5bfb585d-77b4-4faa-b04c-1b626e09cddf">FAQ</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="e3af2ccd-53d2-4eb6-bbf9-648449e0666f.htm" title="Class Diagrams" tocid="e3af2ccd-53d2-4eb6-bbf9-648449e0666f">Class Diagrams</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Controlling Animations</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This topic explains some general concepts and contains information about starting, stopping and controlling animations.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#AnimationService">Animation service</a></li><li class="outlineSectionEntry"><a href="#AnimationData">Timelines, animations and animation instances</a></li><li class="outlineSectionEntry"><a href="#AnimationController">Animation controller</a></li><li class="outlineSectionEntry"><a href="#Transitions">Animation transitions</a></li><li class="outlineSectionEntry"><a href="#Composition">Animation composition chains and animation weights</a></li></ul></div><div class="collapsibleAreaRegion" id="AnimationService"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Animation service</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    The interface <a href="ce8fbff2-b621-fbb7-b7ed-ce31aaccf2c5.htm">IAnimationService</a>
+                    (implemented by the <a href="010c6662-6bd9-7db8-54b9-ffa7861aaae8.htm">AnimationManager</a>)
+                    exposes all methods required to start new animations (see method
+                    <a href="3870b08a-c4b7-0289-9eac-46ee8d373b91.htm">StartAnimation</a>
+                    and its overloads) and stop running animations (see method
+                    <a href="98c1f4bf-e0b4-54ad-2f06-acc519b67d98.htm">StopAnimation</a>
+                    and its overloads).
+                </p><p><a href="f36486cb-e570-8b38-4805-3c14af6c6ff4.htm">IsAnimated</a>
+                    is a method that allows to query whether an object or property is currently being animated.
+                </p><p>
+                    When a new animation is started the animated properties do not change immediately.
+                    Animation values are only updated and applied when the methods
+                    <a href="193da52f-4320-4cdb-8039-9ba610735dbf.htm">Update</a>
+                    and <a href="9234f8b3-15ef-c348-8003-28f2c527a350.htm">ApplyAnimations</a>
+                    of the animation manager are called. But in certain cases the animated
+                    properties should change immediately. In this case the method
+                    <a href="f14c5a3d-e6f1-e27e-879c-31051e3a6c3b.htm">UpdateAndApplyAnimation</a>
+                    (or one of its overloads) can be called. This method instantly evaluates all
+                    animations that affect the specified objects or properties and applies the new
+                    animation values.
+                </p></div><div class="collapsibleAreaRegion" id="AnimationData"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Timelines, animations and animation instances</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    The animation system differentiates between <span class="term">timelines</span>,
+                    <span class="term">animations</span> and <span class="term">animation instances</span>.
+                    (Note: These are no official terms - they are only used by DigitalRune Animation.
+                    The term <span class="term">animation</span> is used very loosely throughout this
+                    documentation and can usually mean any of the above.)
+                </p><h4 class="subHeading" id="Timelines">Timelines</h4><div class="subsection"><p>
+                            A timeline defines when an animation starts and how long it is active.
+                            It is defined by the interface <a href="2b6a2a90-3092-50af-23fd-015f1c8cd694.htm">ITimeline</a>.
+                            Anything that implements <a href="2b6a2a90-3092-50af-23fd-015f1c8cd694.htm">ITimeline</a>
+                            can be played back by the animation system. The most important types that
+                            implement this interface are <a href="b1737627-6ddf-69ae-e6cc-7d43297ddb3b.htm">TimelineClip</a>
+                            and <a href="4bfac403-dc33-8ea7-dc9d-b7ed7b9b2bca.htm">TimelineGroup</a>.
+                            These types of animations do not compute an animation value themselves. Instead
+                            they only <em>arrange</em> other animations.
+                        </p></div><h4 class="subHeading" id="Animations">Animations</h4><div class="subsection"><p>
+                            An animation is a type that returns an actual animation value. An animation is represented
+                            by the interface <a href="2a452b86-1b50-629c-fcef-aca04f1b17ff.htm">IAnimation<span id="LSTE220357_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTE220357_0?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTE220357_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTE220357_1?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>.
+                            (Note that <a href="2a452b86-1b50-629c-fcef-aca04f1b17ff.htm">IAnimation<span id="LSTE220357_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTE220357_2?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTE220357_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTE220357_3?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                            extends <a href="2b6a2a90-3092-50af-23fd-015f1c8cd694.htm">ITimeline</a>.)
+                        </p></div><h4 class="subHeading" id="AnimationInstances">Animation instances</h4><div class="subsection"><p>
+                            When animations are started <a href="220f8d9c-ea2d-3d56-bd5f-bdc2a9ffb449.htm">AnimationInstance</a>s
+                            are created. An animation instance maintains the runtime state (such as the current animation time)
+                            of the animations. See <a href="220f8d9c-ea2d-3d56-bd5f-bdc2a9ffb449.htm">AnimationInstance</a>
+                            for more information.
+                        </p><p>
+                            Each animation controller has a property <a href="be1c8c6a-0ac2-397c-1af3-ff44ae87ee33.htm">AnimationInstance</a>
+                            which points to its root animation instance.
+                        </p></div></div><div class="collapsibleAreaRegion" id="AnimationController"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Animation controller</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    Every time a new animation is started an
+                    <a href="3889b553-b238-753c-0a36-7ba22761cd5a.htm">AnimationController</a>
+                    is returned. The animation controller is a lightweight handle (struct) that allows to
+                    interactively control the associated animation instances.
+                </p><p>
+                    An animation controller can also be created explicitly by calling the method
+                    <a href="2a3e3f26-d506-406e-03d4-d3555c6f75e5.htm">CreateController</a>
+                    of the animation service. In this case the animations are assigned to the specified objects
+                    and properties, but the animations do not start immediately.
+                </p><p>
+                    The animation controller allows to start (see method <a href="b1b4869d-2476-a0db-8fe2-8ac5c8023adf.htm">Start</a>)
+                    and stop (see method <a href="782ac6cb-62e3-30c5-4169-204752f577b3.htm">Stop</a>)
+                    animations, pause (see method <a href="b92c9157-936b-55d6-338b-6234fb241ec4.htm">Pause</a>)
+                    and resume (see method <a href="39363d65-8b2e-e78e-13fa-7a5dd3933d90.htm">Resume</a>)
+                    the animation timing, change the playback speed (see property <a href="e08079da-0c6e-5268-b46b-91ef79fdc1bd.htm">Speed</a>),
+                    query the state (see property <a href="0910c0de-040c-a723-9dfd-a502c6de2e27.htm">State</a>)
+                    of an animation, adjust the animation time (see property <a href="ac754de2-2df9-89bc-55d2-8a02c4a7ffcf.htm">Time</a>),
+                    and more.
+                </p><p><a href="2ea3acc2-9b44-07a0-98e7-c7f69f5b7338.htm">UpdateAndApply</a>
+                    can be called to immediately evaluate and apply the animations associated with
+                    the given animation controller.
+                </p><h4 class="subHeading" id="State">Animation state</h4><div class="subsection"><p>
+                            Timelines have a <a href="9c693a62-7451-4491-9882-b87fe4faab55.htm">FillBehavior</a>.
+                            The fill behavior determines what happens when the duration of the animation is exceeded.
+                            When it is set to <a href="2cbb02eb-98d7-1880-cc4b-3e65f4d1827a.htm">Hold</a>
+                            then the animation holds its last animation value. This animation value is
+                            returned until the animation is stopped manually.
+                            When the fill behavior is <a href="2cbb02eb-98d7-1880-cc4b-3e65f4d1827a.htm">Stop</a>
+                            then the animation system automatically removes the animation once the duration is exceeded.
+                        </p><p>
+                            Each animation instance stores its current state (see property
+                            <a href="0910c0de-040c-a723-9dfd-a502c6de2e27.htm">State</a>).
+                            The possible animation states are:
+                        </p><ul><li><p><a href="b74be3f2-8106-f688-ad42-e75483a01ae7.htm">Delayed</a>:
+                                    This indicates that start of the animation has been delayed and the animation does
+                                    not yet return any values. (This happens when an animation is wrapped by a
+                                    <a href="b1737627-6ddf-69ae-e6cc-7d43297ddb3b.htm">TimelineClip</a>
+                                    or an <a href="6990ac6e-9ea1-50af-5df7-91bfd17acba5.htm">AnimationClip<span id="LSTE220357_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTE220357_4?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTE220357_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTE220357_5?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                                    which defines a delay.)
+                                </p></li><li><p><a href="b74be3f2-8106-f688-ad42-e75483a01ae7.htm">Playing</a>:
+                                    The animation is active and it produces an animation value.
+                                </p></li><li><p><a href="b74be3f2-8106-f688-ad42-e75483a01ae7.htm">Filling</a>:
+                                    The duration of the animation is exceeded and the animation repeats the last
+                                    animation value because the fill behavior is set to
+                                    <a href="2cbb02eb-98d7-1880-cc4b-3e65f4d1827a.htm">Hold</a>.
+                                </p></li><li><p><a href="b74be3f2-8106-f688-ad42-e75483a01ae7.htm">Stopped</a>:
+                                    The animation is halted and does not produce any values. An animation is stopped either if
+                                    it has not been started yet or if its duration has exceeded and the fill behavior
+                                    is set to <a href="2cbb02eb-98d7-1880-cc4b-3e65f4d1827a.htm">Stop</a>.
+                                    Animation that are stopped are automatically removed from the animation system.
+                                </p></li></ul></div><h4 class="subHeading" id="Timing">Animation timing</h4><div class="subsection"><p>
+                            Each animation instance stores the current animation time (see property
+                            <a href="ac754de2-2df9-89bc-55d2-8a02c4a7ffcf.htm">Time</a>).
+                            Note that the animation state, described above, does not indicate whether
+                            the animation timing is active or not. I.e. whether the animation time is progressing
+                            or not. The animation timing can be paused and resumed by calling
+                            <a href="b92c9157-936b-55d6-338b-6234fb241ec4.htm">Pause</a>
+                            and <a href="39363d65-8b2e-e78e-13fa-7a5dd3933d90.htm">Resume</a>.
+                            Pausing an animation won't affect the <a href="0910c0de-040c-a723-9dfd-a502c6de2e27.htm">State</a>.
+                            Use the property <a href="88d8f984-6ac2-7ff1-0d15-6ad349d714bd.htm">IsPaused</a>
+                            to check whether the animation timing is paused or not.
+                        </p><p>
+                            The speed at which the animation time advances can be manipulated by changing
+                            the speed ratio (see property <a href="e08079da-0c6e-5268-b46b-91ef79fdc1bd.htm">Speed</a>).
+                            Setting the speed ratio to 0 also effectively pauses the animation, but this
+                            does not set <a href="88d8f984-6ac2-7ff1-0d15-6ad349d714bd.htm">IsPaused</a>
+                            to <span class="code">true</span>.
+                        </p></div><h4 class="subHeading" id="AutoRecycling">Resource pooling and auto-recycling</h4><div class="subsection"><p>
+                            Animation instances are pooled objects: They are stored in an internal resource
+                            pool and reused whenever possible in order to avoid unnecessary memory
+                            allocations at runtime. There are two ways to recycle animation instances:
+                            manual recycling and auto-recycling.
+                        </p><p><strong>Manual Recycling:</strong> When an animation controller is
+                            no longer needed the associated animation instance can be recycled by explicitly
+                            calling the method <a href="4ddbf639-d7c3-9ee9-5959-5bb153ea6380.htm">Recycle</a>.
+                            When this method is called the animation controller becomes invalid and can
+                            no longer be used.
+                        </p><p><strong>Auto-Recycling:</strong> Animations are automatically removed
+                            from the animation system when they stop. The animation system can be instructed
+                            to automatically recycle animation instances when they are removed. This is done
+                            by calling <a href="275e83ab-2470-ed4e-a1a1-a80d99e71ede.htm">AutoRecycle</a>
+                            or by setting the property <a href="b518ba89-ac52-b5eb-fad1-a3332ae37f8b.htm">AutoRecycleEnabled</a>.
+                            For example:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EABAAADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EABAAADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EABAAADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EABAAADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Play an animation. Automatically recycle the associated animation</span>
+<span class="highlight-comment">// instances once the animation stops.</span>
+<span class="highlight-keyword">var</span> controller = animationService.StartAnimation(animation, property);
+controller.AutoRecycle();
+
+<span class="highlight-comment">// Or, the short version:</span>
+animationService.StartAnimation(animation, property).AutoRecycle()</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EABAAADAAA");</script><p>
+                            Note that the <a href="3889b553-b238-753c-0a36-7ba22761cd5a.htm">AnimationController</a>
+                            itself is only a light-weight handle that does not allocate memory on the managed heap.
+                        </p></div></div><div class="collapsibleAreaRegion" id="Transitions"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Animation transitions</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    When starting a new animation, either with <a href="7c46f401-2a79-1fe1-15c3-1e91fa920b39.htm">IAnimationService<span id="LSTE220357_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTE220357_6?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>StartAnimation(ITimeline, IAnimatableProperty, AnimationTransition)</a>
+                    or with <a href="70da9f20-a541-f0e4-3c1f-9936471dcb53.htm">AnimationController<span id="LSTE220357_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTE220357_7?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Start(AnimationTransition)</a>,
+                    an <a href="290edbfa-5c75-8acb-086c-4407bd19754a.htm">AnimationTransition</a>
+                    can be specified. Animation transitions control how new animations interact
+                    with already existing animations. This is relevant if multiple animations are
+                    applied to the same objects or properties. In this case the animation system
+                    needs to know whether to replace existing animations or whether to combine
+                    new animations with already existing animations. The class
+                    <a href="1b970aa0-9b7c-113c-de35-acf4b888d82e.htm">AnimationTransitions</a>
+                    is a collection of predefined animation transitions.
+                </p><p>
+                    The default behavior is <a href="5bcccf62-0797-463f-bb9e-79be53a626a1.htm">SnapshotAndReplace</a>:
+                    The animation system takes a snapshot of any currently running animations
+                    and then replaces the existing animations with the new animation. The snapshot
+                    of the animation value is then passed to the new animation as an input
+                    parameter. (Some animations - not all - make use of this input parameter. A
+                    <a href="4954dd22-853b-8091-bee7-96e6089ceec7.htm">FromToByAnimation<span id="LSTE220357_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTE220357_8?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LSTE220357_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTE220357_9?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>,
+                    for example, can be configured to animate from the snapshot value to another
+                    value.)
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EAGACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EAGACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EAGACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EAGACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Start a new animation using Snapshot-And-Replace.</span>
+animationService.StartAnimation(animation, property, AnimationTransitions.SnapshotAndReplace());</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EAGACAAA");</script><p>
+                    The <a href="dbd1e403-0bfd-d6a3-3494-9eb6c730491b.htm">Replace</a>
+                    transitions can be used to replace all previously running animations or
+                    to replace one particular animation.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EAEACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EAEACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EAEACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EAEACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Start a new animation and replace all existing animations that affect</span>
+<span class="highlight-comment">// the specified property.</span>
+animationService.StartAnimation(animation, property, AnimationTransitions.Replace());</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EAEACAAA");</script><p>
+                    Some transitions (such as <a href="07060077-6055-f4e2-4c96-f80f1de0e5f1.htm">Replace</a>)
+                    allow to specify a transition time: In this case the new animations slowly fade
+                    in over the specified duration. The result is a "fade-in" or a "cross-fade"
+                    between existing animations and the new animations.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EACACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EACACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EACACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EACACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Start a new animation using a cross-fade of 0.5 seconds.</span>
+TimeSpan crossFadeDuration = TimeSpan.FromSeconds(<span class="highlight-number">0.5</span>);
+animationService.StartAnimation(animation, property, AnimationTransitions.Replace(crossFadeDuration));</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EACACAAA");</script><p>
+                    The transition <a href="9608a29b-fa43-faae-fc8c-9f21231d68f8.htm">Compose</a>
+                    combines new animations with existing animations by building so called
+                    "animation composition chains".
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID2EAAACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID2EAAACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID2EAAACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID2EAAACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Start a new animation adding them to the animation composition chain</span>
+<span class="highlight-comment">// of the specified property.</span>
+animationService.StartAnimation(animation, property, AnimationTransitions.Compose());</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID2EAAACAAA");</script></div><div class="collapsibleAreaRegion" id="Composition"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Animation composition chains and animation weights</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    When animations are started using <a href="9608a29b-fa43-faae-fc8c-9f21231d68f8.htm">Compose</a>
+                    the animations are combined using <span class="term">animation composition chains</span>.
+                    The animation system manages an animation composition chain for every property that
+                    is being animated.
+                </p><p>
+                    An animation composition chain stores all animation instances that affect a certain
+                    property. All animation instances are evaluated in the order in which they were added
+                    to the composition chain. The first animation instance receives the property's base
+                    value as its input. Every animation instance combines its output with the output
+                    of the previous stage in the animation composition chain. Additive animations, for
+                    example, can add their animation value to the output of the previous stage.
+                </p><p>
+                    All animation instances have an <span class="term">animation weight</span> (see property
+                    <a href="8ece622e-015f-25ed-62d9-79309fbe03c9.htm">Weight</a>).
+                    The animation weight is basically a factor that defines the intensity of the
+                    animation. An animation applies the animation weight when it combines its output
+                    with the output of the previous stage. (If the animation is the first or only
+                    animation of a composition chain it combines its value with the base value of the
+                    property that is being animated.)
+                </p><p>
+                    The default value of the animation weights is 1 which means that 100% of the
+                    animation is applied, usually overriding any previous stage in an animation composition
+                    chain. A value of 0.75 means that result is a weighted combination of the previous
+                    stage (25%) and the output of the current animation (75%). A value of 0 basically
+                    disables the output of the current animation.
+                </p><p>
+                    Note that the animation weights themselves are animatable properties! That means
+                    animation weights can be animated. This can be useful to manually fade animations
+                    in or out. (The animation system internally also animates the animation weights
+                    when it fades animations in or out.)
+                </p></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

@@ -1,0 +1,498 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Rendering</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="bb35e0b0-49d5-4847-b7f8-f5a1bb467fbb" /><meta name="Description" content="This article describes how UI controls are drawn to the screen." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="a5a463da-de2e-432f-bf7d-07206aaca634.htm" title="DigitalRune Game UI" tocid="a5a463da-de2e-432f-bf7d-07206aaca634">DigitalRune Game UI</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="5bf85e1f-8f25-4778-b4b1-9d29faf15cc9.htm" title="UI Controls" tocid="5bf85e1f-8f25-4778-b4b1-9d29faf15cc9">UI Controls</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="2c10bf58-571a-4d67-b763-0f6b584c9bce.htm" title="Control Properties and Events" tocid="2c10bf58-571a-4d67-b763-0f6b584c9bce">Control Properties and Events</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c0f13e6f-5e80-4d6b-8816-39f1789fe825.htm" title="Layout" tocid="c0f13e6f-5e80-4d6b-8816-39f1789fe825">Layout</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="bb35e0b0-49d5-4847-b7f8-f5a1bb467fbb.htm" title="Rendering" tocid="bb35e0b0-49d5-4847-b7f8-f5a1bb467fbb">Rendering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="44fe138f-8897-48c6-8ed6-c41bafd7853f.htm" title="Themes" tocid="44fe138f-8897-48c6-8ed6-c41bafd7853f">Themes</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="b6cd5e3b-0bfa-4edb-8ad4-3abe5b47a071.htm" title="UI Input Handling" tocid="b6cd5e3b-0bfa-4edb-8ad4-3abe5b47a071">UI Input Handling</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Rendering</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This article describes how UI controls are drawn to the screen.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Start">Where does the rendering start?</a></li><li class="outlineSectionEntry"><a href="#UIControl">Rendering-specific members of the UIControl</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#RenderTransform">The RenderTransform</a></li><li class="outlineSectionEntry"><a href="#RendererInfo">InvalidateVisual, IsVisualValid and RendererInfo</a></li><li class="outlineSectionEntry"><a href="#VisualState">VisualState</a></li></ul><li class="outlineSectionEntry"><a href="#IUIRenderer">Interface IUIRenderer</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Styles">Control styles and templates</a></li></ul><li class="outlineSectionEntry"><a href="#UIRenderer">Class UIRenderer</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Callbacks">The render callbacks and the render context</a></li><li class="outlineSectionEntry"><a href="#CustomCallback">Custom render callbacks</a></li></ul><li class="outlineSectionEntry"><a href="#Custom">Customizing the render process</a></li></ul></div><div class="collapsibleAreaRegion" id="Start"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Where does the rendering start?</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    The
+                    <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>
+                    is the root of the visual tree. It implements <strong>IDrawable</strong> (the
+                    XNA interface) which means it has a
+                    <a href="19b433b6-35fa-1c36-636e-29a6a27da047.htm">Draw</a>
+                    method. This method must be called in each frame to draw the controls. The
+                    <a href="dfc7be86-2bc8-5616-5aec-37d6bf62a917.htm">UIManager</a>
+                    does not draw the controls! Therefore, you must not forget to call
+                    <a href="19b433b6-35fa-1c36-636e-29a6a27da047.htm">UIScreen<span id="LST8974AA85_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Draw</a>.
+                    You can call the method where ever it fits into your render pipeline. As the
+                    <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a>
+                    show you can also render the whole screen into an off-screen render target.
+                </p><p><a href="19b433b6-35fa-1c36-636e-29a6a27da047.htm">UIScreen<span id="LST8974AA85_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Draw</a>
+                    calls
+                    <a href="4592f26a-109e-c3d5-7957-79b11c149bf9.htm">Render</a>,
+                    which renders the screen and recursively calls the
+                    <a href="4592f26a-109e-c3d5-7957-79b11c149bf9.htm">Render</a>
+                    methods of all controls in the visual tree.
+                </p><p>
+                    The
+                    <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>
+                    owns a UI renderer (interface
+                    <a href="863906fb-2261-0dc3-cb25-22a0030957d8.htm">IUIRenderer</a>)
+                    which is used by the controls to define the visual style and to do the actual rendering.
+                </p></div><div class="collapsibleAreaRegion" id="UIControl"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Rendering-specific members of the UIControl</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    The
+                    <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>
+                    has several properties and methods related to the rendering. The
+                    <a href="4592f26a-109e-c3d5-7957-79b11c149bf9.htm">Render</a>
+                    method is obviously one of them. This method is called by the UI system when the
+                    control should be rendered. It checks if the control is visible (property
+                    <a href="423ea03b-65c3-bf83-e2d2-458d0b82ea28.htm">IsVisible</a>),
+                    if the control is not completely transparent (property
+                    <a href="5b991902-9dc0-2cde-8475-080ed7266a44.htm">Opacity</a>)
+                    and if the actual control size is larger than 0 – otherwise there is no need to render
+                    the control.
+                </p><p>
+                    If the control must be rendered,
+                    <a href="4592f26a-109e-c3d5-7957-79b11c149bf9.htm">Render</a>
+                    calls
+                    <a href="104e1132-8ce9-a732-48a5-813793c24324.htm">OnRender</a>
+                    to do the real work. The
+                    <a href="104e1132-8ce9-a732-48a5-813793c24324.htm">OnRender</a>
+                    method can be overridden in derived controls classes. The base implementation simply
+                    calls the UI renderer of the current screen:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EACBEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EACBEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EACBEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EACBEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">protected</span> <span class="highlight-keyword">virtual</span> <span class="highlight-keyword">void</span> OnRender(<span class="highlight-keyword">float</span> deltaTime)
+{
+  Screen.Renderer.Render(<span class="highlight-keyword">this</span>, deltaTime);
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EACBEAAA");</script><p>
+                    It is not necessary that the
+                    <a href="104e1132-8ce9-a732-48a5-813793c24324.htm">OnRender</a>
+                    methods of custom controls call the renderer to draw the control. Instead, custom
+                    controls can do the drawing right there in this method using, for example, the normal
+                    XNA <strong>SpriteBatch</strong>.
+                    This makes it very easy to quickly add new custom controls.
+                </p><p>
+                    The
+                    <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>
+                    further has a few properties that should be used by the renderer or the custom
+                    <a href="104e1132-8ce9-a732-48a5-813793c24324.htm">OnRender</a>
+                    implementation: the
+                    <a href="a917a6f3-d642-08c6-caa2-7e30040e0146.htm">Background</a>
+                    color, the
+                    <a href="56159b6c-94bc-35b1-bb50-9d741e57e8b0.htm">Foreground</a>
+                    color, the
+                    <a href="c315b901-4fc5-a9fb-8f95-574ec9b888b1.htm">Font</a>
+                    name and the
+                    <a href="5b991902-9dc0-2cde-8475-080ed7266a44.htm">Opacity</a>
+                    of the whole control.
+                </p><h4 class="subHeading" id="RenderTransform">The RenderTransform</h4><div class="subsection"><p>
+                            Each
+                            <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>
+                            has a
+                            <a href="2d54cff6-fff7-88e6-1a7f-f89e6e657b55.htm">RenderTransform</a>.
+                            This is a transformation that is composed of
+                            <a href="880eea96-1600-b889-4448-c743bee4a377.htm">RenderScale</a>,
+                            <a href="7061af9f-b6ed-c6a0-dcce-7a632d8ff89c.htm">RenderRotation</a>,
+                            <a href="9ee6bda7-cff7-734f-edae-b4b3e624d3cc.htm">RenderTranslation</a> and
+                            <a href="54121608-8dd6-dd8b-c8f6-e13036815068.htm">RenderTransformOrigin</a>.
+                            Each property can be animated individually to scale, rotate and translate the control
+                            to create visual effects and transitions – have a look at the
+                            <em>UIAnimationSample</em>
+                            of the <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a>.
+                        </p><p>
+                            The property
+                            <a href="ec89e784-7d89-7d7b-7579-ed9af0b5a8c2.htm">HasRenderTransform</a>
+                            is true if the control is scaled, rotated or translated. It is false, if the render
+                            transform is the identity transform that does nothing.
+                        </p><p>
+                            The
+                            <a href="2d54cff6-fff7-88e6-1a7f-f89e6e657b55.htm">RenderTransform</a>
+                            is also considered by the control input handling. That means, it is possible to
+                            click a rotated and scaled button. But the
+                            <a href="2d54cff6-fff7-88e6-1a7f-f89e6e657b55.htm">RenderTransform</a>
+                            is not used in the layout process. A scaled/rotated/translated control
+                            does not influence the layout. For example, a scaled control does not get
+                            more space in a stack panel. The rendered control may overlap other controls.
+                        </p></div><h4 class="subHeading" id="RendererInfo">InvalidateVisual, IsVisualValid and RendererInfo</h4><div class="subsection"><p>
+                            The property
+                            <a href="de41fade-691f-b383-295b-f2f85f6a73c5.htm">RendererInfo</a>
+                            can be used by the renderer (or the custom
+                            <a href="104e1132-8ce9-a732-48a5-813793c24324.htm">OnRender</a>
+                            method) to cache any information it likes to store with the control. The property
+                            <a href="ec51e23d-97cb-ad00-b6ae-de16235e0173.htm">IsVisualValid</a>
+                            is automatically set to true after the control was rendered (assuming that the
+                            renderer has updated the cached information in
+                            <a href="de41fade-691f-b383-295b-f2f85f6a73c5.htm">RendererInfo</a>).
+                            <a href="ec51e23d-97cb-ad00-b6ae-de16235e0173.htm">IsVisualValid</a>
+                            is reset when
+                            <a href="e92d03f7-1fc6-13e4-e108-83befd2a86fd.htm">InvalidateMeasure</a>,
+                            <a href="dd921cad-0376-8efc-df03-ff62c409e537.htm">InvalidateArrange</a> or
+                            <a href="996742d6-f472-7b4c-b90f-31d182c8c236.htm">InvalidateVisual</a>
+                            are called. Controls that influence the control size (e.g.
+                            <a href="53561a86-0e11-d339-eb40-522dab77f9a5.htm">Width</a>),
+                            the layout arrangement (e.g.
+                            <a href="333ee3e8-8047-2807-25a7-f34bd7fc9a0e.htm">HorizontalAlignment</a>)
+                            or the visual appearance (e.g.
+                            <a href="56159b6c-94bc-35b1-bb50-9d741e57e8b0.htm">Foreground</a>)
+                            call the invalidate methods automatically. The renderer can check
+                            <a href="ec51e23d-97cb-ad00-b6ae-de16235e0173.htm">IsVisualValid</a>
+                            to determine if it can reuse the cached info in
+                            <a href="de41fade-691f-b383-295b-f2f85f6a73c5.htm">RendererInfo</a>.
+                        </p></div><h4 class="subHeading" id="VisualState">VisualState</h4><div class="subsection"><p>
+                            The
+                            <a href="01665c28-bdcc-9145-9375-8ef0243a4fd1.htm">VisualState</a>
+                            property is a simple string that tells the renderer (or the custom
+                            <a href="104e1132-8ce9-a732-48a5-813793c24324.htm">OnRender</a>
+                            method) in which state the control currently is. The base implementation of this
+                            property is simple:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EACAAAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EACAAAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EACAAAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EACAAAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">virtual</span> <span class="highlight-keyword">string</span> VisualState
+{
+  <span class="highlight-keyword">get</span> { <span class="highlight-keyword">return</span> ActualIsEnabled ? <span class="highlight-literal">"Default"</span> : <span class="highlight-literal">"Disabled"</span>; }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EACAAAEAAA");</script><p>
+                            The rendering code can check this property and, for example, draw a disabled button
+                            using different button texture. Other controls can override this property to define
+                            more states. For example, here is the
+                            <a href="01665c28-bdcc-9145-9375-8ef0243a4fd1.htm">VisualState</a>
+                            property of a button:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAAAAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAAAAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAAAAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAAAAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">string</span> VisualState
+{
+  <span class="highlight-keyword">get</span>  
+  {    
+    <span class="highlight-keyword">if</span> (!ActualIsEnabled)      
+      <span class="highlight-keyword">return</span> <span class="highlight-literal">"Disabled"</span>;     
+ 
+    <span class="highlight-keyword">if</span> (IsDown)
+      <span class="highlight-keyword">return</span> <span class="highlight-literal">"Pressed"</span>;
+  
+    <span class="highlight-keyword">if</span> (IsMouseOver)
+      <span class="highlight-keyword">return</span> <span class="highlight-literal">"MouseOver"</span>;
+  
+    <span class="highlight-keyword">if</span> (IsFocused)
+      <span class="highlight-keyword">return</span> <span class="highlight-literal">"Focused"</span>;
+  
+    <span class="highlight-keyword">return</span> <span class="highlight-literal">"Default"</span>;
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAAAAEAAA");</script></div></div><div class="collapsibleAreaRegion" id="IUIRenderer"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Interface IUIRenderer</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    The properties discussed above define the visual appearance of the control. The real
+                    rendering is separated from the
+                    <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>
+                    code. This is the purpose of the interface
+                    <a href="863906fb-2261-0dc3-cb25-22a0030957d8.htm">IUIRenderer</a>.
+                </p><p>
+                    The
+                    <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>
+                    is the root of the control hierarchy. When a screen is created it takes the renderer as
+                    a parameter in the constructor. For example:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EACBDAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EACBDAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EACBDAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EACBDAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Load a UI theme, which defines the appearance and default values of UI controls.</span>
+<span class="highlight-keyword">var</span> content = <span class="highlight-keyword">new</span> ContentManager(Game.Services, <span class="highlight-literal">"NeoforceTheme"</span>);
+Theme theme = content.Load&lt;Theme&gt;(<span class="highlight-literal">"ThemeRed"</span>);
+
+<span class="highlight-comment">// Create a UI renderer, which uses the theme info to renderer UI controls.</span>
+UIRenderer renderer = <span class="highlight-keyword">new</span> UIRenderer(Game, theme);
+
+<span class="highlight-comment">// Create a UIScreen and add it to the UI service. The screen is the root of the </span>
+<span class="highlight-comment">// tree of UI controls. Each screen can have its own renderer.</span>
+_screen = <span class="highlight-keyword">new</span> UIScreen(<span class="highlight-literal">"Menu"</span>, renderer);
+_uiService.Screens.Add(_screen);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EACBDAAA");</script><p>
+                    To draw the GUI,
+                    <a href="19b433b6-35fa-1c36-636e-29a6a27da047.htm">UIScreen<span id="LST8974AA85_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Draw</a>
+                    must be called.
+                    <a href="19b433b6-35fa-1c36-636e-29a6a27da047.htm">UIScreen<span id="LST8974AA85_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Draw</a>
+                    calls
+                    <a href="4592f26a-109e-c3d5-7957-79b11c149bf9.htm">Render</a>.
+                    <a href="4592f26a-109e-c3d5-7957-79b11c149bf9.htm">Render</a>
+                    calls
+                    <a href="104e1132-8ce9-a732-48a5-813793c24324.htm">OnRender</a>
+                    which in turn lets the renderer do the work using
+                    <a href="752378ce-1be5-b2d5-1ec3-9b31faf7bd31.htm">IUIRenderer<span id="LST8974AA85_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_4?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Render</a>.
+                    When the renderer draws a control, it calls
+                    <a href="4592f26a-109e-c3d5-7957-79b11c149bf9.htm">Render</a>
+                    of all child controls. This way,
+                    <a href="4592f26a-109e-c3d5-7957-79b11c149bf9.htm">Render</a>
+                    of each control in the control tree is executed. Each child control
+                    can decide in its
+                    <a href="104e1132-8ce9-a732-48a5-813793c24324.htm">OnRender</a>
+                    method if it wants to call
+                    <a href="752378ce-1be5-b2d5-1ec3-9b31faf7bd31.htm">IUIRenderer<span id="LST8974AA85_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_5?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Render</a>
+                    or do the drawing manually.
+                </p><p>
+                    The
+                    <a href="863906fb-2261-0dc3-cb25-22a0030957d8.htm">IUIRenderer</a>
+                    manages a single <strong>SpriteBatch</strong>, which is used to batch all
+                    sprite batch draw calls. The
+                    <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>
+                    will call
+                    <a href="970ffab0-8edf-c4c2-e9c6-fcef03e074b7.htm">BeginBatch</a>
+                    to start the batch (using <strong>SpriteBatch.Begin</strong>).
+                    Rendering code can use the sprite batch to draw textures and text.
+                    Please note:
+                    Whenever the render state is changed
+                    <a href="fe8e5514-8f25-5feb-37e7-57fa78e48b92.htm">EndBatch</a>
+                    must be called to commit the current batch. Don't forget this if you implement
+                    custom rendering code.
+                </p><h4 class="subHeading" id="Styles">Control styles and templates</h4><div class="subsection"><p>
+                            We strive to separate control logic from rendering. The control classes define the
+                            control logic (e.g. how a check box behaves), and the exchangeable
+                            <a href="863906fb-2261-0dc3-cb25-22a0030957d8.htm">IUIRenderer</a>
+                            defines the visual appearance.
+                            But in order to fully control the visual appearance, the
+                            <a href="863906fb-2261-0dc3-cb25-22a0030957d8.htm">IUIRenderer</a>
+                            must be able to supply default values for properties, like
+                            <a href="56159b6c-94bc-35b1-bb50-9d741e57e8b0.htm">Foreground</a>
+                            color,
+                            <a href="53561a86-0e11-d339-eb40-522dab77f9a5.htm">Width</a>,
+                            etc. And here is how it works:
+                        </p><p>
+                            Each
+                            <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>
+                            has a
+                            <a href="44d62931-84bc-85ec-f992-007ca37ba14f.htm">Style</a>
+                            property. This is simply a string; usually equal to the control name.
+                        </p><p>
+                            The
+                            <a href="863906fb-2261-0dc3-cb25-22a0030957d8.htm">IUIRenderer</a>
+                            has a dictionary called
+                            <a href="2dcf4903-502a-4fd1-6e5b-107ad6ee2c72.htm">Templates</a>.
+                            This dictionary stores an initialized
+                            <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>
+                            instance for each style name. The template instances provide the default vales for
+                            controls.
+                        </p><p>
+                            When a control is loaded (= added to the visual tree), it locates the template
+                            instance for its current style in
+                            <a href="2dcf4903-502a-4fd1-6e5b-107ad6ee2c72.htm">Templates</a>
+                            and sets its own
+                            <a href="a63ae956-c8d2-daa8-6827-35bf82655ac2.htm">Template</a>
+                            property to this instance.
+                            <a href="a63ae956-c8d2-daa8-6827-35bf82655ac2.htm">Template</a>
+                            is a property of the game object system. (See
+                            <a href="be9dad32-1e3f-4361-9cbe-9874e2225049.htm">Templates</a>
+                            to read more about game objects and templates.) Whenever a control has not set a
+                            local property value, it uses the property value of the template object. This way you
+                            can, for example, quickly change the appearance of all
+                            buttons simply by changing the values of the template.
+                        </p><p>
+                            The templates are created on demand: If
+                            <a href="2dcf4903-502a-4fd1-6e5b-107ad6ee2c72.htm">IUIRenderer<span id="LST8974AA85_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_6?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Templates</a>
+                            does not contain a template for a given style, then a new empty instance is created.
+                            All properties of this instance are initialized with the values provided by the
+                            <a href="3617a66e-da71-9523-cd4b-f79608676bee.htm">IUIRenderer<span id="LST8974AA85_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_7?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>GetAttribute<span id="LST8974AA85_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_8?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST8974AA85_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_9?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                            method. The default
+                            <a href="863906fb-2261-0dc3-cb25-22a0030957d8.htm">IUIRenderer</a>
+                            implementation (class
+                            <a href="1a67f258-eec1-5178-5c00-e3b880963929.htm">UIRenderer</a>)
+                            reads the <em>Theme.xml</em> file and returns these values in
+                            <a href="3617a66e-da71-9523-cd4b-f79608676bee.htm">GetAttribute<span id="LST8974AA85_10"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_10?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST8974AA85_11"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_11?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                            (see <a href="44fe138f-8897-48c6-8ed6-c41bafd7853f.htm">Themes</a>).
+                            This way, the
+                            <a href="863906fb-2261-0dc3-cb25-22a0030957d8.htm">IUIRenderer</a>
+                            can define the default values for control properties.
+                        </p><p>
+                            Here is a concrete example that demonstrate the power of styles. The full code (except
+                            comments) for a
+                            <a href="7b5bbf18-7449-f3b4-f54f-a718ef6217b5.htm">MenuItem</a>
+                            looks like this:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EADAAADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EADAAADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EADAAADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EADAAADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> MenuItem : ButtonBase
+{
+  <span class="highlight-keyword">static</span> MenuItem()
+  {
+    OverrideDefaultValue(<span class="highlight-keyword">typeof</span>(MenuItem), FocusWhenMouseOverPropertyId, <span class="highlight-keyword">true</span>);
+  }
+ 
+  <span class="highlight-keyword">public</span> MenuItem()
+  {
+    Style = <span class="highlight-literal">"MenuItem"</span>;
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EADAAADAAA");</script><p>
+                            It is simply a button (base class
+                            <a href="e58f60ea-b5c9-9508-1a83-ce802d35b8f2.htm">ButtonBase</a>).
+                            Per default it gets input focus when the mouse is over the menu item (the
+                            <a href="4e66d001-5642-e990-d35a-f569f7d73b01.htm">OverrideDefaultValue<span id="LST8974AA85_12"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_12?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST8974AA85_13"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_13?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                            call). The style is set to "MenuItem" in the constructor. Since the menu item style is
+                            different from the style of a normal button, the control gets very different property
+                            values than a normal button, and the renderer will render this control in a totally
+                            different way.
+                        </p><p>
+                            Using styles, the control code can focus on the control logic. And the renderer has
+                            full control over how the control should appear.
+                        </p><p>
+                            To apply a new style to an already loaded control, the control must first be removed
+                            from the visual tree and afterwards added back again to the visual tree.
+                        </p></div></div><div class="collapsibleAreaRegion" id="UIRenderer"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Class UIRenderer</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    The class
+                    <a href="1a67f258-eec1-5178-5c00-e3b880963929.htm">UIRenderer</a>
+                    is the default implementation of the interface
+                    <a href="863906fb-2261-0dc3-cb25-22a0030957d8.htm">IUIRenderer</a>.
+                    It implements the necessary interface members and adds a few new ones. It uses an
+                    XML file to define the control styles, see <a href="44fe138f-8897-48c6-8ed6-c41bafd7853f.htm">Themes</a>.
+                    <a href="76b01048-60fe-6c06-bc78-8b9045458c92.htm">UIRenderer<span id="LST8974AA85_14"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_14?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>GetAttribute<span id="LST8974AA85_15"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_15?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script>T<span id="LST8974AA85_16"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_16?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script></a>
+                    uses this <em>Theme.xml</em> file to define the default values
+                    of control properties.
+                </p><h4 class="subHeading" id="Callbacks">The render callbacks and the render context</h4><div class="subsection"><p>
+                            Controls can call
+                            <a href="752378ce-1be5-b2d5-1ec3-9b31faf7bd31.htm">IUIRenderer<span id="LST8974AA85_17"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_17?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Render</a>
+                            to draw the control – this is the main purpose of the UI renderer. When
+                            <a href="62b65d9b-a43c-fe4e-144e-16e462771224.htm">Render</a>
+                            is called, the UI renderer clears the area of the control with its background color,
+                            precomputes a few values and stores them in a
+                            <a href="4575d075-c2bd-8dcd-99eb-f5b9d44bddab.htm">UIRenderContext</a>
+                            instance.
+                        </p><p>
+                            The render context contains the following information:
+                        </p><ul><li>
+                                the control that should be drawn,
+                            </li><li>
+                                the current time step size (for animation timing),
+                            </li><li>
+                                the foreground color,
+                            </li><li>
+                                the effective opacity, which is the opacity of the control multiplied by the
+                                opacities of all parent controls,
+                            </li><li>
+                                the effective render transform, which is the combination of the control's render
+                                transform and the render transforms of all parent controls, and
+                            </li><li>
+                                the
+                                <a href="727bf88d-8989-f76d-0b88-8bab31552e8c.htm">ThemeState</a>
+                                that is associated with the current visual state
+                                (<a href="01665c28-bdcc-9145-9375-8ef0243a4fd1.htm">UIControl<span id="LST8974AA85_18"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_18?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>VisualState</a>e)
+                                of the control.
+                            </li></ul><p>
+                            This render context is then handed to a <span class="term">render callback</span>. A render
+                            callback is a method that is stored in the
+                            <a href="fe2bf62d-a113-6329-440f-f539a124e23e.htm">UIRenderer<span id="LST8974AA85_19"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_19?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>RenderCallbacks</a>
+                            dictionary. The style name of the control defines which render callback should be
+                            used (the style is the key of the dictionary). Actually there are only very few
+                            render callbacks necessary to render all built-in controls. The render callback
+                            dictionary is initialized like this:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAKABACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAKABACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAKABACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAKABACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">RenderCallbacks = <span class="highlight-keyword">new</span> Dictionary&lt;<span class="highlight-keyword">string</span>, Action&lt;UIRenderContext&gt;&gt;();
+RenderCallbacks.Add(<span class="highlight-literal">"UIControl"</span>, RenderUIControl);
+RenderCallbacks.Add(<span class="highlight-literal">"TextBlock"</span>, RenderTextBlock);
+RenderCallbacks.Add(<span class="highlight-literal">"Image"</span>, RenderImageControl);
+RenderCallbacks.Add(<span class="highlight-literal">"Slider"</span>, RenderSlider);
+RenderCallbacks.Add(<span class="highlight-literal">"ProgressBar"</span>, RenderProgressBar);
+RenderCallbacks.Add(<span class="highlight-literal">"Console"</span>, RenderConsole);
+RenderCallbacks.Add(<span class="highlight-literal">"ContentControl"</span>, RenderContentControl);
+RenderCallbacks.Add(<span class="highlight-literal">"TextBox"</span>, RenderTextBox);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAKABACAAA");</script><p>
+                            Styles inherit from each other. This inheritance is defined in the
+                            <em>Theme.xml</em>. If there is no render callback for a given
+                            style, then the render callback of the parent style is used. The style "UIControl"
+                            is the base for all styles, therefore the method
+                            <strong>RenderUIControl</strong>
+                            is the fallback rendering method for all controls.
+                        </p><p>
+                            A few examples:
+                        </p><p>
+                            There is no render callback for buttons. The style "Button" inherits from "ButtonBase"
+                            which inherits from "ContentControl". The method
+                            <strong>RenderContentControl</strong>
+                            is used to draw buttons.
+                        </p><p>
+                            Scroll bars have following style hierarchy: "ScrollBar" –&gt; "RangeBase" –&gt; "UIControl".
+                            The method
+                            <strong>RenderUIControl</strong>
+                            is used to render scroll bars.
+                        </p><p>
+                            Let’s have a look at one of these methods. Here is
+                            <strong>RenderContentControl</strong></p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAEABACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAEABACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAEABACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAEABACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> RenderContentControl(UIRenderContext context)
+{
+  <span class="highlight-keyword">var</span> contentControl = context.Control <span class="highlight-keyword">as</span> ContentControl;
+  <span class="highlight-keyword">if</span> (contentControl == <span class="highlight-keyword">null</span> || contentControl.Content == <span class="highlight-keyword">null</span> || !contentControl.ClipContent)
+  {
+    <span class="highlight-comment">// No content or no clipping - render as normal "UIControl".</span>
+    RenderUIControl(context);
+    <span class="highlight-keyword">return</span>;
+  }
+ 
+  <span class="highlight-comment">// Background images.</span>
+  RenderImages(context, <span class="highlight-keyword">false</span>);
+ 
+  EndBatch();
+ 
+  <span class="highlight-comment">// Render Content and clip with scissor rectangle.</span>
+  <span class="highlight-keyword">var</span> originalScissorRectangle = GraphicsDevice.ScissorRectangle;
+  <span class="highlight-keyword">var</span> scissorRectangle = context.RenderTransform.Transform(contentControl.ContentBounds).ToRectangle(<span class="highlight-keyword">true</span>);
+  GraphicsDevice.ScissorRectangle = Rectangle.Intersect(scissorRectangle, originalScissorRectangle);
+ 
+  BeginBatch();
+  contentControl.Content.Render(context.DeltaTime);
+  EndBatch();
+ 
+  GraphicsDevice.ScissorRectangle = originalScissorRectangle;
+ 
+  BeginBatch();
+ 
+  <span class="highlight-comment">// Visual children except Content.</span>
+  <span class="highlight-keyword">foreach</span> (<span class="highlight-keyword">var</span> child <span class="highlight-keyword">in</span> context.Control.VisualChildren)
+    <span class="highlight-keyword">if</span> (contentControl.Content != child)
+      child.Render(context.DeltaTime);
+ 
+  <span class="highlight-comment">// Overlay images.</span>
+  RenderImages(context, <span class="highlight-keyword">true</span>);
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAEABACAAA");</script><p>
+                            If a content control does not contain a content or does not clip the content, the
+                            <strong>RenderContentControl</strong>
+                            method calls
+                            <strong>RenderUIControl</strong>
+                            to do the job. Otherwise, it renders the background images using
+                            <span class="code">RenderImages(context, false)</span>.
+                            This call renders all images for the current visual state that are defined in
+                            <em>Theme.xml</em> and are not marked as overlay images in the XML.
+                        </p><p>
+                            Then the current sprite batch is committed by calling
+                            <a href="a0eead2b-0511-562c-3b18-a24c2cb954d3.htm">EndBatch</a>.
+                            This is very important because, next, a scissors rectangle is set. This scissors
+                            rectangle is used to clip the content. Since this changes the render state of the
+                            graphics device, we must not forget to call
+                            <a href="a0eead2b-0511-562c-3b18-a24c2cb954d3.htm">EndBatch</a>
+                            to finish the current sprite batch with the current render settings.
+                        </p><p>
+                            The render transform of the render context is used to compute the correct rectangle.
+                            This is necessary because the control could be scaled or translated. (Side note: The
+                            current clipping mechanism uses the hardware scissors rectangle and therefore does
+                            not support clipping rotated controls.) The
+                            <a href="2d54cff6-fff7-88e6-1a7f-f89e6e657b55.htm">RenderTransform</a>
+                            also offers very useful draw method that calls the sprite batch to do the drawing
+                            with the correct scaling, rotation and translation parameters.
+                        </p><p>
+                            Then the content (which is another
+                            <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>)
+                            is rendered. And after that the visual children of the control are rendered. For
+                            example, a window is a content control and its icon image, caption text block and
+                            close button are the visual children of the window control.
+                            Finally, the overlay images (e.g. transparent glow images) are rendered on top of
+                            everything else. The sprite batch is not committed. It is left active, so that the
+                            next control can add its images to the batch.
+                        </p></div><h4 class="subHeading" id="CustomCallback">Custom render callbacks</h4><div class="subsection"><p>
+                            If you want to implement custom rendering for an existing control or a new control,
+                            you have to do the following:
+                        </p><ul><li>
+                                Add the description of your style to the <em>Theme.xml</em>.
+                            </li><li>
+                                Add a render callback with your custom rendering code to the
+                                <a href="fe2bf62d-a113-6329-440f-f539a124e23e.htm">UIRenderer<span id="LST8974AA85_20"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST8974AA85_20?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>RenderCallbacks</a>
+                                dictionary.
+                            </li><li>
+                                Set the
+                                <a href="44d62931-84bc-85ec-f992-007ca37ba14f.htm">Style</a>
+                                of a control to the new style, and it will use the new render code.
+                            </li></ul><p>
+                            Have a look at the existing <em>Theme.xml</em> files and the DigitalRune Game UI source code
+                            for reference. It is best to start by copying existing render callback code and start
+                            from there.
+                        </p></div></div><div class="collapsibleAreaRegion" id="Custom"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Customizing the render process</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    To summarize: There are several ways to customize the appearance and rendering of
+                    controls:
+                </p><ul><li>
+                        If the default
+                        <a href="1a67f258-eec1-5178-5c00-e3b880963929.htm">UIRenderer</a>
+                        is used: Change the styles in the UI theme (see <a href="44fe138f-8897-48c6-8ed6-c41bafd7853f.htm">Themes</a>).
+                    </li><li>
+                        If the default
+                        <a href="1a67f258-eec1-5178-5c00-e3b880963929.htm">UIRenderer</a>
+                        is used: Add a new render method to the
+                        <a href="fe2bf62d-a113-6329-440f-f539a124e23e.htm">RenderCallbacks</a>
+                        of the
+                        <a href="1a67f258-eec1-5178-5c00-e3b880963929.htm">UIRenderer</a>
+                        if custom drawing code is necessary.
+                    </li><li>
+                        Use your own 
+                        <a href="863906fb-2261-0dc3-cb25-22a0030957d8.htm">IUIRenderer</a> 
+                        instead of the 
+                        <a href="1a67f258-eec1-5178-5c00-e3b880963929.htm">UIRenderer</a>.
+                    </li><li>
+                        Override 
+                        <a href="104e1132-8ce9-a732-48a5-813793c24324.htm">OnRender</a> 
+                        of a UI control.
+                    </li></ul></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

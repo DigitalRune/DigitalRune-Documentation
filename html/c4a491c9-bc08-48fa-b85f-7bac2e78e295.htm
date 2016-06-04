@@ -1,0 +1,141 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Timing</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="c4a491c9-bc08-48fa-b85f-7bac2e78e295" /><meta name="Description" content="This section describes the internal timing of the simulation." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="79a8677d-9460-4118-b27b-cef353dfbd92.htm" title="DigitalRune Physics" tocid="79a8677d-9460-4118-b27b-cef353dfbd92">DigitalRune Physics</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="81a6e7ab-bdd3-43d6-b20c-5322ff3f936a.htm" title="Advanced Topics" tocid="81a6e7ab-bdd3-43d6-b20c-5322ff3f936a">Advanced Topics</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="a8933d84-3eee-430c-a472-4fe0db5c1ecd.htm" title="Collision Response Filter" tocid="a8933d84-3eee-430c-a472-4fe0db5c1ecd">Collision Response Filter</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="b52c86be-d31e-4c6f-9892-331af87a0703.htm" title="Continuous Collision Detection" tocid="b52c86be-d31e-4c6f-9892-331af87a0703">Continuous Collision Detection</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="fae52e31-ede2-451e-b107-e42db486d69c.htm" title="Simulation Islands" tocid="fae52e31-ede2-451e-b107-e42db486d69c">Simulation Islands</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="059ddf90-e473-470c-a59c-ee26feff7d12.htm" title="Sleeping" tocid="059ddf90-e473-470c-a59c-ee26feff7d12">Sleeping</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="c4a491c9-bc08-48fa-b85f-7bac2e78e295.htm" title="Timing" tocid="c4a491c9-bc08-48fa-b85f-7bac2e78e295">Timing</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="84231d22-23c1-446c-9e17-36ad2a081133.htm" title="Multithreading" tocid="84231d22-23c1-446c-9e17-36ad2a081133">Multithreading</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="99a61094-6bb9-495a-a037-99bd06d401d6.htm" title="Resource Pooling" tocid="99a61094-6bb9-495a-a037-99bd06d401d6">Resource Pooling</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="bf6f855b-d3b3-49c0-a341-a31f922bb4da.htm" title="Units and Scale" tocid="bf6f855b-d3b3-49c0-a341-a31f922bb4da">Units and Scale</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Timing</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This section describes the internal timing of the simulation.</p></div><div class="collapsibleAreaRegion" id="General"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />General</span></div><div id="ID1RBSection" class="collapsibleSection"><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Caution note" /> Caution</th></tr><tr><td><p>
+                        Time values should be specified as
+                        <a href="http://msdn2.microsoft.com/en-us/library/269ew577" target="_blank">TimeSpan</a>s
+                        for optimal accuracy.
+                    </p><p>
+                        Warning: Do not use the method <a href="http://msdn2.microsoft.com/en-us/library/hbcb0t8t" target="_blank">TimeSpan<span id="LST870B57B7_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>FromSeconds(Double)</a>
+                        to convert a floating-point value to a
+                        <a href="http://msdn2.microsoft.com/en-us/library/269ew577" target="_blank">TimeSpan</a>.
+                        The method will round the time value to milliseconds. Fractions of milliseconds
+                        will be lost!
+                    </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAJAGAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAJAGAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAJAGAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAJAGAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Do not use:</span>
+TimeSpan deltaTime = TimeSpan.FromSeconds(<span class="highlight-number">1.0</span> / <span class="highlight-number">30.0</span>); <span class="highlight-comment">// Inaccurate!</span>
+
+<span class="highlight-comment">// Instead specify time values in ticks:</span>
+TimeSpan deltaTime = <span class="highlight-keyword">new</span> TimeSpan((<span class="highlight-keyword">long</span>)(<span class="highlight-number">1.0</span> / <span class="highlight-number">30.0</span> * TimeSpan.TicksPerSecond));
+
+<span class="highlight-comment">// Or write:</span>
+TimeSpan deltaTime = <span class="highlight-keyword">new</span> TimeSpan(<span class="highlight-number">333333</span>);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAJAGAAA");</script></td></tr></table></div><p>
+                    Each call of
+                    <a href="e2131e7e-5c8a-aa6c-6348-828c26e538f2.htm">Simulation<span id="LST870B57B7_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update(TimeSpan)</a>
+                    advances the simulation state by a given time step. Internally, the time
+                    step specified in the parameter of
+                    <a href="e2131e7e-5c8a-aa6c-6348-828c26e538f2.htm">Update</a>
+                    is divided into <em>sub time steps</em> (also called
+                    <em>internal time steps</em>) of constant size.
+                    This constant size is defined in
+                    <a href="90ffca37-a52c-c514-7804-e85ad89fde16.htm">TimingSettings<span id="LST870B57B7_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>FixedTimeStep</a>.
+                    That means, if the user calls
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAHAGAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAHAGAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAHAGAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAHAGAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">TimeSpan deltaTime = <span class="highlight-keyword">new</span> TimeSpan(<span class="highlight-number">333333</span>); <span class="highlight-comment">// 1/30 s</span>
+Simulation.Update(deltaTime)</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAHAGAAA");</script><p>
+                    and
+                    <a href="90ffca37-a52c-c514-7804-e85ad89fde16.htm">FixedTimeStep</a>
+                    is 1/60 s (default), the simulation will internally perform two sub time steps with 1/60 s.
+                </p><p>
+                    If the user calls
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAEAGAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAEAGAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAEAGAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAEAGAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">TimeSpan deltaTime = <span class="highlight-keyword">new</span> TimeSpan(<span class="highlight-number">83333</span>); <span class="highlight-comment">// 1/120 s</span>
+Simulation.Update(deltaTime)</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAEAGAAA");</script><p>
+                    the simulation will perform no simulation update because the time step is less than
+                    <a href="90ffca37-a52c-c514-7804-e85ad89fde16.htm">FixedTimeStep</a>.
+                    But the time is not "lost". When the user calls
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EACAGAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACAGAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACAGAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACAGAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">TimeSpan deltaTime = <span class="highlight-keyword">new</span> TimeSpan(<span class="highlight-number">83333</span>); <span class="highlight-comment">// 1/120 s</span>
+Simulation.Update(deltaTime)</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACAGAAA");</script><p>
+                    the next time, the simulation will make a single time step with 1/60 s.
+                    - It is allowed to use variable time parameters for each
+                    <a href="e2131e7e-5c8a-aa6c-6348-828c26e538f2.htm">Update</a>
+                    call. The simulation class makes sure that all simulation updates use fixed time steps
+                    internally and that overall no simulation time is lost.
+                </p><p>
+                    The simulation has a property
+                    <a href="20e691bd-8e47-053e-877c-c9ae45c4bbc1.htm">Simulation<span id="LST870B57B7_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Time</a>
+                    which contains the actual simulation time. This time is the sum of all
+                    sub time steps that have been simulated. The property
+                    <a href="b8e6a10e-d738-d4d3-2863-5fa8151049ba.htm">Simulation<span id="LST870B57B7_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_4?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>TargetTime</a>
+                    contains the target time to which the simulation should advance. This time
+                    is the sum of all sub time steps plus any accumulated time.
+                </p></div><div class="collapsibleAreaRegion" id="FixedStepSize"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />The influence of the time step size</span></div><div id="ID2RBSection" class="collapsibleSection"><p><a href="90ffca37-a52c-c514-7804-e85ad89fde16.htm">TimingSettings<span id="LST870B57B7_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_5?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>FixedTimeStep</a>
+                    defines the size of one sub time step. The default value is 1/60 seconds (60 Hz).
+                    Increasing the time step size makes the simulation faster, but less stable.
+                    Decreasing the time step size makes the simulation slower, more accurate
+                    and more stable (higher stacks of boxes are possible, less jittering, less
+                    interpenetrations of objects).
+                </p></div><div class="collapsibleAreaRegion" id="MaxNumberOfSteps"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Limiting the max number of sub time steps</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    The number of time steps per
+                    <a href="e2131e7e-5c8a-aa6c-6348-828c26e538f2.htm">Simulation<span id="LST870B57B7_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_6?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update(TimeSpan)</a>
+                    call is actually limited by
+                    <a href="f9c31a37-751a-d626-8eb2-28539f710bde.htm">TimingSettings<span id="LST870B57B7_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_7?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>MaxNumberOfSteps</a>.
+                    This is necessary to avoid a typical problem in game physics where too many
+                    objects cause the frame rate to go to zero until the game freezes (<em>spiral of death</em>).
+                </p><p>
+                    Here is an example: There are too many physical objects in the game. One frame
+                    of the game took 0.016 ms to compute. The simulation is called with <span class="code">Update(0.016)</span>
+                    and it performs 1 time step internally. Because there are too many objects,
+                    this time step took longer and the frame took 0.034 ms to compute. In the next
+                    frame <span class="code">Update(0.034)</span> is called and the simulation performs 2 time steps
+                    internally - which takes even more time... Each frame the simulation must make
+                    more internal time steps to keep up with the elapsed time and eventually the frame
+                    rate of the game will go towards 0. To avoid this scenario the maximal number of
+                    allowed sub time steps is limited. Practically this means that when this limit
+                    is reached, time is lost and the simulation moves objects in slow motion.
+                    Slow motion at a low frame rate is better than exact motion at 0 frames per second.
+                </p></div><div class="collapsibleAreaRegion" id="SubTimeStepFinished"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Sampling simulation results and the SubTimeStepFinished event</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    In the simplest case the game loop (or the main loop of the application)
+                    and the simulation use the same fixed time steps. The game logic
+                    updates simulation objects, then
+                    <a href="e2131e7e-5c8a-aa6c-6348-828c26e538f2.htm">Simulation<span id="LST870B57B7_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_8?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update(TimeSpan)</a>
+                    is called. Then the game loop reads the simulation results, updates the simulation objects and
+                    <a href="e2131e7e-5c8a-aa6c-6348-828c26e538f2.htm">Simulation<span id="LST870B57B7_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_9?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update(TimeSpan)</a>
+                    is called again. And so forth.
+                </p><p>
+                    If the time step of the game loop is larger than the fixed time step of the simulation,
+                    then the simulation will make several sub time steps in one
+                    <a href="e2131e7e-5c8a-aa6c-6348-828c26e538f2.htm">Simulation<span id="LST870B57B7_10"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_10?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update(TimeSpan)</a>
+                    call. The game loop will not see the intermediate results of the sub time step. For example,
+                    the
+                    <a href="92eb27e8-297a-7a5f-df8b-88c15b8ba889.htm">Simulation<span id="LST870B57B7_11"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_11?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>CollisionDomain</a>
+                    will display the final state of the simulation. Any intermediate collision are not visible.
+                </p><p>
+                    In some cases this can be a problem: For example if the game loop wants to
+                    play sound effects for all collisions. Therefore, the simulation
+                    raises the
+                    <a href="cb85956f-ab84-9b91-5a30-7532153cbc3c.htm">Simulation<span id="LST870B57B7_12"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_12?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>SubTimeStepFinished</a>
+                    event after each internal sub time step. The game loop can handle
+                    this event, for example, to check the collision domain to see the intermediate
+                    simulation results.
+                </p><p>
+                    Any event handler of the
+                    <a href="cb85956f-ab84-9b91-5a30-7532153cbc3c.htm">Simulation<span id="LST870B57B7_13"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_13?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>SubTimeStepFinished</a>
+                    event should be a light-weight method that does not manipulate the simulation
+                    objects. The method should only query the simulation results and cache them for later use after
+                    <a href="e2131e7e-5c8a-aa6c-6348-828c26e538f2.htm">Simulation<span id="LST870B57B7_14"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_14?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update(TimeSpan)</a>
+                    has finished.	This is recommended because in a modern game loop, the physics
+                    engine will be updated parallel to other game modules (like audio or graphics).
+                </p><p>
+                    If the game loop is updated with smaller time step than the fixed time step
+                    of the simulation, then it can happen that the simulation does nothing in
+                    <a href="e2131e7e-5c8a-aa6c-6348-828c26e538f2.htm">Simulation<span id="LST870B57B7_15"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_15?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update(TimeSpan)</a>
+                    and no
+                    <a href="cb85956f-ab84-9b91-5a30-7532153cbc3c.htm">Simulation<span id="LST870B57B7_16"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_16?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>SubTimeStepFinished</a>
+                    event is raised.
+                    (<a href="e2131e7e-5c8a-aa6c-6348-828c26e538f2.htm">Simulation<span id="LST870B57B7_17"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_17?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update(TimeSpan)</a>
+                    will only accumulate the time until enough time for a fixed time step has elapsed.)
+                </p></div><div class="collapsibleAreaRegion" id="VariableTimeStep"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Running the simulation with a variable time step</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    Physics simulations should use a fixed time step. Using variable time steps is not recommended,
+                    and therefore DigitalRune Physics does not contain a direct option to switch to
+                    a variable time step mode. Nevertheless, it still possible to force the simulation to use
+                    a variable time step: Simply set
+                    <a href="90ffca37-a52c-c514-7804-e85ad89fde16.htm">TimingSettings<span id="LST870B57B7_18"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_18?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>FixedTimeStep</a>
+                    to the current elapsed time (must be &gt; 0) before each
+                    <a href="e2131e7e-5c8a-aa6c-6348-828c26e538f2.htm">Simulation<span id="LST870B57B7_19"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST870B57B7_19?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Update(TimeSpan)</a>
+                    call.
+                </p></div><div class="collapsibleAreaRegion" id="Reading"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID6RB')" onkeypress="SectionExpandCollapse_CheckKey('ID6RB', event)" tabindex="0"><img id="ID6RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Recommended reading</span></div><div id="ID6RBSection" class="collapsibleSection"><p>
+                    For more in-depth information about physics simulations and time stepping, read the
+                    excellent article
+                    <a href="http://gafferongames.com/game-physics/fix-your-timestep/" target="_blank">"Fix Your Timestep!"</a>, by Glenn Fiedler.
+                </p></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID7RB')" onkeypress="SectionExpandCollapse_CheckKey('ID7RB', event)" tabindex="0"><img id="ID7RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID7RBSection" class="collapsibleSection"><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="b140214e-cba7-c530-1ffd-a0a9365c05a2.htm">TimingSettings</a></div><h4 class="subHeading">Other Resources</h4><div class="seeAlsoStyle"><a href="http://gafferongames.com/game-physics/fix-your-timestep/" target="_blank">Fix Your Timestep!, by Glenn Fiedler</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

@@ -1,0 +1,245 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>The Service Provider Pattern for Games</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="619b1341-c6a1-4c59-b33d-cc1f799402dc" /><meta name="Description" content="The service provider pattern is one of my favorite patterns: It creates clean, slick code when used right - but when used in the wrong places it creates libraries that are hard to use, difficult to understand and a nightmare to maintain." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d82e6561-0857-4f31-bd2a-6678c311dca4.htm" title="Articles" tocid="d82e6561-0857-4f31-bd2a-6678c311dca4">Articles</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="2a9138d6-d003-4df7-9793-1c3a018aa652.htm" title="Service Provider Pattern" tocid="2a9138d6-d003-4df7-9793-1c3a018aa652">Service Provider Pattern</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="619b1341-c6a1-4c59-b33d-cc1f799402dc.htm" title="The Service Provider Pattern for Games" tocid="619b1341-c6a1-4c59-b33d-cc1f799402dc">The Service Provider Pattern for Games</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="9b4a54b5-1c1a-481b-961b-492e9ee6b5fa.htm" title="Service Provider Implementation" tocid="9b4a54b5-1c1a-481b-961b-492e9ee6b5fa">Service Provider Implementation</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="36504333-0933-40d6-bc90-f7c840fcc1f8.htm" title="Purge Your XNA Game Class" tocid="36504333-0933-40d6-bc90-f7c840fcc1f8">Purge Your XNA Game Class</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">The Service Provider Pattern for Games</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                The service provider pattern is one of my favorite patterns: It creates clean, slick code
+                when used right - but when used in the wrong places it creates libraries that are hard to
+                use, difficult to understand and a nightmare to maintain. In this article we examine the
+                service provider pattern, related concepts, like global variables, services, managers,
+                service providers, contexts and how they can be used in games.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Problem">The problem</a></li><li class="outlineSectionEntry"><a href="#Global">Global variables and global methods</a></li><li class="outlineSectionEntry"><a href="#Contexts">Method parameters and contexts</a></li><li class="outlineSectionEntry"><a href="#Properties">Local properties</a></li><li class="outlineSectionEntry"><a href="#Provider">The service provider pattern</a></li><li class="outlineSectionEntry"><a href="#DependencyInjection">Dependency injection</a></li><li class="outlineSectionEntry"><a href="#WhenToUse">When to use which pattern?</a></li><li class="outlineSectionEntry"><a href="#Conclusion">Conclusion</a></li></ul></div><div class="collapsibleAreaRegion" id="Problem"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />The problem</span></div><div id="ID0RBSection" class="collapsibleSection"><p>The problem is simple:</p><blockquote>
+                    I have a piece of code. The code depends on data and functions outside of my own code.
+                    How can my code access the external dependencies?
+                </blockquote><p>
+                    Let's work with this practical example:
+                </p><blockquote>
+                    I am coding a "Camera" class. The camera can be moved with the WASD keys on the keyboard -
+                    therefore, we need access to the keyboard to test if the WASD keys are pressed.
+                    The camera should move with a constant velocity. If the game uses a variable time step for
+                    each frame, then we need to know the size of the time step for the current frame. With this
+                    information, we can scale the movement in each frame.
+                </blockquote><p>
+                    In short:
+                </p><blockquote>
+                    Our Camera code depends on external data (time step size) and on an external function that
+                    checks if a keyboard key is pressed. How does the Camera code access the external data and
+                    functions?
+                </blockquote></div><div class="collapsibleAreaRegion" id="Global"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Global variables and global methods</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    The simplest solutions is to use global variables and global methods:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EADAHAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EADAHAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EADAHAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EADAHAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> Game {
+  <span class="highlight-comment">// Size of the current time step aka "elapsed time".</span>
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">float</span> DeltaTime;  
+  ...
+}
+
+<span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> InputManager {
+  <span class="highlight-comment">// Checks if a key is pressed.</span>
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">bool</span> IsKeyDown(Keys key) { … }  
+  ...
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EADAHAAA");</script><p>
+                    Everything that our Camera code needs is public and readily available. - This solution is
+                    simple, but has its drawbacks. For example:
+                </p><ul><li>
+                        This code is not maintainable because we have hard-coded dependencies. Our camera code
+                        does only work with this specific classes. The classes are not exchangeable.
+                    </li><li>
+                        And what if game components need different "views" of the data? For example what if
+                        the physics system was programmed by someone else and expects the delta time in
+                        milliseconds and the Camera expects the time in seconds?
+                    </li></ul><p>
+                    In XNA a similar solution is used for device input classes in XNA (e.g. the
+                    <strong>Keyboard</strong> class). But the solution looks very clumsy for the
+                    global DeltaTime variable. Let's look for alternatives.
+                </p></div><div class="collapsibleAreaRegion" id="Contexts"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Method parameters and contexts</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    We can also pass the required dependencies as parameters to the Camera when it is updated:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAEAGAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAEAGAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAEAGAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAEAGAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> Camera : GameComponent {
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> Update(<span class="highlight-keyword">float</span> deltaTime, InputManager input) { ... }
+  ...
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAEAGAAA");</script><p>
+                    This looks natural for the time parameter, and in XNA this pattern is used to pass the
+                    time to <strong>GameComponents</strong>.
+                </p><p>
+                    And what if other game components need more functionality? Should we add more and more
+                    parameters? - Instead, we can group all stuff into one object and call it a
+                    <em>Context</em>:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABAGAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABAGAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABAGAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABAGAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> UpdateContext {
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">float</span> DeltaTime;
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">bool</span> IsGameActive;
+  <span class="highlight-keyword">public</span> InputManager Input;
+  <span class="highlight-keyword">public</span> SpriteBatch SpriteBatch;
+  ...        
+}
+
+<span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> Camera : GameComponent {
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> Update(UpdateContext context) { ... }
+  ...
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABAGAAA");</script><p>
+                    This has the advantage that the method has only a single parameter. The disadvantage is
+                    that the context must be extended whenever a game component needs a new piece of data or
+                    a new functions. And we have to modify the
+                    GameComponent base class. If we want to use the XNA
+                    GameComponent class or any other third party framework, we cannot
+                    change the signature of the
+                    <strong>Update</strong> method.
+                </p></div><div class="collapsibleAreaRegion" id="Properties"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Local properties</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    But even if we use a third party GameComponent base class, we can
+                    add a property very easily:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAEAFAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAEAFAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAEAFAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAEAFAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> Camera : GameComponent {
+    <span class="highlight-keyword">public</span> UpdateContext UpdateContext { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>;}
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> Update() { ... }
+    ...
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAEAFAAA");</script><p>
+                    This solves the problem, but seems more like workaround. For the user of the camera game
+                    component, it is not obvious that the UpdateContext must be set before each Update call.
+                    It is also not obvious that the UpdateContext is only used by the Update method (and no
+                    other Camera method). Such an API demands a lot of explanation.
+                </p><p>
+                    Properties are better used for obvious tasks and dependencies. For example, the XNA
+                    GameComponent class has a reference to the Game class that is set in the constructor:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABAFAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABAFAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABAFAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABAFAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> GameComponent {
+  <span class="highlight-keyword">public</span> Game Game { <span class="highlight-keyword">get</span>; }
+  <span class="highlight-keyword">public</span> GameComponent(Game game) { ... }
+  ...
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABAFAAA");</script><p>
+                    This is a good use for a local property. It makes the data and functionality of the Game
+                    class available for all GameComponents. And the Game is essential for the whole
+                    GameComponent class (not just the Update method).
+                </p></div><div class="collapsibleAreaRegion" id="Provider"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />The service provider pattern</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    A pattern that solves several problems mentioned above is the <em>service provider</em>
+                    pattern - also called
+                    <a href="http://gameprogrammingpatterns.com/service-locator.htmlnormalizedString" target="_blank">service locator pattern</a>.
+                    The .NET Framework provides the interface
+                    <a href="http://msdn2.microsoft.com/en-us/library/zbywf1tw" target="_blank">IServiceProvider</a>
+                    to support this pattern:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAIAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAIAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAIAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAIAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">interface</span> IServiceProvider {
+  <span class="highlight-keyword">object</span> GetService(Type serviceType);
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAIAEAAA");</script><p>
+                    A service provider is basically a dictionary or a registry that manages a set of objects
+                    that provide certain services. A good naming convention is to call the interface of a
+                    service
+                    <em>IXyzService</em>.
+                    Most of the time, the class that implements the interface is called
+                    <em>XyzManager</em>.
+                    For example:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAGAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAGAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAGAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAGAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">interface</span> IInputService {
+  <span class="highlight-keyword">bool</span> IsKeyDown(Keys key);
+  ...
+}
+
+<span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> InputManager : IInputService {
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">bool</span> IsKeyDown(Keys key);
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> Update();
+  ...
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAGAEAAA");</script><p>
+                    The service interface defines the data and functions that are available to the game
+                    components. The manager class defines additional members, like properties to configure the
+                    manager or the Update method. The module that creates the InputManager (usually the Game
+                    class) is responsible for configuring the manager and for calling Update once per frame.
+                    In this method the manager can do its work - if there is any. Such members are excluded
+                    from the IInputService interface because the interface shows only the member that are
+                    relevant for the clients of the service.
+                </p><p>
+                    We can put the service provider into a global variable, e.g.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EADAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EADAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EADAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EADAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> Game {
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> IServiceProvider Services { <span class="highlight-keyword">get</span>; }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EADAEAAA");</script><p>
+                    Then the camera can use it like this:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> Camera : GameComponent {
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> Update() {
+        <span class="highlight-keyword">var</span> gameTimeService = (IGameTimeService)Game.Services.GetService(<span class="highlight-keyword">typeof</span>(IGameTimeService);
+        <span class="highlight-keyword">float</span> deltaTime = gameTimeService.DeltaTime;
+
+        <span class="highlight-keyword">var</span> inputService = (IInputService)Game.Services.GetService(<span class="highlight-keyword">typeof</span>(IInputService));
+        <span class="highlight-keyword">if</span> (inputService.IsKeyDown(Keys.A))
+    ...
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABAEAAA");</script><p>
+                    We do not have to bloat the GameComponent with properties or parameters for all possible
+                    services. And the dependencies are not hard-coded: The InputService could be a
+                    DefaultInputManager that checks the normal keyboard. It could be a
+                    PlaybackInputManager that plays back recorded key events. Or another InputManager that
+                    reads input from and on-screen keyboard - our Camera class does not care.
+                </p></div><div class="collapsibleAreaRegion" id="DependencyInjection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID6RB')" onkeypress="SectionExpandCollapse_CheckKey('ID6RB', event)" tabindex="0"><img id="ID6RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Dependency injection</span></div><div id="ID6RBSection" class="collapsibleSection"><p>
+                    The service provider pattern belongs to the Inversion of Control (IoC) patterns.
+                    <em>Dependency injection</em>
+                    is another IoC pattern. You can read more about that in Martin Fowler's article:
+                    <a href="http://martinfowler.com/articles/injection.html" target="_blank">http://martinfowler.com/articles/injection.html</a></p><p>
+                    Here is a list of dependency injection frameworks for .NET:
+                    <a href="http://www.hanselman.com/blog/ListOfNETDependencyInjectionContainersIOC.aspx" target="_blank">http://www.hanselman.com/blog/ListOfNETDependencyInjectionContainersIOC.aspx</a></p><p>
+                    Dependency injection has its uses, and we use it too in some of our applications. But I
+                    must admit that I am not a big fan of this pattern and will not go into more details in
+                    this article.
+                </p></div><div class="collapsibleAreaRegion" id="WhenToUse"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID7RB')" onkeypress="SectionExpandCollapse_CheckKey('ID7RB', event)" tabindex="0"><img id="ID7RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />When to use which pattern?</span></div><div id="ID7RBSection" class="collapsibleSection"><p>
+                    Which pattern should be used in a game? - All of them! And I mean it. We have a game
+                    framework including game editor components where every pattern discussed above is used
+                    (even dependency injection). Each pattern has its place. And here are a few rules that
+                    have served us well in the last years:
+                </p><ul><li><p><em>Avoid global variables.</em><br />
+                            In most games, there should
+                            be only one global variable, and this is the variable that contains the service
+                            provider.
+                        </p></li><li><p><em>Use local properties for obvious relationships.</em><br />
+                            For example, in our Game UI library each UI control has a property
+                            UIControl.UIService.
+                            This demonstrates tight coupling: The
+                            UIControl can only belong to exactly one UIService.
+                        </p></li><li><p><em>Use the context parameter pattern in object hierarchies. </em><br />
+                            For example, controls in our Game UI library are organized in a tree. Each control has
+                            the method UIControl.HandleInput(InputContext inputContext).
+                            The advantage of the context pattern is that each control can modify the
+                            InputContext before it calls HandleInput on its child controls. In our library, each
+                            control can be scaled, rotated and translated and the InputContext is always modified
+                            such that it contains the MousePosition in the local coordinate space of the control.
+                            In other words: IInputService.MousePosition contains the mouse position in screen
+                            coordinates. InputContext.MousePosition contains the mouse position relative to the
+                            unscaled, unrotated, untranslated control.
+                        </p></li><li><p><em>
+                                Use the service provider pattern for game logic and loosely coupled objects.
+                            </em><br />
+                            A game object needs many sub-systems (input, audio, physics, network, graphics, GUI,
+                            diagnostics, storage, configuration, etc.) that can be exposed as services. But not
+                            each game object needs all of them at once. On the game logic level flexibility is
+                            important. It is should also be expected that some services are missing.
+                            Example: A NetworkedCamera can be used to control the camera and sync it over the
+                            network. But even if the INetworkService is missing, the game object can still provide
+                            useful game logic for single-player games.
+                        </p></li><li><p>
+                            Very important:
+                            <em>
+                                Do not use the service provider pattern for tightly coupled, specialized
+                                sub-systems.
+                            </em><br />
+                            Sub-systems are usually in a separate library and usability and maintainability are
+                            important. Dependencies should be visible in the API.
+                            For example, controls in our UI library need the IInputService - a button cannot be
+                            clicked without an input device. Missing services should create a compiler error. In
+                            our case, the UIManager needs an InputService as parameter in its constructor:
+                        </p><p><span class="code">_uiManager = new UIManager(this, _inputManager);</span></p><p>
+                            If this parameter is missing, the code will not compile. Instead if we use the service
+                            provider pattern here, the code would compile and a ServiceNotFoundException would be
+                            thrown at run-time.
+                        </p></li><li><p><em>Do not use the service provider pattern in performance critical code paths. </em><br />
+                            It is great for game logic but not ok for an inner loop of the physics engine.
+                        </p></li><li><p>
+                            In most applications it is ok to have one global variable that contains the service provider.
+                            <em>In some cases, not all code modules should have access to all services.</em></p><p>
+                            Example: A text editor can be extended with plug-ins. The plug-ins can have access to
+                            the IPrintService and the IDocumentService. But, maybe, for security and stability
+                            reasons the plug-ins should not have access to the IConfigurationService.
+                        </p><p>
+                            → Use several service providers and make them available using one of the other patterns,
+                            e.g. pass them around as part of a context.
+                        </p></li><li><p><em>Contexts and service providers are orthogonal patterns.</em><br />
+                            Most of the time, services provide functionality and context parameters provide data.
+                        </p></li><li><p>
+                            Be careful: <em>
+                                The service provider pattern is a system of global variables
+                                in disguise.
+                            </em><br />
+                            However, it gives a better structure and is more maintainable.
+                        </p></li></ul></div><div class="collapsibleAreaRegion" id="Conclusion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID8RB')" onkeypress="SectionExpandCollapse_CheckKey('ID8RB', event)" tabindex="0"><img id="ID8RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Conclusion</span></div><div id="ID8RBSection" class="collapsibleSection"><p>
+                    The service provider pattern is very powerful, but must be used with care.
+                </p></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

@@ -1,0 +1,56 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Look-At IK Solver</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="e6f0e7fc-85dd-4722-af1b-dcba453f9418" /><meta name="Description" content="This topic discusses the T:DigitalRune.Animation.Character.LookAtIKSolver." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="c2892dfd-491e-4e78-83d1-737e38f1acc9.htm" title="DigitalRune Animation" tocid="c2892dfd-491e-4e78-83d1-737e38f1acc9">DigitalRune Animation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="93178dcc-a9b9-4cc6-b4df-ed693b988561.htm" title="3D Character Animation" tocid="93178dcc-a9b9-4cc6-b4df-ed693b988561">3D Character Animation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="64fa1edd-5392-421b-b647-6379fea78318.htm" title="Inverse Kinematics" tocid="64fa1edd-5392-421b-b647-6379fea78318">Inverse Kinematics</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="e6f0e7fc-85dd-4722-af1b-dcba453f9418.htm" title="Look-At IK Solver" tocid="e6f0e7fc-85dd-4722-af1b-dcba453f9418">Look-At IK Solver</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="147a6b63-6353-40c9-a902-e842759e3eee.htm" title="Foot IK" tocid="147a6b63-6353-40c9-a902-e842759e3eee">Foot IK</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Look-At IK Solver</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This topic discusses the
+                <a href="108645c6-2245-9605-ce89-eb0a77e2e51a.htm">LookAtIKSolver</a>.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Video">Sample and video</a></li><li class="outlineSectionEntry"><a href="#Description">Description</a></li><li class="outlineSectionEntry"><a href="#Tips">Tips</a></li></ul></div><div class="collapsibleAreaRegion" id="Video"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Sample and video</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    The <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a> contain an example
+                    which demonstrates how to use the
+                    <a href="108645c6-2245-9605-ce89-eb0a77e2e51a.htm">LookAtIKSolver</a>.
+                    Here is a video of this sample:
+                </p><ul class="noBullet"><li><p><a href="http://www.youtube.com/watch?v=jzDCvlWvhfY" target="_blank">Video: Look-At IK Solver</a></p></li></ul></div><div class="collapsibleAreaRegion" id="Description"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Description</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    The look-at IK solver influences a single bone. The bone is rotated to look at a certain
+                    target position. Often it is only used to rotate the "head" bone of the model. But you
+                    can also apply several look-at IK solvers to a whole bone chain to create a more natural
+                    animation.
+                </p><p>
+                    In the video, look-at IK solvers are used for the head bone, the neck bone and several
+                    spine bones. All bones will try to look at the target. The character does not only rotate
+                    the head, it will also bend and rotate the upper torso.
+                </p><p>
+                    Each IK solver has a
+                    <a href="0a4a9ad1-fe90-bb57-447e-c0423d30fe13.htm">Weight</a>
+                    property, which can be used to reduce the IK solver’s
+                    influence. The solver for the head bone uses a weight of 1. The other solvers use a
+                    gradually lower value. This means, the head will look directly at the target; the other
+                    bones show a more subtle motion.
+                </p></div><div class="collapsibleAreaRegion" id="Tips"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Tips</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    Depending on the animated model, the results of the look-at IK can appear weird for
+                    certain target positions. Test which target locations look okay and keep the look-at target
+                    in this range. For example: Often, you want to avoid target positions that are very close
+                    to the head, very low on the ground, very high in the air or directly behind the character.
+                </p><p>
+                    The look-at IK solver has a
+                    <a href="a22e1ce4-6215-230f-0f41-c6662965de6a.htm">Limit</a>
+                    property where you can define the max angle of the rotation.
+                </p><p>
+                    Sometimes the character head "snaps" to a new position. This happens when the IK solver
+                    is switched on, when the target position is set to a whole new position, or when the
+                    target is at an extreme position (e.g. directly behind the head). To avoid this, you can
+                    slowly fade-in the weight of the IK solver, or you can use an artificial target position
+                    that slowly transitions to the actual target position. (Of course, you can use the
+                    animation system to create a fade-in animation that controls the weight or an animation
+                    that changes the target position!)
+                </p><p>
+                    You can also dynamically adjust the solver weights if poses appear strange. For example,
+                    the model in the video looks natural when it bends down to look at the ground. But bending
+                    back to look into the sky creates an unnatural pose. In this case the weight of the spine
+                    bone IK solvers can be reduced when the target is above eye height.
+                </p><p>
+                    The look-at IK solver example from the video is one of many examples that come with the
+                    DigitalRune Engine. You can find more details in the example’s source code.
+                </p></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

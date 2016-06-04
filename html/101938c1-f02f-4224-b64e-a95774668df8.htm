@@ -1,0 +1,127 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>How To: Move Objects on a 3D Path</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="101938c1-f02f-4224-b64e-a95774668df8" /><meta name="Description" content="This topic will show how to define a 3-dimensional path and how to move along the path with a defined speed." /><meta name="Microsoft.Help.ContentType" content="How To" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="2ac58586-0d4f-4625-bf4c-fc32591a5304.htm" title="DigitalRune Mathematics" tocid="2ac58586-0d4f-4625-bf4c-fc32591a5304">DigitalRune Mathematics</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="1f324567-e502-496a-a1ca-bdc232611133.htm" title="Articles" tocid="1f324567-e502-496a-a1ca-bdc232611133">Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="dcccdb1a-a354-46e0-a792-6d866b751a77.htm" title="How To: Add DigitalRune Mathematics to a Project" tocid="dcccdb1a-a354-46e0-a792-6d866b751a77">How To: Add DigitalRune Mathematics to a Project</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="492d3089-3c0f-43a5-b068-417fcd8f91e3.htm" title="How To: Compare Floating-Point Numbers" tocid="492d3089-3c0f-43a5-b068-417fcd8f91e3">How To: Compare Floating-Point Numbers</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="e3ea796c-f78d-4a57-8cb4-cb065513c928.htm" title="How To: Use Vectors, Matrices and Quaternions" tocid="e3ea796c-f78d-4a57-8cb4-cb065513c928">How To: Use Vectors, Matrices and Quaternions</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="f2ee69ec-0e54-4acd-a9e7-bd645644a05d.htm" title="How To: Solve a Non-Linear Equation" tocid="f2ee69ec-0e54-4acd-a9e7-bd645644a05d">How To: Solve a Non-Linear Equation</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="101938c1-f02f-4224-b64e-a95774668df8.htm" title="How To: Move Objects on a 3D Path" tocid="101938c1-f02f-4224-b64e-a95774668df8">How To: Move Objects on a 3D Path</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="81cd4f27-5ce5-4439-9a6c-121f2942f175.htm" title="Exponential Smoothing Filter" tocid="81cd4f27-5ce5-4439-9a6c-121f2942f175">Exponential Smoothing Filter</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="69aba1e3-d818-4c9d-9696-a5978ea88f84.htm" title="Scattered Interpolation" tocid="69aba1e3-d818-4c9d-9696-a5978ea88f84">Scattered Interpolation</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">How To: Move Objects on a 3D Path</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This topic will show how to define a 3-dimensional path and how to move
+                along the path with a defined speed.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Definition">Defining a 3D path</a></li><li class="outlineSectionEntry"><a href="#Parameterization">Parameterizing a path by length</a></li><li class="outlineSectionEntry"><a href="#Move">Moving along the path</a></li><li class="outlineSectionEntry"><a href="#Tips">Tips</a></li></ul></div><div class="collapsibleAreaRegion" id="Definition"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Defining a 3D path</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    A 3-dimensional path is a piecewise curve that is defined by several key points.
+                    Key points define the path positions for a given path <span class="term">parameter</span>.
+                    Between the key points the path positions are interpolated using spline curves.
+                    Paths can be used, for example, to define a way that an object should follow when it is
+                    animated.
+                </p><p>
+                    Let's create a 3-dimensional path using the class
+                    <a href="6b347872-56b8-3b35-39be-f73044ee0c48.htm">Path3F</a>:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAHAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAHAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAHAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAHAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">Path3F path = <span class="highlight-keyword">new</span> Path3F();
+path.Add(<span class="highlight-keyword">new</span> Path3FKey { Parameter = <span class="highlight-number">0</span>, Point = <span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">5</span>, <span class="highlight-number">20</span>, <span class="highlight-number">0</span>), Interpolation = SplineInterpolation.CatmullRom });
+path.Add(<span class="highlight-keyword">new</span> Path3FKey { Parameter = <span class="highlight-number">1</span>, Point = <span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">10</span>, <span class="highlight-number">150</span>, <span class="highlight-number">10</span>), Interpolation = SplineInterpolation.CatmullRom });
+path.Add(<span class="highlight-keyword">new</span> Path3FKey { Parameter = <span class="highlight-number">2</span>, Point = <span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">200</span>, <span class="highlight-number">200</span>, <span class="highlight-number">20</span>), Interpolation = SplineInterpolation.CatmullRom });
+path.Add(<span class="highlight-keyword">new</span> Path3FKey { Parameter = <span class="highlight-number">3</span>, Point = <span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">300</span>, <span class="highlight-number">250</span>, <span class="highlight-number">30</span>), Interpolation = SplineInterpolation.CatmullRom });
+path.Add(<span class="highlight-keyword">new</span> Path3FKey { Parameter = <span class="highlight-number">4</span>, Point = <span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">400</span>, <span class="highlight-number">112</span>, <span class="highlight-number">40</span>), Interpolation = SplineInterpolation.CatmullRom });
+path.Add(<span class="highlight-keyword">new</span> Path3FKey { Parameter = <span class="highlight-number">5</span>, Point = <span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">300</span>, <span class="highlight-number">52</span>, <span class="highlight-number">20</span>), Interpolation = SplineInterpolation.CatmullRom });
+path.Add(<span class="highlight-keyword">new</span> Path3FKey { Parameter = <span class="highlight-number">6</span>, Point = <span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">5</span>, <span class="highlight-number">20</span>, <span class="highlight-number">0</span>), Interpolation = SplineInterpolation.CatmullRom });
+
+path.SmoothEnds = <span class="highlight-keyword">true</span>;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAHAEAAA");</script><p>
+                    The path is created and several <span class="term">path key</span> are added. Each path key
+                    is associated with a path parameter. The path key defines the position for a path parameter
+                    and it defines the spline type that is used to interpolate positions between
+                    this path key and the subsequent path key.
+                </p><p>
+                    When a path is used the path parameter is the input and a position on the
+                    path is the desired output. In this example, the path parameter starts at 0
+                    and ends at 6. The path keys define the path position for the parameter
+                    values 0, 1, 2, 3, 4, 5 and 6. Between this parameter values the path
+                    positions are interpolated with the defined spline types. For example,
+                    the path position for parameter 0.5 is somewhere between (5, 20, 0)
+                    and (10, 150, 10). To get the path position we can call
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAEAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAEAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAEAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAEAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">Vector3F p0 = path.GetPoint(<span class="highlight-number">0</span>f);   <span class="highlight-comment">// p0 == (5, 20, 0)</span>
+Vector3F p1 = path.GetPoint(<span class="highlight-number">0.5</span>f); <span class="highlight-comment">// p1 is between (5, 20, 0) and (10, 150, 10)</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAEAEAAA");</script><p>
+                    In this example, the last path key is identical to the first path key to create
+                    a <span class="term">closed</span> path. <span class="code">path.SmoothEnds</span>
+                    is set, to make sure that the path is smooth where the first and the last
+                    path key meet.
+                </p><p>
+                    Next, we define how the path should behave if the path parameter is not
+                    in the range <span class="math">[0, 6]</span>:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EABAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">path.PreLoop = CurveLoopType.Cycle;
+path.PostLoop = CurveLoopType.Cycle;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABAEAAA");</script><p>
+                    This creates a smooth "looping" behavior. For example, the path position for parameter 6.5
+                    is equal to the path position for parameter 0.5.
+                </p></div><div class="collapsibleAreaRegion" id="Parameterization"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Parameterizing a path by length</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    The path that we have defined can be used to translate an object. We can start
+                    with parameter 0 at position (5, 20, 0) and increase the parameter to get the
+                    next positions on the path. The problem with this approach is that the path
+                    parameter is not linearly proportional to the distance along the path. If an object
+                    is animated by using this parameter, it will move with an undefined speed.
+                </p><p>
+                    It would be easier if the parameter for each path key is identical
+                    to the distance of the path keys from the beginning of the path.
+                    This can be achieved by calling:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAEADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAEADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAEADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAEADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">path.ParameterizeByLength(<span class="highlight-number">10</span>, <span class="highlight-number">0.01</span>f);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAEADAAA");</script><p>
+                    This method changes the path parameters. The length parameterization is an
+                    iterative process and the method arguments <span class="code">(10, 0.01f)</span>
+                    define the desired accuracy (see
+                    <a href="f4f8400d-6ba3-dcc8-4708-30e7dc03916f.htm">ParameterizeByLength(Int32, Single)</a>
+                    ).
+                    Before the call the path parameters
+                    at the path keys where 0, 1, 2, 3, 4, 5, 6. After the call the path parameters
+                    at the path keys are identical to the length of the path from the start
+                    to the path key. For example, the parameter of the first path key is now
+                    0 (same as before) and the parameter at the last path key is now equal to the
+                    length of the whole path.
+                </p><p>
+                    Now, the path parameter at the path keys is equal to the path length. But between
+                    the path keys the path parameter varies in a way that is not linearly proportional
+                    to the path length - because of the nature of the Catmull-Rom splines which are used
+                    in this example. To get the path position for a given path length, for example 100, we can call
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EABADAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">Vector3F p = path.GetPoint(path.GetParameterFromLength(<span class="highlight-number">100</span>, <span class="highlight-number">10</span>, <span class="highlight-number">0.01</span>f));</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABADAAA");</script><p><a href="1543775d-852b-3586-b834-8bf135318bb1.htm">GetParameterFromLength(Single, Int32, Single)</a>
+                    computes the approximate path parameter that gives us the path position where
+                    the path is 100 long.
+                    See
+                    <a href="1543775d-852b-3586-b834-8bf135318bb1.htm">GetParameterFromLength(Single, Int32, Single)</a>
+                    for more details.
+                </p></div><div class="collapsibleAreaRegion" id="Move"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Moving along the path</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    The path can be used to move an object along the path. Because the path was
+                    parameterized by length, we can control the speed of the movement on the path.
+                </p><p>
+                    To get the start position on the path call:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EADACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EADACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EADACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EADACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">float</span> parameter = <span class="highlight-number">0</span>;
+Vector3F startPosition = path.GetPoint(<span class="highlight-number">0</span>);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EADACAAA");</script><p>
+                    To get the next position for a given <span class="code">speed</span>:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EABACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">parameter += speed * time;
+Vector3F nextPosition = path.GetPoint(path.GetParameterFromLength(parameter, <span class="highlight-number">10</span>, <span class="highlight-number">0.01</span>f));</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABACAAA");</script><p><span class="code">time</span> is the time difference since the last path position
+                    was computed, for example, <span class="code">1.0f/60.0f</span> if the object
+                    should be animated with 60 frames per second.
+                </p></div><div class="collapsibleAreaRegion" id="Tips"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Tips</span></div><div id="ID4RBSection" class="collapsibleSection"><h4 class="subHeading">Improving performance</h4><div class="subsection"><p><a href="1543775d-852b-3586-b834-8bf135318bb1.htm">GetParameterFromLength(Single, Int32, Single)</a>
+                            is a costly operation that should not be called too often. To improve performance it is recommended
+                            to create a second approximate path from the first path. The keys of the approximate
+                            path are created by sampling the exact path at constant intervals:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EABABABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABABABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABABABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABABABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">float</span> pathLength = path[path.Count - <span class="highlight-number">1</span>].Parameter;  <span class="highlight-comment">// Length of the exact path.</span>
+
+Path3F approximatePath = <span class="highlight-keyword">new</span> Path3F()
+{
+  SmoothEnds = <span class="highlight-keyword">true</span>,
+  PreLoop = CurveLoopType.Cycle,
+  PostLoop = CurveLoopType.Cycle
+};
+
+<span class="highlight-keyword">const</span> <span class="highlight-keyword">int</span> NumberOfSamples = <span class="highlight-number">100</span>;
+<span class="highlight-keyword">for</span> (<span class="highlight-keyword">int</span> i = <span class="highlight-number">0</span>; i &lt;= NumberOfSamples; i++)
+{
+  <span class="highlight-keyword">float</span> distance = pathLength * i / NumberOfSamples;
+  <span class="highlight-keyword">float</span> parameter = path.GetParameterFromLength(distance, <span class="highlight-number">10</span>, <span class="highlight-number">0.01</span>f);
+  Vector3F point = path.GetPoint(parameter);
+  approximatePath.Add(<span class="highlight-keyword">new</span> Path3FKey { Parameter = distance, Point = point, Interpolation = SplineInterpolation.CatmullRom });
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABABABAAA");</script><p>
+                            Moving along this path with <span class="code">Vector3F nextPosition = approximatePath.GetPoint(parameter);</span>
+                            is faster and the difference to the exact path is not noticeable if the
+                            number of samples is high enough.
+                        </p></div><h4 class="subHeading">Looking into the movement direction</h4><div class="subsection"><p><a href="192329ef-71bd-7a7b-4b15-76d8595dece1.htm">GetTangent(Single)</a>
+                            defines the movement direction for a given path parameter. If an object that
+                            is moving along the path is rotated so that it "looks" into the tangent direction,
+                            then the orientation of the object follows the path smoothly.
+                        </p></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

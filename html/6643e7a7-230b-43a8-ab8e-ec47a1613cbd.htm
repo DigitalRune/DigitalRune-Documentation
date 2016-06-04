@@ -1,0 +1,89 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>FAQ</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="6643e7a7-230b-43a8-ab8e-ec47a1613cbd" /><meta name="Description" content="Here is a collection of frequently asked questions, common problems and solutions." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="a5a463da-de2e-432f-bf7d-07206aaca634.htm" title="DigitalRune Game UI" tocid="a5a463da-de2e-432f-bf7d-07206aaca634">DigitalRune Game UI</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="450784f4-d741-4447-809a-527f5c902c98.htm" title="Input Handling" tocid="450784f4-d741-4447-809a-527f5c902c98">Input Handling</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="5bf85e1f-8f25-4778-b4b1-9d29faf15cc9.htm" title="UI Controls" tocid="5bf85e1f-8f25-4778-b4b1-9d29faf15cc9">UI Controls</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="8baa0734-787c-4b13-9cc8-e046adbd4bb9.htm" title="Articles" tocid="8baa0734-787c-4b13-9cc8-e046adbd4bb9">Articles</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="6643e7a7-230b-43a8-ab8e-ec47a1613cbd.htm" title="FAQ" tocid="6643e7a7-230b-43a8-ab8e-ec47a1613cbd">FAQ</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="6be1c3d5-e842-4dec-81d8-5fce19a76345.htm" title="Class Diagrams" tocid="6be1c3d5-e842-4dec-81d8-5fce19a76345">Class Diagrams</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">FAQ</td></tr></table><span class="introStyle"></span><div class="introduction"><p>Here is a collection of frequently asked questions, common problems and solutions.</p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#TransparentScreen">My UIScreen hides graphics behind it. How can I make a UIScreen transparent?</a></li><li class="outlineSectionEntry"><a href="#TextBoxScroll">How can I scroll a TextBox using code?</a></li><li class="outlineSectionEntry"><a href="#WindowDrag">Window dragging does not work if window is not left/top aligned</a></li><li class="outlineSectionEntry"><a href="#ButtonClick">How can I programmatically raise the Button.Click event?</a></li><li class="outlineSectionEntry"><a href="#Export">How can I export/import GUI controls?</a></li></ul></div><div class="collapsibleAreaRegion" id="TransparentScreen"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />My UIScreen hides graphics behind it. How can I make a UIScreen transparent?</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    The
+                    <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>
+                    class has a
+                    <a href="a917a6f3-d642-08c6-caa2-7e30040e0146.htm">Background</a>
+                    property which defines the color used to fill the background of the whole screen. You can
+                    set this color to transparent, for example:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAAFAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAAFAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAAFAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAAFAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">myScreen.Background = <span class="highlight-keyword">new</span> Color(<span class="highlight-number">0</span>, <span class="highlight-number">0</span>, <span class="highlight-number">0</span>, <span class="highlight-number">0</span>);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAAFAAA");</script></div><div class="collapsibleAreaRegion" id="TextBoxScroll"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />How can I scroll a TextBox using code?</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    Just move the caret. The
+                    <a href="00c021dc-419b-0bf3-5210-38b0c9178073.htm">TextBox</a>
+                    will scroll automatically to make the caret visible. For example, to scroll to the
+                    end:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EACAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">myTextBox.CaretIndex = myTextBox.Text.Length;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACAEAAA");</script><p>
+                    A more complicated way is to get the scroll bar and manipulate it:
+                    After the text box was loaded (e.g. shown on the screen), get the contained scroll bar:
+
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">scrollBar = myTextBox.GetDescendants(<span class="highlight-keyword">false</span>)  <span class="highlight-comment">// GetDescendants() is an extension method of the UIHelper class.</span>
+                     .OfType&lt;ScrollBar&gt;()
+                     .First();
+scrollBar.Value = scrollBar.Maximum;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAAEAAA");</script></div><div class="collapsibleAreaRegion" id="WindowDrag"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Window dragging does not work if window is not left/top aligned</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    This is a limitation of the
+                    <a href="8ad1b368-37b8-4b78-6228-5d03ca51c6ac.htm">Window</a>
+                    drag implementation. It only works for the default
+                    left/top alignment. The current system supports following window positioning scenarios:
+                </p><ul><li>
+                        If the window uses left/top alignment, you can use
+                        <a href="1d4e4af9-f088-a306-482b-db511814ea54.htm">UIControl<span id="LSTF3DB90E6_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTF3DB90E6_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>X</a>
+                        and
+                        <a href="98fef05b-30b7-27ee-356f-842fb5df515d.htm">UIControl<span id="LSTF3DB90E6_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTF3DB90E6_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Y</a>
+                        to position the window. Dragging and resizing works.
+                    </li><li>
+                        If the window uses any other alignment, do not use
+                        <a href="1d4e4af9-f088-a306-482b-db511814ea54.htm">UIControl<span id="LSTF3DB90E6_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTF3DB90E6_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>X</a>
+                        and
+                        <a href="98fef05b-30b7-27ee-356f-842fb5df515d.htm">UIControl<span id="LSTF3DB90E6_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTF3DB90E6_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Y</a>.
+                        Instead use
+                        <a href="803f858a-8825-e306-4fe1-91b57d37f811.htm">UIControl<span id="LSTF3DB90E6_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTF3DB90E6_4?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Margin</a>
+                        to position the window. Do not allow dragging/resizing in this mode (set
+                        <a href="0cfce4a6-b149-1cea-3fb9-8da4041b2916.htm">Window<span id="LSTF3DB90E6_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTF3DB90E6_5?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>CanResize</a>
+                        and
+                        <a href="a4caea6f-4813-3637-5b3f-efa3776b66f3.htm">Window<span id="LSTF3DB90E6_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTF3DB90E6_6?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>CanDrag</a>
+                        to false).
+                    </li></ul></div><div class="collapsibleAreaRegion" id="ButtonClick"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />How can I programmatically raise the Button.Click event?</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    If you want to raise the
+                    <a href="368ed785-8df2-9329-ef19-4dc203c2ef81.htm">Click</a>
+                    event of a button from "outside" the button code, you can get the
+                    <a href="b846ba26-1983-6f86-e97d-1c6ed3d31021.htm">IsClicked</a>
+                    property and set it to true:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EACACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">var</span> isClickedProperty = myButton.Properties.Get&lt;<span class="highlight-keyword">bool</span>&gt;(ButtonBase.IsClickedPropertyId);
+isClickedProperty.Value = <span class="highlight-keyword">true</span>;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACACAAA");</script><p>
+                    When the
+                    <a href="b846ba26-1983-6f86-e97d-1c6ed3d31021.htm">IsClicked</a>
+                    property changes to true, it triggers the
+                    <a href="368ed785-8df2-9329-ef19-4dc203c2ef81.htm">Click</a>
+                    event. You could also trigger the
+                    <a href="368ed785-8df2-9329-ef19-4dc203c2ef81.htm">Click</a>
+                    event directly:
+
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">var</span> clickEvent = myButton.Events.Get&lt;EventArgs&gt;(Button.ClickEventId);
+clickEvent.Raise();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAACAAA");</script></div><div class="collapsibleAreaRegion" id="Export"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />How can I export/import GUI controls?</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    You can use the
+                    <a href="e3d852a6-e1a5-3161-1920-eef02306d919.htm">LayoutSerializer</a>
+                    class to load controls from an XML file. The class does not support serialization into an
+                    XML file yet. You have to create this part yourself. Use .NET reflection to enumerate the
+                    class properties of the controls and create an XML that is compatible to the XML required
+                    by the
+                    <a href="e3d852a6-e1a5-3161-1920-eef02306d919.htm">LayoutSerializer</a>.
+                </p><p>
+                    References:
+                </p><ul><li>
+                        An example XML file is contained in the ControlsSample of the DgiitalRune Samples.
+                    </li><li>
+                        If you have access to the Premium Downloads, check out the source code of the
+                        <a href="e3d852a6-e1a5-3161-1920-eef02306d919.htm">LayoutSerializer</a>
+                        class.
+                    </li></ul><p>
+                    Some more tips:
+                </p><ul><li>
+                        You only need to write the properties into the XML that are read/write-able. (Do not
+                        write read-only properties.)
+                    </li><li>
+                        Do not write properties that have their default value.
+                    </li></ul></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

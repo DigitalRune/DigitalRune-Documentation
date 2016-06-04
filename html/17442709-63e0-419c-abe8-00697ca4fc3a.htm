@@ -1,0 +1,286 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Guidelines for Writing Effects</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="17442709-63e0-419c-abe8-00697ca4fc3a" /><meta name="Description" content="This topic explains how to write DirectX Effects that are compatible with DigitalRune Graphics." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="9604b781-8adb-4ec6-87bd-85b805e9c036.htm" title="Asset Creation" tocid="9604b781-8adb-4ec6-87bd-85b805e9c036">Asset Creation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="52773ff4-36b3-4c9e-9534-c97ce25a06c1.htm" title="Effects (*.fx)" tocid="52773ff4-36b3-4c9e-9534-c97ce25a06c1">Effects (*.fx)</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="17442709-63e0-419c-abe8-00697ca4fc3a.htm" title="Guidelines for Writing Effects" tocid="17442709-63e0-419c-abe8-00697ca4fc3a">Guidelines for Writing Effects</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="fda15306-d5dc-449c-850d-82227359d35b.htm" title="Predefined Effects" tocid="fda15306-d5dc-449c-850d-82227359d35b">Predefined Effects</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Guidelines for Writing Effects</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This topic explains how to write DirectX Effects that are compatible with DigitalRune Graphics.
+            </p><p>
+                In general, it is not necessary to write DirectX Effects (.fx files) in a certain way. Most
+                effects should be usable with DigitalRune Graphics. However, by using certain effect
+                parameter names, semantics, and annotations, the engine can automate many task at runtime.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Semantics">Semantics</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Animation">Animation</a></li><li class="outlineSectionEntry"><a href="#Camera">Camera</a></li><li class="outlineSectionEntry"><a href="#Lights">Lights</a></li><li class="outlineSectionEntry"><a href="#Material">Material</a></li><li class="outlineSectionEntry"><a href="#Transforms">Transforms</a></li><li class="outlineSectionEntry"><a href="#Decals">Decals</a></li><li class="outlineSectionEntry"><a href="#Fog">Fog</a></li><li class="outlineSectionEntry"><a href="#Misc">Misc</a></li><li class="outlineSectionEntry"><a href="#Terrain">Terrain</a></li><li class="outlineSectionEntry"><a href="#Custom">Custom semantics</a></li></ul><li class="outlineSectionEntry"><a href="#DXSAS">
+                DirectX Standard Annotations and Semantics (DXSAS) 0.8
+            </a></li><li class="outlineSectionEntry"><a href="#Hints">Sort hints</a></li><li class="outlineSectionEntry"><a href="#Instancing">Hardware instancing</a></li><li class="outlineSectionEntry"><a href="#Restore">Restore pass</a></li></ul></div><div class="collapsibleAreaRegion" id="Semantics"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Semantics</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    When loading an effect, DigitalRune Graphics checks whether the effect parameter has a
+                    certain name or semantic. If it recognizes an effect parameter it will automatically create
+                    an effect parameter binding. It is not necessary to update these effect parameters
+                    explicitly at runtime. The graphics engine manages them automatically.
+                </p><p>
+                    For example:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAJBFAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAJBFAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAJBFAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">float4x4 w : WORLD;           // The world matrix.
+float4x4 vp : VIEWPROJECTION; // The view-projection matrix.
+float4x3 Bones[72];           // The skinning matrices.
+texture LightBuffer0;         // The first light buffer (diffuse light).
+texture LightBuffer1;         // The second light buffer (specular light).</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAJBFAAA");</script><p>
+                    These are examples of effect parameter, which are recognized by the graphics engine.
+                    The graphics engine checks whether the parameter name or its semantic matches the
+                    following pattern:
+                </p><ul class="noBullet"><li><p><span class="code">SEMANTIC</span><em>n</em></p></li></ul><p>
+                    The graphics engine compares the first part <span class="code">SEMANTIC</span> with the
+                    values listed below. (The string comparison is case-insensitive.)
+                </p><p>
+                    The parameter names or semantic may end with an index <em>n</em>.
+                    The index is optional. It is only relevant when the effect parameter may be bound to
+                    multiple values. For example, consider a material shader that supports up to 4 point lights. The parameters
+                    storing the point light positions can be declared as:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAEBFAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAEBFAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAEBFAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">float3 lightPos0 : POINTLIGHTPOSITION0;
+float3 lightPos1 : POINTLIGHTPOSITION1;
+float3 lightPos2 : POINTLIGHTPOSITION2;
+float3 lightPos3 : POINTLIGHTPOSITION3;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAEBFAAA");</script><p>
+                    Alternatively, the point light positions can be declared as:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACBFAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACBFAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACBFAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">float3 lightPos[4] : POINTLIGHTPOSITION;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACBFAAA");</script><p>
+                    In either case, the graphics engine will recognize the effect parameters and create effect
+                    parameter bindings. At runtime, whenever an object is rendered using this shader,
+                    the graphics engine will fetch the four point lights closest to the object, determine their
+                    positions and automatically set the effect parameters in the shader.
+                </p><p>
+                    DigitalRune Graphics supports the following semantics (the semantics can also be
+                    found in the classes
+                    <a href="0fa53b38-0bf7-991f-1a31-1cd1b938c5dc.htm">DefaultEffectParameterSemantics</a>,
+                    <a href="031b4e26-6b6f-b1f3-2956-e238d9d5dfa2.htm">SceneEffectParameterSemantics</a>
+                    and
+                    <a href="e2751b90-5182-4aad-beed-78545612f5dd.htm">TerrainEffectParameterSemantics</a>):
+                </p><h4 class="subHeading" id="Animation">Animation</h4><div class="subsection"><div class="tableSection"><table><tr><th><p>Semantic</p></th><th><p>Types</p></th><th><p>Description</p></th></tr><tr><td><p><span class="code">BONES</span></p></td><td><p><span class="code">float4x3[]</span></p></td><td><p>The skinning matrices for mesh skinning.</p></td></tr></table></div></div><h4 class="subHeading" id="Camera">Camera</h4><div class="subsection"><div class="tableSection"><table><tr><th><p>Semantic</p></th><th><p>Types</p></th><th><p>Description</p></th></tr><tr><td><p><span class="code">CAMERADIRECTION</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The camera direction in world space.</p></td></tr><tr><td><p><span class="code">CAMERAPOSITION</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The camera position in world space.</p></td></tr><tr><td><p><span class="code">LASTCAMERADIRECTION</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The camera direction of the last frame in world space.</p></td></tr><tr><td><p><span class="code">LASTCAMERAPOSITION</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The camera position of the last frame in world space.</p></td></tr><tr><td><p><span class="code">CAMERANEAR</span></p></td><td><p><span class="code">float</span></p></td><td><p>The distance of the camera near plane.</p></td></tr><tr><td><p><span class="code">CAMERAFAR</span></p></td><td><p><span class="code">float</span></p></td><td><p>The distance of the camera far plane.</p></td></tr><tr><td><p><span class="code">LODCAMERAPOSITION</span></p></td><td><p><span class="code">float3</span></p></td><td><p>
+                                        The position of the camera used as reference for LOD calculations
+                                    </p></td></tr></table></div></div><h4 class="subHeading" id="Lights">Lights</h4><div class="subsection"><div class="tableSection"><table><tr><th><p>Semantic</p></th><th><p>Types</p></th><th><p>Description</p></th></tr><tr><td><p><span class="code">AMBIENTLIGHT</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The intensity of an ambient light.</p></td></tr><tr><td><p><span class="code">AMBIENTLIGHTATTENUATION</span></p></td><td><p><span class="code">float</span></p></td><td><p>
+                                        The hemispheric attenuation factor of the ambient light.
+                                        (0 = pure ambient, no hemispheric lighting; 1 = one-sided hemispheric lighting)
+                                    </p></td></tr><tr><td><p><span class="code">AMBIENTLIGHTUP</span></p></td><td><p><span class="code">float3</span></p></td><td><p>
+                                        The up vector of the ambient light in world space.
+                                        (Required for hemispheric attenuation.)
+                                    </p></td></tr><tr><td><p><span class="code">DIRECTIONALLIGHTDIFFUSE</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The diffuse intensity of a directional light.</p></td></tr><tr><td><p><span class="code">DIRECTIONALLIGHTSPECULAR</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The specular intensity of a directional light.</p></td></tr><tr><td><p><span class="code">DIRECTIONALLIGHTDIRECTION</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The light direction in world space.</p></td></tr><tr><td><p><span class="code">DIRECTIONALLIGHTTEXTURE</span></p></td><td><p><span class="code">Texture2D</span></p></td><td><p>The texture of a directional light.</p></td></tr><tr><td><p><span class="code">DIRECTIONALLIGHTTEXTUREOFFSET</span></p></td><td><p><span class="code">float2</span></p></td><td><p>The texture offset of a directional light.</p></td></tr><tr><td><p><span class="code">DIRECTIONALLIGHTTEXTURESCALE</span></p></td><td><p><span class="code">float2</span></p></td><td><p>The texture scale of a directional light.</p></td></tr><tr><td><p><span class="code">DIRECTIONALLIGHTTEXTUREMATRIX</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>
+                                        The texture matrix of a directional light which converts positions from world
+                                        space to the texture space of the light.
+                                    </p></td></tr><tr><td><p><span class="code">DIRECTIONALLIGHTSHADOWMAP</span></p></td><td><p><span class="code">Texture2D</span></p></td><td><p>
+                                        The shadow map of a directional light.
+                                    </p></td></tr><tr><td><p><span class="code">DIRECTIONALLIGHTSHADOWPARAMETERS</span></p></td><td><p><span class="code">*</span></p></td><td><p>
+                                        The shadow parameters of a directional light shadow.
+                                    </p><p>
+                                        * The supported types are struct <span class="code">ShadowParameters</span> as
+                                        defined in ShadowMap.fxh or or struct <span class="code">CascadedShadowParameters</span>
+                                        as defined in CascadedShadowMap.fxh.
+                                    </p></td></tr><tr><td><p><span class="code">ENVIRONMENTMAP</span></p></td><td><p><span class="code">TextureCube</span></p></td><td><p>The cube map texture containing the environment.</p></td></tr><tr><td><p><span class="code">ENVIRONMENTMAPSIZE</span></p></td><td><p><span class="code">float</span></p></td><td><p>The side length of one cube map face of the environment map in texels.</p></td></tr><tr><td><p><span class="code">ENVIRONMENTMAPDIFFUSE</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The intensity of diffuse environment map reflections.</p></td></tr><tr><td><p><span class="code">ENVIRONMENTMAPSPECULAR</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The intensity of specular environment map reflections.</p></td></tr><tr><td><p><span class="code">ENVIRONMENTMAPRGBMMAX</span></p></td><td><p><span class="code">float</span></p></td><td><p>
+                                        The max value (see also
+                                        <a href="53b94344-dcb1-e362-018d-a18bf7bfce32.htm">RgbmEncoding<span id="LSTA39D9AE8_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTA39D9AE8_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Max</a>)
+                                        of the RGBM encoding. If the environment map is encoded using sRGB, this value
+                                        is 1.
+                                    </p></td></tr><tr><td><p><span class="code">ENVIRONMENTMAPMATRIX</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>
+                                        The texture matrix of the environment map which converts positions from world
+                                        space to the texture space of the cube map.
+                                    </p></td></tr><tr><td><p><span class="code">POINTLIGHTDIFFUSE</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The diffuse intensity of a point light.</p></td></tr><tr><td><p><span class="code">POINTLIGHTSPECULAR</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The specular intensity of a point light.</p></td></tr><tr><td><p><span class="code">POINTLIGHTPOSITION</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The position of a point light in world space.</p></td></tr><tr><td><p><span class="code">POINTLIGHTRANGE</span></p></td><td><p><span class="code">float</span></p></td><td><p>The range of a point light.</p></td></tr><tr><td><p><span class="code">POINTLIGHTATTENUATION</span></p></td><td><p><span class="code">float</span></p></td><td><p>The attenuation exponent of a point light.</p></td></tr><tr><td><p><span class="code">POINTLIGHTTEXTURE</span></p></td><td><p><span class="code">TextureCube</span></p></td><td><p>The texture of a point light.</p></td></tr><tr><td><p><span class="code">POINTLIGHTTEXTUREMATRIX</span></p></td><td><p><span class="code">float3x3</span> or
+                                        <span class="code">float4x4</span></p></td><td><p>
+                                        The texture matrix of a point light which converts directions from world
+                                        space to the texture space of the light.
+                                    </p></td></tr><tr><td><p><span class="code">PROJECTORLIGHTDIFFUSE</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The diffuse intensity of a projector light.</p></td></tr><tr><td><p><span class="code">PROJECTORLIGHTSPECULAR</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The specular intensity of a projector light.</p></td></tr><tr><td><p><span class="code">PROJECTORLIGHTPOSITION</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The position of a projector light in world space.</p></td></tr><tr><td><p><span class="code">PROJECTORLIGHTDIRECTION</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The direction of a projector light in world space.</p></td></tr><tr><td><p><span class="code">PROJECTORLIGHTRANGE</span></p></td><td><p><span class="code">float</span></p></td><td><p>The range of a projector light.</p></td></tr><tr><td><p><span class="code">PROJECTORLIGHTATTENUATION</span></p></td><td><p><span class="code">float</span></p></td><td><p>The attenuation exponent of a projector light.</p></td></tr><tr><td><p><span class="code">PROJECTORLIGHTTEXTURE</span></p></td><td><p><span class="code">Texture2D</span></p></td><td><p>The texture that is projected by the projector light.</p></td></tr><tr><td><p><span class="code">PROJECTORLIGHTVIEWPROJECTION</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The view-projection matrix of the projector light.</p></td></tr><tr><td><p><span class="code">PROJECTORLIGHTTEXTUREMATRIX</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>
+                                        The texture matrix of a projector light which converts positions from world
+                                        space to the texture space of the light.
+                                    </p></td></tr><tr><td><p><span class="code">SPOTLIGHTDIFFUSE</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The diffuse intensity of a spotlight.</p></td></tr><tr><td><p><span class="code">SPOTLIGHTSPECULAR</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The specular intensity of a spotlight.</p></td></tr><tr><td><p><span class="code">SPOTLIGHTPOSITION</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The position of a spotlight in world space.</p></td></tr><tr><td><p><span class="code">SPOTLIGHTDIRECTION</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The direction of a spotlight in world space.</p></td></tr><tr><td><p><span class="code">SPOTLIGHTRANGE</span></p></td><td><p><span class="code">float</span></p></td><td><p>The range of a spotlight.</p></td></tr><tr><td><p><span class="code">SPOTLIGHTFALLOFFANGLE</span></p></td><td><p><span class="code">float</span></p></td><td><p>The falloff (umbra) angle of the spotlight in radians.</p></td></tr><tr><td><p><span class="code">SPOTLIGHTCUTOFFANGLE</span></p></td><td><p><span class="code">float</span></p></td><td><p>The cutoff (penumbra) angle of the spotlight in radians.</p></td></tr><tr><td><p><span class="code">SPOTLIGHTATTENUATION</span></p></td><td><p><span class="code">float</span></p></td><td><p>The attenuation exponent of a spotlight.</p></td></tr><tr><td><p><span class="code">SPOTLIGHTTEXTURE</span></p></td><td><p><span class="code">Texture2D</span></p></td><td><p>The texture of a spotlight.</p></td></tr><tr><td><p><span class="code">SPOTLIGHTTEXTUREMATRIX</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>
+                                        The texture matrix of a spotlight which converts positions from world
+                                        space to the texture space of the light.
+                                    </p></td></tr></table></div></div><h4 class="subHeading" id="Material">Material</h4><div class="subsection"><div class="tableSection"><table><tr><th><p>Semantic</p></th><th><p>Types</p></th><th><p>Description</p></th></tr><tr><td><p><span class="code">DIFFUSECOLOR</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The diffuse material color.</p></td></tr><tr><td><p><span class="code">DIFFUSETEXTURE</span></p></td><td><p><span class="code">Texture2D</span></p></td><td><p>The diffuse (albedo) texture.</p></td></tr><tr><td><p><span class="code">SPECULARCOLOR</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The specular material color.</p></td></tr><tr><td><p><span class="code">SPECULARTEXTURE</span></p></td><td><p><span class="code">Texture2D</span></p></td><td><p>The gloss texture containing the specular intensity (not specular power).</p></td></tr><tr><td><p><span class="code">SPECULARPOWER</span></p></td><td><p><span class="code">float</span> or <span class="code">float3</span></p></td><td><p>The material specular color exponent as a single value or per-component.</p></td></tr><tr><td><p><span class="code">EMISSIVECOLOR</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The emissive material color.</p></td></tr><tr><td><p><span class="code">EMISSIVETEXTURE</span></p></td><td><p><span class="code">Texture2D</span></p></td><td><p>The emissive texture.</p></td></tr><tr><td><p><span class="code">OPACITY</span></p></td><td><p><span class="code">float</span></p></td><td><p>The opacity (alpha).</p></td></tr><tr><td><p><span class="code">ALPHA</span></p></td><td><p><span class="code">float</span></p></td><td><p>The opacity (alpha).</p></td></tr><tr><td><p><span class="code">BLENDMODE</span></p></td><td><p><span class="code">float</span></p></td><td><p>
+                                        The blend mode: 0 = additive blending, 1 = normal alpha-blending.
+                                        (Other values than 0 and 1 are allowed to create mixed blend modes.)
+                                    </p></td></tr><tr><td><p><span class="code">REFERENCEALPHA</span></p></td><td><p><span class="code">float</span></p></td><td><p>The reference value used for alpha testing.</p></td></tr><tr><td><p><span class="code">NORMALTEXTURE</span></p></td><td><p><span class="code">Texture2D</span></p></td><td><p>The normal texture.</p></td></tr><tr><td><p><span class="code">FRESNELPOWER</span></p></td><td><p><span class="code">float</span></p></td><td><p>The power of the Fresnel term.</p></td></tr><tr><td><p><span class="code">INSTANCECOLOR</span></p></td><td><p><span class="code">float3</span></p></td><td><p>The instance color as RGB.</p></td></tr><tr><td><p><span class="code">INSTANCEALPHA</span></p></td><td><p><span class="code">float</span></p></td><td><p>
+                                        The instance opacity (alpha).
+                                    </p></td></tr></table></div></div><h4 class="subHeading" id="Transforms">Transforms</h4><div class="subsection"><div class="tableSection"><table><tr><th><p>Semantic</p></th><th><p>Types</p></th><th><p>Description</p></th></tr><tr><td><p><span class="code">POSITION</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The position of the object in world space.</p></td></tr><tr><td><p><span class="code">WORLD</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The world matrix.</p></td></tr><tr><td><p><span class="code">WORLDINVERSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The inverse world matrix.</p></td></tr><tr><td><p><span class="code">WORLDTRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the world matrix.</p></td></tr><tr><td><p><span class="code">WORLDINVERSETRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the inverse world matrix.</p></td></tr><tr><td><p><span class="code">VIEW</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The view matrix.</p></td></tr><tr><td><p><span class="code">VIEWINVERSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The inverse view matrix.</p></td></tr><tr><td><p><span class="code">VIEWTRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the view matrix.</p></td></tr><tr><td><p><span class="code">VIEWINVERSETRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the inverse view matrix.</p></td></tr><tr><td><p><span class="code">PROJECTION</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The projection matrix.</p></td></tr><tr><td><p><span class="code">PROJECTIONINVERSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The inverse projection matrix.</p></td></tr><tr><td><p><span class="code">PROJECTIONTRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the projection matrix.</p></td></tr><tr><td><p><span class="code">PROJECTIONINVERSETRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the inverse projection matrix.</p></td></tr><tr><td><p><span class="code">WORLDVIEW</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The world-view matrix.</p></td></tr><tr><td><p><span class="code">WORLDVIEWINVERSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The inverse world-view matrix.</p></td></tr><tr><td><p><span class="code">WORLDVIEWTRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the world-view matrix.</p></td></tr><tr><td><p><span class="code">WORLDVIEWINVERSETRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the inverse world-view matrix.</p></td></tr><tr><td><p><span class="code">VIEWPROJECTION</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The view-projection matrix.</p></td></tr><tr><td><p><span class="code">VIEWPROJECTIONINVERSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The inverse view-projection matrix.</p></td></tr><tr><td><p><span class="code">VIEWPROJECTIONTRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the view-projection matrix.</p></td></tr><tr><td><p><span class="code">VIEWPROJECTIONINVERSETRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the inverse view-projection matrix.</p></td></tr><tr><td><p><span class="code">WORLDVIEWPROJECTION</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The world-view-projection matrix.</p></td></tr><tr><td><p><span class="code">WORLDVIEWPROJECTIONINVERSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The inverse world-view-projection matrix.</p></td></tr><tr><td><p><span class="code">WORLDVIEWPROJECTIONTRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the world-view-projection matrix.</p></td></tr><tr><td><p><span class="code">WORLDVIEWPROJECTIONINVERSETRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the inverse world-view-projection matrix.</p></td></tr><tr><td><p><span class="code">LASTPOSITION</span></p></td><td><p><span class="code">float3</span> or <span class="code">float4</span></p></td><td><p>The position of the object in world space of the last frame.</p></td></tr><tr><td><p><span class="code">LASTWORLD</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The world matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTWORLDINVERSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The inverse world matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTWORLDTRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the world matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTWORLDINVERSETRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the inverse world matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTVIEW</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The view matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTVIEWINVERSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The inverse view matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTVIEWTRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the view matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTVIEWINVERSETRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the inverse view matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTPROJECTION</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The projection matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTPROJECTIONINVERSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The inverse projection matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTPROJECTIONTRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the projection matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTPROJECTIONINVERSETRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the inverse projection matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTWORLDVIEW</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The world-view matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTWORLDVIEWINVERSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The inverse world-view matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTWORLDVIEWTRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the world-view matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTWORLDVIEWINVERSETRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the inverse world-view matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTVIEWPROJECTION</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The view-projection matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTVIEWPROJECTIONINVERSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The inverse view-projection matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTVIEWPROJECTIONTRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the view-projection matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTVIEWPROJECTIONINVERSETRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the inverse view-projection matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTWORLDVIEWPROJECTION</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The world-view-projection matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTWORLDVIEWPROJECTIONINVERSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The inverse world-view-projection matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTWORLDVIEWPROJECTIONTRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the world-view-projection matrix of the last frame.</p></td></tr><tr><td><p><span class="code">LASTWORLDVIEWPROJECTIONINVERSETRANSPOSE</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>The transpose of the inverse world-view-projection matrix of the last frame.</p></td></tr><tr><td><p><span class="code">UNSCALEDWORLD</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>
+                                        Same as WORLD, except that the matrix does not contain any scale factors.
+                                    </p></td></tr><tr><td><p><span class="code">UNSCALEDWORLDVIEW</span></p></td><td><p><span class="code">float4x4</span></p></td><td><p>
+                                        Same as WORLDVIEW, except that the matrix does not contain any scale factors.
+                                    </p></td></tr></table></div></div><h4 class="subHeading" id="Decals">Decals</h4><div class="subsection"><div class="tableSection"><table><tr><th><p>Semantic</p></th><th><p>Types</p></th><th><p>Description</p></th></tr><tr><td><p><span class="code">DECALALPHA</span></p></td><td><p><span class="code">float</span></p></td><td><p>The opacity of the decal.</p></td></tr><tr><td><p><span class="code">DECALNORMALTHRESHOLD</span></p></td><td><p><span class="code">float</span></p></td><td><p>The normal threshold of the decal.</p></td></tr><tr><td><p><span class="code">DECALOPTIONS</span></p></td><td><p><span class="code">-</span></p></td><td><p>The decal options.</p></td></tr><tr><td><p><span class="code">DECALORIENTATION</span></p></td><td><p><span class="code">float3</span></p></td><td><p>The z-axis of the decal in world space.</p></td></tr></table></div></div><h4 class="subHeading" id="Fog">Fog</h4><div class="subsection"><div class="tableSection"><table><tr><th><p>Semantic</p></th><th><p>Types</p></th><th><p>Description</p></th></tr><tr><td><p><span class="code">FOGCOLOR</span></p></td><td><p><span class="code">float4</span></p></td><td><p>The fog color.</p></td></tr><tr><td><p><span class="code">FOGSTART</span></p></td><td><p><span class="code">float</span></p></td><td><p>The start distance of the fog.</p></td></tr><tr><td><p><span class="code">FOGEND</span></p></td><td><p><span class="code">float</span></p></td><td><p>The end distance of the fog.</p></td></tr><tr><td><p><span class="code">FOGDENSITY</span></p></td><td><p><span class="code">float</span></p></td><td><p>The density of the fog.</p></td></tr><tr><td><p><span class="code">FOGPARAMETERS</span></p></td><td><p><span class="code">float4</span></p></td><td><p>
+                                        The combined parameters of the fog; a 4-dimensional vector containing:
+                                        (start distance, end distance or 1 / density, fog curve exponent, height falloff).
+                                    </p></td></tr></table></div></div><h4 class="subHeading" id="Misc">Misc</h4><div class="subsection"><div class="tableSection"><table><tr><th><p>Semantic</p></th><th><p>Types</p></th><th><p>Description</p></th></tr><tr><td><p><span class="code">DEBUG</span></p></td><td><p><span class="code">float4</span></p></td><td><p>
+                                        A 4-element vector with user-defined data for debugging.
+                                        The values are set using 
+                                        <a href="800f5066-23c2-0e45-993f-27a598ad8319.htm">Debug0</a>
+                                        and
+                                        <a href="1248940f-315d-330d-2a3b-eacc1712a324.htm">Debug1</a>.
+                                    </p></td></tr><tr><td><p><span class="code">ELAPSEDTIME</span></p></td><td><p><span class="code">float</span></p></td><td><p>The time since the previous frame in seconds.</p></td></tr><tr><td><p><span class="code">GBUFFER</span></p></td><td><p><span class="code">Texture2D</span></p></td><td><p>The G-buffer.</p></td></tr><tr><td><p><span class="code">DITHERMAP</span></p></td><td><p><span class="code">Texture2D</span></p></td><td><p>
+                                        An 8-bit texture (alpha only) with 16x16 dither values.
+                                    </p></td></tr><tr><td><p><span class="code">JITTERMAP</span></p></td><td><p><span class="code">Texture2D</span></p></td><td><p>
+                                        A quadratic RGBA texture (8 bit per channel) with random values.
+                                    </p></td></tr><tr><td><p><span class="code">JITTERMAPSIZE</span></p></td><td><p><span class="code">float</span> or
+                                        <span class="code">float2</span></p></td><td><p>
+                                        The width of the quadratic <span class="code">JITTERMAP</span> in texels.
+                                    </p></td></tr><tr><td><p><span class="code">LIGHTBUFFER</span></p></td><td><p><span class="code">Texture2D</span></p></td><td><p>The light buffer.</p></td></tr><tr><td><p><span class="code">NAN</span></p></td><td><p><span class="code">float</span></p></td><td><p>
+                                        A float value containing NaN.
+                                    </p></td></tr><tr><td><p><span class="code">NOISEMAP</span></p></td><td><p><span class="code">Texture2D</span></p></td><td><p>
+                                        A quadratic, tileable RGBA texture (8 bit per channel) with smooth noise values.
+                                    </p></td></tr><tr><td><p><span class="code">NORMALSFITTINGTEXTURE</span></p></td><td><p><span class="code">Texture2D</span></p></td><td><p>The normals fitting texture for encoding "best fit" normals.</p></td></tr><tr><td><p><span class="code">PASSINDEX</span></p></td><td><p><span class="code">int</span></p></td><td><p>The zero-based index of the current effect pass.</p></td></tr><tr><td><p><span class="code">SOURCETEXTURE</span></p></td><td><p><span class="code">Texture2D</span></p></td><td><p>The source texture, which is usually the last backbuffer or the result of a previous post-processor.</p></td></tr><tr><td><p><span class="code">VIEWPORTSIZE</span></p></td><td><p><span class="code">float2</span></p></td><td><p>The viewport width and height in pixels.</p></td></tr></table></div></div><h4 class="subHeading" id="Terrain">Terrain</h4><div class="subsection"><p>
+                           The class 
+                           <a href="e2751b90-5182-4aad-beed-78545612f5dd.htm">TerrainEffectParameterSemantics</a>
+                           defines additional semantics supported by the terrain rendering system.
+                        </p></div><h4 class="subHeading" id="Custom">Custom semantics</h4><div class="subsection"><p>
+                            See <a href="c2b20686-df99-4d21-b5b6-fd7d58a5f407.htm">How To: Add Support for New Effect Parameters</a></p></div></div><div class="collapsibleAreaRegion" id="DXSAS"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />
+                DirectX Standard Annotations and Semantics (DXSAS) 0.8
+            </span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    DigitalRune Graphics partially supports the <span class="term">
+                        DirectX Standard Annotations and
+                        Semantics (DXSAS)
+                    </span> version 0.8.
+                </p><p>
+                    The following DXSAS 0.8 semantics are supported:
+                </p><p><span class="code">
+                        AMBIENT, CAMERAPOSITION, DIFFUSE, DIFFUSEMAP, DIRECTION, ELAPSEDTIME, EMISSIVE,
+                        ENVIRONMENT, ENVMAP, FALLOFFANGLE,
+                        LIGHTPOSITION, NORMAL, OPACITY, POSITION, PROJECTION, PROJECTIONINVERSE, PROJECTIONTRANSPOSE,
+                        PROJECTIONINVERSETRANSPOSE,
+                        
+                        SPECULAR, SPECULARMAP, SPECULARPOWER,
+                        VIEW, VIEWINVERSE, VIEWINVERSETRANSPOSE, VIEWPORTPIXELSIZE, VIEWPROJECTION, VIEWPROJECTIONINVERSE,
+                        VIEWPROJECTIONTRANSPOSE, VIEWPROJECTIONINVERSETRANSPOSE, VIEWTRANSPOSE, WORLD, WORLDINVERSE,
+                        WORLDINVERSETRANSPOSE, WORLDTRANSPOSE, WORLDVIEW, WORLDVIEWINVERSE, WORLDVIEWINVERSETRANSPOSE,
+                        WORLDVIEWTRANSPOSE, WORLDVIEWPROJECTION, WORLDVIEWPROJECTIONINVERSE, WORLDVIEWPROJECTIONINVERSETRANSPOSE,
+                        WORLDVIEWPROJECTIONTRANSPOSE
+                    </span></p><p>
+                    The following DXSAS 0.8 semantics are not (yet) supported:
+                </p><p><span class="code">
+                        ATTENUATION, BOUNDINGCENTER, BOUNDINGBOXMAX, BOUNDINGBOXMIN, BOUNDINGBOXSIZE, BOUNDINGSPHEREMAX,
+                        BOUNDINGSPHEREMIN, BOUNDINGSPHERESIZE, CONSTANTATTENUATION, ENVIRONMENTNORMAL,
+                        FALLOFFEXPONENT, HEIGHT, JOINT, JOINTWORLD, JOINTWORLDINVERSE, JOINTWORLDINVERSETRANSPOSE,
+                        JOINTWORLDTRANSPOSE, JOINTWORLDVIEW, JOINTWORLDVIEWINVERSE, JOINTWORLDVIEWINVERSETRANSPOSE,
+                        JOINTWORLDVIEWTRANSPOSE, LASTTIME, LINEARATTENUATION, QUADRATICATTENUATION, RANDOM, REFRACTION,
+                        TEXTUREMATRIX, TIME
+                    </span></p></div><div class="collapsibleAreaRegion" id="Hints"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Sort hints</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    A <span class="term">sort hint</span> (see enum <a href="159c8792-e4dc-913d-00f0-e21b6c0d5cf5.htm">EffectParameterHint</a>)
+                    is a value that indicates when an effect parameter should be updated and how it should be
+                    treated during state sorting.
+                </p><p>
+                    The supported sort hints are:
+                </p><div class="tableSection"><table><tr><th><p>Hint</p></th><th><p>Description</p></th></tr><tr><td><p><span class="code">Global</span></p></td><td><p>
+                                Global effect parameters are identical for all meshes that use the same effect and effect
+                                technique. They do not depend on the object that is being rendered or on the location of the
+                                object in the scene. Examples of global parameters are: view matrix, projection matrix,
+                                camera position, etc.
+                            </p></td></tr><tr><td><p><span class="code">Material</span></p></td><td><p>
+                                This effect parameter defines the material of a mesh. Multiple meshes can share the same
+                                material. Material parameters are independent of the location of the object in the scene.
+                                Examples of material parameters are: diffuse color, albedo texture, specular color, gloss
+                                texture, normal map, etc.
+                            </p></td></tr><tr><td><p><span class="code">Local</span></p></td><td><p>
+                                This effect parameter depends on the location of the mesh in the scene. Multiple
+                                meshes which are close to each other in the scene may share the same parameter values.
+                                Examples of local parameters are: local environment maps, local lights, etc.
+                            </p></td></tr><tr><td><p><span class="code">PerInstance</span></p></td><td><p>
+                                This effect parameter can be different for each mesh instance. Examples of instance
+                                parameters are: world matrix, skinning matrices.
+                            </p></td></tr><tr><td><p><span class="code">PerPass</span></p></td><td><p>
+                                This effect parameter can be different in each effect pass. Examples of per-pass
+                                parameters are: pass index.
+                            </p></td></tr></table></div><p>
+                    The engine automatically sets an appropriate sort hint, if it recognizes an effect
+                    parameter name or semantic. But the sort hints can also be set or overridden in the
+                    DirectX Effect file using annotations. Examples:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">// The following parameter is a global parameter that stores the simulation time. 
+// It only needs to be updated once per frame.
+float time
+&lt;
+  string Hint = "Global";
+&gt;;
+
+// The following parameter is used in a fur effect. The fur density is a material 
+// property. All mesh instances with the same material share the same value.
+float furDensity
+&lt;
+  string Hint = "Material";
+&gt;;
+
+// The following parameter is used in a material shader that paints each mesh 
+// instance with a different color.
+float4 uniqueColor
+&lt;
+  string Hint = "PerInstance";
+&gt;;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABADAAA");</script><p>
+                    By default, if the graphics engine does not recognize an effect parameter,
+                    it assigns the sort hint <a href="159c8792-e4dc-913d-00f0-e21b6c0d5cf5.htm">Material</a>.
+                </p></div><div class="collapsibleAreaRegion" id="Instancing"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Hardware instancing</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    DigitalRune Graphics supports hardware instancing. The DirectX Effect used
+                    for rendering the objects needs to include two effect techniques:
+                </p><ul><li>
+                        The effect technique for rendering without instancing, and
+                    </li><li>
+                        the effect technique for hardware instancing.
+                    </li></ul><p>
+                    DigitalRune Graphics uses a naming scheme to identify the instancing technique.
+                    The instancing technique needs to have the same name as the default technique
+                    plus the postfix <span class="code">"Instancing"</span>. Example:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAEACAAA_tab1" class="codeSnippetContainerTabSingle">Naming scheme to identify hardware instancing technique (MonoGame, XNA)</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAEACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAEACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAEACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">// Technique without hardware instancing
+technique MyTechnique
+{
+  pass
+  {
+    VertexShader = compile vs_2_0 VS();
+    PixelShader = compile ps_2_0 PS();
+  }
+}
+
+// Equivalent of MyTechnique that supports hardware instancing.
+technique MyTechniqueInstancing
+{
+  pass
+  {
+    VertexShader = compile vs_3_0 HardwareInstancingVS();
+    PixelShader = compile ps_3_0 PS();
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAEACAAA");</script><p>
+                    You may also designate the instancing technique by adding the effect annotation
+                    <span class="code">InstancingTechnique</span> to the default technique.
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Caution note" /> Caution</th></tr><tr><td><p>
+                        MonoGame currently does not support effect annotations. Therefore, this only works in XNA.
+                    </p></td></tr></table></div><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EABACAAA_tab1" class="codeSnippetContainerTabSingle">Effect annotation to identify hardware instancing techniqe (XNA only!)</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">// Default technique without hardware instancing
+technique MyTechnique
+&lt;
+  // There is an equivalent of this technique that supports hardware instancing.
+  string InstancingTechnique = "HardwareInstancing"; 
+&gt;
+{
+  pass
+  {
+    VertexShader = compile vs_2_0 VS();
+    PixelShader = compile ps_2_0 PS();
+  }
+}
+
+// Hardware instancing technique.
+technique HardwareInstancing
+{
+  pass
+  {
+    VertexShader = compile vs_3_0 HardwareInstancingVS();
+    PixelShader = compile ps_3_0 PS();
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABACAAA");</script><p>
+                    At runtime, you can query whether an effect technique has a matching instancing
+                    technique by checking the property
+                    <a href="2d0f978a-b9cf-7b95-3d64-88a903dfa89c.htm">InstancingTechnique</a>.
+                </p></div><div class="collapsibleAreaRegion" id="Restore"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Restore pass</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    Effect techniques can have a <span class="term">restore pass</span>. The purpose of this pass is
+                    to reset render pipeline states to default values - without rendering geometry.
+                </p><p>
+                    The restore pass needs to be the last effect pass of a technique and it needs to be
+                    named <span class="code">Restore</span>.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">technique
+{
+  pass
+  {
+    ZEnable = false;
+    VertexShader = compile vs_2_0 VS();
+    PixelShader = compile ps_2_0 PS();
+  }
+  pass Restore
+  {
+    ZEnable = true;
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAABAAA");</script></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

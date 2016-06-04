@@ -1,0 +1,96 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>3D Math Conventions</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="38879706-9d39-4f03-838f-26b7f14b9878" /><meta name="Description" content="Do you multiply matrices and quaternions from the left or from the right? Do you use a left-handed or a right handed coordinate system? How do you define the front side of a triangle? What units of measurement do you use? – This article explores the math c" /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d82e6561-0857-4f31-bd2a-6678c311dca4.htm" title="Articles" tocid="d82e6561-0857-4f31-bd2a-6678c311dca4">Articles</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="38879706-9d39-4f03-838f-26b7f14b9878.htm" title="3D Math Conventions" tocid="38879706-9d39-4f03-838f-26b7f14b9878">3D Math Conventions</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="a1ed955a-5ac6-411c-a098-14f34845b1bf.htm" title="Multithreading in the DigitalRune Engine" tocid="a1ed955a-5ac6-411c-a098-14f34845b1bf">Multithreading in the DigitalRune Engine</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="2a9138d6-d003-4df7-9793-1c3a018aa652.htm" title="Service Provider Pattern" tocid="2a9138d6-d003-4df7-9793-1c3a018aa652">Service Provider Pattern</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="6a6f8d44-7bbe-4c61-844f-8397b4ad6dd8.htm" title="Real-Time Motion Capture Using Kinect and XNA" tocid="6a6f8d44-7bbe-4c61-844f-8397b4ad6dd8">Real-Time Motion Capture Using Kinect and XNA</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="793ea828-8894-4b61-b623-9f3617e3e1a8.htm" title="External Articles" tocid="793ea828-8894-4b61-b623-9f3617e3e1a8">External Articles</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">3D Math Conventions</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                Do you multiply matrices and quaternions from the left or from the right? Do you use a
+                left-handed or a right handed coordinate system? How do you define the
+                front side of a triangle? What units of measurement do you use? – This article explores the
+                math conventions that we use and a few more helpful details...
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Conventions">DigitalRune conventions</a></li><li class="outlineSectionEntry"><a href="#Coordinates">Coordinate system</a></li><li class="outlineSectionEntry"><a href="#FrontFace">Counter-clockwise orientation and outward pointing normals</a></li><li class="outlineSectionEntry"><a href="#Units">Units</a></li><li class="outlineSectionEntry"><a href="#Multiplication">
+                Order of matrix and quaternion multiplications
+            </a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Matrix">Matrices</a></li><li class="outlineSectionEntry"><a href="#Quaternions">Quaternions</a></li><li class="outlineSectionEntry"><a href="#ChangeOrder">Changing the multiplication order</a></li></ul><li class="outlineSectionEntry"><a href="#Best">Which convention is the best?</a></li></ul></div><div class="collapsibleAreaRegion" id="Conventions"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />DigitalRune conventions</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    The conventions we use in our game libraries are documented in our user documentation:
+                </p><ul><li><a href="384f6645-8a25-488c-9a08-47662266a552.htm">DigitalRune Mathematics - Definitions and Conventions</a></li><li><a href="7945ac67-dffc-4197-9fbf-58a9b68c0ea1.htm">DigitalRune Geometry - Definitions and Conventions</a></li><li><a href="6e0b9a08-b1d8-41a3-9ab4-ebf6235abe19.htm">DigitalRune Physics - Definitions and Conventions</a></li></ul></div><div class="collapsibleAreaRegion" id="Coordinates"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Coordinate system</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    We use a standard right-handed coordinate system. Hopefully, everyone is familiar with the
+                    <a href="http://en.wikipedia.org/wiki/Right_hand_rule" target="_blank">Right-Hand Rule</a>.
+                    The x-axis is our right axis, the y-axis is our up axis, and the z-axis
+                    points to the camera, which means "forward" is –z. To help us with everyday coordinate
+                    system troubles, we use following tool:
+                    <a href="http://www.digitalrune.com/Support/Blog/tabid/719/EntryId/42/3D-Programmers-Best-Friend.aspx" target="_blank">3D Programmer’s Best Friend</a></p></div><div class="collapsibleAreaRegion" id="FrontFace"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Counter-clockwise orientation and outward pointing normals</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    If an observer is looking at a front side of a triangle face, the vertices (v0, v1, v2)
+                    are oriented counter-clockwise. Face normals are computed using
+                    (v1 – v0) x (v2 – v0) and point "outwards". In other words: If an observer is looking at
+                    the front side, the normal points to the viewer.
+                </p></div><div class="collapsibleAreaRegion" id="Units"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Units</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    For many game libraries it is not relevant which units of measurement are used. This is
+                    not exactly true for all game libraries, especially not for game physics libraries because
+                    physics libraries often rely on finely tuned constants. They have default values that
+                    assume that the properties of a physics engine are in a certain range. Therefore, we use
+                    SI standard units for our game objects (m, s, kg, ... see
+                    <a href="http://en.wikipedia.org/wiki/International_System_of_Units" target="_blank">International System of Units</a>).
+                    Angles are measured in radians.
+                </p></div><div class="collapsibleAreaRegion" id="Multiplication"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />
+                Order of matrix and quaternion multiplications
+            </span></div><div id="ID4RBSection" class="collapsibleSection"><h4 class="subHeading" id="Matrix">Matrices</h4><div class="subsection"><p>
+                            In our libraries, matrices are multiplied from the left (pre-multiplication).
+                            That means:
+                        </p><p><em> v' = M2 · M1 · v</em></p><p>
+                            The transformation of M1 is applied before the transformation of M2. The order depends
+                            on whether
+                            <em>column vectors</em>
+                            or
+                            <em>row vectors</em> are used. We have settled on column vectors,
+                            which means that we have no other choice than multiplying the matrices from the left side.
+                        </p><p>
+                            In my experience, column vectors are usually preferred by math and physics guys.
+                            Whereas, row vectors are preferred by graphics guys. Even in our small team we are
+                            divided on this issue but have agreed on column vectors. The same order is used in
+                            OpenGL. Other libraries and APIs use post-multiplication, like XNA, DirectX or OpenSceneGraph.
+                        </p></div><h4 class="subHeading" id="Quaternions">Quaternions</h4><div class="subsection"><p>
+                            Quaternions are multiplied in the same order:
+                        </p><p><em>q' = q2 · q1</em></p><p>
+                            q' represents the rotation q1 followed by the rotation q2.
+                        </p><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Important note" /> Important</th></tr><tr><td><p><em><strong>Important XNA note:</strong> In XNA matrices and quaternions use a
+                                    different order of multiplication! That means, XNA uses the same quaternion
+                                    multiplication order as we do – but it uses the other order for matrix multiplication.
+                                    In contrast, DirectX and Managed DirectX use the same order for matrices and quaternions.
+                                </em></p></td></tr></table></div><p /></div><h4 class="subHeading" id="ChangeOrder">Changing the multiplication order</h4><div class="subsection"><p>
+                            Since we are often dealing with libraries that are not under our control, or we are
+                            reading scientific papers that use the
+                            <em>other</em>
+                            multiplication order, we need to be able
+                            to switch between them. In the simplest case, we just
+                            <em>
+                                transpose all matrices, change
+                                the order of the matrix and multiply from the other side
+                            </em>.
+                            But can we follow this rule
+                            blindly for all kinds of equations? - When in doubt, I think of vectors as matrices
+                            with only 1 row or column and apply matrix rules:
+                        </p><p>
+                            Using our math book we can find a few rules, like:
+                        </p><p>
+                            (A · B)<sup>T</sup> = B<sup>T</sup> · A<sup>T</sup></p><p>
+                            Given following equation with two matrices and two column vectors,
+                        </p><p>
+                            v' = M2 · M1 · v
+                        </p><p>
+                            we transpose the whole equation:
+                        </p><p>
+                            v’<sup>T</sup> = (M2 · M1 · v)<sup>T</sup></p><p>
+                            → v’<sup>T</sup> = ((M2 · M1) · v)<sup>T</sup></p><p>
+                            → v’<sup>T</sup> = v<sup>T</sup> · (M2 · M1)<sup>T</sup></p><p>
+                            → v’<sup>T</sup>= v<sup>T</sup> · M1<sup>T</sup> · M2<sup>T</sup></p><p>
+                            Note that v<sup>T</sup> is a row vector. We have just converted the equation from OpenGL style to
+                            XNA style using mathematics.
+                        </p></div></div><div class="collapsibleAreaRegion" id="Best"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Which convention is the best?</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    I have worked with left-handed and right-handed coordinates systems, inward and outward
+                    pointing normals, different units, pre- and post-multiplied matrices… and personally I do
+                    not care. My only wish is: If your are a software developer or scientific author, please
+                    <em>document</em>
+                    which convention you are following and do not assume that everyone is
+                    automatically using the same.
+                </p></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

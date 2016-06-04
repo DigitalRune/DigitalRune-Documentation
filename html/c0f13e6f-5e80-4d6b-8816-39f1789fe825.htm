@@ -1,0 +1,194 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Layout</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="c0f13e6f-5e80-4d6b-8816-39f1789fe825" /><meta name="Description" content="This article discusses the layout process of GUI controls." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="a5a463da-de2e-432f-bf7d-07206aaca634.htm" title="DigitalRune Game UI" tocid="a5a463da-de2e-432f-bf7d-07206aaca634">DigitalRune Game UI</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="5bf85e1f-8f25-4778-b4b1-9d29faf15cc9.htm" title="UI Controls" tocid="5bf85e1f-8f25-4778-b4b1-9d29faf15cc9">UI Controls</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="2c10bf58-571a-4d67-b763-0f6b584c9bce.htm" title="Control Properties and Events" tocid="2c10bf58-571a-4d67-b763-0f6b584c9bce">Control Properties and Events</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="c0f13e6f-5e80-4d6b-8816-39f1789fe825.htm" title="Layout" tocid="c0f13e6f-5e80-4d6b-8816-39f1789fe825">Layout</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="bb35e0b0-49d5-4847-b7f8-f5a1bb467fbb.htm" title="Rendering" tocid="bb35e0b0-49d5-4847-b7f8-f5a1bb467fbb">Rendering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="44fe138f-8897-48c6-8ed6-c41bafd7853f.htm" title="Themes" tocid="44fe138f-8897-48c6-8ed6-c41bafd7853f">Themes</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="b6cd5e3b-0bfa-4edb-8ad4-3abe5b47a071.htm" title="UI Input Handling" tocid="b6cd5e3b-0bfa-4edb-8ad4-3abe5b47a071">UI Input Handling</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Layout</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This article discusses the layout process of GUI controls.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Size">Defining size</a></li><li class="outlineSectionEntry"><a href="#Position">Defining position</a></li><li class="outlineSectionEntry"><a href="#Layout">Layout process</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Measure">Measure pass</a></li><li class="outlineSectionEntry"><a href="#Arrange">Arrange pass</a></li></ul><li class="outlineSectionEntry"><a href="#Conclusion">Conclusion</a></li></ul></div><div class="collapsibleAreaRegion" id="Size"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Defining size</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    Each
+                    <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>
+                    has a
+                    <a href="53561a86-0e11-d339-eb40-522dab77f9a5.htm">Width</a>,
+                    and a
+                    <a href="a2dc1809-998e-3d91-8382-1d5ffbcff49d.htm">Height</a>
+                    property which define the control size. The default value is NaN, which means that the
+                    control automatically determines its size. For example: The size of an
+                    <a href="8439f7ae-1adc-e84e-664c-ba4e7891eda1.htm">Image</a>
+                    control is determined by the drawn image. The size of a
+                    <a href="d4da839e-436e-2442-64a0-419cafdae031.htm">TextBlock</a>
+                    is determined by the text. If a control has child controls, like a
+                    <a href="aaebdf7d-b609-4eb1-38b6-77ddc8cc1e4c.htm">Panel</a>
+                    or a
+                    <a href="d48478c3-a046-4976-b79a-6a6b1301f1a2.htm">ContentControl</a>,
+                    the size is usually determined by the child controls.
+                </p><p>
+                    A control also has the properties
+                    <a href="d5b131f0-dc82-22f2-d324-3a9d021e2160.htm">MinWidth</a>,
+                    <a href="3fd9dcc5-c22c-2c00-1719-ba3e6f852103.htm">MinHeight</a>,
+                    <a href="da60b177-76d4-68f4-908b-211706c51dde.htm">MaxWidth</a>
+                    and
+                    <a href="3c1023d8-cd2b-62c7-0b01-56edf2631681.htm">MaxHeight</a>.
+                    They default to 0 for the minimums and NaN for the maximums, which means that there
+                    are no size restrictions. These properties limit the actual control size.
+                </p></div><div class="collapsibleAreaRegion" id="Position"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Defining position</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    There a several mechanisms that influence the position of a control.
+                </p><ul><li><p><strong>Parent Controls:</strong>
+                            GUI controls are organized in a tree. The control at the root is the
+                            <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>.
+                            The
+                            <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>
+                            contains other child controls, like
+                            <a href="8ad1b368-37b8-4b78-6228-5d03ca51c6ac.htm">Window</a>s,
+                            <a href="aaebdf7d-b609-4eb1-38b6-77ddc8cc1e4c.htm">Panel</a>s,
+                            <a href="edac5bcb-4871-e66a-a7bd-be45c82d1539.htm">Button</a>s.
+                            Each control can in turn contain other controls. A parent control defines how it
+                            positions child elements. Most other controls allow the children to position
+                            themselves freely within the parent control space using the properties described below.
+                        </p><p><a href="aaebdf7d-b609-4eb1-38b6-77ddc8cc1e4c.htm">Panel</a>s
+                            are special controls – their whole purpose is to arrange child elements using a
+                            specific layout strategy. Current panel controls are the
+                            <a href="064f1a67-ea23-a45b-d2de-ebdc72c2dd70.htm">Canvas</a>,
+                            which allows free positioning of the children, and the
+                            <a href="10d83aad-a2a8-66ed-5812-bc532f39bec7.htm">StackPanel</a>,
+                            which arranges child controls in a horizontal or vertical stack.
+                        </p></li><li><p><strong>Margin and Padding: </strong><a href="803f858a-8825-e306-4fe1-91b57d37f811.htm">Margin</a>
+                            and
+                            <a href="d3b64a23-28b0-4d47-4045-5af6e5a62a07.htm">Padding</a>
+                            are two UI control properties.
+                            Each is a 4-dimensional vector specifying the left, top, right, and bottom values. The
+                            margin is added around a control. Per default, it is (0, 0, 0, 0). In a panel (e.g. a
+                            <a href="10d83aad-a2a8-66ed-5812-bc532f39bec7.htm">StackPanel</a>)
+                            a margin can be added to the controls to create some empty space between them. The
+                            padding is usually the space between the outer border of a control and contained child
+                            controls. However, different types of controls may interpret the
+                            <a href="d3b64a23-28b0-4d47-4045-5af6e5a62a07.htm">Padding</a>
+                            property differently.
+                        </p></li><li><p><strong>HorizontalAlignment and VerticalAlignment:</strong>
+                            Using the properties
+                            <a href="333ee3e8-8047-2807-25a7-f34bd7fc9a0e.htm">HorizontalAlignment</a>
+                            and
+                            <a href="631b7c77-8463-9634-222c-bf28bef06f54.htm">VerticalAlignment</a>
+                            a control can determine its alignment in the area of the parent control.
+                        </p></li><li><p><strong>X and Y:</strong>
+                            Each
+                            control
+                            has an
+                            <a href="1d4e4af9-f088-a306-482b-db511814ea54.htm">X</a>
+                            and a
+                            <a href="98fef05b-30b7-27ee-356f-842fb5df515d.htm">Y</a>
+                            property.
+                            These two properties are only relevant for children of a
+                            <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>
+                            or a
+                            <a href="064f1a67-ea23-a45b-d2de-ebdc72c2dd70.htm">Canvas</a>
+                            panel.
+                            <a href="1d4e4af9-f088-a306-482b-db511814ea54.htm">X</a>
+                            and
+                            <a href="98fef05b-30b7-27ee-356f-842fb5df515d.htm">Y</a>
+                            determine the position of the control’s top left corner on the screen or
+                            in the canvas. –
+                            <a href="1d4e4af9-f088-a306-482b-db511814ea54.htm">X</a>
+                            and
+                            <a href="98fef05b-30b7-27ee-356f-842fb5df515d.htm">Y</a>
+                            should only be used for controls that are left/top aligned.
+                        </p></li></ul></div><div class="collapsibleAreaRegion" id="Layout"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Layout process</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    GUI controls are organized in a tree. The control at the root is the
+                    <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>.
+                    The screen contains child controls, which in turn contain other controls, and so on. The
+                    layout process consists of two traversals of the whole control tree: The
+                    <span class="term">measure pass</span>
+                    and the
+                    <span class="term">arrange pass</span>. First all controls are measured and determine their
+                    desired own size. In the second pass all controls are told where on the screen they should
+                    be rendered.
+                </p><p>
+                    The layout process is started by calling
+                    <a href="d66c3b07-8458-689a-0a13-bef8922c2746.htm">UpdateLayout</a>
+                    on the root control. It is not necessary to call this manually. The
+                    <a href="d13e18d0-713d-cdda-f973-056a66ede381.htm">UIScreen</a>
+                    will automatically call
+                    <a href="d66c3b07-8458-689a-0a13-bef8922c2746.htm">UpdateLayout</a>
+                    when needed.
+                </p><h4 class="subHeading" id="Measure">Measure pass</h4><div class="subsection"><p>
+                            In the measure pass the method
+                            <a href="bb212783-3803-db73-d1cc-22effd0b16e7.htm">Measure</a>
+                            is called on each control with the available size for the control. Each control can
+                            determine how big it wants to be. The measure results are stored in the
+                            <a href="1ec1565f-d534-495a-5916-251f5ace92bc.htm">DesiredWidth</a>
+                            and
+                            <a href="41ed2909-08b8-5485-669f-91d7a56923f1.htm">DesiredHeight</a>
+                            properties.
+                        </p><p>
+                            Controls can override the method
+                            <a href="bf709b76-f4ba-22f2-84f0-330f33d27029.htm">OnMeasure</a>.
+                            This method should call
+                            <a href="bb212783-3803-db73-d1cc-22effd0b16e7.htm">Measure</a>
+                            of child controls and then return the desired size. A control can ignore the
+                            <span class="code">availabeSize</span> parameter and return any value. Some controls
+                            will want to adapt to the available size (e.g. a
+                            <a href="d4da839e-436e-2442-64a0-419cafdae031.htm">TextBlock</a>
+                            with text wrapping will wrap the text at the bounds defined by the available size).
+                        </p><p>
+                            The results of the measure pass are cached until a UI control property with the
+                            <a href="0024d7de-6903-818b-3535-b4d706fc669a.htm">AffectsMeasure</a>
+                            flag is modified or
+                            <a href="e92d03f7-1fc6-13e4-e108-83befd2a86fd.htm">InvalidateMeasure</a>
+                            is called manually. The flag
+                            <a href="688b0a51-5b04-503b-de27-8ccf9760f3f3.htm">IsMeasureValid</a>
+                            indicates whether the current measure results are valid.
+                        </p></div><h4 class="subHeading" id="Arrange">Arrange pass</h4><div class="subsection"><p>
+                            In the arrange pass the method
+                            <a href="9802772b-a865-1a02-dce6-f2aca755f646.htm">Arrange</a>
+                            is called on each control. The method tells a control the rectangle on screen that
+                            the control can use. Each control subtracts its own margin and sets its
+                            <a href="8f360e30-df6a-94d1-3a34-6be9081f13ba.htm">ActualX</a>,
+                            <a href="f095bfff-dc66-3bf0-9963-c1dc4cd13f8e.htm">ActualY</a>,
+                            <a href="44588811-10c8-352f-fabd-11add14c7b6b.htm">ActualWidth</a>
+                            and
+                            <a href="0922918f-1735-27c8-7666-e02558be4488.htm">ActualHeight</a>
+                            properties. This properties define the rectangle relative to the screen
+                            that this control can use. A UI control also has an
+                            <a href="5d166a02-37b8-956f-2345-b384bf029b1b.htm">ActualBounds</a>
+                            property to get the rectangle defined by these properties.
+                        </p><p>
+                            Often a control will get exactly its desired size to arrange into. If it gets more
+                            space, it is allowed to fill the whole space. It can also happen that the actual size
+                            is less than the desired size when there is not enough space on the screen or in a
+                            window. In this case a well-behaved control only draws within the actual bounds. A
+                            misbehaving control may draw outside the allowed bounds and hope that the parent
+                            control automatically clips the drawing. Some controls like the
+                            <a href="d48478c3-a046-4976-b79a-6a6b1301f1a2.htm">ContentControl</a>s
+                            have a
+                            <a href="3eb3eca3-cfa4-8cea-5d05-ebe6a27a7ca0.htm">ClipContent</a>
+                            property. If this is set to true, they will clip the content automatically during
+                            the render process.
+                        </p><p>
+                            If the desired size of a child control is smaller than the actual size of the parent
+                            control, then the properties
+                            <a href="333ee3e8-8047-2807-25a7-f34bd7fc9a0e.htm">HorizontalAlignment</a>
+                            and
+                            <a href="631b7c77-8463-9634-222c-bf28bef06f54.htm">VerticalAlignment</a>
+                            are used to determine the relative position of the child control in the parent control.
+                        </p><p>
+                            Arrange pass results are cached until a UI control property with the
+                            <a href="0024d7de-6903-818b-3535-b4d706fc669a.htm">AffectsMeasure</a>
+                            flag or a
+                            <a href="0024d7de-6903-818b-3535-b4d706fc669a.htm">AffectsArrange</a>
+                            flag is modified or
+                            <a href="e92d03f7-1fc6-13e4-e108-83befd2a86fd.htm">InvalidateMeasure</a>
+                            or
+                            <a href="dd921cad-0376-8efc-df03-ff62c409e537.htm">InvalidateArrange</a>.
+                            is called. The flag
+                            <a href="9afd3b7a-0bc9-446b-a297-8b26419323ab.htm">IsArrangeValid</a>
+                            indicates whether the current actual positions are valid.
+                        </p></div></div><div class="collapsibleAreaRegion" id="Conclusion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Conclusion</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    This GUI layout mechanism was heavily inspired by WPF and Silverlight. It allows to
+                    create flexible GUI layouts. And by creating new
+                    <a href="aaebdf7d-b609-4eb1-38b6-77ddc8cc1e4c.htm">Panel</a>
+                    controls, which override
+                    <a href="bf709b76-f4ba-22f2-84f0-330f33d27029.htm">OnMeasure</a> and
+                    <a href="674b8cdb-bc8c-f7d3-2d67-8fd17fe2ca8f.htm">OnArrange</a>,
+                    developers can add new layout strategies.
+                </p></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

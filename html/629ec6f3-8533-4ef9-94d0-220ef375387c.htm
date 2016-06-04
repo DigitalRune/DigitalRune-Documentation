@@ -1,0 +1,280 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Collision Detection</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="629ec6f3-8533-4ef9-94d0-220ef375387c" /><meta name="Description" content="The namespace N:DigitalRune.Geometry.Collisions contains classes that compute contact information or closest features of objects." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="335dc86a-c68d-4d7b-8641-81dd80de5e76.htm" title="DigitalRune Geometry" tocid="335dc86a-c68d-4d7b-8641-81dd80de5e76">DigitalRune Geometry</a></div><div class="toclevel1 current" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="629ec6f3-8533-4ef9-94d0-220ef375387c.htm" title="Collision Detection" tocid="629ec6f3-8533-4ef9-94d0-220ef375387c">Collision Detection</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="16449523-c2f2-4c86-9dde-720716beaebb.htm" title="Collision Filtering" tocid="16449523-c2f2-4c86-9dde-720716beaebb">Collision Filtering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="cd2fc090-d3fd-4a0f-a7d3-1759241c8545.htm" title="Continuous Collision Detection (CCD)" tocid="cd2fc090-d3fd-4a0f-a7d3-1759241c8545">Continuous Collision Detection (CCD)</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Collision Detection</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                The namespace
+                <a href="f212797a-0b50-aa2b-dfbb-263efc136824.htm">DigitalRune.Geometry.Collisions</a>
+                contains classes that compute contact information or closest features of objects.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#queries">Collision queries</a></li><li class="outlineSectionEntry"><a href="#CollisionObjects">Collision detection</a></li><li class="outlineSectionEntry"><a href="#Contacts">Contacts and contact sets</a></li><li class="outlineSectionEntry"><a href="#CollisionDomain">Collision domains</a></li><li class="outlineSectionEntry"><a href="#CollisionAlgorithms">Collision algorithms and the collision algorithm matrix</a></li><li class="outlineSectionEntry"><a href="#Rays">Ray casting</a></li><li class="outlineSectionEntry"><a href="#Epsilon">Margins and epsilon tolerances</a></li><li class="outlineSectionEntry"><a href="#Caveats">Caveats</a></li><li class="outlineSectionEntry"><a href="#Tips">Tips</a></li><li class="outlineSectionEntry"><a href="#Subtopics">Subtopics</a></li><li class="outlineSectionEntry"><a href="#seeAlsoSection">See Also</a></li></ul></div><div class="collapsibleAreaRegion" id="queries"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Collision queries</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    DigitalRune Geometry can compute three different types of collision queries:
+                </p><ul><li><strong>Boolean queries:</strong>
+                        A boolean query (also known as <span class="term">have-contact query</span>)
+                        checks if two objects are in contact. The result is
+                        <span class="code">true</span> if the objects touch. The result is
+                        <span class="code">false</span> if the objects are separated.
+                        <div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+                                The term <span class="term">boolean query</span> is not equal to
+                                the term <span class="term">boolean operation</span> used in 3D modeling.
+                                A boolean operation is an operation that combines objects using operations
+                                like AND or OR.
+                            </p></td></tr></table></div></li><li><strong>Contact queries:</strong>
+                        A contact query (also known as <span class="term">intersection</span> or <span class="term">interference query</span>)
+                        computes the detailed contact information for two touching
+                        objects. A set of contact points describes the geometry of the contact.
+                        If two objects are separated, a contact query reports the separation
+                        and computes no further details.
+                    </li><li><strong>Closest-point queries:</strong>
+                        A closest-point query (also known as <span class="term">proximity query</span>)
+                        of two objects computes a point pair consisting
+                        of a point on each object. The point pair describes the closest features
+                        of the objects. The distance of the closest-point pair is equal to the
+                        separation distance.
+                    </li></ul></div><div class="collapsibleAreaRegion" id="CollisionObjects"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Collision detection</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    The collision detection in DigitalRune Geometry can compute collision information
+                    between <span class="term">collision objects</span>
+                    (see <a href="84040f22-087e-0052-41c6-c3e48b359847.htm">CollisionObject</a>).
+                    Each collision object contains a reference to a geometric object (see
+                    <a href="14f1e616-5c53-aac7-dd8d-1a21f76ea472.htm">IGeometricObject</a>).
+                    Besides the geometric object a collision object stores additional information for the collision
+                    detection system.
+                </p><p>
+                    The class
+                    <a href="1b4e4fee-5941-cbca-9522-315d04018645.htm">CollisionDetection</a>
+                    contains methods to compute contact points for a pair of touching objects or the two
+                    closest points for a pair of separated objects.
+                </p></div><div class="collapsibleAreaRegion" id="Contacts"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Contacts and contact sets</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    For a pair of touching objects the collision detection computes <span class="term">contacts</span> (see
+                    <a href="bfe2ad9f-ea88-a6a7-0e57-b9f95c88edb5.htm">Contact</a>)
+                    that represent points where objects touch each other.
+                </p><p>
+                    A contact describes a single contact point (or closest-point pair) between
+                    two objects (called "object A" and "object B"). A contact consists of 2 points:
+                    a point on object A (see
+                    <a href="762ed010-04b8-7014-0999-52232435d5cd.htm">PositionALocal</a>
+                    or
+                    <a href="42f2cce8-33b3-2270-a7b0-156bf757b5d4.htm">PositionAWorld</a>)
+                    and a point on object B (see
+                    <a href="ea198e8d-ccd1-0530-5d6d-4c8ee6add172.htm">PositionBLocal</a>
+                    or
+                    <a href="409cef5b-962a-38d6-34e7-41f403a32cf9.htm">PositionBWorld</a>).
+                    The property
+                    <a href="764eabef-02e9-df76-101f-7d8c6cf21b6e.htm">Position</a>
+                    is a point that lies halfway between those two points. The contact further
+                    stores the
+                    <a href="1b03163c-b9b3-4a41-f837-99653e204351.htm">Normal</a>,
+                    the
+                    <a href="6b19b613-8c41-8129-921e-0c413ec8d17e.htm">PenetrationDepth</a>
+                    and other information.
+                </p><p>
+                    There are 3 basic types of contacts:
+                </p><ul><li><p><strong>Touching Contacts:</strong>
+                            Object A and object B are touching at the surface. The
+                            penetration depth is 0. The points on object A and object B are identical.
+                        </p><div class="mediaNear"><img alt="Touching Contact" src="../media/TouchingContact.png" /><div class="caption"><span class="captionLead">Figure:
+						</span>Contact Between Touching Objects</div></div></li><li><p><strong>Pentrating Contacts:</strong>
+                            Object A and object B are penetrating each other. The penetration depth
+                            is greater than 0. The contact stores the points on object A and B that
+                            have maximum penetration.
+                        </p><div class="mediaNear"><img alt="Penetrating Contact" src="../media/PenetratingContact.png" /><div class="caption"><span class="captionLead">Figure:
+						</span>Contact Between Penetrating Objects</div></div></li><li><p><strong>Closest points (separated objects):</strong>
+                            Object A and object B are separated. They are not in contact. This can be the
+                            result of a closest-point query. (Other contact queries do not compute
+                            closest points. Separated objects are simply ignored in normal queries.)
+                        </p><p>
+                            The contact stores closest points between object A and B. The penetration depth
+                            is negative. The absolute value of penetration depth indicates the distance
+                            between object A and object B. (Remember: The penetration depth is the inverse
+                            of the separation distance.)
+                        </p><div class="mediaNear"><img alt="Separated Objects" src="../media/SeparatedContact.png" /><div class="caption"><span class="captionLead">Figure:
+						</span>Closest-Point Pair Between Separated Objects</div></div></li></ul><p>
+                    All contacts for a pair of objects are gathered in a <span class="term">contact set</span>
+                    (see <a href="d03fffa6-8a23-1526-15c3-a5800cbdc56e.htm">ContactSet</a>).
+                </p><div class="mediaNear"><img alt="Contact Set" src="../media/ContactSet.png" /><div class="caption"><span class="captionLead">Figure:
+						</span>Contact Set Of Two Boxes</div></div><p>
+                    A <a href="2d17b013-b3dc-aa5a-05ab-a385e442499e.htm">ContactSetCollection</a>
+                    is a collection of the contact sets of different pairs of collision objects.
+                </p></div><div class="collapsibleAreaRegion" id="CollisionDomain"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Collision domains</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    Collision detection is one of the most costly part of modern computer games.
+                    A <span class="term">collision domain</span>
+                    (<a href="06292c81-16ba-c53c-3f55-a5a6d6eaa59c.htm">CollisionDomain</a>)
+                    is a way to improve the performance of collision detection. A collision
+                    domain manages a collection of collision objects. For these objects it
+                    can compute the collision information much faster by re-using old collision
+                    information.
+                </p><p>
+                    Additionally, if the property
+                    <a href="8ce9ef3a-5524-7d9b-818e-ac04abdb6492.htm">EnableMultithreading</a>
+                    is set, the workload is automatically distributed across multiple CPU cores
+                    to further improve performance.
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Caution note" /> Caution</th></tr><tr><td><p>
+                        The performance of closest point queries is not improved
+                        by using collision domains.
+                    </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="CollisionAlgorithms"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Collision algorithms and the collision algorithm matrix</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    The computation of collision information is performed with different
+                    <span class="term">collision algorithms</span>
+                    (see namespace <a href="14476007-e91d-2461-d51c-e2760c9cb258.htm">DigitalRune.Geometry.Collisions.Algorithms</a>).
+                    The different collision algorithms handle collisions between different
+                    shape types. Some collision algorithms can handle several different
+                    shape types, some handle only a specific shape type.
+                </p><p>
+                    The collision detection uses the class
+                    <a href="1865eb43-a541-736a-3b69-7b9cd2201851.htm">CollisionAlgorithmMatrix</a>
+                    to define which collision algorithms should be used for which pair of
+                    shape types. Per default, all shapes can collide with all other shapes
+                    with following exceptions:
+                </p><ul><li>
+                        The special
+                        <a href="b7aaed59-b93f-aa24-2d84-8377e4dc3b5b.htm">EmptyShape</a>
+                        will never collide with any other shape.
+                    </li><li>
+                        Contacts are not computed for the following pairs of infinite shapes:
+                        <ul><li>
+                                line vs. plane
+                            </li><li>
+                                line vs. height field
+                            </li><li>
+                                plane vs. plane
+                            </li><li>
+                                plane vs. height field
+                            </li><li>
+                                height field vs. height field
+                            </li></ul></li><li>
+                        Two rays do not collide.
+                    </li></ul></div><div class="collapsibleAreaRegion" id="Rays"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Ray casting</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    Ray casting can be done by using a geometric object that has a
+                    <a href="df7958cc-e30b-4c55-34e4-b6b5ddf7eaa2.htm">RayShape</a>.
+                    Thus, rays can be used similar to other shape types.
+                </p><p>
+                    A few things are specials for contacts between a ray and another object:
+                </p><ul><li>
+                        The property
+                        <a href="c9568888-9185-a5b0-74dc-813341e1ce77.htm">IsRayHit</a>
+                        indicates whether the
+                        <a href="bfe2ad9f-ea88-a6a7-0e57-b9f95c88edb5.htm">Contact</a>
+                        is the result of a hit by a ray.
+                    </li><li><a href="6b19b613-8c41-8129-921e-0c413ec8d17e.htm">PenetrationDepth</a>
+                        of a contact is used differently if a ray hits an object:
+                        The property stores the distance from the ray origin to the contact position.
+                        (A normal penetration depth is usually not useful for ray contacts.)
+                    </li><li>
+                        The property
+                        <a href="1b03163c-b9b3-4a41-f837-99653e204351.htm">Normal</a>
+                        of a contact is used differently if the ray hits an object:
+                        <a href="1b03163c-b9b3-4a41-f837-99653e204351.htm">Normal</a>
+                        describes the surface normal at the contact position on the object that was hit.
+                        <div class="mediaNear"><img alt="Ray Hit" src="../media/RayHit.png" /><div class="caption"><span class="captionLead">Figure:
+						</span>A Ray Hit</div></div></li><li>
+                        If the ray origin is inside the other object, the penetration distance
+                        is 0 and the contact normal is not defined.
+                    </li></ul></div><div class="collapsibleAreaRegion" id="Epsilon"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID6RB')" onkeypress="SectionExpandCollapse_CheckKey('ID6RB', event)" tabindex="0"><img id="ID6RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Margins and epsilon tolerances</span></div><div id="ID6RBSection" class="collapsibleSection"><p>
+                    Some collision algorithms are iterative algorithms that abort when the
+                    error of the result falls under a given tolerance limit. In DigitalRune
+                    Geometry this tolerance limit is defined using
+                    <a href="c1d26e76-340c-ba1b-39a4-ff09e4881e98.htm">CollisionDetection<span id="LST70F8633B_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST70F8633B_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Epsilon</a>.
+                </p><p>
+                    Some shapes like points, lines, line segments are treated as infinitely thin
+                    - which mean two points will only collide if they are exactly on the same
+                    position. If you want more tolerant checks, use thick shapes like spheres,
+                    capsule, cylinder, etc. instead.
+                </p><p>
+                    Objects do not have an "outer margin" and do not collide if their separation
+                    distance is greater than zero. Sometimes it is helpful to detect collisions
+                    if objects are separated but the separation distance is very small. To achieve this
+                    you can scale the shapes to make them slightly bigger, so that "near
+                    collisions" are also detected. To scale an object you can use one of the following
+                    methods:
+                </p><ul><li>
+                        Directly increase a parameter of a shape. For example, increase the
+                        <a href="ed705cec-6449-30ad-c476-1927e24ba8d8.htm">Radius</a>
+                        of a
+                        <a href="a99abb5b-257f-4f39-ccb8-99ed8a87ab96.htm">SphereShape</a>.
+                    </li><li>
+                        Use a
+                        <a href="35c20f26-eab6-3f3a-9414-c8d142495646.htm">MinkowskiSumShape</a>
+                        and add a small sphere to the original shape. This has the effect that the
+                        original shape gets a margin with the size of the sphere radius.
+                    </li><li>
+                        Use <a href="00325ee3-7716-7b3c-457f-54879aa1070e.htm">IGeometricObject<span id="LST70F8633B_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST70F8633B_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Scale</a>
+                        to increase the size of shape.
+                    </li></ul></div><div class="collapsibleAreaRegion" id="Caveats"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID7RB')" onkeypress="SectionExpandCollapse_CheckKey('ID7RB', event)" tabindex="0"><img id="ID7RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Caveats</span></div><div id="ID7RBSection" class="collapsibleSection"><p>
+                    Collision algorithms have (numerical) limitations. For example:
+                </p><ul><li>
+                        The penetration information between two convex shapes is usually exact within a
+                        certain numerical tolerance. In rare cases the contact information is only
+                        a <em>local</em> optimum instead of
+                        <em>global</em> optimum. That means that the contact information
+                        can be used to separate the objects properly, but a smaller penetration depth with
+                        a different normal vector might exist.
+                    </li><li>
+                        The algorithms for <em>concave</em> shapes compute penetration
+                        information between convex sub-parts of the concave shape. The resulting contact
+                        information describes locally optimal result between the convex parts.
+                    </li><li>
+                        Triangle meshes are treated as <em>hollow</em> objects. That
+                        means the penetration information for mesh contacts is only an estimate and might
+                        not be exact for deep penetrations.
+                    </li></ul><p>
+                    We have tried to minimize numerical problems and to filter sub-optimal contact information
+                    where possible. To get the best results please look at the tips below.
+                    If you need more tips to make your application faster and more robust, please contact
+                    our support.
+                </p></div><div class="collapsibleAreaRegion" id="Tips"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID8RB')" onkeypress="SectionExpandCollapse_CheckKey('ID8RB', event)" tabindex="0"><img id="ID8RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Tips</span></div><div id="ID8RBSection" class="collapsibleSection"><h4 class="subHeading" id="Shapes">Shapes</h4><div class="subsection"><p>
+                            Here are some tips for choosing the right shape to get the best performance and
+                            the most accurate contact information.
+                        </p><ul><li>
+                                Use basic primitives where possible:
+                                <a href="a99abb5b-257f-4f39-ccb8-99ed8a87ab96.htm">SphereShape</a>,
+                                <a href="0d0b67e4-5104-b6ac-e97c-25e9ee2e8054.htm">BoxShape</a>,
+                                <a href="df7958cc-e30b-4c55-34e4-b6b5ddf7eaa2.htm">RayShape</a></li><li>
+                                If basic primitives are not accurate enough, try to use other
+                                <em>convex</em> shapes.
+                            </li><li>
+                                If possible use a
+                                <a href="de0e44ab-f22b-5188-3868-b5031adbd7e1.htm">HeightField</a>
+                                instead of a
+                                <a href="2701ba79-cac5-5865-eb8f-1da98af75b2b.htm">TriangleMeshShape</a>.
+                            </li><li>
+                                For concave shapes try to use a
+                                <a href="467bd69b-e7ce-490d-fedd-a9495832769c.htm">CompositeShape</a>
+                                consisting of several convex shapes.
+                            </li></ul></div><h4 class="subHeading" id="Size">Object sizes</h4><div class="subsection"><p>
+                            Try to use reasonable sizes for all geometric objects. Avoid extreme sizes:
+                        </p><ul><li>
+                                Do not use shapes with size 0 (e.g. a sphere with radius 0). Use the
+                                <a href="53df8603-ad85-5a4d-2963-ce47aea24c77.htm">PointShape</a>
+                                if you need an infinitely small object.
+                            </li><li>
+                                Do not use infinite shapes (e.g. a box where the widths are set to infinity or
+                                infinite rays).
+                                Use a smaller finite size instead. In some cases there can be different
+                                interpretations for what the collision result (e.g. "penetration depth", "normal vector")
+                                should be if an infinite object is involved. Therefore, the collision algorithms
+                                in DigitalRune Geometry do not always handle infinite objects correctly or as
+                                you would suspect.
+                            </li><li>
+                                Avoid large size differences. All computations are done using single-precision
+                                floating point numbers. If a collision of a large object (e.g. 1 km width) and
+                                a small object (e.g. 1 cm width) is computed, the numerical errors can be large.
+                            </li><li>
+                                Avoid very long stick like objects. Objects which are relatively uniform in all directions
+                                are better.
+                            </li></ul></div><h4 class="subHeading" id="Performance">Performance tips</h4><div class="subsection"><p>
+                            Here are a few tips that help to improve the performance and stability of the collision detection:
+                        </p><ul><li>
+                                Boolean queries are faster than contact queries.
+                                Contact queries are faster than closest-point queries.
+                            </li><li>
+                                Use collision domains.
+                            </li><li>
+                                For objects in a collision domain, contact details are computed per default
+                                for all objects in the collision domain. Collision filtering
+                                can be used to disable the contact computation where it is not necessary.
+                            </li><li>
+                                The property
+                                <a href="08d3e63b-7346-536a-cde5-8824ad19bd9b.htm">Type</a>
+                                can be used to set the object type to "trigger" when only a boolean
+                                result without contact details is required.
+                            </li></ul></div></div><div class="collapsibleAreaRegion" id="Subtopics"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID9RB')" onkeypress="SectionExpandCollapse_CheckKey('ID9RB', event)" tabindex="0"><img id="ID9RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Subtopics</span></div><div id="ID9RBSection" class="collapsibleSection"><ul class="noBullet"><li><a href="16449523-c2f2-4c86-9dde-720716beaebb.htm">Collision Filtering</a></li><li><a href="cd2fc090-d3fd-4a0f-a7d3-1759241c8545.htm">Continuous Collision Detection (CCD)</a></li></ul></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID10RB')" onkeypress="SectionExpandCollapse_CheckKey('ID10RB', event)" tabindex="0"><img id="ID10RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID10RBSection" class="collapsibleSection"><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="f212797a-0b50-aa2b-dfbb-263efc136824.htm">DigitalRune.Geometry.Collisions</a></div><h4 class="subHeading">Other Resources</h4><div class="seeAlsoStyle"><a href="335dc86a-c68d-4d7b-8641-81dd80de5e76.htm">DigitalRune Geometry</a></div><div class="seeAlsoStyle"><a href="1320df22-cb15-41ba-8c20-0c1d914d6d73.htm">Class Diagram of Namespace DigitalRune.Geometry.Collisions</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

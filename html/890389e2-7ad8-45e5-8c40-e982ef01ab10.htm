@@ -1,0 +1,259 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Release 2015-12-19</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="890389e2-7ad8-45e5-8c40-e982ef01ab10" /><meta name="Description" content="A significant effort went into improving MonoGame and implementing missing features, such as occlusion queries, mipmap generation, hardware instancing (GraphicsDevice.DrawInstancedPrimitives), multiple vertex streams (GraphicsDevice.SetVertexBuffers)." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d94d3673-de15-47f9-a122-70b4d97b5920.htm" title="General" tocid="d94d3673-de15-47f9-a122-70b4d97b5920">General</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="1a8e6419-68b2-4e09-9578-a430703e8d5a.htm" title="What's New?" tocid="1a8e6419-68b2-4e09-9578-a430703e8d5a">What's New?</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="ca6ae3c3-7f7c-481d-b1d5-8a3c310921b5.htm" title="Release 2016-03-10" tocid="ca6ae3c3-7f7c-481d-b1d5-8a3c310921b5">Release 2016-03-10</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="890389e2-7ad8-45e5-8c40-e982ef01ab10.htm" title="Release 2015-12-19" tocid="890389e2-7ad8-45e5-8c40-e982ef01ab10">Release 2015-12-19</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="240673a0-ceae-4678-8b70-18765b58fd74.htm" title="Release 2015-09-28" tocid="240673a0-ceae-4678-8b70-18765b58fd74">Release 2015-09-28</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="9fd388c5-bfb4-42ce-aada-32e2dcada3f3.htm" title="Release 2015-05-09" tocid="9fd388c5-bfb4-42ce-aada-32e2dcada3f3">Release 2015-05-09</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="09e8a719-2ba7-485f-a2e9-d8225fa8392f.htm" title="Release 2015-03-10" tocid="09e8a719-2ba7-485f-a2e9-d8225fa8392f">Release 2015-03-10</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="dac4c63c-cc30-43f0-a1bd-00b4c6c1ff3d.htm" title="Change Logs 2010-2014" tocid="dac4c63c-cc30-43f0-a1bd-00b4c6c1ff3d">Change Logs 2010-2014</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Release 2015-12-19</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#ReleaseNotes">Release notes</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Graphics">DigitalRune Graphics and MonoGame</a></li><li class="outlineSectionEntry"><a href="#UWP">DigitalRune Graphics and UWP</a></li><li class="outlineSectionEntry"><a href="#WPF">WPF interoperability</a></li><li class="outlineSectionEntry"><a href="#LoopFrame">Loop frame for cyclic animations</a></li><li class="outlineSectionEntry"><a href="#Breaking">Breaking change</a></li></ul><li class="outlineSectionEntry"><a href="#ChangeLog">Change log</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Base">DigitalRune Base 1.19</a></li><li class="outlineSectionEntry"><a href="#Mathematics">DigitalRune Mathematics 1.14</a></li><li class="outlineSectionEntry"><a href="#Geometry">DigitalRune Geometry 1.18.1</a></li><li class="outlineSectionEntry"><a href="#Animation">DigitalRune Animation 1.4.1</a></li><li class="outlineSectionEntry"><a href="#Graphics">DigitalRune Graphics 1.1</a></li><li class="outlineSectionEntry"><a href="#GameUI">DigitalRune Game UI 1.6.2</a></li><li class="outlineSectionEntry"><a href="#Samples">Samples</a></li><li class="outlineSectionEntry"><a href="#MonoGame">MonoGame</a></li></ul></ul></div><div class="collapsibleAreaRegion" id="ReleaseNotes"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Release notes</span></div><div id="ID0RBSection" class="collapsibleSection"><h4 class="subHeading" id="Graphics">DigitalRune Graphics and MonoGame</h4><div class="subsection"><p>
+                            A significant effort went into improving MonoGame and implementing
+                            missing features, such as occlusion queries, mipmap generation,
+                            hardware instancing (<strong>GraphicsDevice.DrawInstancedPrimitives</strong>),
+                            multiple vertex streams (<strong>GraphicsDevice.SetVertexBuffers</strong>).
+                            These changes plus other fixes have been accepted and merged by the MonoGame team.
+                            As a result, lens flares, hardware instancing and morph target animations
+                            are now supported in MonoGame apps.
+                        </p><p>
+                            (Note: The change log below only lists changes made by the DigitalRune
+                            team. All changes made in the official MonoGame repository have
+                            also been merged into the DigitalRune repository. For a complete
+                            list of changes, please check the official MonoGame project.)
+                        </p></div><h4 class="subHeading" id="UWP">DigitalRune Graphics and UWP</h4><div class="subsection"><p>
+                            Apps for Universal Windows Platform (UWP) may now run in HiDef
+                            profile and make use of advanced graphics. The ID
+                            <a href="3d60854e-c7c8-c140-f760-776de3ec48ef.htm">WindowsUniversal</a>
+                            has been added to the <a href="3d60854e-c7c8-c140-f760-776de3ec48ef.htm">PlatformID</a>
+                            enumeration.
+                        </p></div><h4 class="subHeading" id="WPF">WPF interoperability</h4><div class="subsection"><p>
+                            Microsoft released the WPF DirectX Extensions [1][2] to host DirectX 10
+                            and 11 content in WPF applications. Users may wonder how this relates
+                            to the WPF interop provided by DigitalRune Graphics.
+                        </p><p>
+                            WPF uses Direct3D 9Ex for rendering. Using the built-in D3DImage [3] source
+                            it is possible to display Direct3D 9Ex surfaces directly in WPF. However,
+                            hosting Direct3D 11 in WPF is a different matter. While it is possible to
+                            share surfaces (render targets) between Direct3D 9Ex and Direct3D 11, accessing
+                            shared surfaces is not automatically synchronized. This causes problems when
+                            WPF tries to display a surface, while Direct3D 11 is still busy rendering the content.
+                        </p><p>
+                            The solution is to manually synchronize access to surfaces shared between
+                            WPF (Direct3D 9Ex) and Direct3D 11. One possible implementation is
+                            Microsoft’s surface queue library [4][5]. Unfortunately, all links
+                            leading to the official Microsoft sample have been broken for some time (years?)
+                            now. Luckily, Microsoft has dug up the old code and released it in the
+                            form of the WPF DirectX Extensions.
+                        </p><p>
+                            DigitalRune Graphics does not use the WPF DirectX Extensions for interop.
+                            The WPF DirectX Extensions (Microsoft.Wpf.Interop.DirectX.dll) provide a
+                            native (C++) and, in our opinion, over-engineered solution. Further, the
+                            synchronization in the WPF DirectX Extensions is achieved by blocking the
+                            CPU. This greatly reduces performance.
+                        </p><p>
+                            DigitalRune Graphics uses a lightweight, fully managed (SharpDX) implementation.
+                            The synchronization is part of the
+                            <a href="da532926-b1cf-37ee-c3de-15ee88dcad8f.htm">D3DImagePresentationTarget</a>.
+                            The <a href="da532926-b1cf-37ee-c3de-15ee88dcad8f.htm">D3DImagePresentationTarget</a>
+                            allows different modes of synchronization. By default, it tries to
+                            block the CPU as little as possible to maintain optimal performance.
+                        </p><p>
+                            For further information, see: <a href="da532926-b1cf-37ee-c3de-15ee88dcad8f.htm">D3DImagePresentationTarget</a></p><p>
+                            (Note that by settings <span class="code">D3DImagePresentationTarget.IsSynchronized = true</span>,
+                            the <a href="da532926-b1cf-37ee-c3de-15ee88dcad8f.htm">D3DImagePresentationTarget</a>
+                            behaves the same as the WPF DirectX Extensions.)
+                        </p><p>
+                            New in this release is the flag
+                            <a href="d7ec6bd1-eaf6-06fc-49c2-eecd30dded01.htm">D3DImagePresentationTarget<span id="LST39CD151C_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST39CD151C_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>IsFrameReady</a>.
+                            This flag can be polled to check whether Direct3D 11 has finished rendering the content.
+                        </p><p>
+                            Furthermore, the <a href="da532926-b1cf-37ee-c3de-15ee88dcad8f.htm">D3DImagePresentationTarget</a>
+                            now adapts to the Windows DPI settings. When running with high-DPI settings,
+                            the D3DImagePresentationTarget will render the Direct3D 11 content
+                            in the native resolution for optimal quality.
+                        </p><p>
+                            References:
+                        </p><ul class="noBullet"><li>
+                                [1] Microsoft.Wpf.Interop.DirectX x86 (NuGet),
+                                <a href="https://www.nuget.org/packages/Microsoft.Wpf.Interop.DirectX-x86/" target="_blank">https://www.nuget.org/packages/Microsoft.Wpf.Interop.DirectX-x86/</a>,
+                                <a href="https://www.nuget.org/packages/Microsoft.Wpf.Interop.DirectX-x64/" target="_blank">https://www.nuget.org/packages/Microsoft.Wpf.Interop.DirectX-x64/</a></li><li>
+                                [2] WPF DirectX Extensions (GitHub),
+                                <a href="https://github.com/Microsoft/WPFDXInterop" target="_blank">https://github.com/Microsoft/WPFDXInterop</a></li><li>
+                                [3] WPF D3DImage (MSDN),
+                                <a href="https://msdn.microsoft.com/en-us/library/system.windows.interop.d3dimage.aspx" target="_blank">https://msdn.microsoft.com/en-us/library/system.windows.interop.d3dimage.aspx</a></li><li>
+                                [4] Surface Sharing Between Windows Graphics APIs (MSDN),
+                                <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ee913554.aspx" target="_blank">https://msdn.microsoft.com/en-us/library/windows/desktop/ee913554.aspx</a></li><li>
+                                [5] Sample for Direct3D 9Ex and DXGI-based API interoperability on MSDN Code Gallery,
+                                <a href="http://code.msdn.microsoft.com/D3D9ExDXGISharedSurf" target="_blank">http://code.msdn.microsoft.com/D3D9ExDXGISharedSurf (broken)</a></li></ul><p /></div><h4 class="subHeading" id="LoopFrame">Loop frame for cyclic animations</h4><div class="subsection"><p>
+                            One addition may come in handy for importing models with cyclic
+                            (looping) animations, such as walk cycles. It is now possible to
+                            specify <span class="code">AddLoopFrame="True"</span> in the model
+                            descriptions (.DRMDL file). This new attribute enables automatic
+                            insertion of "loop frames" for animation.
+                        </p><p>
+                            The “loop frame” is the last key frame of a cyclic animation. The
+                            last key frame needs to match the first key frame of the animation.
+                            Ideally, the loop frame should be exported from the 3D modeling/animation
+                            tool. However, some exporters skip the loop frame. Or, in some cases
+                            the last key frame does not exactly match the first key frame.
+                        </p><p>
+                            The new setting <span class="code">AddLoopFrame="True"</span>
+                            automatically adds a loop frame at the end of the duration and
+                            enables smooth transitions.
+                        </p></div><h4 class="subHeading" id="Breaking">Breaking change</h4><div class="subsection"><p>
+                            The setters for
+                            <a href="7d8f6e2f-6562-72fd-5ead-5887a61042f0.htm">FormsPresentationTarget<span id="LST39CD151C_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST39CD151C_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>GraphicsService</a>,
+                            <a href="9d3aa3dd-ac3d-d162-2a91-d377506fcd37.htm">ElementPresentationTarget<span id="LST39CD151C_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST39CD151C_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>GraphicsService</a>,
+                            and
+                            <a href="8e43c335-489a-c977-f47e-b78a48ca01f9.htm">D3DImagePresentationTarget<span id="LST39CD151C_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST39CD151C_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>GraphicsService</a>
+                            have been made private. This was an oversight in the original API - the properties were never meant to be set by the user.
+                        </p><p>
+                            This change may cause an error in Windows Forms projects. The Windows
+                            Forms designer may try to set the property
+                            <a href="7d8f6e2f-6562-72fd-5ead-5887a61042f0.htm">GraphicsService</a>
+                            in the code behind file. If you run into this error, please modify
+                            the code behind file and remove the line which sets the property.
+                        </p></div></div><div class="collapsibleAreaRegion" id="ChangeLog"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Change log</span></div><div id="ID1RBSection" class="collapsibleSection"><h4 class="subHeading" id="Base">DigitalRune Base 1.19</h4><div class="subsection"><ul><li>
+                                NEW: New Platform ID for the Universal Windows Platform (UWP) added.
+                                See <a href="3d60854e-c7c8-c140-f760-776de3ec48ef.htm">PlatformID<span id="LST39CD151C_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST39CD151C_4?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>WindowsUniversal</a>.
+                            </li></ul></div><h4 class="subHeading" id="Mathematics">DigitalRune Mathematics 1.14</h4><div class="subsection"><ul><li>
+                                NEW: Property setter for <a href="230e6b53-acc6-6ba0-f814-19965cabb0ad.htm">Vector4F<span id="LST39CD151C_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST39CD151C_5?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>XYZ</a>
+                                and <a href="fb4b0fbf-3519-d3af-b742-1b97f4815d99.htm">Vector4D<span id="LST39CD151C_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST39CD151C_6?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>XYZ</a>
+                                added.
+                            </li><li>
+                                FIX: Result of
+                                <a href="b51fb231-9e11-9cc9-6aef-385fc8bbaf10.htm">GetAngle</a>
+                                is NaN. Problem fixed for
+                                <a href="1678f61a-6d45-dd4b-a224-b7c6db74d4a8.htm">Vector2F</a>,
+                                <a href="c05db5d2-8063-9f11-af3c-e2389f8c0995.htm">Vector3F</a>,
+                                <a href="b3596a74-d1d7-5f19-18c4-043f128416d6.htm">Vector2D</a>,
+                                <a href="a0079d90-b35b-abc2-129e-e3601815c9ab.htm">Vector3D</a>,
+                                <a href="f08d8771-de8f-2144-1e2d-20cd4378ba43.htm">QuaternionF</a>, and
+                                <a href="355f89be-94b7-87bf-131b-c09b6f14726b.htm">QuaternionD</a>.
+                            </li></ul></div><h4 class="subHeading" id="Geometry">DigitalRune Geometry 1.18.1</h4><div class="subsection"><ul><li>
+                                CHANGE: Improved height field contacts at height field borders.
+                            </li></ul></div><h4 class="subHeading" id="Animation">DigitalRune Animation 1.4.1</h4><div class="subsection"><ul><li>
+                                CHANGE:
+                                <a href="76676570-dc3f-d891-563f-f73341825722.htm">AnimationHelper<span id="LST39CD151C_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST39CD151C_7?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Compress</a>
+                                improved. Method now uses same implementation as
+                                <a href="20c13d12-1389-ab6e-29a1-dc66483344c6.htm">SkeletonKeyFrameAnimation<span id="LST39CD151C_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST39CD151C_8?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Compress</a>.
+                            </li></ul></div><h4 class="subHeading" id="Graphics">DigitalRune Graphics 1.1</h4><div class="subsection"><ul><li>
+                                NEW: Support for hardware instancing in MonoGame.
+                            </li><li>
+                                NEW: Support for morph target animation in MonoGame.
+                            </li><li>
+                                NEW: Support for HiDef effects and renderers on Universal Windows Platform (UWP).
+                            </li><li>
+                                NEW: Support for Windows DPI scaling in
+                                <a href="da532926-b1cf-37ee-c3de-15ee88dcad8f.htm">D3DImagePresentationTarget</a>.
+                                The render target now automatically uses the native size in pixels
+                                for optimal resolution.
+                            </li><li>
+                                NEW: Property
+                                <a href="d7ec6bd1-eaf6-06fc-49c2-eecd30dded01.htm">D3DImagePresentationTarget<span id="LST39CD151C_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST39CD151C_9?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>IsFrameReady</a>
+                                added, which can be polled after a new frame was rendered. The flag
+                                indicates whether Direct3D 11 has finished rendering the frame into
+                                the back buffer of the
+                                <a href="http://msdn2.microsoft.com/en-us/library/cc663071" target="_blank">D3DImage</a>.
+                            </li><li>
+                                NEW: The
+                                <a href="5c23b4bc-db43-16f1-8eab-04f9e3f63938.htm">MeshHelper<span id="LST39CD151C_10"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST39CD151C_10?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Merge</a>
+                                methods now supported on all platforms.
+                            </li><li>
+                                NEW: Support for adding a "loop frame" to cyclic animations in content pipeline.
+                                See attribute "AddLoopFrame" in <a href="c5deb208-188f-4995-bb6b-c682a3997d40.htm">Model Description (*.drmdl File)</a>.
+                            </li><li>
+                                CHANGE: Hide setter of the following properties:
+                                <a href="7d8f6e2f-6562-72fd-5ead-5887a61042f0.htm">FormsPresentationTarget<span id="LST39CD151C_11"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST39CD151C_11?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>GraphicsService</a>,
+                                <a href="9d3aa3dd-ac3d-d162-2a91-d377506fcd37.htm">ElementPresentationTarget<span id="LST39CD151C_12"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST39CD151C_12?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>GraphicsService</a>,
+                                <a href="8e43c335-489a-c977-f47e-b78a48ca01f9.htm">D3DImagePresentationTarget<span id="LST39CD151C_13"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST39CD151C_13?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>GraphicsService</a>.
+                                These setters are not meant to be called by the user.
+                            </li><li>
+                                CHANGE: Setting <span class="code">MipFilter = "NONE"</span> in DirectX Effect files where possible.
+                                (Previously, MonoGame did not support <span class="code">NONE</span>.)
+                            </li><li>
+                                CHANGE: Function <strong>VSScreenSpaceDraw</strong> removed from
+                                <em>Common.fxh</em>. The function <strong>ScreenToProjection</strong>
+                                should be used instead.
+                            </li><li>
+                                FIX: Possible divide-by-zero exception when processing normal textures
+                                with invalid values.
+                            </li><li>
+                                FIX:
+                                <a href="36f34319-fffd-165b-0902-826886bd9258.htm">SkyRenderer</a>
+                                could perform unnecessary sun occlusion test. Sun occlusion queries are
+                                not started when a previous query is still in progress.
+                            </li><li>
+                                FIX:
+                                <a href="6c78f2fc-ac32-3ac2-5933-d82450685315.htm">CloudLayerNode<span id="LST39CD151C_14"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST39CD151C_14?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>SunOcclusion</a>
+                                is now independent of player camera and only depends on clouds. Previously
+                                the sun occlusion was 1 (fully occluded) when the camera was not looking
+                                at the sun.
+                            </li><li>
+                                FIX:
+                                <a href="5b884a02-5553-ff7f-47e5-3526331a406d.htm">CloudLayerNode</a>
+                                also tries to read occlusion query (in case the renderer is only called
+                                once and the sky is cached).
+                            </li><li>
+                                FIX: <a href="5c23b4bc-db43-16f1-8eab-04f9e3f63938.htm">MeshHelper<span id="LST39CD151C_15"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST39CD151C_15?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Merge</a>
+                                could create garbage when meshes with 32-bit indices were combined into
+                                one mesh which only needs 16-bit indices.
+                            </li><li>
+                                FIX: <a href="074b27e0-8f60-4f5c-c66a-ea20a50dfc0c.htm">TerrainHelper<span id="LST39CD151C_16"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST39CD151C_16?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>SmoothTexture</a>
+                                must not change border samples. (Before this fix the border samples were
+                                changed and terrain tiles did not match anymore. This caused a problem in
+                                the collision detection, but not for graphics.)
+                            </li><li>
+                                Minor other improvements.
+                            </li></ul></div><h4 class="subHeading" id="GameUI">DigitalRune Game UI 1.6.2</h4><div class="subsection"><ul><li>
+                                CHANGE: In MonoGame the
+                                <a href="577d80af-f1f2-28c4-1a0a-43846473c0d0.htm">MaxNumberOfPlayers</a>
+                                now depends on the platform. Previously the property always returned 4.
+                            </li><li>
+                                FIX:
+                                <a href="e3d852a6-e1a5-3161-1920-eef02306d919.htm">LayoutSerializer</a>
+                                did not deserialize certain properties on iOS and UWP.
+                            </li></ul></div><h4 class="subHeading" id="Samples">Samples</h4><div class="subsection"><ul><li>
+                                NEW: <em>CollisionFilterSample</em> shows how to enable/disable collisions using filters.
+                            </li><li>
+                                NEW: <em>SpatialPartitionSample</em> shows how to use spatial partitions (e.g. bounding
+                                volume trees).
+                            </li><li>
+                                NEW: <em>HealthBarSample</em> shows how to position a
+                                <a href="999fa63f-2edc-2e0e-b6b2-944b1bf8df16.htm">UIControl</a>
+                                relative to a 3D object to display a 2D health bar.
+                            </li><li>
+                                NEW: <em>ProjectedShadowSample</em> shows how to create planar
+                                projected shadows using a custom scene node renderer.
+                            </li><li>
+                                NEW: <em>ProjectedShadowSample2</em> shows how to create
+                                planar projected shadows using a custom render pass, custom effect and
+                                custom effect parameter bindings.
+                            </li><li>
+                                CHANGE: The Direct3D debug layer is now disabled by default to improve
+                                performance in DEBUG builds. See <em>SampleGame.cs</em>.
+                            </li><li>
+                                CHANGE: Startup sample is now set in <em>SampleGame.cs</em>
+                                and not in <em>SampleFramework.cs</em>.
+                            </li><li>
+                                CHANGE: Disable mipmaps in <em>TerrainSample</em> to improve
+                                performance. (Terrain mipmaps are only required for anisotropic filtering
+                                on AMD GPUs. Mipmap generation is unnecessarily expensive.)
+                            </li><li>
+                                CHANGE: Use <span class="code">POSITION</span> semantic instead of
+                                <span class="code">SV_Position</span> for vertex shader input.
+                            </li><li>
+                                Minor other improvements.
+                            </li></ul></div><h4 class="subHeading" id="MonoGame">MonoGame</h4><div class="subsection"><ul><li>
+                                NEW: <strong>OcclusionQuery</strong> implemented for DirectX.
+                            </li><li>
+                                NEW: Mipmap generation for render targets is now implemented.
+                            </li><li>
+                                NEW: <strong>GraphicsDevice.SetVertexBuffers</strong> implemented for DirectX.
+                            </li><li>
+                                NEW: <strong>GraphicsDevice.DrawInstancedPrimitives</strong> implemented for DirectX.
+                            </li><li>
+                                FIX: AccessViolationException in <strong>X3DAudio.Calculate</strong>.
+                            </li><li>
+                                FIX: Do not build external references "Asset_0" if the asset is included
+                                directly in the content project and explicitly built as "Asset" (no suffix).
+                            </li><li>
+                                Minor other improvements.
+                            </li></ul></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

@@ -1,0 +1,169 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>How To: Add a Custom Scene Node</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="578746ac-7e3c-42b5-b9c9-6900714c966e" /><meta name="Description" content="DigitalRune Graphics contains an extensible scene graph. This section demonstrates how to add a new type of scene node." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="a7a376fe-d747-4c66-ad76-2bc95232af85.htm" title="Articles" tocid="a7a376fe-d747-4c66-ad76-2bc95232af85">Articles</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="a089a32a-ee98-4490-8a3c-9df6beb0b1c1.htm" title="How To: Add DigitalRune Graphics to a Project" tocid="a089a32a-ee98-4490-8a3c-9df6beb0b1c1">How To: Add DigitalRune Graphics to a Project</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="578746ac-7e3c-42b5-b9c9-6900714c966e.htm" title="How To: Add a Custom Scene Node" tocid="578746ac-7e3c-42b5-b9c9-6900714c966e">How To: Add a Custom Scene Node</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="66ba3eee-84a2-4ff2-935f-77b0afa44a89.htm" title="How To: Change Effect Parameter Bindings" tocid="66ba3eee-84a2-4ff2-935f-77b0afa44a89">How To: Change Effect Parameter Bindings</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c2b20686-df99-4d21-b5b6-fd7d58a5f407.htm" title="How To: Add Support for New Effect Parameters" tocid="c2b20686-df99-4d21-b5b6-fd7d58a5f407">How To: Add Support for New Effect Parameters</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="12ff9049-3aea-4b01-affe-3aa37eea9ce2.htm" title="Cloud Quads" tocid="12ff9049-3aea-4b01-affe-3aa37eea9ce2">Cloud Quads</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="1683bd3a-951a-4e79-b43e-ed0f3ee00e31.htm" title="Environment Map Reflections" tocid="1683bd3a-951a-4e79-b43e-ed0f3ee00e31">Environment Map Reflections</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="9a8c8b37-b996-477a-aeab-5d92714be3ca.htm" title="Material Capture (MatCap) Shaders" tocid="9a8c8b37-b996-477a-aeab-5d92714be3ca">Material Capture (MatCap) Shaders</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c9764263-9fc9-43cf-86cb-11daa5090dc2.htm" title="Parallax Mapping" tocid="c9764263-9fc9-43cf-86cb-11daa5090dc2">Parallax Mapping</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="7f44f475-cacd-42d1-8c7d-db6429029245.htm" title="Refraction Rendering" tocid="7f44f475-cacd-42d1-8c7d-db6429029245">Refraction Rendering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="fa431d48-b457-4c70-a590-d44b0840ab1e.htm" title="Screen-Door Transparency" tocid="fa431d48-b457-4c70-a590-d44b0840ab1e">Screen-Door Transparency</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">How To: Add a Custom Scene Node</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                DigitalRune Graphics contains an extensible scene graph. This section demonstrates how to
+                add a new type of scene node.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Node">Creating a custom scene node</a></li><li class="outlineSectionEntry"><a href="#Renderer">Creating a new scene node renderer</a></li></ul></div><div class="collapsibleAreaRegion" id="Node"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Creating a custom scene node</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    Let's assume we want to render text labels at 3D position within the scene. To define
+                    the text labels we can implement a new type of
+                    <a href="206bf836-6510-1c9d-02d4-c0c9a30a75a0.htm">SceneNode</a>.
+                </p><p>
+                    The following code defines a new scene node that stores a color and a text.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EADACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EADACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EADACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EADACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// The TextNode contains a text (string) and a color.</span>
+<span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> TextNode : SceneNode
+{
+  <span class="highlight-comment">// ----- The properties of the new scene node.</span>
+  <span class="highlight-keyword">public</span> Color Color { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">string</span> Text { <span class="highlight-keyword">get</span>; <span class="highlight-keyword">set</span>; }
+
+  <span class="highlight-comment">// ----- The constructor sets relevant scene node properties.</span>
+  <span class="highlight-keyword">public</span> TextNode()
+  {
+    <span class="highlight-comment">// The IsRenderable flag needs to be set to indicate that the scene node should </span>
+    <span class="highlight-comment">// be handled during rendering.</span>
+    IsRenderable = <span class="highlight-keyword">true</span>;
+
+    <span class="highlight-comment">// The CastsShadows flag needs to be set if the scene node needs to be rendered </span>
+    <span class="highlight-comment">// into the shadow maps. But in this case the scene node should be ignored.</span>
+    CastsShadows = <span class="highlight-keyword">false</span>;
+
+    <span class="highlight-comment">// A bounding shape needs to be set for frustum culling.</span>
+    Shape = <span class="highlight-keyword">new</span> PointShape();
+  }
+
+  <span class="highlight-comment">// ----- The following methods are required by the cloning mechanism:</span>
+  <span class="highlight-comment">// CreateInstanceCore() is called when a clone needs to be created.</span>
+  <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> SceneNode CreateInstanceCore()
+  {
+    <span class="highlight-keyword">return</span> <span class="highlight-keyword">new</span> TextNode();
+  }
+
+  <span class="highlight-comment">// CloneCore() is called to initialize the clone.</span>
+  <span class="highlight-keyword">protected</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> CloneCore(SceneNode source)
+  {
+    <span class="highlight-comment">// Copy the SceneNode properties (base class).</span>
+    <span class="highlight-keyword">base</span>.CloneCore(source);
+
+    <span class="highlight-comment">// Copy the TextNode properties.</span>
+    <span class="highlight-keyword">var</span> sourceTextNode = (TextNode)source;
+    Color = sourceTextNode.Color;
+    Text = sourceTextNode.Text;
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EADACAAA");</script><p>
+                    The newly created scene node can be used to define a label within a scene. For example:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EABACAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABACAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABACAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABACAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">var</span> textNode = <span class="highlight-keyword">new</span> TextNode
+{
+  PoseLocal = <span class="highlight-keyword">new</span> Pose(<span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">1</span>, <span class="highlight-number">2</span>, <span class="highlight-number">3</span>),
+  Color = Color.Red,
+  Text = <span class="highlight-literal">"Label123"</span>,
+};
+myScene.Children.Add(textNode);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABACAAA");</script><p>
+                    But DigitalRune Graphics does not yet know how to render a <strong>TextNode</strong>.
+                    A new type of <a href="c022a3a4-2330-9b46-24ad-c8f3ae13f1f8.htm">SceneNodeRenderer</a>
+                    needs to be implemented.
+                </p></div><div class="collapsibleAreaRegion" id="Renderer"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Creating a new scene node renderer</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    A <a href="c022a3a4-2330-9b46-24ad-c8f3ae13f1f8.htm">SceneNodeRenderer</a>
+                    handles one or more types of scene nodes. For example, the
+                    <a href="1782e7fc-9a12-dd2d-d73d-8396a786fdeb.htm">MeshRenderer</a>
+                    handles <a href="150b5feb-ef12-d0be-cd27-0a32759af0ba.htm">MeshNode</a>s,
+                    the <a href="b16622e6-b040-0c77-9b2d-272c3ac34014.htm">BillboardRenderer</a>
+                    handles <a href="73900bd2-e82a-5119-cf0a-871340cf9d24.htm">BillboardNode</a>s
+                    and <a href="cc97eb93-8e8a-820b-81ca-c1e6e4880a79.htm">ParticleSystemNode</a>s,
+                    etc.
+                </p><p>
+                    Let's implement a scene node renderer that draws text labels.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAEABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAEABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAEABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAEABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// The TextRenderer is a custom scene node renderer which draws TextNodes using a </span>
+<span class="highlight-comment">// SpriteBatch and a SpriteFont.</span>
+<span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> TextRenderer : SceneNodeRenderer
+{
+  <span class="highlight-keyword">private</span> SpriteBatch _spriteBatch;
+  <span class="highlight-keyword">private</span> SpriteFont _spriteFont;
+
+  <span class="highlight-keyword">public</span> TextRenderer(IGraphicsService graphicsService, SpriteFont font)
+  {
+    <span class="highlight-keyword">if</span> (graphicsService == <span class="highlight-keyword">null</span>)
+      <span class="highlight-keyword">throw</span> <span class="highlight-keyword">new</span> ArgumentNullException(<span class="highlight-literal">"graphicsService"</span>);
+    <span class="highlight-keyword">if</span> (font == <span class="highlight-keyword">null</span>)
+      <span class="highlight-keyword">throw</span> <span class="highlight-keyword">new</span> ArgumentNullException(<span class="highlight-literal">"font"</span>);
+
+    _spriteBatch = <span class="highlight-keyword">new</span> SpriteBatch(graphicsService.GraphicsDevice);
+    _spriteFont = font;
+
+    <span class="highlight-comment">// The TextRenderer should be called after all other scene node renderers.</span>
+    <span class="highlight-comment">// This is only relevant if different types of scene nodes (e.g. MeshNodes, </span>
+    <span class="highlight-comment">// TextNodes, ...) are rendered at the same time.</span>
+    Order = <span class="highlight-number">100</span>;
+  }
+
+  <span class="highlight-comment">// CanRender() checks whether a given scene node can be rendered with this</span>
+  <span class="highlight-comment">// scene node renderer.</span>
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">bool</span> CanRender(SceneNode node, RenderContext context)
+  {
+    <span class="highlight-keyword">return</span> node <span class="highlight-keyword">is</span> TextNode;
+  }
+
+  <span class="highlight-comment">// Render() draws a list of scene nodes.</span>
+  <span class="highlight-keyword">public</span> <span class="highlight-keyword">override</span> <span class="highlight-keyword">void</span> Render(IList&lt;SceneNode&gt; nodes, RenderContext context, RenderOrder order)
+  {
+    <span class="highlight-comment">// For simplicity we ignore the 'order' parameter and do not sort the TextNodes</span>
+    <span class="highlight-comment">// by distance.</span>
+    <span class="highlight-keyword">var</span> graphicsDevice = context.GraphicsService.GraphicsDevice;
+    <span class="highlight-keyword">var</span> cameraNode = context.CameraNode;
+    <span class="highlight-keyword">if</span> (cameraNode == <span class="highlight-keyword">null</span>)
+      <span class="highlight-keyword">return</span>; <span class="highlight-comment">// No camera set.</span>
+
+    Matrix view = (Matrix)cameraNode.View;
+    Matrix projection = cameraNode.Camera.Projection;
+    <span class="highlight-keyword">var</span> viewport = graphicsDevice.Viewport;
+
+    <span class="highlight-comment">// Use the SpriteBatch for rendering text.</span>
+    _spriteBatch.Begin();
+
+    <span class="highlight-keyword">for</span> (<span class="highlight-keyword">int</span> i = <span class="highlight-number">0</span>; i &lt; nodes.Count; i++)
+    {
+      <span class="highlight-keyword">var</span> node = nodes[i] <span class="highlight-keyword">as</span> TextNode;
+      <span class="highlight-keyword">if</span> (node != <span class="highlight-keyword">null</span>)
+      {
+        <span class="highlight-comment">// Draw text centered at position of TextNode.</span>
+        Vector3 positionWorld = (Vector3)node.PoseWorld.Position;
+        Vector3 positionScreen = viewport.Project(positionWorld, projection, view, Matrix.Identity);
+        Vector2 position2D = <span class="highlight-keyword">new</span> Vector2(positionScreen.X, positionScreen.Y);
+        Vector2 size = _spriteFont.MeasureString(node.Text);
+        _spriteBatch.DrawString(_spriteFont, node.Text, position2D - size / <span class="highlight-number">2</span>, node.Color);
+      }
+    }
+
+    _spriteBatch.End();
+  }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAEABAAA");</script><p>
+                    A
+                    <a href="3da01fb8-e3d4-8d84-1021-b0e23e28c645.htm">SceneRenderer</a>
+                    can be used to create a renderer which combines the <strong>TextRenderer</strong>
+                    with other scene node renderers.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EACABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Let's create a renderer that supports meshes, and text nodes.</span>
+<span class="highlight-keyword">var</span> sceneRenderer = <span class="highlight-keyword">new</span> SceneRenderer();
+sceneRenderer.Renderers.Add(<span class="highlight-keyword">new</span> MeshRenderer());
+sceneRenderer.Renderers.Add(<span class="highlight-keyword">new</span> TextRenderer(graphicsService, spriteFont)</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACABAAA");</script><p>
+                    This renderer can be used to render a scene:
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Set render context info.</span>
+context.CameraNode = Player.CameraNode;
+context.RenderPass = <span class="highlight-literal">"Default"</span>; <span class="highlight-comment">// Needs to be set for MeshNodes.</span>
+context.Scene = myScene;
+
+<span class="highlight-keyword">var</span> graphicsDevice = context.GraphicsService.GraphicsDevice;
+graphicsDevice.DepthStencilState = DepthStencilState.Default;
+graphicsDevice.RasterizerState = RasterizerState.CullCounterClockwise;
+graphicsDevice.BlendState = BlendState.Opaque;
+
+<span class="highlight-comment">// Render all scene nodes within camera frustum.</span>
+<span class="highlight-keyword">var</span> query = myScene.Query&lt;CameraFrustumQuery&gt;(context.CameraNode);
+sceneRenderer.Render(query.RenderableNodes, context);
+
+<span class="highlight-comment">// Clean up.</span>
+context.Scene = <span class="highlight-keyword">null</span>;
+context.RenderPass = <span class="highlight-keyword">null</span>;
+context.CameraNode = <span class="highlight-keyword">null</span>;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAABAAA");</script></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

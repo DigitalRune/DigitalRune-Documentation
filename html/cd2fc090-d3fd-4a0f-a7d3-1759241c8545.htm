@@ -1,0 +1,103 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Continuous Collision Detection (CCD)</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="cd2fc090-d3fd-4a0f-a7d3-1759241c8545" /><meta name="Description" content="This section shows how to use Continuous Collision Detection." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="335dc86a-c68d-4d7b-8641-81dd80de5e76.htm" title="DigitalRune Geometry" tocid="335dc86a-c68d-4d7b-8641-81dd80de5e76">DigitalRune Geometry</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="629ec6f3-8533-4ef9-94d0-220ef375387c.htm" title="Collision Detection" tocid="629ec6f3-8533-4ef9-94d0-220ef375387c">Collision Detection</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="16449523-c2f2-4c86-9dde-720716beaebb.htm" title="Collision Filtering" tocid="16449523-c2f2-4c86-9dde-720716beaebb">Collision Filtering</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="cd2fc090-d3fd-4a0f-a7d3-1759241c8545.htm" title="Continuous Collision Detection (CCD)" tocid="cd2fc090-d3fd-4a0f-a7d3-1759241c8545">Continuous Collision Detection (CCD)</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Continuous Collision Detection (CCD)</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This section shows how to use Continuous Collision Detection.</p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Tip" /> Tip</th></tr><tr><td><p>
+                    More general information about CCD can be found in the following article:
+                    <a href="138fc8fe-c536-40e0-af6b-0fb7e8eb9623.htm">Continuous Collision Detection (Background Information)</a></p></td></tr></table></div><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Comparison">Discrete collision detection vs. continuous collision detection</a></li><li class="outlineSectionEntry"><a href="#TOI">Method GetTimeOfImpact()</a></li><li class="outlineSectionEntry"><a href="#Modes">CCD modes</a></li><li class="outlineSectionEntry"><a href="#limitations">CCD limitations</a></li><li class="outlineSectionEntry"><a href="#Recommendations">CCD recommendations</a></li><li class="outlineSectionEntry"><a href="#seeAlsoSection">See Also</a></li></ul></div><div class="collapsibleAreaRegion" id="Comparison"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Discrete collision detection vs. continuous collision detection</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    The normal <span class="term">Discrete Collision Detection</span> checks for collisions at the current
+                    objects positions. Then the game moves the objects to new positions and in the
+                    next frame the collision detection checks for collision at the new positions.
+                </p><p>
+                    Here is an example (from the
+                    <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm#CCDSample">ContinuousCollisionDetectionSample</a>).
+                    The capsule is moving from top to bottom. The table is moving from left
+                    to right.
+                </p><div class="mediaNear"><img alt="Discrete Collision Detection" src="../media/DiscreteCD.jpg" /><div class="caption"><span class="captionLead">Screenshot:
+						</span>Discrete Collision Detection</div></div><p>
+                    In the first frame of the game the objects are at their top and left positions.
+                    In the next frame of the game the objects are at their bottom and right positions.
+                    Discrete Collision Detection does not detect a collision because only the start
+                    and end positions were checked.
+                </p><p>
+                    This problem is known as "tunneling" and happens for small and fast moving objects
+                    in a game. A game must make sure that tunneling does not happen for game critical
+                    objects, for example, for bullet that is shot at an enemy or a rocket
+                    that should hit a wall.
+                </p><p><span class="term">Continuous Collision Detection (CCD)</span> provides methods to compute the first time
+                    of impact of objects that are in motion. With CCD the intermediate collision
+                    can be found: (Objects in red show the first time of impact.)
+                </p><div class="mediaNear"><img alt="Continuous Collision Detection" src="../media/CCD.jpg" /><div class="caption"><span class="captionLead">Screenshot:
+						</span>Continuous Collision Detection</div></div></div><div class="collapsibleAreaRegion" id="TOI"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Method GetTimeOfImpact()</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    To compute the first time of impact the
+                    <a href="1b4e4fee-5941-cbca-9522-315d04018645.htm">CollisionDetection</a>
+                    class has the method
+                    <a href="4e54d544-4c8d-3e83-6f55-4552a9d333ae.htm">CollisionDetection<span id="LST6EAFC328_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6EAFC328_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>GetTimeOfImpact(CollisionObject, Pose, CollisionObject, Pose, Single)</a>.
+                    This method takes two objects (positioned at their start poses) and the target poses as parameters.
+                    It returns the <span class="code">timeOfImpact</span>, a value in the range [0,1]:
+                </p><div class="tableSection"><table><tr><th><p>Return Value</p></th><th><p>Description</p></th></tr><tr><td><p><span class="code">timeOfImpact = 0</span></p></td><td><p>The objects touch at the start poses.</p></td></tr><tr><td><p><span class="code">timeOfImpact = 1</span></p></td><td><p>The objects either collide at the end poses or they do not collide at all.</p></td></tr><tr><td><p><span class="code">0 &lt; timeOfImpact &lt; 1</span></p></td><td><p>
+                                The objects collide somewhere between start and end pose.
+                                The returned value indicates the time when the objects collide.
+                            </p></td></tr></table></div><p>
+                    The last parameter of
+                    <a href="4e54d544-4c8d-3e83-6f55-4552a9d333ae.htm">CollisionDetection<span id="LST6EAFC328_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6EAFC328_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>GetTimeOfImpact(CollisionObject, Pose, CollisionObject, Pose, Single)</a>
+                    is the <span class="code">allowedPenetration</span>. This parameter
+                    should be set to a small positive value. For example, when most game objects
+                    have an extent around 1 unit (1 m) an <span class="code">allowedPenetration</span> of 0.01 (1 cm) is a good choice.
+                    If the parameter is 0, the time of impact is the
+                    exact time when the objects start to touch. But because of numerical inaccuracies or
+                    approximations in the CCD-phase the discrete collision detection may or may not
+                    detect a collision at this time. Therefore, it is recommended to allow penetrations in the CCD
+                    computation. This way, when the objects are moved to the time of impact
+                    the collision detection will find a solid contact.
+                </p></div><div class="collapsibleAreaRegion" id="Modes"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />CCD modes</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    DigitalRune Geometry supports two CCD modes that can be set with
+                    <a href="f7eb86b5-d87c-ff84-d2d4-a8a2a15bafb1.htm">CollisionDetection<span id="LST6EAFC328_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6EAFC328_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>ContinuousCollisionDetectionMode</a>:
+                </p><div class="tableSection"><table><tr><th><p>CCD Mode</p></th><th><p>Description</p></th></tr><tr><td><p><strong>Linear</strong></p></td><td><p>
+                                The continuous collision detection considers
+                                only the linear movement of the objects involved. The rotational movement is ignored.
+                                This mode is faster, but less accurate.
+                            </p></td></tr><tr><td><p><strong>Full</strong></p></td><td><p>
+                                The continuous collision detection considers
+                                the linear and the rotational movement of the objects involved.
+                                This mode is slower, but more accurate.
+                            </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="limitations"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />CCD limitations</span></div><div id="ID3RBSection" class="collapsibleSection"><ul><li>
+                        CCD assumes that the object rotates less than 180°. The motion of the object is
+                        defined using a start and end pose. It is not possible to correctly handle objects
+                        that make several rotations per frame. - But even for such high rotation speeds an
+                        approximate solution is usually sufficient and visual errors are not noticeable.
+                    </li><li>
+                        CCD assumes that the objects rotate around their local space origin (which is the
+                        position stored in the <a href="7c0b7cea-0ddc-0f21-0412-731af186b1c8.htm">Pose</a>
+                        of the geometric objects). If the center of rotation is not equal to the
+                        local space origin, the computed time of impact is only an approximation.
+                    </li><li>
+                        CCD is not supported for
+                        <a href="2701ba79-cac5-5865-eb8f-1da98af75b2b.htm">TriangleMeshShape</a>
+                        vs.
+                        <a href="2701ba79-cac5-5865-eb8f-1da98af75b2b.htm">TriangleMeshShape</a>.
+                        For mesh vs. mesh the time of impact is always 1.
+                    </li><li>
+                        CCD is not supported for
+                        <a href="e486f168-8f4d-534b-3cb0-4ed0b8dce951.htm">LineShape</a>
+                        vs. any other shape. For line vs. * the time of impact is always 1.
+                        <a href="7d868b78-8cb2-ee9f-9c67-2071ceb289a5.htm">LineSegmentShape</a>
+                        can be used instead if CCD is required for lines.
+                    </li><li>
+                        For <a href="467bd69b-e7ce-490d-fedd-a9495832769c.htm">CompositeShape</a>s
+                        vs. other shapes the computed CCD is only an approximation.
+                    </li><li>
+                        Similar to closest-point queries, time of impact queries are not (yet) integrated into the
+                        <a href="06292c81-16ba-c53c-3f55-a5a6d6eaa59c.htm">CollisionDomain</a>
+                        class.
+                        <a href="4e54d544-4c8d-3e83-6f55-4552a9d333ae.htm">CollisionDetection<span id="LST6EAFC328_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6EAFC328_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>GetTimeOfImpact(CollisionObject, Pose, CollisionObject, Pose, Single)</a>
+                        must be called manually when needed.
+                    </li></ul></div><div class="collapsibleAreaRegion" id="Recommendations"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />CCD recommendations</span></div><div id="ID4RBSection" class="collapsibleSection"><ul><li>
+                        Use CCD only for important game objects.
+                    </li><li>
+                        Use CCD only for objects that move with a velocity that is high (relative to the average object size).
+                    </li><li>
+                        Do not use CCD if the objects are already touching at the start positions.
+                    </li></ul></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID5RBSection" class="collapsibleSection"><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="4e54d544-4c8d-3e83-6f55-4552a9d333ae.htm">CollisionDetection<span id="LST6EAFC328_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST6EAFC328_4?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>GetTimeOfImpact(CollisionObject, Pose, CollisionObject, Pose, Single)</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

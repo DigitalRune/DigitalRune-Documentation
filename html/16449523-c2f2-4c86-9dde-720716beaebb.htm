@@ -1,0 +1,94 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Collision Filtering</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="16449523-c2f2-4c86-9dde-720716beaebb" /><meta name="Description" content="This section introduces methods for collision filtering." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="335dc86a-c68d-4d7b-8641-81dd80de5e76.htm" title="DigitalRune Geometry" tocid="335dc86a-c68d-4d7b-8641-81dd80de5e76">DigitalRune Geometry</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="629ec6f3-8533-4ef9-94d0-220ef375387c.htm" title="Collision Detection" tocid="629ec6f3-8533-4ef9-94d0-220ef375387c">Collision Detection</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="16449523-c2f2-4c86-9dde-720716beaebb.htm" title="Collision Filtering" tocid="16449523-c2f2-4c86-9dde-720716beaebb">Collision Filtering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="cd2fc090-d3fd-4a0f-a7d3-1759241c8545.htm" title="Continuous Collision Detection (CCD)" tocid="cd2fc090-d3fd-4a0f-a7d3-1759241c8545">Continuous Collision Detection (CCD)</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Collision Filtering</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This section introduces methods for collision filtering.</p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Filters">Collision filtering</a></li><li class="outlineSectionEntry"><a href="#BroadPhase">Broad phase filter</a></li><li class="outlineSectionEntry"><a href="#NarrowPhase">Narrow phase filter</a></li><li class="outlineSectionEntry"><a href="#Implementations">Filter implementations</a></li><li class="outlineSectionEntry"><a href="#Static">Static objects</a></li><li class="outlineSectionEntry"><a href="#Other">Other filtering methods</a></li><li class="outlineSectionEntry"><a href="#seeAlsoSection">See Also</a></li></ul></div><div class="collapsibleAreaRegion" id="Filters"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Collision filtering</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    Per default, all collision objects collide with all other collision objects.
+                    It is often useful or required to disable collisions between collision objects
+                    or certain groups of collision objects. Examples:
+                </p><ul><li>
+                        Two objects in a computer game describe <em>static</em> scenery,
+                        like two walls. It is not necessary to compute the contacts between this
+                        two objects. For this case, all static objects could be assigned to
+                        a collision group that should not collide with itself.
+                    </li><li>
+                        Objects can pass through each other, for example, in many games
+                        avatars can walk through each other like ghosts. In this case the collision
+                        between the avatar collision objects should be disabled.
+                    </li><li>
+                        In physics simulation two objects can be attached two each other using
+                        "joints". Most of the time the two connected objects should not
+                        collide with each other.
+                    </li></ul><p>
+                    To disable all collision for an individual collision object the collision object can be
+                    disabled (see property
+                    <a href="6872f9a0-e1c2-a238-d7ed-55a7e6689b9a.htm">Enabled</a>).
+                </p><p>
+                    The collision detection further uses filters at two points in the collision detection
+                    pipeline that define which objects can collide with each other and what contacts are computed.
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Caution note" /> Caution</th></tr><tr><td><p>Collision filters are not used in closest-point queries!</p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="BroadPhase"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Broad phase filter</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+                    You can set a broad phase filter using the property
+                    <a href="41ce0cab-a66b-c8b2-5a2f-328ad7e45294.htm">Filter</a>
+                    of
+                    <a href="97824f84-8d44-f735-6c6f-f357b946cf23.htm">CollisionDomain<span id="LST4076D9C2_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4076D9C2_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>BroadPhase</a>.
+                    Use the broad phase filter if the filtering rules are simple
+                    and do not change during the runtime of your application. For example,
+                    filtering of collisions between static objects is usually done in the
+                    broad phase.
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Caution note" /> Caution</th></tr><tr><td><p>
+                        Do not change the filter rules of a broad phase at runtime!
+                    </p><p>
+                        Changing filter rules can invalidate the information that is cached in
+                        the broad phase, which slows down the broad phase. Use a narrow phase filter instead!
+                    </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="NarrowPhase"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Narrow phase filter</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    Narrow phase filters are set using the property
+                    <a href="486e6158-b325-80da-7cc0-e3e1fa8fe454.htm">CollisionDetection<span id="LST4076D9C2_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4076D9C2_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>CollisionFilter</a>.
+                    Use the narrow phase filter if the filtering rules are complex or can change
+                    during the runtime of your application. For example, if a game character
+                    can drink a magic potion that allows him to go temporarily through walls,
+                    this would be best solved using a narrow phase filter because the filter rules
+                    are complex and subject to change.
+                </p></div><div class="collapsibleAreaRegion" id="Implementations"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Filter implementations</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+                    Any class that implements
+                    <a href="eeada2ff-9551-d2a0-3ac6-a1a00063de79.htm">IPairFilter<span id="LST4076D9C2_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4076D9C2_2?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST4076D9C2_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4076D9C2_3?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                    of
+                    <a href="84040f22-087e-0052-41c6-c3e48b359847.htm">CollisionObject</a>s
+                    can be used as collision filter. DigitalRune Geometry contains two classes that implement
+                    this interface:
+                    <a href="af110ad9-b6f1-b2c7-ec84-14ecf8d2dee1.htm">DelegatePairFilter<span id="LST4076D9C2_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4076D9C2_4?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST4076D9C2_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4076D9C2_5?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>
+                    and
+                    <a href="6f010999-bd89-ecee-641b-ced624e0e70c.htm">CollisionFilter</a>.
+                    The first one calls a user defined callback method to filter collision object pairs.
+                    The second one has an internal table which enables or disables collisions between specific pairs of
+                    collision objects or collision groups (see
+                    <a href="23f6c166-4b72-11c9-933a-a2f560bee253.htm">CollisionGroup</a>).
+                </p></div><div class="collapsibleAreaRegion" id="Static"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Static objects</span></div><div id="ID4RBSection" class="collapsibleSection"><p>
+                    Some collision detection libraries or physics libraries have special support
+                    for static objects. Collision objects can be set to "static" which means that
+                    collisions between two static objects are not computed. This improves performance
+                    because a game level typically consists of many static objects.
+                </p><p>
+                    DigitalRune Geometry has no "IsStatic" property for collision objects because
+                    for some applications it is necessary to compute collisions between "static"
+                    objects. Therefore, the meaning of "IsStatic" depends on the context in which
+                    the collision detection is used.
+                </p><p>
+                    If a game level consists of many static objects and collisions between static
+                    objects should not be computed, you can use collision filtering to disable
+                    collision between static objects. For example, you can use the convention that
+                    all static objects use
+                    <a href="23f6c166-4b72-11c9-933a-a2f560bee253.htm">CollisionGroup</a>
+                    0 and dynamic objects use a collision group greater than 0. And in the
+                    collision filter you can disable collisions of group 0 with group 0.
+                </p></div><div class="collapsibleAreaRegion" id="Other"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Other filtering methods</span></div><div id="ID5RBSection" class="collapsibleSection"><p>
+                    Other options to control which objects can collide with which objects
+                    are:
+                </p><ul><li>
+                        Put objects which should not collide into different collision domains
+                        (This improves performance as well.)
+                    </li><li>
+                        Change the collision algorithm matrix if a pair of shape types should
+                        never collide in a specific application.
+                    </li></ul></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID6RB')" onkeypress="SectionExpandCollapse_CheckKey('ID6RB', event)" tabindex="0"><img id="ID6RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID6RBSection" class="collapsibleSection"><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="eeada2ff-9551-d2a0-3ac6-a1a00063de79.htm">DigitalRune.Geometry.Partitioning<span id="LST4076D9C2_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4076D9C2_6?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>IPairFilter<span id="LST4076D9C2_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4076D9C2_7?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST4076D9C2_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4076D9C2_8?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a></div><div class="seeAlsoStyle"><a href="41ce0cab-a66b-c8b2-5a2f-328ad7e45294.htm">ISpatialPartition<span id="LST4076D9C2_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4076D9C2_9?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST4076D9C2_10"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4076D9C2_10?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script><span id="LST4076D9C2_11"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4076D9C2_11?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Filter</a></div><div class="seeAlsoStyle"><a href="486e6158-b325-80da-7cc0-e3e1fa8fe454.htm">CollisionDetection<span id="LST4076D9C2_12"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4076D9C2_12?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>CollisionFilter</a></div><div class="seeAlsoStyle"><a href="97824f84-8d44-f735-6c6f-f357b946cf23.htm">CollisionDomain<span id="LST4076D9C2_13"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4076D9C2_13?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>BroadPhase</a></div><div class="seeAlsoStyle"><a href="23f6c166-4b72-11c9-933a-a2f560bee253.htm">CollisionObject<span id="LST4076D9C2_14"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST4076D9C2_14?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>CollisionGroup</a></div><h4 class="subHeading">Other Resources</h4><div class="seeAlsoStyle"><a href="1320df22-cb15-41ba-8c20-0c1d914d6d73.htm">Class Diagram of Namespace DigitalRune.Geometry.Collisions</a></div><div class="seeAlsoStyle"><a href="032d766d-8446-472f-9547-06463dfb59d6.htm">Class Diagram of Namespace DigitalRune.Geometry.Partitioning</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

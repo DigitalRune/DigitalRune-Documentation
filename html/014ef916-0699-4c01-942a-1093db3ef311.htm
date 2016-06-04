@@ -1,0 +1,134 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>FAQ</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="014ef916-0699-4c01-942a-1093db3ef311" /><meta name="Description" content="Here is a collection of frequently asked questions, common problems and solutions." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="9604b781-8adb-4ec6-87bd-85b805e9c036.htm" title="Asset Creation" tocid="9604b781-8adb-4ec6-87bd-85b805e9c036">Asset Creation</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="7d5a0abe-8231-452c-895c-e6dbab83822b.htm" title="Graphics Programming" tocid="7d5a0abe-8231-452c-895c-e6dbab83822b">Graphics Programming</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="a7a376fe-d747-4c66-ad76-2bc95232af85.htm" title="Articles" tocid="a7a376fe-d747-4c66-ad76-2bc95232af85">Articles</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="014ef916-0699-4c01-942a-1093db3ef311.htm" title="FAQ" tocid="014ef916-0699-4c01-942a-1093db3ef311">FAQ</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="4c81587d-2692-4e4c-a5f7-bd08f83ba2af.htm" title="Class Diagrams" tocid="4c81587d-2692-4e4c-a5f7-bd08f83ba2af">Class Diagrams</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">FAQ</td></tr></table><span class="introStyle"></span><div class="introduction"><p>Here is a collection of frequently asked questions, common problems and solutions.</p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#General">General</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Tips">Debugging tips</a></li></ul><li class="outlineSectionEntry"><a href="#Effects">Effects and effect bindings</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#TimeParameter">How can I add an effect parameter for absolute time?</a></li><li class="outlineSectionEntry"><a href="#BrokenBinding">Effect parameter binding is not working</a></li></ul><li class="outlineSectionEntry"><a href="#Lights">Lights</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#HdrLdr">How should I handle LDR rendering and HDR rendering in the same game?</a></li><li class="outlineSectionEntry"><a href="#PointLights">PointLights/Spotlights/ProjectorLights are not working</a></li></ul><li class="outlineSectionEntry"><a href="#Meshes">Models and meshes</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#STL">Can I load models from .STL/… files?</a></li><li class="outlineSectionEntry"><a href="#ProceduralMesh">How to create a mesh in code</a></li><li class="outlineSectionEntry"><a href="#BlackModel">Model appears only black</a></li><li class="outlineSectionEntry"><a href="#BoundingShapeForCollisions">Can I use the Shape of the ModelNode for collision tests?</a></li></ul><li class="outlineSectionEntry"><a href="#Misc">Miscellaneous</a></li><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#TextureFilterPoint">
+                        NotSupportedException: "XNA Framework HiDef profile requires TextureFilter to be Point when using
+                        texture format HdrBlendable/Vector4/..."
+                    </a></li></ul></ul></div><div class="collapsibleAreaRegion" id="General"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />General</span></div><div id="ID0RBSection" class="collapsibleSection"><h4 class="subHeading" id="Tips">Debugging tips</h4><div class="subsection"><p>
+                            Use the
+                            <a href="baba2099-54e9-015c-629a-dfe2800bc744.htm">DebugRenderer</a>
+                            to visualize debug information: bounding shapes, skeletons of skinned meshes, etc.
+                        </p><p>
+                            If you are using deferred lighting, visualize the intermediate render targets as shown
+                            in the samples.
+                        </p><p>
+                            To debug rendering problems or problems with effects use a graphics debugging tool,
+                            for example <em>PIX for Windows</em>,
+                            <em><a href="http://msdn.microsoft.com/en-us/library/hh315751(v=vs.110).aspx" target="_blank">Visual Studio Graphics Diagnostics</a></em> or
+                            <em><a href="https://developer.nvidia.com/nvidia-nsight-visual-studio-edition" target="_blank">NVIDIA Nsight</a></em>.
+                        </p></div></div><div class="collapsibleAreaRegion" id="Effects"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Effects and effect bindings</span></div><div id="ID2RBSection" class="collapsibleSection"><h4 class="subHeading" id="TimeParameter">How can I add an effect parameter for absolute time?</h4><div class="subsection"><p>
+                            Here is the quick-and-dirty solution:
+                            Add the time parameter to the effect file:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAEABAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAEABAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAEABAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAEABAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">float</span> time : TIME;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAEABAEAAA");</script><p>
+                            Load the mesh and manually set the time in every frame:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EACABAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EACABAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EACABAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EACABAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">var</span> effectBinding = myMeshNode.Mesh.Materials[index][<span class="highlight-literal">"render pass"</span>];
+effectBinding.Set(<span class="highlight-literal">"time"</span>, currentTimeInSeconds);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EACABAEAAA");</script><p>
+                            Or set a callback method once that automatically sets the current time:
+                        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAABAEAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAABAEAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAABAEAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAABAEAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Assuming there is a method GetCurrentTimeInSeconds() that returns the time</span>
+<span class="highlight-comment">// as float, you can write the following:</span>
+<span class="highlight-keyword">var</span> effectBinding = myMeshNode.Mesh.Materials[index][<span class="highlight-literal">"render pass"</span>];
+effectBinding.Set(<span class="highlight-literal">"time"</span>, (binding, context) =&gt; GetCurrentTimeInSeconds());</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAABAEAAA");</script></div><h4 class="subHeading" id="BrokenBinding">Effect parameter binding is not working</h4><div class="subsection"><p>
+                            If the effect parameter binding does not work, try this:
+                        </p><ul><li>
+                                Check if the name or semantic of the effect parameter is spelled correctly.
+                            </li><li>
+                                Check if the type of the parameter is supported by the semantic, e.g. the semantic
+                                <a href="a1ad9834-26b4-9d52-53d0-99567e5979e2.htm">PointLightAttenuation</a>
+                                can only be used with <strong>float</strong>, not with
+                                <strong>float3</strong>.
+                            </li><li>
+                                Check the materials of the meshes:
+                                Using the Visual Studio debugger check if all parameters which should be set
+                                automatically have
+                                <a href="6368ff8a-c9d8-d68a-3cb9-4dcb45470700.htm">DelegateParameterBinding<span id="LST19227CA8_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST19227CA8_0?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST19227CA8_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST19227CA8_1?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>s
+                                (not
+                                <a href="ae705dad-539d-66d9-fed1-f2ebec8a4eb3.htm">ConstParameterBinding<span id="LST19227CA8_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST19227CA8_2?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>T<span id="LST19227CA8_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST19227CA8_3?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script></a>s).
+                            </li><li>
+                                In custom effects use default values for effect parameters. Check if the default
+                                value or a dynamic value is used at runtime.
+                            </li></ul></div></div><div class="collapsibleAreaRegion" id="Lights"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Lights</span></div><div id="ID3RBSection" class="collapsibleSection"><h4 class="subHeading" id="HdrLdr">How should I handle LDR rendering and HDR rendering in the same game?</h4><div class="subsection"><p>
+                            In HDR scenes you usually render the scene into a HdrBlendable render target. For best
+                            performance you should render LDR scenes into a Color render target.
+                            The light classes usually have
+                            <strong>Diffuse/SpecularIntensity</strong> properties
+                            and a
+                            <strong>HdrScale</strong>. Try to set the correct
+                            <strong>Diffuse/SpecularIntensity</strong>
+                            for the LDR scene and use the
+                            <strong>HdrScale</strong>
+                            to tweak the HDR scene.
+                        </p><p>
+                            For materials and particles you can also apply a custom
+                            "HdrScale" factor if necessary.
+                            (They do not have a built-in <strong>HdrScale</strong> property.)
+                        </p></div><h4 class="subHeading" id="PointLights">PointLights/Spotlights/ProjectorLights are not working</h4><div class="subsection"><p>
+                            Point lights, spotlight and projector lights should work automatically for opaque objects
+                            if you use deferred rendering, as shown in the deferred lighting samples.
+                            If you do not use deferred rendering, then it depends on the used effect. The XNA stock
+                            effects (e.g. <strong>BasicEffect</strong>, <strong>SkinnedEffect</strong>) and the built-in forward rendering effects of
+                            DigitalRune Graphics (e.g. <em>DigitalRune/Materials/Forward</em>, <em>ForwardTwoSided</em>) support only
+                            ambient lights and directional lights. That means, if you do not use deferred lighting or
+                            the object uses alpha-blending, you have to write your own effect which supports point lights.
+                        </p></div></div><div class="collapsibleAreaRegion" id="Meshes"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Models and meshes</span></div><div id="ID4RBSection" class="collapsibleSection"><h4 class="subHeading" id="STL">Can I load models from .STL/… files?</h4><div class="subsection"><p>
+                            XNA supports .X and .FBX files. To load .STL files or other file formats, you need
+                            a XNA Content Importer or a custom loader. For common formats you will usually find an
+                            open source implementation or an example on the Internet.
+                        </p></div><h4 class="subHeading" id="ProceduralMesh">How to create a mesh in code</h4><div class="subsection"><p>
+                            See <em>ProceduralObject.cs</em> in the
+                            <a href="dde51686-4f07-4c54-95d4-756ec929cb57.htm">Samples</a>.
+                        </p></div><h4 class="subHeading" id="BlackModel">Model appears only black</h4><div class="subsection"><p>
+                            If all models are black, then please check if the 3D scene contains any light sources.
+                        </p><p>
+                            Sometimes exported models have a wrong alpha value of 0. Correct this in a 3D modeling
+                            tool or in set a correct alpha value (usually 1) in code after you have loaded the model.
+                        </p></div><h4 class="subHeading" id="BoundingShapeForCollisions">Can I use the Shape of the ModelNode for collision tests?</h4><div class="subsection"><p>
+                            The
+                            <a href="76d2cb68-3a81-7642-6112-bc72db9bf90c.htm">ModelNode</a>
+                            is just a
+                            <a href="206bf836-6510-1c9d-02d4-c0c9a30a75a0.htm">SceneNode</a>
+                            that groups other
+                            <a href="206bf836-6510-1c9d-02d4-c0c9a30a75a0.htm">SceneNode</a>s.
+                            In most cases the
+                            <a href="76d2cb68-3a81-7642-6112-bc72db9bf90c.htm">ModelNode</a>
+                            has child of type
+                            <a href="150b5feb-ef12-d0be-cd27-0a32759af0ba.htm">MeshNode</a>.
+                            The
+                            Shape
+                            of the
+                            <a href="76d2cb68-3a81-7642-6112-bc72db9bf90c.htm">ModelNode</a>
+                            is usually an
+                            <a href="b7aaed59-b93f-aa24-2d84-8377e4dc3b5b.htm">EmptyShape</a>.
+                            You can try to use the shape of the
+                            <a href="150b5feb-ef12-d0be-cd27-0a32759af0ba.htm">MeshNode</a>.
+                            However, the
+                            <a href="4e08b9f3-d665-250d-bcd6-0e77f1c478d3.htm">Shape</a>
+                            of a
+                            <a href="206bf836-6510-1c9d-02d4-c0c9a30a75a0.htm">SceneNode</a>
+                            is just a simple bounding shape - usually just a
+                            <a href="28f243ab-2b08-0343-875b-2aa6f08b6c49.htm">TransformedShape</a>
+                            with a
+                            <a href="0d0b67e4-5104-b6ac-e97c-25e9ee2e8054.htm">BoxShape</a>
+                            or a
+                            <a href="a99abb5b-257f-4f39-ccb8-99ed8a87ab96.htm">SphereShape</a>.
+                            For example, the bounding shape of the "Dude" model is just a fixed size box. The
+                            bounding shapes are used for frustum culling and scene queries. But the shapes are
+                            usually not accurate enough for physics or collision detection.
+                        </p></div></div><div class="collapsibleAreaRegion" id="Misc"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Miscellaneous</span></div><div id="ID5RBSection" class="collapsibleSection"><h4 class="subHeading" id="TextureFilterPoint">
+                        NotSupportedException: "XNA Framework HiDef profile requires TextureFilter to be Point when using
+                        texture format HdrBlendable/Vector4/..."
+                    </h4><div class="subsection"><p>
+                            In XNA floating-point textures (e.g. surface format HdrBlendable, Vector4, etc.) can only
+                            be sampled with point sampling. Hardware filtering is not supported for floating-point
+                            textures. Therefore, effects which sample floating-point textures must set the
+                            sampler state to point filtering.
+                        </p><p>
+                            But sometimes the exception is thrown while rendering a mesh without a texture or with a normal texture.
+                            In this case, the problem might be that a previous renderer read from one or more
+                            floating-point textures and did not reset the texture stages of the graphics device.
+                            To solve the problem, call
+                            <a href="02da7b69-a095-909e-16ce-72c4e6b1c8d6.htm">GraphicsHelper<span id="LST19227CA8_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST19227CA8_4?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>ResetTextures(GraphicsDevice)</a>
+                            before the render action which throws the exception.
+                        </p></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

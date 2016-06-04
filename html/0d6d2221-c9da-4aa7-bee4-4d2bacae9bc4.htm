@@ -1,0 +1,83 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Rendering Scene Nodes</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="0d6d2221-c9da-4aa7-bee4-4d2bacae9bc4" /><meta name="Description" content="Scene nodes that are marked as &quot;renderable&quot; (see property P:DigitalRune.Graphics.SceneGraph.SceneNode.IsRenderable) can be rendered. A T:DigitalRune.Graphics.Rendering.SceneNodeRenderer (base class) renders scene nodes." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="7d5a0abe-8231-452c-895c-e6dbab83822b.htm" title="Graphics Programming" tocid="7d5a0abe-8231-452c-895c-e6dbab83822b">Graphics Programming</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="6b3a13bc-37b4-4820-9f82-c2364a9ed2eb.htm" title="Rendering" tocid="6b3a13bc-37b4-4820-9f82-c2364a9ed2eb">Rendering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="ba13b3e9-cf11-4a8d-959d-338de0a4aa81.htm" title="Render Context" tocid="ba13b3e9-cf11-4a8d-959d-338de0a4aa81">Render Context</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="0d6d2221-c9da-4aa7-bee4-4d2bacae9bc4.htm" title="Rendering Scene Nodes" tocid="0d6d2221-c9da-4aa7-bee4-4d2bacae9bc4">Rendering Scene Nodes</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="1b907017-5904-440d-b5fa-75c75ab60e6b.htm" title="Rendering Debug Information" tocid="1b907017-5904-440d-b5fa-75c75ab60e6b">Rendering Debug Information</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Rendering Scene Nodes</td></tr></table><span class="introStyle"></span><div class="introduction"><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#SceneNodeRenderer">SceneNodeRenderers</a></li><li class="outlineSectionEntry"><a href="#SceneRenderer">SceneRenderer</a></li></ul></div><div class="collapsibleAreaRegion" id="SceneNodeRenderer"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />SceneNodeRenderers</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    Scene nodes that are marked as "renderable" (see property <a href="eb028bf5-1978-67d1-91ea-761273e79e94.htm">SceneNode<span id="LST7EC9F01_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7EC9F01_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>IsRenderable</a>)
+                    can be rendered. A
+                    <a href="c022a3a4-2330-9b46-24ad-c8f3ae13f1f8.htm">SceneNodeRenderer</a>
+                    (base class) renders scene nodes.
+                    DigitalRune Graphics provides
+                    several scene node renderers. Each renderer handles one or more types of scene nodes. For
+                    example:
+                </p><ul><li>
+                        The <a href="1782e7fc-9a12-dd2d-d73d-8396a786fdeb.htm">MeshRenderer</a>
+                        handles <a href="150b5feb-ef12-d0be-cd27-0a32759af0ba.htm">MeshNode</a>s.
+                    </li><li>
+                        The <a href="b075683d-6078-be5e-a00b-b6112064e62b.htm">DecalRenderer</a>
+                        handles <a href="31eb8e3a-cbe8-dbda-b533-77e3979ecf41.htm">DecalNode</a>s.
+                    </li><li>
+                        The <a href="b16622e6-b040-0c77-9b2d-272c3ac34014.htm">BillboardRenderer</a>
+                        handles <a href="73900bd2-e82a-5119-cf0a-871340cf9d24.htm">BillboardNode</a>s
+                        and <a href="cc97eb93-8e8a-820b-81ca-c1e6e4880a79.htm">ParticleSystemNode</a>s.
+                    </li><li>
+                        etc.
+                    </li></ul><p>
+                    Usually the graphics are rendered into the current render target. However, some
+                    <a href="c022a3a4-2330-9b46-24ad-c8f3ae13f1f8.htm">SceneNodeRenderer</a>s
+                    render into a different render target, for example:
+                    the
+                    like
+                </p><ul><li>
+                        The
+                        <a href="50fe6abc-deec-f38d-d866-9d6558a2ebdf.htm">ShadowMapRenderer</a>
+                        renders into the shadow maps (<a href="80b7e21d-3481-58ca-2b2c-061241ac6da0.htm">Shadow<span id="LST7EC9F01_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7EC9F01_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>ShadowMap</a>).
+                    </li><li>
+                        The
+                        <a href="a2239fc2-9069-0ad3-533d-51e3260fc200.htm">CloudMapRenderer</a>
+                        renders into the cloud map textures (<a href="34bc11a4-fabc-eccf-7983-0b0ad8388d64.htm">CloudMap<span id="LST7EC9F01_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LST7EC9F01_2?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Texture</a>).
+                    </li><li>
+                        etc.
+                    </li></ul><p>
+                    Custom scene node renderers can be added when needed. See <a href="578746ac-7e3c-42b5-b9c9-6900714c966e.htm">How To: Add a Custom Scene Node</a>.
+                </p><p>
+                    Scene node renderers need to be called explicitly in the graphics screen that renders a scene graph -
+                    renderers are not called automatically!
+                </p></div><div class="collapsibleAreaRegion" id="SceneRenderer"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />SceneRenderer</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    The <a href="3da01fb8-e3d4-8d84-1021-b0e23e28c645.htm">SceneRenderer</a>
+                    is a special type of scene node renderer. The <a href="3da01fb8-e3d4-8d84-1021-b0e23e28c645.htm">SceneRenderer</a>
+                    is a collection of other scene node renderers, i.e. it can be used to combine different
+                    scene node renderers into a single instance.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EADABAAA_tab1" class="codeSnippetContainerTabSingle">Example (C#): Create a renderer that handles meshes, billboards, and particles.</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EADABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EADABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EADABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">sceneRenderer = <span class="highlight-keyword">new</span> SceneRenderer();
+sceneRenderer.Renderers.Add(<span class="highlight-keyword">new</span> MeshRenderer());
+sceneRenderer.Renderers.Add(<span class="highlight-keyword">new</span> BillboardRenderer(graphicsService, <span class="highlight-number">2048</span>));</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EADABAAA");</script><p>
+                    The main purpose of the <a href="3da01fb8-e3d4-8d84-1021-b0e23e28c645.htm">SceneRenderer</a>
+                    is to correctly sort scene nodes and automatically dispatch them in batches to the correct
+                    renderer.
+                </p><p>
+                    Example: Transparent (alpha-blended) objects need to be rendered back-to-front. That means
+                    the scene nodes need to be sorted by depth. Then depending on the type the scene nodes
+                    need to be passed to the correct renderer. The
+                    <a href="150b5feb-ef12-d0be-cd27-0a32759af0ba.htm">MeshNode</a>s
+                    need to be passed to the <a href="1782e7fc-9a12-dd2d-d73d-8396a786fdeb.htm">MeshRenderer</a>,
+                    the <a href="73900bd2-e82a-5119-cf0a-871340cf9d24.htm">BillboardNode</a>s
+                    need to be passed to the <a href="b16622e6-b040-0c77-9b2d-272c3ac34014.htm">BillboardRenderer</a>,
+                    etc. The <a href="3da01fb8-e3d4-8d84-1021-b0e23e28c645.htm">SceneRenderer</a>
+                    takes care of this.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAABAAA_tab1" class="codeSnippetContainerTabSingle">Example (C#): Render transparent (alpha-blended) scene nodes</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Set render states.</span>
+graphicsDevice.RasterizerState = RasterizerState.CullCounterClockwise;
+graphicsDevice.DepthStencilState = DepthStencilState.DepthRead;
+graphicsDevice.BlendState = BlendState.AlphaBlend;
+
+<span class="highlight-comment">// Select render pass.</span>
+context.RenderPass = <span class="highlight-literal">"AlphaBlend"</span>;
+
+<span class="highlight-comment">// Render a list of scene nodes (mesh nodes, billboard nodes, ...).</span>
+sceneRenderer.Render(sceneNodes, context, RenderOrder.BackToFront);
+
+<span class="highlight-comment">// Optional: If one of the meshes uses floating-point texture, it might be </span>
+<span class="highlight-comment">// necessary to reset the texture stage. Otherwise, the subsequent code may </span>
+<span class="highlight-comment">// throw an exception in XNA.</span>
+graphicsDevice.ResetTextures();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAABAAA");</script></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

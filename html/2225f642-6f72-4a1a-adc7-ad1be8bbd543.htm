@@ -1,0 +1,176 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>DirectXTex Texconv</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="2225f642-6f72-4a1a-adc7-ad1be8bbd543" /><meta name="Description" content="Microsoft(R) DirectX 11 Texture Converter (DirectXTex version). Copyright (C) Microsoft Corp. All rights reserved." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="aae4fd3b-9bc1-4d4e-81fc-b0527c2a57ae.htm" title="Tools" tocid="aae4fd3b-9bc1-4d4e-81fc-b0527c2a57ae">Tools</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="983ed4b5-d98b-4244-81d3-9518b7a16ab4.htm" title="Pack" tocid="983ed4b5-d98b-4244-81d3-9518b7a16ab4">Pack</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="82aae839-9dee-4d18-b87b-85da2b547f7f.htm" title="Texassemble" tocid="82aae839-9dee-4d18-b87b-85da2b547f7f">Texassemble</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="2225f642-6f72-4a1a-adc7-ad1be8bbd543.htm" title="Texconv" tocid="2225f642-6f72-4a1a-adc7-ad1be8bbd543">Texconv</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">DirectXTex Texconv</td></tr></table><span class="introStyle"></span><div class="introduction"><p><em>
+          Microsoft(R) DirectX 11 Texture Converter (DirectXTex version).
+          Copyright (C) Microsoft Corp. All rights reserved.
+        </em></p><p>
+        The <a href="https://directxtex.codeplex.com/" target="_blank">DirectXTex</a> command-line tool <span class="command">texconv</span> can be
+        used prepare images for runtime use. It supports resizing, format conversion, mipmap
+        generation, block-compression.
+      </p><p>
+        To create cubemaps, volume maps, or texture arrays from individual files, use
+        <a href="82aae839-9dee-4d18-b87b-85da2b547f7f.htm">Texassemble</a>.
+      </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#Usage">Usage</a></li><li class="outlineSectionEntry"><a href="#Arguments">Arguments</a></li><li class="outlineSectionEntry"><a href="#Examples">Examples</a></li><li class="outlineSectionEntry"><a href="#seeAlsoSection">See Also</a></li></ul></div><div class="collapsibleAreaRegion" id="Usage"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Usage</span></div><div id="ID1RBSection" class="collapsibleSection"><p /><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAADAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAADAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAADAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">texconv [-w &lt;width&gt;] [-h &lt;height&gt;] [-m &lt;miplevels&gt;] [-f &lt;format&gt;] [-if &lt;filter&gt;] [-srgb | -srgbi | -srgbo] [-px  &lt;prefix&gt;] [-sx &lt;suffix&gt;] [-o &lt;directory&gt;] [-ft &lt;filetype&gt;] [-hflip] [-vflip] [-sepalpha] [-wrap | -mirror] [-pmalpha] [-fl &lt;featurelevel&gt;] [-pow2] [-tu | -tf] [-dword] [-xlum] [-dx10] [-nologo] [-singleproc] [-nogpu] [-bcuniform] [-bcdither] [-bcmax] [-aw &lt;alphaweight&gt;] [-nmap &lt;options&gt;] [-nmapamp &lt;weight&gt;] [-timing] &lt;files&gt;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAADAAA");</script></div><div class="collapsibleAreaRegion" id="Arguments"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Arguments</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+          The following arguments can be specified on the command-line:
+        </p><div class="tableSection"><table><tr><th><p>Argument</p></th><th><p>Description</p></th></tr><tr><td><p><em>files</em></p></td><td><p>
+                The image files that should be assembled into the DDS file.
+              </p></td></tr><tr><td><p><span class="command">-w</span> <em>width</em></p></td><td><p>
+                The width of the output texture in pixels.
+              </p></td></tr><tr><td><p><span class="command">-h</span> <em>height</em></p></td><td><p>
+                The height of the output texture in pixels.
+              </p></td></tr><tr><td><p><span class="command">-m</span> <em>miplevels</em></p></td><td><p>
+                The number of mipmap levels to generate.
+              </p><p>
+                The default value is 0: By default, a full mipmap chain is generated.
+                However, if the input image already has more than one mipmap levels,
+                the same number will be generated for the output image.
+              </p><p>
+                This setting only applies to DDS output files!
+              </p></td></tr><tr><td><p><span class="command">-f</span> <em>format</em></p></td><td><p>
+                The texture format of the output texture.  If no format is given,
+                the format of the first image file is used.
+              </p><p>
+                Allowed values are all
+                <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb173059.aspx" target="_blank">DXGI formats</a>
+                (without the "DXGI_FORMAT_" prefix).
+              </p><p>
+                Example: -f R10G10B10A2_UNORM
+              </p></td></tr><tr><td><p><span class="command">-if</span> <em>filter</em></p></td><td><p>
+                The image filter used for resizing.
+              </p><p>
+                Allowed values: POINT, LINEAR, CUBIC, FANT, BOX, TRIANGLE,
+                POINT_DITHER, LINEAR_DITHER, CUBIC_DITHER, FANT_DITHER, BOX_DITHER,
+                TRIANGLE_DITHER, POINT_DITHER_DIFFUSION, LINEAR_DITHER_DIFFUSION,
+                CUBIC_DITHER_DIFFUSION, FANT_DITHER_DIFFUSION, BOX_DITHER_DIFFUSION,
+                TRIANGLE_DITHER_DIFFUSION
+              </p><p>
+                Filters with DITHER in their name indicate that the 4x4 ordered
+                dither algorithm, while "DITHER_DIFFUSION" is error diffusion
+                dithering.
+              </p></td></tr><tr><td><p><span class="command">-srgbi</span>, <span class="command">-srgbo</span>, <span class="command">-srgb</span></p></td><td><p>
+                Defines whether the input image (<span class="command">-srgbi</span>), the
+                output image (<span class="command">-srgbo</span>) or both (<span class="command">-srgb</span>)
+                use sRGB color format (gamma 2.2).
+              </p></td></tr><tr><td><p><span class="command">-px</span> <em>prefix</em></p></td><td><p>
+                The text that is attached to the front of the output file name.
+              </p></td></tr><tr><td><p><span class="command">-sx</span> <em>suffix</em></p></td><td><p>
+                The text that is attached to the end of the output file name.
+              </p></td></tr><tr><td><p><span class="command">-o</span> <em>directory</em></p></td><td><p>
+                The output directory.
+              </p></td></tr><tr><td><p><span class="command">-ft</span> <em>filetype</em></p></td><td><p>
+                The type of the output file.
+              </p><p>
+                Allowed values are: BMP, JPG, JPEG, PNG, DDS, TGA, TIF, TIFF, WDP, HDP
+              </p><p>
+                The default value is DDS.
+              </p></td></tr><tr><td><p><span class="command">-hflip</span></p></td><td><p>
+                Flip image horizontally.
+              </p></td></tr><tr><td><p><span class="command">-vflip</span></p></td><td><p>
+                Flip image vertically.
+              </p></td></tr><tr><td><p><span class="command">-sepalpha</span></p></td><td><p>
+                Resize/generate mipmap levels for alpha channel separately from color
+                channels. This implies an alpha mode setting of DDS_ALPHA_MODE_CUSTOM
+                as this is typically only used if the alpha channel doesn't contain
+                transparency information.
+              </p></td></tr><tr><td><p><span class="command">-wrap</span>, <span class="command">-mirror</span></p></td><td><p>
+                Sets the texture addressing mode for filtering to WRAP or MIRROR.
+                The default value is CLAMP.
+              </p></td></tr><tr><td><p><span class="command">-pmalpha</span></p></td><td><p>
+                Convert final texture to premultiplied alpha. This sets an alpha
+                mode of DDS_ALPHA_MODE_PREMULTIPLIED unless the entire alpha channel
+                is fully opaque.
+              </p></td></tr><tr><td><p><span class="command">-fl</span> <em>featurelevel</em></p></td><td><p>
+                Sets the target feature level which determines the maximum supported
+                texture size.
+              </p><p>
+                Allowed values are: 9.1, 9.2, 9.3, 10.0, 10.1, 11.0, 11.1, 12.0, 12.1
+              </p><p>
+                The default value is "11.0" which indicates a maximum texture size
+                of 16834.
+              </p></td></tr><tr><td><p><span class="command">-pow2</span></p></td><td><p>
+                Fit each texture to a power-of-2 for width and height, minimizing
+                changes to the aspect ratio.
+              </p></td></tr><tr><td><p><span class="command">-tf</span>, <span class="command">-tu</span></p></td><td><p>
+                Defines whether TYPELESS format is treated as FLOAT or UNORM.
+              </p></td></tr><tr><td><p><span class="command">-dword</span></p></td><td><p>
+                Use DWORD instead of BYTE alignment. Only relevant for legacy DDS files.
+              </p></td></tr><tr><td><p><span class="command">-xlum</span></p></td><td><p>
+                Expand legacy L8, L16, A8L8 and A8P8 formats to 8:8:8:8 or 16:16:16:16 format.
+              </p></td></tr><tr><td><p><span class="command">-dx10</span></p></td><td><p>
+                Force DDS file output to always use the "DX10" header extension. The
+                resulting file may not be compatible with the legacy D3DX10 or D3DX11
+                libraries.
+              </p></td></tr><tr><td><p><span class="command">-nologo</span></p></td><td><p>
+                Suppress copyright message.
+              </p></td></tr><tr><td><p><span class="command">-singleproc</span></p></td><td><p>
+                Disable multi-threaded compression.
+              </p></td></tr><tr><td><p><span class="command">-nogpu</span></p></td><td><p>
+                Disable DirectCompute-based codecs.
+              </p></td></tr><tr><td><p><span class="command">-bcuniform</span></p></td><td><p>
+                Use uniform rather than perceptual weighting for BC1-3.
+              </p></td></tr><tr><td><p><span class="command">-bcdither</span></p></td><td><p>
+                Use dithering for BC1-3.
+              </p></td></tr><tr><td><p><span class="command">-bcmax</span></p></td><td><p>
+                Use exchaustive compression (BC7 only).
+              </p></td></tr><tr><td><p><span class="command">-aw</span> <em>alphaweight</em></p></td><td><p>
+                The BC7 GPU compressor weighting for alpha error metric.
+              </p><p>
+                The default value is 1.0.
+              </p></td></tr><tr><td><p><span class="command">-nmap</span> <em>options</em></p></td><td><p>
+                Convert height map to normal map.
+              </p><p>
+                Allowed values are:
+              </p><div class="tableSection"><table><tr><th><p>
+                        Value
+                      </p></th><th><p>
+                        Description
+                      </p></th></tr><tr><td><p>
+                      r
+                    </p></td><td><p>
+                      Use red channel.
+                    </p></td></tr><tr><td><p>
+                      g
+                    </p></td><td><p>
+                      Use green channel.
+                    </p></td></tr><tr><td><p>
+                      b
+                    </p></td><td><p>
+                      Use alpha channel.
+                    </p></td></tr><tr><td><p>
+                      l
+                    </p></td><td><p>
+                      Use luminance computed from red, green, and blue channels.
+                    </p></td></tr><tr><td><p>
+                      m
+                    </p></td><td><p>
+                      Use mirroring in U &amp; V. Defaults to wrap when doing the central difference computation.
+                    </p></td></tr><tr><td><p>
+                      u
+                    </p></td><td><p>
+                      Use mirroring in U. Defaults to wrap when doing the central difference computation.
+                    </p></td></tr><tr><td><p>
+                      v
+                    </p></td><td><p>
+                      Use mirroring in V. Defaults to wrap when doing the central difference computation.
+                    </p></td></tr><tr><td><p>
+                      i
+                    </p></td><td><p>
+                      Invert sign of the computed normal.
+                    </p></td></tr><tr><td><p>
+                      o
+                    </p></td><td><p>
+                      Compute a rough occlusion term and encode it into alpha channel.
+                    </p></td></tr></table></div><p /></td></tr><tr><td><p><span class="command">-nmapamp</span> <em>weight</em></p></td><td><p>
+                The normal map amplitude.
+              </p><p>
+                The default value is 1.0.
+              </p></td></tr><tr><td><p><span class="command">-timing</span></p></td><td><p>
+                Display elapsed processing time.
+              </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="Examples"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Examples</span></div><div id="ID3RBSection" class="collapsibleSection"><p>
+          Resize an image to a power of 2 in each dimension, generate all mipmap levels
+          and store the result as a DDS file with BC1 (DXT1) block compression:
+        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">texconv -pow2 -f BC1_UNORM cat.jpg</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAABAAA");</script></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID4RBSection" class="collapsibleSection"><h4 class="subHeading">Other Resources</h4><div class="seeAlsoStyle"><a href="82aae839-9dee-4d18-b87b-85da2b547f7f.htm">Texassemble</a></div></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>

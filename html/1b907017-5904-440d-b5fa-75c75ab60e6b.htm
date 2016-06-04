@@ -1,0 +1,102 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Rendering Debug Information</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="1b907017-5904-440d-b5fa-75c75ab60e6b" /><meta name="Description" content="This topic describes the T:DigitalRune.Graphics.Rendering.DebugRenderer, which can be used to draw debug information." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">DigitalRune Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="38bd0f53-477c-48c5-91cc-b9fb7062ceb3.htm" title="DigitalRune Documentation" tocid="roottoc">DigitalRune Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="0a8eb9ca-74ae-4746-9289-93d909b07e22.htm" title="DigitalRune Graphics" tocid="0a8eb9ca-74ae-4746-9289-93d909b07e22">DigitalRune Graphics</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="7d5a0abe-8231-452c-895c-e6dbab83822b.htm" title="Graphics Programming" tocid="7d5a0abe-8231-452c-895c-e6dbab83822b">Graphics Programming</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="6b3a13bc-37b4-4820-9f82-c2364a9ed2eb.htm" title="Rendering" tocid="6b3a13bc-37b4-4820-9f82-c2364a9ed2eb">Rendering</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="ba13b3e9-cf11-4a8d-959d-338de0a4aa81.htm" title="Render Context" tocid="ba13b3e9-cf11-4a8d-959d-338de0a4aa81">Render Context</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="0d6d2221-c9da-4aa7-bee4-4d2bacae9bc4.htm" title="Rendering Scene Nodes" tocid="0d6d2221-c9da-4aa7-bee4-4d2bacae9bc4">Rendering Scene Nodes</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="1b907017-5904-440d-b5fa-75c75ab60e6b.htm" title="Rendering Debug Information" tocid="1b907017-5904-440d-b5fa-75c75ab60e6b">Rendering Debug Information</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="DigitalRune" src="../icons/DigitalRune-Logo.png" /></td><td class="titleColumn">Rendering Debug Information</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+                This topic describes the <a href="baba2099-54e9-015c-629a-dfe2800bc744.htm">DebugRenderer</a>,
+                which can be used to draw debug information.
+            </p><p>This topic contains the following sections:</p><ul class="autoOutline"><li class="outlineSectionEntry"><a href="#DebugRenderer">DebugRenderer</a></li><li class="outlineSectionEntry"><a href="#Examples">Examples</a></li></ul></div><div class="collapsibleAreaRegion" id="DebugRenderer"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />DebugRenderer</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+                    The <a href="baba2099-54e9-015c-629a-dfe2800bc744.htm">DebugRenderer</a>
+                    is a tool for rendering debug information. It can be used to print text, visualize shapes,
+                    textures, and more.
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Important note" /> Important</th></tr><tr><td><p>
+                        The <a href="baba2099-54e9-015c-629a-dfe2800bc744.htm">DebugRenderer</a>
+                        is intended purely for rendering debug information. It is not designed for rendering regular content.
+                    </p></td></tr></table></div><p>
+                    The debug renderer records and batches a list of draw jobs. A draw job is added by calling
+                    one of the <strong>Draw</strong> methods. Note that the <strong>Draw</strong> methods
+                    can be called outside of the <strong>Game.Draw()</strong> method! For example, debug
+                    output can be added during <strong>Game.Update()</strong> when the game logic is
+                    executed.
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertCaution.png" alt="Important note" /> Important</th></tr><tr><td><p>
+                        The <a href="baba2099-54e9-015c-629a-dfe2800bc744.htm">DebugRenderer</a>
+                        is not thread-safe. To add draw jobs from multiple threads simultaneously either use locks
+                        or use multiple <a href="baba2099-54e9-015c-629a-dfe2800bc744.htm">DebugRenderer</a>s
+                        (one per thread).
+                    </p></td></tr></table></div><p>
+                    The method <a href="947c6412-00d1-e6d1-12fc-a59e0feedfc7.htm">Render</a>
+                    can be called at any time during <strong>Game.Draw()</strong> to output all recorded
+                    draw jobs.
+                </p><p>
+                    The method <a href="62d4bd28-6136-1bc2-054f-85253ec8808f.htm">Clear</a>
+                    can be called to clear the list of draw jobs. (Rendering the list of draw jobs does not
+                    automatically clear the list!)
+                </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Tip" /> Tip</th></tr><tr><td><p>
+                        If your application needs to output two types of debug information - for example, one that
+                        is updated per every frame and one that persistent across frames - you can simply use two
+                        instances of the <a href="baba2099-54e9-015c-629a-dfe2800bc744.htm">DebugRenderer</a>
+                        class.
+                    </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="Examples"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Examples</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+                    The following examples show how create a new <a href="baba2099-54e9-015c-629a-dfe2800bc744.htm">DebugRenderer</a>
+                    (usually at the start of the application).
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAEABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAEABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAEABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAEABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Use a content manager to load sprite font for debug text.</span>
+<span class="highlight-keyword">var</span> debugFont = GraphicsService.Content.Load&lt;SpriteFont&gt;(<span class="highlight-literal">"DebugFont"</span>);
+
+<span class="highlight-comment">// Create a new debug renderer.</span>
+<span class="highlight-keyword">var</span> debugRenderer = <span class="highlight-keyword">new</span> DebugRenderer(graphicsService, debugFont) 
+{ 
+  DefaultColor = Color.White 
+};</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAEABAAA");</script><p>
+                    Once the debug renderer is created it can be used to record debug output.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EACABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EACABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EACABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EACABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Clear list of draw jobs.</span>
+debugRenderer.Clear();
+
+<span class="highlight-comment">// Draw a point.</span>
+debugRenderer.DrawPoint(position, Color.White, <span class="highlight-keyword">false</span>);
+
+<span class="highlight-comment">// Draw a line.</span>
+debugRenderer.DrawLine(start, end, Color.Red, <span class="highlight-keyword">false</span>);
+
+<span class="highlight-comment">// Draw continuous text.</span>
+debugRenderer.DefaultTextPosition = <span class="highlight-keyword">new</span> Vector2F(<span class="highlight-number">10</span>, <span class="highlight-number">10</span>);
+debugRenderer.DrawText(<span class="highlight-literal">"Line #1..."</span>);
+debugRenderer.DrawText(<span class="highlight-literal">"Line #2.."</span>);
+debugRenderer.DrawText(<span class="highlight-literal">"Line #3..."</span>);
+
+<span class="highlight-comment">// Draw centered text at world space position.</span>
+debugRenderer.DrawText(<span class="highlight-literal">"WorldSpacePosition (0, 0)"</span>, <span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">0</span>, <span class="highlight-number">0</span>, <span class="highlight-number">0</span>), <span class="highlight-keyword">new</span> Vector2F(<span class="highlight-number">0.5</span>f, <span class="highlight-number">0.5</span>f), Color.White, <span class="highlight-keyword">false</span>);
+
+<span class="highlight-comment">// Draw left/top aligned text at screen space position.</span>
+debugRenderer.DrawText(<span class="highlight-literal">"ScreenPosition (600, 40)"</span>, <span class="highlight-keyword">new</span> Vector2F(<span class="highlight-number">600</span>, <span class="highlight-number">40</span>), <span class="highlight-keyword">new</span> Vector2F(<span class="highlight-number">0</span>, <span class="highlight-number">0</span>), Color.White);
+
+<span class="highlight-comment">// Copy texture to screen for debugging.</span>
+debugRenderer.DrawTexture(texture2D, <span class="highlight-keyword">new</span> Rectangle(<span class="highlight-number">1000</span>, <span class="highlight-number">10</span>, <span class="highlight-number">128</span>, <span class="highlight-number">128</span>));
+
+<span class="highlight-comment">// Draw coordinate axes for certain pose (position + orientation).</span>
+debugRenderer.DrawAxes(<span class="highlight-keyword">new</span> Pose(<span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">0</span>, <span class="highlight-number">0</span>, <span class="highlight-number">0</span>)), <span class="highlight-number">1</span>, <span class="highlight-keyword">true</span>);
+
+<span class="highlight-comment">// Draw axis-aligned bounding box (AABB).</span>
+debugRenderer.DrawAabb(<span class="highlight-keyword">new</span> Aabb(<span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">-0.5</span>f), <span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">0.5</span>f)), <span class="highlight-keyword">new</span> Pose(<span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">2</span>, <span class="highlight-number">0</span>, <span class="highlight-number">-3</span>)), Color.Green, <span class="highlight-keyword">false</span>);
+
+<span class="highlight-comment">// Draw different shapes.</span>
+debugRenderer.DrawBox(<span class="highlight-number">1</span>, <span class="highlight-number">1</span>, <span class="highlight-number">1</span>, <span class="highlight-keyword">new</span> Pose(<span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">-6</span>, <span class="highlight-number">0</span>, <span class="highlight-number">-5</span>)), Color.Green, <span class="highlight-keyword">false</span>, <span class="highlight-keyword">false</span>);
+debugRenderer.DrawViewVolume(<span class="highlight-keyword">new</span> PerspectiveViewVolume(<span class="highlight-number">1</span>, <span class="highlight-number">2</span>, <span class="highlight-number">0.1</span>f, <span class="highlight-number">1</span>f), <span class="highlight-keyword">new</span> Pose(<span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">-2</span>, <span class="highlight-number">0</span>, <span class="highlight-number">-5</span>)), Color.Green, <span class="highlight-keyword">false</span>, <span class="highlight-keyword">false</span>);
+debugRenderer.DrawSphere(<span class="highlight-number">0.5</span>f, <span class="highlight-keyword">new</span> Pose(<span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">2</span>, <span class="highlight-number">0</span>, <span class="highlight-number">-5</span>)), Color.Green, <span class="highlight-keyword">false</span>, <span class="highlight-keyword">false</span>);
+debugRenderer.DrawCapsule(<span class="highlight-number">0.3</span>f, <span class="highlight-number">1</span>, <span class="highlight-keyword">new</span> Pose(<span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">-6</span>, <span class="highlight-number">0</span>, <span class="highlight-number">-7</span>)), Color.Green, <span class="highlight-keyword">false</span>, <span class="highlight-keyword">false</span>);
+debugRenderer.DrawCylinder(<span class="highlight-number">0.3</span>f, <span class="highlight-number">1</span>, <span class="highlight-keyword">new</span> Pose(<span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">-2</span>, <span class="highlight-number">0</span>, <span class="highlight-number">-7</span>)), Color.Green, <span class="highlight-keyword">false</span>, <span class="highlight-keyword">false</span>);
+debugRenderer.DrawCone(<span class="highlight-number">0.3</span>f, <span class="highlight-number">1</span>, <span class="highlight-keyword">new</span> Pose(<span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">2</span>, <span class="highlight-number">0</span>, <span class="highlight-number">-7</span>)), Color.Green, <span class="highlight-keyword">false</span>, <span class="highlight-keyword">false</span>);
+
+<span class="highlight-comment">// Draw any IGeometricObject (GeometricObject, RigidBody, SceneNode, ParticleSystem, etc.).</span>
+debugRenderer.DrawObject(geometricObject, Color.Brown, <span class="highlight-keyword">false</span>, <span class="highlight-keyword">false</span>);
+
+<span class="highlight-comment">// Draw an XNA Model or DigitalRune ModelNode.</span>
+debugRenderer.DrawModel(xnaModel, <span class="highlight-keyword">new</span> Pose(<span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">0</span>, <span class="highlight-number">2</span>, <span class="highlight-number">-2</span>)), <span class="highlight-keyword">new</span> Vector3F(<span class="highlight-number">1</span>, <span class="highlight-number">1</span>, <span class="highlight-number">1</span>), Color.Brown, <span class="highlight-keyword">false</span>, <span class="highlight-keyword">false</span>);
+debugRenderer.DrawModel(modelNode, Color.Brown, <span class="highlight-keyword">false</span>, <span class="highlight-keyword">false</span>);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EACABAAA");</script><p>
+                    The recorded draw jobs can then be rendered.
+                </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAABAAA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Make sure that the current camera is set in the render context.</span>
+context.CameraNode = cameraNode;
+
+<span class="highlight-comment">// Render draw jobs. (Can only be called during Game.Draw()).</span>
+debugRenderer.Render(context);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAABAAA");</script></div></div></div><div id="pageFooter" class="pageFooter">Copyright (c) 2006-2016 DigitalRune GmbH. All rights reserved. (Last updated: 2016-03-10)<p><a href="http://www.digitalrune.com/" target="_blank">http://www.digitalrune.com/</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:office%40digitalrune.com?Subject=DigitalRune Documentation">office@digitalrune.com</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script></div></body></html>
